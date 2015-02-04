@@ -55,6 +55,8 @@ More information about TDR can be found at
 
 Now, you know how to produce the PDF file. The following sections explain how to contribute to the draft.
 
+---
+
 #### Fork the repo to your github account
 
 This and following sections how to contribute to the draft.
@@ -104,17 +106,15 @@ Now, you can push your commits to your forked repo on your github account.
 #### Make a pull request
 
 Now the branch you pushed is in a forked repo on your github account. You can make a pull request from there. 
-**Don't merge pull requests - as Tai is responsible for the AN only he may do this.**
 
 I will write a bit more about the pull request later.  In short, with a web browser, you need to go to your branch that your pushed and click `Pull request`, then follow the instructions on the web.
 
-#### Push to your forked repo
+**Note:** Please don't merge pull requests. Pull requests will be merged by Tai Sakuma after all comments have been addressed or no comments have been made after a while.
 
-Now, you can push your commits to your forked repo on your github account.
+---
 
-    git push myrepo myedit-20150127-01
+##### Appendix: SVN repo of parked analysis Analysis Note
 
-#### SVN repo of parked analysis Analysis Note
 
 Can be found here:
 https://svnweb.cern.ch/cern/wsvn/tdr2/notes/AN-13-366/trunk/
@@ -133,4 +133,3 @@ Instructions to check out and build:
     tdr --style an b AN-13-366
 
 
----
