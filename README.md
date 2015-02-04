@@ -110,7 +110,8 @@ I will write a bit more about the pull request later.  In short, with a web brow
 
 ---
 
-#### SVN repo of parked analysis Analysis Note
+##### Appendix: SVN repo of parked analysis Analysis Note
+
 
 Can be found here:
 https://svnweb.cern.ch/cern/wsvn/tdr2/notes/AN-13-366/trunk/
