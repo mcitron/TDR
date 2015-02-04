@@ -55,6 +55,8 @@ More information about TDR can be found at
 
 Now, you know how to produce the PDF file. The following sections explain how to contribute to the draft.
 
+---
+
 #### Fork the repo to your github account
 
 This and following sections how to contribute to the draft.
