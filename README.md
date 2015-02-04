@@ -13,7 +13,7 @@ The first few sections explain how to check out flies, compile files and produce
 
 First, you need to check out some utility files from the SVN repository for the CMS documents.
 
-    svn co -N svn+ssh://svn.cern.ch/reps/tdr2 myDir
+    svn co -N svn+ssh://<cern_user_name>@svn.cern.ch/reps/tdr2 myDir
     cd myDir
     svn update utils
     svn update -N notes
