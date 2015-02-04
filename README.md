@@ -103,7 +103,8 @@ Now, you can push your commits to your forked repo on your github account.
 
 #### Make a pull request
 
-Now the branch your pushed is in a forked repo on your github account. You can make a pull request from there. 
+Now the branch you pushed is in a forked repo on your github account. You can make a pull request from there. 
+**Don't merge pull requests - as Tai is responsible for the AN only he may do this.**
 
 I will write a bit more about the pull request later.  In short, with a web browser, you need to go to your branch that your pushed and click `Pull request`, then follow the instructions on the web.
 
