@@ -13,12 +13,65 @@ found.  Further, to reduce the ``lost leptons'' backgrounds from W +
 jets and \ttbar, events containing single isolated tracks with $\pt >
 10\GeV$ and $|\eta| < 2.5$, as defined in
 Section~\ref{sec:reconstruction}, are vetoed as part of the signal
-region selection criteria. 
+region selection criteria. In the case of the \mj and \mmj
+samples, a further requirement is made such that events are not vetoed
+due to the presence of a track from the well identified muons, by
+requiring $\Delta R(\textrm{track},\mu) < 0.02$.
+
 
 %%____________________________________________________________________________||
 \subsection{Hadronic signal region selection}
 
 %aim to main 2012 acceptance for compressed susy
+Events are required to have significant hadronic activity by requiring
+$\scalht > 200\GeV$. The aim is to keep this threshold at the level of the 2012
+analysis~\cite{parkedDataAN} to maintain acceptance for SUSY models with
+compressed spectra.  
+
+%Jet selection
+
+%alphaT cuts
+
+% put in new alphaT cuts!! FIXME
+\begin{table}[h!]
+  \caption{\alphat and (effective) \mht/\scalht and \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcccc }
+    \hline
+    \hline
+    \scalht bin  & 200--275   & 275--325   & 325--375   & $>$375       \\
+    \hline
+    \alphat      & 0.65       & 0.60       & 0.55       & 0.55         \\
+    \mht/\scalht & $\sim$0.64 & $\sim$0.55 & $\sim$0.42 & $\sim$0.42   \\
+    \mht         & $\sim$130  & $\sim$150  & $\sim$135  & $\gtrsim$155 \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+To protect against multiple jets failing the $\Et$ threshold, the
+jet-based estimate of the missing transverse energy, \mht, is compared
+to the Particle Flow estimate of missing transverse energy, $\pfmet$,
+and events with $R_{\rm miss}=\mht/\pfmet > 1.25$ are rejected.
+
+To protect against severe energy losses, events with significant jet
+mismeasurements caused by masked regions in the ECAL (which amount to
+about 1\% of the ECAL channel count), or by missing instrumentation in
+the barrel-endcap gap, are removed with the following procedure. The
+jet-based estimate of the missing transverse energy, \mht, is used to
+identify jets most likely to have given rise to the \mht as those
+whose momentum is closest in $\phi$ to the total $\vec{\mht}$ which
+results after removing them from the event.  The azimuthal distance
+between this jet and the recomputed \mht is referred to as
+$\Delta\phi^*$ in what follows. Events with $\Delta\phi^* < 0.5$ are
+rejected if the distance in the ($\eta,\phi$) plane between the
+selected jet and the closest masked ECAL region, $\Delta R_{\rm
+  ECAL}$, is smaller than 0.3. Similarly, events are rejected if the
+jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
+$|\eta| = 1.5$. These final selections complete the definition of the
+acceptance of the hadronic signal sample.
+
 
 \subsubsection{Reduction of \alphat thresholds for high \HT}
 
@@ -37,7 +90,17 @@ region selection criteria.
 %%____________________________________________________________________________||
 \subsection{Analysis bins}
 
-%Introduce old analysis bins
+Events in the hadronic signal region (and the
+three control regions described in Sec.~\ref{sec:controlSelection}) are
+categorised according to the number of jets (\njet) reconstructed in
+each event and the number of jets identified as originating from
+bottom quarks (\nb) in each event. By construction, $\nb \leq \njet$.
+
+Additionally these categories are split up into \HT bins, detailed in 
+Table~\ref{tab:htBins}.
+%HT bins table
+
+% Introduce 2012 bins?
 
 \subsubsection{Introduction of asymmetric jet bin}
 
@@ -49,6 +112,7 @@ region selection criteria.
 
 %%____________________________________________________________________________||
 \subsection{Control region selection}
+\label{sec:controlSelection}
 
 \subsubsection{Hadronic control sample}
 
