@@ -135,19 +135,66 @@ PLACEHOLDER: HT bins per njet category table? have we made a decision here?
 
 \subsubsection{Extension of \HT bins}
 
-In the SUS-14-006 analysis the maximum \HT bin was 1075. 
+In the SUS-14-006 analysis the maximum \HT bin was 1075. With the increase in
+centre of mass energy in Run~2, the prevalance of higher \HT events will be
+increased. The production of heavy SUSY particles, such as gluinos, will result
+in large values \HT . This is illustrated in the \HT bins that events from a pair
+produced gluino model sit, Fig.~\ref{fig:sigYields}. To increase the sensitivity
+of the analysis to these kinds of models the \HT bins can be extended to higher
+values. The only limit placed on this value is that there are enough events in the
+relevant control samples, to allow background prediction. Enough events is
+defined as the number that result in a statistical uncertainty that is
+approximately equal to the expected systematic uncertainty for the bin in
+question. Initial studies suggest it should be possible to extend up to
+$\HT=1600$, possibly even $\HT=2000$. This would give a great increase in the
+signal over background ratio, particularly for gluino mediated models.
 
 \subsubsection{Fine \njet binning}
+
+With the increase in events available from electroweak processes in Run~2, it
+now seems possible introduce a bin per \njet category, rather than requiring
+just $\njet \leq 3$ and $\njet \geq 4$. This aids in categorising low \njet signal
+processes, in which an invisible particle system is made in conjunction with ISR.
 
 \subsubsection{Introduction of asymmetric jet bins}
 
 % introduction of asymmetric dijet bin, describe the bin and small motivation
+As SUSY models with compressed spectra in general only produce soft SM
+particles they are dwarfed by background. It is possible to regain sensitivity
+to these models by relying on their production in conjunction with ISR. These
+sort of events typically have one high \PT jet and other lower \PT jets. For a
+typical compressed model Fig.~\ref{fig:asymMotivation} shows the second jet \PT
+distribution for two different \HT bins. In the low \HT case a large portion of
+the events are killed by requiring the second jet to have $\ET>100\gev$. 
 
-PLACEHOLDER: plot of njet for signal model, DM yield table?
+It is therefore proposed to add an extra analysis category in which events with lead
+jet $\ET>100\gev$ and second jet $40\gev<\ET<100\gev$. This new category will
+result in new asymmetric jet bins split in $\njet$, $\nb$ and \HT. For the 
+simplified model T2tt with $m_{stop}=425\gev$ and $m_{LSP}=325\gev$ 
+including these bins increases signal acceptance by around a factor 3.
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[Second jet \PT for $200\gev<\HT<250\gev$, $\alphat>0.65$]{
+    \includegraphics[width=0.5\textwidth]{figures/asymPlots/secondJetPtlowHT}
+  }~~
+  \subfigure[Second jet \PT for $400\gev<\HT>500\gev$, $\alphat>0.52$]{
+    \includegraphics[width=0.5\textwidth]{figures/asymPlots/secondJetPthigherHT}
+  }
+  \\
+  \caption{\label{fig:asymMotivation} The second leading jet \PT for different
+  cases of \HT after a baseline signal selection: $\njet\geq2$, lead jet
+  $\ET>100\gev$, lepton vetoes. Made using the XXX sample.}
+\end{figure}
+
+NOTE: which sample did the second jet pt plots come from?
+PLACEHOLDER: DM yield table here or in Bjoern's section?
 
 %%____________________________________________________________________________||
 \subsection{Key distributions for the hadronic signal
   region\label{sec:mc-data-comp}}
+
+%Distributions of key analysis variables 
 
 PLACEHOLDER: plots of alphaT for signal region, HT, MHT, njet
 
@@ -174,17 +221,17 @@ or suppressed depending on the number of b-jets required.
 % in Table~\ref{tab:backgrounds}. 
 A plot showing the yields for these electroweak backgrounds and a reference
 signal model can be seen in Fig~\ref{fig:ewkYields}. A break down of the three
-dominant channels, \zinv, \ttbar and W~+~jets, are shown. The contribution from
+dominant channels, \zInv, \ttbar and W~+~jets, are shown. The contribution from
 other sources, such as the single top and diboson channels, was found to be
 negligible so are not shown.
 
-\begin{figure}[h!]
+\begin{figure}[]
   \centering
   \subfigure[Hadronic signal region yields for electroweak backgrounds
   ($\njet = 2$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_eq2j.pdf}
   }~~
-  \subfigure[Hadronic signal region yields for the \zinv background
+  \subfigure[Hadronic signal region yields for the \zInv background
   ($\njet = 2$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_eq2j.pdf}
   }\\
@@ -196,14 +243,20 @@ negligible so are not shown.
   ($\njet = 2$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq2j.pdf}
   }
-  \\
+  \caption{\label{fig:ewkYields1} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region. The binning is chosen to be in line with the analysis
+  bins. For each \njet the contribution from the dominant backgrounds is broken
+  down.}
+\end{figure}
+\begin{figure}[]
+  \centering
   \subfigure[Hadronic signal region yields for electroweak backgrounds
   ($\njet = 3$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_eq3j.pdf}
   }~~
-  \subfigure[Hadronic signal region yields for the \zinv background
+  \subfigure[Hadronic signal region yields for the \zInv background
   ($\njet = 3$)]{
-    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_eq3j.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zInv_eq3j.pdf}
   }\\
   \subfigure[Hadronic signal region yields for W~+~jets backtround
   ($\njet = 3$)]{
@@ -213,13 +266,18 @@ negligible so are not shown.
   ($\njet = 3$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq3j.pdf}
   }
-
-  \\
+  \caption{\label{fig:ewkYields2} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region. The binning is chosen to be in line with the analysis
+  bins. For each \njet the contribution from the dominant backgrounds is broken
+  down.}
+\end{figure}
+\begin{figure}[]
+  \centering
   \subfigure[Hadronic signal region yields for electroweak backgrounds
   ($\njet = 4$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_eq4j.pdf}
   }~~
-  \subfigure[Hadronic signal region yields for the \zinv background
+  \subfigure[Hadronic signal region yields for the \zInv background
   ($\njet = 4$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_eq4j.pdf}
   }\\
@@ -231,13 +289,18 @@ negligible so are not shown.
   ($\njet = 4$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq4j.pdf}
   }
-
-  \\
+  \caption{\label{fig:ewkYields3} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region. The binning is chosen to be in line with the analysis
+  bins. For each \njet the contribution from the dominant backgrounds is broken
+  down.}
+\end{figure}
+\begin{figure}[]
+  \centering
   \subfigure[Hadronic signal region yields for electroweak backgrounds
   ($\njet \geq 5$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_ge5j.pdf}
   } ~~
-  \subfigure[Hadronic signal region yields for the \zinv background
+  \subfigure[Hadronic signal region yields for the \zInv background
   ($\njet \geq 5$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_ge5j.pdf}
   }\\
@@ -251,12 +314,13 @@ negligible so are not shown.
   }
 
   \\
-  \subfigure[Hadronic signal region yields for T1bbbb simplified model 
+  \subfigure[Hadronic signal region yields for T1bbbb simplified model
+  \label{fig:sigYields}
   ($\njet \geq 5$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/sig_T1bbbb_ge5j.pdf}
   }
   \\
-  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  \caption{\label{fig:ewkYields4} Yields at $4\fbinv$ for the electroweak backgrounds in the
   hadronic signal region. The binning is chosen to be in line with the analysis
   bins. For each \njet the contribution from the dominant backgrounds is broken
   down.}
