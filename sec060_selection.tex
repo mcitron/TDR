@@ -24,13 +24,12 @@ requiring $\Delta R(\textrm{track},\mu) < 0.02$.
 
 \subsubsection{Hadronic pre-selection}
 Events are required to have significant hadronic activity by requiring
-$\scalht > 200\GeV$. Despite the increase in centre of mass energy and pile-up
+$\scalht > 200\GeV$. Despite the increase in centre of mass energy and pileup
 in Run~2, this threshold is kept at the level of the Run~1 analyses~\cite{run1Analyses}  
 to maintain acceptance for SUSY models with compressed spectra. This should be
-made possible by the advances made in jet reconstruction, particularly pileup
+made possible by the advances made in offline object reconstruction, particularly pileup
 subtraction~\cite{puppi}.
 
-%Jet selection %fjv
 Jets considered in the analysis are required to have an $\ET>40\gev$ and be
 within the central tracker acceptance ($|\eta|<3.0$). This threshold is chosen
 to be flat across \HT values, unlike the SUS-13-366 analysis. The \ET value is
@@ -46,7 +45,7 @@ vetoed. This reduces the number of events with non genuine \mht caused by jets
 just out of acceptance.
 
 \subsubsection{The hadronic signal region\label{sec:had-signal}}
-%alphaT cuts
+% FIXME put in the alphaT plot ? probably goes earlier
 Following the hadronic pre-selection, the multijet background from QCD
 is still several orders of magnitude larger than the typical signal
 expected from SUSY. Most multijet background sits at $\alphat<0.5$ so can be 
@@ -56,10 +55,9 @@ Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
 \HT values, an \alphat cut that scales with \HT is required, detailed in
 Table~\ref{tab:alphat-thresholds}. The \alphat threshold is to keep the
 effective \mht cut approximately constant. As high \alphat cuts can have a
-significant effect on signal acceptance these thresholds can be tuned to
+significant effect on signal acceptance, these thresholds can be tuned to
 maintain a high signal to background ratio while remaining QCD free.
 
-% put in new alphaT cuts!! FIXME
 \begin{table}[h!]
   \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
   \centering
@@ -77,12 +75,13 @@ maintain a high signal to background ratio while remaining QCD free.
 \end{table}
 
 In the Run~1 analyses there was a minimum cut of $\alphat>0.55$. This was chosen
-as a conservative way to ensure the analysis was QCD free. It was also partially required 
+as a conservative cut to remove QCD. It was also required
 by the \alphat requirement in the HLT paths used to seed the analysis bins. For
 Run~2 it is proposed to seed the the bins with $\HT>900\gev$ by a flat
-$PF\HT>900\gev$ HLT path, removing the \alphat requirement.
+$PF\HT>900\gev$ HLT path with no \alphat requirement.
 
-To protect against multiple jets failing the $\Et$ threshold, the
+Subsequently, additional cleaning cuts are applied. To protect against 
+multiple jets failing the $\Et$ threshold, the
 jet-based estimate of the missing transverse energy, \mht, is compared
 to the Particle Flow estimate of missing transverse energy, $\pfmet$,
 and events with $R_{\rm miss}=\mht/\pfmet > 1.25$ are rejected.
@@ -107,15 +106,6 @@ acceptance of the hadronic signal sample.
 %\subsubsection{Reduction of \alphat thresholds for high \HT}
 % Did this above instead
 
-\subsubsection{Key distributions for the hadronic signal
-  region\label{sec:mc-data-comp}}
-
-%%____________________________________________________________________________||
-\subsection{Breakdown of SM backgrounds in the hadronic signal
-  region\label{sec:bkgd-comp}}
-
-% put yield tables here
-
 %%____________________________________________________________________________||
 \subsection{Analysis bins}
 
@@ -135,11 +125,44 @@ Table~\ref{tab:htBins}.
 
 % introduction of asymmetric dijet bin, describe the bin and small motivation
 
+PLACEHOLDER: plot of njet for signal model, DM yield table?
+
 \subsubsection{Extension of \HT bins}
 
 \subsubsection{Fine \njet binning}
 
 %%____________________________________________________________________________||
+\subsection{Key distributions for the hadronic signal
+  region\label{sec:mc-data-comp}}
+
+PLACEHOLDER: plots of alphaT for signal region, HT, MHT, njet
+
+
+%%____________________________________________________________________________||
+\subsection{Breakdown of SM backgrounds in the hadronic signal
+  region\label{sec:bkgd-comp}}
+
+In the absence of multijet events from QCD, the remaining significant
+backgrounds in the signal region are expected to stem from SM
+processes with genuine \met in the final state. For the low jet
+multiplicity categories, the largest backgrounds with genuine \met are
+generally from the associated production of W or Z bosons with jets,
+followed by either the weak decays \znunu\ or \wtaunu, where the
+$\tau$ decays hadronically and is identified as a jet, or by leptonic
+decays that are outside acceptance or not rejected by the dedicated
+electron or muon vetoes. For the higher jet multiplicity categories,
+top quark production followed by semileptonic weak top quark decay
+becomes important. The relative contribution from \ttbar is enhanced
+or suppressed depending on the number of b-jets required. 
+% A breakdown
+% of the relative contributions of the SM backgrounds, as given by
+% simulation, in the different (\njet, \nb, \scalht) bins can be found
+% in Table~\ref{tab:backgrounds}. 
+
+PLACEHOLDER: put yield tables here and signal model (a la Tai's talk)
+
+%%____________________________________________________________________________||
+
 \subsection{Control region selection}
 \label{sec:controlSelection}
 
