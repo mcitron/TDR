@@ -117,21 +117,33 @@ categorised according to the number of jets (\njet) reconstructed in
 each event and the number of jets identified as originating from
 bottom quarks (\nb) in each event. By construction, $\nb \leq \njet$.
 
-Additionally these categories are split up into \HT bins, detailed in 
-Table~\ref{tab:htBins}.
-%HT bins table
+Additionally these categories are split up into \HT bins. These bins begin at
+$\HT=200\gev$ and extend in $50\gev$ steps up to $\HT=400\gev$. After this, the
+bins are $100\gev$ wide extending up to the highest \HT reachable that still has
+statistics in the control region. These bin widths have been rationalised with
+respect to the SUS-14-006 analysis. As there are plenty of events in the control
+samples (detailed in Sec.~\ref{sec:controlSelection}) at low \HT, $50\gev$ bins
+are an appropriate size. In SUS-14-006 the low \HT bins were seeded by different
+trigger paths, and their lower edge was chosen to sit in the trigger turnon. For
+Run~2 this strategy has been inverted, with the selection of the offline \HT
+bins first. The trigger threshold is then chosen to be sufficiently below that
+of it's relevant offline bin so as to be efficient. More details in
+Sec~\ref{sec:trigger}.
+%detailed in Table~\ref{tab:htBins}.
 
-% Introduce 2012 bins?
+PLACEHOLDER: HT bins per njet category table? have we made a decision here?
 
-\subsubsection{Introduction of asymmetric jet bin}
+\subsubsection{Extension of \HT bins}
+
+In the SUS-14-006 analysis the maximum \HT bin was 1075. 
+
+\subsubsection{Fine \njet binning}
+
+\subsubsection{Introduction of asymmetric jet bins}
 
 % introduction of asymmetric dijet bin, describe the bin and small motivation
 
 PLACEHOLDER: plot of njet for signal model, DM yield table?
-
-\subsubsection{Extension of \HT bins}
-
-\subsubsection{Fine \njet binning}
 
 %%____________________________________________________________________________||
 \subsection{Key distributions for the hadronic signal
@@ -292,7 +304,6 @@ the cleaning cut $\mht/\pfmet$ is also applied, as done in the signal
 region, where the \pfmet is adjusted to account for the transverse
 momentum of the identified, isolated muon.
 
-%STACK THESE UP
 \begin{figure}[h!]
   \centering
   \subfigure[Yields from \texorpdfstring{\mj}{muon plus jets} control sample
@@ -412,7 +423,7 @@ used.
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/ph_gjets_ge5j.pdf}
   } 
   \\
-  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the \gamma~+~jets MC 
+  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the GJets MC 
   contributions to the \texorpdfstring{\gj}{photon plus jets} control sample. }
 \end{figure}
 
