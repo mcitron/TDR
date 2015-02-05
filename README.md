@@ -59,7 +59,7 @@ Now, you know how to produce the PDF file. The following sections explain how to
 
 #### Fork the repo to your github account
 
-This and following sections how to contribute to the draft.
+This and following sections explain how to contribute to the draft.
 
 If you haven't done so, please fork this repo to your github account. If you are reading this online at github, you can do so by clicking `Fork`  around the top right corner of this page.
 
