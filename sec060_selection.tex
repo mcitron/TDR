@@ -54,11 +54,14 @@ rejected with very high efficiency by requiring an appropriate cut on this
 variable (plus the application of two dedicated cleaning filters, described below in
 Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
 \HT values, an \alphat cut that scales with \HT is required, detailed in
-Table~\ref{tab:alphat-thresholds}. 
+Table~\ref{tab:alphat-thresholds}. The \alphat threshold is to keep the
+effective \mht cut approximately constant. As high \alphat cuts can have a
+significant effect on signal acceptance these thresholds can be tuned to
+maintain a high signal to background ratio while remaining QCD free.
 
 % put in new alphaT cuts!! FIXME
 \begin{table}[h!]
-  \caption{\alphat and (effective) \mht/\scalht and \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
+  \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
   \centering
   \footnotesize
   \begin{tabular}{ lcccccc }
@@ -72,6 +75,12 @@ Table~\ref{tab:alphat-thresholds}.
     \hline
   \end{tabular}
 \end{table}
+
+In the Run~1 analyses there was a minimum cut of $\alphat>0.55$. This was chosen
+as a conservative way to ensure the analysis was QCD free. It was also partially required 
+by the \alphat requirement in the HLT paths used to seed the analysis bins. For
+Run~2 it is proposed to seed the the bins with $\HT>900\gev$ by a flat
+$PF\HT>900\gev$ HLT path, removing the \alphat requirement.
 
 To protect against multiple jets failing the $\Et$ threshold, the
 jet-based estimate of the missing transverse energy, \mht, is compared
@@ -95,10 +104,8 @@ jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
 $|\eta| = 1.5$. These final selections complete the definition of the
 acceptance of the hadronic signal sample.
 
-\subsubsection{Reduction of \alphat thresholds for high \HT}
-
-%HT>900 seeded by flat trigger so can choose low alphaT
-%this maps flat onto MHT - show table from Tai talk
+%\subsubsection{Reduction of \alphat thresholds for high \HT}
+% Did this above instead
 
 \subsubsection{Key distributions for the hadronic signal
   region\label{sec:mc-data-comp}}
