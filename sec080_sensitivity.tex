@@ -36,46 +36,6 @@ Sec.~\ref{sec:qcd}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsubsection{\texorpdfstring{\HT}{HT} evolution models}
-%\label{sec:htEvolutionModel}
-%
-%The hypothesis that for a process $p$ the $\alt$ ratio falls
-%exponentially in \HT can be written this way:
-%
-%\begin{equation}
-%R_{\alt}(\HT) = A e^{-k \HT}
-%\end{equation}
-%
-%where $A$ and $k$ are parameters whose values will be determined.  Let
-%$m_i$ represent the number of events observed with $\alt \le 0.55$ in
-%each \HT bin $i$, and let \meanHt{i} represent the mean \HT of such
-%events.  The expected background from the process is written thus:
-%
-%\begin{equation}
-%b_{p}^{i} = \int_{x_i}^{x_{i+1}}\! \frac{\mathrm{d}N}{\mathrm{d}\HT}
-%R_{\alt}\, \mathrm{d}\HT \quad , 
-%\end{equation}
-%
-%where $\frac{\mathrm{d}N}{\mathrm{d}\HT}$ is the distribution of \HT
-%for events with $\alt \le 0.55$, $x_i$ is the lower edge of the
-%bin, and $x_{i+1}$ is the upper edge of the bin ($\infty$ for the
-%final bin).  It is assumed that
-%
-%\begin{equation}
-%\frac{\mathrm{d}N}{\mathrm{d}\HT}(x) = \sum_i
-%m^{i}\delta(x-\meanHt{i}) \quad , 
-%\end{equation}
-%
-%\ie within a bin the whole distribution occurs at the mean value of
-%\HT in that bin. Then:
-%
-%\begin{equation}
-%b_{p}^{i} = \int_{x_i}^{x_{i+1}}\! m^{i}\delta(x-\meanHt{i}) Ae^{-kx}\, \mathrm{d}x = m^{i} Ae^{-k \meanHt{i}} \quad .
-%\label{eq:biDiracExp}
-%\end{equation}
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Electroweak control samples\label{sec:ewk}}
 
 Let \fZinv{i} represent the expected yield from \znunu in bin $i$
@@ -281,24 +241,12 @@ there are five nuisance parameters: $\ewk^{0,1,2,3}$, $\rho_{\mu
 $\rho_{sig}$; when multiple categories are fit simultaneously, the
 total likelihood is
 
-%In a category with eleven \HT bins and three control samples (single
-%muon, di-muon, and photon), there are 40 nuisance parameters:
-%$\{\ewk^{i}\}_{i=0}^{10}$, $\{\fZinv{i}\}_{i=0}^{10}$, $\rho_{phZ}^j$
-%(with $j=3,4,5,6$), $\rho_{\mu\mu Z}^j$, $\rho_{\mu W}^j$, (with
-%$j=0,1,2,3,4,5,6$).  In a category with nine \HT bins and one control
-%sample (single muon), there are 15 nuisance parameters (drop
-%$\{\fZinv{i}\}_{i=0}^{10}$, $\rho_{phZ}^j$, $\rho_{\mu\mu Z}^j$).  In
-%a category with three \HT bins and one control sample (single muon),
-%there are five nuisance parameters: $\ewk^{0,1,2,3}$, $\rho_{\mu
-%  W}^0$.  When considering signal, there is also the parameter
-%$\rho_{sig}$; when multiple categories are fit simultaneously, the
-%total likelihood is
 
 \begin{equation}
 L = L_{sig}\times \prod_k L_{hadronic}^k
 \times L_{\mu}^k \times L_{ph}^k \times L_{\mu\mu}^k \times L_{\rm EWK\, syst.}^k \quad .
 \end{equation}
-A
+
 \subsection{Signal models and efficiencies\label{sec:signal}}
 To interpret the results of this search, simplified
 models~\cite{Alwall:2008ag,Alwall:2008va,sms} are used. These
@@ -346,7 +294,7 @@ and the most sensitive categories are used.
     \hline
     Model                   & Production/decay mode & (\njet,\nb) event categories considered        \\ 
     \hline
-    \texttt{T1bbbb}           & \Ttwobbbb               & (4,2),(4,3),(4,4),($\geq 5$,2), ($\geq 5$,3),($\geq 5$,$\geq 4$) \\ % (2--3,1), 
+    \texttt{T1bbbb}           & \Tonebbbb               & (4,2),(4,3),(4,4),($\geq 5$,2), ($\geq 5$,3),($\geq 5$,$\geq 4$) \\ % (2--3,1), 
     % \texttt{T2bw (x=0.25)}  & \Ttwobw               & FIXME: ANA-CATS \\
     % \texttt{T2bw (x=0.75)}  & \Ttwobw               & FIXME: ANA-CATS \\
     % \texttt{T2tt}           & \Ttwott               & FIXME: ANA-CATS \\
@@ -354,7 +302,7 @@ and the most sensitive categories are used.
     \hline
   \end{tabular}
 \end{table}
-\subsection{Efficiency times acceptance for T2cc\label{sec:t2cc-eff}}
+\subsection{Efficiency times acceptance for \texttt{T1bbbb}\label{sec:t1bbbb-eff}}
 
 Table ~\ref{tab:simplified-models} shows the
 expected signal efficiency times acceptance for the signal region and
@@ -373,7 +321,7 @@ An inclusive selection on \scalht ($>200\gev$) is used.
   \begin{tabular}{ llcc }
     \hline
     \hline
-    Category    & Efficiency times acceptance
+    Category    & Efficiency times acceptance\\
     \hline
     (4,2)	& $0\%$	\\
     (4,3)	& $0\%$	\\
@@ -394,7 +342,7 @@ relative contamination for the \mmj sample is also considered to be
 negligible. Regardless, any potential contamination is accounted for
 in the likelihood model.
 
-\subsection{Systematic uncertainties on signal efficiency times
+\subsection{Systematic uncertainties on signal efficiency times}
 
 
 For the Phys14 exercise the systematic uncertainty for the signal region 
@@ -415,19 +363,21 @@ point per category per \scalht bin.
 
 \subsection{Results}
 
-Assuming a systematic uncertainty of $0.15$ on the signal and taking the systematic
-uncertainties on the backgrounds as $0.10$ (\htscale 200-600), $0.20$ (\htscale 600-1000),
-$0.30$ (1000-$\inf$). The \htscale bins used were motivated as detailed in ???. Using the 
-likelihood model from \ref{sec:hadronicLikelihood} and the \mj control sample (as $\nb > 1$) 
-a limit was found for the T1bbbb model for luminosities of 1 and 4 fb. This is shown along 
-with the theoretical cross section in \ref{sec:limit}. At 4fb it can be seen that we exclude to 1 million sigma.
 
 \begin{figure}[h!]
   \begin{center}
-      \includegraphics[width=0.45\textwidth, trim=0 190 290 20, clip=true]{figures/} % lbrt
-    \label{fig:limit}
+      \includegraphics[width=0.8\textwidth]{figures/limit} % lbrt
+      %\includegraphics[width=0.45\textwidth, trim=0 190 290 20, clip=true ]{figures/limit} % lbrt
   \end{center}
+ \caption{Limit at 1 and 4 fb for \texttt{T1bbbb}}
+     \label{fig:limit}
 \end{figure}
+Assuming a systematic uncertainty of $0.15$ on the signal and taking the systematic
+uncertainties on the backgrounds as $0.10$ (\scalht 200-600), $0.20$ (\scalht 600-1000),
+$0.30$ (1000-$\inf$). The \scalht bins used were motivated as detailed in ???. Using the 
+likelihood model from \ref{sec:hadronicLikelihood} and the \mj control sample (as $\nb > 1$) 
+a limit was found for the \texttt{T1bbbb} model for luminosities of 1 and 4 fb. This is shown along 
+with the theoretical cross section in \ref{fig:limit}. At 4fb it can be seen that we exclude to 1 million sigma.
 
 
 
