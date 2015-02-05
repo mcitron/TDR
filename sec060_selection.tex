@@ -48,9 +48,8 @@ just out of acceptance.
 
 Following the hadronic pre-selection, the multijet background from QCD
 is still several orders of magnitude larger than the typical signal
-expected from SUSY. Most multijet background sits at $\alphat<0.5$ so can be 
-rejected with very high efficiency by requiring an appropriate cut on this
-variable (plus the application of two dedicated cleaning filters, described below in
+expected from SUSY. Most multijet background sits at $\alphat<0.5$, so can be 
+rejected with very high efficiency by requiring an appropriate cut on \alphat (plus the application of two dedicated cleaning filters, described below in
 Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
 \HT values, an \alphat cut that scales with \HT is required, detailed in
 Table~\ref{tab:alphat-thresholds}. The minimum \mht value that the \alphat cut
@@ -58,10 +57,10 @@ corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
 \alphat. The low \HT bins are most likely to be contaminated by QCD so the \alphat threshold 
 is scaled up until the bin is QCD free. The value of \mht that this
 approximately corresponds to is calculated and the \alphat cut for the
-subsequent bins is chosen to keep this \mht approximately constant. As high 
-\alphat cuts can have a significant effect on signal acceptance, it is
-advantageous to tune the cut to maintain a high signal to background ratio while 
-remaining QCD free.
+subsequent bins is chosen to keep this \mht approximately constant. High 
+\alphat cuts can have a significant effect on signal acceptance so it is
+advantageous to tune the cut this way to maintain a high signal to background
+ratio, while remaining QCD free.
 
 \begin{table}[h!]
   \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
@@ -118,9 +117,9 @@ each event and the number of jets identified as originating from
 bottom quarks (\nb) in each event. By construction, $\nb \leq \njet$.
 
 Additionally these categories are split up into \HT bins. These bins begin at
-$\HT=200\gev$ and extend in $50\gev$ steps up to $\HT=400\gev$. After this, the
-bins are $100\gev$ wide extending up to the highest \HT reachable that still has
-statistics in the control region. These bin widths have been rationalised with
+$\HT=200\gev$ and extend in $50\gev$ steps up to $\HT=400\gev$. Above this, the
+bins are $100\gev$ wide extending up to the highest \HT reachable. 
+These bin widths have been rationalised with
 respect to the SUS-14-006 analysis. As there are plenty of events in the control
 samples (detailed in Sec.~\ref{sec:controlSelection}) at low \HT, $50\gev$ bins
 are an appropriate size. In SUS-14-006 the low \HT bins were seeded by different
@@ -128,7 +127,7 @@ trigger paths, and their lower edge was chosen to sit in the trigger turnon. For
 Run~2 this strategy has been inverted, with the selection of the offline \HT
 bins first. The trigger threshold is then chosen to be sufficiently below that
 of it's relevant offline bin so as to be efficient. More details in
-Sec~\ref{sec:trigger}.
+Sec~\ref{sec:triggers}.
 %detailed in Table~\ref{tab:htBins}.
 
 PLACEHOLDER: HT bins per njet category table? have we made a decision here?
@@ -137,13 +136,13 @@ PLACEHOLDER: HT bins per njet category table? have we made a decision here?
 
 In the SUS-14-006 analysis the maximum \HT bin was 1075. With the increase in
 centre of mass energy in Run~2, the prevalance of higher \HT events will be
-increased. The production of heavy SUSY particles, such as gluinos, will result
-in large values \HT . This is illustrated in the \HT bins that events from a pair
-produced gluino model sit, Fig.~\ref{fig:sigYields}. To increase the sensitivity
-of the analysis to these kinds of models the \HT bins can be extended to higher
+increased. The production of heavy SUSY particles, such as gluino pair
+production, will result
+in large values \HT . This is illustrated in the high \HT of events in Fig.~\ref{fig:sigYields}. To increase the sensitivity
+of the analysis to these kinds of models, the \HT bins can be extended to higher
 values. The only limit placed on this value is that there are enough events in the
-relevant control samples, to allow background prediction. Enough events is
-defined as the number that result in a statistical uncertainty that is
+relevant control samples, to allow a data driven background prediction. The
+number of events is deemed to be sufficient when their statistical uncertainty is
 approximately equal to the expected systematic uncertainty for the bin in
 question. Initial studies suggest it should be possible to extend up to
 $\HT=1600$, possibly even $\HT=2000$. This would give a great increase in the
@@ -160,17 +159,17 @@ processes, in which an invisible particle system is made in conjunction with ISR
 
 % introduction of asymmetric dijet bin, describe the bin and small motivation
 As SUSY models with compressed spectra in general only produce soft SM
-particles they are dwarfed by background. It is possible to regain sensitivity
+particles, they are dwarfed by background. It is possible to regain sensitivity
 to these models by relying on their production in conjunction with ISR. These
 sort of events typically have one high \PT jet and other lower \PT jets. For a
-typical compressed model Fig.~\ref{fig:asymMotivation} shows the second jet \PT
+typical compressed model, Fig.~\ref{fig:asymMotivation} shows the second jet \PT
 distribution for two different \HT bins. In the low \HT case a large portion of
 the events are killed by requiring the second jet to have $\ET>100\gev$. 
 
 It is therefore proposed to add an extra analysis category in which events with lead
 jet $\ET>100\gev$ and second jet $40\gev<\ET<100\gev$. This new category will
 result in new asymmetric jet bins split in $\njet$, $\nb$ and \HT. For the 
-simplified model T2tt with $m_{stop}=425\gev$ and $m_{LSP}=325\gev$ 
+simplified model T2tt with $m_{stop}=425\gev$ and $m_{LSP}=325\gev$, 
 including these bins increases signal acceptance by around a factor 3.
 
 \begin{figure}[h!]
@@ -188,6 +187,7 @@ including these bins increases signal acceptance by around a factor 3.
 \end{figure}
 
 NOTE: which sample did the second jet pt plots come from?
+
 PLACEHOLDER: DM yield table here or in Bjoern's section?
 
 %%____________________________________________________________________________||
@@ -220,8 +220,9 @@ or suppressed depending on the number of b-jets required.
 % simulation, in the different (\njet, \nb, \scalht) bins can be found
 % in Table~\ref{tab:backgrounds}. 
 A plot showing the yields for these electroweak backgrounds and a reference
-signal model can be seen in Fig~\ref{fig:ewkYields}. A break down of the three
-dominant channels, \zInv, \ttbar and W~+~jets, are shown. The contribution from
+signal model can be seen in Figs~\ref{fig:ewkYields1}-\ref{fig:ewkYields4}. 
+A breakdown of the three
+dominant channels, \zInv , \ttbar and W~+~jets, are shown. The contribution from
 other sources, such as the single top and diboson channels, was found to be
 negligible so are not shown.
 
@@ -244,9 +245,8 @@ negligible so are not shown.
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq2j.pdf}
   }
   \caption{\label{fig:ewkYields1} Yields at $4\fbinv$ for the electroweak backgrounds in the
-  hadronic signal region. The binning is chosen to be in line with the analysis
-  bins. For each \njet the contribution from the dominant backgrounds is broken
-  down.}
+  hadronic signal region, $\njet=2$. The binning is chosen to be in line with the analysis
+  bins. The contribution from the dominant backgrounds is shown separately.}
 \end{figure}
 \begin{figure}[]
   \centering
@@ -266,10 +266,9 @@ negligible so are not shown.
   ($\njet = 3$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq3j.pdf}
   }
-  \caption{\label{fig:ewkYields2} Yields at $4\fbinv$ for the electroweak backgrounds in the
-  hadronic signal region. The binning is chosen to be in line with the analysis
-  bins. For each \njet the contribution from the dominant backgrounds is broken
-  down.}
+  \caption{\label{fig:ewkYields1} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region, $\njet=3$. The binning is chosen to be in line with the analysis
+  bins. The contribution from the dominant backgrounds is shown separately.}
 \end{figure}
 \begin{figure}[]
   \centering
@@ -289,10 +288,9 @@ negligible so are not shown.
   ($\njet = 4$)]{
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq4j.pdf}
   }
-  \caption{\label{fig:ewkYields3} Yields at $4\fbinv$ for the electroweak backgrounds in the
-  hadronic signal region. The binning is chosen to be in line with the analysis
-  bins. For each \njet the contribution from the dominant backgrounds is broken
-  down.}
+  \caption{\label{fig:ewkYields1} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region, $\njet=4$. The binning is chosen to be in line with the analysis
+  bins. The contribution from the dominant backgrounds is shown separately.}
 \end{figure}
 \begin{figure}[]
   \centering
@@ -320,10 +318,9 @@ negligible so are not shown.
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/sig_T1bbbb_ge5j.pdf}
   }
   \\
-  \caption{\label{fig:ewkYields4} Yields at $4\fbinv$ for the electroweak backgrounds in the
-  hadronic signal region. The binning is chosen to be in line with the analysis
-  bins. For each \njet the contribution from the dominant backgrounds is broken
-  down.}
+  \caption{\label{fig:ewkYields1} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region, $\njet\geq5$. The binning is chosen to be in line with the analysis
+  bins. The contribution from the dominant backgrounds is shown separately.}
 \end{figure}
 
 %%____________________________________________________________________________||
@@ -388,7 +385,7 @@ momentum of the identified, isolated muon.
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mu_ewk_ge5j.pdf}
   } 
   \\
-  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the W~+~jets and \ttbar
+  \caption{\label{fig:muYields} Yields at $4\fbinv$ for the W~+~jets and \ttbar
   MC contributions to the \texorpdfstring{\mj}{muon plus jets} control sample. }
 \end{figure}
 
@@ -443,7 +440,7 @@ at low \scalht where the \gj sample cannot.
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mm_dy_ge5j.pdf}
   } 
   \\
-  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the DY~+~jets MC 
+  \caption{\label{fig:mumuYields} Yields at $4\fbinv$ for the DY~+~jets MC 
   contributions to the \texorpdfstring{\mmj}{di-muon plus jets} control sample. }
 \end{figure}
 
@@ -487,7 +484,7 @@ used.
     \includegraphics[width=0.5\textwidth]{figures/yieldPlots/ph_gjets_ge5j.pdf}
   } 
   \\
-  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the GJets MC 
+  \caption{\label{fig:gammaYields} Yields at $4\fbinv$ for the GJets MC 
   contributions to the \texorpdfstring{\gj}{photon plus jets} control sample. }
 \end{figure}
 
@@ -521,7 +518,7 @@ of the analysis background prediction detailed in Sec.\ref{sec:backgrounds}.
 
 To further help with the number of events available in control samples, it is
 proposed to introduce electron~+~jets control samples. These would work
-analagously to the \mj and \mjj samples, with electrons in place of muons. With
+analagously to the \mj and \mmj samples, with electrons in place of muons. With
 a tight enough requirement on the electron ID it should be possible to have a
 similar control over backgrounds in these samples to those in the muon control
 samples. As electrons in leptonic decay processes behave kinematically similarly
