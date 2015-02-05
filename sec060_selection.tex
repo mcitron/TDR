@@ -20,31 +20,54 @@ requiring $\Delta R(\textrm{track},\mu) < 0.02$.
 
 
 %%____________________________________________________________________________||
-\subsection{Hadronic signal region selection}
+\subsection{Hadronic region selection}
 
-%aim to main 2012 acceptance for compressed susy
+\subsubsection{Hadronic pre-selection}
 Events are required to have significant hadronic activity by requiring
-$\scalht > 200\GeV$. The aim is to keep this threshold at the level of the 2012
-analysis~\cite{parkedDataAN} to maintain acceptance for SUSY models with
-compressed spectra.  
+$\scalht > 200\GeV$. Despite the increase in centre of mass energy and pile-up
+in Run~2, this threshold is kept at the level of the Run~1 analyses~\cite{run1Analyses}  
+to maintain acceptance for SUSY models with compressed spectra. This should be
+made possible by the advances made in jet reconstruction, particularly pileup
+subtraction~\cite{puppi}.
 
-%Jet selection
+%Jet selection %fjv
+Jets considered in the analysis are required to have an $\ET>40\gev$ and be
+within the central tracker acceptance ($|\eta|<3.0$). This threshold is chosen
+to be flat across \HT values, unlike the SUS-13-366 analysis. The \ET value is
+chosen to be as low as possible to reduce the number of jets falling below
+threshold and introducing artificial \mht, while remaining in the realm of
+reliable jet energy corrections. In the nominal analysis the lead two jets 
+are required to satisfy $\ET>100\gev$ and the lead jet must
+have $|\eta|<2.5$. The jets that are accepted are used for the calculation of
+the variables \HT and \mht.
 
+Events in which jets with $\ET>40\gev$ are reconstructed with $|\eta|>3.0$ are
+vetoed. This reduces the number of events with non genuine \mht caused by jets
+just out of acceptance.
+
+\subsubsection{The hadronic signal region\label{sec:had-signal}}
 %alphaT cuts
+Following the hadronic pre-selection, the multijet background from QCD
+is still several orders of magnitude larger than the typical signal
+expected from SUSY. Most multijet background sits at $\alphat<0.5$ so can be 
+rejected with very high efficiency by requiring an appropriate cut on this
+variable (plus the application of two dedicated cleaning filters, described below in
+Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
+\HT values, an \alphat cut that scales with \HT is required, detailed in
+Table~\ref{tab:alphat-thresholds}. 
 
 % put in new alphaT cuts!! FIXME
 \begin{table}[h!]
   \caption{\alphat and (effective) \mht/\scalht and \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
   \centering
   \footnotesize
-  \begin{tabular}{ lcccc }
+  \begin{tabular}{ lcccccc }
     \hline
     \hline
-    \scalht bin  & 200--275   & 275--325   & 325--375   & $>$375       \\
-    \hline
-    \alphat      & 0.65       & 0.60       & 0.55       & 0.55         \\
-    \mht/\scalht & $\sim$0.64 & $\sim$0.55 & $\sim$0.42 & $\sim$0.42   \\
-    \mht         & $\sim$130  & $\sim$150  & $\sim$135  & $\gtrsim$155 \\
+    \scalht bin  & 200--250   & 250--300   & 300--350  & 350--400  & 400--900  & $>$900       \\
+    \hline                                                                     
+    \alphat      & 0.65       & 0.60       & 0.55      & 0.53      & 0.52      & 0.505         \\
+    "Min \mht"   & $\sim$128  & $\sim$138  & $\sim$125 & $\sim$133 & $\sim$137 & $\gtrsim$126 \\
     \hline
     \hline
   \end{tabular}
@@ -71,7 +94,6 @@ selected jet and the closest masked ECAL region, $\Delta R_{\rm
 jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
 $|\eta| = 1.5$. These final selections complete the definition of the
 acceptance of the hadronic signal sample.
-
 
 \subsubsection{Reduction of \alphat thresholds for high \HT}
 
