@@ -32,7 +32,7 @@ subtraction~\cite{puppi}.
 
 Jets considered in the analysis are required to have an $\ET>40\gev$ and be
 within the central tracker acceptance ($|\eta|<3.0$). This threshold is chosen
-to be flat across \HT values, unlike the SUS-13-366 analysis. The \ET value is
+to be flat across \HT values, unlike the SUS-14-006 analysis. The \ET value is
 chosen to be as low as possible to reduce the number of jets falling below
 threshold and introducing artificial \mht, while remaining in the realm of
 reliable jet energy corrections. In the nominal analysis the lead two jets 
@@ -45,7 +45,7 @@ vetoed. This reduces the number of events with non genuine \mht caused by jets
 just out of acceptance.
 
 \subsubsection{The hadronic signal region\label{sec:had-signal}}
-% FIXME put in the alphaT plot ? probably goes earlier
+
 Following the hadronic pre-selection, the multijet background from QCD
 is still several orders of magnitude larger than the typical signal
 expected from SUSY. Most multijet background sits at $\alphat<0.5$ so can be 
@@ -53,10 +53,15 @@ rejected with very high efficiency by requiring an appropriate cut on this
 variable (plus the application of two dedicated cleaning filters, described below in
 Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
 \HT values, an \alphat cut that scales with \HT is required, detailed in
-Table~\ref{tab:alphat-thresholds}. The \alphat threshold is to keep the
-effective \mht cut approximately constant. As high \alphat cuts can have a
-significant effect on signal acceptance, these thresholds can be tuned to
-maintain a high signal to background ratio while remaining QCD free.
+Table~\ref{tab:alphat-thresholds}. The minimum \mht value that the \alphat cut
+corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
+\alphat. The low \HT bins are most likely to be contaminated by QCD so the \alphat threshold 
+is scaled up until the bin is QCD free. The value of \mht that this
+approximately corresponds to is calculated and the \alphat cut for the
+subsequent bins is chosen to keep this \mht approximately constant. As high 
+\alphat cuts can have a significant effect on signal acceptance, it is
+advantageous to tune the cut to maintain a high signal to background ratio while 
+remaining QCD free.
 
 \begin{table}[h!]
   \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
@@ -102,9 +107,6 @@ selected jet and the closest masked ECAL region, $\Delta R_{\rm
 jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
 $|\eta| = 1.5$. These final selections complete the definition of the
 acceptance of the hadronic signal sample.
-
-%\subsubsection{Reduction of \alphat thresholds for high \HT}
-% Did this above instead
 
 %%____________________________________________________________________________||
 \subsection{Analysis bins}
@@ -158,8 +160,90 @@ or suppressed depending on the number of b-jets required.
 % of the relative contributions of the SM backgrounds, as given by
 % simulation, in the different (\njet, \nb, \scalht) bins can be found
 % in Table~\ref{tab:backgrounds}. 
+A plot showing the yields for these electroweak backgrounds and a reference
+signal model can be seen in Fig~\ref{fig:ewkYields}
 
-PLACEHOLDER: put yield tables here and signal model (a la Tai's talk)
+\begin{figure}[h!]
+  \centering
+  \subfigure[Hadronic signal region yields for electroweak backgrounds
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_eq2j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for the \zinv background
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_eq2j.pdf}
+  }\\
+  \subfigure[Hadronic signal region yields for W~+~jets backtround
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_wjets_eq2j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for \ttbar background
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq2j.pdf}
+  }
+  \\
+  \subfigure[Hadronic signal region yields for electroweak backgrounds
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_eq3j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for the \zinv background
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_eq3j.pdf}
+  }\\
+  \subfigure[Hadronic signal region yields for W~+~jets backtround
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_wjets_eq3j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for \ttbar background
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq3j.pdf}
+  }
+
+  \\
+  \subfigure[Hadronic signal region yields for electroweak backgrounds
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_eq4j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for the \zinv background
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_eq4j.pdf}
+  }\\
+  \subfigure[Hadronic signal region yields for W~+~jets backtround
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_wjets_eq4j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for \ttbar background
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_eq4j.pdf}
+  }
+
+  \\
+  \subfigure[Hadronic signal region yields for electroweak backgrounds
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ewk_ge5j.pdf}
+  } ~~
+  \subfigure[Hadronic signal region yields for the \zinv background
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_zinv_ge5j.pdf}
+  }\\
+  \subfigure[Hadronic signal region yields for W~+~jets backtround
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_wjets_ge5j.pdf}
+  }~~
+  \subfigure[Hadronic signal region yields for \ttbar background
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/had_ttbar_ge5j.pdf}
+  }
+
+  \\
+  \subfigure[Hadronic signal region yields for T1bbbb simplified model 
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/sig_T1bbbb_ge5j.pdf}
+  }
+  \\
+  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the electroweak backgrounds in the
+  hadronic signal region. Split up with the analysis bins. }
+\end{figure}
 
 %%____________________________________________________________________________||
 
@@ -203,7 +287,31 @@ the cleaning cut $\mht/\pfmet$ is also applied, as done in the signal
 region, where the \pfmet is adjusted to account for the transverse
 momentum of the identified, isolated muon.
 
-PLACEHOLDER: put yield tables here 
+%STACK THESE UP
+\begin{figure}[h!]
+  \centering
+  \subfigure[Yields from \texorpdfstring{\mj}{muon plus jets} control sample
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mu_ewk_eq2j.pdf}
+  }~~
+  \subfigure[Yields from \texorpdfstring{\mj}{muon plus jets} control sample
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mu_ewk_eq3j.pdf}
+  }
+  \\
+  \subfigure[Yields from \texorpdfstring{\mj}{muon plus jets} control sample
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mu_ewk_eq4j.pdf}
+  }~~
+  \subfigure[Yields from \texorpdfstring{\mj}{muon plus jets} control sample
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mu_ewk_ge5j.pdf}
+  } 
+  \\
+  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the W~+~jets and \ttbar
+  MC contributions to the \texorpdfstring{\mj}{muon plus jets} control sample. }
+\end{figure}
+
 
 \subsubsection{The \texorpdfstring{\mmj}{di-muon plus jets} control sample}
 
@@ -235,7 +343,29 @@ momenta of the two identified, isolated muons. The \mmj sample can be
 used to make predictions in all the \scalht bins, providing coverage
 at low \scalht where the \gj sample cannot.
 
-PLACEHOLDER: put yield tables here 
+\begin{figure}[h!]
+  \centering
+  \subfigure[Yields from \texorpdfstring{\mmj}{di-muon plus jets} control sample
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mm_dy_eq2j.pdf}
+  }~~
+  \subfigure[Yields from \texorpdfstring{\mmj}{di-muon plus jets} control sample
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mm_dy_eq3j.pdf}
+  }
+  \\
+  \subfigure[Yields from \texorpdfstring{\mmj}{di-muon plus jets} control sample
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mm_dy_eq4j.pdf}
+  }~~
+  \subfigure[Yields from \texorpdfstring{\mmj}{di-muon plus jets} control sample
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/mm_dy_ge5j.pdf}
+  } 
+  \\
+  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the DY~+~jets MC 
+  contributions to the \texorpdfstring{\mmj}{di-muon plus jets} control sample. }
+\end{figure}
 
 \subsubsection{The \texorpdfstring{\gj}{photon plus jets} control sample}
 
@@ -244,24 +374,47 @@ process, which has a larger cross section and kinematic properties
 similar to those of \znunu\ events when the photon is
 ignored~\cite{PAS-SUS-08-002,Bern:2011pa}. The \gj sample is defined
 by requiring exactly one photon satisfying tight isolation criteria
-and within an acceptance of $\pt > 165\gev$ and $|\eta| <
-1.45$. Furthermore, events are vetoed if $\Delta
+and within an acceptance of $\pt > 175\gev$ and $|\eta| <
+1.45$ (the anticipated limitation from the trigger). Furthermore, events are vetoed if $\Delta
 R(\gamma,\textrm{jet}_j) < 1.0$ is satisfied, running over all jets
 $j$. As for the muon-based samples, the photon is not considered in
-the calculation of event-level variables such as \scalht, \mht and
+the calculation of event-level variables such as \scalht, \mht, \met and 
 \alphat. All cuts on jet-based quantities are consistent with those
 applied in the hadronic search region, and the same \HT binning is
-used. Given that the photon is ignored, the \gj sample can only be
-used for the region $\scalht > 375\gev$ due to the photon acceptance
-of $\pt > 165\gev$ (enforced by the trigger) and the requirement
-$\alphat > 0.55$.
+used. 
+% Given that the photon is ignored, the \gj sample can only be
+% used for the region $\scalht > 375\gev$ due to the photon acceptance
+% of $\pt > 165\gev$ (enforced by the trigger) and the requirement
+% $\alphat > 0.55$.
 
-PLACEHOLDER: put yield tables here 
+\begin{figure}[h!]
+  \centering
+  \subfigure[Yields from \texorpdfstring{\gj}{photon plus jets} control sample
+  ($\njet = 2$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/ph_gjets_eq2j.pdf}
+  }~~
+  \subfigure[Yields from \texorpdfstring{\gj}{photon plus jets} control sample
+  ($\njet = 3$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/ph_gjets_eq3j.pdf}
+  }
+  \\
+  \subfigure[Yields from \texorpdfstring{\gj}{photon plus jets} control sample
+  ($\njet = 4$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/ph_gjets_eq4j.pdf}
+  }~~
+  \subfigure[Yields from \texorpdfstring{\gj}{photon plus jets} control sample
+  ($\njet \geq 5$)]{
+    \includegraphics[width=0.5\textwidth]{figures/yieldPlots/ph_gjets_ge5j.pdf}
+  } 
+  \\
+  \caption{\label{fig:ewkYields} Yields at $4\fbinv$ for the \gamma~+~jets MC 
+  contributions to the \texorpdfstring{\gj}{photon plus jets} control sample. }
+\end{figure}
+
 
 %%____________________________________________________________________________||
-\subsection{Increasing the acceptance of the control samples\label{sec:larger}}
-
+\subsection{Future developments in the acceptance of the control samples\label{sec:larger}}
+EGM-14-001 - tight to medium
 %Add electron control sample
-%Gamma+jets - remove alphaT cut (due to artificial increase of photon pT) 
 
 %%____________________________________________________________________________||
