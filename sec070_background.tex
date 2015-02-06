@@ -2,4 +2,112 @@
 \section{Background estimation}
 \label{sec:background}
 
+\subsection{Estimation for QCD multijet events}
+\subsubsection{Introduction}
+
+A large proportion of background events is from QCD mulitjet production, due to the large cross sections and lack of precise theoretical
+predictions for the cross sections and kinematic properties of multijet events. With respect to this, the approach of this analysis, like in the previous analysis, is to suppress the multijet background to a negligible level over the goal of high efficiency for any given signal model.
+ 
+Any contamination from QCD multijet events is controlled primarily through the \alphat variable, which is able to distiguish with high efficiency the sources of ``fake'' \met, such as jet energy mismeasurement, from those with ``genuine'' \met, such as neutrinos. Any residual leakage from QCD multijet production is removed with an additional ``\met cleaning'' cut: $\mhtmet < 1.25$, which ensures that any soft jets below the $\Et$ threshold do not contribute significantly to our estimator of missing transverse energy, \mht.
+
+In the previous analysis a conservative cut of $\alphat > 0.65,0.6,0.55$ was applied. Possibilities to loosen the \alphat cut, especially in high \scalht are being investigated. This aims at increasing the acceptance of heavy-gluino model at high \scalht. Importantly, the signal region is defined such that the contribution from QCD multijet events is expected to be {\it negligible}. Specifically, the required level of suppression is considered sufficient for any potential QCD multijet contribution to be negligible with respect to, and absorbed fully by, the systematic uncertainties on the SM processes for which significant genuine \met is expected, predominantly V + jets and \ttbar. The requirement on \alphat is explained in Section~\ref{sec:selection}.
+
+After the \alphat cut, the dominant backgrounds in the signal region are processes in which genuine \met is present in the final state, as expected from W + jets, \ttbar, and \znunu\ + jets.
+
+The method used to determine the \alphat threshold is described below, in Section~\ref{sec:qcd-method}.
+
+\subsubsection{Method}
+\label{sec:qcd-method}
+This method uses both the events passing and failing the requirement $\mhtmet < 1.25$ to estimate the number of QCD multijet events. The \alphat threshold is set such that the number of QCD multijet events is at sub-percent level to the expected contribution from EWK processes. The method comprises the following steps.
+
+\begin{enumerate}
+\item\label{item:data} A data sample rich in QCD multijet events is
+  collected with the (prescaled) \httrigger triggers; this sample is
+  defined by the full signal region selection criteria (defined in
+  Section~\ref{sec:selection}) except for the requirements on \alphat
+  and \mhtmet; the event counts, $N^{\rm data}_{i,j}$, are binned
+  according to \alphat (bin $i$) and \mhtmet (bin $j$).
+\item\label{item:mj} A second data sample rich in \mj events is
+  collected; this sample
+  is defined by the full \mj control region selection criteria
+  (defined in Section~\ref{sec:def-control-samples}) with no
+  requirements on \alphat and \mhtmet; the event counts,
+  $n^{\mu}_{i,j}$, are binned according to \alphat (bin $i$) and
+  \mhtmet (bin $j$), identical to the sample defined above.
+\item\label{item:ewk} The contribution, $n^{\rm EWK}_{i,j}$ from the
+  sum of all EWK processes in the QCD-enriched sample is estimated per
+  bin ($i,j$) in \alphat and \mhtmet from the EWK-enriched \mj sample
+  using {\it transfer factors} obtained from simulation following the
+  method described in the next section
+\item\label{item:qcd} The EWK contribution is subtracted from the data
+  counts in the QCD-enriched sample to obtain an estimate for the QCD
+  multijet contribution per bin, \ie $n^{\rm QCD}_{i,j} = n^{\rm
+    data}_{i,j} - n^{\rm EWK}_{i,j}$.
+\item Two bins in \mhtmet are considered: bin $j=0$ corresponds to
+  events that satisfy the signal region requirement $\mhtmet < 1.25$,
+  and bin $j=1$ corresponds to the inverted requirement $\mhtmet >
+  1.25$. With this binning, an estimate for the number of QCD multijet
+  events that pass and fail the \mhtmet requirement is determined as a
+  function of the \alphat bin $i$ as follows: $R_{i}^{\mhtmet} =
+  n^{\rm QCD}_{i,0} / n^{\rm QCD}_{i,1}$.
+\item\label{item:ratio} The ratio $R_{i}^{\mhtmet}$ is parameterised
+  by an exponentially falling function of \alphat. A fit to the ratios
+  obtained from data within the range $0.505 < \alphat < 0.545$ is
+  performed separately for each signal region bin defined in terms of
+  \njet, \nb, and \scalht and is used to extrapolate to higher values
+  of \alphat. An estimate for the number of QCD multijet events with
+  \alphat above a threshold value corresponding to bin $k$ can be
+  determined by taking the product of the fit expectation and the QCD
+  estimate in the \mhtmet sideband bin ($i,1$) for each bin $i$ and
+  summing over all bins where $i \geq k$ as follows: $N^{\rm QCD}_{k}
+  = \sum\limits^{\infty}_{i=k} R_{i}^{\mhtmet} \cdot n^{\rm
+    QCD}_{i,1}$.
+\item The QCD multijet prediction is determined as a function of the
+  threshold on \alphat (\ie as a function of bin $k$).
+\item The \alphat threshold value used to defined the signal region is
+  chosen such that the prediction for the QCD background is at the
+  sub-percent level with respect to the corresponding expected
+  contribution from EWK processes: $N^{\rm QCD}_{k} \lesssim 0.01
+  \cdot N^{\rm EWK}_{k}$.
+\end{enumerate}
+
+Further data-driven studies are carried out to determine the \alphat threshold properly and reduce contributions from QCD multijets events to a negligible level in the signal region, while remaining sufficient sensitivity.
+
+\subsection{Estimation for processes with genuine \met}
+\subsubsection{Introduction}
+The remaining backgrounds in the signal region, after the imposition of \alphat and \mhtmet cuts, are from SM processes with genuine \met. The main backgrounds include \znunu\ + jets, W + jets, Z + jets, \ttbar. Contributions from SM processes such as single-top, Drell-Yan, and diboson production are also expected.
+
+To estimate the contributions from these backgrounds, three data control sample are used, which are binned identically to the signal region: $\mu$ + jets, $\mu\mu$ + jets and $\gamma$ + jets. Their definitions are in Section \ref{sec:selection}. $\mu\mu$ + jets and $\gamma$ + jets control sample are used to estimate the irreducible background \znunu + jets events, while $\mu$ + jets control sample is used to estimate all other SM processes. The selection criteria for these control regions are defined such that any potential contaminations from SUSY models and QCD multijets are negligible. The possiblity to add an additional control sample with $e$ + jets is being investigated.
+
+
+\subsubsection{Method}
+\label{sec:ewk-method}
+The method to estimate these SM background contributions relies on the use of a transfer factor. A transfer factor is the ratio of the yields obtained from MC simulation, defined for each \scalht, $n_{jet}$, $n_b$ bin of a control sample:
+\begin{equation}
+  \label{equ:tf-ratio}
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\scalht,\njet,\nb)}{N_{\rm
+      MC}^{\rm control}(\scalht,\njet,\nb)} 
+\end{equation}
+
+where $\npre^{\rm signal}(\scalht,\njet,\nb)$ is the predicted yield for the corresponding bin of the signal region, and $\npre^{\rm control}(\scalht,\njet,\nb)$ is the one for the control region.
+
+By this transfer factor, the ``na\"ive'' prediction for the total SM background can be calculated, with $\nobs^{\rm control}(\scalht,\njet,\nb)$, the observed yield in the control region, by:
+
+\begin{equation}
+  \label{equ:pred-method}
+  \npre^{\rm signal}(\scalht,\njet,\nb) = \frac{N_{\rm MC}^{\rm
+      signal}(\scalht,\njet,\nb)}{N_{\rm MC}^{\rm
+      control}(\scalht,\njet,\nb)} \times \nobs^{\rm
+    control}(\scalht,\njet,\nb)   
+\end{equation}
+
+When constructing the transfer factors, the MC expectations for the following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar + jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets ($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets production via the s, t, and tW-channels ($N_{\rm top}$), and WW + jets, WZ + jets, and ZZ + jets ($N_{\rm di-boson}$). Details on the MC samples used are given in Sec.~\ref{sec:datasets}. All MC samples are normalised to appropriate intergrated luminosities for PHYS14 studies.
+
+The selection criteria for the three control samples closely resemble those for the signal region, differing mainly through the use of a muon, di-muon, or photon {\it tag} (that is ignored in the calculation of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc) and some minimal additional kinematic requirements (\eg invariant or transerve mass windows) to obtain W, Z, and \ttbar-enriched event samples. The same selection criteria are designed to suppress signal contamination in the control samples so that unbiased data-driven estimates for the SM backgrounds in the signal region can be made. More detail on the selection criteria can be found in Section \ref{sec:selection}.
+
+Many systematic effects are expected to cancel largely in the transfer factor. However, a systematic uncertainty is assigned to each transfer factor to account for theoretical uncertainties and effects such as the mismodelling of kinematics (\eg acceptances) and instrumental effects (\eg reconstruction efficiencies).
+
+In the end, a fitting prcedure that provides the final result is defined formally by the likelihood model described in Sec.~\ref{sec:sensitivity}. In summary, the observation in each bin (defined in terms of the variables \njet, \nb, and \scalht) of the signal sample is modelled as Poisson-distributed about the sum of a SM expectation (and a potential signal contribution). The components of this SM expectation are related to the expected yields in the control samples via transfer factors derived from simulation. The observations in each bin (again defined by \njet, \nb, and \scalht) of the control samples are similarly modelled as Poisson-distributed about the expectated yields for each control sample. In this way, for a given bin, the observed yields in the signal and control samples are all connected via the transfer factors derived from simulation.
+
+
 %%____________________________________________________________________________||
