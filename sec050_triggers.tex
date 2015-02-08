@@ -17,7 +17,7 @@ In Run 2 the RA1 analysis will aim to retain the low-thresholds of Run 1 with de
 
 The hadronic signal selection is performed with $\scalht$-$\alphat$ cross triggers with a second jet threshold requirement (\verb!HLT_PFDijetXXXHTYYYAlphaTZZZ!), which suppresses QCD multijet events whilst maintaining signal acceptance.  A loose calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based reconstruction, ensuring the PF-based filters meet the HLT mean timing limit of $\sim$10 ms. The calorimeter prefilter utlises loose $\scalht$ and dijet $\pt$ requirements in addition to a new variable $\alphat$', defined as $\alphat$ in the limit $\Delta\scalht \rightarrow 0$, which better correlates $\alphat$ between calorimeter and PF-based reconstruction.
 
-Each of the signal triggers seeds a single offline analysis bin with the exception of the highest-$\scalht$ trigger which is utilised for analysis bins above $\scalht > 400$ GeV. Analysis bins at very high-$\scalht$ are seeded by the \verb!HLT_PFHT900! trigger with no explicit dependence on $\alphat$ or second jet threshold. A list of Run 2 triggers for the hadronic signal region defined in the Run 2 HLT menu are shown in Table~\ref{tab:2015_Hadronic_Triggers}. The thresholds of the triggers will remain unchanged through run conditions and are measured to give high efficiencies in all three proposed run conditions: PU40bx50, PU20bx25 and PU40bx25. The L1 seeds for the HLT paths are given by the disjunction of the lowest unprescaled L1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for the run scenario.
+Each of the signal triggers seeds a single offline analysis bin with the exception of the highest-$\scalht$ trigger which is utilised for analysis bins above $\scalht > 400$ GeV. Analysis bins at very high-$\scalht$ are seeded by the \verb!HLT_PFHT900! trigger with no explicit dependence on $\alphat$ or second jet threshold. A list of Run 2 triggers for the hadronic signal region defined in the Run 2 HLT menu are shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}. The thresholds of the triggers will remain unchanged through run conditions and are measured to give high efficiencies in all three proposed run conditions: PU40bx50, PU20bx25 and PU40bx25. The L1 seeds for the HLT paths are given by the disjunction of the lowest unprescaled L1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for the run scenario.
 
 
 Studies are currently underway to extend the trigger strategy to increase acceptance to monojet-like signatures of compressed spectrum and DM models with the transition from a pure dijet $\pt$ requirement to a dijet average $\pt$ trigger to select events exhibiting asymmetric jet topologies.
@@ -47,7 +47,7 @@ HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter    
 
 \end{tabular}
 \caption{Hadronic signal region HLT paths for the Run 2 PU40bx25 scenario. }
-\label{tab:2015_Hadronic_Triggers}
+\label{tab:2015_Hadronic_Signal_Triggers}
 \end{table}
 
 
@@ -55,13 +55,12 @@ HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter    
 
 %Prescaled control region triggers
 \subsection{Control samples}
-Hadronic control sample prescaled triggers.
+Hadronic control sample prescaled triggers shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}.
 
 Lowest un-prescaled triggers for following?
-Electron control region triggers ($e$, $ee$). \\
-Muon control region triggers ($\mu$, $\mu\mu$).\\
-Photon control region triggers.\\
-
+Electron control region triggers ($e$, $ee$) \verb!HLT_Ele27_eta2p1_WP75_Gsf!? \\
+Muon control region triggers ($\mu$, $\mu\mu$) \verb!HLT_IsoMu20_eta2p1!?\\
+Photon control region triggers \verb!HLT_Photon175!?\\
 
 
 % TABLE : 2015 control triggers
@@ -83,7 +82,7 @@ HLT path & L1 seed & Prescale \\[0.7 ex]
 
 \end{tabular}
 \caption{Hadronic control region HLT paths for the Run 2 PU40bx25 scenario. }
-\label{tab:2015_Hadronic_Triggers}
+\label{tab:2015_Hadronic_Control_Triggers}
 \end{table}
 
 
