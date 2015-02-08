@@ -3,74 +3,95 @@
 \label{sec:triggers}
 
 
-In 2012 the RA1 analysis used four prompt and one parked $\hT-\alphaT$ cross-triggers, using calojet-based reconstruction with 40 GeV requirement. The Run 2 trigger strategy aims to maintain the accepatance of Run 1 with several developments in triggering of events.
+\subsection{Hadronic signal region}
+
+%% Additional items to discuss?
+%%
+%% $\alphaT$ and $\ht$ computed on central jets restricted to $|\eta| < 3$ with 40 GeV threshold.
+%% Static alphaT
+%% List of samples, description of method. Pileup mixed QCD pTHAT samples (crosssections) for the three beam scenarios.
+%% Trigger thresholds optimised to be efficient to a range of signal models and SM backgrounds.
+%% Table of triggers, rates and eff for (compressed model/backgrounds)
+
+In Run 2 the RA1 analysis will aim to retain the low-thresholds of Run 1 with developments to the trigger selection in order to retain sensitivity to signatures of new physics, where possible maintaining the original offline selections of Run 1 including the lowest $\scalht = 200$ GeV bin. A migration to PF-based online jet reconstruction with a reduced radius parameter $\Delta R = 0.4$ provides improvements in het energy resolution in high-pileup conditions over calorimeter-based reconstruction and mitigates the effects of pileup contamination within the jet cone.
+
+The hadronic signal selection is performed with $\scalht$-$\alphat$ cross triggers with a second jet threshold requirement (\verb!HLT_PFDijetXXXHTYYYAlphaTZZZ!), which suppresses QCD multijet events whilst maintaining signal acceptance.  A loose calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based reconstruction, ensuring the PF-based filters meet the HLT mean timing limit of $\sim$10 ms. The calorimeter prefilter utlises loose $\scalht$ and dijet $\pt$ requirements in addition to a new variable $\alphat$', defined as $\alphat$ in the limit $\Delta\scalht \rightarrow 0$, which better correlates $\alphat$ between calorimeter and PF-based reconstruction.
+
+Each of the signal triggers seeds a single offline analysis bin with the exception of the highest-$\scalht$ trigger which is utilised for analysis bins above $\scalht > 400$ GeV. Analysis bins at very high-$\scalht$ are seeded by the \verb!HLT_PFHT900! trigger with no explicit dependence on $\alphat$ or second jet threshold. A list of Run 2 triggers for the hadronic signal region defined in the Run 2 HLT menu are shown in Table~\ref{tab:2015_Hadronic_Triggers}. The thresholds of the triggers will remain unchanged through run conditions and are measured to give high efficiencies in all three proposed run conditions: PU40bx50, PU20bx25 and PU40bx25. The L1 seeds for the HLT paths are given by the disjunction of the lowest unprescaled L1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for the run scenario.
 
 
 
-In Run 2 the RA1 analysis will aim to retain the low-thresholds to keep sensitivity to signatures of new physics, where possible maintaining the original offline selections in Run 1 including the lowest $\hT = 200$ GeV bin. Several improvements to the analysis will be implemented to further improve of the analysis, jet reconstruction will be performed by the particle flow algorithm which exhibits better energy r however to mitigate the effects of pileup the jet reconstruction algorithm utlised in the final trigger decision and the offline analysis will be migrated to particle flow which exhibits better performance in high pileup.\\
-
-
-% Pileup mitigation
-Jet reconstruction will be performed with the anti-kt algorithm with radius parameter $\R = 0.4$ using PF-based reconstruction algorithm. The reduction in cone size reduces pileup contamination. PFJet energy resolution is stable with increasing pileup.
-
-
-Central jets restricted to $|\eta| < 3$ with 40 GeV threshold.
-Maintain the same acceptance as 2012.
-Currently have menu approved of triggers
-
-Able to maintain 2012 thresholds with the introduction of a minimum second jet 90 GeV requirement which controls rate with little loss of signal efficiency.
-PF HT900 seed high HT bins
-
-Table of triggers, rates and eff for (compressed model/backgrounds)
-
-Aim to extend acceptance to compressed spectrum and DM models with inclusion of asymmetric dijet analysis bin offline, seeded by dijet average trigger.
-
-
-% TABLE : 2012 analysis and triggers
+% TABLE : 2015 triggers
 %----------------------------------------------------------------------
 \begin{table}[h!]
-\tiny
+\footnotesize
 \centering
-\begin{tabular}{|rc||c|c||cc|} 
+\begin{tabular}{|c||c|c|c||c|} 
 \hline
-\multicolumn{2}{|c||}{Offline selection}         & L1 seed                  & HLT trigger                                               &   \multicolumn{2}{c|}{Efficiency (\%)}            \\[0.7 ex] 
-    $\hT$ range (GeV)  & $\alphaT$ threshold &                               &                                                                  &  $2 \le n_{\rm jet} \le 3$ &   $n_{\rm jet} \ge 4$\\[0.7 ex] 
+HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter                          & Rate \\[0.7 ex] 
+         &         & ($\scalht$, $\alphat$', $\pt^{\rm j2}$) & ($\scalht$, $\alphat$, $\pt^{\rm j2}$) & (Hz) \\[0.7 ex] 
 \hline
-200 $\le \hT < 275$    & 0.65                         & DoubleJetC64                    &  ${\rm HLT\_HT200\_AlphaT0p57\_v*}$ & $81.8^{+0.4}_{-0.4}$    & $78.9^{+0.3}_{-0.4}$ \\
-275 $\le \hT < 325$    & 0.60                         & DoubleJetC64                    &  ${\rm HLT\_HT250\_AlphaT0p55\_v*}$ & $95.2^{+0.3}_{-0.4}$    & $90.0^{+1.2}_{-1.3}$ \\
-325 $\le \hT < 375$    & 0.55                         & DoubleJetC64 OR HTT175 &  ${\rm HLT\_HT300\_AlphaT0p53\_v*}$ & $97.9^{+0.3}_{-0.3}$    & $95.6^{+0.9}_{-1.0}$ \\
-375 $\le \hT < 475$    & 0.55                         & DoubleJetC64 OR HTT175 &  ${\rm HLT\_HT350\_AlphaT0p52\_v*}$ & $99.2^{+0.2}_{-0.2}$    & $98.7^{+0.5}_{-0.7}$ \\
-       $     \hT > 475$    & 0.55                         & DoubleJetC64 OR HTT175 &  ${\rm HLT\_HT400\_AlphaT0p51\_v*}$ & $99.8^{+0.1}_{-0.3}$    & $99.6^{+0.3}_{-0.7}$ \\
+\verb!HLT_PFDijet90HT200AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 & 11.0 $\pm$ 3.0 \\
+\verb!HLT_PFDijet90HT250AlphaT0p55! & \verb!HTT175 OR ETM70! & 200, 0.535, 70 & 250, 0.550, 90 & 8.5  $\pm$ 3.0 \\
+\verb!HLT_PFDijet90HT300AlphaT0p53! & \verb!HTT175 OR ETM70! & 250, 0.525, 70 & 300, 0.530, 90 & 9.5  $\pm$ 3.0 \\
+\verb!HLT_PFDijet90HT350AlphaT0p52! & \verb!HTT175 OR ETM70! & 300, 0.520, 70 & 350, 0.520, 90 & 10.0 $\pm$ 3.0 \\
+\verb!HLT_PFDijet90HT400AlphaT0p51! & \verb!HTT175 OR ETM70! & 370, 0.510, 70 & 400, 0.510, 90 & 13.5 $\pm$ 3.5 \\
+\hline
+\multicolumn{4}{|r||}{Exclusive rate} & 34 $\pm$ 6 \\
 \hline
 
 
 \end{tabular}
-\caption{HLT paths for Run 1. {\color{red} Typo in AN2013\_366\_v3 for ${\rm HLT\_HT250\_AlphaT0p55\_v*}$? }  }
+\caption{HLT paths for the Run 2 PU40bx25 scenario. }
+\label{tab:2015_Hadronic_Triggers}
 \end{table}
 
 
 
 
-Compressed models can be observed under boost from ISR, yeilding a monojet or asymmetric dijet signature, the RA1 analysis will seek to improve the coverage with the extension to events with asymmetric dijet and monojet signatures, which require new trigger paths.\\
+%Prescaled control region triggers
+\subsection{Control samples}
+Hadronic control sample prescaled triggers.
 
-Trigger studies were performed by emulating the 2015 HLT with phase 1 L1 seeds on 13 TeV MC samples with simulation of the three Run 2 scenarios, a full list of the samples used in the study are listed in Appendix {\color{blue} A1}. To ensure the trigger selections were as inclusive as possible a range of signal models and SM backgrounds which exhibit SUSY event topologies were studied in the optimisation of trigger working points.\\
-
-Offline selection: 50 GeV gen jets, 100 GeV second jet threshold, forward jet veto, lepton veto, MHT/MET cleaning. \\
-
-\subsection{L1 seeds}
-
-To estimate the rate for Level-1 studies a pure-pileup neutrino gun sample is utilised.
-
-New jet algorithm, applying PUM0 subtraction to regions prior to clustering. HTT determined from pileup corrected regions exceeding 7 GeV threshold.
-Due to the influence of pileup the HTT turnon is much slower [Include HTT turn on].  Compressed supersymmetry models, where there is a small mass splitting between the parent and daughter sparticle yields little visible energy in the final state necessitates low $\hT$ thresholds to maintain acceptance to such models. Require new triggers that effectively suppress QCD to enable a lowering of these thresholds.\\
-
-{\color{blue} [ROC curves for 4 different options: HTT, MHT/HTT, DPhi trigger, DPhi x MHT/HTT}\\
+Lowest un-prescaled triggers for following?
+Electron control region triggers ($e$, $ee$). \\
+Muon control region triggers ($\mu$, $\mu\mu$).\\
+Photon control region triggers.\\
 
 
-\subsection{High level trigger}
+
+%% % TABLE : 2015 control triggers
+%% %----------------------------------------------------------------------
+%% \begin{table}[h!]
+%% \footnotesize
+%% \centering
+%% \begin{tabular}{|c||c|c|c||c|} 
+%% \hline
+%% HLT path & L1 seed & Prescale \\[0.7 ex] 
+%% \hline
+%% \verb!HLT_PFDijet90HT200! & \verb!HTT175 OR ETM70! & ? \\
+%% \verb!HLT_PFDijet90HT250! & \verb!HTT175 OR ETM70! & ? \\
+%% \verb!HLT_PFDijet90HT300! & \verb!HTT175 OR ETM70! & ? \\
+%% \verb!HLT_PFDijet90HT350! & \verb!HTT175 OR ETM70! & ? \\
+%% \verb!HLT_PFDijet90HT400! & \verb!HTT175 OR ETM70! & ? \\
+%% \hline
 
 
-The conditions expected in 2015 require an optimisation of trigger thresholds.\\
+%% \end{tabular}
+%% \caption{HLT paths for the Run 2 PU40bx25 scenario. }
+%% \label{tab:2015_Hadronic_Triggers}
+%% \end{table}
+
+
+
+
+\subsection{Future developments}
+Aim to expand trigger strategy to increase acceptance to monojet-like signatures of compressed spectrum and DM models with the transition of an dijet average $\pt$ trigger to select events exhibiting asymmetric jet topologies.
+
+
+
+
+
 
 
 
