@@ -2,9 +2,24 @@
 \section{Physics objects}
 \label{sec:objects}
 The definitions of the physics objects used in this analysis follow the ongoing recommendations of the various Physics Object Groups (POGs) and PHYS14 subgroup investigations. 
+
 \subsection{Jets}
-Jets are reconstructed in the analysis as Particle Flow (PFJets). Particle Flow event reconstruction uses complimentary information from all subdetectors to produce a exclusive collection of reconstructed particles. The reconstructed particles are then used as inputs to the jet clustering algorithms. The anti-$k_{T}$ clustering algorithm with a reconstruction cone of R = 0.4 is adopted (R = $\sqrt{\Delta \eta^{2} + \Delta \phi^{2}   }$). The PFJets used are corrected using L1 FastJet, L2 Relative, and L3 Absolute corrections, based on the Jet Energy Resolutions and Corrections (JERC) Subgroup. There are no L2L3 Residual corrections applied. Charged Hadron Subtraction (CHS) is applied, where charged hadrons that can be traced back to pileup vertices can be removed and then the jets are reclustered. 
-It should be noted that the early L1 FastJet corrections require improvements at this stage, and as a result can impact the L2 and L3 corrections. The Tight working point Jet-Id selection criteria was chosen for the PHYS14 investigation. Figure REF,REF and REF shows the jet closure in simulation as a function of $p_{T}$, for the $\mu +$ jets, $\mu\mu +$ jets, and $\gamma$ + jets control sample
+
+Jets are defined as sets of particle-flow candidates clustered by the
+anti-$k_{T}$ jet clustering algorithm with a distance parameter of 0.4
+(PFJets). The Charged Hadron Subtraction (CHS) is applied, i.e., charged
+hadrons that can be traced back to pileup vertices are not clustered.
+The four-momenta of jets are initially defined as the four-vector sum of
+the four-momenta of the constituent particle-flow candidates and then
+scaled by the jet energy correction factors designated as L1FastJet,
+L2Relative, and L3Absolute.
+
+It should be noted that the early L1 FastJet corrections require
+improvements at this stage, and as a result can impact the L2 and L3
+corrections. The Tight working point Jet-Id selection criteria was
+chosen for the PHYS14 investigation. Figure REF,REF and REF shows the
+jet closure in simulation as a function of $p_{T}$, for the $\mu +$
+jets, $\mu\mu +$ jets, and $\gamma$ + jets control sample
 
 \subsection{b-tagged jets}
 Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction REF. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``Medium`` working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable and results in a gluon/light-quark mis-tag rate of 1.0623 $\%$ ( where ``light`` means $\it{u}$, $\it{d}$ and $\it{s}$ quarks).
@@ -33,7 +48,19 @@ A single isolated track (SIT) can be used to identify W bosons through their lep
 This object can be used to efficiently suppress the ``lost lepton`` background from W and t$\bar{t}$, as described in Section REF. 
 
 \subsection{Missing transverse momenum}
-Missing transverse momentum is defined by the type-I corrected particle-flow (PF)-based MET algorithm REF. The MET variable is only used in the following two cases: to define the transverse mass variable, $M_{T}$, which is in turn used as part of the selection criteria that define the $\mu +$ jets control sample, described in REF. And secondaly, to define a cleaning filter applied after the $\alpha_{T}$ requirement, as described in REF.
+
+Missing transverse momentum is defined as the negative of the vector sum
+of the transverse momentum of all particle-flow candidates in the event.
+The Type-I MET correction is applied, i.e., the transverse momentum of
+the particle-flow candidates clustered as jets are replaced with the
+transverse momentum of the jets that are scaled by the jet energy
+correction factors.
+
+The missing transverse momentum is only used in the following two cases:
+to define the transverse mass, $M_{T}$, which is in turn used as part of
+the selection criteria that define the $\mu +$ jets control sample,
+described in REF, and to define a cleaning filter applied after the
+$\alpha_{T}$ requirement, as described in REF.
 
 
 %%____________________________________________________________________________||
