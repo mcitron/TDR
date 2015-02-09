@@ -55,11 +55,11 @@ This object is used as a veto as part of the hadronic signal region definiton, a
     Categories                    & Barrel                             & EndCap                             \\
     \hline
     Conversion safe electron veto & Yes                                & Yes                                \\
-    Single Tower H/E              & 0.05                               & 0.05                               \\
-    $\sigma_{i\eta i\eta}$        & 0.11                               & 0.31                               \\
-    PF charged hadron isolation   & 0.70                               & 0.50                               \\
-    PF neutral hadron isolation   & 0.4 + 0.04 $\times$ $\pt^{\gamma}$  & 1.5 + 0.04 $\times$ $\pt^{\gamma}$  \\
-    PF photon isolation           & 0.5 + 0.005 $\times$ $\pt^{\gamma}$ & 1.0 + 0.005 $\times$ $\pt^{\gamma}$ \\
+    Single Tower H/E              & 0.012                              & 0.011                               \\
+    $\sigma_{i\eta i\eta}$        & 0.098                              & 0.0264                               \\
+    PF charged hadron isolation   & 1.91                               & 1.26                               \\
+    PF neutral hadron isolation   & 2.55 + 0.0023 $\times$ $\pt^{\gamma}$  & 2.71 + 0.0116 $\times$ $\pt^{\gamma}$  \\
+    PF photon isolation           & 1.29 + 0.0004 $\times$ $\pt^{\gamma}$ & 1.91 + 0.0037 $\times$ $\pt^{\gamma}$ \\
     \hline
     \hline
   \end{tabular}
@@ -70,7 +70,28 @@ This object is used as a veto as part of the hadronic signal region definiton, a
 \label{sec:electron-id}
 Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) of the cut-based identification \cite{electron-id}. PF-based isolation \cite{pf-photon} is determined within a cone size of $\Delta R$ $<$ 0.3 and $\Delta \beta$ corrections are applied to remove the effects of pileup. Table REF summarises the identification and isolation requirements derived using the PHYS14 samples. 	
 
-
+\begin{table}[h!]
+  \caption{Electron identification (Loose working point).\label{tab:ele-id}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcc }
+    \hline
+    \hline
+    Categories                                               & Barrel    & EndCap    \\
+    \hline
+    $\Delta \eta_{In}$                                       & 0.010557  & 0.010654  \\
+    $\Delta \phi_{In}$                                       & 0.012442  & 0.145129  \\
+    $\sigma_{i\eta i\eta}$                                   & 0.072624  & 0.032602  \\
+    H/E                                                      & 0.121476  & 0.131862  \\
+    d0 (vtx)                                                 & 0.022664  & 0.097358  \\
+    dZ (vtx)                                                 & 0.173670  & 0.198444  \\
+    $\lvert(1/E_{\textrm{ECAL}} - 1/p_{\textrm{trk}})\rvert$ & 0.221803  & 0.142283  \\
+    PF relative isolation                                    & 0.120026  & 0.162914  \\
+    Missing hits                                             & 1         & 1         \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{table}
 
 
 \subsection{Single Isolated Tracks}
