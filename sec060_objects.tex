@@ -4,11 +4,10 @@
 The definitions of the physics objects used in this analysis follow the ongoing recommendations of the various Physics Object Groups (POGs) and PHYS14 subgroup investigations. 
 
 \subsection{Jets}
-<<<<<<< HEAD:sec050_objects.tex
 \label{sec:jetreco}
 Jets are reconstructed in the analysis as Particle Flow (PFJets). Particle Flow event reconstruction uses complimentary information from all subdetectors to produce a exclusive collection of reconstructed particles \cite{CMS-PAS-PFT-10-001}. The reconstructed particles are then used as inputs to the jet clustering algorithms. The anti-$k_{T}$ clustering algorithm with a reconstruction cone of R = 0.4 is adopted (R = $\sqrt{\Delta \eta^{2} + \Delta \phi^{2}   }$). The PFJets used are corrected using L1 FastJet, L2 Relative, and L3 Absolute corrections \cite{Jet-energy-scale}, based on the Jet Energy Resolutions and Corrections (JERC) Subgroup \cite{CMS-PAS-JME-10-003}. There are no L2L3 Residual corrections applied. Charged Hadron Subtraction (CHS) is applied, where charged hadrons that can be traced back to pileup vertices can be removed and then the jets are reclustered. 
 The Tight working point Jet-Id selection criteria was chosen for the PHYS14 investigation. Figure REF,REF and REF shows the jet closure in simulation as a function of $p_{T}$, for the $\mu +$ jets, $\mu\mu +$ jets, and $\gamma$ + jets control sample
-=======
+
 
 Jets are defined as sets of particle-flow candidates clustered by the
 anti-$k_{T}$ jet clustering algorithm with a distance parameter of 0.4
@@ -25,7 +24,6 @@ corrections. The Tight working point Jet-Id selection criteria was
 chosen for the PHYS14 investigation. Figure REF,REF and REF shows the
 jet closure in simulation as a function of $p_{T}$, for the $\mu +$
 jets, $\mu\mu +$ jets, and $\gamma$ + jets control sample
->>>>>>> master:sec060_objects.tex
 
 \subsection{b-tagged jets}
 \label{sec:btags}
@@ -47,6 +45,26 @@ Muons are used as a veto as part of the hadronic signal region definition, as de
 Photons are identified according to the Tight working point defintion ($\sim$ 70 $\%$ efficiency) of the simple cut-based photon identification algorithm \cite{photon-id}. PF-based isolation is determined within a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. Table REF summarises the identification and isolation requirements for PHYS14 samples. 
 This object is used as a veto as part of the hadronic signal region definiton, as described in Section REF, and as part of the $\gamma$ + jets control sample described in Section 7.4.4.
 
+\begin{table}[ht!]
+  \caption{Photon identification (Tight working point).\label{tab:photon-id-gamma}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ccc }
+    \hline
+    \hline
+    Categories                    & Barrel                             & EndCap                             \\
+    \hline
+    Conversion safe electron veto & Yes                                & Yes                                \\
+    Single Tower H/E              & 0.05                               & 0.05                               \\
+    $\sigma_{i\eta i\eta}$        & 0.11                               & 0.31                               \\
+    PF charged hadron isolation   & 0.70                               & 0.50                               \\
+    PF neutral hadron isolation   & 0.4 + 0.04 $\times$ $\pt^{\gamma}$  & 1.5 + 0.04 $\times$ $\pt^{\gamma}$  \\
+    PF photon isolation           & 0.5 + 0.005 $\times$ $\pt^{\gamma}$ & 1.0 + 0.005 $\times$ $\pt^{\gamma}$ \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{table}
+
 
 \subsection{Electrons}
 \label{sec:electron-id}
@@ -54,22 +72,18 @@ Electrons are identified according to the Loose working point definition ( $\sim
 
 
 
-<<<<<<< HEAD:sec050_objects.tex
+
 \subsection{Single Isolated Tracks}
 \label{sec:SIT}
-=======
-\subsection{Single isolated tracks}
->>>>>>> master:sec060_objects.tex
+
 A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. Single prong decays of the tau lepton can be identified: W $\rightarrow$ $\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. A single isolated track comprises a charged PF candidate that satisfies the requirements listed in Table REF. The relative track isolation is determined from the vectorial sum of neighbouring charged PF candidates within a cone $\Delta R$ $<$ 0.3 and satisfying $\Delta$z(candidate, PV) $<$ 0.05cm around the candidate isolated track.
 This object can be used to efficiently suppress the ``lost lepton`` background from W and t$\bar{t}$, as described in Section 7.1. 
 
-<<<<<<< HEAD:sec050_objects.tex
 \subsection{Missing transverse energy}
 \label{sec:MET}
 Missing transverse energy,  , is defined by the type-I corrected particle-flow (PF)-based MET algorithm \cite{met-corrections}. The MET variable is only used in the following two cases: to define the transverse mass variable, $M_{T}$, which is in turn used as part of the selection criteria that define the $\mu +$ jets control sample, described in REF. And secondaly, to define a cleaning filter applied after the $\alpha_{T}$ requirement, as described in REF. 
-=======
-\subsection{Missing transverse momenum}
 
+\subsection{Missing transverse momenum}
 Missing transverse momentum is defined as the negative of the vector sum
 of the transverse momentum of all particle-flow candidates in the event.
 The Type-I MET correction is applied, i.e., the transverse momentum of
@@ -82,7 +96,7 @@ to define the transverse mass, $M_{T}$, which is in turn used as part of
 the selection criteria that define the $\mu +$ jets control sample,
 described in REF, and to define a cleaning filter applied after the
 $\alpha_{T}$ requirement, as described in REF.
->>>>>>> master:sec060_objects.tex
+
 
 
 %%____________________________________________________________________________||
