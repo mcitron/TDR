@@ -18,7 +18,7 @@ It should be noted that the early L1 FastJet corrections require
 improvements at this stage, and as a result can impact the L2 and L3
 corrections. The Tight working point Jet-Id selection criteria was
 chosen for the PHYS14 investigation. Figure \ref{fig:QCDJets} shows the
-jet response in simulation as a function of $p_{T}$, for QCD in the Signal region.
+jet resolution in simulation as a function of $p_{T}$, for QCD in the Signal region.
 
 \begin{figure}[h]
   \centering
@@ -38,7 +38,7 @@ Jets originating from bottom quarks are identified through vertices that are dis
 \subsection{Muons}
 \label{sec:muon-id}
 Muons are identified according to the Tight working point definition ($\sim$ 95 $\%$ efficiency ) of the muon identifiction algorithim. A PF-based ``combined relative`` isolation is determined within a cone size of $\Delta R < 0.4 $, and ``$\rho$``corrections are applied to remove the effects of pileup. Isolated muons are required to have minimal energy from neutral and charged PF candidates. A cone of $\Delta R$ = 0.4 is formed around the candidate lepton trajectory, and the transverse momenta is summed over PF neutral and charged candidates, excluding that of the lepton itself. The relative combined isolation $I^{rel}_{comb}$ is then defined as the ratio of this scalar sum to the transverse momentum of the lepton candidate. 
-Figures REF show the relative combined isolation $I^{rel}_{comb}$ for $\mu +$ jets and $\mu\mu +$ jets control sample. The distributions have been weighted according to the cross-section of the respective samples in each region, and an integrated luminosity of 1 fb$^{-1}$ at $\sqrt{s}$ = 13 TeV. Isolated muons promptly produced in the decays of W and Z bosons dominate the region $I^{rel}_{comb}$ $<$ 0.12.
+Figures \ref{fig:SMStack} and \ref{fig:DMStack} show the relative combined isolation $I^{rel}_{comb}$ for $\mu +$ jets and $\mu\mu +$ jets control sample. The distributions have been weighted according to the cross-section of the respective samples in each region, and an integrated luminosity of 1 fb$^{-1}$ at $\sqrt{s}$ = 13 TeV. Isolated muons promptly produced in the decays of W and Z bosons dominate the region $I^{rel}_{comb}$ $<$ 0.12.
 In the case of high jet multiplicity events, an increase in energy resulting in boosted events can result in complicated topologies for leptons and jets. For example high $p_{T}$ top quarks decaying leptonically, the main issue is the small angular separation between that of the lepton and the b-jet. Classical lepton isolation techniques will reject the boosted leptonic top quarks. A solution to this is to reduce the cone size around the lepton in function of $p_{T}$. This technique known as Mini Isolation is currently being investigated as a potential candidate for increasing the prompt lepton efficiency in boosted topologies.  
 
 Muons are used as a veto as part of the hadronic signal region definition, as described in Section \ref{sec:hadSelection}, and as part of the $\mu +$ jets and $\mu\mu +$ jets control sample selections as described in Section \ref{sec:controlSelection}.
@@ -55,6 +55,7 @@ Muons are used as a veto as part of the hadronic signal region definition, as de
     \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/DoubleMuStack.pdf}
     \label{fig:DMStack}
   }~~  
+\caption{$I_{comb}^{rel}$ for \texorpdfstring{\mj}{muon plus jets} & \texorpdfstring{\mmj}{di-muon plus jets} control samples}
 \end{figure}
 
 
@@ -115,9 +116,24 @@ Electrons are identified according to the Loose working point definition ( $\sim
 \subsection{Single Isolated Tracks}
 \label{sec:SIT}
 
-A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. Single prong decays of the tau lepton can be identified: W $\rightarrow$ $\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. A single isolated track comprises a charged PF candidate that satisfies the requirements listed in Table REF. The relative track isolation is determined from the vectorial sum of neighbouring charged PF candidates within a cone $\Delta R$ $<$ 0.3 and satisfying $\Delta$z(candidate, PV) $<$ 0.05cm around the candidate isolated track.
+A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. Single prong decays of the tau lepton can be identified: W $\rightarrow$ $\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. A single isolated track comprises a charged PF candidate that satisfies the requirements listed in Table \ref{tab:sit-id}. The relative track isolation is determined from the vectorial sum of neighbouring charged PF candidates within a cone $\Delta R$ $<$ 0.3 and satisfying $\Delta$z(candidate, PV) $<$ 0.05cm around the candidate isolated track.
 This object can be used to efficiently suppress the ``lost lepton`` background from W and t$\bar{t}$, as described in Section 7.1. 
 
+\begin{table}[h!]
+  \caption{Single isolated track identification.\label{tab:sit-id}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lc }
+    \hline
+    \hline
+    Track \Pt                      & $>10\gev$  \\
+    $\Delta z (\textrm{track,PV})$ & $<0.05\cm$ \\
+    Charge                         & $\neq 0$   \\
+    Relative track isolation       & $<0.1$     \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{table}
 
 \subsection{Missing transverse momenum}
 Missing transverse momentum is defined as the negative of the vector sum
@@ -125,13 +141,13 @@ of the transverse momentum of all particle-flow candidates in the event.
 The Type-I MET correction is applied, i.e., the transverse momentum of
 the particle-flow candidates clustered as jets are replaced with the
 transverse momentum of the jets that are scaled by the jet energy
-correction factors.
+correction factors \cite{METCorrections}.
 
 The missing transverse momentum is only used in the following two cases:
 to define the transverse mass, $M_{T}$, which is in turn used as part of
 the selection criteria that define the $\mu +$ jets control sample,
 described in \ref{subsec:mucontrolSelection}, and to define a cleaning filter applied after the
-$\alpha_{T}$ requirement, as described in \ref{sec:selection}.
+$\alpha_{T}$ requirement, as described in Section \ref{sec:selection}.
 
 
 
