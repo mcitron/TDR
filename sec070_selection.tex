@@ -12,7 +12,7 @@ photon with $\pt > 25\GeV$ and $|\eta| < 2.5$ is
 found.  Further, to reduce the ``lost leptons'' backgrounds from W~+~jets 
 and \ttbar, events containing single isolated tracks with $\pt >
 10\GeV$ and $|\eta| < 2.5$, as defined in
-Section~\ref{sec:reconstruction}, are vetoed as part of the signal
+Section~\ref{sec:objects}, are vetoed as part of the signal
 region selection criteria. In the case of the \mj and \mmj
 samples, a further requirement is made such that events are not vetoed
 due to the presence of a track from the well identified muons, by
@@ -26,33 +26,32 @@ requiring $\Delta R(\textrm{track},\mu) < 0.02$.
 \subsubsection{Hadronic pre-selection}
 Events are required to have significant hadronic activity by requiring
 $\scalht > 200\GeV$. Despite the increase in centre of mass energy and pileup
-in Run~2, this threshold is kept at the level of the Run~1 analyses~\cite{run1Analyses}  
-to maintain acceptance for SUSY models with compressed spectra. This should be
-made possible by the advances made in offline object reconstruction, particularly pileup
-subtraction~\cite{puppi}.
+in Run~2, this threshold is kept at the level of the Run~1 analyses~\cite{Chatrchyan:2013lya}  
+to maintain acceptance for SUSY models with compressed spectra. This is possible due to advances 
+made in offline object reconstruction, particularly pileup
+subtraction%~\cite{puppi}.
 
-Jets considered in the analysis are required to have an $\ET>40\gev$ and be
-within the central tracker acceptance ($|\eta|<3.0$). This threshold is chosen
+Jets considered in the analysis are required to have transverse momentume of $\ET>40\gev$ and be
+within the acceptance of the central tracker ($|\eta|<3.0$). This threshold is chosen
 to be flat across \HT values, unlike the SUS-14-006 analysis. The \ET value is
 chosen to be as low as possible to reduce the number of jets falling below
 threshold and introducing artificial \mht, while remaining in the realm of
-reliable jet energy corrections. In the nominal analysis the lead two jets 
-are required to satisfy $\ET>100\gev$ and the lead jet must
-have $|\eta|<2.5$. The jets that are accepted are used for the calculation of
-the variables \HT and \mht.
+reliable jet energy corrections. In the nominal analysis the two highest energy jets
+are required to satisfy $\ET>100\gev$ and the leading jet must be within $|\eta|<2.5$. 
+The jets that are selected are used for the calculation of the variables \HT and \mht.
 
 Events in which jets with $\ET>40\gev$ are reconstructed with $|\eta|>3.0$ are
-vetoed. This reduces the number of events with non genuine \mht caused by jets
+rejected. This reduces the number of events with non genuine \mht caused by jets
 just out of acceptance.
 
 \subsubsection{The hadronic signal region\label{sec:had-signal}}
 
 Following the hadronic pre-selection, the multijet background from QCD
 is still several orders of magnitude larger than the typical signal
-expected from SUSY. Most multijet background sits at $\alphat<0.5$, so can be 
-rejected with very high efficiency by requiring an appropriate cut on \alphat (plus the application of two dedicated cleaning filters, described below in
+expected from SUSY. Most multijet background is located at values less than $\alphat<0.5$ and therefore can
+be rejected with very high efficiency by requiring an appropriate cut on \alphat (plus the application of two dedicated cleaning filters, described below in
 Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
-\HT values, an \alphat cut that scales with \HT is required, detailed in
+\HT values, the \alphat requirement scales with \HT as detailed in
 Table~\ref{tab:alphat-thresholds}. The minimum \mht value that the \alphat cut
 corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
 \alphat. 
@@ -73,9 +72,8 @@ corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
   \end{tabular}
 \end{table}
 
-In the Run~1 analyses there was a minimum cut of $\alphat>0.55$. This was chosen
-as a conservative cut to remove QCD. It was also required
-by the \alphat requirement in the HLT paths used to seed the analysis bins. For
+In the Run~1 analyses a general minimum cut of $\alphat>0.55$ was used. This was chosen
+as a conservative cut to remove QCD and also part of the \alphat requirement in the HLT paths used to seed the analysis bins. For
 Run~2 it is proposed to seed the the bins with $\HT>900\gev$ by a flat
 $PF\HT>900\gev$ HLT path with no \alphat requirement.
 
@@ -112,22 +110,54 @@ each event and the number of jets identified as originating from
 bottom quarks (\nb) in each event. By construction, $\nb \leq \njet$. The \njet
 bins are likely to be at the level of one \njet per category.
 
-Additionally these categories are split up into \HT bins. These bins begin at
+Additionally these categories are binned in \HT. These bins begin at
 $\HT=200\gev$ and extend in $50\gev$ steps up to $\HT=400\gev$. Above this, the
 bins are $100\gev$ wide extending up to the highest \HT reachable. 
-These bin widths have been rationalised with
-respect to the SUS-14-006 analysis. As there are plenty of events in the control
+These bin widths have been rationalised with respect to the SUS-14-006 analysis. 
+As there are sufficient events in the control
 samples (detailed in Sec.~\ref{sec:controlSelection}) at low \HT, $50\gev$ bins
 are an appropriate size. In SUS-14-006 the low \HT bins were seeded by different
-trigger paths, and their lower edge was chosen to sit in the trigger turnon. For
+trigger paths, and their lower edge was chosen to sit in the trigger turn-on. For
 Run~2 this strategy has been inverted, with the selection of the offline \HT
 bins first. The trigger threshold is then chosen to be sufficiently below that
 of it's relevant offline bin so as to be efficient. More details in
-Sec~\ref{sec:triggers}.
+Sec~\ref{sec:triggers}. An overview of the preliminary binning is given in Tab.~\ref{tab:alphat-binning}.
 %detailed in Table~\ref{tab:htBins}.
 
-It is also proposed to add an extra analysis category in which events with lead
-jet $\ET>100\gev$ and second jet $40\gev<\ET<100\gev$, see Sec~\ref{sec:physics}.
+\begin{table}[h!]
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcccccc }
+    \hline
+    \hline
+    \scalht bin  & \multicolumn{5}{c}{$p_\textrm{T}(j^{1,2})>100$~GeV, $\HT > 200$~GeV, $\alpha_{\rm T}$}\\
+    \scalht bin  & 200--250      & 250--300      & 300--350      & 350--400     & 400--900       & $>$900       \\
+    $n_\textrm{jet}$        & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$\\
+    $n_b$        & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$\\
+    \hline
+    \hline
+  \end{tabular}
+\caption{Preliminary signal region binning \label{tab:alphat-binning}}
+\end{table}
+
+Also a new orthogonal signal region has been added. In order to increase acceptance and sensitivity for ISR and mono-jet type events is lowered to 40~GeV with an upper bound of 100~GeV, see Sec~\ref{sec:physics}.
+
+
+\begin{table}[h!]
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcccccc }
+    \hline
+    \hline
+    \scalht bin  & \multicolumn{5}{c}{$p_\textrm{T}(j^{1})>100$~GeV, $40\ge p_\textrm{T}(j^{2})\le100$~GeV$\HT > 200$~GeV, $\alpha_{\rm T}$}\\
+    \scalht bin  & 200--250      & 250--300      & 300--350      & 350--400     & 400--900       & $>$900       \\
+    $n_\textrm{jet}$        & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$\\
+    $n_b$        & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$\\
+    \hline
+    \hline
+  \end{tabular}
+\caption{Preliminary asymmetric signal region binning \label{tab:alphat-asym-binning}}
+\end{table}
 
 %%____________________________________________________________________________||
 
@@ -164,7 +194,7 @@ transverse mass of the W candidate must satisfy $30 < \mt(\mu,\pfmet)
 < 125\gev$ (to suppress QCD multijet and potential signal
 events). Events are vetoed if $\Delta R(\mu,\textrm{jet}_i) < 0.5$
 running over all jets $i$. The single isolated track veto, described
-in Sections~\ref{sec:reconstruction} and~\ref{sec:vetoes}, is also
+in Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also
 applied, which considers all single isolated tracks in the event
 except that associated with the identified, isolated muon. Finally,
 the cleaning cut $\mht/\pfmet$ is also applied, as done in the signal
@@ -192,7 +222,7 @@ invariant mass of the two muons must satisfy $m_{Z} - 25 <
 M_{\mu_1\mu_2} < m_{Z} + 25$. Events are vetoed if $\Delta
 R(\mu_{i},\textrm{jet}_j) < 0.5$ is satisfied, running over all muons
 $i$ and all jets $j$. The single isolated track veto, described in
-Sections~\ref{sec:reconstruction} and~\ref{sec:vetoes}, is also
+Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also
 applied, considering all single isolated tracks in the event except
 those associated with the two identified, isolated muons. Finally, the
 cleaning cut $\mht/\pfmet$ is also applied, as done in the signal
@@ -243,11 +273,12 @@ improves their predictive power and further reduces the effect of any potential
 signal contamination. 
 
 In the Run~1 analyses the \gj control sample had a tight requirement on the
-photon. After recent developments presented in EGM-14-001~\cite{EGM-14-001}, it
+photon. After recent developments presented in EGM-14-001%~\cite{EGM-14-001}
+, it
 should be possible to reduce the photon requirement from tight to medium, while
 still having a significant background rejection. This will be investigated and
 should help to increase the number of events available, giving a better control
-of the analysis background prediction detailed in Sec.\ref{sec:backgrounds}.
+of the analysis background prediction detailed in Sec.~\ref{sec:background}.
 
 To further help with the number of events available in control samples, it is
 proposed to introduce electron~+~jets control samples. These would work
