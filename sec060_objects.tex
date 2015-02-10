@@ -17,9 +17,17 @@ L2Relative, and L3Absolute.
 It should be noted that the early L1 FastJet corrections require
 improvements at this stage, and as a result can impact the L2 and L3
 corrections. The Tight working point Jet-Id selection criteria was
-chosen for the PHYS14 investigation. Figure REF,REF and REF shows the
-jet closure in simulation as a function of $p_{T}$, for the $\mu +$
-jets, $\mu\mu +$ jets, and $\gamma$ + jets control sample
+chosen for the PHYS14 investigation. Figure \ref{fig:QCDJets} shows the
+jet response in simulation as a function of $p_{T}$, for QCD in the Signal region.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/PhysicsObjectsPlots/JetResolutionSigQCD.pdf}
+  \caption{Jet resolution of matched QCD jets in the Signal region}
+  \label{fig:QCDJets}
+\end{figure}
+   
+  
 
 \subsection{b-tagged jets}
 \label{sec:btags}
@@ -33,13 +41,27 @@ Muons are identified according to the Tight working point definition ($\sim$ 95 
 Figures REF show the relative combined isolation $I^{rel}_{comb}$ for $\mu +$ jets and $\mu\mu +$ jets control sample. The distributions have been weighted according to the cross-section of the respective samples in each region, and an integrated luminosity of 1 fb$^{-1}$ at $\sqrt{s}$ = 13 TeV. Isolated muons promptly produced in the decays of W and Z bosons dominate the region $I^{rel}_{comb}$ $<$ 0.12.
 In the case of high jet multiplicity events, an increase in energy resulting in boosted events can result in complicated topologies for leptons and jets. For example high $p_{T}$ top quarks decaying leptonically, the main issue is the small angular separation between that of the lepton and the b-jet. Classical lepton isolation techniques will reject the boosted leptonic top quarks. A solution to this is to reduce the cone size around the lepton in function of $p_{T}$. This technique known as Mini Isolation is currently being investigated as a potential candidate for increasing the prompt lepton efficiency in boosted topologies.  
 
-Muons are used as a veto as part of the hadronic signal region definition, as described in Section REF, and as part of the $\mu +$ jets and $\mu\mu +$ jets control sample selections as described in Section REF.
+Muons are used as a veto as part of the hadronic signal region definition, as described in Section \ref{sec:hadSelection}, and as part of the $\mu +$ jets and $\mu\mu +$ jets control sample selections as described in Section \ref{sec:controlSelection}.
+
+\begin{figure}[h]
+  \centering
+  \subfigure[Relative combined isolation variable for \texorpdfstring{\mj}{muon plus jets}
+  control sample]{
+    \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/SingleMuStack.pdf}
+    \label{fig:SMStack}
+  }~~
+  \subfigure[Relative combined isolation variable for \texorpdfstring{\mmj}{di-muon plus jets}
+    control sample]{
+    \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/DoubleMuStack.pdf}
+    \label{fig:DMStack}
+  }~~  
+\end{figure}
 
 
 \subsection{Photons}
 \label{sec:photon-id}
-Photons are identified according to the Tight working point defintion ($\sim$ 70 $\%$ efficiency) of the simple cut-based photon identification algorithm \cite{photon-id}. PF-based isolation is determined within a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. Table REF summarises the identification and isolation requirements for PHYS14 samples. 
-This object is used as a veto as part of the hadronic signal region definiton, as described in Section REF, and as part of the $\gamma$ + jets control sample described in Section 7.4.4.
+Photons are identified according to the Tight working point defintion ($\sim$ 70 $\%$ efficiency) of the simple cut-based photon identification algorithm \cite{photon-id}. PF-based isolation is determined within a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. Table \ref{tab:photon-id-gamma} summarises the identification and isolation requirements for PHYS14 samples. 
+This object is used as a veto as part of the hadronic signal region definiton, as described in Section \ref{sec:hadSelection}, and as part of the $\gamma$ + jets control sample described in Section \ref{sec:photoncontrolSelection}.
 
 \begin{table}[ht!]
   \caption{Photon identification (Tight working point).\label{tab:photon-id-gamma}}
@@ -64,7 +86,7 @@ This object is used as a veto as part of the hadronic signal region definiton, a
 
 \subsection{Electrons}
 \label{sec:electron-id}
-Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) of the cut-based identification \cite{electron-id}. PF-based isolation \cite{pf-photon} is determined within a cone size of $\Delta R$ $<$ 0.3 and $\Delta \beta$ corrections are applied to remove the effects of pileup. Table REF summarises the identification and isolation requirements derived using the PHYS14 samples. 	
+Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) of the cut-based identification \cite{electron-id}. PF-based isolation \cite{pf-photon} is determined within a cone size of $\Delta R$ $<$ 0.3 and $\Delta \beta$ corrections are applied to remove the effects of pileup. Table \ref{tab:ele-d} summarises the identification and isolation requirements derived using the PHYS14 samples. 	
 
 \begin{table}[h!]
   \caption{Electron identification (Loose working point).\label{tab:ele-id}}
@@ -108,8 +130,8 @@ correction factors.
 The missing transverse momentum is only used in the following two cases:
 to define the transverse mass, $M_{T}$, which is in turn used as part of
 the selection criteria that define the $\mu +$ jets control sample,
-described in REF, and to define a cleaning filter applied after the
-$\alpha_{T}$ requirement, as described in REF.
+described in \ref{sec:mucontrolSelection}, and to define a cleaning filter applied after the
+$\alpha_{T}$ requirement, as described in \ref{sec:selection}.
 
 
 
