@@ -292,7 +292,7 @@ and the most sensitive categories are used.
   \begin{tabular}{ llccc }
     \hline
     \hline
-    Model                  & Production/decay mode & (${m_{\rm SUSY},m_{\rm LSP}$) [GeV]  & (\njet,\nb) event categories considered        \\ 
+    Model                  & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV]  & (\njet,\nb) event categories considered        \\ 
     \hline
     \texttt{T1bbbb}           & \Tonebbbb & (1500,100)               & (4,2), (4,$\geq 3$), ($\geq 5$,2), ($\geq 5$,$\geq 3$) \\ % (2--3,1), 
     % \texttt{T2bw (x=0.25)}  & \Ttwobw               & FIXME: ANA-CATS \\
@@ -327,28 +327,32 @@ acceptance is assumed.
 
 \subsection{Results}
 
-Table~\ref{tab:results} shows the expected performance for the model
-\verb!T1bbbb! with $m_{\rm gluino} = 1500\gev$ and $m_{\rm LSP} =
-100\gev$ and an integrated luminosity of 4\fbinv. The table lists both
-significances and R-values for the \scalht and \alphat variables,
-along with a range of alternative variables, including \mht, \met,
-effective mass (\meff), and finally the projection of the \mht vector
-onto the plane transverse to the event thrust axis (\mhttt). The two
-most sensitive bins in each variable are used, and each result is
-based on a combination of bins from four events categories:
-(\njet,\nb) = (4,2), (4,$\geq$3), ($\geq$5,2), and
-($\geq$5,$\geq$3). All signal region selection criteria are applied,
-including $\scalht > 900\gev$ and $\mht > 130\gev$. The background
-systematic uncertainty is assumed to be 30\% for this selection and a
-systematic uncertainty on signal acceptance of 10\% is assumed. The
-results were produced with the Higgs combination tool and rely on the
-use of \cls and pseudo-experiments.
+%Tables~\ref{tab:t1bbbb_1500_100} and~\ref{tab:t1bbbb_1000_900} show
+Table~\ref{tab:results} shows
+the expected performance for the model \verb!T1bbbb! with two mass
+scenarios, ($m_{\rm gluino} = 1500,m_{\rm LSP} = 100\gev$) and
+($m_{\rm gluino} = 1000,m_{\rm LSP} = 900\gev$), and an integrated
+luminosity of 4\fbinv. The tables list both significances and R-values
+for the \scalht and \alphat variables, along with a range of
+alternative variables, including \mht, \met, effective mass (\meff),
+and finally the projection of the \mht vector onto the plane
+transverse to the event thrust axis (\mhttt). The two most sensitive
+bins in each variable are used, and each result is based on a
+combination of bins from four events categories: (\njet,\nb) = (4,2),
+(4,$\geq$3), ($\geq$5,2), and ($\geq$5,$\geq$3). All signal region
+selection criteria are applied, including $\scalht > 900\gev$ and
+$\mht > 130\gev$. The background systematic uncertainty is assumed to
+be 30\% for this selection and a systematic uncertainty on signal
+acceptance of 10\% is assumed. The results were produced with the
+Higgs combination tool and rely on the use of \cls and
+pseudo-experiments.
 
-The results with the \scalht and \alphat requirements listed in
-Table~\ref{tab:results} represent the baseline performance with no
-optimisation beyond a minimal choice in categories and
-binning. Further optimisations are possible, such as increasing the
-number of categories and bins used in the statistical
+The results with the \scalht and \alphat requirements listed in 
+%Tables~\ref{tab:t1bbbb_1500_100} and~\ref{tab:t1bbbb_1000_900} represent
+Table~\ref{tab:results} represents 
+the baseline performance with no optimisation beyond a minimal choice
+in categories and binning. Further optimisations are possible, such as
+increasing the number of categories and bins used in the statistical
 interpretation. Some example alternatives to \scalht and \alphat are
 also shown, which increase the significance to as much as
 $\sim4\sigma$. Investigations concerning the choice of an additional
@@ -366,29 +370,71 @@ etc. The reliance on data-driven methods, cross-checks, and control
 variables is of paramount important as we probe a new mass regime in
 Run~2.
 
+%\begin{table}
+%  \centering
+%  \caption{Significances and R-values for \texttt{T1bbbb} ($m_{\rm
+%      gluino} = 1500, m_{\rm LSP} = 100\gev$).}
+%  \label{tab:t1bbbb_1500_100}
+%  \footnotesize
+%  \begin{tabular}{lccccccccccc}
+%    \hline
+%    \hline
+%    Variable & Binning                & Significance & R-value ($\pm1\sigma$ exptal.) \\
+%    \hline
+%    \scalht  & 1400--1700, $\geq$1700 & 1.9$\sigma$  & $1.08^{+0.69}_{-0.42}$         \\
+%    \alphat  & 0.55--0.65, $\geq$0.65 & 2.1$\sigma$  & $1.04^{+0.74}_{-0.43}$         \\
+%    \mhttt   & 130--200, $\geq$200    & 2.9$\sigma$  & $0.74^{+0.53}_{-0.27}$         \\
+%    \meff    & 1750--2500, $\geq$2500 & 3.2$\sigma$  & $0.64^{+0.40}_{-0.27}$         \\
+%    \mht     & 500--700, $\geq$700    & 4.1$\sigma$  & $0.45^{+0.30}_{-0.17}$         \\
+%    \met     & 500--700, $\geq$700    & 4.2$\sigma$  & $0.43^{+0.28}_{-0.15}$         \\
+%    \hline
+%    \hline
+%  \end{tabular} 
+%\end{table}
+
+%\begin{table}
+%  \centering
+%  \caption{Significances and R-values for \texttt{T1bbbb} ($m_{\rm
+%      gluino} = 1000, m_{\rm LSP} = 900\gev$).}
+%  \label{tab:t1bbbb_1000_900}
+%  \footnotesize
+%  \begin{tabular}{lccccccccccc}
+%    \hline
+%    \hline
+%    Variable & Binning                & Significance & R-value    ($\pm1\sigma$ exptal.) \\
+%    \hline
+%    \scalht  & 1400--1700, $\geq$1700 & 0.2$\sigma$  & $8.93^{+6.26}_{-3.87}$            \\
+%    \alphat  & 0.55--0.65, $\geq$0.65 & 2.2$\sigma$  & $0.93^{+0.63}_{-0.40}$            \\
+%    \mhttt   & 130--200, $\geq$200    & 1.0$\sigma$  & $2.38^{+1.60}_{-0.98}$           \\
+%    \meff    & 1750--2500, $\geq$2500 & 0.7$\sigma$  & $2.90^{+1.77}_{-1.24}$            \\
+%    \mht     & 500--700, $\geq$700    & 3.1$\sigma$  & $0.62^{+0.38}_{-0.24}$            \\
+%    \met     & 500--700, $\geq$700    & 3.2$\sigma$  & $0.60^{+0.36}_{-0.24}$            \\
+%    \hline
+%    \hline
+%  \end{tabular} 
+%\end{table}
 
 \begin{table}
   \centering
-  \caption{Significances and R-values for \texttt{T1bbbb}.}
+  \caption{Significances and R-values for various models.}
   \label{tab:results}
   \footnotesize
-  \begin{tabular}{lccccccccccc}
+  \begin{tabular}{llcccc}
     \hline
     \hline
-    Variable & Binning                & Significance & R-value    ($\pm1\sigma$ exptal.) \\
-    \hline
-    \scalht  & 1400--1700, $\geq$1700 & 1.9$\sigma$  & $1.08^{+0.69}_{-0.42}$            \\
-    \alphat  & 0.55--0.65, $\geq$0.65 & 2.1$\sigma$  & $1.04^{+0.74}_{-0.43}$            \\
-    \mhttt   & 130--200, $\geq$200    & 2.9$\sigma$  & $0.74.^{+0.53}_{-0.27}$           \\
-    \meff    & 1750--2500, $\geq$2500 & 3.2$\sigma$  & $0.64^{+0.40}_{-0.27}$            \\
-    \mht     & 500--700, $\geq$700    & 4.1$\sigma$  & $0.45^{+0.30}_{-0.17}$            \\
-    \met     & 500--700, $\geq$700    & 4.2$\sigma$  & $0.43^{+0.28}_{-0.15}$            \\
+    &  & \multicolumn{2}{c}{\texttt{T1bbbb} (1500,100)} & \multicolumn{2}{c}{\texttt{T1bbbb} (1000,900)} \\
+    Variable & Binning                & Significance & R-value ($\pm1\sigma_{\rm exptal}$) & Significance & R-value ($\pm1\sigma_{\rm exptal}$) \\
+    \hline                                                                                                                              
+    \scalht  & 1400--1700, $\geq$1700 & 1.9$\sigma$  & $1.08^{+0.69}_{-0.42}$              & 0.2$\sigma$  & $8.93^{+6.26}_{-3.87}$              \\
+    \alphat  & 0.55--0.65, $\geq$0.65 & 2.1$\sigma$  & $1.04^{+0.74}_{-0.43}$              & 2.2$\sigma$  & $0.93^{+0.63}_{-0.40}$              \\
+    \mhttt   & 130--200, $\geq$200    & 2.9$\sigma$  & $0.74^{+0.53}_{-0.27}$              & 1.0$\sigma$  & $2.38^{+1.60}_{-0.98}$              \\
+    \meff    & 1750--2500, $\geq$2500 & 3.2$\sigma$  & $0.64^{+0.40}_{-0.27}$              & 0.7$\sigma$  & $2.90^{+1.77}_{-1.24}$              \\
+    \mht     & 500--700, $\geq$700    & 4.1$\sigma$  & $0.45^{+0.30}_{-0.17}$              & 3.1$\sigma$  & $0.62^{+0.38}_{-0.24}$              \\
+    \met     & 500--700, $\geq$700    & 4.2$\sigma$  & $0.43^{+0.28}_{-0.15}$              & 3.2$\sigma$  & $0.60^{+0.36}_{-0.24}$              \\
     \hline
     \hline
   \end{tabular} 
 \end{table}
-
-
 
 %Comment to let me make a commit called first draft
 
