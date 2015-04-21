@@ -1,7 +1,7 @@
 # CMS AN-15-004
 an Analysis Note for PHYS14
 
-This repo contains the content of the directory `notes/AN-15-004/trunk` in the SVN repository for the CMS documents.
+This repo contains the directories `utils/trunk` and  `notes/AN-15-004/trunk` in the SVN repository for the CMS documents.
 
 Brief instructions are given below.
 
@@ -11,37 +11,29 @@ The first few sections explain how to check out flies, compile files and produce
 
 #### Check out latex source files
 
-First, you need to check out some utility files from the SVN repository for the CMS documents.
+First, you need to make a clone of this repo.
 
-    svn co -N svn+ssh://<cern_user_name>@svn.cern.ch/reps/tdr2 myDir
-    cd myDir
-    svn update utils
-    svn update -N notes
+    git clone -o ra1 git@github.com:CMSRA1/AN-15-004.git myDir
 
-Then, you can check out this repo in `myDir`.
-
-    git clone -o ra1 git@github.com:CMSRA1/AN-15-004.git notes/AN-15-004/trunk
-
-This command will clone this repo from `CMSRA1/AN-15-004`. For the cloned repo, `CMSRA1/AN-15-004` is a remote and called `ra1`.
+This command will clone this repo from `CMSRA1/AN-15-004` to the directory `myDir`. The name `myDir` is an example. You can give a different name of your choice. If `myDir` doesn't exist, it will be created. If `myDir` does exist, it needs to be empty. If it does exist and is not empty, the command fails. For the cloned repo, `CMSRA1/AN-15-004` is a remote and called `ra1`.
 
 **Note:** Please don't push to `ra1`. Instead make a pull request from a forked repo on your account as explained below.
 
 
 #### Set environmental variables for TDR
 
-You need to execute this command in `myDir` to set environmental variables every time you start a new shell.
+You need to move down to `myDir` and execute this command there to set environmental variables every time you start a new shell.
 
+    cd myDir
     eval `notes/tdr runtime -sh` # for bash. use -csh for tcsh.
 
-You need to be in `myDir` when you execute the above command.
+You need to be in `myDir` when you execute the `eval` command.
 
 #### Compile latex files
 
-Then, go down to the directory with latex source files.
+Then, go further down to the directory with latex source files.
 
     cd notes/AN-15-004/trunk
-
-This directory is where you cloned this repo.
 
 Compile with the `tdr` command:
 
@@ -63,11 +55,9 @@ This and following sections explain how to contribute to the draft.
 
 If you haven't done so, please fork this repo to your github account. If you are reading this online at github, you can do so by clicking `Fork`  around the top right corner of this page.
 
-The forked repo will be private on your account.
+The forked repo will be private on your account. However, a forked private repo is not counted as a private repo for the billing purpose.  (I am still not perfectly sure who will be able too see the forked private repo. Members of the team who has a certain access to the original private repo seem to be able to see the forked private repo. Otherwise, they won't be able to merge pull requests from there.)
 
 #### Add remote
-
-The following instructions assume that you are in the directory `myDir/notes/AN-15-004/trunk`
 
 Originally, you cloned this repo from `CMSRA1/AN-15-004`, which is the only remote at the moment and named `ra1`. You need to add your forked repo as another remote.
 
@@ -131,5 +121,4 @@ Instructions to check out and build:
     cd notes/AN-13-366/trunk/
     eval `../../tdr runtime -sh` 
     tdr --style an b AN-13-366
-
 
