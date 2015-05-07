@@ -38,26 +38,34 @@ Jets originating from bottom quarks are identified through vertices that are dis
 
 \subsection{Muons}
 \label{sec:muon-id}
-Muons are identified according to the Medium working point definition ($\sim$ 95 $\%$ efficiency ) of the muon identifiction algorithim. A PF-based ``combined relative`` isolation is determined within a cone size of $\Delta R < 0.4 $, and ``$\rho$``corrections are applied to remove the effects of pileup. Isolated muons are required to have minimal energy from neutral and charged PF candidates. A cone of $\Delta R$ = 0.4 is formed around the candidate lepton trajectory, and the transverse momenta is summed over PF neutral and charged candidates, excluding that of the lepton itself. The relative combined isolation $I^{rel}_{comb}$ is then defined as the ratio of this scalar sum to the transverse momentum of the lepton candidate. 
-Figures \ref{fig:SMStack} and \ref{fig:DMStack} show the relative combined isolation $I^{rel}_{comb}$ for $\mu +$ jets and $\mu\mu +$ jets control sample. The distributions have been weighted according to the cross-section of the respective samples in each region, and an integrated luminosity of 1 fb$^{-1}$ at $\sqrt{s}$ = 13 TeV. Isolated muons promptly produced in the decays of W and Z bosons dominate the region $I^{rel}_{comb}$ $<$ 0.12.
-In the case of high jet multiplicity events, an increase in energy resulting in boosted events can result in complicated topologies for leptons and jets. For example high $p_{T}$ top quarks decaying leptonically, the main issue is the small angular separation between that of the lepton and the b-jet. Classical lepton isolation techniques will reject the boosted leptonic top quarks. A solution to this is to reduce the cone size around the lepton in function of $p_{T}$. This technique known as Mini Isolation is currently being investigated as a potential candidate for increasing the prompt lepton efficiency in boosted topologies.  
+Muons are identified according to the Medium working point definition ($\sim$ 98 $\%$ efficiency ) of the muon identifiction algorithim. A PF-based relative isolation is determined within a variable cone size, and ``$\Delta\beta$`` corrections are applied to remove the effects of pileup.  Isolated muons are required to have minimal energy from neutral and charged PF candidates. The transverse momenta of PF neutral and charged candidates within a cone around the lepton are summed. The relative combined isolation $I^{rel}_{comb}$ is then defined as the ratio of this scalar sum to the transverse momentum of the lepton candidate. 
+
+In the case of high jet multiplicity events, an increase in energy resulting in boosted events can result in complicated topologies for leptons and jets. For example high $p_{T}$ top quarks decaying leptonically, the main issue is the small angular separation between that of the lepton and the b-jet. Classical lepton isolation techniques will reject the boosted leptonic top quarks. A solution to this is to reduce the cone size around the lepton in function of $p_{T}$. This technique, known as Mini Isolation, is used to determine the cone 
+size, $R$, in which to calculate isolation. For leptons with $\Pt\leq50\gev$ $R=0.2$, between $50\gev$ 
+and $200\gev$ the cone size scales down to $R=0.05$ where it remains for all higher \Pt leptons. 
+Muons are defined as isolated when they have $I^{rel}_{comb} < 0.2$ within $R$.
+
+% Figures \ref{fig:SMStack} and \ref{fig:DMStack} show the relative combined isolation $I^{rel}_{comb}$ for $\mu +$ jets and $\mu\mu +$ jets control sample. The distributions have been weighted according to the cross-section of the respective samples in each region, and an integrated luminosity of 1 fb$^{-1}$ at $\sqrt{s}$ = 13 TeV. Isolated muons promptly produced in the decays of W and Z bosons dominate the region $I^{rel}_{comb}$ $<$ 0.12.
 
 Muons are used as a veto as part of the hadronic signal region definition, as described in Section \ref{sec:hadSelection}, and as part of the $\mu +$ jets and $\mu\mu +$ jets control sample selections as described in Section \ref{sec:controlSelection}.
 
-\begin{figure}[h]
-  \centering
-  \subfigure[Relative combined isolation variable for \texorpdfstring{\mj}{muon plus jets}
-  control sample]{
-    \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/SingleMuStack.pdf}
-    \label{fig:SMStack}
-  }~~
-  \subfigure[Relative combined isolation variable for \texorpdfstring{\mmj}{di-muon plus jets}
-    control sample]{
-    \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/DoubleMuStack.pdf}
-    \label{fig:DMStack}
-  }~~  
-\caption{$I_{comb}^{rel}$ for \texorpdfstring{\mj}{muon plus jets} & \texorpdfstring{\mmj}{di-muon plus jets} control samples}
-\end{figure}
+
+% now we're using mini isolation this is no longer relevant:
+
+% \begin{figure}[h]
+%   \centering
+%   \subfigure[Relative combined isolation variable for \texorpdfstring{\mj}{muon plus jets}
+%   control sample]{
+%     \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/SingleMuStack.pdf}
+%     \label{fig:SMStack}
+%   }~~
+%   \subfigure[Relative combined isolation variable for \texorpdfstring{\mmj}{di-muon plus jets}
+%     control sample]{
+%     \includegraphics[width=0.5\textwidth]{figures/PhysicsObjectsPlots/DoubleMuStack.pdf}
+%     \label{fig:DMStack}
+%   }~~  
+% \caption{$I_{comb}^{rel}$ for \texorpdfstring{\mj}{muon plus jets} & \texorpdfstring{\mmj}{di-muon plus jets} control samples}
+% \end{figure}
 
 
 \subsection{Photons}
@@ -88,7 +96,7 @@ This object is used as a veto as part of the hadronic signal region definiton, a
 
 \subsection{Electrons}
 \label{sec:electron-id}
-Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) of the cut-based identification \cite{electron-id}. PF-based isolation \cite{pf-photon} is determined within a cone size of $\Delta R$ $<$ 0.3 and $\Delta \beta$ corrections are applied to remove the effects of pileup. Table \ref{tab:ele-d} summarises the identification and isolation requirements derived using the PHYS14 samples. 	
+Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) of the cut-based identification \cite{electron-id}. PF-based isolation \cite{pf-photon} is determined within a cone size determined by the mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\Delta \beta$ corrections are applied to remove the effects of pileup. Table \ref{tab:ele-d} summarises the identification and isolation requirements derived using the PHYS14 samples. 	
 
 \begin{table}[h!]
   \caption{Electron identification (Loose working point).\label{tab:ele-id}}
@@ -106,7 +114,7 @@ Electrons are identified according to the Loose working point definition ( $\sim
     d0 (vtx)                                                 & 0.022664  & 0.097358  \\
     dZ (vtx)                                                 & 0.173670  & 0.198444  \\
     $\lvert(1/E_{\textrm{ECAL}} - 1/p_{\textrm{trk}})\rvert$ & 0.221803  & 0.142283  \\
-    PF relative isolation                                    & 0.120026  & 0.162914  \\
+    PF relative isolation                                    & 0.1       & 0.1       \\
     Missing hits                                             & 1         & 1         \\
     \hline
     \hline
