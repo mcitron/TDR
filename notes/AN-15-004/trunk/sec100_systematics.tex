@@ -41,7 +41,7 @@
 % Run~1. 
 %\clearpage
 
-\section{Closure tests and systematic uncertainties on transfer factors\label{sec:bkgd-syst}}
+\subsection{Closure tests and systematic uncertainties on transfer factors\label{sec:bkgd-syst}}
 
 The normalisation of the \mht dimension in the signal region is determined from 
 a transfer factor from control regions as described in \ref{sec:background}. 
@@ -89,17 +89,23 @@ Eight sets of closure tests use the five data control samples to
 probe key ingredients of the simulation modelling of the SM
 backgrounds with genuine \met as a function of \scalht, as shown in
 Fig.~\ref{fig:closure}. This is done for each jet multiplicity bin
-separately: 
-
+separately. Results are shown for 4 and $\geq$ 5 jets for both 3/fb and 10/fb: 
+%create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots10fb.pdf
+%create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots1fb.pdf
+%create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots3fb.pdf
+%create mode 100644 notes/AN-15-004/trunk/figures/closureTests/systOut2d10fb.pdf
+%create mode 100644 notes/AN-15-004/trunk/figures/closureTests/systOut2d1fb.pdf
+%create mode 100644 notes/AN-15-004/trunk/figures/closureTests/systOut2d3fb.pdf
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[$2 \leq \njet \leq 3$]{\includegraphics[width=0.7\textwidth]{figures/syst/v0/le3j/summary_plot}} \\
-    \subfigure[$\njet \geq 4$]{\includegraphics[width=0.7\textwidth]{figures/syst/v0/ge4j/summary_plot}} \\
-    \caption{PLACEHOLDER Sets of closure tests (open symbols) overlaid on top of
-      the systematic uncertainty used for each of the five \scalht
-      regions (shaded bands) and for the two different jet
-      multiplicity bins: (a) $2 \leq \njet \leq 3$ and (b) $\njet \geq
-      4$.  }
+    \subfigure[$\njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq4j_htClosure_3fb.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/ge5j_htClosure_3fb.pdf}} \\
+    \subfigure[$\njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq4j_htClosure_10fb.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/ge5j_htClosure_10fb.pdf}} \\
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty used for each of the seven \scalht
+      bins (shaded bands) and for two different jet
+      multiplicity bins: (a) $\njet = 4$ and (b) $\njet \geq5$.}
     \label{fig:closure}
   \end{center} 
 \end{figure}
@@ -107,8 +113,8 @@ separately:
 The first three sets of closure tests are carried out between the $\mu$ 
 + jets sample and the e + jets sample. These probe the lepton 
 identification for three background scenarios. These are 0 (red circles), 
-1 (times symbols) and $\ge2$ (squares) b-jets and probe lepton identification 
-for W, W + \ttbar and \ttbar respectively.
+1 (times symbols) and $\geq$2 (squares) b-jets and probe lepton identification 
+for W, W and \ttbar, and \ttbar respectively.
 % The first three sets of closure tests are carried out within the $\mu$
 % + jets sample. The first set (indicated by circles) probes the
 % modelling of the \alphat distribution in genuine \met events as a
@@ -187,17 +193,21 @@ uncertainties that are assigned to the transfer factors, as it is only
 the statistical uncertainties associated with the tests that limit our
 knowledge of whether closure is actually achieved or otherwise.
 
-Expected systematics are determined for seven regions in \scalht,
-for each jet category as indicated in Figure~\ref{fig:doesntexist}. 
-A missing entry implies that the statistics were insufficient to complete
-the necessary set of closure tests and the \scalht bin is not used 
-for this jet category. In data for each \scalht region, the systematic uncertainty 
+Systematics are determined for seven regions in \scalht,
+for each jet category. In data for each \scalht region, the systematic uncertainty 
 is estimated by taking the quadrature sum of the weighted mean and sample variance for 
-the closure tests within the given \scalht region. To find expected systematics the weighted 
-mean of the closure tests errors is used as an estimator of the expected variance.
-This procedure yields the values quoted in Figure~\ref{fig:doesntexist}. In addition to 
-the fits described in \ref{sec:systematics} comparing the size of the systematic found
-in data with that expected will provide an indication of bias.
+the closure tests within the given \scalht region. To find expected systematics \nobs and \npre are 
+taken from the same Monte Carlo (guaranteeing closure) but the statistical errors are 
+from the weighted and unweighted counts respectively. The expected systematic uncertainty is then 
+taken as the weighted mean of the error on the closure tests. This is an estimator of the expected variance
+assuming no bias that should be found in data. 
+This procedure yields the values quoted in Figure~\ref{fig:systematics} for the statistics
+dominated scenario ($3/fb$) and the systematics dominated scenario ($10/fb$). 
+A missing entry implies that the statistics were insufficient to complete the 
+necessary set of closure tests and the \scalht bin is not used for this jet category. 
+In addition to the fits described in \ref{sec:syst-from-closure} comparing the 
+size of the systematic found in data with that expected will provide 
+an indication of any true bias.
 
 The effect of uncertainties related to the modelling of b-quark jets
 in simulation on the transfer factors is found to be negligible, at
@@ -205,92 +215,27 @@ the percent level as discussed in Section~\ref{sec:btag-syst}, in
 comparison to the aforementioned \njet- and \scalht-dependent
 systematic uncertainties.
 
-\begin{table}[!h]
-  \caption{A summary of the magnitude of the systematic uncertainties (\%)
-    assigned to the transfer factors, according to \njet and \scalht
-    region.}
-  \label{tab:syst-values}
+\begin{figure}[]
   \centering
-  \footnotesize
-  \begin{tabular}{ cccccccc }
-    \hline
-    \hline
-            & \multicolumn{7}{c}{\scalht region (GeV)}                                \\
-    \cline{2-8}
-    \njet   & 200--275 & 275--325 & 325--375 & 375--575 & 575--775 & 775-975 & $>975$ \\
-    \hline                                                                                                                                  
-    2--3    & 4        & 6        & 6        & 8        & 12       & 17      & 19     \\
-    $\geq$4 & 6        & 6        & 11       & 11       & 18       & 20      & 26     \\
-    \hline                                                                                                                                  
-    \hline
-  \end{tabular}
-\end{table}
+  \subfigure[Systematic uncertainties for the 3/fb luminosity scenario
+  (luminosity 3/fb)]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/systOut2d3fb.pdf}
+  } ~~
+  \subfigure[Systematic uncertainties for the 10/fb luminosity scenario
+  (luminosity 10/fb)]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/systOut2d10fb.pdf}
+  }
+  \caption{\label{fig:systematics} Expected systematics derived from the closure tests shown for
+the 3/fb and 10/fb scenarios}
+\end{figure}
 
 Figure~\ref{fig:closure} shows the sets of closure tests overlaid on
-top of grey bands that represent the \scalht-dependent systematic
-uncertainties in Table~\ref{tab:syst-values}. These systematic
+top of grey bands that represent a subset of the \scalht-dependent systematic
+uncertainties in Figure~\ref{fig:systematics}. These systematic
 uncertainties are assumed to fully uncorrelated between the different
 b jet multiplicity categories and also the seven \scalht regions,
 which is a conservative approach given that one can expect some
 correlation between adjacent \scalht bins (due to comparable
-kinematics).  This approach of decorrelating the \scalht regions
-should be contrasted against the fits shown in
-Figure~\ref{fig:closure-fits} that do assume a correlated behaviour in
-\scalht.
-% while some fits outside bands, could argue to use correlation. plus
-% fit uncertainties not shown. 
-
-%\subsection{Conservative closure tests and systematic uncertainties\label{sec:conservative}} 
-%
-%As mentioned briefly above, several sets of closure tests are
-%considered to be very conservative, due to the significant differences
-%in background composition and event kinematics between the two
-%sub-samples used in the closure test relative to the (much smaller)
-%differences between each control sample and the corresponding
-%background(s) in the signal region. The accurate mirroring of the
-%signal region and control samples is due to kinematically-similar
-%event selections and the fact that the predictions are always made
-%using the same (\njet, \nb, \scalht) bin. Conversely, suitable
-%examples of conservative closure tests are: the two tests that change
-%the \nb requirement (within the \mj sample), the test that uses the
-%\mj and \mmj samples, and the three tests that change the \njet
-%requirement (for each control sample).
-%
-%Consequently, the systematics derived from these conservative closure
-%tests are also considered to be conservative. One important test of
-%this statement is the sensitivity of the transfer factors to the
-%admixture of W + jets and \ttbar in the signal region and \mj control
-%sample. This is demonstrated by Fig.~\ref{fig:vary-xs-le3j} in
-%Appendix~\ref{app:vary-xs}, which shows the effect of varying the
-%cross sections of the W + jets and \ttbar by by $+$20\% and $-$20\%,
-%respectively, on the closure tests performed in the \njet multiplicity
-%bin \njetlow. Similarly, Fig.~\ref{fig:vary-xs-ge4j} shows the effect
-%in the \njet multiplicity bin \njethigh. This variation in cross
-%sections (in opposite directions) is considered to be extreme and is
-%motivated (loosely) by the uncertainty on the experimental
-%measurements of the W + jets and \ttbar inclusive cross sections.
-%
-%Given these variations in cross sections, the level of closure for
-%several tests is subsequently degraded significantly and introduces
-%apparently significant biases. However, the effect on the transfer
-%factors used in the analysis (to ``translate'' an observation in a
-%control sample to a prediction in the signal region) is negligible due
-%to the ``mirroring'' of the signal region and control
-%samples. Table~\ref{tab:vary-xs} demonstrates this by showing the
-%effect on the transfer factors used to predict the W + jets and
-%\ttbar backgrounds when varying the cross sections of W + jets and
-%\ttbar by $+$20\% and $-$20\%, respectively. (In this case, no
-%requirement is made on \njet, but the same behaviour is observed for
-%the exclusive \njet bins.) While the artificial biases introduced to
-%the closure tests are as large as $\sim$30\%, most apparent in the
-%lowest \scalht bins, the effect of the transfer factors used in the
-%analysis is typically at the percent level and only as large as
-%$5\%$. 
-%
-%Hence, given the robust behaviour of the transfer factors with
-%respect to large (and opposite) variations in the W + jets and \ttbar
-%cross sections, one can assume with confidence that any bias in the
-%transfer factors is adequately (and conservatively) covered by the
-%systematic uncertainties -- of at least 10\% -- used in the analysis.
-
-%%____________________________________________________________________________||
+kinematics). This approach of decorrelating the \scalht regions
+should be contrasted against the fits that do assume a correlated 
+behaviour in \scalht.
