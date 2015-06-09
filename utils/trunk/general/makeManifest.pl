@@ -13,7 +13,7 @@ use XML::Twig;
 use Text::Balanced qw (extract_bracketed);
 #use PDF::API2; #not installed on lxplus
 
-my $VERSION = sprintf "%d.%03d", q$Revision: 280421 $ =~ /(\d+)/g;
+my $VERSION = sprintf "%d.%03d", q$Revision: 284866 $ =~ /(\d+)/g;
 my $verbose;
 my $texFile = 'D:/tdr2/papers/XXX-08-000/trunk/XXX-08-000.tex';
 my $doc = 'XXX-08-000_temp.pdf';
@@ -137,10 +137,10 @@ EOD
    $_ .= do { local( $/ ); <FILE> }; #grab entire content!
    close(FILE);
    # extract svn info: exemplars-- (note that these are the real values for this file)
-   # \RCS$Revision: 280421 $
-   # \RCS$Date: 2015-03-12 16:28:09 +0100 (Thu, 12 Mar 2015) $
+   # \RCS$Revision: 284866 $
+   # \RCS$Date: 2015-04-16 17:00:13 +0200 (Thu, 16 Apr 2015) $
    # \RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/utils/trunk/general/makeManifest.pl $
-   # \RCS$Id: makeManifest.pl 280421 2015-03-12 15:28:09Z alverson $
+   # \RCS$Id: makeManifest.pl 284866 2015-04-16 15:00:13Z alverson $
    # -- what it looked like under cvs, with the dollar signs removed
    #\RCS Revision: 1.4 
    #\RCS Date: 2008/07/31 09:20:05 
@@ -466,7 +466,7 @@ EOD
 #---------- now get the path to the file
             while (!$figPath && ($_ = <LOGFILE>))
             {
-              if (/^<use (.*)/)
+              if (/^\s*<use (.*)/)
               {
                 $line = $1;
                 if (not $line =~ /(.*)>/)
@@ -556,6 +556,11 @@ EOD
               system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?"; 
               $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
               $doc_tag->paste('last_child',$fft_tag);
+          }
+          if (0)
+          {
+            @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1.png"); 
+            system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
           }
           $fft_tag->paste('last_child',$record);                    
       }
