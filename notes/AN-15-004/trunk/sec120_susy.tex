@@ -1,9 +1,84 @@
 %%____________________________________________________________________________||
 \section{Intepretation in Simplified SUSY models}
 \label{sec:susy}
+\textbf{FIXME: Preliminary cut&paste}\\
 
 \subsection{Signal models and efficiencies}
 \label{subsec:susy_models}
+To interpret the results of this search, simplified
+models~\cite{Alwall:2008ag,Alwall:2008va,sms} are used. These
+effective models use only a limited set of sparticles (production and
+decay) and enable comprehensive studies of individual SUSY event
+topologies. The simplified model studies can be performed in terms of
+fundamental properties such as decay modes, production cross sections,
+and sparticle masses. As gluinos provide an early discovery potential, the model
+T1bbbb is used here to demonstrate sensitivity.
+
+Signal efficiency times acceptance is determined per model per event
+category (\njet,\nb) per \scalht bin. Systematic
+uncertainties on the signal efficiencies are determined per model
+following the 2012 analysis (see Section~\ref{sec:sig-syst}). Due to CPU
+limitations, only a subset of event categories (but all \scalht bins
+within a category) are considered for interpretation with each
+simplified model. 
+
+%The efficiency time acceptance for an inclusive
+
+%selection on \scalht and for the relevant categories are shown.
+The simplified models considered for the Phys14 exercise are summarised in
+Table~\ref{tab:simplified-models}. The event categories considered for
+each model interpretation are listed. The choice of which categories
+is made by comparing the expected upper limit on the signal cross section 
+per model mass point achieved for each individual event category. 
+The categories are then ranked according to their expected (exclusion) reach 
+and the most sensitive categories are used. 
+
+%The second method is based on a signal
+%injection test that highlights the expected signal significance per
+%signal region bin. The event categories that demonstrate the largest
+%significances across all \scalht bins are chosen. The former method is
+%presently used.
+
+\begin{table}[h!]
+  \caption{A summary of the simplified models considered for
+    interpretation. The event categories considered for each model are
+    listed.}  
+  \label{tab:simplified-models}
+  \setlength{\extrarowheight}{2.5pt}
+  \centering
+  \begin{tabular}{ llccc }
+    \hline
+    \hline
+    Model                  & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV]  & (\njet,\nb) event categories considered        \\ 
+    \hline
+    \texttt{T1bbbb}           & \Tonebbbb & (1500,100)               & (4,2), (4,$\geq 3$), ($\geq 5$,2), ($\geq 5$,$\geq 3$) \\ % (2--3,1), 
+    % \texttt{T2bw (x=0.25)}  & \Ttwobw               & FIXME: ANA-CATS \\
+    % \texttt{T2bw (x=0.75)}  & \Ttwobw               & FIXME: ANA-CATS \\
+    % \texttt{T2tt}           & \Ttwott               & FIXME: ANA-CATS \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Systematic uncertainties on signal efficiency times}
+\label{sec:sig-syst}
+
+For the Phys14 exercise the systematic uncertainty for the signal region 
+is assumed to be unchanged from that in the previous analysis. 
+Thus a systematic uncertainty of $10\%$ is applied. The systematic 
+uncertainty in the signal acceptance times efficiency is determined per mass 
+point per event category (\njet,\nb) per
+\scalht bin (inclusive on $\scalht > 200$). The effect of
+uncertainties on the luminosity measurement, the parton distribution
+functions, the jet energy scale, initial state radiation, and the
+efficiencies of various cuts (including the \mht/\met filter, the
+``dead ECAL'' filter, etc)
+%and the lepton/photon vetoes)
+used in the candidate signal event selection are considered. Each
+contribution is considered to be independent and all contributions are
+summed in quadrature to obtain a total systematic uncertainty per mass
+point per category per \scalht bin. A 10\% uncertainty on the signal
+acceptance is assumed. 
 
 
 \subsection{Expected exclusion limits and discovery significance}
