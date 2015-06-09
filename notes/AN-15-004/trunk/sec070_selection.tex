@@ -5,7 +5,7 @@
 \subsection{Event vetoes for leptons, photons, and single isolated tracks\label{sec:vetoes}}
 
 To suppress SM processes with genuine \met from neutrinos, events
-containing an isolated electron with $\pt > 20\GeV$ and $|\eta| < 2.5$ or an isolated muon
+containing an isolated electron with $\pt > 10\GeV$ and $|\eta| < 2.5$ or an isolated muon
 with $\pt > 10\GeV$ and $|\eta| < 2.5$ are vetoed. To select a pure
 multijet topology, events are vetoed in which an isolated
 photon with $\pt > 25\GeV$ and $|\eta| < 2.5$ is
@@ -30,17 +30,17 @@ in Run~2, this threshold is kept at the level of the Run~1 analyses~\cite{Chatrc
 to maintain acceptance for SUSY models with compressed spectra.
 
 Jets considered in the analysis are required to have transverse momenta of $\PT>40\gev$ and be
-within the acceptance of the central tracker ($|\eta|<3.0$). This threshold is chosen
+within the acceptance $|\eta|<3.0$. This threshold is chosen
 to be flat across \HT values, unlike the SUS-14-006 analysis~\cite{CMS_AN_2013-366}. The \PT value is
 chosen to be as low as possible to reduce the number of jets falling below
 threshold and introducing artificial \mht, while remaining in the realm of
 reliable jet energy corrections. In the nominal analysis the two highest energy jets
-are required to satisfy $\PT>100\gev$ and the leading jet must be within $|\eta|<2.5$. 
+are required to satisfy $\PT>100\gev$.% --this isn't required currently, it may be in the future--- and the leading jet must be within $|\eta|<2.5$. 
 The jets that are selected are used for the calculation of the variables \HT and \mht.
 
 Events in which jets with $\PT>40\gev$ are reconstructed within $|\eta|>3.0$ are
 rejected. This reduces the number of events with non genuine \mht caused by jets
-just out of acceptance.
+out of acceptance.
 
 \subsubsection{The hadronic signal region\label{sec:had-signal}}
 
@@ -61,10 +61,10 @@ corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
   \begin{tabular}{ lcccccc }
     \hline
     \hline
-    \scalht bin  & 200--250   & 250--300   & 300--350  & 350--400  & 400--900  & $>$900       \\
+    \scalht      & 200--250   & 250--300   & 300--350  & 350--400  & 400--800 \\ %& $>$900       \\
     \hline                                                                     
-    \alphat      & 0.65       & 0.60       & 0.55      & 0.53      & 0.52      & 0.505         \\
-    "Min \mht"   & $\sim$128  & $\sim$138  & $\sim$125 & $\sim$133 & $\sim$137 & $\sim$126 \\
+    \alphat      & 0.65       & 0.60       & 0.55      & 0.53      & 0.52     \\  %& 0.505         \\
+    "Min \mht"   & $\sim$128  & $\sim$138  & $\sim$125 & $\sim$133 & $\sim$137 \\  %& $\sim$126 \\
     \hline
     \hline
   \end{tabular}
@@ -72,8 +72,10 @@ corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
 
 In the Run~1 analyses a general minimum cut of $\alphat>0.55$ was used. This was chosen
 as a conservative cut to remove QCD and also part of the \alphat requirement in the HLT paths used to seed the analysis bins. For
-Run~2 it is proposed to seed the the bins with $\HT>900\gev$ by a flat
-$PF\HT>900\gev$ HLT path with no \alphat requirement, see Sec.~\ref{triggers}.
+Run~2 it is proposed to seed the the bins with $\HT>800\gev$ by a flat
+$PF\HT>800\gev$ HLT path with no \alphat requirement, see Sec.~\ref{triggers}. Instead of an offline \alphat cut for events with 
+$\HT>900$, a flat $\MHT>130\gev$ is required. As QCD contamination at high \HT bins is not so much of a problem, there are gains
+from not losing the efficiency normally associated with an \alphat cut.
 
 Subsequently, additional cleaning cuts are applied. To protect against 
 multiple jets failing the $\Et$ threshold, the
@@ -138,7 +140,7 @@ Sec~\ref{sec:triggers}. An overview of the preliminary binning is given in Tab.~
   \end{tabular}
 \end{table}
 
-Also a new orthogonal signal region has been added. In order to increase acceptance and sensitivity for ISR and mono-jet type events is lowered to 40~GeV with an upper bound of 100~GeV, see Sec~\ref{sec:}. \textbf{FIXME: to be checked where this description goes}
+Also a new orthogonal signal region has been added. In order to increase acceptance and sensitivity for ISR and mono-jet type events is lowered to 40~GeV with an upper bound of 100~GeV, see Sec~\ref{sec:} \textbf{FIXME: to be checked where this description goes}. Bins for this new signal region are given in Tab.~\ref{tab:alphat-asym-binning}.
 
 
 \begin{table}[h!]
@@ -218,7 +220,7 @@ Sec.~\ref{sec:larger}. In order to select an event sample containing Z
 bosons, exactly two tight isolated muons within an acceptance of $\Pt
 > 30\gev$ and $|\eta| < 2.1$ are required (due to the trigger). The
 invariant mass of the two muons must satisfy $m_{Z} - 25 <
-M_{\mu_1\mu_2} < m_{Z} + 25$. Events are vetoed if $\Delta
+M_{\mu_1\mu_2} < m_{Z} + 25$ and they must have opposite charge. Events are vetoed if $\Delta
 R(\mu_{i},\textrm{jet}_j) < 0.5$ is satisfied, running over all muons
 $i$ and all jets $j$. The single isolated track veto, described in
 Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also
@@ -252,9 +254,27 @@ used.
 % $\alphat > 0.55$.
 
 %%____________________________________________________________________________||
+\subsection{The \ej and \eej electron control samples}
+
+Electron control samples are introduced analagous
+to the \mj and \mmj samples, with electrons in place of muons. As electrons 
+in leptonic decay processes behave kinematically similarly
+to muons, it should be possible to effectively increase the statistics available
+from the control samples. 
+
+In both these samples electrons are required to satisfy the Tight working point
+and pass requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The tightening of the
+Loose working point defined in Sec.~\ref{sec:electron-id} was found to 
+greatly reduce QCD contamination without a large reduction in statistics 
+within these electron control samples.
+
+All other requirements imposed on the muons in the \mj and \mmj samples are 
+required on the electrons in the \ej and \eej samples respectively.
+
+%%____________________________________________________________________________||
 \subsection{Increasing the acceptance of the control samples\label{sec:larger}}
 
-As described in Sec.~\ref{sec:controlSelection} above, the
+As described in Sec.~\ref{sec:controlSelection}, the
 selection criteria of the three control samples are defined such that
 the background composition and event kinematics of the three control
 samples mirror as closely as possible those for the signal
@@ -272,20 +292,14 @@ muon control samples can be significantly increased, which simultaneously
 improves their predictive power and further reduces the effect of any potential
 signal contamination. 
 
-In the Run~1 analyses the \gj control sample had a tight requirement on the
-photon. After recent developments presented in EGM-14-001~\cite{CMS-EGM-14-001}
-, it
-should be possible to reduce the photon requirement from tight to medium, while
-still having a significant background rejection. This will be investigated and
-should help to increase the number of events available, giving a better control
-of the analysis background prediction detailed in Sec.~\ref{sec:background}.
+% --- this next bit was found to not really be true due to the high pT requirements anyway
 
-To further help with the number of events available in control samples, it is
-proposed to introduce electron~+~jets control samples. These would work
-analagously to the \mj and \mmj samples, with electrons in place of muons. With
-a tight enough requirement on the electron ID it should be possible to have a
-similar control over backgrounds in these samples to those in the muon control
-samples. As electrons in leptonic decay processes behave kinematically similarly
-to muons, it should be possible to effectively increase the statistics available
-from the control samples. 
+% In the Run~1 analyses the \gj control sample had a tight requirement on the
+% photon. After recent developments presented in EGM-14-001~\cite{CMS-EGM-14-001}
+% , it
+% should be possible to reduce the photon requirement from tight to medium, while
+% still having a significant background rejection. This will be investigated and
+% should help to increase the number of events available, giving a better control
+% of the analysis background prediction detailed in Sec.~\ref{sec:background}.
+
 %%____________________________________________________________________________||
