@@ -241,4 +241,61 @@ correlation between adjacent \scalht bins (due to comparable
 kinematics). This approach of decorrelating the \scalht regions
 should be contrasted against the fits that do assume a correlated 
 behaviour in \scalht.
->>>>>>> e2e87317dbfa09c4bc832cd797ecfb280d203174
+
+
+\subsection{Systematic uncertainties on \mht shape \label{sec:syst-on-shape}}
+
+The normalisation of the \mht shape in each \scalht bin is set by the control
+samples with the data determined systematic error described in \ref{sec:bkgd-syst}.
+This section describes the method used to determine the systematics on the shape
+from all significant sources of uncertainy. In general for each source of systematic
+the shape templates are found for variations of the relevant systematic up and down by 
+one sigma. If they are found to be significant the templates are included as a systematic in the likelihood. 
+Each source of systematic that will be considered is described in the sub-sections below. 
+Resuls are shown in Figure~\ref{fig:jec-shape} for considering the variation of jet energy scale with 2012 uncertainties.
+
+\subsubsection{Jet energy scale\label{sec:sms-syst-jes}}
+The relative change in the \mht shape is
+determined when varying the energy of all jets in an event up or down
+according to a \pt- and $\eta$-dependent jet energy scale uncertainty
+(\ie vary the event scale up and down), as recommended by the JetMET
+POG. A representative example of the shape variations from the jet energy scale 
+is shown in Figure~\ref{fig:jec-shape}.
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/closureTests/mhtJetSyst_SMS_T1bbbb_2J_mGl1000_mLSP900_JEC_ge3b_ge5j_800_1600.png}
+  \caption{\label{fig:jec-shape} Templates for the JEC shape systematic for $\geq$ 3 b-jets $\geq$ 5 jets and \scalht > 800 for the 10/fb luminosity scenario}
+\end{figure}
+
+\subsubsection{PDF uncertainties\label{sec:pdf-sets}}
+
+\newcommand{\lcr}{Left: $\frac{\epsilon_{CTEQ6L1}}{\epsilon_{CT10}}$,
+  center: $\frac{\epsilon_{CTEQ6L1}}{\epsilon_{MSTW08}}$, right:
+  $\frac{\epsilon_{CTEQ6L1}}{\epsilon_{NNPDF2.1}}$}
+
+The samples are produced with the \verb!CTEQ6L1! PDF set by
+default. The shape is compared with that obtained with
+three alternative PDF sets: \verb!CT10!, \verb!NNPDF2.1!, and
+\verb!MSTW2008!. The envelope and its uncertainties are determined
+following the PDF4LHC recommendation~\cite{pdf4lhc}.
+
+
+\subsubsection{Initial state radiation\label{sec:sms-syst-isr}}
+Will have to cook up a recipe for this\ldots
+
+
+\subsubsection{\texorpdfstring{\mht/\met}{MHT/MET} cleaning cut\label{sec:sms-syst-mht-met}}
+The efficiencies for the requirement $\mht/\met < 1.25$ must be measured in 
+data and simulation as a function of \mht for each \scalht bin.
+The ratio of these two efficiencies should be unity. Deviation from unity is taken
+to represent the uncertainties on the simulation modelling of this
+variable for processes with significant, genuine \met. This can be used
+to define templates for the uncertainty on this quantity.
+
+\subsubsection{Dead ECAL filter\label{sec:sms-syst-dead-ecal}}
+
+The ratio of efficiencies observed in data and simulation for the dead
+ECAL filter may be used as in Section~\ref{sec:sms-syst-mht-met} to templates
+for the uncertainty from the Dead ECAL filter. 
+>>>>>>> c22b6fc... added closure figure
