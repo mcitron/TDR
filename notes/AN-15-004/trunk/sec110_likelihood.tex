@@ -1,0 +1,67 @@
+%%____________________________________________________________________________||
+\section{Likelihood model}
+\label{sec:likelihood}
+
+Consider a given category of event as defined by \njet, \nb and \HT, which will be in the following identified with \htcat. 
+In each category, the signal is extracted using the \mht shape as a discriminating variable. 
+Histogram templates of the \mht distribution are built for the signal and the background processes 
+using the MC samples described in section \ref{sec:datasets}. 
+The binning of the templates is chosen taking into account both the limited statistics of the MC samples and 
+the control of the background. To fulfill both these objectives, each bin should have, at the same time:
+\begin{itemize}
+\item at least 10 unweighted MC counts
+\item at least 10 events in the corresponding bin of each of the control samples relevant for the background prediction (inclusively on the b-tag requirement)
+\end{itemize}
+
+The first requirement ensures that the MC statistical uncertainty is negligible with respect to the other sources of systematic uncertainties. \textbf{FIXME: this sounds too aggressive!} \\
+The second requirement allows the perform a statistically meaningful closure test in data up to the highest \mht values. \\
+Furthermore, a minimum bin width constraint of 50 GeV is applied, in order to have negligible bin-by-bin migration. \\ 
+
+For each \mht bin $i$, let $n^{i}$ be the number of observed events, $b^{i}$ the number of predicted 
+background events and $s^{i}$ the expected number of signal events. \\
+The likelihood function for the hadronic signal region is:
+
+\begin{equation}
+\mathcal{L}_{\mathrm{hadronic}}=\prod_i \mathrm{Pois}(n^i |\, b^i + s^i)
+\label{eq:hadronicLikelihood}
+\end{equation}
+
+The control regions are not diced in the \mht dimension, and their information is only used to constrain the normalisation of the background processes 
+in the signal region, as described in section \ref{sec:background}. 
+Their likelihood is therefore written as:
+
+\begin{equation}
+\mathcal{L}_{\mathrm{control}}=\mathrm{Pois}(n |\, b + s)
+\label{eq:controlLikelihood}
+\end{equation}
+
+Equation \ref{eq:controlLikelihood} applies to any of the control region, 
+as they are defined in \ref{sec:selection}, namely: $e$ + jets, $ee$ + jets, $\mu$ + jets, $\mu\mu$ + jets and $\gamma$ + jets. \\
+Notice that the signal contribution $s$ in equation \ref{eq:controlLikelihood}, as estimated from MC, is in general negligible. 
+Where the signal contamination is sizeable, it is included in the likelihood as an additional process contributing the event yield in that particular bin. \\
+
+The prediction of the background yields in the signal region and in the corresponding control samples are connected 
+by means of transfer factors, as explained in \ref{sec:background}. 
+This connection is implemented by introducing a log-uniform nuisance parameter, which is correlated 
+between the signal region and the control region, separately for each background process ($Z_{\mathrm{inv.}}$, $ttW$ \footnote{In the following we will use $Z_{\mathrm{inv}}$ to indicate the $Z\to \mathrm{inv}$ process and $ttW$ to indicate the sum of the yields of the $t\bar{t}$ and $W+\mathrm{jets}$ processes.}). \\
+This way the background yields in the signal and control region are bound to float together, 
+taking into account this way the statistical uncertainty associated with the counts in the control samples, which is then propagated to the 
+prediction of the background in the signal region. \\
+
+The systematic uncertainties affecting the transfer factors, described in \ref{subsec:tfunc}, are incorporated in the likelihood by means of log-normal nuisance parameters, which are taken as uncorrelated between each of the \htcat bin. \\
+The unsertainty on the signal efficiency times acceptance, described in section \ref{subsec:susy_results}, is taken as correlated between all the \htcat bins. \\
+The shape uncertainties for the \mht templates are implemented providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. \\
+
+The total likelihood can be written as:
+\begin{equation}
+\label{eq:total_likelihood}
+\mathcal{L} = \mathcal{L}_{\text{hadronic}} \times \mathcal{L}_{\text{syst.}} \times \sum _{\text{control}} \mathcal{L}_{\text{control}}
+\end{equation}
+The likelihood is profiled with respect all the nuisance parameters in order to derive exclusion limits, 
+as the ones shown in sections \ref{sec:susy} and \ref{sec:darkmatter}. 
+
+%Comment to let me make a commit called first draft
+
+
+
+%%____________________________________________________________________________||
