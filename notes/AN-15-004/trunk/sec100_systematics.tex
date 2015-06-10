@@ -1,24 +1,18 @@
 %%____________________________________________________________________________||
 \section{Systematic uncertainties}
 \label{sec:systematics}
+This section addresses the estimation of systematic uncertainties in the analysis.
+Since the detailed and complete study of the systematics can be meaningfully carried on only with the data, 
+for the MC-based PHYS14 exercise presented in this note we rather intend to describe the strategy to compute them 
+in data and present the assumptions made to get the projections of physics reach, which are detailed in sections \ref{sec:susy} and \ref{sec:darkmatter}. 
 
+The uncertainties are divided in ``normalisation'' and ``shape'' systematics. \\
+The first type affects the yields of the background in the signal region in each (\nb,\njet,\HT) 
+category and is estimated through closure tests as described in section \ref{sec:bkgdnorm-syst}. \\
+The bin-by-bin migration between \mht bins within the same \HT bin is taken into account implementing 
+shape uncertainties, providing alternative template \mht shapes together with the nominal one.
 
-
-% \subsubsection{Background systematics}
-%
-% Systematic uncertainties on the transfer factors are determined from
-% closure tests in data as a function of \njet and regions in
-% \scalht. These uncertainties are assumed to be fully correlated
-% between \scalht bins within a region, and fully uncorrelated between
-% \scalht regions and (\njet,\nb) categories, as done during Run~1. In
-% the absence of biases, the systematic uncertainties are statistically
-% limited by the control sample yields. 
-%
-% Estimates based on the values obtained for the Run~1 analyses while
-% extrapolating to the higher cross sections expeced in Run~2, and
-% accounting for the finer categorisation of events in the signal region
-% and control samples, are shown in Table~\ref{sec:bkgd-syst}.
-%
+% % Maybe we can re-use this table at some point
 % \begin{table}[h!]
 %   \caption{Systematic uncertainties on the transfer factors as a
 %     function of \scalht.}  
@@ -43,18 +37,17 @@
 % Run~1. 
 %\clearpage
 
-\subsection{Closure tests and systematic uncertainties on transfer factors\label{sec:bkgd-syst}}
-\label{subsec:tfunc}
+\subsection{Closure tests and systematic uncertainties on transfer factors\label{sec:bkgdnorm-syst}}
 
-The normalisation of the \mht dimension in the signal region is determined from 
-a transfer factor from control regions as described in \ref{sec:background}. 
-An appropriate systematic uncertainty is assigned to each factor to
-account for theoretical uncertainties~\cite{Bern:2011pa} and
+The background yields are determined fn each of the (\nb,\njet,\HT) event category 
+by defining transfer factors from control region to signal region, as described in \ref{sec:background}. 
+Several sources of systematic uncertainties affect each factor, like 
+theoretical uncertainties~\cite{Bern:2011pa}, 
 limitations in the simulation modelling of event kinematics and
 instrumental effects. This section describes how the systematic
-uncertainties are determined from closure tests in data.
+uncertainties are assessed from closure tests in data.
 
-\subsection{Closure tests\label{sec:closure-tests-desc}}
+\subsubsection{Closure tests\label{sec:closure-tests-desc}}
 
 The sensitivity of the transfer factors to potential limitations in
 the simulation modelling is established through sets of closure tests,
@@ -70,7 +63,7 @@ the transfer factors.
 
 The level of statistical consistency between the predicted and
 observed yields of each closure test in the ensemble is inspected, in
-the absence of any assumed systematic uncertainty. The level of
+the absence of any bias in the transfer factors. The level of
 agreement between the predicted and observed yields is expressed as
 the ratio $(\nobs - \npre)/\npre$ while considering only the
 statistical uncertainties on \npre and \nobs. Therefore, the level of
@@ -88,11 +81,11 @@ systematic uncertainties on the transfer factors are derived for each
 estimating the systematic uncertainties on the transfer factors is
 described in Section~\ref{sec:syst-from-closure}.
 
-Eight sets of closure tests use the five data control samples to
+Thirteen sets of closure tests use the five data control samples to
 probe key ingredients of the simulation modelling of the SM
 backgrounds with genuine \met as a function of \scalht, as shown in
 Fig.~\ref{fig:closure}. This is done for each jet multiplicity bin
-separately. Results are shown for 4 and $\geq$ 5 jets for both 3/fb and 10/fb: 
+separately. Results are shown for 4 and $\geq$ 5 jets for both 3 \ifb and 10 \ifb: 
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots10fb.pdf
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots1fb.pdf
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots3fb.pdf
@@ -113,11 +106,13 @@ separately. Results are shown for 4 and $\geq$ 5 jets for both 3/fb and 10/fb:
   \end{center} 
 \end{figure}
 
+\textbf{FIXME: markers are not really visible in the plots}
 The first three sets of closure tests are carried out between the $\mu$ 
 + jets sample and the e + jets sample. These probe the lepton 
-identification for three background scenarios. These are 0 (red circles), 
-1 (times symbols) and $\geq$2 (squares) b-jets and probe lepton identification 
-for W, W and \ttbar, and \ttbar respectively.
+identification for three scenarios: 0 (red circles), 
+1 (times symbols) and $\geq$2 (squares) b-tags, corresponding to samples with a different admixture of the $W$ and \ttbar processes., 
+and, as a consequence, different kinematic. 
+%% In particular, the 0 b-tag sub-sample is enriched in $W$+jets events, while the $\geq$2 b-tags is very pure in \ttbar.
 % The first three sets of closure tests are carried out within the $\mu$
 % + jets sample. The first set (indicated by circles) probes the
 % modelling of the \alphat distribution in genuine \met events as a
@@ -142,13 +137,11 @@ sub-sample (selected by requiring one b-jet). These two tests also
 probe the modelling of the reconstruction of b-quark jets, although
 this is also addressed more fully by dedicated studies that determine
 systematic uncertainties via the method described in
-Sec.~\ref{sec:btag-syst}.
+Sec.~\ref{sec:btag-syst}. \textbf{FIXME: do we include the b-tag formula method?? If not this statement should be removed}
 
-The sixth (hollow stars) and seventh (inverse triangles) set deals 
+The sixth (hollow stars) and seventh (inverse triangles) set deal 
 with the consistency of the prediction of W + jets with $\gamma$ + jets.
-This is useful in general for understanding the predictions of vector 
-bosons (\ie \znunu + jets) from the \gj process. 
-
+This is useful in general for understanding the predictions of the \znunu + jets background from the \gj process. 
 
 The eigth (diamonds) and ninth (brown asterix), connecting the $\mu$ + jets 
 and $\mu\mu$ + jets control samples, again addresses the modelling of 
@@ -161,8 +154,8 @@ control samples. However, dedicated data-driven methods are used to
 measure the muon trigger and reconstruction efficiencies, with values
 taken from the muon POG.
 
-The tenth (solid stars) and eleventh (red crosses) deals with the consistency between the
-Z$\rightarrow\mu\mu$ + jets and $\gamma$ + jets samples, which is an
+The tenth (solid stars) and eleventh (red crosses) deal  with the consistency between the
+Z$\rightarrow ee$ + jets and $\gamma$ + jets samples, which is an
 important self-consistency cross-check between two independent methods
 used to predict the same irreducible background of \znunu + jets
 events. Hence, this is also an important check on the validity of
@@ -186,10 +179,10 @@ fits will be performed along the \scalht dimension for each closure test
 and jet category. The fits will be inspected for any indication of bias 
 averaged over \scalht as well as a bias dependant on \scalht. 
 
-\subsection{Systematic uncertainties from closure tests\label{sec:syst-from-closure}}
+\subsubsection{Systematic uncertainties from closure tests\label{sec:syst-from-closure}}
 
 Once it is established that no significantly large bias or trend is
-observed for any set of closure tests the systematic uncertainties
+observed for any set of closure tests, the systematic uncertainties
 are determined. The statistical precision of the closure tests is
 considered a suitable benchmark for determining the systematic
 uncertainties that are assigned to the transfer factors, as it is only
@@ -197,58 +190,64 @@ the statistical uncertainties associated with the tests that limit our
 knowledge of whether closure is actually achieved or otherwise.
 
 Systematics are determined for seven regions in \scalht,
-for each jet category. In data for each \scalht region, the systematic uncertainty 
+for each jet category. In data, for each \scalht region, the systematic uncertainty 
 is estimated by taking the quadrature sum of the weighted mean and sample variance for 
 the closure tests within the given \scalht region. To find expected systematics \nobs and \npre are 
 taken from the same Monte Carlo (guaranteeing closure) but the statistical errors are 
-from the weighted and unweighted counts respectively. The expected systematic uncertainty is then 
+from the unweighted and weighted counts respectively. The expected systematic uncertainty is then 
 taken as the weighted mean of the error on the closure tests. This is an estimator of the expected variance
 assuming no bias that should be found in data. 
 This procedure yields the values quoted in Figure~\ref{fig:systematics} for the statistics
-dominated scenario ($3/fb$) and the systematics dominated scenario ($10/fb$). 
+dominated scenario (3 \ifb) and the systematics dominated scenario (10 \ifb). 
 A missing entry implies that the statistics were insufficient to complete the 
 necessary set of closure tests and the \scalht bin is not used for this jet category. 
 In addition to the fits described in \ref{sec:syst-from-closure} comparing the 
 size of the systematic found in data with that expected will provide 
-an indication of any true bias.
+an indication of any genuine bias.
 
-The effect of uncertainties related to the modelling of b-quark jets
-in simulation on the transfer factors is found to be negligible, at
-the percent level as discussed in Section~\ref{sec:btag-syst}, in
-comparison to the aforementioned \njet- and \scalht-dependent
-systematic uncertainties.
+The uncertainty related to the modelling of b-quark jets
+in simulation on the transfer factors is studied separately and 
+found to be very small, at the percent level, as discussed in Section~\ref{sec:btag-syst}. 
+This source of uncertainty is however included in the closure tests described previously.
+%% , in
+%% comparison to the aforementioned \njet- and \scalht-dependent
+%% systematic uncertainties.
+
+
+Figure \ref{fig:systematics} shows the systematic uncertainty on the trasfer factor as a function of the \HT and (\nb,\njet) category, 
+extracted with the procedure described above, as they are expected in the absence of bias (i.e. perfect closure).
 
 \begin{figure}[]
   \centering
-  \subfigure[Systematic uncertainties for the 3/fb luminosity scenario
-  (luminosity 3/fb)]{
+  \subfigure[Systematic uncertainties for the 3 \ifb luminosity scenario
+  (luminosity 3 \ifb)]{
     \includegraphics[width=0.5\textwidth]{figures/closureTests/systOut2d3fb.pdf}
   } ~~
-  \subfigure[Systematic uncertainties for the 10/fb luminosity scenario
-  (luminosity 10/fb)]{
+  \subfigure[Systematic uncertainties for the 10 \ifb luminosity scenario
+  (luminosity 10 \ifb)]{
     \includegraphics[width=0.5\textwidth]{figures/closureTests/systOut2d10fb.pdf}
   }
   \caption{\label{fig:systematics} Expected systematics derived from the closure tests shown for
-the 3/fb and 10/fb scenarios}
+the 3 \ifb and 10 \ifb scenarios}
 \end{figure}
 
-Figure~\ref{fig:closure} shows the sets of closure tests overlaid on
-top of grey bands that represent a subset of the \scalht-dependent systematic
-uncertainties in Figure~\ref{fig:systematics}. These systematic
-uncertainties are assumed to fully uncorrelated between the different
-b jet multiplicity categories and also the seven \scalht regions,
-which is a conservative approach given that one can expect some
+These systematic uncertainties are assumed to fully uncorrelated between the different 
+event categories, as described in section \ref{sec:likelihood}. 
+This is believed to be a conservative approach, given that one can expect some
 correlation between adjacent \scalht bins (due to comparable
-kinematics). This approach of decorrelating the \scalht regions
-should be contrasted against the fits that do assume a correlated 
-behaviour in \scalht.
+kinematics).
 
+%% b jet multiplicity categories and also the seven \scalht regions,
+%% which is a conservative approach given that one can expect some
+%% correlation between adjacent \scalht bins (due to comparable
+%% kinematics). This approach of decorrelating the \scalht regions
+%% should be contrasted against the fits that do assume a correlated 
+%% behaviour in \scalht.
 
-\subsection{Systematic uncertainties on \mht shape \label{sec:syst-on-shape}}
-\label{subsec:shapeunc}
+\subsection{Systematic uncertainties on the \mht shape \label{sec:syst-on-shape}}
 
 The normalisation of the \mht shape in each \scalht bin is set by the control
-samples with the data determined systematic error described in \ref{sec:bkgd-syst}.
+samples with the data driven determined systematic error described in \ref{sec:bkgd-syst}.
 This section describes the method used to determine the systematics on the shape
 from all significant sources of uncertainy. In general for each source of systematic
 the shape templates are found for variations of the relevant systematic up and down by 
@@ -267,7 +266,7 @@ is shown in Figure~\ref{fig:jec-shape}.
 \begin{figure}[]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/closureTests/mhtJetSyst_SMS_T1bbbb_2J_mGl1000_mLSP900_JEC_ge3b_ge5j_800_1600.png}
-  \caption{\label{fig:jec-shape} Templates for the JEC shape systematic for $\geq$ 3 b-jets $\geq$ 5 jets and \scalht > 800 for the 10/fb luminosity scenario}
+  \caption{\label{fig:jec-shape} Templates for the JEC shape systematic for $\geq$ 3 b-jets $\geq$ 5 jets and \scalht > 800 for the 10 \ifb luminosity scenario}
 \end{figure}
 
 \subsubsection{PDF uncertainties\label{sec:pdf-sets}}
