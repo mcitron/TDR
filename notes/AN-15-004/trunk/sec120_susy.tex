@@ -12,15 +12,16 @@ topologies. The simplified model studies can be performed in terms of
 fundamental properties such as decay modes, production cross sections,
 and sparticle masses. 
 In order to gauge the early discovery potential, simplified models corresponding to both gluino and squark pair production 
-are considered in this exercise. The full list of models considered is in table \ref{tab:simplified-models}. 
+are considered in this exercise, together with different mass-splitting scenarios for the sparticle and the LSP. \\  
+The full list of models considered is in table \ref{tab:simplified-models}. 
 
 Signal efficiency times acceptance is determined per model per event
-category (\njet,\nb) per \scalht bin. Systematic
-uncertainties on the signal efficiencies are determined per model
+category (\njet,\nb) per \HT bin. 
+Systematic uncertainties on the signal efficiencies are determined 
 following the 2012 analysis (see Section~\ref{sec:sig-syst}). Due to CPU
 limitations, only a subset of event categories (but all \scalht bins
 within a category) are considered for interpretation with each
-simplified model and are listed in table \ref{tab:simplified-models}. (\texbf{FIXME: really?})
+simplified model and are listed in table \ref{tab:simplified-models}. 
 The choice of which categories to include in the fit 
 is made by comparing the expected upper limit on the signal cross section 
 per model mass point achieved for each individual event category. 
@@ -29,7 +30,10 @@ and the 10 most sensitive categories are used.
 
 \textbf{FIXME: where are the cross sections for each model listed?}
 
-\textbf{Do we want to list here the categories used in the fit?}
+\textbf{FIXME: Do we want to list here the categories used in the fit?}
+
+\textbf{FIXME: signal efficiency plots??}
+
 \begin{table}[h!]
   \caption{A summary of the simplified models considered for
     interpretation. The event categories considered for each model are
@@ -62,25 +66,24 @@ and the 10 most sensitive categories are used.
   \end{tabular*}
 \end{table}
 
-\subsection{Systematic uncertainties on signal efficiency times}
+\subsection{Systematic uncertainties on signal efficiency times acceptance}
 \label{sec:sig-syst}
 
-For the Phys14 exercise the systematic uncertainty for the signal region 
-is assumed to be unchanged from that in the previous analysis. 
-Thus a systematic uncertainty of $15\%$ is applied. The systematic 
-uncertainty in the signal acceptance times efficiency is determined per mass 
-point per event category (\njet,\nb) per
-\scalht bin (inclusive on $\scalht > 200$). The effect of
+For the PHYS14 exercise the same systematic uncertainty on the signal yield 
+as in the previous Run1 analysis is assumed. 
+It is determined per mass 
+point per event category (\njet,\nb), inclusively in \HT ($\HT > 200$ GeV) and accounts for 
 uncertainties on the luminosity measurement, the parton distribution
-functions, the jet energy scale, initial state radiation, and the
-efficiencies of various cuts (including the \mht/\met filter, the
-``dead ECAL'' filter, etc)
-%and the lepton/photon vetoes)
-used in the candidate signal event selection are considered. Each
-contribution is considered to be independent and all contributions are
+functions, the jet energy scale, the initial state radiation, and the
+efficiencies of various cuts (including the \mht/\met filter, the ``dead ECAL'' filter, etc) 
+used in the candidate signal event selection are considered. 
+Each contribution is considered to be independent and all contributions are
 summed in quadrature to obtain a total systematic uncertainty per mass
-point per category per \scalht bin. A 10\% uncertainty on the signal
-acceptance is assumed. 
+point per category per \scalht bin. This results in a total 15\% uncertainty on the signal
+acceptance is assumed. \\
+This uncertainty is taken as fully correlated betweeen all the bins, as reviewed in section \ref{sec:likelihood}. 
+Considering the different event category as uncorrelated is believed to be a conservative approach, 
+because it does not take into account the possibility migration of events between different categories considered in the analysis. 
 
 
 \subsection{Expected exclusion limits and discovery significance}
@@ -88,46 +91,29 @@ acceptance is assumed.
 
 %Tables~\ref{tab:t1bbbb_1500_100} and~\ref{tab:t1bbbb_1000_900} show
 Table~\ref{tab:results} shows
-the expected performance for the model \verb!T1bbbb! with two mass
-scenarios, ($m_{\rm gluino} = 1500,m_{\rm LSP} = 100\gev$) and
-($m_{\rm gluino} = 1000,m_{\rm LSP} = 900\gev$), and an integrated
-luminosity of 4\fbinv. The tables list both significances and R-values
-for the \scalht and \alphat variables, along with a range of
-alternative variables, including \mht, \met, effective mass (\meff),
-and finally the projection of the \mht vector onto the plane
-transverse to the event thrust axis (\mhttt). The two most sensitive
-bins in each variable are used, and each result is based on a
-combination of bins from four events categories: (\njet,\nb) = (4,2),
-(4,$\geq$3), ($\geq$5,2), and ($\geq$5,$\geq$3). All signal region
-selection criteria are applied, including $\scalht > 900\gev$ and
-$\mht > 130\gev$. The background systematic uncertainty is assumed to
-be 30\% for this selection and a systematic uncertainty on signal
-acceptance of 10\% is assumed. The results were produced with the
-Higgs combination tool and rely on the use of \cls and
-pseudo-experiments.
+the expected performance for the all the simplified models, 
+with different shape systematic scenarios (as discussed in section \ref{sec:syst-on-shape}) 
+and for two different integrated luminosity scenarios, namely 3 \ifb and 10 \ifb. \\
+The table lists both discovery significances and 95\% confidence level upper limit 
+on the signal strength $\mu = \sigma/\sigma_{\text{pred}}$. 
+Both the significance and the limit are computed using the asymptotic formulae and the Asimov datasets \cite{AsymptoticFormulae}. 
+The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
+All the statistical results were produced using the \textit{combine} tool, 
+provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. \\
+For each model, the categories used in the combination are listed in table \ref{tab:simplified-models}. 
 
-The results with the \scalht and \alphat requirements listed in 
-%Tables~\ref{tab:t1bbbb_1500_100} and~\ref{tab:t1bbbb_1000_900} represent
-Table~\ref{tab:results} represents 
-the baseline performance with no optimisation beyond a minimal choice
-in categories and binning. Further optimisations are possible, such as
-increasing the number of categories and bins used in the statistical
-interpretation. Some example alternatives to \scalht and \alphat are
-also shown, which increase the significance to as much as
-$\sim4\sigma$. Investigations concerning the choice of an additional
-discriminating variable(s) are ongoing.
-
-It should be noted that, while encouraging, such optimisations are
-sensitive to the assumed level of control when extrapolating into the
-tails of kinematic distributions, particularly for this class of
-models (involving very heavy objects). Ultimately, these assumptions
-are limited by event counts in data control samples, which are the
-only way to validate the use of transfer factors (as done in this
-analysis), or the accuracy of MC modelling of kinematic shapes, or the
-assumptions implicit in the parameterisation of shapes in data or MC,
-etc. The reliance on data-driven methods, cross-checks, and control
-variables is of paramount important as we probe a new mass regime in
-Run~2.
+%% % This should move to the ``Analysis Startegy'' section
+%% It should be noted that, while encouraging, such optimisations are
+%% sensitive to the assumed level of control when extrapolating into the
+%% tails of kinematic distributions, particularly for this class of
+%% models (involving very heavy objects). Ultimately, these assumptions
+%% are limited by event counts in data control samples, which are the
+%% only way to validate the use of transfer factors (as done in this
+%% analysis), or the accuracy of MC modelling of kinematic shapes, or the
+%% assumptions implicit in the parameterisation of shapes in data or MC,
+%% etc. The reliance on data-driven methods, cross-checks, and control
+%% variables is of paramount important as we probe a new mass regime in
+%% Run~2.
 
 %\begin{table}
 %  \centering
