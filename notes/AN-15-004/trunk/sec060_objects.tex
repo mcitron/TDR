@@ -1,18 +1,18 @@
 %%____________________________________________________________________________||
 \section{Physics objects}
 \label{sec:objects}
-The definitions of the physics objects used in this analysis follow the ongoing recommendations of the various Physics Object Groups (POGs). \\
+The definitions of the physics objects used in this analysis follow the ongoing recommendations of the various Physics Object Groups (POGs). 
 
 \subsection{Jets}
 \label{sec:jetreco}
-Jets are defined as sets of particle-flow candidates clustered by the
+Jets are defined as sets of particle-flow (PF) candidates clustered by the
 anti-$k_{T}$ jet clustering algorithm with a distance parameter of 0.4
 (PFJets). Charged Hadron Subtraction (CHS) is applied, i.e., charged
 hadrons that can be traced back to pileup vertices are not clustered.
 The four-momenta of jets are initially defined as the four-vector sum of
 the four-momenta of the constituent particle-flow candidates and then
 scaled by the jet energy correction factors designated as L1FastJet,
-L2Relative, and L3Absolute.
+L2Relative, and L3Absolute \cite{Jet-energy-scale}.
 
 It should be noted that the early L1 FastJet corrections require
 improvements at this stage, and as a result can impact the L2 and L3
@@ -24,7 +24,7 @@ shown on the y-axis represent the RMS of the distrubution.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/PhysicsObjectsPlots/JetResQCDVarBinWidthv3.pdf}
-  \caption{Jet resolution of matched QCD jets in the Signal region}
+  \caption{Jet energy scale and resolution of matched QCD jets in the Signal region.}
   \label{fig:QCDJets}
 \end{figure}
    
@@ -32,24 +32,34 @@ shown on the y-axis represent the RMS of the distrubution.
 
 \subsection{b-tagged jets}
 \label{sec:btags}
-Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction \cite{b-tagging}. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``Medium`` working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable and results in a gluon/light-quark mis-tag rate of 1.0623 $\%$ ( where ``light`` means $\it{u}$, $\it{d}$ and $\it{s}$ quarks).
+Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction \cite{b-tagging}. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``Medium`` working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable. 
+This results in a gluon/light-quark mis-tag rate of $\sim$1 \% (where ``light`` means $\it{u}$, $\it{d}$ and $\it{s}$ quarks) with a b-tag signal efficiency of about 80 \%. 
 
 
 
 \subsection{Muons}
 \label{sec:muon-id}
-Muons are identified according to the Medium working point definition ($\sim$ 98 $\%$ efficiency ) of the muon identifiction algorithim. A PF-based relative isolation is determined within a variable cone size. Isolated muons are required to have minimal energy from neutral and charged PF candidates. The transverse momenta of PF neutral and charged candidates within a cone around the lepton are summed. The relative combined isolation $I^{rel}_{comb}$ is then defined as the ratio of this scalar sum to the transverse momentum of the lepton candidate. The neutral hadron and photon contribution to the isolation is corrected by subtracting the expected neutral contribution from PU collisions, $\Delta\beta=1/2\sum_{PU}^{ch had}{\pt}$. The factor 1/2 takes into account the neutral to charged ratio as measured in \cite{CMS-PFT-10-002}. 
-%The effects of pileup``$\Delta\beta$`` corrections are applied to remove the effects of pileup.
-
-In the case of high jet multiplicity events, an increase in energy resulting in boosted events can result in complicated topologies for leptons and jets. For example high $p_{T}$ top quarks decaying leptonically, the main issue is the small angular separation between that of the lepton and the b-jet. Classical lepton isolation techniques will reject the boosted leptonic top quarks. A solution to this is to reduce the cone size around the lepton in function of $p_{T}$. This technique, known as Mini Isolation, is used to determine the cone 
-size, $R$, in which to calculate isolation. For leptons with $\Pt\leq50\gev$ $R=0.2$, between $50\gev$ 
-and $200\gev$ the cone size scales down to $R=0.05$ where it remains for all higher \Pt leptons. 
+Muons are identified according to the Medium working point definition of the recommended identifiction algorithim, which provides $\sim$ 98 $\%$ efficiency. \\
+Muons are also required to be well isolated, i.e. with a low activity in the vicinity of their track. 
+A PF-based relative isolation is used with a variable cone size, which is referred to as ``mini-isolation''.
+This isolation algorithm helps in recovering some efficiency in the lepton selection for boosted topology of top quark decay, 
+in which the muon's track may be found close to jet activity due to the boost of the parent top. 
+Therefore, the cone size used for the calculation of the lepton isolation is reduced as a function of 
+the lepton \Pt, as follows: $R=0.2$ for $\Pt_{\ell}\leq50\gev$, $R=0.05$ for $\Pt_{\ell} > 50\gev$. \\
+The transverse momenta of PF neutral and charged candidates within a cone around the lepton are summed. 
+The relative combined isolation $I^{rel}_{comb}$ is then defined as 
+the ratio of this scalar sum to the transverse momentum of the lepton candidate. 
+The neutral hadron and photon contribution to the isolation is corrected 
+by subtracting the expected neutral contribution from PU collisions, $\Delta\beta=1/2\sum_{PU}^{ch had}{\pt}$. 
+The factor 1/2 takes into account the neutral to charged ratio as measured in \cite{CMS-PFT-10-002}. \\
 Muons are defined as isolated when they have $I^{rel}_{comb} < 0.2$ within $R$.
 
 % Figures \ref{fig:SMStack} and \ref{fig:DMStack} show the relative combined isolation $I^{rel}_{comb}$ for $\mu +$ jets and $\mu\mu +$ jets control sample. The distributions have been weighted according to the cross-section of the respective samples in each region, and an integrated luminosity of 1 fb$^{-1}$ at $\sqrt{s}$ = 13 TeV. Isolated muons promptly produced in the decays of W and Z bosons dominate the region $I^{rel}_{comb}$ $<$ 0.12.
 
-Muons are used as a veto as part of the hadronic signal region definition, as described in Section \ref{sec:hadSelection}, and as part of the $\mu +$ jets and $\mu\mu +$ jets control sample selections as described in Section \ref{sec:controlSelection}.
-
+Muons are vetoed in the definition of the hadronic signal region, 
+as described in Section \ref{sec:hadSelection}, while 
+control regions with one muon (``single muon'') or two muons (``double muon'') are defined for the purpose of the background estimation, 
+as described in Section \ref{sec:mucontrolSelection}.
 
 % now we're using mini isolation this is no longer relevant:
 
@@ -71,8 +81,17 @@ Muons are used as a veto as part of the hadronic signal region definition, as de
 
 \subsection{Photons}
 \label{sec:photon-id}
-Photons are identified according to the Tight working point defintion ($\sim$ 70 $\%$ efficiency) of the simple cut-based photon identification algorithm \cite{photon-id}. PF-based isolation is determined within a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. Table \ref{tab:photon-id-gamma} summarises the identification and isolation requirements for PHYS14 samples. 
-This object is used as a veto as part of the hadronic signal region definiton, as described in Section \ref{sec:hadSelection}, and as part of the $\gamma$ + jets control sample described in Section \ref{subsec:photoncontrolSelection}.
+Photons are identified according to the Tight working point defintion ($\sim$ 70 $\%$ efficiency) 
+of the simple cut-based photon identification algorithm \cite{photon-id} 
+and required to be well isolated. 
+A PF-based isolation is used with a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. 
+Table \ref{tab:photon-id-gamma} summarises the identification and isolation requirements for PHYS14 samples. 
+
+Photons are vetoed in the definition of the hadronic signal region, 
+as described in Section \ref{sec:hadSelection}, while a 
+control region with one photon (``single photon'') is defined for the purpose of the background estimation, 
+as described in Section \ref{subsec:photoncontrolSelection}.
+
 
 \begin{table}[ht!]
   \caption{Photon identification (Tight working point).\label{tab:photon-id-gamma}}
@@ -97,7 +116,17 @@ This object is used as a veto as part of the hadronic signal region definiton, a
 
 \subsection{Electrons}
 \label{sec:electron-id}
-Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) of the cut-based identification \cite{electron-id}. PF-based isolation \cite{pf-photon} is determined within a cone size determined by the mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\Delta \beta$ corrections are applied to remove the effects of pileup. Table \ref{tab:ele-id} summarises the identification and isolation requirements derived using the PHYS14 samples. 	
+Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) 
+of the cut-based identification \cite{electron-id} and 
+required to be well isolated. 
+A PF-based isolation \cite{pf-photon} is used with a cone size determined by the mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\Delta \beta$ corrections are applied to remove the effects of pileup. 
+Table \ref{tab:ele-id} summarises the identification and isolation requirements derived using the PHYS14 samples.
+
+Electrons are vetoed in the definition of the hadronic signal region, 
+as described in Section \ref{sec:hadSelection}, while 
+control regions with one electron (``single electron'') or two electrons (``double electron'') are defined for the purpose of the background estimation, 
+as described in Section \ref{sec:elecontrolSelection}.
+
 
 \begin{table}[h!]
   \caption{Electron identification (Loose working point).\label{tab:ele-id}}
@@ -126,37 +155,44 @@ Electrons are identified according to the Loose working point definition ( $\sim
 \subsection{Single Isolated Tracks}
 \label{sec:SIT}
 
-A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. Single prong decays of the tau lepton can be identified: W $\rightarrow$ $\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. A single isolated track comprises a charged PF candidate that satisfies the requirements listed in Table \ref{tab:sit-id}. The relative track isolation is determined from the vectorial sum of neighbouring charged PF candidates within a cone $\Delta R$ $<$ 0.3 and satisfying $\Delta$z(candidate, PV) $<$ 0.05cm around the candidate isolated track.
-This object can be used to efficiently suppress the ``lost lepton`` background from W and t$\bar{t}$, as described in Section 7.1. 
+A single isolated track (SIT) can be used to identify W bosons through their leptonic decays: 
+W $\rightarrow$ $\mu \nu$, W $\rightarrow$ $e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l$) $\nu$. 
+Single prong decays of the tau lepton can be identified as well: W $\rightarrow$ $\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}$) $\nu$. 
+A single isolated track comprises a charged PF candidate with $\Pt > 10 \gev$, $\Delta z(\mathrm{track}, \mathrm{PV}) < 0.05 \, \mathrm{cm}$ 
+and with a relative isolation smaller than 0.1, where the isolation is determined from the sum 
+of the \Pt of the charged PF candidates within $\Delta R < 0.3$.\\
+SIT are vetoed in the definition of the hadronic signal region, 
+as described in Section \ref{sec:hadSelection}.
 
-\begin{table}[h!]
-  \caption{Single isolated track identification.\label{tab:sit-id}}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lc }
-    \hline
-    \hline
-    Track \Pt                      & $>10\gev$  \\
-    $\Delta z (\textrm{track,PV})$ & $<0.05\cm$ \\
-    Charge                         & $\neq 0$   \\
-    Relative track isolation       & $<0.1$     \\
-    \hline
-    \hline
-  \end{tabular}
-  \end{table}
+%% % No more needed
+%% \begin{table}[h!]
+%%   \caption{Single isolated track identification.\label{tab:sit-id}}
+%%   \centering
+%%   \footnotesize
+%%   \begin{tabular}{ lc }
+%%     \hline
+%%     \hline
+%%     Track \Pt                      & $>10\gev$  \\
+%%     $\Delta z (\textrm{track,PV})$ & $<0.05\cm$ \\
+%%     Charge                         & $\neq 0$   \\
+%%     Relative track isolation       & $<0.1$     \\
+%%     \hline
+%%     \hline
+%%   \end{tabular}
+%%   \end{table}
 
 \subsection{Missing transverse momentum}
-Missing transverse momentum is defined as the negative of the vector sum
+Missing transverse momentum (MET) is defined as the opposite of the vector sum
 of the transverse momentum of all particle-flow candidates in the event.
-The Type-I MET correction is applied, i.e., the transverse momentum of
+The Type-I MET correction \cite{met-corrections} is applied, i.e., the transverse momentum of
 the particle-flow candidates clustered as jets are replaced with the
 transverse momentum of the jets that are scaled by the jet energy
-correction factors \cite{met-corrections}.
+correction factors.
 
-The missing transverse momentum is only used in the following two cases:
-to define the transverse mass, $M_{T}$, which is in turn used as part of
-the selection criteria that define the $\mu +$ jets control sample,
-described in \ref{subsec:mucontrolSelection}, and to define a cleaning filter applied after the
+The MET is used in the definition of 
+the transverse mass, $M_{T}$, which is in turn used as part of
+the selection criteria that define the single muon control sample 
+(section \ref{subsec:mucontrolSelection}), and to define a cleaning filter applied after the
 $\alpha_{T}$ requirement, as described in Section \ref{sec:selection}.
 
 
