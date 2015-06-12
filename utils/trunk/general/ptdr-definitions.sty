@@ -1,7 +1,7 @@
 \def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
 \def\Filedate$#1: #2-#3-#4 #5 ${\gdef\filedate{#2/#3/#4}}
-\Fileversion$Revision: 282189 $
-\Filedate$Date: 2015-03-25 15:10:03 +0100 (Wed, 25 Mar 2015) $
+\Fileversion$Revision: 290728 $
+\Filedate$Date: 2015-05-30 18:10:14 +0200 (Sat, 30 May 2015) $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  CMS Common definitions style file
@@ -33,6 +33,7 @@
 % Some software programs (alphabetized)
 \newcommand{\ACERMC} {\textsc{AcerMC}\xspace}
 \newcommand{\ALPGEN} {{\textsc{alpgen}}\xspace}
+\newcommand{\BLACKHAT} {{\textsc{BlackHat}}\xspace}
 \newcommand{\CALCHEP} {{\textsc{CalcHEP}}\xspace}
 \newcommand{\CHARYBDIS} {{\textsc{charybdis}}\xspace}
 \newcommand{\CMKIN} {\textsc{cmkin}\xspace}
@@ -43,6 +44,7 @@
 \newcommand{\COMPHEP} {\textsc{CompHEP}\xspace}
 \newcommand{\EVTGEN} {{\textsc{evtgen}}\xspace}
 \newcommand{\FAMOS} {{\textsc{famos}}\xspace}
+\newcommand{\FASTJET} {{\textsc{FastJet}}\xspace}
 \newcommand{\FEWZ} {{\textsc{fewz}}\xspace}
 \newcommand{\GARCON} {\textsc{garcon}\xspace}
 \newcommand{\GARFIELD} {{\textsc{garfield}}\xspace}
@@ -144,7 +146,7 @@
 \newcommand{\ETslash}{\ensuremath{E_{\mathrm{T}}\hspace{-1.1em}/\kern0.45em}\xspace}
 \newcommand{\VEtmiss}{\ensuremath{{\vec E}_{\mathrm{T}}^{\text{miss}}}\xspace}
 \newcommand{\ptvec}{\ensuremath{{\vec p}_{\mathrm{T}}}\xspace}
-\newcommand{\ptvecmiss}{\ensuremath{{\vec p}_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\ptvecmiss}{\ensuremath{{\vec p}_{\mathrm{T}}^{\kern1pt\text{miss}}}\xspace}
 
 % roman face derivative
 \newcommand{\dd}[2]{\ensuremath{\frac{\cmsSymbolFace{d} #1}{\cmsSymbolFace{d} #2}}}
@@ -193,6 +195,7 @@
 % future symbols from heppennames2
 \providecommand{\PH}{\ensuremath{\cmsSymbolFace{H}}\xspace} % plain Higgs
 \providecommand{\Ph}{\ensuremath{\cmsSymbolFace{h}}\xspace} % SUSY Higgs
+\providecommand{\Pa}{\ensuremath{\cmsSymbolFace{a}}\xspace}  
 \providecommand{\PJGy}{\ensuremath{\cmsSymbolFace{J}\hspace{-.08em}/\hspace{-.14em}\psi}\xspace} % J/Psi (no mass)
 \providecommand{\PBzs}{\ensuremath{\cmsSymbolFace{B}^0_\cmsSymbolFace{s}}\xspace} % B^0_s
 \providecommand{\Pg}{\ensuremath{\cmsSymbolFace{g}}\xspace} % generic gluon
@@ -240,7 +243,11 @@
 \providecommand{\PQb}{\ensuremath{\cmsSymbolFace{b}}\xspace} % b
 \providecommand{\PAQb}{\ensuremath{\overline{\cmsSymbolFace{b}}}\xspace} %
 \providecommand{\PGm}{\ensuremath{\mu}\xspace} % muon
+\providecommand{\PGmm}{\ensuremath{\mu^-}\xspace} % muon
+\providecommand{\PGmp}{\ensuremath{\mu^+}\xspace} % muon
+\providecommand{\PGmpm}{\ensuremath{\mu^\pm}\xspace} % muon
 \providecommand{\PGt}{\ensuremath{\tau}\xspace} % tau
+\providecommand{\PAGt}{\ensuremath{\overline{\tau}}\xspace} % anti-tau
 \providecommand{\PQq}{\ensuremath{\cmsSymbolFace{q}}\xspace} % quark (generic)
 \providecommand{\PQd}{\ensuremath{\cmsSymbolFace{d}}\xspace} % down quark
 \providecommand{\PQu}{\ensuremath{\cmsSymbolFace{u}}\xspace} % up quark
