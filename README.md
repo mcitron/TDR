@@ -55,7 +55,7 @@ This and following sections explain how to contribute to the draft.
 
 If you haven't done so, please fork this repo to your github account. If you are reading this online at github, you can do so by clicking `Fork`  around the top right corner of this page.
 
-The forked repo will be private on your account. However, a forked private repo is not counted as a private repo for the billing purpose.  (I am still not perfectly sure who will be able too see the forked private repo. Members of the team who has a certain access to the original private repo seem to be able to see the forked private repo. Otherwise, they won't be able to merge pull requests from there.)
+The forked repo will be private on your account. However, a forked private repo is not counted as a private repo for the billing purpose.  (I am still not perfectly sure who will be able to see the forked private repo. Members of the team who has a certain access to the original private repo seem to be able to see the forked private repo. Otherwise, they won't be able to merge pull requests from there.)
 
 #### Add remote
 
