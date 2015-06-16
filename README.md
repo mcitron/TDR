@@ -65,7 +65,7 @@ Originally, you cloned this repo from `CMSRA1/AN-15-004`, which is the only remo
 
 This command will add your forked repo as a remote and name it `myrepo`.
 
-#### Create a new branch 
+#### Create a new branch
 
 You are now on the branch `master`. It is often more convenient to create a new branch for new edits.
 
@@ -75,9 +75,9 @@ This command will create a new branch `myedit-20150127-01` and check out the bra
 
 #### Make changes
 
-This is where you make your changes. 
+This is where you make your changes.
 
-I will write a bit more detail later. In short after editing, you need add 
+I will write a bit more detail later. In short after editing, you need add
 
     git add (files your modified)
 
@@ -95,7 +95,7 @@ Now, you can push your commits to your forked repo on your github account.
 
 #### Make a pull request
 
-Now the branch you pushed is in a forked repo on your github account. You can make a pull request from there. 
+Now the branch you pushed is in a forked repo on your github account. You can make a pull request from there.
 
 I will write a bit more about the pull request later.  In short, with a web browser, you need to go to your branch that your pushed and click `Pull request`, then follow the instructions on the web.
 
@@ -121,6 +121,5 @@ Instructions to check out and build:
     svn update -N papers
     svn update notes/AN-13-366
     cd notes/AN-13-366/trunk/
-    eval `../../tdr runtime -sh` 
+    eval `../../tdr runtime -sh`
     tdr --style an b AN-13-366
-
