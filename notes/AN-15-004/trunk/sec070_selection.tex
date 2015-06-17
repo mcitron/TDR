@@ -41,17 +41,20 @@ jet, which is required to satisfy either $\PT > 100\gev$ (leading to a
 helps to improve acceptance to a range of DM models and compressed
 SUSY.
 
-{\bf Event categorisation according to \njet and \nb.} 
+{\bf Baseline event categorisation according to \njet and \nb.} 
 
 Events in the hadronic signal and all control regions (described
 below) are categorised identically and according to the number of jets
 (\njet) reconstructed in each event and the number of jets identified
 as originating from bottom quarks (\nb) in each event. The resulting
 sub-samples comprise events containing exactly two, three, four, or at
-least five jets, plus exactly zero, one, two, or at least three
-b-jets. By construction, $\nb \leq \njet$.
+least five jets. As a baseline choice, the sub-samples are also
+defined by a requirement on the number of b-tagged jets corresponding
+toexactly zero, one, two, or at least three b-jets. By construction,
+$\nb \leq \njet$. Additional categories with higher b-tag
+multiplicities may be added at a later date, as described below. 
 
-{\bf \HT requirements and default binning.} 
+{\bf \HT requirements and baseline \HT binning.} 
 
 Events are required to have significant hadronic activity by requiring
 $\scalht > 200\GeV$. Despite an increase in both multijet production
@@ -62,10 +65,40 @@ SUSY. Events in all samples are binned identically, according to the
 \HT variable. The choice of binning in \HT is driven primarily by the
 trigger strategy employed by the analysis, as described in
 Section~\ref{sec:triggers}, and can be summarised as follows: 50\gev
-bins in the range $200 < \HT < 400\gev$ and 200\gev bins in the range
-$\HT > 400\gev$. The final \HT bin is inclusive.
+bins in the range $200 < \HT < 400\gev$, 200\gev bins in the range
+$400 < \HT < 800\gev$, and a final inclusive bin $\HT > 800\gev$.
 
-{\bf Event categorisation versus integrated luminosity.} 
+{\bf Summary of pre-selection requirements.} 
+
+Table~\ref{tab:pre-selections} summarises the pre-selection
+requirements. The evolution of the choice of event categorisation and
+\HT binning is described below.
+
+\begin{table}[h!]
+  \topcaption{Summary of the pre-selection criteria.}
+  \label{tab:pre-selections}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ll }
+    \hline
+    \hline
+    Selection                     & Requirement                                                            \\
+    \hline
+    ``MET filters''               & Various                                                                \\
+    Jet acceptance                & $\PT > 40\gev$, $|\eta| < 3$                                           \\
+    \njet                         & $\geq2$                                                                \\
+    Lead jet acceptance           & $\PT > 100\gev$, $|\eta| <    2.5$                                     \\
+    Second jet acceptance         & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$                       \\
+    Loosest \HT requirement       & $\HT > 200\gev$                                                        \\
+    Baseline \HT binning          & 200--250, 250--300, 300--350, 350--400, 400--600, 600--800, $>$800\gev \\
+    Baseline \njet multiplicities & 2, 3, 4, $\geq$5                                                       \\
+    Baseline \nb multiplicities   & 0, 1, 2, $\geq3$ ($\nb \leq \njet$)                                    \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+{\bf Evolution of event categorisation versus integrated luminosity.} 
 
 The choice of how events are categorised according to the number of
 \njet and \nb will evolve as a function of integrated luminosity. In
@@ -81,22 +114,25 @@ statistical precision of predictions involving events containing three
 or four b-tagged jets, which may allow for the addition of further
 categories that contain at least four b-tagged jets. 
 
-{\bf \HT binning versus integrated luminosity.} 
+{\bf Evolution of \HT binning versus integrated luminosity.} 
 
 The lower threshold of the last (inclusive) \HT bin is determined
-independently for each event category and is chosen to always align
-with one of the ``default'' boundaries defined above. The metric for
-choosing the final bin threshold is based on the number of events in
-the corresponding \HT bin (and event category) of the data control
-samples. This ensures that all bins in the data control samples are
-sufficiently populated to ensure a statistically significant
-prediction in each of the corresponding signal region bins. Currently,
-sufficient events ($\sim 10$) are required such that the statistical
-uncertainty on the total prediction is $\sim30\%$. Events from high
-\HT bins are combined into a single inclusive bin that satisfies this
-metric.
+independently for each (\njet,\nb) event category and is chosen to
+always align with one of the ``default'' boundaries defined above. The
+metric for choosing the final bin threshold is based on the number of
+events in the corresponding event category and \HT bin of the data
+control samples. This ensures that all bins in the data control
+samples are sufficiently populated to ensure a statistically
+significant prediction in each of the corresponding signal region
+bins. Currently, this is achieved by requiring sufficient events
+($\sim 10$) to yield a statistical uncertainty on the total background
+prediction of $\lesssim30\%$. Events from high \HT bins are combined
+into a single inclusive bin that satisfies this metric. This metric
+also ensures that there are sufficient events in the control samples
+to probe for potential systematic effects with closure tests between
+simulation and data, as described in Sec.~\ref{sec:systematics}.
 
-{\bf Final common categorisation and binning choice for all samples.} 
+{\bf Event categorisation and binning choice for 3\fbinv.} 
 
 The event categorisation according to \njet and \nb and the \HT
 binning scheme per category is summarised in
@@ -110,21 +146,20 @@ and \HT bins may be considered for larger integrated luminosities.
 
 \begin{table}[h!]
   \caption{Threshold (GeV) of the final \HT bin as a function of event
-    category (\njet,\nb). The threshold is always aligned with respect
-    to one of the default boundaries (motivated primarily by the trigger) of
-    200, 250, 300, 350, 400, 600, 800, 1000\gev. This is the projected
-    choice for 3\fbinv.}
+    category (\njet,\nb), which is always aligned with respect
+    to one of the baseline boundaries (motivated primarily by the trigger) of
+    200, 250, 300, 350, 400, 600, 800\gev. This is the projected choice for 3\fbinv.}
   \label{tab:binning-3fb}
   \centering
   \footnotesize
   \begin{tabular}{ l|ccc|cccc|cccc|cccc }
     \hline
     \hline
-    \njet & \multicolumn{3}{c}{2} & \multicolumn{4}{c}{3} & \multicolumn{4}{c}{4} & \multicolumn{4}{c}{$\geq5$} \\ 
-    \nb        & 0   & 1   & 2   & 0   & 1   & 2   & 3   & 0   & 1   & 2   & $\geq3$ & 0   & 1   & 2   & $\geq3$ \\
+    \njet      & \multicolumn{3}{c}{2} & \multicolumn{4}{c}{3} & \multicolumn{4}{c}{4} & \multicolumn{4}{c}{$\geq5$}                                                   \\ 
+    \nb        & 0                     & 1                     & 2                     & 0   & 1   & 2   & 3   & 0   & 1   & 2   & $\geq3$ & 0   & 1   & 2   & $\geq3$ \\
     \hline
-    Symmtric   & 800 & 800 & 600 & 800 & 800 & 800 & 400 & 800 & 800 & 800 & 600     & 800 & 800 & 800 & 800     \\
-    Asymmetric & 800 & 600 & 400 & 800 & 600 & 400 & 300 & 600 & 600 & 600 & 400     & 600 & 600 & 600 & 400     \\
+    Symmetric  & 800                   & 800                   & 600                   & 800 & 800 & 800 & 400 & 800 & 800 & 800 & 600     & 800 & 800 & 800 & 800     \\
+    Asymmetric & 800                   & 600                   & 400                   & 800 & 600 & 400 & 300 & 600 & 600 & 600 & 400     & 600 & 600 & 600 & 400     \\
     \hline
     \hline
   \end{tabular}
@@ -244,21 +279,19 @@ characterised by the presence of significant \met.
 
 {\bf Additional cleaning filters.} 
 
-Two additional dedicated cleaning cuts are applied.
-
-First, to protect against multiple jets failing the $\Et$ threshold,
-the jet-based estimate of the missing transverse energy, \mht, is
-compared to the missing transverse energy variable, $\met$, and events
-with $R_{\rm miss}=\mht/\met > 1.25$ are rejected. 
-
-Second, to protect against severe energy losses caused by masked
-regions in the ECAL (which amount to about 1\% of the ECAL channel
-count) or HCAL, or by missing instrumentation in the barrel-endcap
-gap, events with $\bdphi < 0.5$ are rejected if the distance in the
-($\eta,\phi$) plane between the selected jet and the closest masked
-ECAL region, $\Delta R_{\rm ECAL}$, is smaller than 0.3. Similarly,
-events are rejected if the jet points within 0.3 in $\eta$ of the ECAL
-barrel-endcap gap at $|\eta| = 1.5$. 
+Two additional dedicated cleaning cuts are applied. First, to protect
+against multiple jets failing the $\Et$ threshold, the jet-based
+estimate of the missing transverse energy, \mht, is compared to the
+missing transverse energy variable, $\met$, and events with $R_{\rm
+  miss}=\mht/\met > 1.25$ are rejected. Second, to protect against
+severe energy losses caused by masked regions in the ECAL (which
+amount to about 1\% of the ECAL channel count) or HCAL, or by missing
+instrumentation in the barrel-endcap gap, events with $\bdphi < 0.5$
+are rejected if the distance in the ($\eta,\phi$) plane between the
+selected jet and the closest masked ECAL region, $\Delta R_{\rm
+  ECAL}$, is smaller than 0.3. Similarly, events are rejected if the
+jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
+$|\eta| = 1.5$.
 
 {\bf Summary of signal region selection.} 
 
@@ -266,30 +299,87 @@ The requirements that define the hadronic signal region are summarised
 in Table~\ref{tab:sr-selections}.
 
 \begin{table}[h!]
-\topcaption{Summary of the signal region definition\label{tab:sr-selections}}
+  \topcaption{Summary of the signal region selection criteria, applied
+    in addition to the pre-selection summaised in
+    Table~\ref{tab:pre-selections}.}
+  \label{tab:sr-selections}
   \centering
   \footnotesize
-  \begin{tabular}{ lrl }
+  \begin{tabular}{ ll }
     \hline
     \hline
-    \multicolumn{2}{c}{Selection} & Requirement                                                                      \\
+    Selection             & Requirement                                                    \\
     \hline
-    ``MET filters''               & (pre-selection) & Various                                                        \\
-    Jet acceptance                & (pre-selection) & $\PT > 40\gev$, $|\eta| < 3$                                   \\
-    \njet                         & (pre-selection) & $\geq2$                                                        \\
-    Lead jet acceptance           & (pre-selection) & $\PT > 100\gev$, $|\eta| <    2.5$                             \\
-    Second jet acceptance         & (pre-selection) & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$               \\
-    \HT                           & (pre-selection) & $\HT > 200\gev$                                                \\
-    \hline
-    \alphat                       & (signal region) & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 800\gev$ \\
-    \mht                          & (signal region) & $>130\gev$ for region $\HT > 800\gev$                          \\  
-    \bdphi                        & (signal region) & $>0.3$                                                         \\
-    \mht/\met                     & (signal region) & $<1.25$                                                        \\
-    ``Dead ECAL filter''          & (signal region) & (see text)                                                     \\
+    \alphat               & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 800\gev$ \\
+    \mht                  & $>130\gev$ for region $\HT > 800\gev$                          \\  
+    \bdphi                & $>0.3$                                                         \\
+    \mht/\met             & $<1.25$                                                        \\
+    ``Dead ECAL filter''  & (see text)                                                     \\
     \hline
     \hline
   \end{tabular}
 \end{table}
+
+\subsection{Adding the \texorpdfstring{\mht}{MHT} dimension}
+\label{sec:had-shape}
+
+As described above, and as used in Run~1, the analysis takes advantage
+of three discriminating variables, \njet, \nb, and \HT, to provide
+sensitivity to a large range of SUSY (and DM) models. No extrapolation
+in these variables is performed, with predictions of SM background
+yields in the (\njet,\nb,\HT) bins of the signal region based on both
+observed counts and transfer factors derived from simulated yields in
+the corresponding (\njet,\nb,\HT) bins of the control samples. Each
+prediction is statistically and systematically independent.
+
+In Run~1, for each (\njet,\nb,\HT) bin in the signal region, an
+extrapolation in the variable \alphat was necessary to obtain
+background predictions based on the muon control samples, which did
+not impose any \alphat requirement. No extrapolation in \alphat was
+performed for the photon control sample, which used the same \alphat
+requirements as the signal region. The \alphat requirements used in
+Run~1 for the signal region correspond loosely to \mht thresholds in
+the range $\sim$130 to $\sim$500\gev depending on the \HT
+bin. Uncertainties in this extrapolation were determined through
+closure tests with respect to data, including one dedicated to the
+\alphat extrapolation, plus additional cross checks.
+
+In Run~2, we will additionally bin event counts in the signal region
+according to the variable \mht in order to provide further
+discriminating power between any potential signal and the SM
+background counts. Hence, while no extrapolation is performed in
+\njet, \nb, nor \HT, the analysis will rely on shape information
+obtained from simulation to extrapolate from counts (integrated over
+\mht) in the control samples to a predicted shape in \mht for each
+corresponding (\njet,\nb,\HT) bin in the signal region. 
+
+The \mht shape information is included in the likelihood model using
+templates determined per (\njet,\nb,\HT) bin from simulation. An
+associated normalisation nuisance is determined from closure tests
+between simulation and data, as described in
+Sec.~\ref{sec:systematics}. Alternative templates are used to encode
+the systematic uncertainty in the \mht shape. Preliminary studies and
+estimates of the shape systematics are also discussed
+Sec.~\ref{sec:systematics}. The likelihood model is described in
+Sec.~\ref{sec:likelihood}.
+
+The templates use \mht bins of 50\gev in width. A metric is used to
+determine the threshold of the final \mht bin used by the
+templates. This metric is currently based on requiring a minimum
+number of both observed counts in the {\it data control samples} and
+(unweighted) simulated events with \mht values higher than the final
+bin threshold. While the counts in the (\njet,\nb,\HT) bins of each
+data control sample will not be binned according to \mht (as in the
+signal region), the former requirement ensures that there are
+sufficient events in each (\njet,\nb,\HT) bin of the control samples
+to probe for potential systematic effects {\it across all bins in
+  \mht} using closure tests between simulation and data, as described
+in Sec.~\ref{sec:systematics}. Hence, a data-driven cross check for
+potential biases and on the systematic uncertainty in the template
+shape is possible. The latter requirement minimises the statistical
+uncertainties associated with the finite number of simulated events
+for the various SM background processes. Both requirement are based on
+counts according to \njet and \nb but inclusive with respect to \nb.
 
 \subsection{The hadronic control region}
 
@@ -303,7 +393,6 @@ requirements.
 The sample of events populating this control region are used primarily
 to estimate any residual background contamination from QCD multijet
 events, described in Sec.~\ref{sec:qcd}.
-
 
 \subsection{Commonalities between the lepton and photon control
   regions}
@@ -425,5 +514,5 @@ the \gj sample to predict the kinematic distributions of the \znunu
 background. The cleaning cut $\mht/\met$ is also applied, as done in
 the signal region, where the \met is adjusted to account for the
 transverse energy of the identified, isolated photon. As stated above,
-the \hg sample can only be used to predict background components in
+the \gj sample can only be used to predict background components in
 the region $\HT > 400\gev$ due to trigger requirements.
