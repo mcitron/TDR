@@ -112,7 +112,9 @@ class cleanRefs:
                        ('DOI',re.compile('10.1088/1126-6708/2002/06/029|10.1088/1126-6708/2003/08/007|10.1088/1126-6708/2006/03/092|10.1088/1126-6708/2008/07/029|10.1007/JHEP01\(2011\)053'), 'MC@NLO citation found. Did you get them all? See http://www.hep.phy.cam.ac.uk/theory/webber/MCatNLO/ near the bottom','Warning'),
                        ('DOI',re.compile('doi|DOI'), 'Do not include dx.doi.org','Error'),
                        ('DOI',re.compile(','), 'Only one doi in the DOI field','Error'),
+                       ('DOI',re.compile(' '), 'No spaces in the DOI field','Error'),
                        ('COLLABORATION',re.compile(r'Collaboration'), r'Should not normally use Collaboration: already in the format','Error'), 
+                       ('LANGUAGE',re.compile('.*'),'Language entry requires loading the babel package, which is not used','Error for APS'),
                        ('PAGES',  re.compile('-'), 'Range in page field: we only use first page','Warning') ] # rules for checking format: field, compiled re, message. (Add severity?)
         self._blankCheck = re.compile(r'^\s+$')
         # field ordering not yet implemented (if ever)
