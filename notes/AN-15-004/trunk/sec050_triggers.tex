@@ -5,23 +5,39 @@
 
 \subsection{Hadronic signal region}
 
-In Run 2 the RA1 analysis will aim to retain the low-thresholds of Run 1 with developments to the trigger selection, maintaining sensitivity to signatures of new physics with hadronic energy as low as $\scalht = 200$ GeV. This in part is achieved by a migration to PF-based jet reconstruction online which, in conjuction with a reduction of clustering radius parameter $\Delta R = 0.4$, provides improvements in jet energy resolution in high-pileup conditions and mitigates the effects of pileup contamination within the jet cone.
+In Run 2 the RA1 analysis will aim to retain the low-thresholds of Run 1 with developments to the trigger selection, maintaining sensitivity to signatures of new physics with hadronic energies as low as $\scalht = 200$ GeV. This in part is achieved by a migration to PF-based jet reconstruction within the HLT which, in conjunction with a reduction of clustering radius parameter $\Delta R = 0.4$, provides improvements in jet energy resolution in high-pileup conditions and mitigates the effects of pileup contamination within the jet cone.
 
-The hadronic signal selection is performed with $\scalht$-$\alphat$ cross triggers with a threshold on the average $\pt$ of the leading two jets (\verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!), which suppresses QCD multijet events whilst maintaining signal acceptance. 
+A suite of $\scalht$-$\alphat$ cross-triggers with a requirement on the minimum average \pt of the leading two jets, $\pt^{\rm \left<j1,j2\right>$, are utilised in the selection of events in the hadronic signal region, labelled \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a dijet average threshold provides an improved suppression of QCD multijet events enabling the use of looser \alphaT thresholds whilst maintaining acceptance to events exhibiting asymmetric jet topologies such as monojet-like signatures of compressed spectrum and DM models. A loose calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based reconstruction, ensuring the PF-based filters meet timing requirements. The calorimeter prefilter utilises loose \scalht and dijet average \pt requirements in addition to a new variable \alphat', defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better correlates \alphat between calorimeter and PF-based reconstruction.
 
-The use of a dijet average $\pt$ trigger requirement enables a suppression of rate from QCD whilst maintaining acceptance to events exhibiting asymmetric jet topologies such as monojet-like signatures of compressed spectrum and DM models.
-
-
- A loose calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based reconstruction, ensuring the PF-based filters meet timing requirements. The calorimeter prefilter utilises loose $\scalht$ and dijet $\pt$ requirements in addition to a new variable $\alphat$', defined as $\alphat$ in the limit $\Delta\scalht \rightarrow 0$, which better correlates $\alphat$ between calorimeter and PF-based reconstruction.
-
-The signal triggers uniquely seed individual offline analysis bins with the exception of the highest-$\scalht$ trigger which is utilised for analysis bins in the range: $400 < \scalht < 800$ GeV. Above $\scalht > 800$ the \verb!HLT_PFHT800! trigger is utilised which has no explicit dependence on $\alphat$ or dijet average threshold. 
+The thresholds of the signal triggers, shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}, are tuned to maintain acceptance to a range of signal topologies whilst effectively suppressing QCD multijet events to maintain acceptable trigger rates. These uniquely seed individual offline \scalht bins with the exception of the highest-\scalht trigger which is utilised for analysis bins in the range: $400 < \scalht < 800$ \GeV. Above $\scalht > 800$ a pure \scalht trigger, \verb!HLT_PFHT800!, is utilised which has no explicit dependence on $\alphat$ or dijet average threshold. In addition to the primary triggers, a set of backup triggers with higher thresholds are utilised to provide protection for higher luminosity scenarios. The Level-1 seeds for the HLT paths are given by the disjunction of the lowest unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for the given run scenario.
 
 
-A list of Run 2 triggers for the hadronic signal region in the Run 2 HLT menu are shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}. 
-In addition to the primary triggers, a set of backup triggers with higher thresholds are utilised to provide protection for higher luminosity scenarios.
+% TABLE : 2015 triggers
+%----------------------------------------------------------------------
+\begin{table}[h!]
+\topcaption{Trigger thresholds of the Level-1, calorimeter prefilter and final PF-trigger decision for the primary HLT paths for the hadronic signal region in the $\lumi=1.4\times10^{34}$ PU40bx25 scenario. Lower threshold Level-1 \scalht and \met seeds are utilised for the lower luminosity scenarios. }
+\footnotesize
+\centering
+%\begin{tabular}{c|ccc|c} 
+\begin{tabular}{c|ccc} 
+\hline
+\hline
+HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter                          \\ %& Rate \\[0.7 ex] 
+         &         & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>$) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>$) \\ %& (Hz) \\[0.7 ex] 
+\hline
+\verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
+\verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT175 OR ETM70! & 200, 0.535, 70 & 250, 0.550, 90 \\ %& \\ % 8.5  $\pm$ 3.0 \\
+\verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT175 OR ETM70! & 250, 0.525, 70 & 300, 0.530, 90 \\ %& \\ % 9.5  $\pm$ 3.0 \\
+\verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT175 OR ETM70! & 300, 0.520, 70 & 350, 0.520, 90 \\ %& \\ % 10.0 $\pm$ 3.0 \\
+\verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT175 OR ETM70! & 370, 0.510, 70 & 400, 0.510, 90 \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %\multicolumn{4}{c|}{Exclusive rate (Hz)} & \\ % 34 $\pm$ 6 \\
+\hline
+\hline
+
+\end{tabular}
+\label{tab:2015_Hadronic_Signal_Triggers}
+\end{table}
 
 
-The thresholds of the triggers will remain unchanged through run conditions and are measured to give high efficiencies in all three proposed run conditions: PU40bx50, PU20bx25 and PU40bx25. The Level-1 seeds for the HLT paths are given by the disjunction of the lowest unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for the given run scenario.
 
 
 The Measurement of trigger efficiency in data with an orthogonal \verb!SingleMu! dataset, seeded by the \verb!HLT_IsoMu24_eta2p1! trigger.
@@ -30,31 +46,7 @@ Selection of sample: $|\eta| < 2.1$
 The muon is excluded in the computation of event variables.
 
 
-% TABLE : 2015 triggers
-%----------------------------------------------------------------------
-\begin{table}[h!]
-\topcaption{Hadronic signal region HLT paths for the Run 2 PU40bx25 scenario, lower threshold Level-1 seeds, HTT150 OR ETM60, are utilised for the PU40bx50 and PU20bx50 scenarios. }
-\footnotesize
-\centering
-\begin{tabular}{c|ccc|c} 
-\hline
-\hline
-HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter                          & Rate \\[0.7 ex] 
-         &         & ($\scalht$, $\alphat$', $<\pt>_{\rm j1, j2}$) & ($\scalht$, $\alphat$, $\pt^{\rm j2}$) & (Hz) \\[0.7 ex] 
-\hline
-\verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 & \\ % 11.0 $\pm$ 3.0 \\
-\verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT175 OR ETM70! & 200, 0.535, 70 & 250, 0.550, 90 & \\ % 8.5  $\pm$ 3.0 \\
-\verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT175 OR ETM70! & 250, 0.525, 70 & 300, 0.530, 90 & \\ % 9.5  $\pm$ 3.0 \\
-\verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT175 OR ETM70! & 300, 0.520, 70 & 350, 0.520, 90 & \\ % 10.0 $\pm$ 3.0 \\
-\verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT175 OR ETM70! & 370, 0.510, 70 & 400, 0.510, 90 & \\ % 13.5 $\pm$ 3.5 \\
-\hline
-\multicolumn{4}{c|}{Exclusive rate (Hz)} & \\ % 34 $\pm$ 6 \\
-\hline
-\hline
 
-\end{tabular}
-\label{tab:2015_Hadronic_Signal_Triggers}
-\end{table}
 
 
 
@@ -67,9 +59,7 @@ HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter    
     \subfigure[$\njet = 4$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} ~~
     \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} \\
     \caption{
-Trigger efficiency after signal selection for T1tttt(X,y) model in representative analysis bins.
-   cumulative in \alphaT
-(a) $\njet = 4$ and (b) $\njet \geq5$.}
+Cumulative trigger efficiency for the {\verb!T1tttt}(1200,800) model after signal selection in the \alphat-\scalht and \mht-\scalht planes for the representative analysis jet multiplicity bins.}
     \label{fig:T1ttt_Trigger_Efficiency}
   \end{center} 
 \end{figure}
