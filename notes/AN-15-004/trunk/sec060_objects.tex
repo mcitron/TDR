@@ -32,25 +32,25 @@ shown on the y-axis represent the RMS of the distrubution.
 
 \subsection{b-tagged jets}
 \label{sec:btags}
-Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction \cite{b-tagging}. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``Medium`` working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable. 
-This results in a gluon/light-quark mis-tag rate of $\sim$1 \% (where ``light`` means $\it{u}$, $\it{d}$ and $\it{s}$ quarks) with a b-tag signal efficiency of about 80 \%. 
+Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction \cite{b-tagging}. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``Medium'' working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable. 
+This results in a gluon/light-quark mis-tag rate of $\sim$1 \% (where ``light'' means $u$, $d$ and $s$ quarks) with a b-tag signal efficiency of about 80 \%. 
 
 
 
 \subsection{Muons}
 \label{sec:muon-id}
-Muons are identified according to the Medium working point definition of the recommended identifiction algorithim, which provides $\sim$ 98 $\%$ efficiency. \\
+Muons are identified according to the Medium working point definition of the recommended identification algorithm, which provides $\sim$ 98 $\%$ efficiency. \\
 Muons are also required to be well isolated, i.e. with a low activity in the vicinity of their track. 
 A PF-based relative isolation is used with a variable cone size, which is referred to as ``mini-isolation''.
-This isolation algorithm helps in recovering some efficiency in the lepton selection for boosted topology of top quark decay, 
-in which the muon's track may be found close to jet activity due to the boost of the parent top. 
+This isolation algorithm helps in recovering some efficiency in the lepton selection for boosted topology of top quark decays, 
+in which the muon's track may be found close to the jet activity due to the boost of the parent top. 
 Therefore, the cone size used for the calculation of the lepton isolation is reduced as a function of 
-the lepton \Pt, as follows: $R=0.2$ for $\Pt_{\ell}\leq50\gev$, $R=0.05$ for $\Pt_{\ell} > 50\gev$. \\
+the lepton \Pt, as follows: $R=0.2$ for $\Pt_{\ell}\leq50\gev$, $0.05<R<0.2$ for $50 \gev < \Pt_{\ell} < 200\gev$ and $R=0.05$ for $\Pt_{\ell} > 200 \gev$. \\
 The transverse momenta of PF neutral and charged candidates within a cone around the lepton are summed. 
 The relative combined isolation $I^{rel}_{comb}$ is then defined as 
 the ratio of this scalar sum to the transverse momentum of the lepton candidate. 
 The neutral hadron and photon contribution to the isolation is corrected 
-by subtracting the expected neutral contribution from PU collisions, $\Delta\beta=1/2\sum_{PU}^{ch had}{\pt}$. 
+by subtracting the expected neutral contribution from PU collisions, $\Delta\beta=1/2\sum_{\mathrm{PU}}^{\mathrm{ch had}}{\pt}$. 
 The factor 1/2 takes into account the neutral to charged ratio as measured in \cite{CMS-PFT-10-002}. \\
 Muons are defined as isolated when they have $I^{rel}_{comb} < 0.2$ within $R$.
 
@@ -58,8 +58,8 @@ Muons are defined as isolated when they have $I^{rel}_{comb} < 0.2$ within $R$.
 
 Muons are vetoed in the definition of the hadronic signal region, 
 as described in Section \ref{sec:hadSelection}, while 
-control regions with one muon (``single muon'') or two muons (``double muon'') are defined for the purpose of the background estimation, 
-as described in Section \ref{sec:mucontrolSelection}.
+control regions with one muon (``$\mu$+jets'') or two muons (``$\mu\mu$+jets'') are defined for the purpose of the background estimation, 
+as described in Section \ref{subsec:mucontrolSelection}.
 
 % now we're using mini isolation this is no longer relevant:
 
@@ -85,11 +85,11 @@ Photons are identified according to the Tight working point defintion ($\sim$ 70
 of the simple cut-based photon identification algorithm \cite{photon-id} 
 and required to be well isolated. 
 A PF-based isolation is used with a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. 
-Table \ref{tab:photon-id-gamma} summarises the identification and isolation requirements for PHYS14 samples. 
+Table \ref{tab:photon-id-gamma} summarises the identification and isolation selection used for the PHYS14 exercise. 
 
 Photons are vetoed in the definition of the hadronic signal region, 
 as described in Section \ref{sec:hadSelection}, while a 
-control region with one photon (``single photon'') is defined for the purpose of the background estimation, 
+control region with one photon (``$\gamma$+jets'') is defined for the purpose of the background estimation, 
 as described in Section \ref{subsec:photoncontrolSelection}.
 
 
@@ -116,15 +116,15 @@ as described in Section \ref{subsec:photoncontrolSelection}.
 
 \subsection{Electrons}
 \label{sec:electron-id}
-Electrons are identified according to the Loose working point definition ( $\sim$ 90 $\%$ efficiency ) 
-of the cut-based identification \cite{electron-id} and 
-required to be well isolated. 
+Electrons are identified according to the ``loose'' working point definition ($\sim$ 90 $\%$ efficiency) 
+of the cut-based identification \cite{electron-id} for the purpose of the electron veto in the signal region, while the ``tight'' working point ($\sim$ 70 $\%$ efficiency) is used for the selection of electron in the corresponding control regions. \\
+Electrons are also require required to be well isolated. 
 A PF-based isolation \cite{pf-photon} is used with a cone size determined by the mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\Delta \beta$ corrections are applied to remove the effects of pileup. 
-Table \ref{tab:ele-id} summarises the identification and isolation requirements derived using the PHYS14 samples.
+Table \ref{tab:ele-id} summarises the identification and isolation selection used for the PHYS14 exercise.
 
 Electrons are vetoed in the definition of the hadronic signal region, 
 as described in Section \ref{sec:hadSelection}, while 
-control regions with one electron (``single electron'') or two electrons (``double electron'') are defined for the purpose of the background estimation, 
+control regions with one electron (``$e$+jets'') or two electrons (``$ee$+jets'') are defined for the purpose of the background estimation, 
 as described in Section \ref{sec:elecontrolSelection}.
 
 
