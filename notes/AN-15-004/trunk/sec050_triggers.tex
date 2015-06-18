@@ -7,7 +7,7 @@
 
 In Run 2 the RA1 analysis will aim to retain the low-thresholds of Run 1 with developments to the trigger selection, maintaining sensitivity to signatures of new physics with hadronic energies as low as $\scalht = 200$ GeV. This in part is achieved by a migration to PF-based jet reconstruction within the HLT which, in conjunction with a reduction of clustering radius parameter $\Delta R = 0.4$, provides improvements in jet energy resolution in high-pileup conditions and mitigates the effects of pileup contamination within the jet cone.
 
-A suite of $\scalht$-$\alphat$ cross-triggers with a requirement on the minimum average \pt of the leading two jets, $\pt^{\rm \left<j1,j2\right>$, are utilised in the selection of events in the hadronic signal region, labelled \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a dijet average threshold provides an improved suppression of QCD multijet events enabling the use of looser \alphaT thresholds whilst maintaining acceptance to events exhibiting asymmetric jet topologies such as monojet-like signatures of compressed spectrum and DM models. A loose calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based reconstruction, ensuring the PF-based filters meet timing requirements. The calorimeter prefilter utilises loose \scalht and dijet average \pt requirements in addition to a new variable \alphat', defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better correlates \alphat between calorimeter and PF-based reconstruction.
+A suite of $\scalht$-$\alphat$ cross-triggers with a requirement on the minimum average \pt of the leading two jets, $\pt^{\rm \left<j1,j2\right>$, are utilised in the selection of events in the hadronic signal region, labelled: \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a dijet average threshold provides an improved suppression of QCD multijet events enabling the use of looser \alphaT thresholds whilst maintaining acceptance to events exhibiting asymmetric jet topologies such as monojet-like signatures of compressed spectrum and DM models. A loose calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based reconstruction, ensuring the PF-based filters meet timing requirements. The calorimeter prefilter utilises loose \scalht and dijet average \pt requirements in addition to a new variable \alphat', defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better correlates \alphat between calorimeter and PF-based reconstruction.
 
 The thresholds of the signal triggers, shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}, are tuned to maintain acceptance to a range of signal topologies whilst effectively suppressing QCD multijet events to maintain acceptable trigger rates. These uniquely seed individual offline \scalht bins with the exception of the highest-\scalht trigger which is utilised for analysis bins in the range: $400 < \scalht < 800$ \GeV. Above $\scalht > 800$ a pure \scalht trigger, \verb!HLT_PFHT800!, is utilised which has no explicit dependence on $\alphat$ or dijet average threshold. In addition to the primary triggers, a set of backup triggers with higher thresholds are utilised to provide protection for higher luminosity scenarios. The Level-1 seeds for the HLT paths are given by the disjunction of the lowest unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for the given run scenario.
 
@@ -47,11 +47,13 @@ The muon is excluded in the computation of event variables.
 
 
 
+The trigger efficiency measured for a signal model is shown in Figure~\ref{fig:T1ttt_Trigger_Efficiency}
 
 
 
-% Efficiencies table
-% T1tttt Rows = AlphaT, MHT: Columns = NJet 4,5
+
+% FIGURE: Trigger efficiencies
+%----------------------------------------------------------------------
 \begin{figure}[h!]
   \begin{center}
     \subfigure[$\njet = 4$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/eq4j_ht_vs_alphaT_Cumul.pdf}} ~~
@@ -59,7 +61,7 @@ The muon is excluded in the computation of event variables.
     \subfigure[$\njet = 4$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} ~~
     \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} \\
     \caption{
-Cumulative trigger efficiency for the {\verb!T1tttt}(1200,800) model after signal selection in the \alphat-\scalht and \mht-\scalht planes for the representative analysis jet multiplicity bins.}
+Cumulative trigger efficiency for the {\verb!T1tttt}(1200,800) model after signal selection in the \alphat-\scalht and \mht-\scalht planes for representative analysis jet multiplicity bins.}
     \label{fig:T1ttt_Trigger_Efficiency}
   \end{center} 
 \end{figure}
@@ -70,9 +72,39 @@ Cumulative trigger efficiency for the {\verb!T1tttt}(1200,800) model after signa
 
 
 
-%Prescaled control region triggers
+% Control region triggers
 \subsection{Control samples}
-Prescaled $\scalht$ triggers, each with an exclusive rate of $\sim$1 Hz, are utilised in the selection of events for the hadronic control region. These share the same Level-1 seeds and $\scalht$ threshold of the signal triggers and are similarly each mapped to a unique offline bin. The non-hadronic control regions will be seeded by the lowest-threshold unprescaled triggers of the given run scenario, with \verb!HLT_Ele27_eta2p1_WP75_Gsf! seeding the electron control region ($e$, $ee$), \verb!HLT_IsoMu20_eta2p1! the muon control region ($\mu$, $\mu\mu$) and \verb!HLT_Photon175! the photon control region.
+Prescaled $\scalht$ triggers shown in Table~\ref{tab:2015_Hadronic_Control_Triggers} are utilised in the selection of events for the hadronic control region. These share the same Level-1 seeds and $\scalht$ threshold of the signal triggers and are similarly each mapped to a unique offline bin. 
+
+
+% TABLE: Hadronic control region
+%----------------------------------------------------------------------
+\begin{table}[h!]
+\topcaption{Hadronic control triggers. }
+\footnotesize
+\centering
+\begin{tabular}{c|cc} 
+\hline
+\hline
+HLT path & \multicolumn{2}{c}{Prescale} \\
+         & $\lumi=1.4\times10^{34}$  & $\lumi=7\times10^{33}$     \\
+\hline
+\verb!HLT_PFHT200! & 12600 & 6300 \\
+\verb!HLT_PFHT250! & 8400  & 4200 \\
+\verb!HLT_PFHT300! & 4200  & 2100 \\
+\verb!HLT_PFHT350! & 700   & 350  \\
+\verb!HLT_PFHT400! & 1400  & 700  \\
+\hline
+\hline
+
+\end{tabular}
+\label{tab:2015_Hadronic_Control_Triggers}
+\end{table}
+
+
+
+
+The non-hadronic control regions will be seeded by the lowest-threshold unprescaled triggers of the given run scenario, with \verb!HLT_Ele27_eta2p1_WP75_Gsf! seeding the electron control region ($e$, $ee$), \verb!HLT_IsoMu20_eta2p1! the muon control region ($\mu$, $\mu\mu$) and \verb!HLT_Photon175! the photon control region.
 
 
 
