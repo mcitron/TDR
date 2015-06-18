@@ -1,305 +1,518 @@
 %____________________________________________________________________________||
-\section{Event selection}
+\section{Event selection for signal and control regions}
 \label{sec:selection}
 
-\subsection{Event vetoes for leptons, photons, and single isolated tracks\label{sec:vetoes}}
-
-To suppress SM processes with genuine \met from neutrinos, events
-containing an isolated electron with $\pt > 10\GeV$ and $|\eta| < 2.5$ or an isolated muon
-with $\pt > 10\GeV$ and $|\eta| < 2.5$ are vetoed. To select a pure
-multijet topology, events are vetoed in which an isolated
-photon with $\pt > 25\GeV$ and $|\eta| < 2.5$ is
-found.  Further, to reduce the ``lost leptons'' backgrounds from W~+~jets 
-and \ttbar, events containing single isolated tracks with $\pt >
-10\GeV$ and $|\eta| < 2.5$, as defined in
-Section~\ref{sec:objects}, are vetoed as part of the signal
-region selection criteria. In the case of the \mj and \mmj
-samples, a further requirement is made such that events are not vetoed
-due to the presence of a track from the well identified muons, by
-requiring $\Delta R(\textrm{track},\mu) > 0.02$.
-
+This section first outlines the set of ``pre-selection'' requirements
+that are common to all signal and control regions, before defining the
+selection criteria that are specific to each region.
 
 %%____________________________________________________________________________||
-\subsection{Hadronic region selection}
-\label{sec:hadSelection}
+\subsection{Pre-selection}
+\label{sec:preSelection}
 
-\subsubsection{Hadronic pre-selection}
+{\bf Removing instrumental sources of ``fake'' \met.} 
+
+A number of beam- and detector-related effects can induce significant
+\met. Examples include beam halo, reconstruction failures, spurious
+detector noise, or event misreconstruction due to detector
+inefficiencies. These events, with large, non-physical values of \met,
+are rejected with high efficiency by applying a range of dedicated
+vetoes. All ``MET filters'' recommended by the JetMET POG and SUSY PAG
+will be applied by default in this analysis.
+
+{\bf Jet requirements.} 
+
+Jets considered in the analysis are required to satisfy $\PT>40\gev$
+and $|\eta|<3.0$. Events containing jets in the forward region that
+satisfy the requirements $\PT>40\gev$ and $|\eta|>3.0$ are rejected in
+order to control background contributions from SM processes, without
+introducing a significant reduction in signal acceptance. The jets
+that are selected are used in the calculation of all jet-based
+event-level variables, such as \HT, \mht, and \alphat.
+
+Raised $\PT$ thresholds on the lead jets are also required. The lead
+jet is required to satisfy $\PT > 100\gev$, which is required to
+ensure trigger efficiency but also helps to improve the S/B for a wide
+range of models with respect to SM processes such as V + jets
+production. Events are then classified according to the second hardest
+jet, which is required to satisfy either $\PT > 100\gev$ (leading to a
+``symmetric'' \njet category), or $40 < \PT < 100\gev$ (an
+``asymmetric'' \njet category). The latter of these two requirements
+helps to improve acceptance to a range of DM models and compressed
+SUSY.
+
+{\bf Baseline event categorisation according to \njet and \nb.} 
+
+Events in the hadronic signal and all control regions (described
+below) are categorised identically and according to the number of jets
+(\njet) reconstructed in each event and the number of jets identified
+as originating from bottom quarks (\nb) in each event. The resulting
+sub-samples comprise events containing exactly two, three, four, or at
+least five jets. As a baseline choice, the sub-samples are also
+defined by a requirement on the number of b-tagged jets corresponding
+toexactly zero, one, two, or at least three b-jets. By construction,
+$\nb \leq \njet$. Additional categories with higher b-tag
+multiplicities may be added at a later date, as described below. 
+
+{\bf \HT requirements and baseline \HT binning.} 
+
 Events are required to have significant hadronic activity by requiring
-$\scalht > 200\GeV$. Despite the increase in centre of mass energy and pileup
-in Run~2, this threshold is kept at the level of the Run~1 analyses~\cite{Chatrchyan:2013lya}  
-to maintain acceptance for SUSY models with compressed spectra.
+$\scalht > 200\GeV$. Despite an increase in both multijet production
+cross sections and pileup in Run~2, the lowest \HT threshold will be
+kept at the same value of the Run~1 analysis~\cite{Chatrchyan:2013lya}
+in order to maintain acceptance to DM models or compressed
+SUSY. Events in all samples are binned identically, according to the
+\HT variable. The choice of binning in \HT is driven primarily by the
+trigger strategy employed by the analysis, as described in
+Section~\ref{sec:triggers}, and can be summarised as follows: 50\gev
+bins in the range $200 < \HT < 400\gev$, 200\gev bins in the range
+$400 < \HT < 800\gev$, and a final inclusive bin $\HT > 800\gev$.
 
-Jets considered in the analysis are required to have transverse momenta of $\PT>40\gev$ and be
-within the acceptance $|\eta|<3.0$. This threshold is chosen
-to be flat across \HT values, unlike the SUS-14-006 analysis~\cite{CMS_AN_2013-366}. The \PT value is
-chosen to be as low as possible to reduce the number of jets falling below
-threshold and introducing artificial \mht, while remaining in the realm of
-reliable jet energy corrections. In the nominal analysis the two highest energy jets
-are required to satisfy $\PT>100\gev$.% --this isn't required currently, it may be in the future--- and the leading jet must be within $|\eta|<2.5$. 
-The jets that are selected are used for the calculation of the variables \HT and \mht.
+{\bf Summary of pre-selection requirements.} 
 
-Events in which jets with $\PT>40\gev$ are reconstructed within $|\eta|>3.0$ are
-rejected. This reduces the number of events with non genuine \mht caused by jets
-out of acceptance.
-
-\subsubsection{The hadronic signal region\label{sec:had-signal}}
-
-Following the hadronic pre-selection, the multijet background from QCD
-is still several orders of magnitude larger than the typical signal
-expected from SUSY. Most multijet background is located at values less than $\alphat<0.5$ and therefore can
-be rejected with very high efficiency by requiring an appropriate cut on \alphat (plus the application of two dedicated cleaning filters, described below in
-Sec.~\ref{sec:had-signal}). As the mulitjet background is more prevalent at low
-\HT values, the \alphat requirement scales with \HT as detailed in
-Table~\ref{tab:alphat-thresholds}. The minimum \mht value that the \alphat cut
-corresponds to is calculated by assuming $\dht=0$ and inverting the formula for
-\alphat. 
+Table~\ref{tab:pre-selections} summarises the pre-selection
+requirements. The evolution of the choice of event categorisation and
+\HT binning is described below.
 
 \begin{table}[h!]
-  \caption{\alphat and (effective) \mht thresholds per \scalht bin.\label{tab:alphat-thresholds}}
+  \topcaption{Summary of the pre-selection criteria.}
+  \label{tab:pre-selections}
   \centering
   \footnotesize
-  \begin{tabular}{ lcccccc }
+  \begin{tabular}{ ll }
     \hline
     \hline
-    \scalht      & 200--250   & 250--300   & 300--350  & 350--400  & 400--800 \\ %& $>$900       \\
-    \hline                                                                     
-    \alphat      & 0.65       & 0.60       & 0.55      & 0.53      & 0.52     \\  %& 0.505         \\
-    "Min \mht"   & $\sim$128  & $\sim$138  & $\sim$125 & $\sim$133 & $\sim$137 \\  %& $\sim$126 \\
+    Selection                     & Requirement                                                            \\
+    \hline
+    ``MET filters''               & Various                                                                \\
+    Jet acceptance                & $\PT > 40\gev$, $|\eta| < 3$                                           \\
+    \njet                         & $\geq2$                                                                \\
+    Lead jet acceptance           & $\PT > 100\gev$, $|\eta| <    2.5$                                     \\
+    Second jet acceptance         & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$                       \\
+    Loosest \HT requirement       & $\HT > 200\gev$                                                        \\
+    Baseline \HT binning          & 200--250, 250--300, 300--350, 350--400, 400--600, 600--800, $>$800\gev \\
+    Baseline \njet multiplicities & 2, 3, 4, $\geq$5                                                       \\
+    Baseline \nb multiplicities   & 0, 1, 2, $\geq3$ ($\nb \leq \njet$)                                    \\
     \hline
     \hline
   \end{tabular}
 \end{table}
 
-In the Run~1 analyses a general minimum cut of $\alphat>0.55$ was used. This was chosen
-as a conservative cut to remove QCD and also part of the \alphat requirement in the HLT paths used to seed the analysis bins. For
-Run~2 it is proposed to seed the the bins with $\HT>800\gev$ by a flat
-$PF\HT>800\gev$ HLT path with no \alphat requirement, see Sec.~\ref{triggers}. Instead of an offline \alphat cut for events with 
-$\HT>900$, a flat $\MHT>130\gev$ is required. As QCD contamination at high \HT bins is not so much of a problem, there are gains
-from not losing the efficiency normally associated with an \alphat cut.
+{\bf Evolution of event categorisation versus integrated luminosity.} 
 
-Subsequently, additional cleaning cuts are applied. To protect against 
-multiple jets failing the $\Et$ threshold, the
-jet-based estimate of the missing transverse energy, \mht, is compared
-to the Particle Flow estimate of missing transverse energy, $\pfmet$,
-and events with $R_{\rm miss}=\mht/\pfmet > 1.25$ are rejected.
+The choice of how events are categorised according to the number of
+\njet and \nb will evolve as a function of integrated luminosity. In
+this note, events containing three or more b-tags are combined (in
+conjunction with \njet) into a single category, which implies either
+an additional source of b-jets beyond those from the \ttbar process
+(\eg via gluon splitting) or at least one mistag from a gluon or
+light-flavoured quark. The number of reconstructed jets that are
+b-tagged is taken directly from simulation. However, in the near
+future, the ``b-tag formula method'' detailed in
+Ref.~\cite{Chatrchyan:2013lya} will again be employed to improve the
+statistical precision of predictions involving events containing three
+or four b-tagged jets, which may allow for the addition of further
+categories that contain at least four b-tagged jets. 
 
-To protect against severe energy losses, events with significant jet
-mismeasurements caused by masked regions in the ECAL (which amount to
-about 1\% of the ECAL channel count), or by missing instrumentation in
-the barrel-endcap gap, are removed with the following procedure. The
-jet-based estimate of the missing transverse energy, \mht, is used to
-identify jets most likely to have given rise to the \mht as those
-whose momentum is closest in $\phi$ to the total $\vec{\mht}$ which
-results after removing them from the event.  The azimuthal distance
-between this jet and the recomputed \mht is referred to as
-$\Delta\phi^*$ in what follows. Events with $\Delta\phi^* < 0.5$ are
-rejected if the distance in the ($\eta,\phi$) plane between the
+{\bf Evolution of \HT binning versus integrated luminosity.} 
+
+The lower threshold of the last (inclusive) \HT bin is determined
+independently for each (\njet,\nb) event category and is chosen to
+always align with one of the ``default'' boundaries defined above. The
+metric for choosing the final bin threshold is based on the number of
+events in the corresponding event category and \HT bin of the data
+control samples. This ensures that all bins in the data control
+samples are sufficiently populated to ensure a statistically
+significant prediction in each of the corresponding signal region
+bins. Currently, this is achieved by requiring sufficient events
+($\sim 10$) to yield a statistical uncertainty on the total background
+prediction of $\lesssim30\%$. Events from high \HT bins are combined
+into a single inclusive bin that satisfies this metric. This metric
+also ensures that there are sufficient events in the control samples
+to probe for potential systematic effects with closure tests between
+simulation and data, as described in Sec.~\ref{sec:systematics}.
+
+{\bf Event categorisation and binning choice for 3\fbinv.} 
+
+The event categorisation according to \njet and \nb and the \HT
+binning scheme per category is summarised in
+Table~\ref{tab:binning-3fb} for the 3\fbinv scenario. An identical
+scheme is used for the signal region and all control regions. No
+extrapolation is performed in the variables \njet, \nb, and \HT in
+this analysis. For each of the signal and control regions, thirty
+event categories are considered, each with up to seven bins in \HT,
+assuming an integrated luminosity of 3\fbinv. Additional categories
+and \HT bins may be considered for larger integrated luminosities.
+
+\begin{table}[h!]
+  \caption{Threshold (GeV) of the final \HT bin as a function of event
+    category (\njet,\nb), which is always aligned with respect
+    to one of the baseline boundaries (motivated primarily by the trigger) of
+    200, 250, 300, 350, 400, 600, 800\gev. This is the projected choice for 3\fbinv.}
+  \label{tab:binning-3fb}
+  \centering
+  \footnotesize
+  \begin{tabular}{ l|ccc|cccc|cccc|cccc }
+    \hline
+    \hline
+    \njet      & \multicolumn{3}{c}{2} & \multicolumn{4}{c}{3} & \multicolumn{4}{c}{4} & \multicolumn{4}{c}{$\geq5$}                                                   \\ 
+    \nb        & 0                     & 1                     & 2                     & 0   & 1   & 2   & 3   & 0   & 1   & 2   & $\geq3$ & 0   & 1   & 2   & $\geq3$ \\
+    \hline
+    Symmetric  & 800                   & 800                   & 600                   & 800 & 800 & 800 & 400 & 800 & 800 & 800 & 600     & 800 & 800 & 800 & 800     \\
+    Asymmetric & 800                   & 600                   & 400                   & 800 & 600 & 400 & 300 & 600 & 600 & 600 & 400     & 600 & 600 & 600 & 400     \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Lepton and photon vetoes to select hadronic final states \label{sec:vetoes}}
+
+To select a sample of events in the hadronic final state and to
+suppress SM processes with genuine \met from neutrinos, events
+containing an isolated electron with $\pt > 10\GeV$ and $|\eta| < 2.5$
+or an isolated muon with $\pt > 10\GeV$ and $|\eta| < 2.5$ are
+vetoed. Further, to reduce the ``lost leptons'' backgrounds from \wj
+and \ttbar, events containing single isolated tracks with $\pt >
+10\GeV$ and $|\eta| < 2.5$, as defined in Section~\ref{sec:objects},
+are vetoed as part of the signal region selection criteria. In the
+case of the single and di-lepton control samples, a further
+requirement is made such that events are not vetoed due to the
+presence of a track from the well identified leptons, by requiring
+$\Delta R(\textrm{track},\textrm{lepton}) > 0.02$.
+
+Finally, to select a pure multijet topology and to allow for a
+disjoint control region, events are vetoed in which an isolated photon
+with $\pt > 25\GeV$ and $|\eta| < 2.5$ is identified.
+
+\subsection{The hadronic signal region}
+\label{sec:had-signal}
+
+The lepton and photon vetoes are applied to select hadronic final
+states. All pre-selection criteria are also applied. Following these
+selections, the multijet background from QCD is still several orders
+of magnitude larger than the typical signal expected from SUSY.
+
+{\bf \HT-dependent \alphat requirements.}
+
+Background events from multijet production populate the region
+$\alphat \lesssim 0.5$ and therefore can be rejected with very high
+efficiency by requiring an appropriate cut on \alphat. In the Run~1
+analyses, a minimum requirement of $\alphat > 0.55$ was imposed, with
+a raised threshold (as high as 0.65) used at low \HT to control
+against a potential increase in contamination from multijet production
+due to worsening resolution and jet \PT threshold effects.  (The
+latter effect refers to ``fake'' \mht arising from the rare occurance
+of multiple soft jets below threshold that are relatively collinear.)
+The minimum threshold of 0.55 was motivated primarily by the control
+of the multijet background and considered conservative for mid to high
+regions in \HT, while maintaining good signal acceptance. However,
+improving jet resolutions and a reduced jet threshold effect relative
+to an increasing \HT scale means that looser \alphat thresholds can be
+used at higher values of \HT.
+
+A useful approximate conversion between \alphat and \mht can be
+obtained by calculating \alphat while forcing $\dht = 0\gev$, as
+described by Equ.~\ref{eq:alphat3}. Hence, using this metric, the
+dependence of the \alphat requirement as a function of the \HT bin can
+be determined such that the effective requirement on \mht is
+comparable, \ie roughly constant, across all \HT bins. The values
+typically fall in the range $\sim110 < \mht < \sim160\gev$. This
+approximate levelling of the ``effective'' \mht threshold implies
+increasingly tighter requirements against instrumental effects versus
+\HT, while maximising signal
+acceptance. Table~\ref{tab:alphat-thresholds} summarises the expected
+\alphat thresholds and corresponding ``effective'' \mht thresholds for
+each \HT bin. The \alphat threshold is dependent only on \HT and not
+on \njet nor \nb that are used to define the event categories.
+
+\begin{table}[h!]
+  \caption{\alphat and corresponding ``effective'' \mht (GeV) thresholds versus
+    lower bound of \scalht bin. For all \HT bins satisfying $\HT > 800
+    \gev$, a direct requirement of $\mht > 130\gev$ is imposed rather
+    than a requirement on \alphat.}
+  \label{tab:alphat-thresholds}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcccccccc }
+    \hline
+    \hline
+    \scalht            & 200       & 250       & 300       & 350       & 400       & 600       \\
+    \hline                                                                     
+    \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      \\
+    ``Effective'' \mht & $\sim$128 & $\sim$138 & $\sim$125 & $\sim$123 & $\sim$110 & $\sim$162 \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+For Run~2, all signal region bins satisfying $\HT > 800\gev$ will be
+seeded by the single-object \texttt{HLT\_HT800} trigger, which is
+expected to be unprescaled. For these high \HT bins, no \alphat
+threshold is required, which removes the inefficiencies of this
+variable for high jet multiplicity events. Instead, the following
+requirements are imposed to control the multijet background: $\mht >
+130\gev$ and $\bdphi > 0.3$ (described below).
+
+{\bf \bdphi requirement.} 
+
+Further, an additional powerful variable \bdphi is used to suppress
+multijet contamination due to both instrumental effects and
+semi-leptonic heavy-flavour decays with genuine \met in the final
+state. The variable is determined as follows. The jet-based estimate
+of the missing transverse energy, $\vec{\mht}$, is recomputed while
+ignoring one of the reconstructed jets (the ``test'' jet). The
+difference in the azimuthal angle between the recomputed $\vec{\mht}$
+and the ``test'' jet is then determined. This process is repeated for
+each jet in the event and the minimum of all the azimuthal
+differences, \bdphi, is determined. The ``test'' jet whose subtraction
+from the calculation $\vec{\mht}$ yields this minimum value, is
+identified as the jet that is most likely to have given rise to the
+missing tranverse energy in the event. Events with significant \mht
+due to instrumental effects or heavy flavour decays populate the
+region $\bdphi \approx 0$ and so candidate signal event are accepted
+only if they satisfy $\bdphi > 0.3$. The use of the \bdphi and \alphat
+variables provide an extremely powerful rejection factor against
+contamination from multijet events and allow to maintain low jet \PT,
+\HT, and \mht thresholds, which in turn maximises signal acceptance
+for a large range of DM and SUSY models with final states
+characterised by the presence of significant \met.
+
+{\bf Additional cleaning filters.} 
+
+Two additional dedicated cleaning cuts are applied. First, to protect
+against multiple jets failing the $\Et$ threshold, the jet-based
+estimate of the missing transverse energy, \mht, is compared to the
+missing transverse energy variable, $\met$, and events with $R_{\rm
+  miss}=\mht/\met > 1.25$ are rejected. Second, to protect against
+severe energy losses caused by masked regions in the ECAL (which
+amount to about 1\% of the ECAL channel count) or HCAL, or by missing
+instrumentation in the barrel-endcap gap, events with $\bdphi < 0.5$
+are rejected if the distance in the ($\eta,\phi$) plane between the
 selected jet and the closest masked ECAL region, $\Delta R_{\rm
   ECAL}$, is smaller than 0.3. Similarly, events are rejected if the
 jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
-$|\eta| = 1.5$. These final selections complete the definition of the
-acceptance of the hadronic signal sample.
+$|\eta| = 1.5$.
 
-%%____________________________________________________________________________||
-\subsection{Analysis bins}
+{\bf Summary of signal region selection.} 
 
-Events in the hadronic signal region (and the
-three control regions described in Sec.~\ref{sec:controlSelection}) are
-categorised according to the number of jets (\njet) reconstructed in
-each event and the number of jets identified as originating from
-bottom quarks (\nb) in each event. By construction, $\nb \leq \njet$. The \njet
-bins are likely to be at the level of one \njet per category.
-
-Additionally these categories are binned in \HT. These bins begin at
-$\HT=200\gev$ and extend in $50\gev$ steps up to $\HT=400\gev$. Above this, the
-bins are $100\gev$ wide extending up to the highest \HT reachable. 
-These bin widths have been rationalised with respect to the SUS-14-006 analysis. 
-As there are sufficient events in the control
-samples (detailed in Sec.~\ref{sec:controlSelection}) at low \HT, $50\gev$ bins
-are an appropriate size. In SUS-14-006 the low \HT bins were seeded by different
-trigger paths, and their lower edge was chosen to sit in the trigger turn-on. For
-Run~2 this strategy has been inverted, with the selection of the offline \HT
-bins first. The trigger threshold is then chosen to be sufficiently below that
-of it's relevant offline bin so as to be efficient. More details in
-Sec~\ref{sec:triggers}. An overview of the preliminary binning is given in Tab.~\ref{tab:alphat-binning}.
-%detailed in Table~\ref{tab:htBins}.
+The requirements that define the hadronic signal region are summarised
+in Table~\ref{tab:sr-selections}.
 
 \begin{table}[h!]
-\topcaption{Preliminary signal region binning \label{tab:alphat-binning}}
+  \topcaption{Summary of the signal region selection criteria, applied
+    in addition to the pre-selection summaised in
+    Table~\ref{tab:pre-selections}.}
+  \label{tab:sr-selections}
   \centering
   \footnotesize
-  \begin{tabular}{ lcccccc }
+  \begin{tabular}{ ll }
     \hline
     \hline
-    \scalht bin  & \multicolumn{5}{c}{$p_\textrm{T}(j^{1,2})>100$~GeV, $\HT > 200$~GeV, $\alpha_{\rm T}$}\\
-    \scalht bin  & 200--250      & 250--300      & 300--350      & 350--400     & 400--900       & $>$900       \\
-    $n_\textrm{jet}$        & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$\\
-    $n_b$        & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$)\\
+    Selection             & Requirement                                                    \\
+    \hline
+    \alphat               & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 800\gev$ \\
+    \mht                  & $>130\gev$ for region $\HT > 800\gev$                          \\  
+    \bdphi                & $>0.3$                                                         \\
+    \mht/\met             & $<1.25$                                                        \\
+    ``Dead ECAL filter''  & (see text)                                                     \\
     \hline
     \hline
   \end{tabular}
 \end{table}
 
-Also a new orthogonal signal region has been added. In order to increase acceptance and sensitivity for ISR and mono-jet type events is lowered to 40~GeV with an upper bound of 100~GeV, see Sec~\ref{sec:}. Bins for this new signal region are given in Tab.~\ref{tab:alphat-asym-binning}.
+\subsection{Adding the \texorpdfstring{\mht}{MHT} dimension}
+\label{sec:had-shape}
 
+As described above, and as used in Run~1, the analysis takes advantage
+of three discriminating variables, \njet, \nb, and \HT, to provide
+sensitivity to a large range of SUSY (and DM) models. No extrapolation
+in these variables is performed, with predictions of SM background
+yields in the (\njet,\nb,\HT) bins of the signal region based on both
+observed counts and transfer factors derived from simulated yields in
+the corresponding (\njet,\nb,\HT) bins of the control samples. Each
+prediction is statistically and systematically independent.
 
-\begin{table}[h!]
-\topcaption{Preliminary asymmetric signal region binning \label{tab:alphat-asym-binning}}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lcccccc }
-    \hline
-    \hline
-    \scalht bin  & \multicolumn{5}{c}{$p_\textrm{T}(j^{1})>100$~GeV, $40\ge p_\textrm{T}(j^{2})\le100$~GeV, $\HT > 200$~GeV, $\alpha_{\rm T}$}\\
-    \scalht bin  & 200--250      & 250--300      & 300--350      & 350--400     & 400--900       & $>$900       \\
-    $n_\textrm{jet}$        & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$ & $2,3,4,\ge 5$\\
-    $n_b$        & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$) & 0--min($n_\textrm{jet},\ge 4$)\\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
+In Run~1, for each (\njet,\nb,\HT) bin in the signal region, an
+extrapolation in the variable \alphat was necessary to obtain
+background predictions based on the muon control samples, which did
+not impose any \alphat requirement. No extrapolation in \alphat was
+performed for the photon control sample, which used the same \alphat
+requirements as the signal region. The \alphat requirements used in
+Run~1 for the signal region correspond loosely to \mht thresholds in
+the range $\sim$130 to $\sim$500\gev depending on the \HT
+bin. Uncertainties in this extrapolation were determined through
+closure tests with respect to data, including one dedicated to the
+\alphat extrapolation, plus additional cross checks.
 
-%%____________________________________________________________________________||
+In Run~2, we will additionally bin event counts in the signal region
+according to the variable \mht in order to provide further
+discriminating power between any potential signal and the SM
+background counts. Hence, while no extrapolation is performed in
+\njet, \nb, nor \HT, the analysis will rely on shape information
+obtained from simulation to extrapolate from counts (integrated over
+\mht) in the control samples to a predicted shape in \mht for each
+corresponding (\njet,\nb,\HT) bin in the signal region. 
 
-\subsection{Definition of the control samples}
-\label{sec:controlSelection}
+The \mht shape information is included in the likelihood model using
+templates determined per (\njet,\nb,\HT) bin from simulation. An
+associated normalisation nuisance is determined from closure tests
+between simulation and data, as described in
+Sec.~\ref{sec:systematics}. Alternative templates are used to encode
+the systematic uncertainty in the \mht shape. Preliminary studies and
+estimates of the shape systematics are also discussed
+Sec.~\ref{sec:systematics}. The likelihood model is described in
+Sec.~\ref{sec:likelihood}.
 
-\subsubsection{Hadronic control sample}
+The templates use \mht bins of 50\gev in width. A metric is used to
+determine the threshold of the final \mht bin used by the
+templates. This metric is currently based on requiring a minimum
+number of both observed counts in the {\it data control samples} and
+(unweighted) simulated events with \mht values higher than the final
+bin threshold. While the counts in the (\njet,\nb,\HT) bins of each
+data control sample will not be binned according to \mht (as in the
+signal region), the former requirement ensures that there are
+sufficient events in each (\njet,\nb,\HT) bin of the control samples
+to probe for potential systematic effects {\it across all bins in
+  \mht} using closure tests between simulation and data, as described
+in Sec.~\ref{sec:systematics}. Hence, a data-driven cross check for
+potential biases and on the systematic uncertainty in the template
+shape is possible. The latter requirement minimises the statistical
+uncertainties associated with the finite number of simulated events
+for the various SM background processes. Both requirement are based on
+counts according to \njet and \nb but inclusive with respect to \nb.
 
-A disjoint hadronic control sample consisting predominantly of
-multijet events is defined by applying the hadronic pre-selection
-criteria and inverting the \alphat and/or \mhtmet requirements for a
-given \scalht region, which is used primarily in the estimation of any
-residual background from QCD multijet events, described in
-Sec.~\ref{sec:qcd}.
+\subsection{The hadronic control region}
 
-\subsubsection{The \texorpdfstring{\mj}{muon plus jets} control sample}
-\label{subsec:mucontrolSelection}
+A hadronic control region that is enriched in multijet events and
+disjoint with respect to the signal region is obtained by applying
+both the pre-selection criteria and lepton/photon vetoes, as defined
+above, and inverting the (\HT-dependent) \alphat and/or \mhtmet
+requirements. 
+%None of the cleaning filters are not applied to allow the study of
+%instrumental effects. 
+The sample of events populating this control region are used primarily
+to estimate any residual background contamination from QCD multijet
+events, described in Sec.~\ref{sec:qcd}.
 
-Events from the \wj and \ttbar processes are found in the hadronic
-signal sample due to unidentified leptons (either out of acceptance or
-not reconstructed) and hadronic tau decays originating from
-high-p$_{T}$ W bosons. An estimate of these background processes is
-obtained through the use of a \mj sample. The selection criteria for
-this sample are chosen to identify W bosons decaying to a muon and a
-neutrino in the phase-space of the signal. The muon is not considered
-in the calculation of event-level variables such as \scalht, \mht and
-\alphat. All cuts on such jet-based quantities are consistent with
+\subsection{Commonalities between the lepton and photon control
+  regions}
+
+There are five control regions with leptons or photons in the final
+state: \mj, \mmj, \ej, \eej, and \gj. The full pre-selection is
+applied as part of the definition of each of these control
+regions. The cuts on event-level jet-based quantities are identical to
 those applied in the hadronic search region and the same \njet, \nb,
-and \scalht binning is used. The only exception is that no \alphat
-requirement is made, as motivated by the discussion in
-Sec.~\ref{sec:larger}. In order to select events containing W bosons,
-exactly one tight isolated muon within an acceptance of \PT $>$ 30
-\gev and $|\eta| <$ 2.1 is required (due to the trigger), and the
-transverse mass of the W candidate must satisfy $30 < \mt(\mu,\pfmet)
-< 125\gev$ (to suppress QCD multijet and potential signal
-events). Events are vetoed if $\Delta R(\mu,\textrm{jet}_i) < 0.5$
-running over all jets $i$. The single isolated track veto, described
-in Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also
-applied, which considers all single isolated tracks in the event
-except that associated with the identified, isolated muon. Finally,
-the cleaning cut $\mht/\pfmet$ is also applied, as done in the signal
-region, where the \pfmet is adjusted to account for the transverse
-momentum of the identified, isolated muon.
+and \scalht binning is used. The lepton(s) or photon is not considered
+in the calculation of the event-level variables.
 
-\subsubsection{The \texorpdfstring{\mmj}{di-muon plus jets} control sample}
-
-The \znunu\ + jets process forms an irreducible background and can be
-estimated using the \zmumu + jets process, which has similar kinematic
-properties but a different acceptance and a smaller branching ratio. A
-background estimate is obtained through the use of a \mmj sample. Most
-of the selection criteria are identical to those for the \mj sample,
-but the few that differ are tuned to identify Z bosons decaying to two
-muons in the kinematic phase space of the signal region. The muons are
-not considered in the calculation of event-level variables such as
-\scalht, \mht and \alphat. All cuts on such jet-based quantities are
-consistent with those applied in the hadronic search region and the
-same \njet, \nb, and \scalht binning is used. The only exception is
-that no \alphat requirement is made, as motivated by the discussion in
-Sec.~\ref{sec:larger}. In order to select an event sample containing Z
-bosons, exactly two tight isolated muons within an acceptance of $\Pt
-> 30\gev$ and $|\eta| < 2.1$ are required (due to the trigger). The
-invariant mass of the two muons must satisfy $m_{Z} - 25 <
-M_{\mu_1\mu_2} < m_{Z} + 25$ and they must have opposite charge. Events are vetoed if $\Delta
-R(\mu_{i},\textrm{jet}_j) < 0.5$ is satisfied, running over all muons
-$i$ and all jets $j$. The single isolated track veto, described in
-Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also
-applied, considering all single isolated tracks in the event except
-those associated with the two identified, isolated muons. Finally, the
-cleaning cut $\mht/\pfmet$ is also applied, as done in the signal
-region, where the \pfmet is adjusted to account for the transverse
-momenta of the two identified, isolated muons. The \mmj sample can be
-used to make predictions in all the \scalht bins, providing coverage
-at low \scalht where the \gj sample cannot.
-
-\subsubsection{The \texorpdfstring{\gj}{photon plus jets} control sample}
-\label{subsec:photoncontrolSelection}
-
-The \znunu\ + jets process can also be estimated using the \gj
-process, which has a larger cross section and kinematic properties
-similar to those of \znunu\ events when the photon is
-ignored~\cite{PAS-SUS-08-002,Bern:2011pa}. The \gj sample is defined
-by requiring exactly one photon satisfying tight isolation criteria
-and within an acceptance of $\pt > 175\gev$ and $|\eta| <
-1.45$ (the anticipated limitation from the trigger). Furthermore, events are vetoed if $\Delta
-R(\gamma,\textrm{jet}_j) < 1.0$ is satisfied, running over all jets
-$j$. As for the muon-based samples, the photon is not considered in
-the calculation of event-level variables such as \scalht, \mht, \met and 
-\alphat. All cuts on jet-based quantities are consistent with those
-applied in the hadronic search region, and the same \HT binning is
-used. 
-% Given that the photon is ignored, the \gj sample can only be
-% used for the region $\scalht > 375\gev$ due to the photon acceptance
-% of $\pt > 165\gev$ (enforced by the trigger) and the requirement
-% $\alphat > 0.55$.
-
-%%____________________________________________________________________________||
-\subsection{The \ej and \eej electron control samples}
-
-Electron control samples are introduced analagous
-to the \mj and \mmj samples, with electrons in place of muons. As electrons 
-in leptonic decay processes behave kinematically similarly
-to muons, it should be possible to effectively increase the statistics available
-from the control samples. 
-
-In both these samples electrons are required to satisfy the Tight working point
-and pass requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The tightening of the
-Loose working point defined in Sec.~\ref{sec:electron-id} was found to 
-greatly reduce QCD contamination without a large reduction in statistics 
-within these electron control samples.
-
-All other requirements imposed on the muons in the \mj and \mmj samples are 
-required on the electrons in the \ej and \eej samples respectively.
-
-%%____________________________________________________________________________||
-\subsection{Increasing the acceptance of the control samples\label{sec:larger}}
-
-As described in Sec.~\ref{sec:controlSelection}, the
-selection criteria of the three control samples are defined such that
-the background composition and event kinematics of the three control
-samples mirror as closely as possible those for the signal
+The selection criteria of the various control regions are defined such
+that the background composition and event kinematics of the control
+regions mirror as closely as possible those for the signal
 region. This is done in order to minimise the reliance on the
 simulation to model correctly the backgrounds and event kinematics in
 the control and signal samples.
 
-However, in the case of the \mj and \mmj samples, no requirement is
-made on \alphat in the selection criteria of the samples. This is made
-possible by the remaining kinematic selection criteria, which are
-sufficiently selective to ensure that the muon samples remain rich in
-events from the \wj, \ttbar and \zmumu processes with negligible
-contamination from QCD multijet events. Thus, the acceptance of the two 
-muon control samples can be significantly increased, which simultaneously 
-improves their predictive power and further reduces the effect of any potential
-signal contamination. 
+Two exceptions are made. First, no \bdphi requirement is imposed as
+part of the selection criteria defining the control regions. Second,
+in the case of the four leptonic control regions, no requirement is
+made on \alphat. This is made possible by the remaining kinematic
+selection criteria, which are sufficiently selective to ensure that
+the leptonic event samples remain rich in events from the \wj, \ttbar
+and \zll processes with negligible contamination from QCD multijet
+events. Thus, the acceptance of the leptonic control regions can be
+significantly increased, which simultaneously improves their
+predictive power and further reduces the effect of any potential
+signal contamination.
 
-% --- this next bit was found to not really be true due to the high pT requirements anyway
+The lepton event samples can be used to predict components of the SM
+background across all \scalht bins, while the \gj sample can only be
+used for the region $\HT > 400\gev$ due to the photon trigger
+requirements.
 
-% In the Run~1 analyses the \gj control sample had a tight requirement on the
-% photon. After recent developments presented in EGM-14-001~\cite{CMS-EGM-14-001}
-% , it
-% should be possible to reduce the photon requirement from tight to medium, while
-% still having a significant background rejection. This will be investigated and
-% should help to increase the number of events available, giving a better control
-% of the analysis background prediction detailed in Sec.~\ref{sec:background}.
+\subsection{The \texorpdfstring{\mj}{muon plus jets} control sample}
+\label{subsec:mucontrolSelection}
 
-%%____________________________________________________________________________||
+%Events from the \wj and \ttbar processes are found in the hadronic
+%signal sample due to unidentified leptons (either out of acceptance or
+%not reconstructed) and hadronic tau decays originating from
+%high-p$_{T}$ W bosons. An estimate of these background processes is
+%obtained through the use of a \mj sample. 
+
+The selection criteria for the \mj sample are chosen to identify W
+bosons decaying to a muon and a neutrino in the phase-space of the
+signal. In order to select events containing W bosons, exactly one
+tight isolated muon within an acceptance of \PT $>$ 30 \gev and
+$|\eta| <$ 2.1 is required (due to the trigger), and the transverse
+mass of the W candidate must satisfy $30 < \mt(\mu,\pfmet) < 125\gev$
+(to suppress QCD multijet and potential signal events). Events are
+vetoed if $\Delta R(\mu,\textrm{jet}_i) < 0.5$ running over all jets
+$i$. The single isolated track veto, described in
+Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also applied,
+which considers all single isolated tracks in the event except that
+associated with the identified, isolated muon. Finally, the cleaning
+cut $\mht/\met$ is also applied, as done in the signal region, where
+the \met is adjusted to account for the transverse momentum of the
+identified, isolated muon.
+
+\subsection{The \texorpdfstring{\mmj}{di-muon plus jets} control sample}
+
+%The \znunu\ + jets process forms an irreducible background and can be
+%estimated using the \zmumu + jets process, which has similar kinematic
+%properties but a different acceptance and a smaller branching ratio. A
+%background estimate is obtained through the use of a \mmj sample. 
+
+The selection criteria are identical to those for the \mj sample, with
+the following exceptions that are tuned to identify Z bosons decaying
+to two muons in the kinematic phase space of the signal region. 
+In order to select an event sample containing Z bosons, exactly two
+tight isolated muons within an acceptance of $\Pt > 30\gev$ and
+$|\eta| < 2.1$ are required (due to the trigger). The invariant mass
+of the two muons must satisfy $m_{Z} - 25 < M_{\mu_1\mu_2} < m_{Z} +
+25$ and they must have opposite charge. Events are vetoed if $\Delta
+R(\mu_{i},\textrm{jet}_j) < 0.5$ is satisfied, running over all muons
+$i$ and all jets $j$. The single isolated track veto is also applied
+considering all single isolated tracks in the event except those
+associated with the two identified, isolated muons. Finally, the
+cleaning cut $\mht/\met$ is also applied, as done in the signal
+region, where the \met is adjusted to account for the transverse
+momenta of the two identified, isolated muons. 
+
+\subsection{The \texorpdfstring{\ej}{electron plus jets} control sample}
+\label{subsec:mucontrolSelection}
+
+The selection criteria that define the \ej and \eej control samples
+mirror those of the \mj and \mmj samples, respectively, and are tuned
+to identify W and Z bosons, respectively, decaying to electrons in the
+kinematic phase space of the signal region. 
+
+Electrons are required to satisfy the Tight working point and satisfy
+the requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The tightening of
+the Loose working point defined in Sec.~\ref{sec:electron-id} was
+found to greatly reduce multijet contamination without a large
+reduction in statistics within the electron control samples.
+
+\subsection{The \texorpdfstring{\gj}{photon plus jets} control sample}
+\label{subsec:photoncontrolSelection}
+
+%The \znunu\ + jets process can also be estimated using the \gj
+%process, which has a larger cross section and kinematic properties
+%similar to those of \znunu\ events when the photon is
+%ignored~\cite{PAS-SUS-08-002,Bern:2011pa}. 
+
+The \gj sample is defined by requiring exactly one photon satisfying
+tight isolation criteria and within an acceptance of $\pt > 175\gev$
+(limited by trigger requirements) and $|\eta| < 1.45$. Furthermore,
+events are vetoed if $\Delta R(\gamma,\textrm{jet}_i) < 1.0$ is
+satisfied, running over all jets $i$. One important difference with
+respect to the leptonic control samples is the application of the
+\HT-dependent \alphat requirements imposed as part of the signal
+region definition. This is done primarily to ensure that the photon
+control sample and signal region are subject to identical kinematic
+requirements and the photon carries sufficient transverse energy so
+that the mass of the Z boson becomes a negligible effect when using
+the \gj sample to predict the kinematic distributions of the \znunu
+background. The cleaning cut $\mht/\met$ is also applied, as done in
+the signal region, where the \met is adjusted to account for the
+transverse energy of the identified, isolated photon. As stated above,
+the \gj sample can only be used to predict background components in
+the region $\HT > 400\gev$ due to trigger requirements.
