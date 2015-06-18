@@ -29,30 +29,45 @@ for each model and are listed in table \ref{tab:simplified-models}.
   \caption{A summary of the simplified benchmark models considered in 
     this exercise. The models labelled as ``T1'' correspond to the pair production of gluinos, while 
     the one labelled as ``T2'' correspond to the pair production of squarks (either stops, sbottoms or other flavours). 
-    The event categories considered for each model are listed.}  
+    The event categories considered for each model are listed. 
+    For the jet multiplicity categorisation, the ``$j$'' refers to the ``symmetric'' selection, while ``$a$'' refers to the ``asymmetric'' one.}  
   \label{tab:simplified-models}
-  \setlength{\extrarowheight}{2.5pt}
+  %% \setlength{\extrarowheight}{2.5pt}
   \centering
   %% \begin{tabular*}{\textwidth}{ llcc }
-  \begin{tabular*}{\textwidth}{ llcc }
+  \begin{tabular*}{1.4\textwidth}{ llcl }
     \hline
     \hline
     %% Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\njet,\nb) event categories \\ 
-    Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\njet,\nb) event categories \\ 
+    Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\nb,\njet) event categories \\ 
+    \hline    
+    \multirow{2}{*}{T1bbbb 1500,100} & \multirow{2}{*}{\Tonebbbb} & \multirow{2}{*}{(1500,100)} & {\small $ (2b,\geq5j), (\geq3b,\geq5j), (1b,\geq5j), (2b,\geq5a)$} \\
+    & & & {\small $ (2b,4j), (1b,4j), (\geq3b,\geq5a), (2b,4a), (1b,3a), (2b,3j)$} \\ \hline
+    \multirow{2}{*}{T1bbbb 1000,900} & \multirow{2}{*}{\Tonebbbb} & \multirow{2}{*}{(1000,900)} & {\small $ (2b,\geq5j), (\geq3b,\geq5j), (1b,\geq5j), (2b,\geq5a)$} \\
+    & & & {\small $ (2b,4j), (1b,4j), (\geq3b,\geq5a), (2b,4a), (1b,3a), (2b,3j)$} \\ \hline
+    \multirow{2}{*}{T1qqqq 1400,100} & \multirow{2}{*}{\Toneqqqq} & \multirow{2}{*}{(1400,100)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,4j), (2b,\geq5j)$} \\
+    & & & {\small $ (1b,4j), (0b,3j), (2b,4j), (\geq3b,\geq5j), (1b,3j), (2b,3j)$} \\ \hline
+    \multirow{2}{*}{T1qqqq 1000,800} & \multirow{2}{*}{\Toneqqqq} & \multirow{2}{*}{(1000,800)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,4j), (0b,\geq5a)$} \\
+    & & & {\small $ (2b,\geq5j), (1b,4j), (0b,4a), (0b,3j), (0b,3a), (\geq3b,\geq5j)$} \\ \hline
+    \multirow{2}{*}{T1tttt 1500,100} & \multirow{2}{*}{\Tonetttt} & \multirow{2}{*}{(1500,100)} & {\small $ (\geq3b,\geq5j), (2b,\geq5j), (1b,\geq5j), (0b,\geq5j)$} \\
+    & & & {\small $ (2b,4j), (1b,4j), (\geq3b,4j), (2b,3j), (1b,\geq5a), (0b,4j)$} \\ \hline
+    \multirow{2}{*}{T1tttt 1200,800} & \multirow{2}{*}{\Tonetttt} & \multirow{2}{*}{(1200,800)} & {\small $ (\geq3b,\geq5j), (2b,\geq5j), (\geq3b,\geq5a), (1b,\geq5j)$} \\
+    & & & {\small $ (2b,\geq5a), (1b,\geq5a), (0b,\geq5j), (0b,\geq5a), (2b,4j), (\geq3b,4j)$} \\ \hline
     \hline
-    \texttt{T1bbbb 1500,100} & \Tonebbbb & (1500,100) & \\
-    \texttt{T1bbbb 1000,900} & \Tonebbbb & (1000,900) & \\
-    \texttt{T1qqqq 1400,100} & \Toneqqqq & (1400,100) & \\
-    \texttt{T1qqqq 1000,800} & \Toneqqqq & (1000,800) & \\
-    \texttt{T1tttt 1500,100} & \Tonetttt & (1500,100) & \\
-    \texttt{T1tttt 1200,800} & \Tonetttt & (1200,800) & \\
-    \texttt{T2tt 650,325}    & \Ttwott   & (650,550) & \\
-    \texttt{T2tt 500,325}    & \Ttwott   & (500,325) & \\
-    \texttt{T2tt 425,325}    & \Ttwott   & (425,325) & \\
-    \texttt{T2qq 600,550}    & \Ttwoqq   & (600,550) & \\
-    \texttt{T2qq 1200,100}   & \Ttwoqq   & (1200,100) & \\
-    \texttt{T2bb 900,100}    & \Ttwobb   & (900,100) & \\
-    \texttt{T2bb 600,580}    & \Ttwobb   & (600,580) & \\
+    \multirow{2}{*}{T2tt 650,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(650,550)} & {\small $ (1b,\geq5j), (\geq3b,\geq5j), (2b,4j), (2b,\geq5a)$} \\
+    & & & {\small $ (1b,4j), (0b,\geq5j), (2b,4a), (\geq3b,\geq5a), (1b,4a), (1b,3j)$} \\ \hline
+    \multirow{2}{*}{T2tt 500,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(500,325)} & {\small $ (1b,\geq5j), (2b,\geq5j), (\geq3b,\geq5j), (2b,\geq5a)$} \\
+    & & & {\small $ (0b,\geq5j), (1b,4j), (\geq3b,\geq5a), (2b,4j), (0b,\geq5a), (1b,4a)$} \\ \hline
+    \multirow{2}{*}{T2tt 425,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(425,325)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,\geq5a), (0b,4j)$} \\
+    & & & {\small $ (2b,\geq5j), (1b,4j), (0b,4a), (0b,3j), (1b,4a), (0b,3a)$} \\ \hline
+    \multirow{2}{*}{T2qq 600,550}    & \multirow{2}{*}{\Ttwoqq}   & \multirow{2}{*}{(600,550)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,4j), (0b,\geq5a)$} \\
+    & & & {\small $ (0b,4a), (0b,3j), (0b,3a), (1b,4j), (2b,\geq5j), (1b,4a)$} \\ \hline
+    \multirow{2}{*}{T2qq 1200,100}   & \multirow{2}{*}{\Ttwoqq}   & \multirow{2}{*}{(1200,100)} & {\small $ (0b,\geq5j), (0b,4j), (0b,3j), (0b,2j)$} \\
+    & & & {\small $ (1b,\geq5j), (1b,4j), (1b,3j), (1b,2j), (2b,\geq5j), (2b,4j)$} \\ \hline
+    \multirow{2}{*}{T2bb 900,100}    & \multirow{2}{*}{\Ttwobb}   & \multirow{2}{*}{(900,100)} & {\small $ (2b,3j), (2b,2j), (2b,\geq5j), (2b,4j)$} \\
+    & & & {\small $ (1b,2j), (1b,\geq5j), (1b,3j), (1b,4j), (\geq3b,\geq5j), (0b,\geq5j)$} \\ \hline
+    \multirow{2}{*}{T2bb 600,580}    & \multirow{2}{*}{\Ttwobb}   & \multirow{2}{*}{(600,580)} & {\small $ (1b,\geq5j), (0b,\geq5j), (0b,3j), (0b,4j)$} \\
+    & & & {\small $ (1b,4j), (1b,3j), (0b,2j), (2b,\geq5j), (0b,3a), (0b,2a)$} \\ 
     \hline
     \hline
   \end{tabular*}
@@ -83,8 +98,8 @@ but dedicated studies will be carried on in the future about this.
 Table~\ref{tab:results_ul} and \ref{tab:results_signif} show, respectively, 
 the expected 95\% upper limit on the signal strength $\mu=\sigma/\sigma_{\mathrm{theory}}$ 
 and the expected discovery significance, for all the simplified models. 
-The projections are done for 1/3/10 \ifb scenarios for the integrated luminosity. 
-The effect of including a ``fake'' shape uncertainty (as discussed in Section \ref{sec:syst-on-shape}) is also shown. \\
+The projections are done for 1,3,10 \ifb scenarios for the integrated luminosity. 
+The effect of including a ``fake'' shape uncertainty (as discussed in Section \ref{sec:syst-on-shape}) is also shown. 
 
 Both the significance and the limit are computed using the asymptotic formulae and the Asimov datasets \cite{AsymptoticFormulae}. 
 The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
@@ -111,6 +126,7 @@ For each model, the categories used in the combination are listed in table \ref{
     T1qqqq 1000,800 &   &   &   \\
     T1tttt 1500,100 &   &   &   \\
     T1tttt 1200,800 &   &   &   \\
+    \hline
     T2tt 650,325    &   &   &   \\
     T2tt 500,325    &   &   &   \\
     T2tt 425,325    &   &   &   \\
@@ -143,6 +159,7 @@ For each model, the categories used in the combination are listed in table \ref{
     T1qqqq 1000,800 &   &   &   \\
     T1tttt 1500,100 &   &   &   \\
     T1tttt 1200,800 &   &   &   \\
+    \hline
     T2tt 650,325    &   &   &   \\
     T2tt 500,325    &   &   &   \\
     T2tt 425,325    &   &   &   \\
