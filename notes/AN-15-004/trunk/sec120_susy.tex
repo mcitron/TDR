@@ -98,10 +98,10 @@ but dedicated studies will be carried on in the future about this.
 Table~\ref{tab:results_ul} and \ref{tab:results_signif} show, respectively, 
 the expected 95\% upper limit on the signal strength $\mu=\sigma/\sigma_{\mathrm{theory}}$ 
 and the expected discovery significance, for all the simplified models. 
-The projections are done for 1,3,10 \ifb scenarios for the integrated luminosity. 
-The effect of including a ``fake'' shape uncertainty (as discussed in Section \ref{sec:syst-on-shape}) is also shown. 
+The projections are done for an integrated luminosity of 3 and 10 \ifb. 
+The effect of including a ``fake'' shape uncertainty (Section \ref{sec:syst-on-shape}) is compared to the result without any shape systematic.  
 
-Both the significance and the limit are computed using the asymptotic formulae and the Asimov datasets \cite{AsymptoticFormulae}. 
+Both the significance and the limit are computed using the asymptotic formulae and the pre-fit Asimov datasets \cite{AsymptoticFormulae}. 
 The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
 All the statistical results are produced using the \textit{combine} tool, 
 provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. \\
@@ -110,30 +110,30 @@ For each model, the categories used in the combination are listed in table \ref{
 \begin{table}
   \centering
   \caption{95\% C.L. upper limit on $\mu$ for the different benchmark models and the different luminosity scenarios. 
-  The main result is obtained without any shape systematic, while the number in parenthesis is obtained by applying 
-  the ``fake'' shape systematic described in Section \ref{sec:syst-on-shape}.}
+  The main result is obtained by applying 
+  the ``fake'' shape systematic described in Section \ref{sec:syst-on-shape}, while in parentheses the result without any shape systematic is reported.}
   \label{tab:results_ul}
   \footnotesize
-  \begin{tabular}{lccc}
+  \begin{tabular}{lcc}
     \hline
     \hline
-    Signal model & $\mathcal{L} = 1 \ifb$ & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
+    Signal model & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
     \hline
     \hline
-    T1bbbb 1500,100 &   &   &   \\
-    T1bbbb 1000,900 &   &   &   \\
-    T1qqqq 1400,100 &   &   &   \\
-    T1qqqq 1000,800 &   &   &   \\
-    T1tttt 1500,100 &   &   &   \\
-    T1tttt 1200,800 &   &   &   \\
-    \hline
-    T2tt 650,325    &   &   &   \\
-    T2tt 500,325    &   &   &   \\
-    T2tt 425,325    &   &   &   \\
-    T2qq 600,550    &   &   &   \\
-    T2qq 1200,100   &   &   &   \\
-    T2bb 900,100    &   &   &   \\
-    T2bb 600,580    &   &   &   \\
+    T1bbbb 1500,100  & 0.68 (0.66) & 0.33 (0.31) \\ 
+    T1bbbb 1000,900  & 0.67 (0.62) & 0.35 (0.31) \\ 
+    T1qqqq 1400,100  & 0.98 (0.82) & 0.54 (0.41) \\ 
+    T1qqqq 1000,800  & 0.75 (0.65) & 0.42 (0.35) \\ 
+    T1tttt 1500,100  & 1.9 (1.84) & 0.92 (0.86) \\  
+    T1tttt 1200,800  & 3.89 (3.78) & 2.06 (1.93) \\ \hline
+    T2tt 850,100     & 2.07 (1.91) & 1.13 (0.98) \\ 
+    T2tt 650,325     & 2.3 (2.16) & 1.32 (1.18) \\  
+    T2tt 500,325     & 3.48 (3.39) & 1.88 (1.79) \\ 
+    T2tt 425,325     & 2.16 (2.02) & 1.19 (1.1) \\  
+    T2qq 1200,100    & 1.75 (1.43) & 0.91 (0.7) \\  
+    T2qq 600,550     & 0.57 (0.47) & 0.32 (0.24) \\ 
+    T2bb 900,100     & 4.89 (3.95) & 2.84 (2.13) \\ 
+    T2bb 600,580     & 1.84 (1.71) & 0.92 (0.82) \\ 
     \hline
     \hline
   \end{tabular} 
@@ -143,30 +143,31 @@ For each model, the categories used in the combination are listed in table \ref{
 \begin{table}
   \centering
   \caption{Expected significance for the different benchmark models and the different luminosity scenarios. 
-  The main result is obtained without any shape systematic, while the number in parenthesis is obtained by applying 
-  the ``fake'' shape systematic described in Section \ref{sec:syst-on-shape}.}
+    The main result is obtained by applying 
+  the ``fake'' shape systematic described in Section \ref{sec:syst-on-shape}, while in parentheses the result without any shape systematic is reported.}
   \label{tab:results_signif}
   \footnotesize
-  \begin{tabular}{lccc}
+  \footnotesize
+  \begin{tabular}{lcc}
     \hline
     \hline
-    Signal model & $\mathcal{L} = 1 \ifb$ & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
+    Signal model & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
     \hline
     \hline
-    T1bbbb 1500,100 &   &   &   \\
-    T1bbbb 1000,900 &   &   &   \\
-    T1qqqq 1400,100 &   &   &   \\
-    T1qqqq 1000,800 &   &   &   \\
-    T1tttt 1500,100 &   &   &   \\
-    T1tttt 1200,800 &   &   &   \\
-    \hline
-    T2tt 650,325    &   &   &   \\
-    T2tt 500,325    &   &   &   \\
-    T2tt 425,325    &   &   &   \\
-    T2qq 600,550    &   &   &   \\
-    T2qq 1200,100   &   &   &   \\
-    T2bb 900,100    &   &   &   \\
-    T2bb 600,580    &   &   &   \\
+    T1bbbb 1500,100  & 3.0 (3.3) & 5.2 (5.9) \\  
+    T1bbbb 1000,900  & 3.0 (3.4) & 5.1 (6.2) \\  
+    T1qqqq 1400,100  & 1.9 (2.6) & 3.2 (4.8) \\  
+    T1qqqq 1000,800  & 2.6 (3.1) & 4.6 (5.6) \\  
+    T1tttt 1500,100  & 1.3 (1.4) & 2.2 (2.5) \\  
+    T1tttt 1200,800  & 0.6 (0.6) & 1.0 (1.1) \\  \hline
+    T2tt 850,100     & 1.0 (1.2) & 1.8 (2.1) \\  
+    T2tt 650,325     & 0.9 (1.0) & 1.5 (1.7) \\  
+    T2tt 500,325     & 0.6 (0.6) & 1.1 (1.2) \\  
+    T2tt 425,325     & 0.9 (1.0) & 1.7 (1.9) \\  
+    T2qq 1200,100    & 1.1 (1.5) & 2.1 (2.9) \\  
+    T2qq 600,550     & 3.3 (4.3) & 6.0 (8.0) \\  
+    T2bb 900,100     & 0.4 (0.5) & 0.7 (1.0) \\  
+    T2bb 600,580     & 1.2 (1.3) & 2.2 (2.5) \\  
     \hline
     \hline
   \end{tabular} 
