@@ -1,6 +1,6 @@
 % svn info. These are modified at svn checkout time. Do not edit!
-\RCS$Revision: 284044 $
-\RCS$Id: notes_for_authors.tex 284044 2015-04-10 10:38:37Z alverson $
+\RCS$Revision: 290428 $
+\RCS$Id: notes_for_authors.tex 290428 2015-05-28 01:20:38Z alverson $
 \RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/utils/trunk/general/notes_for_authors.tex $
 %%%%%%%%%%%%% ptdr definitions %%%%%%%%%%%%%%%%%%%%%
 \input{ptdr-definitions}
@@ -211,8 +211,8 @@ script (described below); if you change it things may fail.
 
 \texttt{svn} is similar in many ways to \texttt{cvs}. Once a repository has been checked out, the workflow is
 almost identical except for tagging. In \texttt{svn}, tagging is done by creating a new directory branch using
-the \texttt{svn copy} command. Please see the \texttt{svn} \href{http://svnbook.red-bean.com/en/1.5/svn-book.pdf}{manual} for details, particularly
-the chapter on \href{http://svnbook.red-bean.com/en/1.5/svn-book.pdf#svn.branchmerge}{branching and tagging} and \href{http://svnbook.red-bean.com/en/1.5/svn-book.pdf#svn.forcvs}{svn for cvs users}. Please do not change the depth of the directory structure to the top-level \TeX\ file for your document. The template is created in the \texttt{trunk} subdirectory, and this is what is used by default. You should also note that \texttt{svn}, as opposed to \texttt{cvs}, does allow for easily moving and copying directory trees.
+the \texttt{svn copy} command. Please see the \texttt{svn} \href{http://svnbook.red-bean.com/en/1.7/svn-book.pdf}{manual} for details, particularly
+the chapter on \href{http://svnbook.red-bean.com/en/1.7/svn-book.pdf#svn.branchmerge}{branching and tagging} and \href{http://svnbook.red-bean.com/en/1.7/svn-book.pdf#svn.forcvs}{svn for cvs users}. Please do not change the depth of the directory structure to the top-level \TeX\ file for your document. The template is created in the \texttt{trunk} subdirectory, and this is what is used by default. You should also note that \texttt{svn}, as opposed to \texttt{cvs}, does allow for easily moving and copying directory trees.
 
 \emph{Please make sure to configure your svn client:} edit \texttt{\~/.subversion/config} so that it appropriately tags pdf files.
 \begin{verbatim}
@@ -229,6 +229,8 @@ There are other useful settings as well. For example, to stop \texttt{svn} from 
 [miscellany]
 global-ignores = *.o *.bak
 \end{verbatim}
+
+Filenames should not contain any of the following characters:\begin{verbatim} /\?%*:|"<>\end{verbatim} plus space. The dot  (.) when used as anything but a filetype extension can also can cause problems.
 
 
 %....................................
