@@ -1,43 +1,35 @@
 %%____________________________________________________________________________||
 \section{Intepretation in Simplified SUSY models}
 \label{sec:susy}
+To interpret the results of this search, simplified
+models~\cite{Alwall:2008ag,Alwall:2008va,sms} for the production of supersymmetric particles are considered. 
+They use only a limited set of sparticles in the production and
+decay and enable comprehensive studies of individual SUSY event
+topologies. These studies can be performed in terms of
+fundamental properties such as decay modes, production cross sections and sparticle masses. 
+In order to gauge the early discovery potential, simplified models corresponding to both gluino and squark pair production 
+are considered in this exercise, corresponding to different scenarios for the mass-splitting between the sparticle and the LSP. 
 
 \subsection{Signal models and efficiencies}
 \label{subsec:susy_models}
-To interpret the results of this search, simplified
-models~\cite{Alwall:2008ag,Alwall:2008va,sms} are used. These
-effective models use only a limited set of sparticles (production and
-decay) and enable comprehensive studies of individual SUSY event
-topologies. The simplified model studies can be performed in terms of
-fundamental properties such as decay modes, production cross sections,
-and sparticle masses. 
-In order to gauge the early discovery potential, simplified models corresponding to both gluino and squark pair production 
-are considered in this exercise, together with different mass-splitting scenarios for the sparticle and the LSP. \\  
-The full list of models considered is in table \ref{tab:simplified-models}. 
 
-Signal efficiency times acceptance is determined per model per event
+The full list of models considered is in table \ref{tab:simplified-models}. 
+The signal efficiency times acceptance is determined per model per event
 category (\njet,\nb) per \HT bin. 
 Systematic uncertainties on the signal efficiencies are determined 
 following the 2012 analysis (see Section~\ref{sec:sig-syst}). Due to CPU
 limitations, only a subset of event categories (but all \scalht bins
-within a category) are considered for interpretation with each
-simplified model and are listed in table \ref{tab:simplified-models}. 
-The choice of which categories to include in the fit 
-is made by comparing the expected upper limit on the signal cross section 
-per model mass point achieved for each individual event category. 
-The categories are then ranked according to their expected (exclusion) reach 
-and the 10 most sensitive categories are used. 
+within a category) are considered to extract the final result. 
+The categories included in the fit are the ten most sensitive 
+for each model and are listed in table \ref{tab:simplified-models}. 
 
-\textbf{FIXME: where are the cross sections for each model listed?}
-
-\textbf{FIXME: Do we want to list here the categories used in the fit?}
-
-\textbf{FIXME: signal efficiency plots??}
+\begin{landscape}
 
 \begin{table}[h!]
-  \caption{A summary of the simplified models considered for
-    interpretation. The event categories considered for each model are
-    listed.}  
+  \caption{A summary of the simplified benchmark models considered in 
+    this exercise. The models labelled as ``T1'' correspond to the pair production of gluinos, while 
+    the one labelled as ``T2'' correspond to the pair production of squarks (either stops, sbottoms or other flavours). 
+    The event categories considered for each model are listed.}  
   \label{tab:simplified-models}
   \setlength{\extrarowheight}{2.5pt}
   \centering
@@ -46,141 +38,122 @@ and the 10 most sensitive categories are used.
     \hline
     \hline
     %% Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\njet,\nb) event categories \\ 
-    Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] \\%& (\njet,\nb) event categories \\ 
+    Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\njet,\nb) event categories \\ 
     \hline
-    \texttt{SMS\_T1bbbb\_mGl1500\_mLSP100} & \Tonebbbb & (1500,100) \\
-    \texttt{SMS\_T1bbbb\_mGl1000\_mLSP900} & \Tonebbbb & (1000,900) \\
-    \texttt{SMS\_T1qqqq\_mGl1400\_mLSP100} & \Toneqqqq & (1400,100) \\
-    \texttt{SMS\_T1qqqq\_mGl1000\_mLSP800} & \Toneqqqq & (1000,800) \\
-    \texttt{SMS\_T1tttt\_mGl1500\_mLSP100} & \Tonetttt & (1500,100) \\
-    \texttt{SMS\_T1tttt\_mGl1200\_mLSP800} & \Tonetttt & (1200,800) \\
-    \texttt{SMS\_T2tt\_mStop650\_mLSP325}  & \Ttwott   & (650,550) \\
-    \texttt{SMS\_T2tt\_mStop500\_mLSP325}  & \Ttwott   & (500,325) \\
-    \texttt{SMS\_T2tt\_mStop425\_mLSP325}  & \Ttwott   & (425,325) \\
-    \texttt{SMS\_T2qq\_mStop600\_mLSP550}  & \Ttwoqq   & (600,550) \\
-    \texttt{SMS\_T2qq\_mStop1200\_mLSP100} & \Ttwoqq   & (1200,100) \\
-    \texttt{SMS\_T2bb\_mStop900\_mLSP100}  & \Ttwobb   & (900,100) \\
-    \texttt{SMS\_T2bb\_mStop600\_mLSP580}  & \Ttwobb   & (600,580) \\
+    \texttt{T1bbbb 1500,100} & \Tonebbbb & (1500,100) & \\
+    \texttt{T1bbbb 1000,900} & \Tonebbbb & (1000,900) & \\
+    \texttt{T1qqqq 1400,100} & \Toneqqqq & (1400,100) & \\
+    \texttt{T1qqqq 1000,800} & \Toneqqqq & (1000,800) & \\
+    \texttt{T1tttt 1500,100} & \Tonetttt & (1500,100) & \\
+    \texttt{T1tttt 1200,800} & \Tonetttt & (1200,800) & \\
+    \texttt{T2tt 650,325}    & \Ttwott   & (650,550) & \\
+    \texttt{T2tt 500,325}    & \Ttwott   & (500,325) & \\
+    \texttt{T2tt 425,325}    & \Ttwott   & (425,325) & \\
+    \texttt{T2qq 600,550}    & \Ttwoqq   & (600,550) & \\
+    \texttt{T2qq 1200,100}   & \Ttwoqq   & (1200,100) & \\
+    \texttt{T2bb 900,100}    & \Ttwobb   & (900,100) & \\
+    \texttt{T2bb 600,580}    & \Ttwobb   & (600,580) & \\
     \hline
     \hline
   \end{tabular*}
 \end{table}
 
+\end{landscape}
+
 \subsection{Systematic uncertainties on signal efficiency times acceptance}
 \label{sec:sig-syst}
 
 For the PHYS14 exercise the same systematic uncertainty on the signal yield 
-as in the previous Run1 analysis is assumed. 
-It is determined per mass 
-point per event category (\njet,\nb), inclusively in \HT ($\HT > 200$ GeV) and accounts for 
-uncertainties on the luminosity measurement, the parton distribution
-functions, the jet energy scale, the initial state radiation, and the
-efficiencies of various cuts (including the \mht/\met filter, the ``dead ECAL'' filter, etc) 
-used in the candidate signal event selection are considered. 
+as in the previous Run1 analysis is assumed \cite{CMS_AN_2013-366}. 
+The following sources of uncertainty were considered: 
+luminosity, the parton distribution
+functions, the jet energy scale, the initial state radiation, the
+efficiencies of the \mht/\met filter and the ``dead ECAL'' filter. 
 Each contribution is considered to be independent and all contributions are
-summed in quadrature to obtain a total systematic uncertainty per mass
-point per category per \scalht bin. This results in a total 15\% uncertainty on the signal
-acceptance is assumed. \\
-This uncertainty is taken as fully correlated betweeen all the bins, as reviewed in section \ref{sec:likelihood}. 
-Considering the different event category as uncorrelated is believed to be a conservative approach, 
-because it does not take into account the possibility migration of events between different categories considered in the analysis. 
+summed in quadrature. \\
+A flat 15\% uncertainty is applied, fully correlated across all the bins (see Section \ref{sec:likelihood}). 
+The uncorrelated approach has been checked to give very similar results. \\
+No shape uncertainty for the signal is considered in these results, 
+but dedicated studies will be carried on in the future about this.
 
 
 \subsection{Expected exclusion limits and discovery significance}
 \label{subsec:susy_results}
 
-%Tables~\ref{tab:t1bbbb_1500_100} and~\ref{tab:t1bbbb_1000_900} show
-Table~\ref{tab:results} shows
-the expected performance for the all the simplified models, 
-with different shape systematic scenarios (as discussed in section \ref{sec:syst-on-shape}) 
-and for two different integrated luminosity scenarios, namely 3 \ifb and 10 \ifb. \\
-The table lists both discovery significances and 95\% confidence level upper limit 
-on the signal strength $\mu = \sigma/\sigma_{\text{pred}}$. 
+Table~\ref{tab:results_ul} and \ref{tab:results_signif} show, respectively, 
+the expected 95\% upper limit on the signal strength $\mu=\sigma/\sigma_{\mathrm{theory}}$ 
+and the expected discovery significance, for all the simplified models. 
+The projections are done for 1/3/10 \ifb scenarios for the integrated luminosity. 
+The effect of including a ``fake'' shape uncertainty (as discussed in Section \ref{sec:syst-on-shape}) is also shown. \\
+
 Both the significance and the limit are computed using the asymptotic formulae and the Asimov datasets \cite{AsymptoticFormulae}. 
 The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
-All the statistical results were produced using the \textit{combine} tool, 
+All the statistical results are produced using the \textit{combine} tool, 
 provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. \\
 For each model, the categories used in the combination are listed in table \ref{tab:simplified-models}. 
 
-%% % This should move to the ``Analysis Startegy'' section
-%% It should be noted that, while encouraging, such optimisations are
-%% sensitive to the assumed level of control when extrapolating into the
-%% tails of kinematic distributions, particularly for this class of
-%% models (involving very heavy objects). Ultimately, these assumptions
-%% are limited by event counts in data control samples, which are the
-%% only way to validate the use of transfer factors (as done in this
-%% analysis), or the accuracy of MC modelling of kinematic shapes, or the
-%% assumptions implicit in the parameterisation of shapes in data or MC,
-%% etc. The reliance on data-driven methods, cross-checks, and control
-%% variables is of paramount important as we probe a new mass regime in
-%% Run~2.
-
-%\begin{table}
-%  \centering
-%  \caption{Significances and R-values for \texttt{T1bbbb} ($m_{\rm
-%      gluino} = 1500, m_{\rm LSP} = 100\gev$).}
-%  \label{tab:t1bbbb_1500_100}
-%  \footnotesize
-%  \begin{tabular}{lccccccccccc}
-%    \hline
-%    \hline
-%    Variable & Binning                & Significance & R-value ($\pm1\sigma$ exptal.) \\
-%    \hline
-%    \scalht  & 1400--1700, $\geq$1700 & 1.9$\sigma$  & $1.08^{+0.69}_{-0.42}$         \\
-%    \alphat  & 0.55--0.65, $\geq$0.65 & 2.1$\sigma$  & $1.04^{+0.74}_{-0.43}$         \\
-%    \mhttt   & 130--200, $\geq$200    & 2.9$\sigma$  & $0.74^{+0.53}_{-0.27}$         \\
-%    \meff    & 1750--2500, $\geq$2500 & 3.2$\sigma$  & $0.64^{+0.40}_{-0.27}$         \\
-%    \mht     & 500--700, $\geq$700    & 4.1$\sigma$  & $0.45^{+0.30}_{-0.17}$         \\
-%    \met     & 500--700, $\geq$700    & 4.2$\sigma$  & $0.43^{+0.28}_{-0.15}$         \\
-%    \hline
-%    \hline
-%  \end{tabular} 
-%\end{table}
-
-%\begin{table}
-%  \centering
-%  \caption{Significances and R-values for \texttt{T1bbbb} ($m_{\rm
-%      gluino} = 1000, m_{\rm LSP} = 900\gev$).}
-%  \label{tab:t1bbbb_1000_900}
-%  \footnotesize
-%  \begin{tabular}{lccccccccccc}
-%    \hline
-%    \hline
-%    Variable & Binning                & Significance & R-value    ($\pm1\sigma$ exptal.) \\
-%    \hline
-%    \scalht  & 1400--1700, $\geq$1700 & 0.2$\sigma$  & $8.93^{+6.26}_{-3.87}$            \\
-%    \alphat  & 0.55--0.65, $\geq$0.65 & 2.2$\sigma$  & $0.93^{+0.63}_{-0.40}$            \\
-%    \mhttt   & 130--200, $\geq$200    & 1.0$\sigma$  & $2.38^{+1.60}_{-0.98}$           \\
-%    \meff    & 1750--2500, $\geq$2500 & 0.7$\sigma$  & $2.90^{+1.77}_{-1.24}$            \\
-%    \mht     & 500--700, $\geq$700    & 3.1$\sigma$  & $0.62^{+0.38}_{-0.24}$            \\
-%    \met     & 500--700, $\geq$700    & 3.2$\sigma$  & $0.60^{+0.36}_{-0.24}$            \\
-%    \hline
-%    \hline
-%  \end{tabular} 
-%\end{table}
-
 \begin{table}
   \centering
-  \caption{Significances and R-values for various models.}
-  \label{tab:results}
+  \caption{95\% C.L. upper limit on $\mu$ for the different benchmark models and the different luminosity scenarios. 
+  The main result is obtained without any shape systematic, while the number in parenthesis is obtained by applying 
+  the ``fake'' shape systematic described in Section \ref{sec:syst-on-shape}.}
+  \label{tab:results_ul}
   \footnotesize
-  \begin{tabular}{llcccc}
+  \begin{tabular}{lccc}
     \hline
     \hline
-    &  & \multicolumn{2}{c}{\texttt{T1bbbb} (1500,100)} & \multicolumn{2}{c}{\texttt{T1bbbb} (1000,900)} \\
-    Variable & Binning                & Significance & R-value ($\pm1\sigma_{\rm exptal}$) & Significance & R-value ($\pm1\sigma_{\rm exptal}$) \\
-    \hline                                                                                                                              
-    \scalht  & 1400--1700, $\geq$1700 & 1.9$\sigma$  & $1.08^{+0.69}_{-0.42}$              & 0.2$\sigma$  & $8.93^{+6.26}_{-3.87}$              \\
-    \alphat  & 0.55--0.65, $\geq$0.65 & 2.1$\sigma$  & $1.04^{+0.74}_{-0.43}$              & 2.2$\sigma$  & $0.93^{+0.63}_{-0.40}$              \\
-    \mhttt   & 130--200, $\geq$200    & 2.9$\sigma$  & $0.74^{+0.53}_{-0.27}$              & 1.0$\sigma$  & $2.38^{+1.60}_{-0.98}$              \\
-    \meff    & 1750--2500, $\geq$2500 & 3.2$\sigma$  & $0.64^{+0.40}_{-0.27}$              & 0.7$\sigma$  & $2.90^{+1.77}_{-1.24}$              \\
-    \mht     & 500--700, $\geq$700    & 4.1$\sigma$  & $0.45^{+0.30}_{-0.17}$              & 3.1$\sigma$  & $0.62^{+0.38}_{-0.24}$              \\
-    \met     & 500--700, $\geq$700    & 4.2$\sigma$  & $0.43^{+0.28}_{-0.15}$              & 3.2$\sigma$  & $0.60^{+0.36}_{-0.24}$              \\
+    Signal model & $\mathcal{L} = 1 \ifb$ & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
+    \hline
+    \hline
+    T1bbbb 1500,100 &   &   &   \\
+    T1bbbb 1000,900 &   &   &   \\
+    T1qqqq 1400,100 &   &   &   \\
+    T1qqqq 1000,800 &   &   &   \\
+    T1tttt 1500,100 &   &   &   \\
+    T1tttt 1200,800 &   &   &   \\
+    T2tt 650,325    &   &   &   \\
+    T2tt 500,325    &   &   &   \\
+    T2tt 425,325    &   &   &   \\
+    T2qq 600,550    &   &   &   \\
+    T2qq 1200,100   &   &   &   \\
+    T2bb 900,100    &   &   &   \\
+    T2bb 600,580    &   &   &   \\
     \hline
     \hline
   \end{tabular} 
 \end{table}
 
+
+\begin{table}
+  \centering
+  \caption{Expected significance for the different benchmark models and the different luminosity scenarios. 
+  The main result is obtained without any shape systematic, while the number in parenthesis is obtained by applying 
+  the ``fake'' shape systematic described in Section \ref{sec:syst-on-shape}.}
+  \label{tab:results_signif}
+  \footnotesize
+  \begin{tabular}{lccc}
+    \hline
+    \hline
+    Signal model & $\mathcal{L} = 1 \ifb$ & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
+    \hline
+    \hline
+    T1bbbb 1500,100 &   &   &   \\
+    T1bbbb 1000,900 &   &   &   \\
+    T1qqqq 1400,100 &   &   &   \\
+    T1qqqq 1000,800 &   &   &   \\
+    T1tttt 1500,100 &   &   &   \\
+    T1tttt 1200,800 &   &   &   \\
+    T2tt 650,325    &   &   &   \\
+    T2tt 500,325    &   &   &   \\
+    T2tt 425,325    &   &   &   \\
+    T2qq 600,550    &   &   &   \\
+    T2qq 1200,100   &   &   &   \\
+    T2bb 900,100    &   &   &   \\
+    T2bb 600,580    &   &   &   \\
+    \hline
+    \hline
+  \end{tabular} 
+\end{table}
 
 
 %%____________________________________________________________________________||
