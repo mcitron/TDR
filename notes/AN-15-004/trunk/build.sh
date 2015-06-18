@@ -1,2 +1,2 @@
-eval `../tdr runtime -sh` 
+eval `../../tdr runtime -sh` 
 tdr --style an b AN-15-004
