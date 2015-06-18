@@ -39,7 +39,7 @@ use Text::Balanced qw (extract_bracketed);
 # Main:
 #############################################################################
 
-my $VERSION = sprintf "%6d", q$Revision: 284219 $ =~ /(\d+)/g;
+my $VERSION = sprintf "%6d", q$Revision: 290429 $ =~ /(\d+)/g;
 
 my $verbose = '';
 my $help = '';
@@ -47,6 +47,7 @@ my $style = 'tdr';
 my $copyPdf = 0;
 my $export = '';
 my $draft = 1;
+my $graphics = 1;
 my $wrap = 0;
 my $upload = '';
 my $reload = '';
@@ -75,6 +76,7 @@ GetOptions ('verbose!' => \$verbose, # negatable: --noverbose, turn on TeX scree
             'copyPdf=s' => \$copyPdf, # copy the pdf output back to the directory the tex was found in
             'export!' => \$export, # generate an exportable tarball
             'draft!' => \$draft, # indicate draft status
+            'graphics!' => \$graphics, # indicates draft graphics option
             'wrap!' => \$wrap, # generate an archive of pdf+figures: currently only pas
             'arxiv!' => \$arxiv, # generate arxiv-specific tarball: currently only pas/paper
             'cernNo=s' => \$cmsCernNo, # CERN-generated preprint number (for papers only)
@@ -186,6 +188,8 @@ sub print_usage {
     print "* (default --noexport) *\n";
     print "* --draft: mark the output as a draft version *\n";
     print "* (default --draft; override with --nodraft) *\n";
+    print "* --graphics: include all graphics files as normal *\n";
+    print "* (default --graphics; override with -nographics) *\n";
     print "* --clean: clean the tmp working area before execution *\n";
     print "* (default --clean; override with --noclean) *\n";
     print "* > tdr clean // deletes temporary output files *\n";
@@ -353,17 +357,19 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
     $temp_tex = "$temp_stem".'.tex';
 
     unlink($temp_tex);
+    my $stylestring = $style;
+    if (!$graphics) {$stylestring .= ",draft"}; # this adds LaTeX draft option: not same as CMS draft option
     my $svnVersion = qx{svnversion --no-newline};
     if ($style eq 'cmspaper' && !$draft)
     {
       my $meta = '';
       if ($cmsCernNo && $cmsCernDate) { $meta = qq|\\def\\cmsCernNo{$cmsCernNo}\\def\\cmsCernDate{$cmsCernDate}|; }
       if ($message) {$meta .= qq|\\def\\cmsMessage{$message}|;}
-      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]{cms-tdr}", ",$style]{cms-tdr}\n\\def\\svnVersion{$svnVersion}$meta" ) ;
+      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]{cms-tdr}", ",$stylestring]{cms-tdr}\n\\def\\svnVersion{$svnVersion}$meta" ) ;
     }
     else
     {
-      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]{cms-tdr}", ",$style]{cms-tdr}\n\\def\\svnVersion{$svnVersion}" ) ;
+      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]{cms-tdr}", ",$stylestring]{cms-tdr}\n\\def\\svnVersion{$svnVersion}" ) ;
     }
     if (!$draft)
     {
