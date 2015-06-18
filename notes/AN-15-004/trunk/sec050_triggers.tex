@@ -17,8 +17,12 @@ the leading two jets, $\pt^{\rm \left<j1,j2\right>}$, are utilised in the select
 the hadronic signal region, labelled: \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a 
 dijet average threshold provides an improved suppression of QCD multijet events enabling the use 
 of looser \alphat thresholds whilst maintaining acceptance to events exhibiting asymmetric jet 
-topologies such as monojet-like signatures of compressed spectrum and DM models. A loose 
-calorimeter trigger prefilter is utilised to reduce the pass-through rate prior to track-based 
+topologies such as monojet-like signatures of compressed spectrum and DM models. 
+
+The Level-1 seeds for the HLT paths are given by the disjunction of the lowest 
+unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for 
+the given run scenario. A loose calorimeter trigger prefilter is utilised to reduce the pass-through 
+rate prior to track-based 
 reconstruction, ensuring the PF-based filters meet timing requirements. The calorimeter prefilter 
 utilises loose \scalht and dijet average \pt requirements in addition to a new variable \alphat', 
 defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better correlates \alphat 
@@ -26,14 +30,13 @@ between calorimeter and PF-based reconstruction.
 
 The thresholds of the signal triggers, shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}, are 
 tuned to maintain acceptance to a range of signal topologies whilst effectively suppressing QCD 
-multijet events to maintain acceptable trigger rates. These uniquely seed individual offline \scalht 
-bins with the exception of the highest-\scalht trigger which is utilised for analysis bins in the range: 
+multijet events to maintain acceptable trigger rates. These triggers uniquely seed individual offline \scalht 
+bins with the exception of the highest-\scalht \scalht-\alphat cross-trigger which is utilised for analysis 
+bins in the range: 
 $400 < \scalht < 800$ \GeV. Above $\scalht > 800$ a pure \scalht trigger, \verb!HLT_PFHT800!, is utilised 
-which has no explicit dependence on $\alphat$ or dijet average threshold. In addition to the primary 
-triggers, a set of backup triggers with higher thresholds are utilised to provide protection for higher 
-luminosity scenarios. The Level-1 seeds for the HLT paths are given by the disjunction of the lowest 
-unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for 
-the given run scenario.
+which has no explicit dependence on $\alphat$ or dijet average threshold. These triggers form the primary 
+signal selection menu, in addition a set of secondary triggers with higher \alphat thresholds provide redundancy 
+for higher luminosity scenarios. 
 
 
 % TABLE : 2015 triggers
@@ -47,7 +50,7 @@ the given run scenario.
 \begin{tabular}{c|cccc} 
 \hline
 \hline
-HLT path     & L1 seed & HLT calo-prefilter                      & HLT PF-filter                                                \\
+HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                                                \\
     &        & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$) \\ %& (Hz) \\[0.7 ex] 
 \hline
  \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
@@ -75,15 +78,19 @@ HLT path     & L1 seed & HLT calo-prefilter                      & HLT PF-filter
 
 
 
-The Measurement of trigger efficiency in data with an orthogonal \texttt{SingleMu} dataset, 
-seeded by the $\eta$-restricted \verb!HLT_IsoMu24_eta2p1! trigger.
-Selection of sample: $|\eta| < 2.1$
 
-The muon is excluded in the computation of event variables.
+The efficiency of the signal triggers are measured in both Monte Carlo and data-driven measurements.
+The signal triggers have been measured to give high efficiency to a range of signal models and SM 
+backgrounds with genuine \met. The trigger efficiency for an example signal model, \texttt{T1tttt}(1200,800), 
+is shown in Figure~\ref{fig:T1ttt_Trigger_Efficiency} for the high jet multiplicity analysis bins which are 
+representative of the typical long decay cascades.
+
+Efficiency measurements in data are performed with an unbiased muon sample, selected by the unprescaled \verb!HLT_IsoMu24_eta2p1! 
+reference trigger. A single isolated muon selection is imposed, requiring a single muon exceeding $\pt > 25 \GeV$ 
+within the acceptance $|\eta| < 2.1$. The efficiency of the signal triggers is measured on the subsequent selection 
+with the muon excluded in the computation of event variables.
 
 
-
-The trigger efficiency measured for a signal model is shown in Figure~\ref{fig:T1ttt_Trigger_Efficiency}
 
 
 % FIGURE: Trigger efficiencies
@@ -108,7 +115,7 @@ Cumulative trigger efficiency for the \texttt{T1tttt}(1200,800) model after sign
 
 % Control region triggers
 \subsection{Control samples\label{sec:control_samples}}
-Prescaled $\scalht$ triggers shown in Table~\ref{tab:2015_Hadronic_Control_Triggers} are utilised in the selection of events for the hadronic control region. These share the same Level-1 seeds and $\scalht$ threshold of the signal triggers and are similarly each mapped to a unique offline bin. 
+Prescaled $\scalht$ triggers, \verb!HLT_HTXXX!, are utilised in the selection of events for the hadronic control region. Shown in shown in Table~\ref{tab:2015_Hadronic_Control_Triggers} these triggers share the same Level-1 seeds and $\scalht$ threshold of the signal cross-triggers and are similarly each mapped to a unique offline bin. The efficiency of these triggers are similarly measured from a muon reference trigger in addition to an independent measurement with the \verb!HLT_Physics! minimum bias trigger.
 
 
 % TABLE: Hadronic control region
@@ -128,6 +135,8 @@ HLT path & \multicolumn{2}{c}{Prescale} \\
 \verb!HLT_PFHT300! & 4200  & 2100 \\
 \verb!HLT_PFHT350! & 700   & 350  \\
 \verb!HLT_PFHT400! & 1400  & 700  \\
+%% \verb!HLT_PFHT475! & 175   & 75   \\
+%% \verb!HLT_PFHT600! & 250   & 150  \\
 \hline
 \hline
 
@@ -136,100 +145,17 @@ HLT path & \multicolumn{2}{c}{Prescale} \\
 \end{table}
 
 
-The non-hadronic control regions will be seeded by the lowest-threshold unprescaled 
-triggers avliable in the given run scenario. In the high-luminosity scenario The \ej 
-and \eej and \mj and \mmj control samples will be selected with the $\eta$-restricted 
+The non-hadronic control regions are seeded by the lowest-threshold unprescaled 
+triggers available in the given run scenario. In the high-luminosity scenario The \ej 
+and \eej and \mj and \mmj control samples are selected with the $\eta$-restricted 
 triggers: \verb!HLT_Ele27_eta2p1_WP75_Gsf! and \verb!HLT_IsoMu20_eta2p1! respectively,
 and the \gj control sample by the \verb!HLT_Photon175! trigger. 
 
-The efficiency of the control triggers will be measured by data-driven methods. The tag 
+The efficiency of the control triggers are be measured by data-driven methods. The tag 
 and probe method is used in the measurement of efficiencies of the electron and muon triggers 
 and a loose photon reference trigger is utilised in the measurement of the photon trigger
 efficiency.
 
-
-
-%% \subsection{Muon control samples\label{sec:muon_control_triggers}}
-
-%% Events for the \mj and \mmj control samples are recorded with a loosely-isolated,
-%% $\eta$-restricted muon trigger \verb!HLT_IsoMu24_eta2p1!. The muon
-%% trigger efficiency is determined for each of the \mj and \mmj control
-%% samples according to the binning scheme in \njet and \scalht. Events
-%% with muons satisfying the acceptance requirements $\pt > 25\gev$ and
-%% $|\eta| < 2.1$ are considered.
-
-%% The \verb!HLT_IsoMu24_eta2p1! trigger efficiency is determined from
-%% data in bins of muon $\pt$ and $|\eta|$ by the muon POG from a
-%% tag-and-probe method~\cite{ref:muon-eff}. These efficiencies are
-%% weighted by MC yields binned according to the muon $\pt$ and $|\eta|$
-%% in order to determine a single weighted efficiency measurement per
-%% (\njet,\scalht) bin. Simulation-to-data scale factors for muon
-%% identification and isolation efficiencies are applied to MC
-%% events. These scale factors are also determined by the muon POG in
-%% bins of muon $\pt$ and $|\eta|$. Table~\ref{tab:muon-effs} summarises
-%% the muon trigger efficiencies which are assumed to have a relative
-%% systematic uncertainty of 1\%~\cite{ref:muon-eff}. Efficiencies are
-%% higher for the \mmj sample due to the fact that both muons must
-%% satisfy $\pt > 30\gev$ and so can be the source of the positive
-%% trigger decision. A further consequence of these thresholds
-%% requirements is that there is little dependence on \scalht. 
-
-%% \begin{table}[!h]
-%%   \caption{Muon trigger efficiencies (\%). Statistical uncertainties
-%%     are at the per-mille level, while a relative systematic
-%%     uncertainty on all measurements is assumed to be 1\%.}  
-%%   \label{tab:muon-effs}
-%%   \centering
-%%   \footnotesize
-%%   \begin{tabular}{ cccccc }
-%%     \hline
-%%     \hline
-%%     \scalht (GeV) \textbackslash \njet & \multicolumn{2}{c}{\mj} & \multicolumn{2}{c}{\mmj} \\ [0.5ex]
-%%                                        & 2-3                     & $\geq$4 & 2-3 & $\geq$4  \\ [0.5ex]
-%%     \hline
-%%     150--200  & 87.2 & 88.1 & 98.4 & 98.4  \\
-%%     200--275  & 87.5 & 88.1 & 98.5 & 98.4  \\
-%%     275--325  & 87.8 & 88.2 & 98.5 & 98.4  \\
-%%     325--375  & 87.9 & 88.4 & 98.6 & 98.6  \\
-%%     375--475  & 88.1 & 88.6 & 98.6 & 98.5  \\
-%%     475--575  & 88.2 & 88.8 & 98.6 & 98.6  \\
-%%     575--675  & 88.4 & 88.9 & 98.6 & 98.6  \\
-%%     675--775  & 88.5 & 89.0 & 98.7 & 98.6  \\
-%%     775--875  & 88.6 & 89.1 & 98.6 & 98.6  \\
-%%     875--975  & 88.8 & 89.0 & 98.7 & 98.6  \\
-%%     975--1075 & 88.7 & 89.0 & 98.7 & 98.8  \\
-%%     $>$1075   & 88.4 & 89.6 & 98.7 & 98.7  \\
-%%     \hline
-%%     \hline
-%%   \end{tabular}
-%% \end{table}
-
-%% \subsection{Photon control sample\label{sec:photon_control_triggers}}
-
-%% Events for the photon control sample are selected with the
-%% \verb!HLT_Photon175! trigger, which is $\sim100\%$ efficient for
-%% $E_{\rm T}^{\rm photon} > 165\gev$ and $\scalht > 375\gev$, as shown
-%% in Figure~\ref{fig:eff-photon}. 
-
-%% The efficiency measurement is made
-%% using the \verb!HLT_Photon???! trigger as a reference, and we assume
-%% that the \verb!L1_SingleEG22! seed is fully efficient.
-
-%% \begin{figure}[!h]
-%%   \begin{center}
-%%     \subfigure[\njetlow]{
-%%       \includegraphics[width=0.48\textwidth,page=3,trim=40 50 160 120,clip=true]{figures/trigger/g_barrel_375_caloJet_le3j.pdf}
-%%     }
-%%     \subfigure[\njethigh]{
-%%       \includegraphics[width=0.48\textwidth,page=3,trim=40 50 160 120,clip=true]{figures/trigger/g_barrel_375_caloJet_ge4j.pdf}
-%%     } \\
-%%     \caption{\label{fig:eff-photon} Efficiency turn-on curves for
-%%       the \texttt{HLT\_Photon175} trigger that records events that
-%%       satisfy the \gj selection criteria, $E_{\rm T}^{\rm photon} >
-%%       165\gev$, $\scalht > 375\gev$, and \njetlow (Left) and \njethigh
-%%       (Right). }
-%%   \end{center}
-%% \end{figure}
 
 
 
