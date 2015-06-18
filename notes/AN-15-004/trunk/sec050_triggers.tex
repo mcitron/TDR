@@ -40,33 +40,42 @@ the given run scenario.
 %----------------------------------------------------------------------
 \begin{table}[h!]
 \topcaption{Trigger thresholds of the Level-1, calorimeter prefilter and final PF-trigger decision for
- the primary HLT paths for the hadronic signal region in the $\lumi=1.4\times10^{34}$ PU40bx25 scenario.
+ the primary HLT paths for the hadronic signal region in the $\lumi=1.4\times10^{34}\cm^{-2}{\rm s}^{-1}$ scenario.
  Lower threshold Level-1 \scalht and \met seeds are utilised for the lower luminosity scenarios. }
 \footnotesize
 \centering
-%\begin{tabular}{c|ccc|c} 
-\begin{tabular}{c|ccc} 
+\begin{tabular}{c|cccc} 
 \hline
 \hline
-HLT path & L1 seed & HLT calo-prefilter                      & HLT PF-filter                          \\ %& Rate \\[0.7 ex] 
-         &         & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$) \\ %& (Hz) \\[0.7 ex] 
+HLT path     & L1 seed & HLT calo-prefilter                      & HLT PF-filter                                                \\
+    &        & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$) \\ %& (Hz) \\[0.7 ex] 
 \hline
-\verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
-\verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT175 OR ETM70! & 200, 0.535, 70 & 250, 0.550, 90 \\ %& \\ % 8.5  $\pm$ 3.0 \\
-\verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT175 OR ETM70! & 250, 0.525, 70 & 300, 0.530, 90 \\ %& \\ % 9.5  $\pm$ 3.0 \\
-\verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT175 OR ETM70! & 300, 0.520, 70 & 350, 0.520, 90 \\ %& \\ % 10.0 $\pm$ 3.0 \\
-\verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT175 OR ETM70! & 370, 0.510, 70 & 400, 0.510, 90 \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %\multicolumn{4}{c|}{Exclusive rate (Hz)} & \\ % 34 $\pm$ 6 \\
+ \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
+ \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT175 OR ETM70! & 200, 0.535, 70 & 250, 0.550, 90 \\ %& \\ % 8.5  $\pm$ 3.0 \\
+ \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT175 OR ETM70! & 250, 0.525, 70 & 300, 0.530, 90 \\ %& \\ % 9.5  $\pm$ 3.0 \\
+ \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT175 OR ETM70! & 300, 0.520, 70 & 350, 0.520, 90 \\ %& \\ % 10.0 $\pm$ 3.0 \\
+ \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT175 OR ETM70! & 370, 0.510, 70 & 400, 0.510, 90 \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+ \verb!HLT_PFHT800!                         & \verb!HTT175!          & 650, -, -      & 800, -, -      \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
 \hline
 \hline
-
 \end{tabular}
 \label{tab:2015_Hadronic_Signal_Triggers}
 \end{table}
 
 
+%% Offline \scalht & HLT p
+%% region (\GeV)   &      
+%% \hline                 
+%% $200 < \scalht < 250$ &
+%% $250 < \scalht < 300$ &
+%% $300 < \scalht < 350$ &
+%% $350 < \scalht < 400$ &
+%% $400 < \scalht < 800$ &
+%%       $\scalht > 800$ &
 
 
-The Measurement of trigger efficiency in data with an orthogonal \verb!SingleMu! dataset, 
+
+The Measurement of trigger efficiency in data with an orthogonal \texttt{SingleMu} dataset, 
 seeded by the $\eta$-restricted \verb!HLT_IsoMu24_eta2p1! trigger.
 Selection of sample: $|\eta| < 2.1$
 
@@ -112,7 +121,7 @@ Prescaled $\scalht$ triggers shown in Table~\ref{tab:2015_Hadronic_Control_Trigg
 \hline
 \hline
 HLT path & \multicolumn{2}{c}{Prescale} \\
-         & $\lumi=1.4\times10^{34}$  & $\lumi=7\times10^{33}$     \\
+         & $\lumi=1.4\times10^{34}\cm^{-2}{\rm s}^{-1}$  & $\lumi=7\times10^{33}\cm^{-2}{\rm s}^{-1}$     \\
 \hline
 \verb!HLT_PFHT200! & 12600 & 6300 \\
 \verb!HLT_PFHT250! & 8400  & 4200 \\
@@ -128,7 +137,7 @@ HLT path & \multicolumn{2}{c}{Prescale} \\
 
 
 The non-hadronic control regions will be seeded by the lowest-threshold unprescaled 
-triggers avliable in the given run scenario. In the high-luminosity scenrio The \ej 
+triggers avliable in the given run scenario. In the high-luminosity scenario The \ej 
 and \eej and \mj and \mmj control samples will be selected with the $\eta$-restricted 
 triggers: \verb!HLT_Ele27_eta2p1_WP75_Gsf! and \verb!HLT_IsoMu20_eta2p1! respectively,
 and the \gj control sample by the \verb!HLT_Photon175! trigger. 
