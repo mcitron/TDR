@@ -103,7 +103,11 @@ Thirteen sets of closure tests use the five data control samples to
 probe key ingredients of the simulation modelling of the SM
 backgrounds with genuine \met as a function of \scalht. These are
 shown in Fig.~\ref{fig:closure} for both 3 \ifb and 10 \ifb and two
-different jet multiplicity bins: $\njet = 4$ and $\geq 5$. 
+different jet multiplicity bins: $\njet = 4$ and $\geq 5$. In the case
+that there are no statistics in a control region (sub-)sample to 
+perform one of the closure tests, a red band is drawn. In these
+instances, the bin in question would not be used in the statistical
+interpretation of the analysis.
 
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots10fb.pdf
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots1fb.pdf
@@ -113,6 +117,7 @@ different jet multiplicity bins: $\njet = 4$ and $\geq 5$.
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/systOut2d3fb.pdf
 \begin{figure}[h!]
   \begin{center}
+    \subfigure[Legend]{\includegraphics[width=0.3\textwidth]{figures/closureTests/legend.png}} \\
     \subfigure[$L_{\rm int} = 3\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq4j_htClosure_3fb.pdf}} ~~
     \subfigure[$L_{\rm int} = 3\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/ge5j_htClosure_3fb.pdf}} \\
     \subfigure[$L_{\rm int} = 10\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq4j_htClosure_10fb.pdf}} ~~
@@ -315,7 +320,7 @@ according to a \pt- and $\eta$-dependent jet energy scale uncertainty
 (\ie vary the event scale up and down), as recommended by the JetMET
 POG. 
 
-Fianlly, studies are underway with the aim of establishing procedures
+Finally, studies are underway with the aim of establishing procedures
 based on data (akin to the closure tests) that will help to either
 estimate dominant source of uncertainty related to how events are
 distributed in \mht, or to at least provide data-driven cross checks.
