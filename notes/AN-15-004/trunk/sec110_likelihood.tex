@@ -24,7 +24,7 @@ The likelihood function for the hadronic signal region is, in each \htcat:
 \end{equation}
 
 The control regions are not diced in the \mht dimension, and their information is only used to constrain the normalisation of the background processes 
-in the signal region, as described in Section~\ref{sec:background}. 
+in the signal region, as described in Section~\ref{sec:backgroundmet}. 
 Their likelihood is therefore written as:
 
 \begin{equation}
@@ -40,7 +40,7 @@ Notice that the signal contribution $s^{\htcat}_{\mathrm{CR,j}}$ in Equation~\re
 Where the signal contamination is sizeable, it is included in the likelihood as an additional process contributing to the event yield in that particular bin.
 
 The prediction of the background yields in the signal region and in the corresponding control samples are connected 
-by means of transfer factors, as explained in Section~\ref{sec:background}. 
+by means of transfer factors, as explained in Section~\ref{sec:backgroundmet}. 
 This connection is implemented by introducing a log-uniform nuisance parameter, which is correlated 
 between the signal region and the control region, separately for each background process ($Z_{\mathrm{inv.}}$, $ttW$) \footnote{In the following we will use $Z_{\mathrm{inv}}$ to indicate the $Z\to \mathrm{inv}$ process and $ttW$ to indicate the sum of the yields of the $t\bar{t}$ and $W+\mathrm{jets}$ processes.}. \\
 This binds the background yields in the signal and control region to float together, 
@@ -50,9 +50,13 @@ The systematic uncertainties affecting the transfer factors, described in \ref{s
 are incorporated in the likelihood by means of log-normal nuisance parameters, 
 which are taken as uncorrelated between each of the \htcat bins.
 The uncertainty on the signal efficiency times acceptance, described in Section~\ref{subsec:susy_results}, is taken as correlated across all the \htcat bins. 
-The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. The procedure to assess the alternative templates is described in detail in Section~\ref{sec:syst-on-shape}. 
+The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. The procedure to assess the alternative templates is described in detail in Section~\ref{sec:syst-on-shape}. \\
+The uncertainty due to the limited statistics in the MC samples used to populate the template histograms is incorporated 
+as additional nuisance parameters, uncorrelated across the histogram bins. 
+Only the uncertainty on the highest \mht bin is included, since the effect of all the others has been found to be negligible.
 
 The total likelihood is the product over all the \htcat bins and all the control regions, and can be written as:
+
 \begin{equation}
 \label{eq:total_likelihood}
 \mathcal{L} = \prod_{\htcat} \mathcal{L}_{\text{had}}^{\htcat} \times \prod_{\text{j}} \mathcal{L}_{\text{CR,j}}^{\htcat}
