@@ -17,12 +17,12 @@ that are detailed in Section \ref{sec:susy} are also outlined.
 
 Two types of systematic uncertainty are considered separately. First,
 the normalisation uncertainties affect the background predictions for
-the signal region in each (\nb,\njet,\HT) bin (integrated over \mht)
+the signal region in each (\nb,\njet,\scalht) bin (integrated over \mht)
 These uncertainties are estimated with closure tests, described in
 Sections~\ref{sec:bkgdnorm-syst} and \ref{sec:syst-from-closure}.
 
 Second, systematic effects that may result in the migration of
-(simulated) events between \mht bins within a given (\njet,\nb,\HT)
+(simulated) events between \mht bins within a given (\njet,\nb,\scalht)
 bin is accounted for by providing alternative templates to the nominal
 \mht template obtained from simulation. These alternative \mht
 templates may be derived from, or at least cross checked with, the
@@ -57,7 +57,7 @@ data control samples, as described in Section~\ref{sec:syst-on-shape}.
 \label{sec:closure-tests-desc}
 \label{sec:bkgdnorm-syst}
 
-The background estimates are determined in each (\nb,\njet,\HT) bin by
+The background estimates are determined in each (\nb,\njet,\scalht) bin by
 defining transfer factors from control region to signal region, as
 described in Section \ref{sec:selection}. Since the transfer factors
 are obtained from simulation, an appropriate systematic uncertainty is
@@ -216,7 +216,7 @@ can be interpreted as a systematic uncertainty limited by statistical
 uncertainties associated with the data (and simulation).
 
 Prior to deriving uncertainties, each individual set of closure tests
-(as a function of \HT) is inspected for closure. Zero and first order
+(as a function of \scalht) is inspected for closure. Zero and first order
 polynomial fits are performed along the \scalht dimension for each set
 of closure tests per jet category. The fits will be inspected for any
 indication of bias averaged over \scalht as well as any
@@ -237,7 +237,7 @@ The systematic uncertainties in the transfer factors can be considered
 as a ``normalisation'' uncertainty in the SM background predictions,
 which are determined per \scalht bin per (\njet,\nb) category and are
 assumed to be fully uncorrelated between the different (\njet,\nb)
-categories and \HT bins. Further details are provided in Section
+categories and \scalht bins. Further details are provided in Section
 \ref{sec:likelihood}. 
 
 The systematic uncertainty is estimated by taking the quadrature sum
@@ -252,7 +252,7 @@ no bias that should be found in data.
 
 This procedure yields the values quoted in
 Figure~\ref{fig:systematics}, which shows the systematic uncertainty
-on the transfer factor as a function of the \HT and (\nb,\njet)
+on the transfer factor as a function of the \scalht and (\nb,\njet)
 category, extracted for two integrated luminosity scenarios: 3 \ifb
 and 10 \ifb. A clear dependence on integrated luminosity is a
 reflection of the fully statistical nature of the ``systematic'' in
@@ -293,7 +293,7 @@ are propagated through to the final total.
 
 \subsection{Systematic uncertainties in the \mht dimension\label{sec:syst-on-shape}}
 
-The estimate of the number of events per (\njet,\nb,\HT) bin,
+The estimate of the number of events per (\njet,\nb,\scalht) bin,
 integrated over \mht, is determined from data control samples, with
 the associated systematic error determined from closure tests
 described in Section \ref{sec:syst-from-closure}. This section
@@ -306,7 +306,7 @@ general, for each source of systematic, the \mht templates are found
 based on $\pm$1$\sigma$ variations in the relevant source of
 uncertainty. The alternative templates reflect the magnitude of the
 migration of events between bins in \mht (but not in \njet, \nb, nor
-\HT, which is encapsulated by the normalisation systematic
+\scalht, which is encapsulated by the normalisation systematic
 uncertainties from closure tests). If the systematic source is found
 to be significant, the template variations will be included in the
 likelihood. 
@@ -318,6 +318,31 @@ determined when varying the energy of all jets in an event up or down
 according to a \pt- and $\eta$-dependent jet energy scale uncertainty
 (\ie vary the event scale up and down), as recommended by the JetMET
 POG. 
+
+For the sensitivity studies reported in the AN, we assume a significant 
+uncertainty on the distribution of events in the \mht dimension. 
+At present this is modelled assuming a maximum of 50\% uncertainty in the last \mht bin, 
+which typically represents the bin with the best single sensitivity in a given \scalht category. 
+In this model the systematic uncertainty of lower \mht bins is determined 
+as an exponential with a maximum shift of 50\% in the last \mht bin. 
+Figure \ref{fig:mht-shape-syst-toy} shows the corresponding $\pm$1 Sigma variation of the 
+\mht template obtained from this systematic model. 
+As can be seen, this variation is much larger than the ones induced by MC variations (Figure \ref{fig:jec-shape}).  
+We also have tested other models of the \mht systematic such as a linear instead of an exponential function which lead to rather similar results. 
+Although we consider a 50\% variation of the 
+last \mht bin in a given \scalht category as a conservative estimate, 
+especially because it is combined with fully data driven normalisation uncertainty of the \scalht category, 
+it will be essential to refine the systematic \mht model in data. 
+Studies based on Run 1 data are currently underway.
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/mhtShapeSyst/MHTShapeSyst_ge3b_ge5j_800_Inf.pdf}
+  \caption{\label{fig:mht-shape-syst-toy} 
+    The nominal \mht shape and its up/down alternative shapes for the $ttW$ background in the $\njet \geq5$, $\nb \geq 3$
+    category for the $\HT > 800 \gev$ bin.
+  }
+\end{figure}
 
 Finally, studies are underway with the aim of establishing procedures
 based on data (akin to the closure tests) that will help to either
