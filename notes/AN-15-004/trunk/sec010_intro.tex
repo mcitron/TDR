@@ -4,73 +4,78 @@
 
 In this note, we summarise the Early Analysis exercise for the \alphat
 analysis, which searches for signatures of physics beyond the standard
-model in events with jets and missing transverse momentum (MET). This
-analysis uses the kinematic variable \alphat in selecting events with
-missing transverse momentum.
-
-With this variable \alphat, CMS has been searching for supersymmetry
-(SUSY) in proton-proton collisions data collected during LHC Run~1. With
-data at a centre-of-mass energy of 7 TeV collected in 2010 and 2011, the
-\alphat analysis has excluded a large parameter space of the constrained
-minimal supersymmetric extension of the standard model (CMSSM)
-\cite{Khachatryan:2011tk, Chatrchyan:2011zy, Chatrchyan:2012wa} and a
-parameter space of simplified models \cite{Chatrchyan:2012wa}. With data
-at a centre-of-mass energy of 8 TeV collected and promptly reconstructed
-in 2012, the \alphat analysis further excluded a parameter space of
-simplified models \cite{Chatrchyan:2013lya}. Additional sets of data
-which were collected in 2012 but were reconstructed later during the LHC
-Long Shutdown 1 (LS1) are called the ``parked data'', which contain data
-for events triggered with lower energy thresholds. The review of the
-\alphat analysis of the parked data \cite{CMS_AN_2013-366} is ongoing.
+model in events with jets and missing transverse momentum (\met). This
+analysis uses the kinematic variable \alphat to efficiently select
+candidate signal events with genuine missing transverse momentum while
+providing robust rejection against QCD multijet background
+events. With the \alphat variable, CMS has been searching for
+supersymmetry (SUSY) in proton-proton collisions data collected during
+LHC Run~1. With data at a centre-of-mass energy of 7 TeV collected in
+2010 and 2011, the \alphat analysis has excluded a large parameter
+space of the constrained minimal supersymmetric extension of the
+standard model (CMSSM) \cite{Khachatryan:2011tk, Chatrchyan:2011zy,
+  Chatrchyan:2012wa} and a parameter space of simplified models
+\cite{Chatrchyan:2012wa}. With data at a centre-of-mass energy of 8
+TeV collected and promptly reconstructed in 2012, the \alphat analysis
+further excluded a parameter space of simplified models
+\cite{Chatrchyan:2013lya}. Additional sets of data which were
+collected in 2012 but were reconstructed later during the LHC Long
+Shutdown 1 (LS1) are called the ``parked data'', which contain data
+for events triggered with lower energy
+thresholds~\cite{CMS_AN_2013-366}.
+%The review of the \alphat analysis of the parked data \cite{CMS_AN_2013-366} is ongoing.  
 The search strategy in this note is an extension of that in Ref.
 \cite{CMS_AN_2013-366}.
 
 After two years of the LS1, in June 2015, LHC started its Run 2 and is
 delivering proton-proton collisions to CMS at a higher centre-of-mass
-energy of 13 TeV. The higher energy collision considerably increases the
-production cross sections of heavy particles. It is highly motivated to
-continue the search for supersymmetry. The \alphat analysis is
-particularly suited for this search and has potential for discovery in
-early data. The reconstruction of missing transverse momentum in
-different collider environment or at new collider energy is typically
-very challenging and often requires an extended period of development.
-However, the \alphat variable can effectively select events with missing
-transverse momentum without directly using the reconstructed missing
-transverse momentum.
+energy of 13 TeV. The higher energy collision considerably increases
+the production cross sections of heavy particles. It is highly
+motivated to continue the search for supersymmetry. The \alphat
+analysis is particularly suited for this search and has potential for
+discovery in early data. The reconstruction of missing transverse
+momentum in different collider environment or at new collider energy
+is typically very challenging and often requires an extended period of
+development. However, the \alphat variable is designed to provide
+robust discriminating power between sources of genuine and ``fake''
+(\eg instrumental) \met, as well as using an estimator of \met that
+relies solely on the vector sum of jet transverse momenta (\mht).
+%can effectively select events with missing transverse momentum without
+%directly using the reconstructed missing transverse momentum.
 
-The identify of the dark matter (DM) is one of the outstanding problems
-in particle physics. The production of DM at LHC Run~2 has been
-predicted by many models of physics beyond the standard model, by both
-supersymmetric and non-supersymmetric models. The \alphat variable can
-be also effective to select events that potentially contain DM produced
-in the collisions. In Run~2, we extend the \alphat analysis to include
-the collider dark matter search\footnote{This version of the note omits
-the section of dark matter search. It was included in the previous
-version. We plan to revise the section and update this note.}.
+The identity of dark matter (DM) is one of the outstanding problems in
+particle physics. The production of DM at LHC Run~2 has been predicted
+by many models of physics beyond the standard model, by both
+supersymmetric and non-supersymmetric models. The \alphat variable
+efficiently selects events that potentially contain DM candidates
+produced in the collisions. In Run~2, we extend the \alphat analysis
+to significantly improve the acceptance to dark matter production at
+the LHC.
 
 The study in this note started as part of the PHYS14 exercise
-\cite{PHYS14}. The PHYS14 exercise, which started in October 2014, was a
-preparation for LHC Run 2 carried out in the CMS collaboration and was
-focused on the preparation of physics analyses. In this note, we used MC
-event samples generated for the this exercise. Events in these samples
-were simulated under conditions anticipated in early LHC Run~2, e.g, the
-centre-of-mass energy, the bunch-spacing, the number of the interactions
-per bunch crossing.
+\cite{PHYS14}. The PHYS14 exercise, initiated in October 2014, was
+focused on preparation of the Run~2 physics analyses. In this note, we
+use MC event samples generated for this exercise. Events in these
+samples are simulated under conditions anticipated in early LHC Run~2,
+e.g, the centre-of-mass energy, the bunch-spacing, the number of the
+interactions per bunch crossing.
 
-Section \ref{sec:strategy} discusses changes in the search methods made
-since Run~1. Section \ref{sec:alphatdef} defines the \alphat variable.
-Section \ref{sec:datasets} lists the data sets used in this note.
-Section \ref{sec:triggers} describes the preparation of the triggers for
-Run~2. Section \ref{sec:objects} defines the physics objects used in
-this note. Section \ref{sec:selection} describes how events are
-selected. Section \ref{sec:yields} shows the expected event yields in
-the signal and control regions. While Section \ref{sec:qcd} discusses
-how multijet background events are controlled, Section
-\ref{sec:backgroundmet} estimates background from other processes. Then,
-Section \ref{sec:systematics} discusses systematic uncertainties in the
-estimates. With likelihood models introduced in Section
-\ref{sec:likelihood}, we interpret the results in simplified SUSY models
-in Section \ref{sec:susy}. Section \ref{sec:summary} summarises this
-exercise.
+Section \ref{sec:strategy} discusses changes in the search methods
+made since Run~1. Section \ref{sec:alphatdef} defines the \alphat
+variable.  Section \ref{sec:datasets} lists the data sets used in this
+note.  Section \ref{sec:triggers} describes the preparation of the
+triggers for Run~2. Section \ref{sec:objects} defines the physics
+objects used in this note. Section \ref{sec:selection} describes how
+events are selected. Section \ref{sec:yields} shows the expected event
+yields in the signal and control regions. While Section \ref{sec:qcd}
+discusses how multijet background events are controlled, Section
+\ref{sec:backgroundmet} estimates background from other
+processes. Then, Section \ref{sec:systematics} discusses systematic
+uncertainties in the estimates. With likelihood models introduced in
+Section \ref{sec:likelihood}, we interpret the results in simplified
+SUSY models in Section \ref{sec:susy}.\footnote{This version of the
+  note omits the sections related to dark matter interpretations,
+  which will be added shortly.} Section \ref{sec:summary} summarises
+this exercise.
 
 %%____________________________________________________________________________||
