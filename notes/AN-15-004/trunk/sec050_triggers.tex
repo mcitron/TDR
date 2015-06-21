@@ -15,8 +15,8 @@ conditions and mitigates the effects of pileup contamination within the jet cone
 A suite of $\scalht$-$\alphat$ cross-triggers with a requirement on the minimum average \pt of 
 the leading two jets, $\pt^{\rm \left<j1,j2\right>}$, are utilised in the selection of events in 
 the hadronic signal region, labelled: \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a 
-dijet average threshold provides an improved suppression of QCD multijet events enabling the use 
-of looser \alphat thresholds whilst maintaining acceptance to events exhibiting asymmetric jet 
+dijet average threshold provides an improved suppression of QCD multijet events within the trigger,
+enabling looser \alphat thresholds to be utilised whilst maintaining acceptance to events exhibiting asymmetric jet 
 topologies such as monojet-like signatures of compressed spectrum and DM models. 
 
 The Level-1 seeds for the HLT paths are given by the disjunction of the lowest 
@@ -29,7 +29,7 @@ defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better corr
 between calorimeter and PF-based reconstruction.
 
 The thresholds of the signal triggers, shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}, are 
-tuned to maintain acceptance to a range of signal topologies whilst effectively suppressing QCD 
+tuned to maintain acceptance for a range of signal topologies whilst effectively suppressing QCD 
 multijet events to maintain acceptable trigger rates. These triggers uniquely seed individual offline \scalht 
 bins with the exception of the highest-\scalht \scalht-\alphat cross-trigger which is utilised for analysis 
 bins in the range: 
@@ -79,16 +79,15 @@ HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                     
 
 
 The efficiency of the signal triggers are measured in both Monte Carlo and data-driven measurements.
-The signal triggers have been measured to give high efficiency to a range of signal models and SM 
-backgrounds with genuine \met. The trigger efficiency for an example signal model, \texttt{T1tttt}(1200,800), 
+The signal triggers have been measured to give high efficiency for a range of signal models and SM 
+backgrounds with genuine \met. The trigger efficiency for an example signal model, T1tttt(1200,800), 
 is shown in Figure~\ref{fig:T1ttt_Trigger_Efficiency} for the high jet multiplicity analysis bins which are 
-representative of the typical long decay cascades.
+representative of the model's typically long decay cascades.
 
 Efficiency measurements in data are performed with an unbiased muon sample, selected by the unprescaled \verb!HLT_IsoMu24_eta2p1! 
 reference trigger. A single isolated muon selection is imposed, requiring a single muon exceeding $\pt > 25 \GeV$ 
 within the acceptance $|\eta| < 2.1$. The efficiency of the signal triggers is measured on the subsequent selection 
 with the muon excluded in the computation of event variables.
-
 
 
 
@@ -101,7 +100,7 @@ with the muon excluded in the computation of event variables.
     \subfigure[$\njet = 4$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} ~~
     \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} \\
     \caption{
-Cumulative trigger efficiency for the \texttt{T1tttt}(1200,800) model after signal selection in the \alphat-\scalht and \mht-\scalht planes for representative analysis jet multiplicity bins.}
+Cumulative trigger efficiency for the T1tttt(1200,800) model after signal selection in the \alphat-\scalht and \mht-\scalht planes for representative analysis jet multiplicity bins.}
     \label{fig:T1ttt_Trigger_Efficiency}
   \end{center} 
 \end{figure}
@@ -168,7 +167,7 @@ The $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ seed exploits the typical dijet topologi
 
 An alternate $\mht/\scalht$ 'reduced-MHT' seed exploits the correlation in missing hadronic energy and visible hadronic energy typical of decays with genuine $\met$ and the decorrelation of these quantities for QCD with fake-$\met$ by requiring a minimum $\mht/\scalht$ ratio. This again enables triggers with a significant reduction in the threshold on the $\scalht$-leg, for example with the rate neutral trigger: \verb!L1_HTT125_rHTM0p3!.
 
-The logical disjunction of these two seeds can further improve signal efficiency whilst maintaining an effective suppression of QCD events by increasing acceptance to additional topolgies. ISR-dominated final states for instance typically have large $\mht/\scalht$ but may fail the $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ selection, where as events with high jet multiplicities typically have high $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ but may fail the $\mht/\scalht$ threshold due to the breakdown in $\mht/\scalht$ at high jet multiplicities. Combined these seeds allow even smaller thresholds to be used on the $\scalht$-leg without loss of efficiency to ISR-dominated or high jet multiplicity events, for example with the trigger:\\ \verb!L1_HTT110_rHTM0p6_rHTM0p0_WdPhi6!.
+The logical disjunction of these two seeds can further improve signal efficiency whilst maintaining an effective suppression of QCD events by increasing acceptance to additional topologies. ISR-dominated final states for instance typically have large $\mht/\scalht$ but may fail the $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ selection, where as events with high jet multiplicities typically have high $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ but may fail the $\mht/\scalht$ threshold due to the breakdown in $\mht/\scalht$ at high jet multiplicities. Combined these seeds allow even smaller thresholds to be used on the $\scalht$-leg without loss of efficiency to ISR-dominated or high jet multiplicity events, for example with the trigger:\\ \verb!L1_HTT110_rHTM0p6_rHTM0p0_WdPhi6!.
 
 
 \subsubsection{Implementation and performance of low-$\scalht$ Level-1 seeds}
