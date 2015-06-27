@@ -2,10 +2,8 @@
 \section{Interpretation in Dark Matter models}
 \label{sec:darkmatter}
 
-In Run~1, the \alphat analysis searched for supersymmetry. Its results
-were used to interpret models with supersymmetry and their simplified
-models. In Run~2, we plan to extend this analysis to include searches
-for the production of dark matter (DM) in the proton-proton collisions.
+In Run~1, the \alphat analysis searched for supersymmetry. Its results were used to interpret models with supersymmetry and their simplified
+models. In Run~2, we extended the analysis strategy to include searches for the production of dark matter (DM) in the proton-proton collisions.
 
 The properties of DM and their connections to known particles and
 physical laws remain unknown. Although the Weakly Interacting Massive
@@ -16,7 +14,7 @@ uncertainty, more model-independent searches for dark matter have gained
 significant traction. It is important to be able to combine collider,
 direct detection, and indirect detection searches in a complementary way
 if we are to determine that a signal observed experimentally is indeed
-ssssfrom dark matter \cite{Bauer:2013ihz}.
+from dark matter \cite{Bauer:2013ihz}.
 
 In particular, the use of simplified models provides allows one to relate the different experimental
 signatures in a relatively model-independent way~\cite{Buchmueller:2014yoa}. 
@@ -59,110 +57,55 @@ This analysis will also set strongest constraints for low mass dark matter, and 
 
 
 
-\subsection{Datasets for simplified models}
-
-In this note, we use samples of simulated events specifically produced
-for the PHYS14 exercise. These are effective field theory samples (EFT) produced using the official production chain and full simulation using {\textsc CMSSW\_7\_2\_0}
-and corresponding private production using {\textsc FastSim} of Minimal Simplifed Dark Matter (MSDM) models. These events are generated and reconstructed
-under conditions anticipated in early LHC Run~2. Events of the proton-proton collisions at the centre-of-mass energy at 13~TeV are
-generated. In addition to the main interaction, each event contains on average 20 minimum bias interactions which simulate expected multiple
-interactions per bunch-crossing (in-time pileup). The expected detector signal from previous or following bunch crossings (out-of-time pileup)
-with 25ns bunch spacing is overlapped.
-Tables \ref{tab:xsec_va}-\ref{tab:datasets_dm} lists the data sets for the MSDM and EFT signal DM simplified models. Details regarding the background samples can be found in the RA1 note~\cite{CMS_AN-15-004}.
-
-
 
 \subsection{Simplified Models}
 
-We are simulating simplified models for dirac fermion dark matter $s$-cannel production via a meditor $\Phi$ with (axial-)vector and (pseudo-)scalar couplings. The simulations
-have been performed suing {\tt Powheg-BOX v2} taking into account the full finite top mass for the scalar interaction. The samples used n this note are generated with $g_{\textrm{DM}}=g_{\textrm{SM}}=1$ whereas the dark matter mass $m_{\chi}$ and the mediator mass $m_{\Phi}$ are varied. Tables~\ref{tab:xsec_va},~\ref{tab:xsec_s} list the samples generated and the correpsonding production cross section.
+
+The primary simplified models for Dirac fermion DM studied and recommended by the DM Forum for early LHC Run-2 searches are
+are comprised of spin-0 and spin-1 mediators using $s$-channel and $t$-channel models.
 
 
-%VA
+We consider the case of a DM particle $\chi$ of mass $m_{\chi}$ that is a Dirac fermion and where the production proceeds via the exchange
+of a spin-1 mediator $\Phi$ of mass $m_{\Phi}$ in the $s$-channel. Two models with vector (V) and axial-vector (AV) couplings are considered. The coupling to the standard model
+$g_{\textrm SM}$ is assumed to be universal for all quark families and $g_{\textrm DM}$ is the couplings to the dark matter particles. Assuming that not additional visible or invisible particles contribute to the decay we use the minimal width determined by the choice of $g_{\textrm SM}$ and $g_{\textrm DM}$.
+We specifically assume that the vector mediator does not couple to leptons. If such a coupling were present, it would have a minor effect in increasing the mediator width, but it
+would also bring in constraints from measurements of the Drell-Yan process that would unnecessarily restrict the model space. 
+ In order to determine an optimal choice of the parameter grid for the simulation of early Run-2 benchmark models, dependencies of the kinematic quantities and cross sections on the model parameters
+have been studied. Only points that are kinematically distinct will be fully simulated, while instructions on how to rescale the results
+according to models with different cross sections. 
+
+
+$M_{\Phi}$ grid points are chosen, roughly equidistant in a logarithmic scale: 10,~20, 50, 100, 200, 300, 500, 1000 and 2000 GeV. In the thresh-
+old regime $M_{\Phi} = 2 \times m_{\Chi}$, the $ m_{\Chi}$ grid points are taken at approximately $M_{\Phi}/2$. Points on the on-shell diagonal are always chosen to be
+5 GeV away from the threshold, to avoid numerical instabilities in the event generation. 
+
+
 \begin{table}[h]
 \centering
-\topcaption{Dark matter masses $m_{\chi}$ and mediator masses $m_{\Phi}$ generated for $g_{\textrm{DM}}=g_{\textrm{SM}}=1$ in the axial-vector model. The resulting production cross sections are given in pb.\label{tab:xsec_va}}
-\begin{tabular}{lll||lll}
-\hline \hline
-$m_\chi $  & $m_\Phi$ & $\sigma$ [pb] & $m_\chi $  & $m_\Phi$ & $\sigma$ [pb]\\ \hline
-10  & 10   & 8027.16  & 300 & 50   & 0.79   \\ \hline
-10  & 100  & 4204.60  & 300 & 500  & 1.71   \\ \hline
-10  & 1100 & 3.98     & 300 & 700  & 2.95   \\ \hline
-10  & 1300 & 2.12     & 300 & 900  & 2.47   \\ \hline
-10  & 300  & 289.19   & 400 & 10   & 0.25   \\ \hline
-10  & 50   & 14519.95 & 400 & 100  & 0.25   \\ \hline
-10  & 500  & 60.54    & 400 & 1100 & 0.88   \\ \hline
-10  & 700  & 19.72    & 400 & 1300 & 0.65   \\ \hline
-10  & 900  & 8.24     & 400 & 300  & 0.29   \\ \hline
-100 & 10   & 30.30    & 400 & 50   & 0.25   \\ \hline
-100 & 100  & 37.14    & 400 & 500  & 0.38   \\ \hline
-100 & 1100 & 3.37     & 400 & 700  & 0.62   \\ \hline
-100 & 1300 & 1.83     & 400 & 900  & 0.94   \\ \hline
-100 & 300  & 111.61   & 50  & 10   & 205.67 \\ \hline
-100 & 50   & 31.74    & 50  & 100  & 545.02 \\ \hline
-100 & 500  & 40.65    & 50  & 1100 & 3.76   \\ \hline
-100 & 700  & 15.26    & 50  & 1300 & 2.01   \\ \hline
-100 & 900  & 6.77     & 50  & 300  & 227.28 \\ \hline
-200 & 10   & 3.37     & 50  & 50   & 246.66 \\ \hline
-200 & 100  & 3.55     & 50  & 500  & 53.82  \\ \hline
-200 & 1100 & 2.49     & 50  & 700  & 18.18  \\ \hline
-200 & 1300 & 1.42     & 50  & 900  & 7.72   \\ \hline
-200 & 300  & 5.97     & 500 & 10   & 0.10   \\ \hline
-200 & 50   & 3.42     & 500 & 100  & 0.10   \\ \hline
-200 & 500  & 13.00    & 500 & 1100 & 0.36   \\ \hline
-200 & 700  & 8.52     & 500 & 1300 & 0.35   \\ \hline
-200 & 900  & 4.57     & 500 & 300  & 0.10   \\ \hline
-300 & 10   & 0.79     & 500 & 50   & 0.10   \\ \hline
-300 & 100  & 0.81     & 500 & 500  & 0.12   \\ \hline
-300 & 1100 & 1.62     & 500 & 700  & 0.17   \\ \hline
-300 & 1300 & 1.01     & 500 & 900  & 0.26   \\ \hline
-300 & 300  & 1.00     &     &      &        \\ \hline \hline
+\begin{tabular}{l|llllllllll}\hline
+mDM  & \multicolumn{10}{c}{mPhi}                                   \\ \hline
+1    & 10 & 20 & 50 & 100 & 200 & 300 & 500 & 1000 & 2000 & 100000 \\
+10   & 10 & 15 & 50 & 100 &     &     &     &      &      & 100000 \\
+50   & 10 &    & 50 & 95  & 200 & 300 &     &      &      & 100000 \\
+150  & 10 &    &    &     & 200 & 295 & 500 & 1000 &      & 100000 \\
+500  & 10 &    &    &     &     &     & 500 & 995  &      & 100000 \\
+1000 & 10 &    &    &     &     &     &     & 1000 & 1995 & 100000\\ \hline
 \end{tabular}
+\caption{Dark matter and mediator mass grid analysed. The parameter space follows the DM Forum recommendations}
+\label{tab:DMgrid}
 \end{table}
 
+\subsubsection{Vector and Axial Vector Models}
+
+\subsubsection{Scalar and Pseudoscalar Models} \label{sec:dm_pscalar}
+
+\subsubsection{Heavy Quark Models}
+
+Following the concept of Minimal Flavor Violating (MFV) top and bottom quarks can play important roles in the phenomenology of dark matter events.
+Scalar and pseudoscalar mediator models predict not only the monojet process described in Sec.~\ref{sec:dm_pscalar} but also production of dark matter in association
+with top (or bottom) pairs. This results in signature with relative large jet multiplicities, in particular for DM$+t\bar{t}$ production and heavy jets. Our $\alpa_{\textrm{T}}$ is particular well designed for this signature and the aforementioned improvements for monojet-like and compressed events further improves the sensitivity. The events are produced in the same parameters space as detailed in Tab.~\ref{tab:DMgrid} using \textsc{MadGraph5\_aMC@NLO} 2.2.2 and using \textsc{Pythia 8} for the parton shower.
 
 
-%scalar
-\begin{table}[h]
-\centering
-\topcaption{Dark matter masses $m_{\chi}$ and mediator masses $m_{\Phi}$ generated for $g_{\textrm{DM}}=g_{\textrm{SM}}=1$ in the scalar model. The resulting production cross sections are given in pb.\label{tab:xsec_s}}
-\begin{tabular}{lll||lll}
-\hline \hline
-$m_\Chi $  & $m_\Phi$ & $\sigma$ [pb] & $m_\Chi $  & $m_\Phi$ & $\sigma$ [pb]\\ \hline
-10  & 10   & 1.23     & 300 & 50   & 1.01E-03 \\ \hline
-10  & 100  & 17.20    & 300 & 500  & 2.87E-03 \\ \hline
-10  & 1100 & 2.40E-02 & 300 & 700  & 6.17E-02 \\ \hline
-10  & 1300 & 9.22E-03 & 300 & 900  & 3.57E-02 \\ \hline
-10  & 300  & 4.18     & 400 & 10   & 1.98E-04 \\ \hline
-10  & 50   & 34.55    & 400 & 100  & 2.01E-04 \\ \hline
-10  & 500  & 1.38     & 400 & 1100 & 8.68E-03 \\ \hline
-10  & 700  & 0.27     & 400 & 1300 & 4.28E-03 \\ \hline
-10  & 900  & 7.27E-02 & 400 & 300  & 2.33E-04 \\ \hline
-100 & 10   & 5.08E-02 & 400 & 50   & 1.99E-04 \\ \hline
-100 & 100  & 5.97E-02 & 400 & 500  & 3.30E-04 \\ \hline
-100 & 1100 & 2.25E-02 & 400 & 700  & 7.29E-04 \\ \hline
-100 & 1300 & 8.61E-03 & 400 & 900  & 1.04E-02 \\ \hline
-100 & 300  & 4.19     & 50  & 10   & 0.16     \\ \hline
-100 & 50   & 5.27E-02 & 50  & 100  & 0.56     \\ \hline
-100 & 500  & 1.25     & 50  & 1100 & 2.36E-02 \\ \hline
-100 & 700  & 0.25     & 50  & 1300 & 9.05E-03 \\ \hline
-100 & 900  & 6.78E-02 & 50  & 300  & 4.18     \\ \hline
-200 & 10   & 7.09E-03 & 50  & 50   & 0.18     \\ \hline
-200 & 100  & 7.53E-03 & 50  & 500  & 1.35     \\ \hline
-200 & 1100 & 1.88E-02 & 50  & 700  & 0.27     \\ \hline
-200 & 1300 & 7.29E-03 & 50  & 900  & 7.15E-02 \\ \hline
-200 & 300  & 1.42E-02 & 500 & 10   & 4.95E-05 \\ \hline
-200 & 50   & 7.19E-03 & 500 & 100  & 5.00E-05 \\ \hline
-200 & 500  & 0.61     & 500 & 1100 & 2.38E-03 \\ \hline
-200 & 700  & 0.18     & 500 & 1300 & 2.49E-03 \\ \hline
-200 & 900  & 5.49E-02 & 500 & 300  & 5.50E-05 \\ \hline
-300 & 10   & 1.00E-03 & 500 & 50   & 4.96E-05 \\ \hline
-300 & 100  & 1.03E-03 & 500 & 500  & 6.79E-05 \\ \hline
-300 & 1100 & 1.43E-02 & 500 & 700  & 1.00E-04 \\ \hline
-300 & 1300 & 5.85E-03 & 500 & 900  & 2.22E-04 \\ \hline
-300 & 300  & 1.34E-03 &     &      &          \\ \hline \hline
-\end{tabular}
-\end{table}
 
 \subsection{EFT samples}
 Table~\ref{tab:datasets_dm} lists the EFT samples generated using full simulation for the Phys14 exercise. The samples are generated using a mediator mass $M=40$~TeV.
