@@ -6,13 +6,13 @@ The definitions of the physics objects used in this analysis follow the ongoing 
 \subsection{Jets}
 \label{sec:jetreco}
 Jets are defined as sets of particle-flow (PF) candidates clustered by the
-anti-$k_{T}$ jet clustering algorithm with a distance parameter of 0.4
+anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp} with a distance parameter of 0.4
 (PFJets). Charged Hadron Subtraction (CHS) is applied, i.e., charged
 hadrons that can be traced back to pileup vertices are not clustered.
 The four-momenta of jets are initially defined as the four-vector sum of
 the four-momenta of the constituent particle-flow candidates and then
 scaled by the jet energy correction factors designated as L1FastJet,
-L2Relative, and L3Absolute \cite{Jet-energy-scale}.
+L2Relative, and L3Absolute \cite{Chatrchyan:2011ds}.
 
 It should be noted that the early L1 FastJet corrections require
 improvements at this stage, and as a result can impact the L2 and L3
@@ -32,7 +32,7 @@ shown on the y-axis represent the RMS of the distribution.
 
 \subsection{b-tagged jets}
 \label{sec:btags}
-Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction \cite{b-tagging}. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``medium'' working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable. 
+Jets originating from bottom quarks are identified through vertices that are displaced with respect to the primary interaction \cite{Chatrchyan:2012jua}. The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, using the ``medium'' working point, which is achieved by requiring a cut of $>$ 0.814 on the algorithm discriminator variable. 
 This results in a gluon/light-quark mis-tag rate of $\sim$1 \% (where ``light'' means $u$, $d$ and $s$ quarks) with a b-tag signal efficiency of about 80 \%. 
 
 
@@ -188,7 +188,7 @@ as described in Section \ref{sec:preSelection}.
 \subsection{Missing transverse momentum}
 Missing transverse momentum (\met) is defined as the opposite of the vector sum
 of the transverse momentum of all particle-flow candidates in the event.
-The Type-I \met correction \cite{met-corrections} is applied, i.e., the transverse momentum of
+The Type-I \met correction \cite{Khachatryan:2014gga} is applied, i.e., the transverse momentum of
 the particle-flow candidates clustered as jets are replaced with the
 transverse momentum of the jets that are scaled by the jet energy
 correction factors.
