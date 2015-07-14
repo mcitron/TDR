@@ -71,24 +71,17 @@ HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                     
 \end{table}
 
 
-%% Offline \scalht & HLT p
-%% region (\GeV)   &      
-%% \hline                 
-%% $200 < \scalht < 250$ &
-%% $250 < \scalht < 300$ &
-%% $300 < \scalht < 350$ &
-%% $350 < \scalht < 400$ &
-%% $400 < \scalht < 800$ &
-%%       $\scalht > 800$ &
-
-
-
 
 The efficiency of the signal triggers are measured in both Monte Carlo and data-driven measurements.
 The signal triggers have been measured to give high efficiency for a range of signal models and SM 
-backgrounds with genuine \met. The trigger efficiency for an example signal model, T1tttt(1200,800), 
-is shown in Figure~\ref{fig:T1ttt_Trigger_Efficiency} for the high jet multiplicity analysis bins which are 
-representative of the model's typically long decay cascades.
+backgrounds with genuine \met. The trigger efficiency for an example signal models, T2tt(425,325) and T1tttt(1200,800), 
+are shown in Figure~\ref{fig:T1ttt_Trigger_Efficiency} for the low and high jet multiplicity analysis bins which are 
+representative of the respective models. As illustrated in Figure~\ref{fig:T1ttt_Trigger_Efficiency_DijetAve}, the use of a dijet 
+average threshold is fully efficient for the symmetric jet selection however does exhibit inefficiencies for challening asymmetric 
+topologies where both the leading and second jet are relatively soft.
+
+
+
 
 Efficiency measurements in data are performed with an unbiased muon sample, selected by the unprescaled \verb!HLT_IsoMu24_eta2p1! 
 reference trigger. A single isolated muon selection is imposed, requiring a single muon exceeding $\pt > 25 \GeV$ 
@@ -101,17 +94,28 @@ with the muon excluded in the computation of event variables.
 %----------------------------------------------------------------------
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[$\njet = 4$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/eq4j_ht_vs_alphaT_Cumul.pdf}} ~~
-    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/eq4j_ht_vs_alphaT_Cumul.pdf}} \\
-    \subfigure[$\njet = 4$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} ~~
-    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/ge5j_ht_vs_mht_Cumul.pdf}} \\
+    \subfigure[$\njet = 2$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_eq2j_ht_vs_alphaT_Cumul.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/T1tttt_1200_800_ge5j_ht_vs_alphaT_Cumul.pdf}} \\
+    \subfigure[$\njet \geq 2$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_Sym_ht_vs_mht_Cumul.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/T1tttt_1200_800_ge5j_ht_vs_mht_Cumul.pdf}} \\
     \caption{
-Cumulative trigger efficiency for the T1tttt(1200,800) model after signal selection in the \alphat-\scalht and \mht-\scalht planes for representative analysis jet multiplicity bins.}
+Cumulative trigger efficiency for the T2tt(425,325) and T1tttt(1200,800) simplified models after signal selection in the \alphat-\scalht and \mht-\scalht planes for representative analysis jet multiplicity bins.}
     \label{fig:T1ttt_Trigger_Efficiency}
   \end{center} 
 \end{figure}
 
 
+% FIGURE: Trigger efficiencies - Dijet average
+%----------------------------------------------------------------------
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Symmetric-$\njet$ requirement]  {\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_Sym_j1vsj2_cumulEff.pdf}} ~~
+    \subfigure[Asymmetric-$\njet$ requirement]{\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_Asym_j1vsj2_cumulEff.pdf}} \\
+    \caption{
+Cumulative trigger efficiency for the T2tt(425,325) simplified model after signal selection as a function of leading and second jet threshold for the symmetric and asymmetric selection requirements for the lowest-\scalht bin.}
+    \label{fig:T1ttt_Trigger_Efficiency_DijetAve}
+  \end{center} 
+\end{figure}
 
 
 
@@ -150,7 +154,7 @@ HLT path & \multicolumn{2}{c}{Prescale} \\
 The non-hadronic control regions are seeded by the lowest-threshold unprescaled 
 triggers available in the given run scenario. In the high-luminosity scenario The \ej 
 and \eej and \mj and \mmj control samples are selected with the $\eta$-restricted 
-triggers: \verb!HLT_Ele27_eta2p1_WP75_Gsf! and \verb!HLT_IsoMu20_eta2p1! respectively,
+triggers: \verb!HLT_Ele27_eta2p1_WPLoose_Gsf_v1! and \verb!HLT_IsoMu24_eta2p1! respectively,
 and the \gj control sample by the \verb!HLT_Photon175! trigger. 
 
 The efficiency of the control triggers are be measured by data-driven methods. The tag 
