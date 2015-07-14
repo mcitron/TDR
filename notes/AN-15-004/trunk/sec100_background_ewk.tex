@@ -345,35 +345,61 @@ in Section \ref{sec:selection}. The selection criteria for these
 control regions are defined such that any potential contamination from
 new physics processes or QCD multijets is negligible.
 
-Currently, the projected sensitivity of the analysis is based on
-predictions of SM background components made from control regions as
-follows. For events containing exactly zero or one b-tagged jets, the
-\ej (enriched in \wej) and \gj control samples are used to estimate
-the irreducible \znunu + jets background, while the \mj control sample
-is used to estimate all remaining SM processes (predominately \wj and
-\ttbar). For events containing two or more b-tagged jets, both the \mj
-and \ej samples are used to predict the total SM background (dominated
-by \ttbar). 
+{\bf
 
-It is planned to use also the \mj sample (enriched in \wmj) to predict
-the \znunu + jets background (as well as \wej and \gj events) and also
-the \ej sample to predict the \wj and \ttbar backgrounds plus residual
-contributions (as well as \mj).
+In previous versions of this analysis, the \mmj and \gj control
+samples are used to predict the \znunu +jets background. We plan to
+extend this approach by relying on all (and not just a sub-set of)
+relevant control samples to predict the two dominant components of the
+total SM background (\wj and \ttbar, or \znunu + jets). Specifically,
+we may use both \mj and \ej to predict the \wj and \ttbar backgrounds
+(across all \nb bins) and up to five samples comprising \zmmj, \zeej,
+\gj, \wmj, and \wej to predict the \znunu + jets background for events
+containing exactly zero or one b-tagged jets. Any correlations will be
+appropriately handled by the likelihood model (via the
+\texttt{Combine} tool).
 
-%The \gj and \zmumu + jets processes have similar kinematic properties
-%when the photon or muons are ignored~\cite{Bern:2011pa} albeit
-%different acceptances. In addition, the \gj process has a larger
-%production cross section than \znunu + jets events.
+The predictions of the \znunu + jets background based on the \zmmj and
+\zeej control samples will exhibit significantly larger statistical
+uncertainties at high \njet, \nb, \scalht, or \mht due to lower event
+counts arising from the lower Z cross section (w.r.t. \gj and
+\wj). Regardless, these samples will be included in the likelihood fit
+to provide additional confidence in the control of the \znunu + jets
+background.
 
-%The \mj data sample provides an estimate for the total contribution
-%from all other SM processes, which is dominated by \ttbar and W-boson
-%production. Residual contributions from processes such as
-%single-top-quark, diboson, and Drell-Yan production are also
-%estimated. For the category of events satisfying $\nb \geq 2$, in
-%which the contribution from $\znunu + \text{jets}$ events is
-%suppressed to a negligible level, the \mj sample is also used to
-%estimate this small contribution rather than using the statistically
-%limited \mmj and \gj samples. Hence, only the \mj sample is used to
-%estimate the total SM background for events satisfying $\nb \geq 2$,
-%whereas all three data control samples are used for events satisfying
-%$\nb \leq 1$.
+Concerning the use of W-enriched samples to predict the \znunu +jets
+background, we are currently in the process of studying this approach
+in detail with the 8\TeV dataset. Based on the outcome of these studies,
+we will decide whether or not we proceed with this approach, as part
+of the baseline likelihood description, or revert back to the approach
+used in Run~I analysis (\ie relying solely on the \zll and \gj
+samples). Preliminary studies, based on closure tests with 8\TeV data
+(as described in Sec.~\ref{sec:closure-tests-desc}), do indeed
+indicate that this approach is feasible. Closure tests are a critial
+tool to determine which samples can be used to predict the SM
+background components. The additional electron control samples will
+provide additional redundancy and cross checks with respect to Run~I. 
+%The closure tests provide important event samples for probing the
+%accuracy of the simulation modelling implicit in the transfer factors.
+%Specific examples include ``\mj to predict \mmj'' and ``zeej to
+%predict \gj'' with events containing exactly zero or one b-tagged
+%jets. The former test relies on a \wmj-enriched sample to predict
+%yields in the \zmmj sample (in the presence of some ``\ttbar
+%contamination'' for events with $\nb = 1$). The latter test is a
+%consistency check between a dilepton and a \gj sample (as done in
+%previous iterations of the analysis).
+Most importantly, we retain full flexibility in our approach and the
+control samples used to predict the various background components.
+
+Currently, the projected sensitivity, as described in the current
+version of this note, is based on predictions of SM background
+components made from control regions as follows. For events containing
+exactly zero or one b-tagged jets, the \ej (enriched in \wej) and \gj
+control samples are used to estimate the irreducible \znunu + jets
+background, while the \mj control sample is used to estimate all
+remaining SM processes (predominately \wj and \ttbar). For events
+containing two or more b-tagged jets, both the \mj and \ej samples are
+used to predict the total SM background (dominated by \ttbar).
+
+}
+
