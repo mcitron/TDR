@@ -10,7 +10,7 @@ fundamental properties such as decay modes, production cross sections and sparti
 In order to gauge the early discovery potential, simplified models corresponding to both gluino and squark pair production 
 are considered in this exercise, corresponding to different scenarios for the mass-splitting between the sparticle and the LSP. 
 
-\subsection{Signal models and efficiencies}
+\subsection{Signal models and event categories}
 \label{subsec:susy_models}
 
 The full list of models considered is in table \ref{tab:simplified-models}. 
@@ -32,6 +32,7 @@ for each model and are listed in table \ref{tab:simplified-models}.
     The event categories considered for each model are listed. 
     For the jet multiplicity categorisation, the ``$j$'' refers to the ``symmetric'' selection, while ``$a$'' refers to the ``asymmetric'' one.}  
   \label{tab:simplified-models}
+  \scriptsize
   %% \setlength{\extrarowheight}{2.5pt}
   \centering
   %% \begin{tabular*}{\textwidth}{ llcc }
@@ -40,6 +41,7 @@ for each model and are listed in table \ref{tab:simplified-models}.
     \hline
     %% Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\njet,\nb) event categories \\ 
     Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\nb,\njet) event categories \\ 
+    \hline    
     \hline    
     \multirow{2}{*}{T1bbbb 1500,100} & \multirow{2}{*}{\Tonebbbb} & \multirow{2}{*}{(1500,100)} & {\small $ (2b,\geq5j), (\geq3b,\geq5j), (1b,\geq5j), (2b,\geq5a)$} \\
     & & & {\small $ (2b,4j), (1b,4j), (\geq3b,\geq5a), (2b,4a), (1b,3a), (2b,3j)$} \\ \hline
@@ -52,9 +54,10 @@ for each model and are listed in table \ref{tab:simplified-models}.
     \multirow{2}{*}{T1tttt 1500,100} & \multirow{2}{*}{\Tonetttt} & \multirow{2}{*}{(1500,100)} & {\small $ (\geq3b,\geq5j), (2b,\geq5j), (1b,\geq5j), (0b,\geq5j)$} \\
     & & & {\small $ (2b,4j), (1b,4j), (\geq3b,4j), (2b,3j), (1b,\geq5a), (0b,4j)$} \\ \hline
     \multirow{2}{*}{T1tttt 1200,800} & \multirow{2}{*}{\Tonetttt} & \multirow{2}{*}{(1200,800)} & {\small $ (\geq3b,\geq5j), (2b,\geq5j), (\geq3b,\geq5a), (1b,\geq5j)$} \\
-    & & & {\small $ (2b,\geq5a), (1b,\geq5a), (0b,\geq5j), (0b,\geq5a), (2b,4j), (\geq3b,4j)$} \\ \hline
-    \hline
-    \multirow{2}{*}{T2tt 650,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(650,550)} & {\small $ (1b,\geq5j), (\geq3b,\geq5j), (2b,4j), (2b,\geq5a)$} \\
+    & & & {\small $ (2b,\geq5a), (1b,\geq5a), (0b,\geq5j), (0b,\geq5a), (2b,4j), (\geq3b,4j)$} \\ \hline \hline
+    \multirow{2}{*}{T2tt 850,100}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(850,100)} & {\small $ (2b,\geq5j), (1b,\geq5j), (\geq3b,\geq5j), (2b,4j)$} \\
+    & & & {\small $ (1b,4j), (2b,3j), (0b,\geq5j), (1b,3j), (\geq3b,4j), (1b,\geq5a)$} \\ \hline
+    \multirow{2}{*}{T2tt 650,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(650,325)} & {\small $ (1b,\geq5j), (\geq3b,\geq5j), (2b,4j), (2b,\geq5a)$} \\
     & & & {\small $ (1b,4j), (0b,\geq5j), (2b,4a), (\geq3b,\geq5a), (1b,4a), (1b,3j)$} \\ \hline
     \multirow{2}{*}{T2tt 500,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(500,325)} & {\small $ (1b,\geq5j), (2b,\geq5j), (\geq3b,\geq5j), (2b,\geq5a)$} \\
     & & & {\small $ (0b,\geq5j), (1b,4j), (\geq3b,\geq5a), (2b,4j), (0b,\geq5a), (1b,4a)$} \\ \hline
@@ -74,6 +77,90 @@ for each model and are listed in table \ref{tab:simplified-models}.
 \end{table}
 
 \end{landscape}
+
+\subsection{Signal acceptance and contamination}
+
+Figure~\ref{fig:contamination} characterises the level of signal
+contamination in the \mj control sample for the benchmark model
+\texttt{T2tt} (850,100) relative to the signal acceptance in the
+signal region. Figures~\ref{fig:contamination} (a) and (b) show the
+expected signal yield counts as a function of event category and
+\scalht bin in the signal and \mj control regions, respectively.
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Expected counts in the signal region]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/h_ht_mht_all_SMS_T2tt_2J_mStop850_mLSP100}
+    } 
+    \subfigure[Expected counts in the \mj control region]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/m_ht_mht_all_SMS_T2tt_2J_mStop850_mLSP100}
+    } \\
+    \subfigure[Ratio of signal acceptance (signal region w.r.t. \mj)]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/relEff_singlemu_SMS_T2tt_2J_mStop850_mLSP100}
+    }
+    \subfigure[Ratio of S/B values (signal region w.r.t. \mj)]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/doubleRatio_singlemu_SMS_T2tt_2J_mStop850_mLSP100}
+    }
+    \caption{Characterisation of signal acceptance and contamination
+      in the signal and \mj control regions, respectively, for the
+      benchmark model \texttt{T2tt} (850,100).}
+    \label{fig:contamination}
+  \end{center}
+\end{figure}
+
+Figure~\ref{fig:contamination} (c) shows the ratio of these expected
+yields (signal region with respect to the \mj control region). The
+ratio is typically small, at the percent level for the most sensitive
+categories (\ie with four or more jets and one or two b-tagged jets).
+
+In addition, the event counts from SM background processes in the \mj
+control sample are significantly higher than in the signal region, as
+no \alphat requirement is made for the \mj sample. Therefore, the S/B
+ratios for the signal region relative to the \mj sample are larger by
+many factors, typically $\gg$10. Figure~\ref{fig:contamination} (d)
+shows the ratio of S/B$_{\rm signal}$ over S/B$_{\rm \mj}$ as a
+function of the event category and \scalht bin.
+
+Figure~\ref{fig:contamination_t1tttt} characterises the level of
+signal contamination in the \mj control sample for the benchmark model
+\texttt{T1tttt} (1500,100). A larger level of contamination is
+expected for this model (with respect to \texttt{T2tt}), due to the
+presence of four W bosons produced in the decay of the gluino-pair
+system (via off-shell top squarks). The ratio of yields in the signal
+and \mj control regions is at the level of $\sim$10--20\% for the most
+sensitive categories (\ie with four or more jets, two or more b-tagged
+jets, and at high \scalht). The ratio of S/B values for the signal
+region relative to the \mj sample is still large, typically $\gg$10.
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Expected counts in the signal region]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/h_ht_mht_all_SMS_T1tttt_2J_mGl1500_mLSP100}
+    } 
+    \subfigure[Expected counts in the \mj control region]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/m_ht_mht_all_SMS_T1tttt_2J_mGl1500_mLSP100}
+    } \\
+    \subfigure[Ratio of signal acceptance (signal region w.r.t. \mj)]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/relEff_singlemu_SMS_T1tttt_2J_mGl1500_mLSP100}
+    }
+    \subfigure[Ratio of S/B values (signal region w.r.t. \mj)]{
+      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/doubleRatio_singlemu_SMS_T1tttt_2J_mGl1500_mLSP100}
+    }
+    \caption{Characterisation of signal acceptance and contamination
+      in the signal and \mj control regions, respectively, for the
+      benchmark model \texttt{T1tttt} (1500,100).}
+    \label{fig:contamination_t1tttt}
+  \end{center}
+\end{figure}
+
+For both models (and in general), the level of contamination for the
+\mmj sample is smaller still due to the requirement of a second
+muon. The contamination for the \gj sample is expected to be zero for
+the models under consideration. 
+
+Finally, the potential for signal contamination in all control samples
+is fully accounted for in the likelihood model used to extract
+information on sensitivity to any given signal model.
 
 \subsection{Systematic uncertainties on signal efficiency times acceptance}
 \label{sec:sig-syst}
