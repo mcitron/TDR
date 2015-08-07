@@ -2,7 +2,7 @@
 \section{\mht templates}
 \label{sec:mht_templates}
 
-In Section \ref{sec::likelihood} the use of templates in the \mht variable to extract the signal is described, and the criteria for the choice of the binning are outlined. For each bin, the following two requirements must be fulfilled:
+In Section \ref{sec:likelihood} the use of templates in the \mht variable to extract the signal is described, and the criteria for the choice of the binning are outlined. For each bin, the following two requirements must be fulfilled:
 \begin{itemize}
   \item Each bin must contain at least 10 unweighted events. This criterium makes the MC statistical uncertainty sub-dominant with respect to the other sources of systematic uncertainty.
     \item The square root of the weighted variance of the statistical error in the last \mht bin, computed with the single-muon and single-electron control regions, must account for less than 30\%. This requirement allows to perform a meaningful closure test in data up to the highest bin in the \mht variable.
@@ -12,547 +12,528 @@ In Tables \ref{tab:mhtBinning_eq0b_ge5j}-\ref{tab:mhtBinning_eq2b_eq2a} the binn
 
 \newpage
 
-%% \begin{center}
-
+\begin{center}
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet \geq 5$. }
 \label{tab:mhtBinning_eq0b_ge5j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & [130.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 0 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0] GeV \\ \hline 
-$\nb = 0 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, 675.0] GeV \\ \hline 
-$\nb = 0 , \njet \geq 5$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, \\ \hline 
- & & 625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 950.0, 1050.0, 1100.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 0 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0]$ GeV \\ \hline 
+$\nb = 0 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, 675.0]$ GeV \\ \hline 
+$\nb = 0 , \njet \geq 5$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, $ \\ \hline 
+ & & $625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 950.0, 1050.0, 1100.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet \geq 5$. }
 \label{tab:mhtBinning_eq1b_ge5j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & [130.0] GeV \\ \hline 
-$\nb = 1 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0] GeV \\ \hline 
-$\nb = 1 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0] GeV \\ \hline 
-$\nb = 1 , \njet \geq 5$ & $\scalht > 800$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, \\ \hline 
- & & 625.0, 725.0, 800.0, 975.0, 1025.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 1 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0]$ GeV \\ \hline 
+$\nb = 1 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0]$ GeV \\ \hline 
+$\nb = 1 , \njet \geq 5$ & $\scalht > 800$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, $ \\ \hline 
+ & & $625.0, 725.0, 800.0, 975.0, 1025.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet \geq 5$. }
 \label{tab:mhtBinning_eq2b_ge5j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet \geq 5$ & $300 < \scalht < 350$ GeV & [130.0] GeV \\ \hline 
-$\nb = 2 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 2 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0] GeV \\ \hline 
-$\nb = 2 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 625.0, 675.0] GeV \\ \hline 
-$\nb = 2 , \njet \geq 5$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, \\ \hline 
- & & 650.0, 725.0, 825.0, 875.0, 950.0, 1050.0, 1100.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet \geq 5$ & $300 < \scalht < 350$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 2 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 2 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0]$ GeV \\ \hline 
+$\nb = 2 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 625.0, 675.0]$ GeV \\ \hline 
+$\nb = 2 , \njet \geq 5$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, $ \\ \hline 
+ & & $650.0, 725.0, 825.0, 875.0, 950.0, 1050.0, 1100.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb \geq 3 , \njet \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb \geq 3 , \njet \geq 5$. }
 \label{tab:mhtBinning_ge3b_ge5j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb \geq 3 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & [130.0] GeV \\ \hline 
-$\nb \geq 3 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb \geq 3 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 250.0, 300.0, 350.0, 400.0, 450.0] GeV \\ \hline 
-$\nb \geq 3 , \njet \geq 5$ & $\scalht > 800$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 475.0, 525.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb \geq 3 , \njet \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 250.0, 300.0, 350.0, 400.0, 450.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet \geq 5$ & $\scalht > 800$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 475.0, 525.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet = 4$. }
 \label{tab:mhtBinning_eq0b_eq4j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet = 4$ & $250 < \scalht < 300$ GeV & [130.0] GeV \\ \hline 
-$\nb = 0 , \njet = 4$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 0 , \njet = 4$ & $350 < \scalht < 400$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0] GeV \\ \hline 
-$\nb = 0 , \njet = 4$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0] GeV \\ \hline 
-$\nb = 0 , \njet = 4$ & $600 < \scalht < 800$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, \\ \hline 
- & & 675.0, 725.0] GeV \\ \hline 
-$\nb = 0 , \njet = 4$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, \\ \hline 
- & & 625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 925.0, 1000.0, 1150.0, 1200.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet = 4$ & $250 < \scalht < 300$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 4$ & $600 < \scalht < 800$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, $ \\ \hline 
+ & & $675.0, 725.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 4$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, $ \\ \hline 
+ & & $625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 925.0, 1000.0, 1150.0, 1200.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
+\newpage
+
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet = 4$. }
 \label{tab:mhtBinning_eq1b_eq4j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet = 4$ & $300 < \scalht < 350$ GeV & [130.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 1 , \njet = 4$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 1 , \njet = 4$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0] GeV \\ \hline 
-$\nb = 1 , \njet = 4$ & $600 < \scalht < 800$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 550.0, 600.0, 650.0] GeV \\ \hline 
-$\nb = 1 , \njet = 4$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 550.0, 650.0, \\ \hline 
- & & 700.0, 825.0, 875.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 4$ & $600 < \scalht < 800$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 550.0, 600.0, 650.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 4$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 550.0, 650.0, $ \\ \hline 
+ & & $700.0, 825.0, 875.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet = 4$. }
 \label{tab:mhtBinning_eq2b_eq4j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet = 4$ & $250 < \scalht < 300$ GeV & [130.0] GeV \\ \hline 
-$\nb = 2 , \njet = 4$ & $300 < \scalht < 350$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 2 , \njet = 4$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 2 , \njet = 4$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0] GeV \\ \hline 
-$\nb = 2 , \njet = 4$ & $600 < \scalht < 800$ GeV & [130.0, 275.0, 325.0, 375.0, 425.0, 475.0, 575.0, 675.0, 725.0] GeV \\ \hline 
-$\nb = 2 , \njet = 4$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 550.0, 625.0, \\ \hline 
- & & 775.0, 825.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet = 4$ & $250 < \scalht < 300$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 4$ & $600 < \scalht < 800$ GeV & $[130.0, 275.0, 325.0, 375.0, 425.0, 475.0, 575.0, 675.0, 725.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 4$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 550.0, 625.0, $ \\ \hline 
+ & & $775.0, 825.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb \geq 3 , \njet = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb \geq 3 , \njet = 4$. }
 \label{tab:mhtBinning_ge3b_eq4j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb \geq 3 , \njet = 4$ & $300 < \scalht < 350$ GeV & [130.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 4$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 4$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 4$ & $600 < \scalht < 800$ GeV & [130.0, 325.0, 375.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 4$ & $\scalht > 800$ GeV & [130.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb \geq 3 , \njet = 4$ & $300 < \scalht < 350$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 4$ & $600 < \scalht < 800$ GeV & $[130.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 4$ & $\scalht > 800$ GeV & $[130.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet = 3$. }
 \label{tab:mhtBinning_eq0b_eq3j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet = 3$ & $200 < \scalht < 250$ GeV & [130.0] GeV \\ \hline 
-$\nb = 0 , \njet = 3$ & $250 < \scalht < 300$ GeV & [130.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 0 , \njet = 3$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 0 , \njet = 3$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 0 , \njet = 3$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0] GeV \\ \hline 
-$\nb = 0 , \njet = 3$ & $600 < \scalht < 800$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, \\ \hline 
- & & 675.0, 725.0, 775.0] GeV \\ \hline 
-$\nb = 0 , \njet = 3$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, \\ \hline 
- & & 625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 925.0, 1025.0, 1075.0, 1175.0, 1225.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet = 3$ & $200 < \scalht < 250$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 3$ & $600 < \scalht < 800$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, $ \\ \hline 
+ & & $675.0, 725.0, 775.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 3$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, $ \\ \hline 
+ & & $625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 925.0, 1025.0, 1075.0, 1175.0, 1225.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet = 3$. }
 \label{tab:mhtBinning_eq1b_eq3j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet = 3$ & $250 < \scalht < 300$ GeV & [130.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 1 , \njet = 3$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 1 , \njet = 3$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 1 , \njet = 3$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0] GeV \\ \hline 
-$\nb = 1 , \njet = 3$ & $600 < \scalht < 800$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, \\ \hline 
- & & 675.0, 725.0] GeV \\ \hline 
-$\nb = 1 , \njet = 3$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, \\ \hline 
- & & 625.0, 700.0, 750.0, 800.0, 875.0, 925.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 3$ & $600 < \scalht < 800$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0, $ \\ \hline 
+ & & $675.0, 725.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 3$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, $ \\ \hline 
+ & & $625.0, 700.0, 750.0, 800.0, 875.0, 925.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
+\newpage
+
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet = 3$. }
 \label{tab:mhtBinning_eq2b_eq3j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet = 3$ & $200 < \scalht < 250$ GeV & [130.0] GeV \\ \hline 
-$\nb = 2 , \njet = 3$ & $250 < \scalht < 300$ GeV & [130.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 2 , \njet = 3$ & $300 < \scalht < 350$ GeV & [130.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 2 , \njet = 3$ & $350 < \scalht < 400$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0] GeV \\ \hline 
-$\nb = 2 , \njet = 3$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0] GeV \\ \hline 
-$\nb = 2 , \njet = 3$ & $600 < \scalht < 800$ GeV & [130.0, 325.0, 375.0, 450.0, 500.0, 550.0, 600.0, 700.0, 750.0] GeV \\ \hline 
-$\nb = 2 , \njet = 3$ & $\scalht > 800$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 475.0, 525.0, 625.0, \\ \hline 
- & & 675.0, 725.0, 775.0, 825.0, 925.0, 1000.0, 1050.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet = 3$ & $200 < \scalht < 250$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 3$ & $600 < \scalht < 800$ GeV & $[130.0, 325.0, 375.0, 450.0, 500.0, 550.0, 600.0, 700.0, 750.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 3$ & $\scalht > 800$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 475.0, 525.0, 625.0, $ \\ \hline 
+ & & $675.0, 725.0, 775.0, 825.0, 925.0, 1000.0, 1050.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb \geq 3 , \njet = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb \geq 3 , \njet = 3$. }
 \label{tab:mhtBinning_ge3b_eq3j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb \geq 3 , \njet = 3$ & $250 < \scalht < 300$ GeV & [130.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 3$ & $300 < \scalht < 350$ GeV & [130.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 3$ & $350 < \scalht < 400$ GeV & [130.0, 225.0, 275.0] GeV \\ \hline 
-$\nb \geq 3 , \njet = 3$ & $400 < \scalht < 600$ GeV & [130.0, 300.0, 350.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb \geq 3 , \njet = 3$ & $250 < \scalht < 300$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 3$ & $300 < \scalht < 350$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 300.0, 350.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
+\newpage 
+
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet = 2$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet = 2$. }
 \label{tab:mhtBinning_eq0b_eq2j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet = 2$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 0 , \njet = 2$ & $250 < \scalht < 300$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 0 , \njet = 2$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 0 , \njet = 2$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 0 , \njet = 2$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0] GeV \\ \hline 
-$\nb = 0 , \njet = 2$ & $600 < \scalht < 800$ GeV & [130.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0, \\ \hline 
- & & 650.0, 700.0, 750.0, 800.0] GeV \\ \hline 
-$\nb = 0 , \njet = 2$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, \\ \hline 
- & & 625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 925.0, 975.0, 1025.0, 1150.0, 1200.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet = 2$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 2$ & $250 < \scalht < 300$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 2$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 2$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 2$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, 625.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 2$ & $600 < \scalht < 800$ GeV & $[130.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0, $ \\ \hline 
+ & & $650.0, 700.0, 750.0, 800.0]$ GeV \\ \hline 
+$\nb = 0 , \njet = 2$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0, $ \\ \hline 
+ & & $625.0, 675.0, 725.0, 775.0, 825.0, 875.0, 925.0, 975.0, 1025.0, 1150.0, 1200.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet = 2$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet = 2$. }
 \label{tab:mhtBinning_eq1b_eq2j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet = 2$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 1 , \njet = 2$ & $250 < \scalht < 300$ GeV & [130.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 1 , \njet = 2$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 1 , \njet = 2$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 1 , \njet = 2$ & $400 < \scalht < 600$ GeV & [130.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0] GeV \\ \hline 
-$\nb = 1 , \njet = 2$ & $600 < \scalht < 800$ GeV & [130.0, 250.0, 300.0, 350.0, 500.0, 575.0, 625.0, 675.0] GeV \\ \hline 
-$\nb = 1 , \njet = 2$ & $\scalht > 800$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 850.0, 900.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet = 2$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 2$ & $250 < \scalht < 300$ GeV & $[130.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 2$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 2$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 2$ & $400 < \scalht < 600$ GeV & $[130.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 2$ & $600 < \scalht < 800$ GeV & $[130.0, 250.0, 300.0, 350.0, 500.0, 575.0, 625.0, 675.0]$ GeV \\ \hline 
+$\nb = 1 , \njet = 2$ & $\scalht > 800$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0, 850.0, 900.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet = 2$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet = 2$. }
 \label{tab:mhtBinning_eq2b_eq2j} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet = 2$ & $200 < \scalht < 250$ GeV & [130.0, 200.0, 250.0] GeV \\ \hline 
-$\nb = 2 , \njet = 2$ & $250 < \scalht < 300$ GeV & [130.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 2 , \njet = 2$ & $300 < \scalht < 350$ GeV & [130.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 2 , \njet = 2$ & $350 < \scalht < 400$ GeV & [130.0, 250.0, 300.0, 350.0, 400.0] GeV \\ \hline 
-$\nb = 2 , \njet = 2$ & $400 < \scalht < 600$ GeV & [130.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0] GeV \\ \hline 
-$\nb = 2 , \njet = 2$ & $600 < \scalht < 800$ GeV & [130.0, 325.0, 450.0, 525.0, 575.0, 625.0, 675.0, 725.0, 775.0] GeV \\ \hline 
-$\nb = 2 , \njet = 2$ & $\scalht > 800$ GeV & [130.0, 200.0, 250.0, 350.0, 400.0, 775.0, 875.0, 925.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet = 2$ & $200 < \scalht < 250$ GeV & $[130.0, 200.0, 250.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 2$ & $250 < \scalht < 300$ GeV & $[130.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 2$ & $300 < \scalht < 350$ GeV & $[130.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 2$ & $350 < \scalht < 400$ GeV & $[130.0, 250.0, 300.0, 350.0, 400.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 2$ & $400 < \scalht < 600$ GeV & $[130.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 2$ & $600 < \scalht < 800$ GeV & $[130.0, 325.0, 450.0, 525.0, 575.0, 625.0, 675.0, 725.0, 775.0]$ GeV \\ \hline 
+$\nb = 2 , \njet = 2$ & $\scalht > 800$ GeV & $[130.0, 200.0, 250.0, 350.0, 400.0, 775.0, 875.0, 925.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
+\newpage
+
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} \geq 5$. }
 \label{tab:mhtBinning_eq0b_ge5a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $250 < \scalht < 300$ GeV & [130.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 275.0, 350.0, 400.0, 450.0, 500.0, 550.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $\scalht > 800$ GeV & [130.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $250 < \scalht < 300$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 275.0, 350.0, 400.0, 450.0, 500.0, 550.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} \geq 5$ & $\scalht > 800$ GeV & $[130.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} \geq 5$. }
 \label{tab:mhtBinning_eq1b_ge5a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $250 < \scalht < 300$ GeV & [130.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 325.0, 400.0, 450.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $\scalht > 800$ GeV & [130.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $250 < \scalht < 300$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 325.0, 400.0, 450.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} \geq 5$ & $\scalht > 800$ GeV & $[130.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} \geq 5$. }
 \label{tab:mhtBinning_eq2b_ge5a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $250 < \scalht < 300$ GeV & [130.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $600 < \scalht < 800$ GeV & [130.0, 275.0, 350.0, 400.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $\scalht > 800$ GeV & [130.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $250 < \scalht < 300$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $600 < \scalht < 800$ GeV & $[130.0, 275.0, 350.0, 400.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} \geq 5$ & $\scalht > 800$ GeV & $[130.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$. }
+\caption{Binning of the \mht templates, for the category $\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$. }
 \label{tab:mhtBinning_ge3b_ge5a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & [130.0, 200.0, 250.0] GeV \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$ & $300 < \scalht < 350$ GeV & $[130.0, 200.0, 250.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} \geq 5$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} = 4$. }
 \label{tab:mhtBinning_eq0b_eq4a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $200 < \scalht < 250$ GeV & [130.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & [130.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $600 < \scalht < 800$ GeV & [130.0, 500.0, 575.0, 625.0, 675.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $\scalht > 800$ GeV & [130.0, 600.0, 675.0, 775.0, 825.0, 875.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $200 < \scalht < 250$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & $[130.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $600 < \scalht < 800$ GeV & $[130.0, 500.0, 575.0, 625.0, 675.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 4$ & $\scalht > 800$ GeV & $[130.0, 600.0, 675.0, 775.0, 825.0, 875.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
+\newpage
+
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} = 4$. }
 \label{tab:mhtBinning_eq1b_eq4a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $200 < \scalht < 250$ GeV & [130.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & [130.0, 200.0, 250.0, 300.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $400 < \scalht < 600$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $600 < \scalht < 800$ GeV & [130.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $\scalht > 800$ GeV & [130.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $200 < \scalht < 250$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & $[130.0, 200.0, 250.0, 300.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $600 < \scalht < 800$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 4$ & $\scalht > 800$ GeV & $[130.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} = 4$. }
 \label{tab:mhtBinning_eq2b_eq4a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $200 < \scalht < 250$ GeV & [130.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $400 < \scalht < 600$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $200 < \scalht < 250$ GeV & $[130.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 4$ & $400 < \scalht < 600$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0, 475.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb \geq 3 , \njet^{\mathrm{asy}} = 4$. }
+\caption{Binning of the \mht templates, for the category $\nb \geq 3 , \njet^{\mathrm{asy}} = 4$. }
 \label{tab:mhtBinning_ge3b_eq4a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & [130.0, 200.0, 250.0] GeV \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & [130.0, 200.0, 250.0] GeV \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} = 4$ & $250 < \scalht < 300$ GeV & $[130.0, 200.0, 250.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} = 4$ & $300 < \scalht < 350$ GeV & $[130.0, 200.0, 250.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} = 4$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} = 3$. }
 \label{tab:mhtBinning_eq0b_eq3a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $350 < \scalht < 400$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $400 < \scalht < 600$ GeV & [130.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $600 < \scalht < 800$ GeV & [130.0, 600.0, 650.0, 700.0, 750.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $\scalht > 800$ GeV & [130.0, 600.0, 650.0, 700.0, 750.0, 800.0, 850.0, 900.0, 950.0, 1000.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 250.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0, 600.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $600 < \scalht < 800$ GeV & $[130.0, 600.0, 650.0, 700.0, 750.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 3$ & $\scalht > 800$ GeV & $[130.0, 600.0, 650.0, 700.0, 750.0, 800.0, 850.0, 900.0, 950.0, 1000.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} = 3$. }
 \label{tab:mhtBinning_eq1b_eq3a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $350 < \scalht < 400$ GeV & [130.0, 200.0, 250.0, 300.0, 350.0, 400.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $400 < \scalht < 600$ GeV & [130.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $600 < \scalht < 800$ GeV & [130.0, 625.0, 675.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $\scalht > 800$ GeV & [130.0, 800.0, 850.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 200.0, 250.0, 300.0, 350.0, 400.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 300.0, 350.0, 400.0, 450.0, 500.0, 550.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $600 < \scalht < 800$ GeV & $[130.0, 625.0, 675.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 3$ & $\scalht > 800$ GeV & $[130.0, 800.0, 850.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
+\newpage
+
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} = 3$. }
 \label{tab:mhtBinning_eq2b_eq3a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & [130.0, 175.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & [130.0, 150.0, 200.0, 250.0, 300.0, 350.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $350 < \scalht < 400$ GeV & [130.0, 225.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $400 < \scalht < 600$ GeV & [130.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 175.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 150.0, 200.0, 250.0, 300.0, 350.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $350 < \scalht < 400$ GeV & $[130.0, 225.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 3$ & $400 < \scalht < 600$ GeV & $[130.0, 325.0, 375.0, 425.0, 475.0, 525.0, 575.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb \geq 3 , \njet^{\mathrm{asy}} = 3$. }
+\caption{Binning of the \mht templates, for the category $\nb \geq 3 , \njet^{\mathrm{asy}} = 3$. }
 \label{tab:mhtBinning_ge3b_eq3a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0] GeV \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & [130.0, 200.0, 250.0] GeV \\ \hline 
-$\nb \geq 3 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & [130.0, 200.0, 250.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} = 3$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} = 3$ & $250 < \scalht < 300$ GeV & $[130.0, 200.0, 250.0]$ GeV \\ \hline 
+$\nb \geq 3 , \njet^{\mathrm{asy}} = 3$ & $300 < \scalht < 350$ GeV & $[130.0, 200.0, 250.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} = 2$. }
+\caption{Binning of the \mht templates, for the category $\nb = 0 , \njet^{\mathrm{asy}} = 2$. }
 \label{tab:mhtBinning_eq0b_eq2a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $250 < \scalht < 300$ GeV & [130.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $300 < \scalht < 350$ GeV & [130.0, 275.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $350 < \scalht < 400$ GeV & [130.0, 325.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $400 < \scalht < 600$ GeV & [130.0, 425.0, 475.0, 525.0, 575.0, 625.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $600 < \scalht < 800$ GeV & [130.0, 650.0, 700.0, 750.0, 800.0, 625.0] GeV \\ \hline 
-$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $\scalht > 800$ GeV & [130.0, 700.0, 750.0, 800.0, 850.0, 900.0, 950.0, 1000.0, 1075.0, 1150.0, 1200.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $250 < \scalht < 300$ GeV & $[130.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $300 < \scalht < 350$ GeV & $[130.0, 275.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $350 < \scalht < 400$ GeV & $[130.0, 325.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $400 < \scalht < 600$ GeV & $[130.0, 425.0, 475.0, 525.0, 575.0, 625.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $600 < \scalht < 800$ GeV & $[130.0, 650.0, 700.0, 750.0, 800.0]$ GeV \\ \hline 
+$\nb = 0 , \njet^{\mathrm{asy}} = 2$ & $\scalht > 800$ GeV & $[130.0, 700.0, 750.0, 800.0, 850.0, 900.0, 950.0, 1000.0, 1075.0, 1150.0, 1200.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} = 2$. }
+\caption{Binning of the \mht templates, for the category $\nb = 1 , \njet^{\mathrm{asy}} = 2$. }
 \label{tab:mhtBinning_eq1b_eq2a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $250 < \scalht < 300$ GeV & [130.0, 225.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $300 < \scalht < 350$ GeV & [130.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $350 < \scalht < 400$ GeV & [130.0, 375.0, 425.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $400 < \scalht < 600$ GeV & [130.0, 400.0, 450.0, 500.0, 550.0, 600.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $600 < \scalht < 800$ GeV & [130.0, 625.0, 675.0, 725.0] GeV \\ \hline 
-$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $\scalht > 800$ GeV & [130.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $250 < \scalht < 300$ GeV & $[130.0, 225.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $300 < \scalht < 350$ GeV & $[130.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $350 < \scalht < 400$ GeV & $[130.0, 375.0, 425.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $400 < \scalht < 600$ GeV & $[130.0, 400.0, 450.0, 500.0, 550.0, 600.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $600 < \scalht < 800$ GeV & $[130.0, 625.0, 675.0, 725.0]$ GeV \\ \hline 
+$\nb = 1 , \njet^{\mathrm{asy}} = 2$ & $\scalht > 800$ GeV & $[130.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
 \begin{table}[h!]
-\caption{Threshold of the highest \mht bin in the templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} = 2$. }
+\caption{Binning of the \mht templates, for the category $\nb = 2 , \njet^{\mathrm{asy}} = 2$. }
 \label{tab:mhtBinning_eq2b_eq2a} 
- \footnotesize
- \centering
- \begin{tabular*}{\textwidth}{ lll }
- \hline
- \hline
-Jet category & \scalht bin & \mht threshold \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $200 < \scalht < 250$ GeV & [130.0, 175.0, 225.0, 275.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $250 < \scalht < 300$ GeV & [130.0, 275.0, 325.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $300 < \scalht < 350$ GeV & [130.0, 325.0, 375.0] GeV \\ \hline 
-$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $350 < \scalht < 400$ GeV & [130.0, 375.0, 425.0] GeV \\ \hline 
-\hline\end{tabular*}
+\scriptsize\begin{tabular*}{\textwidth}{ lll }
+\hline
+\hline
+Jet category & \scalht bin & \mht binning \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $200 < \scalht < 250$ GeV & $[130.0, 175.0, 225.0, 275.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $250 < \scalht < 300$ GeV & $[130.0, 275.0, 325.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $300 < \scalht < 350$ GeV & $[130.0, 325.0, 375.0]$ GeV \\ \hline 
+$\nb = 2 , \njet^{\mathrm{asy}} = 2$ & $350 < \scalht < 400$ GeV & $[130.0, 375.0, 425.0]$ GeV \\ \hline 
+\hline
+\end{tabular*}
 \end{table}
 
-%% \end{center}
+\end{center}
