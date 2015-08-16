@@ -3,25 +3,36 @@
 \label{sec:mhtTemplate}
 
 The estimate of the number of events per (\njet,\nb,\scalht) bin,
-integrated over \mht, is determined from data control samples, with
+integrated over \mht, is derived from data control samples, with
 the associated systematic error determined from closure tests
 described in Section \ref{sec:syst-from-closure}. This section
-describes the method used to determine the systematic uncertainties in
+describes the method used to assess the systematic uncertainties in
 the distribution of events according to \mht. A data driven approach is
 utilised where the level of closure in the control regions is used
-to determine the maximum deviation expected in the signal region.
+to derive alternative templates accounting for systematic uncertainties. 
 
 When looking at the \mht dimension inclusively there are
 large theoretical uncertainties that originate from mixing events
-at different scales. However, if a a variable, such as \scalht, 
-that is strongly correlated with the scale of the event 
-is used to 'set the scale' these uncertainties can be mitigated.
-In \ref{sec:valid8} the 8 TeV data will be used to show that binning in
-\scalht elminates bias in the data and MC agreement in the control regions. 
-In \label{sec:systMhtDimension} this will then be used to extract systematic template 
-variations in the signal region. In \ref{sec:syst13TeV} results for the
-expected systematic for Run 2 will be shown. Finally, in \ref{sec:addMhtUnc} 
-methods for dealing with additional template uncertainties are discussed.
+at different scales. These uncertainties can be mitigated if the events 
+are binned according to a variable, such as \scalht, 
+which is strongly correlated with the “scale” of the event. 
+After this categorisation is applied, the uncertainty in 
+the distribution of the \mht variable
+(as well as any other MET-like variable) is expected to be 
+mainly affected by the MC modelling of the particle 
+decays and, to a lesser extent, by jet reconstruction effects, 
+such as jet energy scale and resolution. 
+This approach, which will be often referred to as “scale anchoring” 
+in the following, is used in this analysis.
+
+In Section~\ref{sec:valid8} the 8 \TeV data will be used 
+to validate the scale anchoring approach. 
+In Section~\ref{sec:systMhtDimension} 
+the procedure used to extract the systematic uncertainties in the 
+\mht dimension is described and results shown with 8 \TeV data. 
+In \ref{sec:syst13TeV} the expected systematics for Run 2 will be shown. 
+Finally, in \ref{sec:addMhtUnc}, methods for dealing with 
+additional systematic uncertainties are discussed.
 
 
 % extent to which the control regions can constrain this bias 
@@ -31,16 +42,31 @@ methods for dealing with additional template uncertainties are discussed.
 \subsection{Validation with 8 \TeV Data}
 \label{sec:valid8}
 In previous versions of this analysis three control regions
-were used: \mj, \mmj and \gj. In Figure~\ref{fig:linearMotiv} the data/MC 
+were used: \mj, \mmj and \gj. To parameterise the data/MC agreement
+orthogonal polynomials are used such that odd and even powers 
+are decorrelated \cite{cohen2013applied}. 
+The $n^{th}$ order orthogonal polynomial which is fitted to the data/MC 
+distribution is defined in Equation~\ref{equ:orthog-polynomial}.
+
+\begin{equation}
+  \label{equ:orthog-polynomial}
+  f_n(x) = \sum_k^{n=k}{(1-p_k)\times(x-\bar{x})^k}
+\end{equation}
+
+where $\bar{x}$ is the weighted mean of the distribution and $p_k = 1$ 
+implies the $k^th$ order is negligible.
+In Figure~\ref{fig:linearMotiv} the data/MC 
 distribution against \mht for the control region selection 
 (detailed in \cite{CMS_AN_2013-366}) is shown inclusive 
 in \scalht and categories. By fitting a second order orthogonal polynomial
-it can be seen that in each case the quadratic term is small and consistent
-with zero. Motivated by this a linear function will be used to measure
-the level of bias remaining when the \mht dimension is binned in \mht. 
-As the normalisation systematic is dealt with seperately the normalisation
-of the MC is set to that of the data when fitting alternative templates.
-
+it can be seen that in each case the second order 
+term is small and consistent with zero ($p_2 = 1$). 
+Motivated by this, a linear function (first order orthogonal polynomial)
+will be used to measure the level of bias remaining when the \mht dimension is binned in \scalht. 
+As the normalisation in each \scalht bin and its systematics 
+are dealt with separately, the MC yields are set to the observed 
+number of events in data when extracting alternative templates 
+(Section~\ref{sec:systMhtDimension}).
 \begin{figure}[h!]
   \centering
   \subfigure[\gj]{
@@ -55,8 +81,8 @@ of the MC is set to that of the data when fitting alternative templates.
   \\
   \caption{\label{fig:linearMotiv} 
   The data/MC distribution against \mht for an inclusive selection on category and \scalht
-  showing the results of a quadratic fit. There is a clear bias
-  in the linear component while the quadratic component is consistent with zero.
+  showing the results of a quadratic fit. A bias, well described by the linear function, 
+  is observed. The additional quadratic term is found to be compatible with zero.
 }
 \end{figure}
 
@@ -64,17 +90,24 @@ By anchoring the scale using binning in the \scalht dimension the remaining
 bias should be negligible. In Figures~\ref{fig:linearFits0bLe3} and \ref{fig:linearFits0bGe4} 
 example fits of an orthogonal linear function to the data/MC ratio 
 are shown for the three control regions. Comparing to the inclusive distribution 
-the linear component can be seen to be much more compatible with the null, 
-zero bias hypothesis. In order to formalise this assertion 
+the linear component can be seen to be compatible with the null hypothesis, 
+i.e. no bias. In order to formalise this assertion 
 the pull of the linear component from zero is calculated.
-This pull distribtuion is shown for each of the three control regions in
-in Figure~\ref{fig:pulls} and can be see in each case to have mean and sigma
-consistent with zero and one respectively. This supports the zero
-bias hypothesis. Figure~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
+This pull distribution is shown for each of the three control regions in
+in Figure~\ref{fig:pulls} and can be seen in each case to have mean and sigma
+consistent with zero and one respectively. This confirms that the linear component 
+is compatible with zero ($p_1 = 1$), i.e. no significant bias is observed, 
+and the error the error on the parameter is correctly estimated by the fit.
+Figure~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
 in category and \scalht bins. Those anchored by \scalht are consistent
-with zero (including inclusive categories) while fits inclusive in \scalht
+with zero (including inclusive jet categories) while the fits inclusive in \scalht
 show very large pulls. This shows as expected the \scalht anchoring
-is critical for removing bias in the \mht dimension.  
+is critical for removing bias in the \mht dimension. 
+
+%Finally, an additional validation 
+%can be seen from the p-value distribution of the constant fits
+% -- should add p value of constant fit but currently not flat due to
+% non guassian behaviour.
 
 \begin{figure}[h!]
   \centering
@@ -127,9 +160,7 @@ is critical for removing bias in the \mht dimension.
   }~~
   \\
   \caption{\label{fig:pulls} 
-  The pull distribution of the linear parameter from the flat hypothesis showing
-  a distribution consistent with mean and sigma of zero and one. 
-  This is consistent with the zero bias hypothesis.
+  The pull distribution of the linear parameter from the flat hypothesis.
 }
 \end{figure}
 \begin{figure}[h!]
@@ -154,31 +185,31 @@ is critical for removing bias in the \mht dimension.
 \end{figure}
 \subsection{Deriving systematic on \mht dimension}
 \label{sec:systMhtDimension}
-The systematic in the \mht dimension is extracting from the hypothesis
-of zero bias. The control regions are used to determine the statistical 
-precision to which this hypothesis can be confirmed. The procedure for
-this is described in this section.
+The systematic in the \mht dimension is extracted from the hypothesis
+of no bias. This is done by using the control regions 
+to determine the statistical precision to which this hypothesis can
+be confirmed. This information is then used to derive the systematic 
+uncertainty, as described in the following. 
 
 Each background in the signal region (\ttbar/W  and \zInv~) is predicted 
-using several control regions. In order to determine an uncertainty in
-the \mht dimension a combined fit is made over all relevant control regions
+using several control regions. In order to determine the uncertainty in
+the \mht dimension a combined linear fit is made over all relevant control regions
 of the linear function. The uncertainty on the linear parameter is then
 used to define the up and down one sigma variations of the nominal template.
-As a conservative estimate the difference from zero is added in quadrature
-to the uncertainty on the linear parameter and used to define the overall
-uncertainty on the parameter. 
+As a conservative estimate, the best fit value of the parameter is 
+added in quadrature to its uncertainty in order to derive the overall variation.
 
-The result from using such a template is shown in Figure~\ref{fig:signalOverlay} where the 
-template variations for both relevant backgrounds have been combined
-to show the overall uncertainty on the \mht dimension. This is tested using data from
-the 8 \TeV signal region where no signal contribution is expected. The data scatter
-in the signal region is overlain for several bins and categories 
-to show variations consistent within the expected uncertainty from the control regions.
+The result of this procedure is shown in Figure~\ref{fig:signalOverlay} for different 
+\scalht bins and categories, using the data from the 8 \TeV signal region. 
+Here the template variations for both relevant backgrounds are combined to show 
+the overall uncertainty on the \mht dimension. The scatter of the points around 
+one is compatible with statistical fluctuations, 
+as no signal has been observed in this data sample.
 
-An additional validation is carried out by comparing the expected and observed uncertainties
+An additional validation is carried out by comparing expected and observed uncertainties
 on the linear parameter defining the template variations.
 The expected errors are derived by using a linear fit to the MC/MC ratio where the numerator
-have errors given by the poisson uncertainty on the number of predicted counts while
+have errors given by the Poisson uncertainty on the number of predicted counts while
 the uncertainty on the denominator comes from the statistical uncertainty on the
 MC prediction. The relative errors derived from this approach for \ttbar/W and \zInv~ are shown in 
 Figure~\ref{fig:expectedObservedTtw} and Figure~\ref{fig:expectedObservedZinv} 
@@ -232,14 +263,18 @@ well as validating the method for deriving expected uncertainties.
   with observed relative uncertainties shown in Figure~\ref{fig:observedZinv}.}
 \end{figure}
 
-\subsection{Application to 13 \TeV}
+\subsection{Expected systematic uncertainties for the 13 \TeV analysis}
 \label{sec:syst13TeV}
 Using the method described in Section~\ref{sec:systMhtDimension} the expected uncertainties
 from 13 \TeV MC for both \ttbar/W  and \zInv~ using all relevant control regions are
 shown in Figure~\ref{fig:expected13}. 
-Depending on the category and \scalht bin, uncertainties between 1 and 10\% are found.
+Depending on the category and \scalht bin, uncertainties between 1 and 10\% are found
+on the linear parameter.
 An example of the overall uncertainties on the \mht templates is shown
 in Figure~\ref{fig:exampleTemplate13}.
+The alternative templates derived with this method are folded into the 
+likelihood described in Section~\ref{sec:likelihood} to account for
+systematic uncertainties in the \mht dimension.
 
 \begin{figure}[h!]
   \centering
@@ -268,9 +303,9 @@ components of the background on the total background prediction.}
 
 \subsection{Additional uncertainties in the \mht dimension}
 \label{sec:addMhtUnc}
-Theoretical uncertanties due to scale differences in the data and MC agreement 
+Theoretical uncertainties due to scale differences in the data and MC agreement 
 are mitigated through the procedure described in
-Section~\ref{sec:mhtTemplate}. Several additional potential 
+Section~\ref{sec:mhtTemplate}. Other additional potential 
 sources of uncertainty will be considered, such as
 ISR, JES, PDF, b-tag scale factors, etc, as detailed below. In
 general, for each source of systematic, the \mht templates are found
@@ -286,7 +321,7 @@ likelihood.
   \centering
   \includegraphics[width=0.5\textwidth]{figures/closureTests/mhtJetSyst_SMS_T1bbbb_2J_mGl1000_mLSP900_JEC_ge3b_ge5j_800_1600.png}
   \caption{\label{fig:jec-shape} Alternative \mht templates that
-    refect uncertainties in the jet energy scale corrections for
+    reflect uncertainties in the jet energy scale corrections for
     $\geq$5 jets, $\geq$3 b-jets, and $\scalht > 800\gev$ bin for the
     10 \ifb luminosity scenario.}
 \end{figure}
