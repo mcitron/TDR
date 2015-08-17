@@ -50,17 +50,17 @@ distribution is defined in Equation~\ref{equ:orthog-polynomial}.
 
 \begin{equation}
   \label{equ:orthog-polynomial}
-  f_n(x) = \sum_k^{n=k}{(1-p_k)\times(x-\bar{x})^k}
+  f_n(x) = \sum_{k=0}^{k=n}{(p_k)\times(\bar{x}-x)^k}
 \end{equation}
 
-where $\bar{x}$ is the weighted mean of the distribution and $p_k = 1$ 
+where $\bar{x}$ is the weighted mean of the distribution and $p_k = 0$ 
 implies the $k^th$ order is negligible.
 In Figure~\ref{fig:linearMotiv} the data/MC 
 distribution against \mht for the control region selection 
 (detailed in \cite{CMS_AN_2013-366}) is shown inclusive 
 in \scalht and categories. By fitting a second order orthogonal polynomial
 it can be seen that in each case the second order 
-term is small and consistent with zero ($p_2 = 1$). 
+term is small and consistent with zero ($p_2 = 0$). 
 Motivated by this, a linear function (first order orthogonal polynomial)
 will be used to measure the level of bias remaining when the \mht dimension is binned in \scalht. 
 As the normalisation in each \scalht bin and its systematics 
@@ -96,13 +96,15 @@ the pull of the linear component from zero is calculated.
 This pull distribution is shown for each of the three control regions in
 in Figure~\ref{fig:pulls} and can be seen in each case to have mean and sigma
 consistent with zero and one respectively. This confirms that the linear component 
-is compatible with zero ($p_1 = 1$), i.e. no significant bias is observed, 
+is compatible with zero ($p_1 = 0$), i.e. no significant bias is observed, 
 and the error the error on the parameter is correctly estimated by the fit.
 Figure~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
 in category and \scalht bins. Those anchored by \scalht are consistent
 with zero (including inclusive jet categories) while the fits inclusive in \scalht
 show very large pulls. This shows as expected the \scalht anchoring
-is critical for removing bias in the \mht dimension. 
+is critical for removing bias in the \mht dimension. In the gaussian
+regime, the p-value of the fits follow a uniform distribution 
+between 0 and 1 as shown in Figure ~\ref{fig:pValues}.
 
 %Finally, an additional validation 
 %can be seen from the p-value distribution of the constant fits
@@ -123,8 +125,7 @@ is critical for removing bias in the \mht dimension.
   \\
   \caption{\label{fig:linearFits0bLe3} 
   The data/MC distribution against \mht for the 0b, $\le3$j category and \scalht 475-575\GeV bin.
-  The large linear bias in the linear component seen in Figure~\ref{fig:linearMotiv} is
-  largely mitigated.
+  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.
 }
 \end{figure}
 
@@ -142,8 +143,7 @@ is critical for removing bias in the \mht dimension.
   \\
   \caption{\label{fig:linearFits0bGe4} 
   The data/MC distribution against \mht for the 0b, $\ge4$j category and \scalht 475-575\GeV bin.
-  The large linear bias in the linear component seen in Figure~\ref{fig:linearMotiv} is
-  largely mitigated.
+  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.
 }
 \end{figure}
 
@@ -183,6 +183,15 @@ is critical for removing bias in the \mht dimension.
 
 }
 \end{figure}
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/pValueAll.pdf}
+  \\
+  \caption{\label{fig:pValues} 
+  The distributions of the p-value for the linear fit in the gaussian regime.
+}
+\end{figure}
 \subsection{Deriving systematic on \mht dimension}
 \label{sec:systMhtDimension}
 The systematic in the \mht dimension is extracted from the hypothesis
@@ -211,11 +220,11 @@ on the linear parameter defining the template variations.
 The expected errors are derived by using a linear fit to the MC/MC ratio where the numerator
 have errors given by the Poisson uncertainty on the number of predicted counts while
 the uncertainty on the denominator comes from the statistical uncertainty on the
-MC prediction. The relative errors derived from this approach for \ttbar/W and \zInv~ are shown in 
-Figure~\ref{fig:expectedObservedTtw} and Figure~\ref{fig:expectedObservedZinv} 
-and compared to the observed relative uncertainties. These show good agreement 
-which provides additional motivation for the zero bias hypothesis as
-well as validating the method for deriving expected uncertainties.
+MC prediction. The relative errors on $1+p_1$ derived from this approach 
+for \ttbar/W and \zInv~ are shown in Figure~\ref{fig:expectedObservedTtw} 
+and Figure~\ref{fig:expectedObservedZinv} and compared to those observed. 
+These show good agreement which provides additional motivation for the 
+zero bias hypothesis as well as validating the method for deriving expected uncertainties.
 
 
 \begin{figure}[h!]
@@ -292,9 +301,8 @@ systematic uncertainties in the \mht dimension.
 
 \begin{figure}[h!]
   \centering
-  \subfigure[]{
-    \includegraphics[width=0.5\textwidth]{figures/template/exampleTemplate13TeV.pdf}
-  }\\
+  \includegraphics[width=0.5\textwidth]{figures/template/exampleTemplate13TeV.pdf}
+  \\
   \caption{\label{fig:exampleTemplate13}
   Example template for 0b,$\ge5$j and $\scalht > 800$\GeV showing the error from both
 components of the background on the total background prediction.}
