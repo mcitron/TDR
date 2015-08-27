@@ -1,6 +1,6 @@
 %%____________________________________________________________________________||
 \section{Systematic uncertainties in the \mht dimension}
-\label{sec:mhtTemplate}
+\label{sec:syst-on-shape}
 
 The estimate of the number of events per (\njet,\nb,\scalht) bin,
 integrated over \mht, is derived from data control samples, with
@@ -8,10 +8,11 @@ the associated systematic error determined from closure tests
 described in Section \ref{sec:syst-from-closure}. This section
 describes the method used to assess the systematic uncertainties in
 the distribution of events according to \mht. A data driven approach is
-utilised where the level of closure in the control regions is used
-to derive alternative templates accounting for systematic uncertainties. 
+utilised under the hypothesis of zero bias in the data and MC agreement.
+The level of closure in the control regions is used
+to derive alternative templates accounting for systematic uncertainties.
 
-When looking at the \mht dimension inclusively there are
+When looking at the \mht dimension inclusively in \scalht there are
 large theoretical uncertainties that originate from mixing events
 at different scales. These uncertainties can be mitigated if the events 
 are binned according to a variable, such as \scalht, 
@@ -23,7 +24,9 @@ mainly affected by the MC modelling of the particle
 decays and, to a lesser extent, by jet reconstruction effects, 
 such as jet energy scale and resolution. 
 This approach, which will be often referred to as “scale anchoring” 
-in the following, is used in this analysis.
+in the following, is used in this analysis. The distribution in \mht
+is measured in data using the control regions and compared to MC
+to determine the validity of the zero bias hypothesis after scale anchoring.
 
 In Section~\ref{sec:valid8} the 8 \TeV data will be used 
 to validate the scale anchoring approach. 
@@ -39,7 +42,7 @@ additional systematic uncertainties are discussed.
 % to the flat hypothesis
 %Motivated by the inclusive distribution, a linear bias is assumed.
 
-\subsection{Validation with 8 \TeV Data}
+\subsection{Validation with 8 \texorpdfstring{\TeV} Data}
 \label{sec:valid8}
 In previous versions of this analysis three control regions
 were used: \mj, \mmj and \gj. To parameterise the data/MC agreement
@@ -82,8 +85,7 @@ number of events in data when extracting alternative templates
   \caption{\label{fig:linearMotiv} 
   The data/MC distribution against \mht for an inclusive selection on category and \scalht
   showing the results of a quadratic fit. A bias, well described by the linear function, 
-  is observed. The additional quadratic term is found to be compatible with zero.
-}
+  is observed. The additional quadratic term is found to be compatible with zero.}
 \end{figure}
 
 By anchoring the scale using binning in the \scalht dimension the remaining
@@ -97,7 +99,7 @@ This pull distribution is shown for each of the three control regions in
 in Figure~\ref{fig:pulls} and can be seen in each case to have mean and sigma
 consistent with zero and one respectively. This confirms that the linear component 
 is compatible with zero ($p_1 = 0$), i.e. no significant bias is observed, 
-and the error the error on the parameter is correctly estimated by the fit.
+and the error on the parameter is correctly estimated by the fit.
 Figure~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
 in category and \scalht bins. Those anchored by \scalht are consistent
 with zero (including inclusive jet categories) while the fits inclusive in \scalht
@@ -125,8 +127,7 @@ a uniform distribution between 0 and 1 as shown in Figure ~\ref{fig:pValues}.
   \\
   \caption{\label{fig:linearFits0bLe3} 
   The data/MC distribution against \mht for the 0b, $\le3$j category and \scalht 475-575\GeV bin.
-  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.
-}
+  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -143,8 +144,7 @@ a uniform distribution between 0 and 1 as shown in Figure ~\ref{fig:pValues}.
   \\
   \caption{\label{fig:linearFits0bGe4} 
   The data/MC distribution against \mht for the 0b, $\ge4$j category and \scalht 475-575\GeV bin.
-  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.
-}
+  The large bias in the linear component seen in Figure~\ref{fig:linearMotiv} is mitigated.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -160,8 +160,7 @@ a uniform distribution between 0 and 1 as shown in Figure ~\ref{fig:pValues}.
   }~~
   \\
   \caption{\label{fig:pulls} 
-  The pull distribution of the linear parameter from the flat hypothesis.
-}
+  The pull distribution of the linear parameter from the flat hypothesis.}
 \end{figure}
 \begin{figure}[h!]
   \centering
@@ -175,24 +174,19 @@ a uniform distribution between 0 and 1 as shown in Figure ~\ref{fig:pValues}.
     \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagPull_Linear2D_p1_SingleMu.pdf}
   }~~
   \\
-  \caption{\label{fig:frenchFlagPulls} 
-  The pull distribution of the linear parameter from the flat hypothesis across all
+  \caption{\label{fig:frenchFlagPulls} The pull distribution of the linear parameter from the flat hypothesis across all
   \scalht bins and categories. There are no significant pulls for the \scalht binned
   fits while the \scalht inclusive case shows very large pulls as expected. 
-  Due to trigger requirements the \gj control sample may only be used for \scalht $> 375$\GeV.
-
-}
+  Due to trigger requirements the \gj control sample may only be used for \scalht $> 375$\GeV.}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.8\textwidth]{figures/template/linear/pValueAll.pdf}
   \\
-  \caption{\label{fig:pValues} 
-  The distributions of the p-value for the linear fit in the gaussian regime.
-}
+  \caption{\label{fig:pValues} The distributions of the p-value for the linear fit in the gaussian regime.}
 \end{figure}
-\subsection{Deriving systematic on \mht dimension}
+\subsection{Deriving systematics on the \texorpdfstring{\mht} dimension}
 \label{sec:systMhtDimension}
 The systematic in the \mht dimension is extracted from the hypothesis
 of no bias. This is done by using the control regions 
@@ -222,9 +216,13 @@ have errors given by the Poisson uncertainty on the number of predicted counts w
 the uncertainty on the denominator comes from the statistical uncertainty on the
 MC prediction. The relative errors on $1+p_1$ derived from this approach 
 for \ttbar/W and \zInv~ are shown in Figure~\ref{fig:expectedObservedTtw} 
-and Figure~\ref{fig:expectedObservedZinv} and compared to those observed. 
+and Figure~\ref{fig:expectedObservedZinv} and compared to those observed.
 These show good agreement which provides additional motivation for the 
 zero bias hypothesis as well as validating the method for deriving expected uncertainties.
+As a gauge of the effect of the template variations the uncertainty parameter 
+can be translate to an uncertainty on the last bin. This is typically
+of the order of 10\% depending on the category. The distribution of this
+parameter is shown in Figure~\ref{fig:lastBinError}.
 
 
 \begin{figure}[h!]
@@ -242,8 +240,8 @@ zero bias hypothesis as well as validating the method for deriving expected unce
     \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_le3j_ht_475_575_MEGA.pdf}
   }~~
   \\
-  \caption{\label{fig:signalOverlay} 
-}
+  \caption{\label{fig:signalOverlay} Signal data/MC shown with template variations predicted from 
+  the control regions.}
 \end{figure}
 
 \begin{figure}[h!]
@@ -254,8 +252,7 @@ zero bias hypothesis as well as validating the method for deriving expected unce
   \subfigure[\label{fig:observedTtw} Observed uncertainties]{
     \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrComplete_Linear2D_p1_Ttw.pdf}
   }\\
-  \caption{\label{fig:expectedObservedTtw}
-  Expected relative uncertainties shown for \ttbar/W in Figure~\ref{fig:expectedTtw} are consistent
+  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties shown for \ttbar/W in Figure~\ref{fig:expectedTtw} are consistent
   with observed relative uncertainties shown in Figure~\ref{fig:observedTtw}.}
 \end{figure}
 
@@ -267,12 +264,18 @@ zero bias hypothesis as well as validating the method for deriving expected unce
   \subfigure[\label{fig:observedZinv} Observed uncertainties]{
     \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrComplete_Linear2D_p1_Zinv.pdf}
   }\\
-  \caption{\label{fig:expectedObservedZinv}
-  Expected relative uncertainties shown for \zInv~ in Figure~\ref{fig:expectedZinv} are consistent
+  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties shown for \zInv~ in Figure~\ref{fig:expectedZinv} are consistent
   with observed relative uncertainties shown in Figure~\ref{fig:observedZinv}.}
 \end{figure}
 
-\subsection{Expected systematic uncertainties for the 13 \TeV analysis}
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/template/lastBinVariation.pdf}
+  \caption{\label{fig:lastBinError} Uncertanties on the final bin
+over all categories and \scalht bins.}
+\end{figure}
+
+\subsection{Expected systematic uncertainties for the 13 \texorpdfstring{\TeV} analysis}
 \label{sec:syst13TeV}
 Using the method described in Section~\ref{sec:systMhtDimension} the expected uncertainties
 from 13 \TeV MC for both \ttbar/W  and \zInv~ using all relevant control regions are
@@ -290,11 +293,10 @@ systematic uncertainties in the \mht dimension.
   \subfigure[\label{fig:ttw13} \ttbar/W]{
     \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrComplete13_Linear2D_p1_Zinv.pdf}
   }~~
-  \subfigure[\label{fig:zinv13} \zInv]{
+  \subfigure[\label{fig:zinv13} \zInv~]{
     \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrComplete13_Linear2D_p1_Zinv.pdf}
   }\\
-  \caption{\label{fig:expected13}
-  Expected relative uncertainties on the template shown for \zInv~ in Figure~\ref{fig:zinv13} 
+  \caption{\label{fig:expected13} Expected relative uncertainties on the template shown for \zInv~ in Figure~\ref{fig:zinv13} 
   and \ttbar/w in Figure~\ref{fig:ttw13} are around 1 to 10\%.}
   
 \end{figure}
@@ -303,17 +305,16 @@ systematic uncertainties in the \mht dimension.
   \centering
   \includegraphics[width=0.5\textwidth]{figures/template/exampleTemplate13TeV.pdf}
   \\
-  \caption{\label{fig:exampleTemplate13}
-  Example template for 0b,$\ge5$j and $\scalht > 800$\GeV showing the error from both
+  \caption{\label{fig:exampleTemplate13} Example template for 0b,$\ge5$j and $\scalht > 800$\GeV showing the error from both
 components of the background on the total background prediction.}
   
 \end{figure}
 
-\subsection{Additional uncertainties in the \mht dimension}
+\subsection{Additional uncertainties in the \texorpdfstring{\mht} dimension}
 \label{sec:addMhtUnc}
 Theoretical uncertainties due to scale differences in the data and MC agreement 
 are mitigated through the procedure described in
-Section~\ref{sec:mhtTemplate}. Other additional potential 
+Section~\ref{sec:syst-on-shape}. Other additional potential 
 sources of uncertainty will be considered, such as
 ISR, JES, PDF, b-tag scale factors, etc, as detailed below. In
 general, for each source of systematic, the \mht templates are found
