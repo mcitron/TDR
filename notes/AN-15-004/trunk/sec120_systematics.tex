@@ -303,3 +303,54 @@ are propagated through to the final total.
 %% should be contrasted against the fits that do assume a correlated 
 %% behaviour in \scalht.
 
+\subsection{Splitting up the closure tests based on background
+processes \label{sec:closure-split}}
+
+The current approach for deriving the normalisation systematic
+on the SM background predictions is to derive one systematic per bin
+for all the transfer factors that are used to predict every background
+process. This is the approach described in
+Sec.\ref{sec:closure-tests-desc}.
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Legend]{\includegraphics[width=0.4\textwidth]{figures/closureTests/legend.pdf}} \\
+    \subfigure[$L_{\rm int} = 3\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq4j_lumi3.pdf}} ~~
+    \subfigure[$L_{\rm int} = 3\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/ge5j_lumi3.pdf}} \\
+    \subfigure[$L_{\rm int} = 10\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq4j_lumi10.pdf}} ~~
+    \subfigure[$L_{\rm int} = 10\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/ge5j_lumi10.pdf}} \\
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands), for two different integrated
+      luminosity scenarios (rows) and for two different jet
+      multiplicity bins (columns).}
+    \label{fig:closure}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[Systematic uncertainties for 3 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/systOut2d3fb.pdf}
+  } ~~
+  \subfigure[Systematic uncertainties for 10 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/systOut2d10fb.pdf}
+  }
+  \caption{\label{fig:systematics-ttW} Expected systematics derived from
+  the closure tests selected for the W and \ttbar backgrounds, shown for
+  the 3 \ifb and 10 \ifb scenarios}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[Systematic uncertainties for 3 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/systOut2d3fb.pdf}
+  } ~~
+  \subfigure[Systematic uncertainties for 10 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/systOut2d10fb.pdf}
+  }
+  \caption{\label{fig:systematics-Zinv} Expected systematics derived from
+  the closure tests selected for the \znunu backgrounds, shown for
+  the 3 \ifb and 10 \ifb scenarios}
+\end{figure}
