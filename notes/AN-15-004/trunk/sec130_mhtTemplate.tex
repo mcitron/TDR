@@ -64,11 +64,17 @@ distribution against \mht for the control region selection
 in \scalht and categories. By fitting a second order orthogonal polynomial
 it can be seen that in each case the second order 
 term is small and consistent with zero ($p_2 = 0$). 
-Motivated by this, a linear function (first order orthogonal polynomial)
-will be used to measure the level of bias remaining when the \mht dimension is binned in \scalht. 
-As the normalisation in each \scalht bin and its systematics 
-are dealt with separately, the MC yields are set to the observed 
-number of events in data when extracting alternative templates 
+However, there is a large remaining linear bias. 
+A bias in the data/MC agreement is expected as events 
+at different scales are mixed.
+A first order orthogonal polynomial
+will be used to measure the level of bias remaining 
+when the \mht dimension is binned in \scalht.
+This allows the normalisation parameter to be
+decorrelated from the parameter which controls
+the distribution in \mht.
+The normalisation in each \scalht bin and its systematics 
+is then fixed following the data-drived method used in Run 1. 
 (Section~\ref{sec:systMhtDimension}).
 \begin{figure}[h!]
   \centering
@@ -221,8 +227,8 @@ These show good agreement which provides additional motivation for the
 zero bias hypothesis as well as validating the method for deriving expected uncertainties.
 As a gauge of the effect of the template variations the uncertainty parameter 
 can be translate to an uncertainty on the last bin. This is typically
-of the order of 10\% depending on the category. The distribution of this
-parameter is shown in Figure~\ref{fig:lastBinError}.
+of the order of 10\% depending on the category and is shown
+in Figure~\ref{fig:frenchFlagLastBin}.
 
 
 \begin{figure}[h!]
@@ -270,8 +276,8 @@ parameter is shown in Figure~\ref{fig:lastBinError}.
 
 \begin{figure}[]
   \centering
-  \includegraphics[width=0.5\textwidth]{figures/template/lastBinVariation.pdf}
-  \caption{\label{fig:lastBinError} Uncertanties on the final bin
+  \includegraphics[width=0.5\textwidth]{figures/template/frenchFlagLastBin.pdf}
+  \caption{\label{fig:frenchFlagLastBin} Uncertanties on the final bin
 over all categories and \scalht bins.}
 \end{figure}
 
