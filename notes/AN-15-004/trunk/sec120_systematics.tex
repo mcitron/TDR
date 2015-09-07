@@ -102,11 +102,15 @@ Thirteen sets of closure tests use the five data control samples to
 probe key ingredients of the simulation modelling of the SM
 backgrounds with genuine \met as a function of \scalht. These are
 shown in Fig.~\ref{fig:closure} for both 3 \ifb and 10 \ifb and two
-different jet multiplicity bins: $\njet = 4$ and $\geq 5$. In the case
-that there are no statistics in a control region (sub-)sample to 
-perform one of the closure tests, a red band is drawn. In these
-instances, the bin in question would not be used in the statistical
-interpretation of the analysis.
+different jet multiplicity bins: $\njet = 4$ and $\geq 5$. 
+In the case that there are no statistics in a control region (sub-)sample
+to perform one of the closure tests, the bin in question would not be 
+used in the statistical interpretation of the analysis.
+% In the case
+% that there are no statistics in a control region (sub-)sample to 
+% perform one of the closure tests, a red band is drawn. In these
+% instances, the bin in question would not be used in the statistical
+% interpretation of the analysis.
 
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots10fb.pdf
 %create mode 100644 notes/AN-15-004/trunk/figures/closureTests/summary_plots1fb.pdf
@@ -303,3 +307,142 @@ are propagated through to the final total.
 %% should be contrasted against the fits that do assume a correlated 
 %% behaviour in \scalht.
 
+\subsection{Splitting up the closure tests based on background
+processes \label{sec:closure-split}}
+
+The current approach for deriving a prediction of the normalisation systematic
+on the SM background predictions is to derive one systematic per bin
+for all the transfer factors (of which there is one per background process). This is the 
+method described in Sec.~\ref{sec:closure-tests-desc}.
+
+An alternative approach would be to split the closure tests based on
+the background processes that they are most relevant to. This would
+allow for the derivation of different systematic errors for different
+transfer factors in the same bin.
+
+To test the effect of this alternative the closure tests are split into
+two sets, those relevant to the W and \ttbar background and those relevant
+to the \znunu backgrounds. The closure tests used and motivated in
+Sec.~\ref{sec:closure-tests-desc} are split appropriately between the
+two sets. Additionally, a few more are included that are specific to each of
+the background processes.
+
+In Fig.~\ref{fig:ttWClosure} the closure tests selected for the W and
+\ttbar backgrounds are presented. The exact tests are detailed
+in the legend. As the single lepton control samples are used for W and
+\ttbar background prediction, closure tests using only these samples
+are selected. In addition to the tests described in
+Sec~\ref{sec:closure-tests-desc}, closure tests probing the b-tag
+extrapolation (hollow star and inverted triangle) are carried out with 
+the single electron control sample, analagous to those in the muon control sample.
+
+In Fig.~\ref{fig:ZinvClosure} the closure tests selected for the
+\znunu background are presented. For the \znunu prediction, single
+lepton, double lepton and the photon control samples are all used.
+Closure tests are therefore chosen that test the extrapolation
+between these different samples with different b-tag multiplicities. 
+These are the first ten closure tests in the legend. Most of these
+tests are taken from those in Sec~\ref{sec:closure-tests-desc}. On top
+of these are \mmj to \gj tests (brown asterisk and grey star), analagous to
+the \eej to \gj closure tests, and \ej to \eej tests (inverted
+triangle and hollow diamond), analagous to the \mj to \mmj tests.
+
+To further probe the use of the single lepton control samples for the
+\znunu background prediction, $\mu^+$ to $\mu^-$ and $e^+$ to $e^-$
+closure tests are added (red plus and green asterisk). These are 
+designed to identify any source of systematic caused by W polarisation 
+effects, as discussed in App.~\ref{app:zInvBgControl}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Legend]{\includegraphics[width=0.4\textwidth]{figures/closureTests/split/ttW/legend.pdf}} \\
+    \subfigure[$L_{\rm int} = 3\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/eq4j_lumi3.pdf}} ~~
+    \subfigure[$L_{\rm int} = 3\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/ge5j_lumi3.pdf}} \\
+    \subfigure[$L_{\rm int} = 10\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/eq4j_lumi10.pdf}} ~~
+    \subfigure[$L_{\rm int} = 10\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/ge5j_lumi10.pdf}} \\
+    \caption{Sets of closure tests chosen to probe the W and \ttbar
+      background prediction. Each test is overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands), for two different integrated
+      luminosity scenarios (rows) and for two different jet
+      multiplicity bins (columns).}
+    \label{fig:ttWClosure}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Legend]{\includegraphics[width=0.4\textwidth]{figures/closureTests/split/Zinv/legend.pdf}} \\
+    \subfigure[$L_{\rm int} = 3\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/eq4j_lumi3.pdf}} ~~
+    \subfigure[$L_{\rm int} = 3\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/ge5j_lumi3.pdf}} \\
+    \subfigure[$L_{\rm int} = 10\fbinv, \njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/eq4j_lumi10.pdf}} ~~
+    \subfigure[$L_{\rm int} = 10\fbinv, \njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/ge5j_lumi10.pdf}} \\
+    \caption{Sets of closure tests chosen to probe the W and \ttbar
+      background prediction. Each test is overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands), for two different integrated
+      luminosity scenarios (rows) and for two different jet
+      multiplicity bins (columns).}
+    \label{fig:ZinvClosure}
+  \end{center} 
+\end{figure}
+
+A summary of the systematics in each category for the W with \ttbar 
+and \znunu transfer factors for two luminosity scenarios are presented in
+Figs.~\ref{fig:systematics-ttW} and \ref{fig:systematics-Zinv}
+respectively. 
+
+In the W and \ttbar case, the expected systematic errors have decreased 
+slightly with respect to those presented in
+Sec.~\ref{sec:closure-tests-desc}. As the
+closure tests selected for W and \ttbar are now only based on the higher
+statistic single lepton control samples, there is a better overall level of
+control than when the lower statistic samples were included in the
+closure tests used for the systematic error prediction. As the
+predicted systematic is a statistical statement about the
+extent to which we can say a particular bin is free of bias, we now 
+expect this observed lower value. In most bins the
+effect is of the order of a few percent.
+
+In the \znunu case, the expected systematic errors have increased with
+respect to those presented in Sec.~\ref{sec:closure-tests-desc}. In
+this case, many of the selected closure tests contain the lower
+statistic single photon and double lepton control samples. The lower
+statistics has the opposite effect to that in the W and \ttbar closure 
+tests, reducing the level of control and resulting in a larger
+expected systematic. In the low jet multiplicity bins the overall
+effect is only of the order of a few percent. High jet multiplicity
+and low \scalht bins are the most affected. As the \znunu
+background is sub-dominant in these cases the overall effect of these
+systematic errors is expected to be minor.
+
+% As there are no overall dramatic changes to the values of the
+% systematics it is not expected that splitting the systematics up in
+% this way will make a big difference to the overall sensitivity of the
+% analysis.
+
+\begin{figure}[]
+  \centering
+  \subfigure[Systematic uncertainties for 3 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/systOut2d3fb.pdf}
+  } ~~
+  \subfigure[Systematic uncertainties for 10 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/ttW/systOut2d10fb.pdf}
+  }
+  \caption{\label{fig:systematics-ttW} Expected systematics derived from
+  the closure tests selected for the W and \ttbar backgrounds, shown for
+  the 3 \ifb and 10 \ifb scenarios}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[Systematic uncertainties for 3 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/systOut2d3fb.pdf}
+  } ~~
+  \subfigure[Systematic uncertainties for 10 \ifb]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/split/Zinv/systOut2d10fb.pdf}
+  }
+  \caption{\label{fig:systematics-Zinv} Expected systematics derived from
+  the closure tests selected for the \znunu backgrounds, shown for
+  the 3 \ifb and 10 \ifb scenarios}
+\end{figure}
