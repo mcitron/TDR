@@ -46,5 +46,36 @@ with 25ns bunch spacing is overlapped.
 \end{table}
 \end{landscape}
 
+\subsection{Cross sections for SM samples}
+Several MC samples of individual SM processes are binned according to a generator level quantity, such as the partonic \HT or bosonic \PT.
+This analysis choses to use samples binned in partonic \HT, for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets) and $\hat{P_{T}}$
+for only the QCD sample.
+These binned samples are provided with LO cross sections. The \kfactors required to go from LO to NNLO cross setions are typically deterimned using corresponding
+inclusive samples applied to each \HT binned sample.
+Further studies can provide additional corrections to the cross sections, which can prove important to the closure test procedures described in
+Section \ref{sec:closure-tests-desc}. As can be seen in Section \ref{sec:sideband_corrections}, residual cross section
+corrections are measured using sidebands in data enriched specific processes.
+
+Following an inclusive selection, the distribution of the MC samples with respect to the binning variable $H_{T}^{parton}$ are shown in Figure~\ref{fig:Lhe_Ht}, with
+also the $\hat{P_{T}}$ distribution for QCD.
+
+As stated above, the distributions shown in Figure~\ref{fig:Lhe_Ht} follow an inclusive selection, whereby there is no requirement on each event. This direct translation
+from MC allows to fully stitch the binned generator level variable, and upon inspection appears to show a undeviating shape with respect to the cross section in question.
+
+A more in depth, data-driven investigation into the cross sections is shown in Section \ref{sec:sideband_corrections}. Of which, an important point to note is that
+the corrections to the cross sections, derived with the data sidebands are only relevant for data/MC comparison plots and the suite of closure tests defined in Section \ref{sec:closure-tests-desc}.
+
+\begin{figure}[!h]
+  \begin{center}
+    \subfigure[$Z\rightarrow \nu\nu$ +jets] {\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/Zinv.pdf}} ~~
+    \subfigure[$W\rightarrow l \nu$ + jets]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/WJetsToLNu_HT.pdf}} \\
+    \subfigure[$DY\rightarrow ll$ + jets]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/DYJetsToLL_M50_HT.pdf}} ~~
+    \subfigure[QCD]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/QCD_HT.pdf}} \\
+    \subfigure[$\gamma$+jets]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/GJets_HT.pdf}} ~~
+    \subfigure[QCD $\hat{P_{T}}$]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/QCD.pdf}}\\
+    \caption{Generator-level $H_{T}^{parton}$ distributions for SM process, $Z\rightarrow \nu\nu$ + jets, W+jets, DY+jets, QCD, $\gamma$+jets, and $\hat{P_{T}}$ for QCD.}
+    \label{fig:Lhe_Ht}
+  \end{center}
+\end{figure}
 
 %%____________________________________________________________________________||
