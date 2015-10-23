@@ -30,15 +30,19 @@ introducing a significant reduction in signal acceptance. The jets
 that are selected are used in the calculation of all jet-based
 event-level variables, such as \HT, \mht, and \alphat.
 
-Raised $\PT$ thresholds on the lead jets are also required. The lead
-jet is required to satisfy $\PT > 100\gev$, which is required to
-ensure trigger efficiency but also helps to improve the S/B for a wide
-range of models with respect to SM processes such as V + jets
-production. Events are then classified according to the second hardest
-jet, which is required to satisfy either $\PT > 100\gev$ (leading to a
-``symmetric'' \njet category), or $40 < \PT < 100\gev$ (an
-``asymmetric'' \njet category). The latter of these two requirements
-helps to improve acceptance to a range of DM models and compressed
+Raised $\PT$ thresholds and tighter $\eta$ requirements on the lead jets 
+are also required. The lead jet is required to satisfy $\PT > 100\gev$
+and $|\eta|<2.5$. This helps to ensure high trigger efficiencies,
+but also helps to improve the S/B for a wide
+range of models with respect to SM processes, such as V + jets
+production. Events are then classified based on the
+second leading jet. In the case that a second leading jet satisfies $\PT > 100\gev$ 
+events are assigned to a ``symmetric'' \njet category. If the second
+jet satisfies $40 < \PT < 100\gev$ events are assigned to an
+``asymmetric'' \njet category. Finally, if there is no second leading
+jet with $\PT>40\gev$, events are assigned to the ``mono-jet''
+category. The asymmetric and mono-jet categories have been added to
+the analysis to help improve acceptance to a range of DM models and compressed
 SUSY.
 
 {\bf Event categorisation according to \njet and \nb.} 
@@ -47,8 +51,9 @@ Events in the hadronic signal and all control regions (described
 below) are categorised identically and according to the number of jets
 (\njet) reconstructed in each event and the number of jets identified
 as originating from bottom quarks (\nb) in each event. As a baseline,
-the resulting sub-samples comprise events containing exactly two,
+the resulting sub-samples comprise events containing exactly one, two,
 three, four, or at least five jets. These are further split into
+``monojet'' (only in the $\njet=1$ case),
 ``symmetric'' or ``asymmetric'' \njet categories according to the
 second leading jet \Pt, as defined above.
 
@@ -102,10 +107,12 @@ SUSY. Events in all samples are binned identically, according to the
 \HT variable. The choice of binning in \HT is driven primarily by the
 trigger strategy employed by the analysis, as described in
 Section~\ref{sec:triggers}, and can be summarised as follows: 50\gev
-bins in the range $200 < \HT < 400\gev$, 200\gev bins in the range
-$400 < \HT < 800\gev$, and a final inclusive bin $\HT > 800\gev$.
+bins in the range $200 < \HT < 400\gev$, 100\gev bins in the range
+$400 < \HT < 600\gev$, a 200\gev bin $600<\HT<800\gev$ and a final 
+inclusive bin $\HT > 800\gev$.
 
-The lower threshold of the last (inclusive) \HT bin is determined
+The lower threshold of the last (inclusive) \HT bin is not forced to
+$800\gev$, it is instead determined
 independently for each (\njet,\nb) event category and is chosen to
 always align with one of the ``default'' boundaries defined above. The
 metric for choosing the final bin threshold is based on the number of
@@ -137,8 +144,8 @@ simulation and data, as described in Sec.~\ref{sec:systematics}.
     Lead jet acceptance           & $\PT > 100\gev$, $|\eta| <    2.5$                                     \\
     Second jet acceptance         & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$                       \\
     Loosest \HT requirement       & $\HT > 200\gev$                                                        \\
-    Baseline \HT binning          & 200--250, 250--300, 300--350, 350--400, 400--600, 600--800, $>$800\gev \\
-    Baseline \njet multiplicities & 2, 3, 4, $\geq$5 (both symmetric and asymmetric)                       \\
+    Baseline \HT binning          & 200--250, 250--300, 300--350, 350--400, 400--500, 500--600, 600--800, $>$800\gev \\
+    Baseline \njet multiplicities & 1 (mono-jet), 2, 3, 4, $\geq$5 (both symmetric and asymmetric)                       \\
     Baseline \nb multiplicities   & 0, 1, 2, $\geq3$ ($\nb \leq \njet$)                                    \\
     \hline
     \hline
@@ -265,10 +272,10 @@ on \njet nor \nb that are used to define the event categories.
   \begin{tabular}{ lcccccccc }
     \hline
     \hline
-    \scalht            & 200       & 250       & 300       & 350       & 400       & 600       \\
-    \hline                                                                     
-    \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      \\
-    ``Effective'' \mht & $\sim$128 & $\sim$138 & $\sim$125 & $\sim$123 & $\sim$110 & $\sim$162 \\
+    \scalht            & 200       & 250       & 300       & 350       & 400       & 500       & 600       \\
+    \hline                                                                                     
+    \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      & 0.52      \\
+    ``Effective'' \mht & $\sim$128 & $\sim$138 & $\sim$125 & $\sim$123 & $\sim$110 & $\sim$138 & $\sim$162 \\
     \hline
     \hline
   \end{tabular}
@@ -544,7 +551,7 @@ and they must have opposite charge.
 %ignored~\cite{PAS-SUS-08-002,Bern:2011pa}. 
 
 The \gj sample is defined by requiring exactly one photon satisfying
-tight isolation criteria and within an acceptance of $\pt > 175\gev$
+tight isolation criteria and within an acceptance of $\pt > 200\gev$
 (limited by trigger requirements) and $|\eta| < 1.45$. Furthermore,
 events are vetoed if $\Delta R(\gamma,\textrm{jet}_i) < 1.0$ is
 satisfied, running over all jets $i$. One important difference with
