@@ -621,6 +621,70 @@ systematic uncertainty}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Paragraph about JEC:
+The energies of jets used in the analysis are corrected as a function of
+their \pt and \eta via the procedure recommended by
+the JetMET POG. These corrections have an associated uncertainty,
+which can propagate through the analysis. This adds another potential source 
+of systematic uncertainty. As the analysis is designed such that bins
+with the same value of \scalht and jet multiplicity in the control
+regions are used to predict the background in the signal region, we
+expect to be protected against many of the effects caused by these jet
+energy scale uncertainties. However, the jet energy scale can still
+have an effect, due to jets moving in and
+out acceptance (above and below $40\gev$).
+
+As a preliminary study, the effect of varying the jet
+energy scale in the \mj and \mmj control regions is investigated. Full
+selection, as described in Sec.~\ref{sec:selection}, is required.
+Pseudo transfer factors are calculated in each analysis bin, defined
+as the number of events in a signal region after passing the signal
+region \alphat cut in a particular bin divided by the total number of
+events in that bin. This is carried out using the jet energy
+corrections with their nominal, most likely, value and with their
+minus one sigma, lower bound, value. The percentage change in these two
+transfer factors is then calculated. For the \mj control region, these
+values are shown in Fig.~\ref{fig:jes-syst-singleMu}. For the \mmj
+control region, these values are shown in
+Fig.~\ref{fig:jes-syst-doubleMu}. 
+
+If any control region bin has fewer 
+than $10$ predicted events at $552\ipb$ it is left out of the study.
+Overall, the effect of varying the jet energy scale down appears to be
+small. With variations in the pseudo transfer factors being typically
+less than $10\%$. Any larger effects are likely due to statistical
+fluctuations in bins with a small number of events.
+
+This preliminary study suggests that the jet energy scale
+uncertainties should be covered by the systematics derived from the
+closure tests in Sec.~\ref{sec:closure-data-study}. We will carry out
+a more thorough study of this source of systematic uncertainty in the
+future.
+
+\begin{figure}[]
+  \centering
+  \subfigure[The percentage change in transfer factors per \scalht bin
+  and jet category]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/SingleMu_MC_TF_Comp.pdf}
+  } ~~
+  \subfigure[The percentage change in transfer factors for every
+  analysis bin]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/SingleMu_MC_Systematics1D.pdf}
+  }
+  \caption{\label{fig:jes-syst-singleMu} }
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[The percentage change in transfer factors per \scalht bin
+  and jet category]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/DoubleMu_MC_TF_Comp.pdf}
+  } ~~
+  \subfigure[The percentage change in transfer factors for every
+  analysis bin]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/DoubleMu_MC_Systematics1D.pdf}
+  }
+  \caption{\label{fig:jes-syst-doubleMu} }
+\end{figure}
 
 % To be included at the end:
 Finally, an additional dedicated study is used to determine the
