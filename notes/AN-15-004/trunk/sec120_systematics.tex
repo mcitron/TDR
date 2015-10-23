@@ -302,7 +302,14 @@ indication of bias averaged over \scalht as well as any
 \scalht-dependant bias.
 
 In the case of the closure tests presented in this section, there are
-no tests which demonstrate a significant departure from closure. 
+no tests which demonstrate a significant departure from closure. One
+effect that is visible, however, is the lack of b-tag scale factors.
+Simulated events will be reweighted when these scale factors become
+available, but for now we notice a slight defecit in the number of
+b-tags observed than predicted. This is manifest in the $0 b-tag
+\rightarrow 1 b-tag$ and $1 b-tag \rightarrow \geq 2 b-tag$ closure
+tests, that exhibit consistently negative values. We expect this to
+improve with the application of the scale factors. 
 
 \begin{figure}[h!]
   \begin{center}
@@ -336,7 +343,7 @@ no tests which demonstrate a significant departure from closure.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[$\njet = 1$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq1j.pdf}} 
+    \subfigure[$\njet = 1$]{\includegraphics[width=0.7\textwidth]{figures/closureTests/552pb/eq1j.pdf}} 
     \caption{Sets of closure tests (open symbols) overlaid on top of
       the systematic uncertainty estimates used for each of the seven
       \scalht bins (shaded bands) carried out with $552\ipb$ of
@@ -374,8 +381,9 @@ uncertainty is then taken as the weighted mean of the error on the
 closure tests. This is an estimator of the expected variance assuming
 no bias that should be found in data. 
 
-This procedure yields the values quoted in
-Figure~\ref{fig:systematics}, which shows the systematic uncertainty
+For the MC studies detailed in Sec.~\ref{sec:closure-mc-study}, this 
+procedure yields the values quoted in
+Fig.~\ref{fig:systematics}, which shows the systematic uncertainty
 on the transfer factor as a function of the \scalht and (\nb,\njet)
 category, extracted for two integrated luminosity scenarios: 3 \ifb
 and 10 \ifb. A clear dependence on integrated luminosity is a
@@ -400,13 +408,56 @@ additional indication of any genuine bias.
 the 3 \ifb and 10 \ifb scenarios}
 \end{figure}
 
-Finally, an additional dedicated study is used to determine the
-systematic uncertainties that arise from uncertainties in scale factor
-corrections related to b-tag modelling. These are generally found to
-be small, at the percent level, and are typically sub-dominant with
-respect to the systematic uncertainties derived from the closure
-tests. However, if not sub-dominant, these additional uncertainties
-are propagated through to the final total.
+For the data studies detailed in Sec.~\ref{sec:closure-data-study},
+this procedure yields the values quoted in
+Fig.~\ref{fig:systematicsObs}. In the kinematically restricted bins, such
+as those with a high jet multiplicity and low value of \scalht, the
+limited statistics leads to large systematic errors. As a minimum number of
+events is required for each bin considered in the final stages of the
+analysis, these large systematic errors are unlikely to be a problem.
+In the bins populated with a reasonable number of events, the
+systematic errors determined from the closure tests vary from $10$ to
+$40\%$.
+
+The expected systematics, made with the
+closure tests detailed in Sec.~\ref{sec:closure-data-study} are also
+determined for $552\ipb$. These are shown in
+Fig.~\ref{fig:systematicsExp}, along with the ratio of observed over
+expected systematics. We expect this ratio to remain close to one with
+fluctuations above and below the value. Recall, the
+systematic is calculated as the square root of the sum of the weighted
+mean squared and weighted variance. When calculating the expected
+systematics from MC, the weighted mean is always zero. This is not the
+case for the data, we therefore expect the observed systematic to
+tend to higher values than the expected systematic. We observe numbers
+compatible with this hypothesis, observed divided by expected values
+scattered around one, with the majority slightly above one. The fact
+that the observed and expected errors are compatible further supports
+the conclusion that there is no extreme source of bias in the closure
+tests carried out with data. In the case of bias, we would expect a
+much inflated observed systematic.
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/closureTests/552pb/obs2D.pdf}
+  \caption{\label{fig:systematicsObs} Observed systematics derived from
+  the closure tests detailed in Sec.~\ref{sec:closure-data-study}, made with $552\ipb$ of $13\tev$ data.}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[Expected systematic uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/exp2D.pdf}
+  } ~~
+  \subfigure[Observed divided by expected systematic uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/obsDivExp.pdf}
+  }
+  \caption{\label{fig:systematicsExp} Expected systematics and observed
+  (see in Fig~\ref{fig:systematicsObs})
+  divided by expected systematics. Derived from the closure tests 
+  detailed in Sec~\ref{sec:closure-data-study}. Expected systematics made with MC
+  scaled to $552\ipb$}
+\end{figure}
 
 %% b jet multiplicity categories and also the seven \scalht regions,
 %% which is a conservative approach given that one can expect some
@@ -524,6 +575,11 @@ and low \scalht bins are the most affected. As the \znunu
 background is sub-dominant in these cases the overall effect of these
 systematic errors is expected to be minor.
 
+As we observe a small effect when splitting the systematics based on
+the background processes, we have elected to not split up the closure
+tests for studies in early data. This keeps it in line with the
+procedure carried out in the $8\tev$ analysis \cite{CMS_AN_2013-366}.
+
 % As there are no overall dramatic changes to the values of the
 % systematics it is not expected that splitting the systematics up in
 % this way will make a big difference to the overall sensitivity of the
@@ -554,3 +610,23 @@ systematic errors is expected to be minor.
   the closure tests selected for the \znunu backgrounds, shown for
   the 3 \ifb and 10 \ifb scenarios}
 \end{figure}
+
+
+\subsection{MC based studies of additional potential sources of
+systematic uncertainty}
+\label{sec:closure-tests-desc}
+
+%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CHRISTIAN %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paragraph about JEC:
+
+% To be included at the end:
+Finally, an additional dedicated study is used to determine the
+systematic uncertainties that arise from uncertainties in scale factor
+corrections related to b-tag modelling. These are generally found to
+be small, at the percent level, and are typically sub-dominant with
+respect to the systematic uncertainties derived from the closure
+tests. However, if not sub-dominant, these additional uncertainties
+are propagated through to the final total.
