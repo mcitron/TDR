@@ -18,7 +18,7 @@ detector noise, or event misreconstruction due to detector
 inefficiencies. These events, with large, non-physical values of \met,
 are rejected with high efficiency by applying a range of dedicated
 vetoes. All ``MET filters'' recommended by the JetMET POG and SUSY PAG
-will be applied by default in this analysis.
+will be applied by default in this analysis, listed in Table ~\ref{tab:pre-selections}.
 
 {\bf Jet requirements.} 
 
@@ -136,10 +136,10 @@ simulation and data, as described in Sec.~\ref{sec:systematics}.
   \begin{tabular}{ ll }
     \hline
     \hline
-    Selection                     & Requirement                                                            \\
+    Selection                     & Requirement                                                                          \\
     \hline
-    ``MET filters''               & Various                                                                \\
-    Jet acceptance                & $\PT > 40\gev$, $|\eta| < 3$                                           \\
+    ``MET filters''               & Primary Vertex, CSC Beam Halo, HBHE Noise and Isolation, ECAL Endcap SC Noise        \\
+    Jet acceptance                & $\PT > 40\gev$, $|\eta| < 3$                                                         \\
 %    \njet                         & $\geq2$                                                                \\
     Lead jet acceptance           & $\PT > 100\gev$, $|\eta| <    2.5$                                     \\
     Second jet acceptance         & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$                       \\
@@ -313,21 +313,47 @@ contamination from multijet events and allow to maintain low jet \PT,
 for a large range of DM and SUSY models with final states
 characterised by the presence of significant \met.
 
-{\bf Additional cleaning filters.} 
+{\bf $\mht/\met$ cleaning filter.} 
 
-Two additional dedicated cleaning cuts are applied. First, to protect
-against multiple jets failing the $\Et$ threshold, the jet-based
+To protect against multiple jets failing the $\Et$ threshold, the jet-based
 estimate of the missing transverse energy, \mht, is compared to the
 missing transverse energy variable, $\met$, and events with $R_{\rm
-  miss}=\mht/\met > 1.25$ are rejected. Second, to protect against
-severe energy losses caused by masked regions in the ECAL (which
-amount to about 1\% of the ECAL channel count) or HCAL, or by missing
-instrumentation in the barrel-endcap gap, events with $\bdphi < 0.5$
-are rejected if the distance in the ($\eta,\phi$) plane between the
-selected jet and the closest masked ECAL region, $\Delta R_{\rm
-  ECAL}$, is smaller than 0.3. Similarly, events are rejected if the
-jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
-$|\eta| = 1.5$.
+  miss}=\mht/\met > 1.25$ are rejected.
+  
+{\bf Detector dead cell control.}
+
+Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count)
+or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause 
+severe energy losses. A data-driven method is developed to identify dead cells. The 
+procedure is as follows. For each jet in the inclusive jet collection with
+$\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
+recomputed ${\mhtvec}$ is determined, same as the procedure to compute the \bdphi 
+variable. A $\eta$ $\phi$ map is made with each jet which gives $\Delta\phi_{jet} < 0.3$.
+Finally, a $\eta$ $\phi$ map is also made with all jets in the inclusive jet collection and
+a 2D ratio map is obtained with the numerator being the former and the denumerator being 
+the later. Jets pointing to dead cells are likely to give $\Delta\phi_{jet} < 0.3$, so the
+location of dead cells in $\eta$ and $\phi$ will have a higher value in the 2D ratio map. 
+Figure~\ref{fig:2dRatioMap} is the 2D ratio map made with unblinded signal region with luminosity of 
+149.49~$\text{pb}^{-1}$.
+
+\begin{figure}[h!]
+    \begin{center}
+        {\includegraphics[width=0.7\textwidth]{figures/selection/EtaPhiMap.pdf}}
+        \caption{2D ratio map, with unblinded signal region with luminosity of 149.49~$\text{pb}^{-1}$}
+        \label{fig:2dRatioMap}
+    \end{center}
+\end{figure}
+
+
+
+%To protect against severe energy losses caused by masked regions in the ECAL (which
+%amount to about 1\% of the ECAL channel count) or HCAL, or by missing
+%instrumentation in the barrel-endcap gap, events with $\bdphi < 0.5$
+%are rejected if the distance in the ($\eta,\phi$) plane between the
+%selected jet and the closest masked ECAL region, $\Delta R_{\rm
+%  ECAL}$, is smaller than 0.3. Similarly, events are rejected if the
+%jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
+%$|\eta| = 1.5$.
 
 {\bf Summary of signal region selection.} 
 
