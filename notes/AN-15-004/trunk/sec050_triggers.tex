@@ -5,7 +5,7 @@
 
 \subsection{Hadronic signal region\label{sec:hadronic_signal_region}}
 
-In Run 2 the RA1 analysis will aim to retain the low-thresholds of Run 1 with developments 
+In Run 2 the RA1 analysis retains the low-thresholds of Run 1 with developments 
 to the trigger selection, maintaining sensitivity to signatures of new physics with hadronic 
 energies as low as $\scalht = 200$ GeV. This in part is achieved by a migration to PF-based 
 jet reconstruction within the HLT which, in conjunction with a reduction of clustering radius 
@@ -48,8 +48,8 @@ for higher luminosity scenarios.
 %----------------------------------------------------------------------
 \begin{table}[h!]
 \topcaption{Trigger thresholds of the Level-1, calorimeter prefilter and final PF-trigger decision for
- the primary HLT paths for the hadronic signal region in the $\lumi=1.4\times10^{34}\cm^{-2}{\rm s}^{-1}$ scenario.
- Lower threshold Level-1 \scalht and \met seeds are utilised for the lower luminosity scenarios. }
+ the primary HLT paths for the hadronic signal region in the $\lumi=7\times10^{33}\cm^{-2}{\rm s}^{-1}$ scenario.
+ Higher threshold Level-1 \scalht and \met seeds are utilised for the higher luminosity scenario. }
 \footnotesize
 \centering
 \begin{tabular}{c|cccc} 
@@ -58,11 +58,11 @@ for higher luminosity scenarios.
 HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                                                \\
     &        & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$) \\ %& (Hz) \\[0.7 ex] 
 \hline
- \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT175 OR ETM70! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
- \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT175 OR ETM70! & 200, 0.535, 70 & 250, 0.550, 90 \\ %& \\ % 8.5  $\pm$ 3.0 \\
- \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT175 OR ETM70! & 250, 0.525, 70 & 300, 0.530, 90 \\ %& \\ % 9.5  $\pm$ 3.0 \\
- \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT175 OR ETM70! & 300, 0.520, 70 & 350, 0.520, 90 \\ %& \\ % 10.0 $\pm$ 3.0 \\
- \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT175 OR ETM70! & 370, 0.510, 70 & 400, 0.510, 90 \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+ \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT125 OR ETM50! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
+ \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT125 OR ETM50! & 200, 0.535, 70 & 250, 0.550, 90 \\ %& \\ % 8.5  $\pm$ 3.0 \\
+ \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT125 OR ETM50! & 250, 0.525, 70 & 300, 0.530, 90 \\ %& \\ % 9.5  $\pm$ 3.0 \\
+ \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT125 OR ETM50! & 300, 0.520, 70 & 350, 0.520, 90 \\ %& \\ % 10.0 $\pm$ 3.0 \\
+ \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT125 OR ETM50! & 370, 0.510, 70 & 400, 0.510, 90 \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
  \verb!HLT_PFHT800!                         & \verb!HTT175!          & 650, -, -      & 800, -, -      \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
 \hline
 \hline
@@ -70,14 +70,11 @@ HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                     
 \label{tab:2015_Hadronic_Signal_Triggers}
 \end{table}
 
-The efficiency of the signal triggers is determined from both
-simulation and data samples. In the case of data-driven measurements,
-these are performed with an unbiased muon sample, selected by the
-unprescaled \verb!HLT_IsoMu24_eta2p1! reference trigger. A single
-isolated muon selection is imposed, requiring a single muon exceeding
-$\pt > 25 \GeV$ within the acceptance $|\eta| < 2.1$. The efficiency
-of the signal triggers is measured on the subsequent selection with
-the muon excluded from the computation of event variables.
+The efficiency of the signal triggers is determined using both
+simulation and data samples. Data-driven measurements are performed with an electron sample, selected by the
+unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger. To remain consistent with the reconstruction 
+of electrons in the trigger, no cross-cleaning of electrons from jets are performed offline, with
+the electron being included in the computation of event variables.
 
 Based on simulation studies, the signal triggers demonstrate high
 efficiencies for a range of benchmark signal models and SM processes
@@ -149,7 +146,14 @@ Cumulative trigger efficiency for the T2tt(425,325) simplified model after signa
 
 % Control region triggers
 \subsection{Control samples\label{sec:control_samples}}
-Prescaled $\scalht$ triggers, \verb!HLT_HTXXX!, are utilised in the selection of events for the hadronic control region. Shown in shown in Table~\ref{tab:2015_Hadronic_Control_Triggers} these triggers share the same Level-1 seeds and $\scalht$ threshold of the signal cross-triggers and are similarly each mapped to a unique offline bin. The efficiency of these triggers are similarly measured from a muon reference trigger in addition to an independent measurement with the \verb!HLT_Physics! minimum bias trigger.
+Prescaled $\scalht$ triggers, \verb!HLT_HTXXX!, and a prescaled 
+$\scalht$-$\alphat$ cross-trigger, \verb!HLT_HTXXX_AlphaT0pZZ!, are utilised in the 
+selection of events for the hadronic control region. Shown 
+in Table~\ref{tab:2015_Hadronic_Control_Triggers} these triggers share the same Level-1 
+seeds and $\scalht$ threshold of the signal cross-triggers and are similarly each mapped 
+to a unique offline bin. The efficiency of these triggers are similarly measured from an electron 
+reference trigger in addition to an independent measurement with the \verb!HLT_Physics! 
+minimum bias trigger.
 
 
 % TABLE: Hadronic control region
@@ -161,14 +165,14 @@ Prescaled $\scalht$ triggers, \verb!HLT_HTXXX!, are utilised in the selection of
 \begin{tabular}{c|cc} 
 \hline
 \hline
-HLT path & \multicolumn{2}{c}{Prescale} \\
-         & $\lumi=1.4\times10^{34}\cm^{-2}{\rm s}^{-1}$  & $\lumi=7\times10^{33}\cm^{-2}{\rm s}^{-1}$     \\
+HLT path & \multicolumn{1}{c}{Prescale} \\
 \hline
-\texttt{HLT\_PFHT200} & 12600 & 6300 \\
-\texttt{HLT\_PFHT250} & 8400  & 4200 \\
-\texttt{HLT\_PFHT300} & 4200  & 2100 \\
-\texttt{HLT\_PFHT350} & 700   & 350  \\
-\texttt{HLT\_PFHT400} & 1400  & 700  \\
+\texttt{HLT\_PFHT200} & 3060 \\
+\texttt{HLT\_PFHT250} & 2040 \\
+\texttt{HLT\_PFHT300} & 1020 \\
+\texttt{HLT\_PFHT350} & 180  \\
+\texttt{HLT\_PFHT400} & 120  \\
+\texttt{HLT\_PFHT200\_PFAlphaT0p51} & 175 \\
 \hline
 \hline
 
