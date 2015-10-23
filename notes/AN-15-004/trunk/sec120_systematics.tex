@@ -7,12 +7,18 @@ associated with the predictions of the non-multijet backgrounds. Since
 this analysis aims to rely as much as possible on the data control
 samples to check for sources of bias and derive and/or cross check
 systematic uncertainties, a detailed study can only be meaningfully
-carried out with data. The strategies that will be employed to
+carried out with data. The strategies that are employed to
 ascertain the presence of biases or otherwise, and the procedures used
-to derive systematic uncertainties, are described below. The MC-based
+to derive systematic uncertainties, are described below. Presented
+first are the MC-based
 expectations for uncertainties in the background predictions under the
-assumption of zero bias (\ie, only the statistical component) are
-presented. The assumptions made in the projections of physics reach
+assumption of zero bias (\ie, only the statistical component) for the
+$3\ifb$ and $10\ifb$ data scenarios. These studies utilise the
+\ej and \eej control samples that are not yet used in the initial
+data studies. After this, a set of closure tests made with $552\ipb$ of certified
+data are presented. They are subsequently used to estimate the first
+set of systematic errors to be used in the analysis. The assumptions made in 
+the projections of physics reach
 that are detailed in Section \ref{sec:susy} are also outlined.
 
 Two types of systematic uncertainty are considered separately. First,
@@ -98,7 +104,14 @@ systematic uncertainties on the transfer factors are derived for each
 estimating the systematic uncertainties on the transfer factors is
 described in Section~\ref{sec:syst-from-closure}.
 
-Thirteen sets of closure tests use the five data control samples to
+\subsection{Expected level of closure from simulation of the $3\ifb$
+and $10\ifb$ scenarios}
+\label{sec:closure-mc-study}
+
+For the calculation of expected systematics in the projected data scenarios, 
+thirteen sets of closure tests are
+determined. They use the five data control samples (including the \ej
+and \eej samples) to
 probe key ingredients of the simulation modelling of the SM
 backgrounds with genuine \met as a function of \scalht. These are
 shown in Fig.~\ref{fig:closure} for both 3 \ifb and 10 \ifb and two
@@ -168,7 +181,7 @@ b-tag scale factors, as the one performed in the previous analysis,
 see for instance \cite{CMS_AN_2013-366}. This study will be repeated
 for this analysis.
 
-The sixth (hollow stars) and seventh (inverse triangles) set deal with
+The sixth (hollow stars) and seventh (inverse triangles) sets deal with
 the consistency of the prediction of \wej with $\gamma$ + jets in two
 different b-tag multiplicity bins. This is important for understanding
 the consistency of the \znunu + jets background predictions from both
@@ -221,6 +234,9 @@ checked, \ie, the list above is not exhaustive. However, they are a
 representative set that cover the main potential sources of bias in
 the transfer factors derived from simulation. 
 
+\subsection{Closure tests with $552\ipb$ of data}
+\label{sec:closure-data-study}
+
 Each set of closure tests should demonstrate {\bf in data}, within the
 statistical precision of each test, that there are no significant
 biases or dependencies on \njet nor \scalht inherent in the transfer
@@ -231,12 +247,104 @@ systematic uncertainties that can be derived (described below), which
 can be interpreted as a systematic uncertainty limited by statistical
 uncertainties associated with the data (and simulation).
 
+For the first look at data, the $\ej$ and $\eej$ control samples are
+not used. Given this fact, and the fact that fewer events are
+available in the $552\ipb$ than in the $3\ifb$ MC study a smaller
+subset of closure tests is chosen. Any closure tests utilising the
+electron samples are removed and tests that were carried out
+multiple times with different numbers of b-tags are collapsed into one
+(such as the $\mj\rightarrow\mmj$ test). The set of tests used for
+this data study can be seen in the legend of
+Figs.~\ref{fig:closureDataSym} and ~\ref{closureDataAsym}. 
+
+Most of these closure tests have been motivated in
+Sec.~\ref{sec:closure-mc-study}, with a few exceptions. Instead of the
+$\eej\rightarrow\gj$ test we now have an analagous
+$\mmj\rightarrow\gj$ test, a check on the validity of using the \gj
+process to predict the \znunu + jets process. Instead of the 
+$\ej\rightarrow\gj$ test we now have an analagous
+$\mj\rightarrow\gj$ test, a check on 
+the consistency of the prediction of \wej with $\gamma$ + jets.
+
+Additionally, to test the prediction of \znunu + jets processes with
+the W-enriched \mj control sample, we have introduced the
+$\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
+Sec.~\ref{sec:backgroundmet}. The production mechanism of W from pp collisions means
+high $p_T$ W bosons are predominantly left handed \cite{WPol}.  
+For high $p_T$ bosons, this implies that $W^+$ will decay 
+to the left handed neutrino along its direction of motion while 
+the lepton will be backward. The opposite behaviour is
+expected for the $W^-$. The lepton will therefore be more boosted (and
+the neutrino less boosted) in $W^+$ decays than $W^-$ decays.  This
+leads to a larger number of $W^+$ decays in the single lepton control
+regions (which relies on the lepton $p_T$ for acceptance) than in the
+signal region (which relies on the neutrino $p_T$ for acceptance). The
+new closure test checks if this leads to a bias in the prediction of the 
+\znunu + jets background. This is discussed in
+Sec~\ref{app:zInvBgControl} and study of this test performed on the
+$8\tev$ data is presented.
+
+The closure tests are performed for each of the different jet
+categories. In Fig.~\ref{fig:closureDataSym} are the results of the
+closure tests performed on events in the ``symmetric'' jet category
+and in Fig.~\ref{fig:closureDataAsym} the results of the closure tests
+performed on events in the ``asymmetric'' jet
+category. For events in the ``mono-jet'' category, the closure tests
+that rely on more than one jet (such as the $1 b-tag\rightarrow\geq 2
+b-tag$ test) are removed. The results of these tests are in
+Fig~\ref{fig:closureDataMono}.
+
 Prior to deriving uncertainties, each individual set of closure tests
-(as a function of \scalht) is inspected for closure. Zero and first order
+(as a function of \scalht) have been inspected for closure. Zero and first order
 polynomial fits are performed along the \scalht dimension for each set
-of closure tests per jet category. The fits will be inspected for any
+of closure tests per jet category. The fits are inspected for any
 indication of bias averaged over \scalht as well as any
 \scalht-dependant bias.
+
+In the case of the closure tests presented in this section, there are
+no tests which demonstrate a significant departure from closure. 
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$\njet = 2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq2j.pdf}} ~~
+    \subfigure[$\njet = 3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq3j.pdf}} \\
+    \subfigure[$\njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq4j.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/ge5j.pdf}} \\
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands) carried out with $552\ipb$ of
+      $13\tev$ data. All events fit into the ``symmetric'' jet
+      category}
+    \label{fig:closureDataSym}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$\njet = 2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq2a.pdf}} ~~
+    \subfigure[$\njet = 3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq3a.pdf}} \\
+    \subfigure[$\njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq4a.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/ge5a.pdf}} \\
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands) carried out with $552\ipb$ of
+      $13\tev$ data. All events fit into the ``asymmetric'' jet
+      category}
+    \label{fig:closureDataAsym}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$\njet = 1$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq1j.pdf}} 
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands) carried out with $552\ipb$ of
+      $13\tev$ data. All events fit into the ``mono-jet'' jet
+      category}
+    \label{fig:closureDataMono}
+  \end{center} 
+\end{figure}
 
 \subsection{Systematic uncertainties in the transfer factors\label{sec:syst-from-closure}}
 
