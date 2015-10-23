@@ -355,6 +355,37 @@ Figure~\ref{fig:2dRatioMap} is the 2D ratio map made with unblinded signal regio
 %jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
 %$|\eta| = 1.5$.
 
+{\bf Beam halo.}
+
+The CSC beam halo filter has been found to be less efficient during the early
+Run 2 data-taking period compared to the previous run.
+
+Beam halo events manifest themselves as single energy deposits in the
+calorimeters, which introduces large amounts of ``fake'' \met. This effect is
+especially prominent in the signal region monojet category, particularly at
+$\phi$ coordinates of 0 and $\pi$ because of the tendency of halo particles to
+lie within the plane of the LHC ring. This is evident in
+Fig.~\ref{fig:leadJetCleaning}.
+
+Such spurious events are suppressed by requiring at least 10\% of the leading
+jet's energy to originate from charged hadrons. The effectiveness of this selection
+is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
+
+\begin{figure}[h!]
+    \begin{center}
+        {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetChf_all_before.pdf}}
+        {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetPhi_all_before.pdf}}
+        {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetPhi_all_after.pdf}}
+        \caption{Distributions in the signal region of the lead jet charged hadron
+        energy fraction (CHF) (Left), lead jet $\phi$ direction (Centre), and lead jet $\phi$
+        direction after applying a requirement of {CHF~$>0.1$}. The large excess in data
+        at charged hadron fractions close to zero and ${\phi = 0, \pi}$ is consistent with beam
+        halo effects, and is effectively suppressed by the aforementioned selection.}
+        \label{fig:leadJetCleaning}
+    \end{center}
+\end{figure}
+
+
 {\bf Summary of signal region selection.} 
 
 The requirements that define the hadronic signal region are summarised
