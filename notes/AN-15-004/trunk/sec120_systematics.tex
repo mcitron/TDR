@@ -7,12 +7,18 @@ associated with the predictions of the non-multijet backgrounds. Since
 this analysis aims to rely as much as possible on the data control
 samples to check for sources of bias and derive and/or cross check
 systematic uncertainties, a detailed study can only be meaningfully
-carried out with data. The strategies that will be employed to
+carried out with data. The strategies that are employed to
 ascertain the presence of biases or otherwise, and the procedures used
-to derive systematic uncertainties, are described below. The MC-based
+to derive systematic uncertainties, are described below. Presented
+first are the MC-based
 expectations for uncertainties in the background predictions under the
-assumption of zero bias (\ie, only the statistical component) are
-presented. The assumptions made in the projections of physics reach
+assumption of zero bias (\ie, only the statistical component) for the
+$3\ifb$ and $10\ifb$ data scenarios. These studies utilise the
+\ej and \eej control samples that are not yet used in the initial
+data studies. After this, a set of closure tests made with $552\ipb$ of certified
+data are presented. They are subsequently used to estimate the first
+set of systematic errors to be used in the analysis. The assumptions made in 
+the projections of physics reach
 that are detailed in Section \ref{sec:susy} are also outlined.
 
 Two types of systematic uncertainty are considered separately. First,
@@ -98,7 +104,14 @@ systematic uncertainties on the transfer factors are derived for each
 estimating the systematic uncertainties on the transfer factors is
 described in Section~\ref{sec:syst-from-closure}.
 
-Thirteen sets of closure tests use the five data control samples to
+\subsection{Expected level of closure from simulation of the $3\ifb$
+and $10\ifb$ scenarios}
+\label{sec:closure-mc-study}
+
+For the calculation of expected systematics in the projected data scenarios, 
+thirteen sets of closure tests are
+determined. They use the five data control samples (including the \ej
+and \eej samples) to
 probe key ingredients of the simulation modelling of the SM
 backgrounds with genuine \met as a function of \scalht. These are
 shown in Fig.~\ref{fig:closure} for both 3 \ifb and 10 \ifb and two
@@ -168,7 +181,7 @@ b-tag scale factors, as the one performed in the previous analysis,
 see for instance \cite{CMS_AN_2013-366}. This study will be repeated
 for this analysis.
 
-The sixth (hollow stars) and seventh (inverse triangles) set deal with
+The sixth (hollow stars) and seventh (inverse triangles) sets deal with
 the consistency of the prediction of \wej with $\gamma$ + jets in two
 different b-tag multiplicity bins. This is important for understanding
 the consistency of the \znunu + jets background predictions from both
@@ -221,6 +234,9 @@ checked, \ie, the list above is not exhaustive. However, they are a
 representative set that cover the main potential sources of bias in
 the transfer factors derived from simulation. 
 
+\subsection{Closure tests with $552\ipb$ of data}
+\label{sec:closure-data-study}
+
 Each set of closure tests should demonstrate {\bf in data}, within the
 statistical precision of each test, that there are no significant
 biases or dependencies on \njet nor \scalht inherent in the transfer
@@ -231,12 +247,111 @@ systematic uncertainties that can be derived (described below), which
 can be interpreted as a systematic uncertainty limited by statistical
 uncertainties associated with the data (and simulation).
 
+For the first look at data, the $\ej$ and $\eej$ control samples are
+not used. Given this fact, and the fact that fewer events are
+available in the $552\ipb$ than in the $3\ifb$ MC study a smaller
+subset of closure tests is chosen. Any closure tests utilising the
+electron samples are removed and tests that were carried out
+multiple times with different numbers of b-tags are collapsed into one
+(such as the $\mj\rightarrow\mmj$ test). The set of tests used for
+this data study can be seen in the legend of
+Figs.~\ref{fig:closureDataSym} and ~\ref{closureDataAsym}. 
+
+Most of these closure tests have been motivated in
+Sec.~\ref{sec:closure-mc-study}, with a few exceptions. Instead of the
+$\eej\rightarrow\gj$ test we now have an analagous
+$\mmj\rightarrow\gj$ test, a check on the validity of using the \gj
+process to predict the \znunu + jets process. Instead of the 
+$\ej\rightarrow\gj$ test we now have an analagous
+$\mj\rightarrow\gj$ test, a check on 
+the consistency of the prediction of \wej with $\gamma$ + jets.
+
+Additionally, to test the prediction of \znunu + jets processes with
+the W-enriched \mj control sample, we have introduced the
+$\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
+Sec.~\ref{sec:backgroundmet}. The production mechanism of W from pp collisions means
+high $p_T$ W bosons are predominantly left handed \cite{WPol}.  
+For high $p_T$ bosons, this implies that $W^+$ will decay 
+to the left handed neutrino along its direction of motion while 
+the lepton will be backward. The opposite behaviour is
+expected for the $W^-$. The lepton will therefore be more boosted (and
+the neutrino less boosted) in $W^+$ decays than $W^-$ decays.  This
+leads to a larger number of $W^+$ decays in the single lepton control
+regions (which relies on the lepton $p_T$ for acceptance) than in the
+signal region (which relies on the neutrino $p_T$ for acceptance). The
+new closure test checks if this leads to a bias in the prediction of the 
+\znunu + jets background. This is discussed in
+Sec~\ref{app:zInvBgControl} and study of this test performed on the
+$8\tev$ data is presented.
+
+The closure tests are performed for each of the different jet
+categories. In Fig.~\ref{fig:closureDataSym} are the results of the
+closure tests performed on events in the ``symmetric'' jet category
+and in Fig.~\ref{fig:closureDataAsym} the results of the closure tests
+performed on events in the ``asymmetric'' jet
+category. For events in the ``mono-jet'' category, the closure tests
+that rely on more than one jet (such as the $1 b-tag\rightarrow\geq 2
+b-tag$ test) are removed. The results of these tests are in
+Fig~\ref{fig:closureDataMono}.
+
 Prior to deriving uncertainties, each individual set of closure tests
-(as a function of \scalht) is inspected for closure. Zero and first order
+(as a function of \scalht) have been inspected for closure. Zero and first order
 polynomial fits are performed along the \scalht dimension for each set
-of closure tests per jet category. The fits will be inspected for any
+of closure tests per jet category. The fits are inspected for any
 indication of bias averaged over \scalht as well as any
 \scalht-dependant bias.
+
+In the case of the closure tests presented in this section, there are
+no tests which demonstrate a significant departure from closure. One
+effect that is visible, however, is the lack of b-tag scale factors.
+Simulated events will be reweighted when these scale factors become
+available, but for now we notice a slight defecit in the number of
+b-tags observed than predicted. This is manifest in the $0 b-tag
+\rightarrow 1 b-tag$ and $1 b-tag \rightarrow \geq 2 b-tag$ closure
+tests, that exhibit consistently negative values. We expect this to
+improve with the application of the scale factors. 
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$\njet = 2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq2j.pdf}} ~~
+    \subfigure[$\njet = 3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq3j.pdf}} \\
+    \subfigure[$\njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq4j.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/ge5j.pdf}} \\
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands) carried out with $552\ipb$ of
+      $13\tev$ data. All events fit into the ``symmetric'' jet
+      category}
+    \label{fig:closureDataSym}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$\njet = 2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq2a.pdf}} ~~
+    \subfigure[$\njet = 3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq3a.pdf}} \\
+    \subfigure[$\njet = 4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/eq4a.pdf}} ~~
+    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/ge5a.pdf}} \\
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands) carried out with $552\ipb$ of
+      $13\tev$ data. All events fit into the ``asymmetric'' jet
+      category}
+    \label{fig:closureDataAsym}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$\njet = 1$]{\includegraphics[width=0.7\textwidth]{figures/closureTests/552pb/eq1j.pdf}} 
+    \caption{Sets of closure tests (open symbols) overlaid on top of
+      the systematic uncertainty estimates used for each of the seven
+      \scalht bins (shaded bands) carried out with $552\ipb$ of
+      $13\tev$ data. All events fit into the ``mono-jet'' jet
+      category}
+    \label{fig:closureDataMono}
+  \end{center} 
+\end{figure}
 
 \subsection{Systematic uncertainties in the transfer factors\label{sec:syst-from-closure}}
 
@@ -266,8 +381,9 @@ uncertainty is then taken as the weighted mean of the error on the
 closure tests. This is an estimator of the expected variance assuming
 no bias that should be found in data. 
 
-This procedure yields the values quoted in
-Figure~\ref{fig:systematics}, which shows the systematic uncertainty
+For the MC studies detailed in Sec.~\ref{sec:closure-mc-study}, this 
+procedure yields the values quoted in
+Fig.~\ref{fig:systematics}, which shows the systematic uncertainty
 on the transfer factor as a function of the \scalht and (\nb,\njet)
 category, extracted for two integrated luminosity scenarios: 3 \ifb
 and 10 \ifb. A clear dependence on integrated luminosity is a
@@ -292,13 +408,56 @@ additional indication of any genuine bias.
 the 3 \ifb and 10 \ifb scenarios}
 \end{figure}
 
-Finally, an additional dedicated study is used to determine the
-systematic uncertainties that arise from uncertainties in scale factor
-corrections related to b-tag modelling. These are generally found to
-be small, at the percent level, and are typically sub-dominant with
-respect to the systematic uncertainties derived from the closure
-tests. However, if not sub-dominant, these additional uncertainties
-are propagated through to the final total.
+For the data studies detailed in Sec.~\ref{sec:closure-data-study},
+this procedure yields the values quoted in
+Fig.~\ref{fig:systematicsObs}. In the kinematically restricted bins, such
+as those with a high jet multiplicity and low value of \scalht, the
+limited statistics leads to large systematic errors. As a minimum number of
+events is required for each bin considered in the final stages of the
+analysis, these large systematic errors are unlikely to be a problem.
+In the bins populated with a reasonable number of events, the
+systematic errors determined from the closure tests vary from $10$ to
+$40\%$.
+
+The expected systematics, made with the
+closure tests detailed in Sec.~\ref{sec:closure-data-study} are also
+determined for $552\ipb$. These are shown in
+Fig.~\ref{fig:systematicsExp}, along with the ratio of observed over
+expected systematics. We expect this ratio to remain close to one with
+fluctuations above and below the value. Recall, the
+systematic is calculated as the square root of the sum of the weighted
+mean squared and weighted variance. When calculating the expected
+systematics from MC, the weighted mean is always zero. This is not the
+case for the data, we therefore expect the observed systematic to
+tend to higher values than the expected systematic. We observe numbers
+compatible with this hypothesis, observed divided by expected values
+scattered around one, with the majority slightly above one. The fact
+that the observed and expected errors are compatible further supports
+the conclusion that there is no extreme source of bias in the closure
+tests carried out with data. In the case of bias, we would expect a
+much inflated observed systematic.
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/closureTests/552pb/obs2D.pdf}
+  \caption{\label{fig:systematicsObs} Observed systematics derived from
+  the closure tests detailed in Sec.~\ref{sec:closure-data-study}, made with $552\ipb$ of $13\tev$ data.}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[Expected systematic uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/exp2D.pdf}
+  } ~~
+  \subfigure[Observed divided by expected systematic uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/closureTests/552pb/obsDivExp.pdf}
+  }
+  \caption{\label{fig:systematicsExp} Expected systematics and observed
+  (see in Fig~\ref{fig:systematicsObs})
+  divided by expected systematics. Derived from the closure tests 
+  detailed in Sec~\ref{sec:closure-data-study}. Expected systematics made with MC
+  scaled to $552\ipb$}
+\end{figure}
 
 %% b jet multiplicity categories and also the seven \scalht regions,
 %% which is a conservative approach given that one can expect some
@@ -416,6 +575,11 @@ and low \scalht bins are the most affected. As the \znunu
 background is sub-dominant in these cases the overall effect of these
 systematic errors is expected to be minor.
 
+As we observe a small effect when splitting the systematics based on
+the background processes, we have elected to not split up the closure
+tests for studies in early data. This keeps it in line with the
+procedure carried out in the $8\tev$ analysis \cite{CMS_AN_2013-366}.
+
 % As there are no overall dramatic changes to the values of the
 % systematics it is not expected that splitting the systematics up in
 % this way will make a big difference to the overall sensitivity of the
@@ -446,3 +610,93 @@ systematic errors is expected to be minor.
   the closure tests selected for the \znunu backgrounds, shown for
   the 3 \ifb and 10 \ifb scenarios}
 \end{figure}
+
+
+\subsection{MC based studies of additional potential sources of
+systematic uncertainty}
+\label{sec:closure-tests-desc}
+
+%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CHRISTIAN %%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Paragraph about JEC:
+The energies of jets used in the analysis are corrected as a function of
+their \pt and \eta via the procedure recommended by
+the JetMET POG. These corrections have an associated uncertainty,
+which can propagate through the analysis. This adds another potential source 
+of systematic uncertainty. As the analysis is designed such that bins
+with the same value of \scalht and jet multiplicity in the control
+regions are used to predict the background in the signal region, we
+expect to be protected against many of the effects caused by these jet
+energy scale uncertainties. However, the jet energy scale can still
+have an effect, due to jets moving in and
+out acceptance (above and below $40\gev$).
+
+As a preliminary study, the effect of varying the jet
+energy scale in the \mj and \mmj control regions is investigated. Full
+selection, as described in Sec.~\ref{sec:selection}, is required.
+Pseudo transfer factors are calculated in each analysis bin, defined
+as the number of events in a signal region after passing the signal
+region \alphat cut in a particular bin divided by the total number of
+events in that bin. This is carried out using the jet energy
+corrections with their nominal, most likely, value and with their
+minus one sigma, lower bound, value. The percentage change in these two
+transfer factors is then calculated. For the \mj control region, these
+values are shown in Fig.~\ref{fig:jes-syst-singleMu}. For the \mmj
+control region, these values are shown in
+Fig.~\ref{fig:jes-syst-doubleMu}. 
+
+If any control region bin has fewer 
+than $10$ predicted events at $552\ipb$ it is left out of the study.
+Overall, the effect of varying the jet energy scale down appears to be
+small. With variations in the pseudo transfer factors being typically
+less than $10\%$. Any larger effects are likely due to statistical
+fluctuations in bins with a small number of events.
+
+This preliminary study suggests that the jet energy scale
+uncertainties should be covered by the systematics derived from the
+closure tests in Sec.~\ref{sec:closure-data-study}. We will carry out
+a more thorough study of this source of systematic uncertainty in the
+future.
+
+\begin{figure}[]
+  \centering
+  \subfigure[The percentage change in transfer factors per \scalht bin
+  and jet category]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/SingleMu_MC_TF_Comp.pdf}
+  } ~~
+  \subfigure[The percentage change in transfer factors for every
+  analysis bin]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/SingleMu_MC_Systematics1D.pdf}
+  }
+  \caption{\label{fig:jes-syst-singleMu} The change in pseudo transfer
+  factors when calculating them with nominal jet energy corrections
+  and the minus one sigma level jet energy corrections in the \mj
+  control sample.}
+\end{figure}
+
+\begin{figure}[]
+  \centering
+  \subfigure[The percentage change in transfer factors per \scalht bin
+  and jet category]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/DoubleMu_MC_TF_Comp.pdf}
+  } ~~
+  \subfigure[The percentage change in transfer factors for every
+  analysis bin]{
+    \includegraphics[width=0.5\textwidth]{figures/jesSystematics/DoubleMu_MC_Systematics1D.pdf}
+  }
+  \caption{\label{fig:jes-syst-doubleMu} The change in pseudo transfer
+  factors when calculating them with nominal jet energy corrections
+  and the minus one sigma level jet energy corrections in the \mmj
+  control sample.}
+\end{figure}
+
+% To be included at the end:
+Finally, an additional dedicated study is used to determine the
+systematic uncertainties that arise from uncertainties in scale factor
+corrections related to b-tag modelling. These are generally found to
+be small, at the percent level, and are typically sub-dominant with
+respect to the systematic uncertainties derived from the closure
+tests. However, if not sub-dominant, these additional uncertainties
+are propagated through to the final total.
