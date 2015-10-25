@@ -10,19 +10,18 @@ the data sets relevant for the analysis. The integrated luminosities
 shown in the table are the sizes of the certified data for each data set
 at the time of writing. Since the data collection for the year 2015 and
 the certification of the data are ongoing, the sizes of the data sets
-that will be used in the final version of the note will be different
-from the sizes that the table indicates.
+that will be used in the final analysis will be larger than the sizes indicated in the table.
 
 This version of the note uses subsets of the data listed in the table.
-As the analysis is actively ongoing, different sections of this note
+As the analysis is ongoing, different sections of this note
 might use different sizes of the data. The data sizes used in particular
 studies in the note might be indicated in relevant sections, tables or
 figures.
 
-We are performing the blind analysis. In this version of the note, the
-data in the signral region is blinded. In the signral region, only the
-149.48 \ipb of the certified data agreed upton to unblind in the SUS PAG are
-analysed. No data in the control regions is blinded.
+We are performing a blind analysis. In this version of the note, the
+data in the signal region is largely blinded with the exception of
+149.48 \ipb of the certified data agreed to unblind in the SUS PAG. These are used to commission
+the analysis. No data in the control regions is blinded.
 
 \subsection{Simulation}
 
@@ -56,29 +55,28 @@ with 25ns bunch spacing is overlapped.
 The distribution of the numbers of the pileup interactions in the
 simulated events is different from that in the data; the simulated
 events contain, on average, a larger number of pileup interactions than
-the data. We reweight simulated events to correct for this difference.
+the data. We reweight simulated events to reproduce  for this difference.
 This procedure is called \textit{pileup reweighting}.
 
 In analyses in CMS, the pileup reweighting is, in general, done in the
 method recommended by the physics validation group
 \cite{twiki-PdmVPileUpDescription}. However, since, at the time of
-writing, the recommended method for the 2015 data is not available, we
-use reweighting factors that we privately derive. We will use the
-recommended method in later versions of the note.
+writing, no official recommendation is available we currently use a private reweighting.
+Once available we will update to use the recommended method.
 
 The reweighting factors used in this version of the note is a function
 of the number of the reconstructed vertices derived by comparing the
-data and simulated events. The events which pass the trigger path
-\verb!HLT_ZeroBias! is used in the derivation. The condition of this
+data and simulated events. Events passing the trigger path
+\verb!HLT_ZeroBias! are used for this derivation. The condition of this
 trigger path is a bunch crossing. Therefore, the events virtually
 contain only pilup interactions. For the simulated event sample, we use
-the so-called the neutrino guns, listed in
+the so-called neutrino guns, listed in
 Table~\ref{tab:datasets_neutrinoguns}. This sample also virtually
 contain only pilup interactions. In contrast, the events in the signal
 and control regions each has, in addition to the pilup interactions, the
 main interaction that produces high-\PT jets, muons, electrons, photons,
 or missing transverse momentum as described in
-Section~\ref{sec:selection}.
+Sec.~\ref{sec:selection}.
 
 
 \begin{table}[!h]
@@ -100,7 +98,7 @@ The reweighting factors are derived as follows. First, we create the
 distributions of the numbers of the reconstructed vertices for the data
 and simulated sample. In creating these distributions, we add one to the
 number of the reconstructed vertices. This is because these events do
-not have the vetex for the main interaction while the events in the
+not have the vertex for the main interaction while the events in the
 signal and control regions do. Second, we smooth each distribution with
 the smoothing spline. Third, we take the ratio of the two distributions,
 i.e., the data over the simulated sample. The ratio is a function of the
@@ -118,21 +116,21 @@ the reconstructed vertices nearly identical to that in the data.
 
 \subsection{Cross sections for SM samples}
 Several MC samples of individual SM processes are binned according to a generator level quantity, such as the partonic \HT or bosonic \PT.
-This analysis choses to use samples binned in partonic \HT, for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets) and $\hat{P_{T}}$
+This analysis chooses to use samples binned in partonic \HT, for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets) and $\hat{P_{T}}$
 for only the QCD sample.
-These binned samples are provided with LO cross sections. The \kfactors required to go from LO to NNLO cross setions are typically deterimned using corresponding
+These binned samples are provided with LO cross sections. The \kfactors required to go from LO to NNLO cross section are typically determined using corresponding
 inclusive samples applied to each \HT binned sample.
 Further studies can provide additional corrections to the cross sections, which can prove important to the closure test procedures described in
 Section \ref{sec:closure-tests-desc}. As can be seen in Section \ref{sec:sideband_corrections}, residual cross section
-corrections are measured using sidebands in data enriched specific processes.
+corrections are measured using data in sidebands designed to enriched specific processes.
 
-Following an inclusive selection, the distribution of the MC samples with respect to the binning variable $H_{T}^{parton}$ are shown in Figure~\ref{fig:Lhe_Ht}, with
+Following an inclusive selection, the distribution of the MC samples with respect to the binning variable $H_{T}^{parton}$ are shown in Fig.~\ref{fig:Lhe_Ht}, with
 also the $\hat{P_{T}}$ distribution for QCD.
 
-As stated above, the distributions shown in Figure~\ref{fig:Lhe_Ht} follow an inclusive selection, whereby there is no requirement on each event. This direct translation
-from MC allows to fully stitch the binned generator level variable, and upon inspection appears to show a undeviating shape with respect to the cross section in question.
+As stated above, the distributions shown in Fig.~\ref{fig:Lhe_Ht} follow an inclusive selection, whereby there is no requirement on each event. This direct translation
+from MC allows to merge the binned generator level variable, and exhibits a smooth shape with respect to the cross sections in question.
 
-A more in depth, data-driven investigation into the cross sections is shown in Section \ref{sec:sideband_corrections}. Of which, an important point to note is that
+A more in depth, data-driven investigation of the cross sections is shown in Sec.~\ref{sec:sideband_corrections}. Of which, an important point to note is that
 the corrections to the cross sections, derived with the data sidebands are only relevant for data/MC comparison plots and the suite of closure tests defined in Section \ref{sec:closure-tests-desc}.
 
 \begin{figure}[!h]
