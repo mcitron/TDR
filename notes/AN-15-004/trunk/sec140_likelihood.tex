@@ -2,10 +2,10 @@
 \section{Likelihood model}
 \label{sec:likelihood}
 
-Consider a given category of event as defined by \njet, \nb and \scalht, which will be in the following identified with \htcat. 
+Consider a given category of event as defined by \njet, \nb~and \scalht, which will be in the following identified with \htcat. 
 In each category, the signal is extracted using the discriminating variable \mht. 
 Histogram templates of the \mht distribution are built for the signal and the background processes 
-using the MC samples described in Section~\ref{sec:datasets}. 
+using the MC samples described in Sec.~\ref{sec:datasets}. 
 The binning of the templates is chosen taking into account both the limited statistics in the simulation and 
 the control of the background in data. \\
 A minimum of 10 unweighted events is required in each bin of the MC histogram template, 
@@ -14,7 +14,7 @@ Furthermore, we require at least 10 events in the highest bin in the relevant co
 This requirement allows to perform a statistically meaningful closure test in data up to the highest values of \mht.\\
 Finally, a minimum bin width constraint of 50 GeV is applied, 
 in order to reduce the bin-by-bin migration due to the finite \mht resolution.\\
-The binning of the \mht templates for all the \htcat is given in Appendix \ref{sec:mht_templates}.
+The binning of the \mht templates for all the \htcat is given in App.~\ref{sec:mht_templates}.
 
 
 For each category \htcat and \mht bin, $i$, in the signal region, let $n^{\htcat}_{\mathrm{had},i}$ be the number of observed events, $b^{\htcat}_{\mathrm{had},i}$ the number of predicted background events and $s^{\htcat}_{\mathrm{had},i}$ the expected number of signal events. \\
@@ -25,8 +25,8 @@ The likelihood function for the hadronic signal region is, in each \htcat:
 \label{eq:hadronicLikelihood}
 \end{equation}
 
-The control regions are not diced in the \mht dimension, and their information is only used to constrain the normalisation of the background processes 
-in the signal region, as described in Section~\ref{sec:backgroundmet}. 
+The control regions are not split in the \mht dimension, and their information is only used to constrain the normalisation of the background processes 
+in the signal region, as described in Sec.~\ref{sec:backgroundmet}. 
 Their likelihood is therefore written as:
 
 \begin{equation}
@@ -34,15 +34,15 @@ Their likelihood is therefore written as:
 \label{eq:controlLikelihood}
 \end{equation}
 
-In Equation \ref{eq:controlLikelihood}, $n^{\htcat}_{\mathrm{CR,j}}$ is the number of observed events, $b^{\htcat}_{\mathrm{CR,j}}$ the number of predicted 
+In Eq.~\ref{eq:controlLikelihood}, $n^{\htcat}_{\mathrm{CR,j}}$ is the number of observed events, $b^{\htcat}_{\mathrm{CR,j}}$ the number of predicted 
 background events and $s^{\htcat}_{\mathrm{CR,j}}$ the expected number of signal events in the control region $j$. \\
-Equation \ref{eq:controlLikelihood} applies to all the control region used for the background estimation, 
+Eq.~\ref{eq:controlLikelihood} applies to all the control region used for the background estimation, 
 as defined in \ref{sec:selection}. \\
-Notice that the signal contribution $s^{\htcat}_{\mathrm{CR,j}}$ in Equation~\ref{eq:controlLikelihood}, as estimated from MC, is in general negligible. 
+Notice that the signal contribution $s^{\htcat}_{\mathrm{CR,j}}$ in Eq.~\ref{eq:controlLikelihood}, as estimated from MC, is in general negligible. 
 Where the signal contamination is sizeable, it is included in the likelihood as an additional process contributing to the event yield in that particular bin.
 
 The prediction of the background yields in the signal region and in the corresponding control samples are connected 
-by means of transfer factors, as explained in Section~\ref{sec:backgroundmet}. 
+by means of transfer factors, as explained in Sec.~\ref{sec:backgroundmet}. 
 This connection is implemented by introducing a log-uniform nuisance parameter, which is correlated 
 between the signal region and the control region, separately for each background process ($Z_{\mathrm{inv.}}$, \ttbar/W) \footnote{In the following we will use $Z_{\mathrm{inv}}$ to indicate the $Z\to \mathrm{inv}$ process and \ttbar/W to indicate the sum of the yields of the $t\bar{t}$ and $W+\mathrm{jets}$ processes.}. \\
 This binds the background yields in the signal and control region to float together, 
@@ -51,8 +51,8 @@ taking into account the statistical uncertainty associated with the counts in th
 The systematic uncertainties affecting the transfer factors, described in \ref{sec:bkgdnorm-syst}, 
 are incorporated in the likelihood by means of log-normal nuisance parameters, 
 which are taken as uncorrelated between each of the \htcat bins.
-The uncertainty on the signal efficiency times acceptance, described in Section~\ref{subsec:susy_results}, is taken as correlated across all the \htcat bins. 
-The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. The procedure to assess the alternative templates is described in detail in Section~\ref{sec:syst-on-shape}. \\
+The uncertainty on the signal efficiency times acceptance, described in Sec.~\ref{subsec:susy_results}, is taken as correlated across all the \htcat bins. 
+The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. The procedure to assess the alternative templates is described in detail in Sec.~\ref{sec:syst-on-shape}. \\
 The uncertainty due to the limited statistics in the MC samples used to populate the template histograms is incorporated 
 as additional nuisance parameters, one per template bin, taken as uncorrelated across the histogram bins. 
 %% Only the uncertainty on the highest \mht bin is included, since the effect of all the others has been found to be negligible.
@@ -66,12 +66,12 @@ The total likelihood is the product over all the \htcat bins and all the control
 
 The fit is carried on in two steps. 
 In the first, the background prediction for the signal region $b^{\htcat}_{\mathrm{had},i}$ are extracted from a likelihood fit 
-using the control regions only in Equation \ref{eq:controlLikelihood}. 
-In the second step, the fit is done using the full likelihood (Equation \ref{eq:total_likelihood}) and all 
+using the control regions only in Eq.~\ref{eq:controlLikelihood}. 
+In the second step, the fit is done using the full likelihood (Eq.~\ref{eq:total_likelihood}) and all 
 the correlations between the backgrounds in control regions and signal region are taken into account, 
 together with the statistical uncertainty associated to the finite number of events in the control region. \\
 The likelihood is profiled against all nuisance parameters in order to derive expected exclusion limits and sensitivity. 
-These are shown in Sections \ref{sec:susy}. 
+These are shown in Sec.~\ref{sec:susy}. 
 
 
 %Comment to let me make a commit called first draft
