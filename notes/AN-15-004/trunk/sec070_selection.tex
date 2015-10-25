@@ -66,35 +66,37 @@ from the \ttbar process (\eg via gluon splitting) or at least one
 mistag of a jet from a light-flavoured parton. The number of b-tagged
 jets is currently taken directly from simulation.
 
-In the near future, the ``b-tag formula method'' (described below and
-detailed in Ref.~\cite{Chatrchyan:2013lya}) will again be employed to
-improve the statistical precision of predictions involving events
-containing high multiplicities of b-tagged jets, which will allow for
-the addition of further categories that contain at least four b-tagged
-jets. In order to maximise sensitivity to potential new physics
-signatures in final states with a high b-quark content, a method that
-improves the statistical power of the predictions from simulation,
-particularly for $n_\cPqb \ge 2$, is employed~\cite{Chatrchyan:2013lya}. The
-distribution of $n_\cPqb$ is estimated from generator-level
-information contained in the simulation, namely the number of
-reconstruction-level jets matched to underlying bottom quarks
-($n_\cPqb^\text{gen}$), charm quarks ($n_\cPqc^\text{gen}$), and
-light-flavoured partons ($n_\cPq^\text{gen}$) per event. All relevant
-combinations of $n_\cPqb^{\rm gen}$, $n_\cPqc^{\rm gen}$, and
-$n_{\cPq}^{\rm gen}$ are considered, and event counts are recorded
-according to the categorisation of events in terms of \njet and
-\scalht. The efficiency $\epsilon$ with which b-quark jets are
-identified and the mistag probabilities $f_\cPqc$ and $f_\cPq$ are
-also determined from simulation per event category, with each quantity
-averaged over jet \pt and $\eta$. Corrections are applied on a
-jet-by-jet basis to $\epsilon$, $f_\cPqc$, and $f_\cPq$ in order to
-match the corresponding measurements from
-data~\cite{Chatrchyan:2012jua}. This information is sufficient to
-predict $n_\cPqb$ and thus also determine the event yield from
-simulation for a given event category. The event yields for a given
-b-quark jet multiplicity can be predicted with a higher statistical
-precision than obtained directly from simulation, particularly for
-events with high counts of b-quark jets.
+%In the near future, the ``b-tag formula method'' (described below and
+%detailed in Ref.~\cite{Chatrchyan:2013lya}) will again be employed to
+%improve the statistical precision of predictions involving events
+%containing high multiplicities of b-tagged jets, which will allow for
+%the addition of further categories that contain at least four b-tagged
+%jets. 
+
+%In order to maximise sensitivity to potential new physics
+%signatures in final states with a high b-quark content, a method that
+%improves the statistical power of the predictions from simulation,
+%particularly for $n_\cPqb \ge 2$, is employed~\cite{Chatrchyan:2013lya}. The
+%distribution of $n_\cPqb$ is estimated from generator-level
+%information contained in the simulation, namely the number of
+%reconstruction-level jets matched to underlying bottom quarks
+%($n_\cPqb^\text{gen}$), charm quarks ($n_\cPqc^\text{gen}$), and
+%light-flavoured partons ($n_\cPq^\text{gen}$) per event. All relevant
+%combinations of $n_\cPqb^{\rm gen}$, $n_\cPqc^{\rm gen}$, and
+%$n_{\cPq}^{\rm gen}$ are considered, and event counts are recorded
+%according to the categorisation of events in terms of \njet and
+%\scalht. The efficiency $\epsilon$ with which b-quark jets are
+%identified and the mistag probabilities $f_\cPqc$ and $f_\cPq$ are
+%also determined from simulation per event category, with each quantity
+%averaged over jet \pt and $\eta$. Corrections are applied on a
+%jet-by-jet basis to $\epsilon$, $f_\cPqc$, and $f_\cPq$ in order to
+%match the corresponding measurements from
+%data~\cite{Chatrchyan:2012jua}. This information is sufficient to
+%predict $n_\cPqb$ and thus also determine the event yield from
+%simulation for a given event category. The event yields for a given
+%b-quark jet multiplicity can be predicted with a higher statistical
+%precision than obtained directly from simulation, particularly for
+%events with high counts of b-quark jets.
 
 {\bf \HT requirements and binning.} 
 
@@ -129,7 +131,7 @@ to probe for potential systematic effects with closure tests between
 simulation and data, as described in Sec.~\ref{sec:systematics}.
 
 \begin{table}[h!]
-  \topcaption{Summary of the pre-selection criteria for 3\fbinv and 10\fbinv.}
+  \topcaption{Summary of the pre-selection criteria.}
   \label{tab:pre-selections}
   \centering
   \footnotesize
@@ -152,7 +154,7 @@ simulation and data, as described in Sec.~\ref{sec:systematics}.
   \end{tabular}
 \end{table}
 
-{\bf Summary of pre-selection requirements for 3\fbinv and 10\fbinv.} 
+{\bf Summary of pre-selection requirements.} 
 
 Table~\ref{tab:pre-selections} summarises the pre-selection
 requirements and default categorisation and binning scheme. The
@@ -162,9 +164,7 @@ signal region and all control regions. No extrapolation is performed
 in the variables \njet, \nb, and \HT in this analysis. For each of the
 signal and control regions, thirty event categories are considered,
 each with up to seven bins in \HT, assuming an integrated luminosity
-of 3\fbinv. The same binning scheme is currently also used for the
-sensitivity projections with 10\fbinv. However, this scheme will
-evolve with integrated luminosity as discussed below.
+of 3\fbinv. 
 
 \begin{table}[h!]
   \caption{Threshold (GeV) of the final \HT bin as a function of event
@@ -195,8 +195,7 @@ integrated luminosity. Additional categories with higher jet
 multiplicities maybe added for data samples corresponding to higher
 integrated luminosities (\eg $\sim$10\fbinv). Additional categories
 with higher b-tag multiplicities will also be considered once the
-b-tag ``formula method'' (described above and detailed in
-Ref.~\cite{Chatrchyan:2013lya}) has been commissioned with data. This
+b-tag ``formula method''~Ref.~\cite{Chatrchyan:2013lya} has been commissioned with data. This
 will allow for categories defined by the requirement of at least four
 b-tagged jets. Additional bins at high \HT will also be considered for
 higher integrated luminosity scenarios. 
@@ -217,7 +216,7 @@ presence of a track from the well identified leptons, by requiring
 $\Delta R(\textrm{track},\textrm{lepton}) > 0.02$.
 
 Finally, to select a pure multijet topology and to allow for a
-disjoint control region, events are vetoed in which an isolated photon
+orthogonal control region, events are vetoed in which an isolated photon
 with $\pt > 25\GeV$ and $|\eta| < 2.5$ is identified.
 
 \subsection{The hadronic signal region}
@@ -328,10 +327,10 @@ severe energy losses. A data-driven method is developed to identify dead cells. 
 procedure is as follows. For each jet in the inclusive jet collection with
 $\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
 recomputed ${\mhtvec}$ is determined, same as the procedure to compute the \bdphi 
-variable. A $\eta$ $\phi$ map is made with each jet which gives $\Delta\phi_{jet} < 0.3$.
-Finally, a $\eta$ $\phi$ map is also made with all jets in the inclusive jet collection and
+variable. A $\eta-\phi$ map is constructed with each jet which gives $\Delta\phi_{jet} < 0.3$.
+Finally, a $\eta-\phi$ map is also made with all jets in the inclusive jet collection and
 a 2D ratio map is obtained with the numerator being the former and the denumerator being 
-the later. Jets pointing to dead cells are likely to give $\Delta\phi_{jet} < 0.3$, so the
+the latter. Jets pointing to dead cells are likely to give $\Delta\phi_{jet} < 0.3$, so the
 location of dead cells in $\eta$ and $\phi$ will have a higher value in the 2D ratio map. 
 Figure~\ref{fig:2dRatioMap} is the 2D ratio map made with unblinded signal region with luminosity of 
 149.49~$\text{pb}^{-1}$.
@@ -368,7 +367,7 @@ lie within the plane of the LHC ring. This is evident in
 Fig.~\ref{fig:leadJetCleaning}.
 
 Such spurious events are suppressed by requiring at least 10\% of the leading
-jet's energy to originate from charged hadrons. The effectiveness of this selection
+jet's energy to originate from charged hadrons, $CHF>0.1$. The effectiveness of this selection
 is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
 
 \begin{figure}[h!]
@@ -408,6 +407,8 @@ in Table~\ref{tab:sr-selections}.
     \bdphi                & $>0.3$                                                         \\
     \mht/\met             & $<1.25$                                                        \\
     ``Dead ECAL filter''  & (see text)                                                     \\
+    ``Beam Halo Filter''  &  $CHF(\textrm{leading jet})>0.1$                                \\
+
     \hline
     \hline
   \end{tabular}
@@ -437,11 +438,11 @@ bin. Uncertainties in this extrapolation were determined through
 closure tests with respect to data, including one dedicated to the
 \alphat extrapolation, plus additional cross checks.
 
-In Run~2, we will additionally bin event counts in the signal region
+In Run~2, we additionally bin event counts in the signal region
 according to the variable \mht in order to provide further
 discriminating power between any potential signal and the SM
 background counts. Hence, while no extrapolation is performed in
-\njet, \nb, nor \HT, the analysis will rely on information obtained
+\njet, \nb, nor \HT, the analysis relies on information obtained
 from simulation to extrapolate from counts (integrated over \mht) in
 the control samples to a predicted distribution in \mht for each
 corresponding (\njet,\nb,\HT) bin in the signal region.
@@ -468,7 +469,7 @@ signal region), the former requirement ensures that there are
 sufficient events in each (\njet,\nb,\HT) bin of the control samples
 to probe for potential systematic effects {\it across all bins in
   \mht} using closure tests between simulation and data, as described
-in Sec.~\ref{sec:systematics}. Hence, a data-driven cross check for
+in Sec.~\ref{sec:systematics}. Hence, a data-driven validation for
 potential biases and on the systematic uncertainty in the \mht
 template is possible. The latter requirement minimises the statistical
 uncertainties associated with the finite number of simulated events
@@ -491,8 +492,9 @@ events, described in Sec.~\ref{sec:qcd}.
 \subsection{Commonalities between the data control regions}
 
 There are five control regions with leptons or photons in the final
-state: \mj, \mmj, \ej, \eej, and \gj. The full pre-selection is
-applied as part of the definition of each of these control
+state: \mj, \mmj, and \gj. 
+%\ej, \eej, and \gj. 
+The full pre-selection is applied as part of the definition of each of these control
 regions. The cuts on event-level jet-based quantities are identical to
 those applied in the hadronic search region and the same \njet, \nb,
 and \scalht binning is used. The lepton(s) or photon is not considered
@@ -570,34 +572,34 @@ cleaning cut $\mht/\met$ is also applied, as done in the signal
 region, where the \met is adjusted to account for the transverse
 momenta of the two identified, isolated muons. 
 
-\subsection{The \texorpdfstring{\ej}{electron plus jets} control sample}
-\label{subsec:elecontrolSelection}
+%\subsection{The \texorpdfstring{\ej}{electron plus jets} control sample}
+%\label{subsec:elecontrolSelection}
 
-The selection criteria that define the \ej control sample
-mirror those of the \mj sample, \ie, they are tuned
-to identify W boson decaying to an electron and a neutrino in the
-kinematic phase space of the signal region.
+%The selection criteria that define the \ej control sample
+%mirror those of the \mj sample, \ie, they are tuned
+%to identify W boson decaying to an electron and a neutrino in the
+%kinematic phase space of the signal region.
 
-Electrons are required to satisfy the Tight working point and satisfy
-the requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The tightening of
-the Loose working point defined in Sec.~\ref{sec:electron-id} was
-found to greatly reduce multijet contamination without a large
-reduction in statistics within the electron control samples. The
-transverse mass of the W candidate must satisfy $30 < \mt(e,\pfmet)
-< 125\gev$.
+%Electrons are required to satisfy the Tight working point and satisfy
+%the requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The tightening of
+%the Loose working point defined in Sec.~\ref{sec:electron-id} was
+%found to greatly reduce multijet contamination without a large
+%reduction in statistics within the electron control samples. The
+%transverse mass of the W candidate must satisfy $30 < \mt(e,\pfmet)
+%< 125\gev$.
 
-\subsection{The \texorpdfstring{\eej}{electron plus jets} control sample}
-\label{subsec:dielecontrolSelection}
+%\subsection{The \texorpdfstring{\eej}{electron plus jets} control sample}
+%\label{subsec:dielecontrolSelection}
 
-The selection criteria that define the \eej control sample
-mirror those of the \mmj sample. They are tuned
-to identify Z boson decaying to a pair of electrons in the
-kinematic phase space of the signal region.
+%The selection criteria that define the \eej control sample
+%mirror those of the \mmj sample. They are tuned
+%to identify Z boson decaying to a pair of electrons in the
+%kinematic phase space of the signal region.
 
-Both electrons need to satisfy Tight working point and the
-requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The invariant mass of
-the two electrons must satisfy $m_{Z} - 25 < M_{e_1e_2} < m_{Z} + 25$
-and they must have opposite charge.
+%Both electrons need to satisfy Tight working point and the
+%requirements $\Pt> 30\gev$ and $|\eta| < 2.1$. The invariant mass of
+%the two electrons must satisfy $m_{Z} - 25 < M_{e_1e_2} < m_{Z} + 25$
+%and they must have opposite charge.
 
 \subsection{The \texorpdfstring{\gj}{photon plus jets} control sample}
 \label{subsec:photoncontrolSelection}
