@@ -16,14 +16,14 @@ When looking at the \mht dimension inclusively in \scalht there are
 large theoretical uncertainties that originate from mixing events
 at different scales. These uncertainties can be mitigated if the events 
 are binned according to a variable, such as \scalht, 
-which is strongly correlated with the “scale” of the event. 
+which is strongly correlated with the scale of the event. 
 After this categorisation is applied, the uncertainty in 
 the distribution of the \mht variable
 (as well as any other MET-like variable) is expected to be 
 mainly affected by the MC modelling of the particle 
 decays and, to a lesser extent, by jet reconstruction effects, 
 such as jet energy scale and resolution. 
-This approach, which will be often referred to as “scale anchoring” 
+This approach, which will be often referred to as \textit{scale anchoring}
 in the following, is used in this analysis. The distribution in \mht
 is measured in data using the control regions and compared to MC
 to determine the validity of the zero bias hypothesis after scale anchoring.
@@ -33,9 +33,9 @@ to validate the scale anchoring approach.
 In Section~\ref{sec:systMhtDimension} 
 the procedure used to extract the systematic uncertainties in the 
 \mht dimension is described and results shown with 8 \TeV data. 
-In \ref{sec:syst13TeV} the expected systematics for Run 2 will be shown. 
-Finally, in \ref{sec:addMhtUnc}, methods for dealing with 
-additional systematic uncertainties are discussed.
+In Section~\ref{sec:dataValid13TeV} the validation is repeated with 13\TeV data
+and in Section~\ref{sec:biasInj} the results of a bias injection test described.
+Finally, in \ref{sec:syst13TeV} the expected systematics for 3\ifb in Run 2 are be shown. 
 
 
 % extent to which the control regions can constrain this bias 
@@ -107,7 +107,7 @@ and the error on the parameter is correctly estimated by the fit.
 Figure~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
 in category and \scalht bins. Those anchored by \scalht are consistent
 with zero (including inclusive jet categories) while the fits inclusive in \scalht
-show very large pulls. This shows as expected the \scalht anchoring
+show very large pulls. This shows, as expected, the \scalht anchoring
 is critical for removing bias in the \mht dimension. The linear fits to the
 data/MC ratio additionally show a p-value following 
 a uniform distribution between 0 and 1 as shown in Figure ~\ref{fig:pValues}.
@@ -203,7 +203,7 @@ using several control regions. In order to determine the uncertainty in
 the \mht dimension a combined linear fit is made over all relevant control regions
 of the linear function. A requirement of at least 10 events and a non-trivial
 number of degrees of freedom is made to ensure a reasonable fit. Where this
-requiement is not satisfied the signal region is not binned in \mht.
+requiement is not satisfied the \mht distribution is not used in the signal region.
 The uncertainty on the linear parameter from the fit is then
 used to define the up and down one sigma variations of the nominal template.
 As a conservative estimate, the best fit value of the parameter is 
@@ -280,7 +280,7 @@ the control regions used for the \ttbar/W prediction (\mj)
 and for \zInv~ (\mj, \mmj, \gj) are shown to be consistent with no bias.
 In Figure~\ref{fig:frenchFlagPulls13} the french flag plot of the pulls
 also shows no regions with consistent bias for either background.
-Finally figure Figure~\ref{fig:expectedObservedTtw} and Figure~\ref{fig:expectedObservedTtw}
+Finally, figure Figure~\ref{fig:expectedObservedTtw} and Figure~\ref{fig:expectedObservedTtw}
 show the observed systematics agree well with those expected as 
 was observed in the full 8\TeV dataset. These validations will
 be continually updated as additional data becomes available.
@@ -298,7 +298,7 @@ be continually updated as additional data becomes available.
   }~~
   \\
   \caption{\label{fig:pulls} 
-  The pull distribution of the linear parameter from the flat hypothesis showing no significant bias.}
+  The pull distribution of the linear parameter from the flat hypothesis showing no significant bias for any control region.}
 \end{figure}
 \begin{figure}[h!]
   \centering
@@ -315,7 +315,7 @@ be continually updated as additional data becomes available.
   \caption{\label{fig:frenchFlagPulls} The pull distribution of the linear parameter from the flat hypothesis across all
   \scalht bins and categories. There are no significant pulls for the \scalht binned
   fits while the \scalht inclusive case shows very large pulls as expected. 
-  Due to trigger requirements the \gj control sample may only be used for \scalht $> 375$\GeV.}
+  Due to trigger requirements the \gj control sample may only be used for \scalht $> 400$\GeV.}
 \end{figure}
 \subsection{Bias injection test}
 
@@ -326,10 +326,10 @@ The prediction in the final bin only is varied and the effect on the
 overall pull studied. The results are shown for the symmetric jet categories only
 as for asymmetric categories the final \mht bin dominates the fit. This is 
 an extreme test of the ability to probe bias using the linear fit. 
-Figure~\ref{fig:biasInjTest} shows the results of this test showing
+Figure~\ref{fig:biasInjTest} displays the results of this test showing
 the pull distribution is sensitive to such a bias. In Figure~\ref{fig:biasSyst} the 
 change in predicted systematic is shown for the case of halving the prediction in the last bin. 
-This shows a substantial increase in the systematics predicted.
+This shows an overall substantial increase in the systematics predicted.
 
 \begin{figure}[]
   \centering
@@ -391,38 +391,38 @@ components of the background on the total background prediction.}
   
 \end{figure}
 
-\subsection{Additional uncertainties in the \texorpdfstring{\mht}~ dimension}
-\label{sec:addMhtUnc}
-Theoretical uncertainties due to scale differences in the data and MC agreement 
-are mitigated through the procedure described in
-Section~\ref{sec:syst-on-shape}. Other additional potential 
-sources of uncertainty will be considered, such as
-ISR, JES, PDF, b-tag scale factors, etc, as detailed below. In
-general, for each source of systematic, the \mht templates are found
-based on $\pm$1$\sigma$ variations in the relevant source of
-uncertainty. The alternative templates reflect the magnitude of the
-migration of events between bins in \mht (but not in \njet, \nb, nor
-\scalht, which is encapsulated by the normalisation systematic
-uncertainties from closure tests). If the systematic source is found
-to be significant, the template variations will be included in the
-likelihood. 
-
-\begin{figure}[]
-  \centering
-  \includegraphics[width=0.5\textwidth]{figures/closureTests/mhtJetSyst_SMS_T1bbbb_2J_mGl1000_mLSP900_JEC_ge3b_ge5j_800_1600.png}
-  \caption{\label{fig:jec-shape} Alternative \mht templates that
-    reflect uncertainties in the jet energy scale corrections for
-    $\geq$5 jets, $\geq$3 b-jets, and $\scalht > 800\gev$ bin for the
-    10 \ifb luminosity scenario.}
-\end{figure}
-
-An indicative behaviour is shown in Figure~\ref{fig:jec-shape} by
-considering the variation of jet energy scale given the uncertainties
-determined in Run~1. The relative change in the \mht distribution is
-determined when varying the energy of all jets in an event up or down
-according to a \pt- and $\eta$-dependent jet energy scale uncertainty
-(\ie vary the event scale up and down), as recommended by the JetMET
-POG. 
+% \subsection{Additional uncertainties in the \texorpdfstring{\mht}~ dimension}
+% \label{sec:addMhtUnc}
+% Theoretical uncertainties due to scale differences in the data and MC agreement 
+% are mitigated through the procedure described in
+% Section~\ref{sec:syst-on-shape}. Other additional potential 
+% sources of uncertainty will be considered, such as
+% ISR, JES, PDF, b-tag scale factors, etc, as detailed below. In
+% general, for each source of systematic, the \mht templates are found
+% based on $\pm$1$\sigma$ variations in the relevant source of
+% uncertainty. The alternative templates reflect the magnitude of the
+% migration of events between bins in \mht (but not in \njet, \nb, nor
+% \scalht, which is encapsulated by the normalisation systematic
+% uncertainties from closure tests). If the systematic source is found
+% to be significant, the template variations will be included in the
+% likelihood. 
+%
+% \begin{figure}[]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{figures/closureTests/mhtJetSyst_SMS_T1bbbb_2J_mGl1000_mLSP900_JEC_ge3b_ge5j_800_1600.png}
+%   \caption{\label{fig:jec-shape} Alternative \mht templates that
+%     reflect uncertainties in the jet energy scale corrections for
+%     $\geq$5 jets, $\geq$3 b-jets, and $\scalht > 800\gev$ bin for the
+%     10 \ifb luminosity scenario.}
+% \end{figure}
+%
+% An indicative behaviour is shown in Figure~\ref{fig:jec-shape} by
+% considering the variation of jet energy scale given the uncertainties
+% determined in Run~1. The relative change in the \mht distribution is
+% determined when varying the energy of all jets in an event up or down
+% according to a \pt- and $\eta$-dependent jet energy scale uncertainty
+% (\ie vary the event scale up and down), as recommended by the JetMET
+% POG. 
 
 % \begin{figure}[]
 %   \centering
