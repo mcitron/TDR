@@ -54,8 +54,8 @@ which are taken as uncorrelated between each of the \htcat bins.
 The uncertainty on the signal efficiency times acceptance, described in Section~\ref{subsec:susy_results}, is taken as correlated across all the \htcat bins. 
 The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. The procedure to assess the alternative templates is described in detail in Section~\ref{sec:syst-on-shape}. \\
 The uncertainty due to the limited statistics in the MC samples used to populate the template histograms is incorporated 
-as additional nuisance parameters, uncorrelated across the histogram bins. 
-Only the uncertainty on the highest \mht bin is included, since the effect of all the others has been found to be negligible.
+as additional nuisance parameters, one per template bin, taken as uncorrelated across the histogram bins. 
+%% Only the uncertainty on the highest \mht bin is included, since the effect of all the others has been found to be negligible.
 
 The total likelihood is the product over all the \htcat bins and all the control regions, and can be written as:
 
@@ -63,8 +63,16 @@ The total likelihood is the product over all the \htcat bins and all the control
 \label{eq:total_likelihood}
 \mathcal{L} = \prod_{\htcat} \mathcal{L}_{\text{had}}^{\htcat} \times \prod_{\text{j}} \mathcal{L}_{\text{CR,j}}^{\htcat}
 \end{equation}
+
+The fit is carried on in two steps. 
+In the first, the background prediction for the signal region $b^{\htcat}_{\mathrm{had},i}$ are extracted from a likelihood fit 
+using the control regions only in Equation \ref{eq:controlLikelihood}. 
+In the second step, the fit is done using the full likelihood (Equation \ref{eq:total_likelihood}) and all 
+the correlations between the backgrounds in control regions and signal region are taken into account, 
+together with the statistical uncertainty associated to the finite number of events in the control region. \\
 The likelihood is profiled against all nuisance parameters in order to derive expected exclusion limits and sensitivity. 
 These are shown in Sections \ref{sec:susy}. 
+
 
 %Comment to let me make a commit called first draft
 
