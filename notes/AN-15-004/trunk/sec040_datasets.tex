@@ -2,6 +2,8 @@
 \section{Data sets}
 \label{sec:datasets}
 
+\subsection{Data}
+
 In this note, we use proton-proton collision data at $\sqrt{s} =$ 13~TeV
 being collected in 2015. Table~\ref{tab:datasets_data} lists the names of
 the data sets relevant for the analysis. The integrated luminosities
@@ -19,8 +21,10 @@ figures.
 
 We are performing the blind analysis. In this version of the note, the
 data in the signral region is blinded. In the signral region, only the
-149.48 of the certified data agreed upton to unblind in the SUS PAG are
+149.48 \ipb of the certified data agreed upton to unblind in the SUS PAG are
 analysed. No data in the control regions is blinded.
+
+\subsection{Simulation}
 
 Table~\ref{tab:datasets_bkg} lists the data sets of simulated events
 of the standard model background processes used in this note. In these
@@ -45,6 +49,72 @@ with 25ns bunch spacing is overlapped.
 \label{tab:datasets_bkg}
 \end{table}
 \end{landscape}
+
+\subsection{Pileup reweighting}
+
+
+The distribution of the numbers of the pileup interactions in the
+simulated events is different from that in the data; the simulated
+events contain, on average, a larger number of pileup interactions than
+the data. We reweight simulated events to correct for this difference.
+This procedure is called \textit{pileup reweighting}.
+
+In analyses in CMS, the pileup reweighting is, in general, done in the
+method recommended by the physics validation group
+\cite{twiki-PdmVPileUpDescription}. However, since, at the time of
+writing, the recommended method for the 2015 data is not available, we
+use reweighting factors that we privately derive. We will use the
+recommended method in later versions of the note.
+
+The reweighting factors used in this version of the note is a function
+of the number of the reconstructed vertices derived by comparing the
+data and simulated events. The events which pass the trigger path
+\verb!HLT_ZeroBias! is used in the derivation. The condition of this
+trigger path is a bunch crossing. Therefore, the events virtually
+contain only pilup interactions. For the simulated event sample, we use
+the so-called the neutrino guns, listed in
+Table~\ref{tab:datasets_neutrinoguns}. This sample also virtually
+contain only pilup interactions. In contrast, the events in the signal
+and control regions each has, in addition to the pilup interactions, the
+main interaction that produces high-\PT jets, muons, electrons, photons,
+or missing transverse momentum as described in
+Section~\ref{sec:selection}.
+
+
+\begin{table}[!h]
+\topcaption{Simulated sample used in deriving pileup reweighting factors}
+\footnotesize \input{tables/dataset_neutrinoguns.tex}
+\label{tab:datasets_neutrinoguns}
+\end{table}
+
+\begin{figure}[!b]
+\centering
+\includegraphics[scale=1.00]{figures/pileup_reweighting/f042_corr_nVert_data_mc_norm}
+\caption{The distributions of the number of the reconstructed vertices
+in the data, the simulated events, and the reweighted simulated events.
+One is added to the the number of the reconstructed vertices.}
+\label{f042_corr_nVert_data_mc_norm}
+\end{figure}
+
+The reweighting factors are derived as follows. First, we create the
+distributions of the numbers of the reconstructed vertices for the data
+and simulated sample. In creating these distributions, we add one to the
+number of the reconstructed vertices. This is because these events do
+not have the vetex for the main interaction while the events in the
+signal and control regions do. Second, we smooth each distribution with
+the smoothing spline. Third, we take the ratio of the two distributions,
+i.e., the data over the simulated sample. The ratio is a function of the
+number of reconstructed vertices. The ratio becomes reweighting factors
+after normalised. The reweighting factors are normalised so as to
+preserve the number of the generated events.
+
+Figure~\ref{f042_corr_nVert_data_mc_norm} shows the distributions of the
+number of the reconstructed vertices in the data, the simulated events,
+and the reweighted simulated events. In the figure, one is added to the
+the number of the reconstructed vertices. The figure demonstrates that
+the reweighted simulated events have the distribution of the number of
+the reconstructed vertices nearly identical to that in the data.
+
 
 \subsection{Cross sections for SM samples}
 Several MC samples of individual SM processes are binned according to a generator level quantity, such as the partonic \HT or bosonic \PT.
