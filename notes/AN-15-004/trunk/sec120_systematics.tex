@@ -610,20 +610,45 @@ procedure carried out in the $8\tev$ analysis \cite{CMS_AN_2013-366}.
 \end{figure}
 
 
-\subsection{MC based studies of additional potential sources of
-systematic uncertainty}
-\label{sec:closure-tests-desc}
+\subsection{Monte Carlo systematic uncertainties in transfer factors}
+\label{sec:mc-systematics}
 
-%%%%%%%%%%%%%%%%%%%%%%%% SECTION FOR CHRISTIAN %%%%%%%%%%%%%%%%%%%%
+As described in Secs.~\ref{sec:backgroundmet} and~\ref{sec:closure-tests-desc},
+the non-multijet background yields per $(\njet,\nb,\scalht)$
+bin are estimated through the use of control regions and
+appropriate MC-based transfer factors. This approach aims to minimise
+the sensitivity to simulation mismodelling, as many systematic biases are
+expected to cancel to a large extent in the ratios defining the transfer
+factors. Systematic uncertainties on the transfer factors accounting for
+residual biases are derived from the data-driven closure tests.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We still consider a wide range of  systematic effects arising from 
+uncertainties in jet energy scales, b-tag scale factors, parton distribution 
+functions, lepton and photon identification, etc. These are all expected 
+to be sub-dominant with respect to the systematic uncertainties derived 
+from the closure tests, and we check that this is the case.
 
-% Paragraph about JEC:
+The procedure to determine the effect of these sources of systematic
+uncertainties is to construct the transfer factors when varying in turn each
+source by their up and down one sigma uncertainties, and express this as a
+percentage difference relative to the nominal transfer factors. 
+
+These sources of systematic uncertainty can affect both the
+experimental acceptance of the signal and control regions, as well as event
+migration between analysis bins. The former is accounted for by cross section
+corrections derived from sidebands and NNLO calculations. The aim in this case
+is to assess the relative changes in the transfer factors across bins
+as the variations are performed and the overall integrated yields are fixed.
+
+%{\bf Jet energy corrections}
+
+As a preliminary study, the effect of varying the jet
+energy scale in the \mj and \mmj control regions is investigated.
 The energies of jets used in the analysis are corrected as a function of
 their \pt and $\eta$ via the procedure recommended by
 the JetMET POG. These corrections have an associated uncertainty,
-which can propagate through the analysis. This adds another potential source 
-of systematic uncertainty. As the analysis is designed such that bins
+which can propagate through the analysis. 
+As the analysis is designed such that bins
 with the same value of \scalht and jet multiplicity in the control
 regions are used to predict the background in the signal region, we
 expect to be protected against many of the effects caused by these jet
@@ -631,9 +656,9 @@ energy scale uncertainties. However, the jet energy scale can still
 have an effect, due to jets moving in and
 out acceptance (above and below $40\gev$).
 
-As a preliminary study, the effect of varying the jet
-energy scale in the \mj and \mmj control regions is investigated. Full
-selection, as described in Sec.~\ref{sec:selection}, is required.
+Full selection, as described in Sec.~\ref{sec:selection}, is required.
+If any control region bin has fewer
+than $10$ predicted events at $552\ipb$ it is left out of the study.
 Pseudo transfer factors are calculated in each analysis bin, defined
 as the number of events in a signal region after passing the signal
 region \alphat cut in a particular bin divided by the total number of
@@ -645,18 +670,11 @@ values are shown in Fig.~\ref{fig:jes-syst-singleMu}. For the \mmj
 control region, these values are shown in
 Fig.~\ref{fig:jes-syst-doubleMu}. 
 
-If any control region bin has fewer 
-than $10$ predicted events at $552\ipb$ it is left out of the study.
 Overall, the effect of varying the jet energy scale down appears to be
 small. With variations in the pseudo transfer factors being typically
 less than $10\%$. Any larger effects are likely due to statistical
 fluctuations in bins with a small number of events.
 
-This preliminary study suggests that the jet energy scale
-uncertainties should be covered by the systematics derived from the
-closure tests in Sec.~\ref{sec:closure-data-study}. We will carry out
-a more thorough study of this source of systematic uncertainty in the
-future.
 
 \begin{figure}[]
   \centering
@@ -690,11 +708,29 @@ future.
   control sample.}
 \end{figure}
 
+
+A check has also been performed on the systematic effect on the background 
+prediction due to QCD contamination in the control samples, which has been found
+to be at the percent level for the \mj and \gj control regions. Applying an
+aribtrarily large variation of $\pm 100\%$ on the number of Monte Carlo QCD
+events leads to a systematic variation on the transfer factors of at most 5\% in
+the majority of bins.
+
+These preliminary studies suggest that the jet energy scale and QCD
+uncertainties are small and should be covered by the systematics derived from the
+closure tests in Sec.~\ref{sec:closure-data-study}. The closure tests are
+therefore a conservative estimate to which it can be established, based on data, 
+that there is no significant bias in the background predictions. A more thorough 
+study of these and additional source of systematic uncertainty will be carried 
+out in the near future. If not sub-dominant, these additional uncertainties will
+be propagated through to the final total.
+
 % To be included at the end:
-Finally, an additional dedicated study is used to determine the
-systematic uncertainties that arise from uncertainties in scale factor
-corrections related to b-tag modelling. These are generally found to
-be small, at the percent level, and are typically sub-dominant with
-respect to the systematic uncertainties derived from the closure
-tests. However, if not sub-dominant, these additional uncertainties
-are propagated through to the final total.
+%Finally, an additional dedicated study is used to determine the
+%systematic uncertainties that arise from uncertainties in scale factor
+%corrections related to b-tag modelling. These are generally found to
+%be small, at the percent level, and are typically sub-dominant with
+%respect to the systematic uncertainties derived from the closure
+%tests. However, if not sub-dominant, these additional uncertainties
+%are propagated through to the final total.
+
