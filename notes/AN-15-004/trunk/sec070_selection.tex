@@ -264,7 +264,8 @@ on \njet nor \nb that are used to define the event categories.
   \caption{\alphat and corresponding ``effective'' \mht (GeV) thresholds versus
     lower bound of \scalht bin. For all \HT bins satisfying $\HT > 800
     \gev$, a direct requirement of $\mht > 130\gev$ is imposed rather
-    than a requirement on \alphat.}
+    than a requirement on \alphat. No \alphat requirement is imposed in the
+    monojet bins.}
   \label{tab:alphat-thresholds}
   \centering
   \footnotesize
@@ -286,7 +287,7 @@ expected to be unprescaled. For these high \HT bins, no \alphat
 threshold is required, which removes the inefficiencies of this
 variable for high jet multiplicity events. Instead, the following
 requirements are imposed to control the multijet background: $\mht >
-130\gev$ and $\bdphi > 0.3$ (described below).
+130\gev$ and $\bdphi > 0.5$ (described below).
 
 {\bf \bdphi requirement.} 
 
@@ -299,13 +300,14 @@ ignoring one of the reconstructed jets (the ``test'' jet). The
 difference in the azimuthal angle between the recomputed $\mhtvec$
 and the ``test'' jet is then determined. This process is repeated for
 each jet in the event and the minimum of all the azimuthal
-differences, \bdphi, is determined. The ``test'' jet whose subtraction
+differences, \bdphi, is determined. For monojet events, the calculation is 
+performed using all jets with $\Pt > 20\gev$. The ``test'' jet whose subtraction
 from the calculation $\mhtvec$ yields this minimum value, is
 identified as the jet that is most likely to have given rise to the
 missing transverse energy in the event. Events with significant \mht
 due to instrumental effects or heavy flavour decays populate the
 region $\bdphi \approx 0$ and so candidate signal event are accepted
-only if they satisfy $\bdphi > 0.3$. The use of the \bdphi and \alphat
+only if they satisfy $\bdphi > 0.5$. The use of the \bdphi and \alphat
 variables provide an extremely powerful rejection factor against
 contamination from multijet events and allow to maintain low jet \PT,
 \HT, and \mht thresholds, which in turn maximises signal acceptance
@@ -404,7 +406,7 @@ in Table~\ref{tab:sr-selections}.
     \hline
     \alphat               & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 800\gev$ \\
     \mht                  & $>130\gev$ for region $\HT > 800\gev$                          \\  
-    \bdphi                & $>0.3$                                                         \\
+    \bdphi                & $>0.5$                                                         \\
     \mht/\met             & $<1.25$                                                        \\
     ``Dead ECAL filter''  & (see text)                                                     \\
     ``Beam Halo Filter''  &  $CHF(\textrm{leading jet})>0.1$                                \\
