@@ -17,9 +17,6 @@ This is at the moment the only simplified model available: we will update with t
 The signal efficiency times acceptance is determined per model per event
 category (\njet,\nb) per \HT bin. 
 Systematic uncertainties on the signal acceptance are taken from the 2012 analysis (see Sec.~\ref{sec:sig-syst}). 
-%% Due to CPU
-%% limitations, only a subset of event categories (but all \scalht bins
-%% within a category) are considered to extract the final result. 
 %% The categories included in the fit are the ten most sensitive 
 %% for each model and are listed in Tab.~\ref{tab:simplified-models}. 
 %% The following studies are yet based on Phys14 samples for the background processes and fast simulation for the signal samples. The final samples are currently being processed and will be soon.
@@ -200,6 +197,10 @@ Upper limits on the cross section and discovery significance are computed using 
 The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
 All the statistical results are produced using the \textit{combine} tool, 
 provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. 
+
+Due to CPU constraints, only a subset of event categories (but all \scalht bins
+within a category) are considered to extract the final result. 
+The categories entering the final fit are chosen based as the 10 most sensitive ones according to the expected discovery significance.
 
 In Figure \ref{fig:T1bbbb_plane_expected} the expected upper limits on the cross section are shown for 3 \ifb of integrated luminosity, in the $(m_{Gluino},m_{LSP})$ plane, for the \texttt{T1bbbb} model. 
 The exclusion contour is also shown together with $\pm1\sigma$ uncertainty from the expected limit. 
