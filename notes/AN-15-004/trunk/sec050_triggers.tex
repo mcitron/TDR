@@ -141,21 +141,24 @@ Cumulative trigger efficiency for the T2tt(425,325) simplified model after signa
 The measurements of signal trigger efficiency in data are performed with an electron sample, selected by the
 unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger. To remain consistent with the reconstruction 
 of electrons in the trigger, no cross-cleaning of electrons from jets are performed offline, with
-the electron being included in the computation of event variables. 
+the electron being included in the computation of event-level jet energy sums, such as \scalht, \MHT and \alt. 
 The offline selection requires at least 2 jets with $\pt > 100$ GeV, a veto for forward ($|\eta|>3$) jets with $\pt > 40$ GeV 
-and $\mhtmet < 1.25$. In addition, an offline cut on \scalht is applied to ensure the selection to be on the plateau of the \scalht leg. 
-The cut is 100 GeV tighter than the trigger requirement for the \verb!HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57! and 50 GeV tighter for the other triggers. \\
-The trigger ``turn-ons'' for the \alt leg are shown in Figure \ref{fig:alphat_turnons}.
+and a $\mhtmet < 1.25$ requirement. 
+Each \scalht bin in the analysis is seeded by a single trigger, so an offline \scalht cut is applied to ensure the selection to be on the plateau of the \scalht leg. 
+For the \verb!HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57! trigger an offline cut $\scalht > 300$ GeV is applied, corresponding to a gap between the trigger and the offline selection 
+of 100 GeV. For all the other triggers a 50 GeV gap is found to be enough to be in the plateau for the \scalht leg.
+The trigger ``turn-ons'' for the \alt leg are shown in Figure \ref{fig:alphat_turnons}, with the offline selection described above.
+The \verb!HLT_PFHT800! trigger, used to seed the analysis bin $\scalht > 800$ GeV, has no \alt requirement and thus no \alt turn-on is shown for this path.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[HLT\_PFHT200\_DiPFJetAve90\_PFAlphaT0p57]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57_MoM_HT300_alphaT}} ~~
-    \subfigure[HLT\_PFHT250\_DiPFJetAve90\_PFAlphaT0p55]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55_MoM_HT300_alphaT}} \\
-    \subfigure[HLT\_PFHT300\_DiPFJetAve90\_PFAlphaT0p53]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53_MoM_HT350_alphaT}} ~~
-    \subfigure[HLT\_PFHT350\_DiPFJetAve90\_PFAlphaT0p52]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52_MoM_HT400_alphaT}} \\
-    \subfigure[HLT\_PFHT400\_DiPFJetAve90\_PFAlphaT0p51]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51_MoM_HT450_alphaT}} ~~
+    \subfigure[HLT\_PFHT200\_DiPFJetAve90\_PFAlphaT0p57 \\($\scalht>300$ GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57_MoM_HT300_alphaT}} ~~
+    \subfigure[HLT\_PFHT250\_DiPFJetAve90\_PFAlphaT0p55 \\($\scalht>300$ GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55_MoM_HT300_alphaT}} \\
+    \subfigure[HLT\_PFHT300\_DiPFJetAve90\_PFAlphaT0p53 \\($\scalht>350$ GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53_MoM_HT350_alphaT}} ~~
+    \subfigure[HLT\_PFHT350\_DiPFJetAve90\_PFAlphaT0p52 \\($\scalht>400$ GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52_MoM_HT400_alphaT}} \\
+    \subfigure[HLT\_PFHT400\_DiPFJetAve90\_PFAlphaT0p51 \\($\scalht>450$ GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51_MoM_HT450_alphaT}} ~~
     \caption{
-      The trigger efficiency measured in the data as a function of \alt for the \scalht-\alt triggers used to seed the analysis bins in the signal region.
+      The trigger efficiency measured in the data as a function of \alt for the \scalht-\alt triggers used to seed the analysis bins in the signal region. The offline \scalht is also specified. 
     }
     \label{fig:alphat_turnons}
   \end{center} 
@@ -166,7 +169,7 @@ The trigger ``turn-ons'' for the \alt leg are shown in Figure \ref{fig:alphat_tu
 
 % Control region triggers
 \subsection{Control samples\label{sec:control_samples}}
-Prescaled $\scalht$ triggers, \verb!HLT_HTXXX!, and a prescaled 
+Prescaled $\scalht$ triggers, \verb!HLT_PFHTXXX!, and a prescaled 
 $\scalht$-$\alphat$ cross-trigger, are utilised in the 
 selection of events for the hadronic control region. Shown 
 in Table~\ref{tab:2015_Hadronic_Control_Triggers} these triggers share the same Level-1 
