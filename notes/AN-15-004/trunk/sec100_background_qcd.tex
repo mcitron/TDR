@@ -1,6 +1,13 @@
 %%____________________________________________________________________________||
 
+% Overrides original definition
+\def\rmhtmet{\mbox{$\mathcal{R}$}\xspace}
+
 \section{Estimation for QCD multijet events \label{sec:qcd}}
+
+{\bf It is noted that these studies will be updated in time for the
+  Full Status report with increased luminosity and additional cross
+  checks. }
 
 One of the major challenges for searches of new physics in the jets +
 \met final state is the control of background events from QCD multijet
@@ -13,191 +20,162 @@ multijet events. Hence, without special consideration and treatment,
 significant uncertainties on large background expectations can
 overwhelm any potential sensitivity to new physics signatures.
 
-With regards to QCD multijet production, the approach of this analysis
+With regards to QCD multijet production, the approach of this search
 is to favour the suppression of the multijet background to a
 negligible level over the goal of high efficiency for any given signal
-model. A conservative uncertainty on a negligible contribution is our
-preferred approach for the first analysis, over a procedure that
-attempts to accurately estimate a non-negligible contribution from
-multijet events. When more data are available, we might also attempt to
-further lower thresholds and to establish a data-driven approach to
-measure any residual multijet background in the signal region. For the
-analysis, however, the level of contamination should be sufficiently
-small (\ie sub-percent level) such that the associated uncertainty, even
-if large, will be sub-dominant with respect to the uncertainties on the
-remaining SM backgrounds with genuine \met such as \wj, \znunu, and
-\ttbar, henceforth labelled as non-multijet processes.
-
-
-
+model. A conservative uncertainty on a negligible contribution is
+preferred over a procedure that attempts to accurately estimate a
+non-negligible contribution from multijet events. The level of
+contamination should be sufficiently small (\ie sub-percent level)
+such that the associated uncertainty, even if large, will be
+sub-dominant with respect to the uncertainties on the remaining SM
+backgrounds with genuine \met such as \wj, \znunu, and \ttbar,
+henceforth labelled as non-multijet processes.
 
 Any contamination from QCD multijet events is controlled primarily
 through the \alphat and \bdphi variables. The \alphat variable is able
 to distiguish with high efficiency the sources of ``fake'' \met, such
 as jet energy mismeasurement, from those with ``genuine'' \met, such
-as neutrinos. The \bdphi variable is particularly efficient at
-identifying jets that suffer both under- and over-measurements in
-(otherwise balanced) multijet events. The variable is also
-particularly suited to identifying multijet events exhibiting
-significant \met due to the production of neutrinos (collinear with a
-jet axis) in semileptonic heavy-flavour decays. Both variables are
-capable of reducing the yields from multijet events by several orders
-of magnitude.
+as neutrinos. The \bdphi variable is also very efficient at
+identifying jets that suffer under-measurements, as well as
+over-measurements, in (otherwise balanced) multijet events. The
+variable is also particularly suited to identifying multijet events
+that exhibit significant \met due to the production of neutrinos
+(collinear with a jet axis) in semileptonic heavy-flavour decays. Both
+variables are individually capable of reducing the yields from
+multijet events by several orders of magnitude, and combined provide
+an extremely robust method to reject multijet events. 
 
-%A couple of simple considerations can give an indication as to what
-%thresholds provide adequate protection against jet threshold effects
-%or QCD multijet events suffering from ``extreme'' instrumental
-%effects. In the case of \bdphi, instrumental effects leading to jet
-%\Pt mismeasurement will result in an \mht vector collinear in $\phi$
-%with respect to the affected jet axis. In the case of heavy flavour
-%decays, the neutrinos will be approximately collinear with respect to
-%the jet axis. The threshold requirement on \bdphi is expected to be
-%approximately similar to the anti-\kt cone size parameter value of
-%0.4. In the case of \alphat, consider a balanced ``mercedes''
-%three-jet event in which the jets are separated from their neighbour
-%by $\Delta \phi = 120^\textrm{o}$ and each jet has a transverse energy
-%of $\Et \approx x\GeV$. Assume that two jets have transverse energies
-%just above a jet transverse energy threshold of $X\gev$ and the third
-%falls just below. \ie, two jets satisfy $x + \delta x > X\gev$ and the
-%third jet satisfies $x - \delta x > X\gev$, such that only two of the
-%three jets are considered by the analysis and what was a ``balanced''
-%three-jet event is considered as a dijet event with ``fake'' missing
-%transerve energy from the jet below threshold. Using
-%Eq. (\ref{eq:alphat3}) and in the limit $\delta x \rightarrow 0$ and
-%$x \rightarrow X$, then $\scalht = 2x$, $\mht = x$, and $\dht =
-%0$. Hence, Eq. (\ref{eq:alphat3}) simplifies to $\alphat =
-%\frac{1}{2}\cdot\frac{1 - (0/2x)}{\sqrt{1 - (x/2x)^2}} =
-%\frac{1}{2}\cdot\frac{1}{\sqrt(0.75)} = 0.577$.  In the case of a
-%similarly balanced ``mercedes'' event at a higher scale, \ie when $x =
-%2X$, if one jet suffers a severe undermeasurement of greater than
-%50\%, then the jet will fall below the threshold $X$ and the ``full''
-%\Pt (equal to $2x$) of the jet will be lost. Still, the \alphat value
-%will be 0.577.  (For completeness: the case when all three jets are
-%just above threshold, \ie, a perfectly balanced multijet event, then
-%$\scalht = 3x$, $\mht = 0$, and $\dht = x$, hence $\alphat = 0.5$.)
-%The topology described above is considered to be an extreme case of a
-%multijet event generating ``fake'' \met due to a threshold effect
-%(potentially compounded by a severe undermeasurement). It is important
-%to note that the aforementioned requirement $\mhtmet < 1.25$ would
-%likely reject this (extreme) event on the basis of a large discrepancy
-%in \mht and \met. More generally, the \mhtmet variable is used to the
-%filter the rare occurance in which multiple jets below threshold are
-%relatively collinear in $\phi$, thus significantly biasing the \mht
-%value (high) with respect to \met. 
-%@@ WHAT ABOUT LOWER ALPHAT THRESHOLDS AT HIGHER HT? 
-%@@ IS JET THRESHOLD EFFECT LESS IMPORTANT? 
+In Run~1, the \alphat and \bdphi thresholds required to control
+multijet contamination to the required level were determined by a
+dedicated data-driven method, which relied on multijet-enriched
+sidebands in the variables \alphat, \bdphi, and \mhtmet. The \mhtmet
+variable, discussed in Sec.~\ref{sec:selection}, is used to filter QCD
+multijet events that contain soft jets below threshold contributing
+significantly to \mht. The method relied on extrapolating the
+exponential modelling of the number of multijet events passing and
+failing a requirement on the variable \mhtmet, \ie the pass/fail ratio
+\rmhtmet, as a function of \alphat for a given signal region bin
+(defined in terms of \njet, \nb, and \scalht). In essence, the
+approach employed was an ABCD method that accounted for the
+correlation between the variables \rmhtmet and \alphat, followed
+by an additional requirement on \bdphi determined and validated in a
+data control sideband.
 
-The \alphat thresholds required to control multijet contamination to
-the required level were determined by a method used in the Run~1
-analysis. The method takes advantage of a multijet-enriched sidebands
-in the variables \alphat and \mhtmet, the latter of which is used to
-filter QCD multijet events that contain soft jets below threshold
-contributing significantly to \mht. The method relies on the
-exponential modelling of the number of events passing and failing a
-requirement on the variable \mhtmet (\ie the pass/fail ratio \rmhtmet)
-as a function of \alphat for a given signal region bin (defined in
-terms of \njet, \nb, and \scalht). In essence, an ABCD approach is
-used that takes into account the correlation between the variables
-\rmhtmet and \alphat.
-
-The method can be summarised as follows. The events in the sideband
-are collected with the \texttt{HLT\_HTxxx} prescaled triggers
-described in Sec.~\ref{sec:triggers}. Events are binned according to \alphat
-and \mhtmet. Any contribution from non-multijet backgrounds in each
-bin is estimated from the muon data control samples and transfer
-factors determined from simulation (using the method described in
-Sec.~\ref{sec:backgroundmet}) and subtracted from the data counts. Any remaining counts
-are assumed to arise from multijet production. The number of counts
-integrated below and above the threshold $\mhtmet = 1.25$, \ie the
-pass/fail ratio \rmhtmet, is determined as a function of bins in
-\alphat. The observed ratio and its dependence on \alphat is then
-parameterised by an exponentially falling function in a low \alphat
-sideband region and extrapolated to higher values of \alphat. An
-estimate for the number of multijet events above a threshold value of
-\alphat is determined by taking the product of the fit expectation and
-the (non-multijet-subtracted) counts in the \mhtmet sideband. The
-prediction is determined as a function of an \alphat threshold, which
-is chosen when the prediction reaches the sub-percent level with
-respect to the contribution from all non-multijet processes. All
-relevant statistical uncertainties are propagated through to the
-multijet prediction. Alternative functional forms are considered,
-which are used to derive a systematic uncertainty on the multijet
-prediction. 
+For this search, we employ a simpler approach that relies on the
+determination of the ratio \rmhtmet per (\njet,\scalht) bin from
+simulation. The ratio is determined following the application of the
+\alphat and \bdphi requirements, which in the former case are
+\scalht-dependent. For the region $\scalht > 800\gev$, the requirement
+$\mht > 130\gev$ is made in place of any on \alphat. No \alphat nor
+\mht requirements are imposed for events in the monojet
+category.\footnote{For events in the monojet bin, an implicit
+  requirement of $\mht > 200\gev$ is indeed made given that $\mht =
+  \scalht$ for monojet events. No \alphat calculation can be made
+  given the absence of a second jet.} The requirements on \alphat,
+\mht, and \bdphi as a function of \scalht are summarised in
+Sec.~\ref{sec:selection}. Each ratio \rmhtmet is then used as a
+multiplier on data counts per (\bjet,\scalht) bin obtained in the
+\mhtmet data sideband. The data counts are corrected for contributions
+from V+jets and \ttbar (and other residual contributions from
+non-multijet processes) in order to obtain an estimate of the number
+of QCD multijet events, $\mathcal{Q}$ in each sideband bin. The
+product of these (corrected) counts and the ratio, $\mathcal{Q} \times
+r\mhtmet$, provides an estimate of the level of QCD multijet events in
+each (\njet,\scalht) bin of the signal region. The estimate is
+currently made inclusively with respect to the \nb\ and \mht for each
+(\njet,\scalht) bin. The method is outlined in more detail below.
 
 \begin{figure}[!h]
   \centering
-  \subfigure[Non-multijet events]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d_had_ewk_le3j_eq0b_200}
+  \subfigure[QCD events in signal region.\label{fig:qcd_pass}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/QCD/SigTrig_PassMoM_NJet_vs_HT}
   } 
-  \subfigure[Multijet events]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d_had_qcd_le3j_eq0b_200}
+  \subfigure[QCD events in \mhtmet sideband.\label{fig:qcd_fail}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/QCD/SigTrig_FailMoM_NJet_vs_HT}
   } \\
-%  \subfigure[Non-multijet events, $\njet \geq 4$]{
-%    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d_had_ewk_ge4j_eq0b_200}
-%  } 
-%  \subfigure[Multijet events, $\njet \geq 4$]{
-%    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d_had_qcd_ge4j_eq0b_200}
-%  } \\
-  \caption{Distribution of (Left) non-multijet and (Right) multijet
-    events, as given by Monte-Carlo simulation, in the 2D plane of
-    \mhtmet and \alphat. The full signal region selection has been
-    applied except for the requirements on \mhtmet and \alphat, for
-    events that exhibit low jet multiplicities and
-    \scalht. Non-multijet events comprise mainly W + jets, \ttbar, and
-    \znunu\ + jets events. Note the different ranges for the colour
-    scale.}
-  \label{fig:qcd-2d-sim}
+  \subfigure[Ratio \rmhtmet for QCD events.\label{fig:qcd_ratio}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/QCD/SigTrig_RMoM_NJet_vs_HT}
+  } 
+  \subfigure[EWK events in \mhtmet sideband.\label{fig:ewk_fail}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/Ewk/SigTrig_FailMoM_NJet_vs_HT}
+  } \\
+  \caption{Expected number of QCD multijet events determined from
+    simulation, binned according to \njet and \scalht, that (a) satify
+    and (b) fail the requirement $\mhtmet < 1.25$. Also shown in (c)
+    is the ratio \rmhtmet for QCD multijets, again determined from
+    simulation. Finally, (d) shows the expected number of EWK events
+    (V+jets and \ttbar, plus other residual non-multijet backgrounds)
+    that fail the $\mhtmet < 1.25$ requirement, again determined from
+    simulation and binned according to \njet and \scalht.}
+  \label{fig:qcd_plots}
 \end{figure}
+
+The number of counts from multijet events satisfying and failing the
+requirement $\mhtmet < 1.25$, \ie the pass/fail ratio \rmhtmet, is
+determined from simulation per (\njet,\scalht) bin. The pass and fail
+counts and the ratios are summarised in Fig.~\ref{fig:qcd_pass},
+\ref{fig:qcd_fail}, and \ref{fig:qcd_ratio}. Figure~\ref{fig:ewk_fail}
+shows the expected counts from non-multijet backgrounds in the \mhtmet
+sideband, as determined from simulation.
 
 \begin{figure}[!h]
   \centering
-  \subfigure[Low \njet multiplicities.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio_le3j_eq0b_200}
+  \subfigure[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/SigTrig_FailMoM_NJet_vs_HT}
   } 
-  \subfigure[High \njet multiplicities]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio_ge4j_eq0b_200}
+  \subfigure[Corrected data counts in \mhtmet sideband.\label{fig:data_corr}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/SigTrig_FailMoM_NJet_vs_HT_NoEwk}
   } \\
-  \caption{Ratio of multijet events passing and failing the \mhtmet
-    requirement as a function of \alphat as measured in data for the
-    (a) low and (b) high jet multiplicities in
-    the low \HT region ($200 < \HT < 275\gev$). }
-  \label{fig:qcd-ratio-data}
+  \subfigure[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/SigTrig_QCDPredMoM_NJet_vs_HT_NoEwk}
+  } 
+  \subfigure[Ratio of predicted multijet and non-multijet yields.\label{fig:qcd_ewk_ratio}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v1/SigTrig_QCDPredDivEwkMoM_NJet_vs_HT_NoEwk_Log}
+  } \\
+  \caption{Expected number of QCD multijet events determined from
+    simulation, binned according to \njet and \scalht that (a) fail
+    and (b) satisfy the $\mhtmet < 1.25$ requirement. Also shown in
+    (c) is the ratio \rmhtmet for QCD multijets, again determined from
+    simulation. Finally, (d) shows the expected number of EWK events
+    (V+jets and \ttbar plus other residual non-multijet backgrounds)
+    that the fail the $\mhtmet < 1.25$ requirement, again determined
+    from simulation and binned according to \njet and \scalht.}
+  \label{fig:qcd_plots}
 \end{figure}
 
-Figure~\ref{fig:qcd-2d-sim} shows the shapes of the EWK and QCD
-multijet backgrounds in the \mhtmet--\alphat plane based on $8\TeV$
-simulation and highlights the effectiveness of the \mhtmet requirement
-used in the definition of the signal region. Both figures show the
-distributions following the full signal region selection criteria
-except the requirements on \alphat and \mhtmet for events exhibiting
-low jet multiplicities and \scalht. The EWK processes result in a
-distribution in $\mhtmet$ peaked at $\sim$1, which gets sharper with
-increasing \alphat. The QCD multijet shape is much broader in \mhtmet
-and typically peaks at values $>1$ and migrates to larger values of
-\mhtmet with increasing \alphat. 
+The data counts in the \mhtmet sideband are collected with the
+\verb!HLT_HTxxx_AlphaT0pyy!  and \verb!HLT_HT800! signal triggers
+described in Sec.~\ref{sec:triggers}. Events satisfy the full signal
+region requirements plus the inverted \mhtmet requirement and are
+binned according to \njet and \scalht. Any contribution from
+non-multijet backgrounds (V+jets, \ttbar, \etc) in each bin is
+estimated from simulation\footnote{In the future, the counts from
+  non-multijet backgrounds will be estimated from the muon data
+  control samples and transfer factors determined from simulation
+  (using the method described in Sec.~\ref{sec:backgroundmet}).} and
+subtracted from the data counts. Any remaining counts, $\mathcal{Q}$,
+are assumed to arise from multijet production.
+Figure~\ref{fig:data_fail} shows the observed counts in the \mhtmet
+sideband, and Fig.~\ref{fig:data_corr} shows the counts after
+subtracting the expected contributions from non-multijet processes.
+Figure~\ref{fig:qcd_pred} shows the predicted counts for the multijet
+contribution in the signal region bins, which are obtained from the
+products of \rmhtmet and $\mathcal{Q}$, summarised in
+Figs.~\ref{fig:qcd_ratio} and \ref{fig:data_corr}. Finally,
+Fig.~\ref{fig:qcd_ewk_ratio} shows the ratios of predicted multijet
+counts with respect to the expected EWK counts, in order to quantify
+the (predicted) relative contamination from multijet events in the
+signal region bins.
 
-Figure~\ref{fig:qcd-ratio-data} shows the ratio \rmhtmet determined
-from 8~TeV data as a function of \alphat for (a) low and (b) high jet
-multiplicities in the low \HT region ($200 < \HT < 275\gev$).  Also
-shown in each figure is the result of an exponential fit (red solid
-line) in a low \alphat sideband. The red band represents the
-statistical uncertainties associated with the maximum-likelihood
-values of the fit parameters. An alternative fit (blue solid line)
-with an additional parameter included as a power term allows for
-``deviations'' away from the assumed exponential behaviour. The
-maximum-likelihood values for the 3-parameter fits and their
-uncertainties (blue band) are propagated through to the predictions,
-which are assumed to represent an appropriate systematic uncertainty.
-
-Based on studies of 8~TeV data, the expectation is that the
-\HT-dependent \alphat thresholds defined in
-Table~\ref{tab:sr-selections} and the requirement of $\bdphi > 0.5$
-will be sufficient to reduce the multijet contamination in all bins of
-the signal region to the sub-percent with respect to the total
-non-multijet background. With this level of suppression, it is
-expected that the uncertainty associated with the residual multijet
-contamination to be sub-dominant with respect to, and fully aborbed
-by, the systematic uncertainties on the non-multijet backgrounds,
-which are expected to be at the level of $\sim$5\% or larger. 
-However, the cuts inspired by the 8 TeV data analysis will be checked
-once sufficient 13 TeV data are available.
+The predictions summarised in Fig.~\ref{fig:qcd_pred} support the
+expectation based on experience with 8~TeV data that the \HT-dependent
+\alphat thresholds defined in Table~\ref{tab:sr-selections} and the
+requirement of $\bdphi > 0.5$ are sufficient to reduce the multijet
+contamination in all bins of the signal region to the sub-percent with
+respect to the total non-multijet background. With this level of
+suppression, it is expected that the uncertainty associated with the
+residual multijet contamination to be sub-dominant with respect to,
+and fully aborbed by, the systematic uncertainties on the non-multijet
+backgrounds, which are expected to be at the level of $\sim$10\% or
+larger. 
