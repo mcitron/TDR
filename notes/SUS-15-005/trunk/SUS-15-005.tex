@@ -1,0 +1,84 @@
+%%__________________________________________________________________||
+
+%%__________________________________________________________________||
+\RCS$Revision: 306876 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/SUS-15-005/trunk/SUS-15-005.tex $
+\RCS$Id: SUS-15-005.tex 306876 2015-10-26 11:01:00Z alverson $
+
+%%__________________________________________________________________||
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+
+%%__________________________________________________________________||
+\cmsNoteHeader{SUS-15-005}
+
+%%__________________________________________________________________||
+\title{Search for new physics in final states with jets and missing
+transverse momentum in $\sqrt{s}$ = 13~TeV pp collisions with the
+$\alpha_{\text{T}}$ variable}
+
+%%__________________________________________________________________||
+\address[cern]{CERN}
+\author[cern]{The CMS Collaboration}
+
+%%__________________________________________________________________||
+\date{\today}
+
+%%__________________________________________________________________||
+\abstract{An inclusive search for new physics in final states with
+jets and missing transverse momentum is performed in pp collisions at
+a centre-of-mass energy of 13 TeV.}
+
+% 1. **DO NOT use \include or \input** to include the abstract: our
+%    abstract extractor will not search through other files than this
+%    one.
+% 2. **DO NOT use %** to comment out sections of the abstract: the
+%    extractor will still grab those lines (and they won't be
+%    comments any longer!).
+% 3. For PASs: **DO NOT use tex macros** in the abstract: CDS MathJax
+%    processor used on the abstract doesn't understand them _and_ will
+%    only look within $$. The abstracts for papers are hand formatted
+%    so macros are okay.
+
+
+%%__________________________________________________________________||
+\input{mydefs}
+\input{symbols}
+
+%%__________________________________________________________________||
+\hypersetup{
+pdfauthor={Mark Baber, Robert Bainbridge, Freya Blekman, Oliver
+Buchmueller, Jim Brooke, Stefano Casasso, Matthew Citron, Adam Elwood,
+Henning Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo,
+Sarah Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
+Tapper},
+pdftitle={Search for new physics in final states with jets and missing
+transverse momentum in sqrt(s) = 13 TeV pp collisions with the alpha_T
+variable},
+pdfsubject={CMS},
+pdfkeywords={CMS, jets, missing transverse momentum, supersymmetry,
+dark matter, AlphaT}
+}
+
+
+%%__________________________________________________________________||
+\maketitle
+
+%%__________________________________________________________________||
+% \tableofcontents
+
+\input{sec010_introduction}
+\input{sec020_detector}
+\input{sec050_event_selection}
+\input{sec080_qcd_background}
+\input{sec110_ewk_background}
+\input{sec140_interpretation}
+\input{sec200_summary}
+
+%%__________________________________________________________________||
+% \nocite{*}
+\bibliography{auto_generated}
+
+%%__________________________________________________________________||
