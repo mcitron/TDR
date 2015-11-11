@@ -196,7 +196,11 @@ factors obtained from simulation.
 % uncertainties associated with the data (and simulation).
 
 For the first look at data, the $\ej$ and $\eej$ control samples are
-not used. 
+not used. An $\mht>130\gev$ requirement is also made. As the muon
+control samples do not have an \alphat cut and \mht is correlated to
+\alphat this cut reduces the potential problems
+caused by the extrapolation inherent in using low \mht event counts to
+predict high \mht event counts.
 % Given this fact, and the fact that fewer events are
 % available in the $1.28\ifb$ than in the $3\ifb$ MC study a smaller
 % subset of closure tests is chosen. Any closure tests utilising the
@@ -204,29 +208,65 @@ not used.
 % multiple times with different numbers of b-tags are collapsed into one
 % (such as the $\mj\rightarrow\mmj$ tests). 
 The set of tests used for
-this data study can be seen in the legend of
-Figs.~\ref{fig:ttWclosureDataSym},~\ref{fig:ttWclosureDataAsym}
-,~\ref{fig:ZinvclosureDataAsym}~and~\ref{fig:ZinvclosureDataAsym}.
+this data study can be seen in the legends of
+Fig.~\ref{fig:exampleClosures}.
 
-In the set of closure tests used in the first look at
-data an additional $\mht>130\gev$ requirement is made. As the muon
-control samples do not have an \alphat cut and \mht is correlated to
-\alphat this cut reduces the potential problems
-caused by the extrapolation inherent in using low \mht event counts to
-predict high \mht event counts.
+The $0$ b-tag $\rightarrow1$ b-tag and $1$ b-tag $\rightarrow2$ b-tag
+tests probe the
+sensitivity of the transfer factors to the relative admixture of
+events from the $W$ + jets and \ttbar processes by varying the number
+of b-tagged jets within the \mj sample. These tests are conservative,
+as the admixture changes little between the \mj sample and the signal
+region (as there is no extrapolation in \nb), whereas the closure
+tests use sub-samples with different \nb bins and therefore different
+admixtures of $W$ + jets and \ttbar events. \eg, the former uses a
+$W$-enriched sub-sample (selected by requiring zero b-jets) to predict
+yields in a \ttbar-enriched sub-sample (selected by requiring one
+b-jet).  These two tests also probe the modelling of the
+reconstruction of b-quark jets, although this is addressed more
+precisely by dedicated studies involving varying the uncertainties in
+b-tag scale factors, as the one performed in the previous analysis,
+see for instance \cite{CMS_AN_2013-366}. This study will be repeated
+for this analysis in the future.
 
-%%%%%%%%%%%%% FIXME %%%%%%%%%%%%%
-%Add something about splitting when describing each test (probably
-%move this up to the closure test bit)
+The \mj $\rightarrow$ $\gamma$ + jets tests deal with
+the consistency of the prediction of \wej with $\gamma$ + jets. This is 
+important for understanding
+the consistency of the \znunu + jets background predictions from both
+\wej and \gj events along with the associated assumptions (such
+as the negligible effect of the vector boson mass on kinematic
+distributions from the V + jets and \gj samples under sufficient
+boost). 
+% Additional checks between these two sub-samples (and also
+% between the single and di-lepton sub-samples) will also be performed
+% with the charge of the single lepton sample taken into consideration,
+% which will allow to probe the simulation modelling of acceptance
+% effects due to $W$ polarisation.
 
-Most of these closure tests have been motivated in
-Sec.~\ref{sec:closure-mc-study}, with a few exceptions. Instead of the
-$\eej\rightarrow\gj$ tests we now have analagous
-$\mmj\rightarrow\gj$ tests, a check on the validity of using the \gj
-process to predict the \znunu + jets process. Instead of the 
-$\ej\rightarrow\gj$ tests we now have analagous
-$\mj\rightarrow\gj$ tests, a check on 
-the consistency of the prediction of \wej with $\gamma$ + jets.
+The \mj \rightarrow \mmj tests address the modelling of vector boson production
+(including the handling of contamination from \ttbar). The muon
+trigger and reconstruction efficiencies are also probed, given that
+exactly one and two muons are required in the two control
+samples. However, dedicated data-driven methods are used to measure
+the muon trigger and reconstruction efficiencies, with values taken
+from the muon POG.
+
+The \mmj \rightarrow \gj tests deal with the
+consistency between the \zee + jets and $\gamma$ + jets
+samples, which is a further check on the validity of using the \gj
+process to predict the \znunu\, + jets process.
+
+The $\njet=2\rightarrow\njet=3$ and $\njet=4\rightarrow\njet\geq5$ tests 
+probe the simulation modelling of jet
+multiplicity in the \mj,
+\mmj and \gj samples,
+which is checked due to the exclusive binning in jet multiplicity.  As
+in the case of the $W$ + jets / \ttbar admixture, these sets of tests
+are a conservative check, as predictions are always made from the same
+jet multiplicity bin, whereas the closure tests translate between the
+two bins.
+% Most of these closure tests have been motivated in
+% Sec.~\ref{sec:closure-mc-study}, with a few exceptions. 
 
 Additionally, to test the prediction of \znunu + jets processes with
 the $W$-enriched \mj control sample, we introduce the
@@ -247,6 +287,12 @@ Appendix~\ref{app:zInvBgControl} and study of this test performed on the
 $8\tev$ data is presented.
 
 %%%%%%%%%%%%% FIXME %%%%%%%%%%%%%
+% write something about the TT->TL test
+
+The aforementioned closure tests are not the only ones considered or
+checked, \ie, the list above is not exhaustive. However, they are a
+representative set that cover the main potential sources of bias in
+the transfer factors derived from simulation. 
 
 The closure tests are performed for each of the different jet
 categories. In Fig.~\ref{fig:closureDataSym} are the results of the
@@ -297,7 +343,7 @@ improve with the application of the scale factors.
     demonstration of ensembles split for the \znunu and W and \ttbar +
     jets closure tests are also included.
     }
-    \label{fig:ttWclosureDataSym}
+    \label{fig:exampleClosures}
   \end{center} 
 \end{figure}
 
@@ -467,42 +513,46 @@ much inflated observed systematic.
     (1,1)       & 9  (9)  & 12 (12) & 11 (11) & 21 (21) & 11 (11) & 21 (21) & 36 (36)  & -         \\
     \hline
     \multicolumn{8}{c}{Symmetric:}                                                                 \\
-    (2,0)       & 29 (29) & 19 (19) & 15 (15) & 22 (22) & 7 (11)  & 34 (19) & 23 (23)  & 29 (30)   \\
-    (2,1)       & 29 (29) & 19 (19) & 15 (15) & 22 (22) & 7 (11)  & 34 (19) & 23 (23)  & 29 (30)   \\
-    (2,2)       & 29 (29) & 19 (19) & 15 (15) & 22 (22) & 7 (11)  & 34 (19) & 23 (23)  & 29 (30)   \\
-    (3,0)       & 32 (32) & 20 (20) & 22 (22) & 17 (17) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
-    (3,1)       & 32 (32) & 20 (20) & 22 (22) & 17 (17) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
-    (3,2)       & 32 (32) & 20 (20) & 22 (22) & 17 (17) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
-    (3,3)       & 32 (32) & 20 (20) & 22 (22) & 17 (17) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
-    (4,0)       & -       & -       & 36 (36) & 29 (29) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
-    (4,1)       & -       & -       & 36 (36) & 29 (29) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
-    (4,2)       & -       & -       & 36 (36) & 29 (29) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
-    (4,$\geq$3) & -       & -       & 36 (36) & 29 (29) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
-    (5,0)       & -       & -       & -       & 19 (19) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
-    (5,1)       & -       & -       & -       & 19 (19) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
-    (5,2)       & -       & -       & -       & 19 (19) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
-    (5,$\geq$3) & -       & -       & -       & 19 (19) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
+    (2,0)       & 15 (30) & 21 (18) & 15 (16) & 22 (28) & 7 (11)  & 34 (19) & 23 (23)  & 29 (30)   \\
+    (2,1)       & 15 (30) & 21 (18) & 15 (16) & 22 (28) & 7 (11)  & 34 (19) & 23 (23)  & 29 (30)   \\
+    (2,2)       & 15 (30) & 21 (18) & 15 (16) & 22 (28) & 7 (11)  & 34 (19) & 23 (23)  & 29 (30)   \\
+    (3,0)       & 31 (44) & 19 (21) & 15 (27) & 14 (19) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
+    (3,1)       & 31 (44) & 19 (21) & 15 (27) & 14 (19) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
+    (3,2)       & 31 (44) & 19 (21) & 15 (27) & 14 (19) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
+    (3,3)       & 31 (44) & 19 (21) & 15 (27) & 14 (19) & 18 (18) & 14 (13) & 9 (25)   & 24 (17)   \\
+    (4,0)       & -       & -       & 36 (34) & 24 (30) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
+    (4,1)       & -       & -       & 36 (34) & 24 (30) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
+    (4,2)       & -       & -       & 36 (34) & 24 (30) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
+    (4,$\geq$3) & -       & -       & 36 (34) & 24 (30) & 13 (21) & 22 (27) & 19 (8)   & 14 (18)   \\
+    (5,0)       & -       & -       & -       & 19 (28) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
+    (5,1)       & -       & -       & -       & 19 (28) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
+    (5,2)       & -       & -       & -       & 19 (28) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
+    (5,$\geq$3) & -       & -       & -       & 19 (28) & 15 (16) & 19 (34) & 21 (17)  & 22 (19)   \\
     \hline
     \multicolumn{8}{c}{Asymmetric:}                                                                \\
-    (2,0)       & 10 (10) & 12 (12) & 13 (13) & 10 (10) & 19 (14) & 17 (20) & 105 (46) & 91   (35) \\
-    (2,1)       & 10 (10) & 12 (12) & 13 (13) & 10 (10) & 19 (14) & 17 (20) & 105 (46) & 91   (35) \\
-    (2,2)       & 10 (10) & 12 (12) & 13 (13) & 10 (10) & 19 (14) & 17 (20) & 105 (46) & 91   (35) \\
-    (3,0)       & 15 (15) & 12 (12) & 17 (17) & 21 (21) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
-    (3,1)       & 15 (15) & 12 (12) & 17 (17) & 21 (21) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
-    (3,2)       & 15 (15) & 12 (12) & 17 (17) & 21 (21) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
-    (3,3)       & 15 (15) & 12 (12) & 17 (17) & 21 (21) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
-    (4,0)       & -       & 55 (55) & 18 (18) & 17 (17) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
-    (4,1)       & -       & 55 (55) & 18 (18) & 17 (17) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
-    (4,2)       & -       & 55 (55) & 18 (18) & 17 (17) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
-    (4,$\geq$3) & -       & 55 (55) & 18 (18) & 17 (17) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
-    (5,0)       & -       & -       & 47 (47) & 25 (25) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
-    (5,1)       & -       & -       & 47 (47) & 25 (25) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
-    (5,2)       & -       & -       & 47 (47) & 25 (25) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
-    (5,$\geq$3) & -       & -       & 47 (47) & 25 (25) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
+    (2,0)       & 11 (9)  & 14 (13) & 17 (10) & 14 (11) & 19 (14) & 17 (20) & 105 (46) & 91   (35) \\
+    (2,1)       & 11 (9)  & 14 (13) & 17 (10) & 14 (11) & 19 (14) & 17 (20) & 105 (46) & 91   (35) \\
+    (2,2)       & 11 (9)  & 14 (13) & 17 (10) & 14 (11) & 19 (14) & 17 (20) & 105 (46) & 91   (35) \\
+    (3,0)       & 16 (18) & 12 (12) & 19 (20) & 27 (22) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
+    (3,1)       & 16 (18) & 12 (12) & 19 (20) & 27 (22) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
+    (3,2)       & 16 (18) & 12 (12) & 19 (20) & 27 (22) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
+    (3,3)       & 16 (18) & 12 (12) & 19 (20) & 27 (22) & 20 (8)  & 28 (37) & 86 (78)  & 41   (61) \\
+    (4,0)       & -       & 34 (55) & 17 (15) & 16 (13) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
+    (4,1)       & -       & 34 (55) & 17 (15) & 16 (13) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
+    (4,2)       & -       & 34 (55) & 17 (15) & 16 (13) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
+    (4,$\geq$3) & -       & 34 (55) & 17 (15) & 16 (13) & 22 (16) & 29 (7)  & 52 (43)  & 112  (67) \\
+    (5,0)       & -       & -       & 36 (73) & 22 (27) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
+    (5,1)       & -       & -       & 36 (73) & 22 (27) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
+    (5,2)       & -       & -       & 36 (73) & 22 (27) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
+    (5,$\geq$3) & -       & -       & 36 (73) & 22 (27) & 19 (32) & 47 (7)  & 45 (53)  & 92   (45) \\
     \hline
     \hline
   \end{tabular}
 \end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIXME explicitly mention which closure tests went where
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Dedicated \alphat closure test}
 
