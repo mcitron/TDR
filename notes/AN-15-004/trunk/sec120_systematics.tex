@@ -286,8 +286,21 @@ new closure test checks if this leads to a bias in the prediction of the
 Appendix~\ref{app:zInvBgControl} and study of this test performed on the
 $8\tev$ data is presented.
 
-%%%%%%%%%%%%% FIXME %%%%%%%%%%%%%
-% write something about the TT->TL test
+The TT$\rightarrow$TL closure tests are designed to test the effects
+of the extrapolation in the lepton definition used for the veto in the
+signal region (see Sec.~\ref{sec:vetoes}) and the selection in the muon control
+regions (see
+Sec.~\ref{subsec:mucontrolSelection}~and~\ref{subsec:mumucontrolSelection}).
+Two di-muon samples are defined that pass the \mmj control region
+selection, minus the single isolated track veto and $M_{ll}$
+requirement. One sample is required to have two muons that pass the
+tight criteria defined for the muon control region (TT), the other
+sample is required to have one muon that passes this tight criteria
+and one muon that passes the loose criteria defined for the signal
+region veto (TL). The TT sample is then used to predict the TL
+sample for these closure tests. Along with the \mj \rightarrow \mmj
+and \mj \rightarrow \gj closure tests, this addresses the
+uncertainties associated with the modelling of lost leptons in the MC.
 
 The aforementioned closure tests are not the only ones considered or
 checked, \ie, the list above is not exhaustive. However, they are a
@@ -556,6 +569,26 @@ much inflated observed systematic.
 
 \subsubsection{Dedicated \alphat closure test}
 
+The closure tests in Fig.~\ref{fig:closureAlphaT} probe the
+modelling of the \alphat distribution in genuine \met events as a
+function of \scalht. This is important to verify the approach of using
+\mj and \mmj samples without an \alphat requirement to
+make background predictions in the signal region. The tests confront
+data yields in a \mj (\mmj) samples with an \alphat requirement against
+predictions determined in a \mj (\mmj) sample with the \alphat requirement
+inverted. As usual, corresponding expectations from simulation are
+obtained to construct the transfer factors required to make the
+predictions.
+
+These closure tests are left out of the ensembles presented in
+Sec.~\ref{sec:closure-data-study} and instead added as a separate
+systematic per \scalht bin. The values for the calculated systematics
+are presented in Tab.~\ref{tab:alphaTSyst}. For $\scalht<800\gev$
+these numbers are derived from the \alphat closure tests. However, as
+there is no \alphat requirement for $\scalht>800\gev$ the $\Delta\phi
+*$ closure tests in Sec.~\ref{sec:closureCrossCheck} are used to
+derive the systematic in this case.
+
 \begin{figure}[h!]
   \begin{center}
     \subfigure[$\njet =
@@ -595,6 +628,16 @@ much inflated observed systematic.
 
 
 \subsubsection{Closure tests for cross checks}
+\label{sec:closureCrossCheck}
+
+The closure tests in Fig.~\ref{fig:closureBDPhi} probe the
+modelling of the $\Delta\phi *$ distribution in genuine \met events as a
+function of \scalht. This is important to verify the approach of using
+\mj and \mmj samples without an $\Delta\phi *$ requirement to
+make background predictions in the signal region. The tests confront
+data yields in a \mj (\mmj) samples with an $\Delta\phi *$ requirement against
+predictions determined in a \mj (\mmj) sample with the $\Delta\phi *$ requirement
+inverted. 
 
 \begin{figure}[h!]
   \begin{center}
@@ -603,7 +646,7 @@ much inflated observed systematic.
     \caption{Closure tests probing the $\Delta\phi *$ extrapolation for each
     \njet category (open symbols) carried out with $1.28\ifb$ of
       $13\tev$ data. }
-    \label{fig:closureAlphaT}
+    \label{fig:closureBDPhi}
   \end{center} 
 \end{figure}
 
@@ -618,7 +661,7 @@ much inflated observed systematic.
       region (tight) muon criteria are used to predict events with one
       tight muon and one muon that passes the signal region veto
       criteria (loose)}
-    \label{fig:closureAlphaT}
+    \label{fig:closureLooseLep}
   \end{center} 
 \end{figure}
 
