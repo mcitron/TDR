@@ -1,9 +1,10 @@
 %%__________________________________________________________________||
 \section{Results and interpretation}
 \label{sec:interpretation}
-
-For a given category of events satisfying requirements on both \njet
-and \nb, a likelihood model of the observations in all data samples is
+%
+%For a given category of events satisfying requirements on both \njet
+%and \nb, 
+A likelihood model of the observations in all data samples is
 used to obtain a consistent prediction of the SM backgrounds and to
 test for the presence of a variety of signal models.% It is written as:
 
@@ -21,8 +22,8 @@ test for the presence of a variety of signal models.% It is written as:
 In each bin of \scalht, the observation is modelled as a
 Poisson-distributed variable about the sum of the SM expectation and a
 potential signal contribution (assumed to be zero in the following
-discussion). The contribution from multijet production is assumed
-to be zero, based on the studies in Section~\ref{sec:multijet}. 
+discussion).% The contribution from multijet production is assumed
+%to be zero, based on the studies in Section~\ref{sec:multijet}. 
 The SM expectation is related to the expected yields in
 the \mj, \mmj, and \gj control samples via the transfer factors
 derived from simulation. Likelihood functions %$L_\mu$,
@@ -79,28 +80,29 @@ distribution.
 The expected number of events from SM processes is determined from a
 simultaneous fit to the signal region and up to three control
 samples. The likelihood function is maximised over all fit parameters
-under the SM-only hypothesis. \FIXME{Table of numbers here?} 
-%Figure~\ref{fig:SMfithadronic} and Table~\ref{tab:fit-result} summarise
-%the observed yields and expected event counts in bins of HT for events
-%in the signal region categorised according to \njet and \nb. 
-%
+under the SM-only hypothesis.
+%Figure~\ref{fig:SMfithadronic} and 
+Table~\ref{tab:fit-result} summarises 
+the observed yields and expected event counts in bins of \scalht for events
+in the signal region categorised according to \njet and \nb. 
 No significant tension is observed between the signal and control
 regions, which are well described by the SM-only hypothesis.% The
 %category-level p-values are found to be uniformly distributed, with a
 %minimum observed value of 0.19. 
 %yes, P-value is still correct
 
-%\begin{table}[h!]
-%  \caption{Observed event yields and expected SM-only event counts
-%    with associated uncertainties in bins of \scalht for events in the
-%    signal region that are categorised according to \njet and \nb.
-%  }
-%  \label{tab:fit-result}
-%  \centering
-%  \tiny
-%  \begin{tabular}{ llllllllllllll }
-%    \hline
-%    \hline
+\begin{table}[h!]
+  \caption{Observed event yields and expected SM-only event counts
+    with associated uncertainties in bins of \scalht for events in the
+    signal region that are categorised according to \njet and \nb.}
+  \label{tab:fit-result}
+  \centering
+  \tiny
+  \begin{tabular}{ llllllllllllll }
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 %    \multicolumn{3}{c}{} & \multicolumn{11}{c}{\scalht (GeV)}                                                                                                                                                                                                                                            \\ 
 %    \njet                & \nb      &        & 200--275              & 275--325             & 325--375             & 375--475             & 475--575             & 575--675             & 675--775             & 775--875             & 875--975             & 975--1075           & 1075--$\infty$      \\ 
 %    \hline
@@ -165,8 +167,7 @@ with \MADGRAPH V5~\cite{madgraph}.
 Inclusive, process-dependent, NLO
 calculations of SUSY production cross sections, with
 next-to-leading-logarithmic (NLL) corrections, are obtained with the
-program \PROSPINO~\cite{Beenakker:1996ch, PhysRevD.80.095004,
-  PhysRevLett.102.111802, PhysRevD.80.095004, 1126-6708-2009-12-041,
+program \PROSPINO~\cite{Beenakker:1996ch, PhysRevD.80.095004,PhysRevLett.102.111802, PhysRevD.80.095004, 1126-6708-2009-12-041,
   doi:10.1142/S0217751X11053560, susy-nlo-nll}. The samples are
 generated using the CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The
 distribution of the number of pp interactions per bunch crossing for
@@ -176,46 +177,23 @@ Various experimental uncertainties on the expected signal yields are
 considered. Contributions arise from
 various sources such as the uncertainties in the PDFs, jet energy
 scale, the modelling of the efficiency and mistag probability of
-b-quark jets in simulation,jet and \nb category
+b-quark jets in simulation, jet and \nb category
 and is accounted for with a nuisance parameter, the measurement 
 of which is assumed to follow a lognormal distribution.
 
-%\begin{figure*}[tbhp]
-%\vspace{-0.5cm}
-%  \begin{center}
-%\vspace{-0.3cm}
-%    \subfigure[\label{fig:t2cc}${\rm p\bar{p}} \rightarrow \sTop\sTop^{*}, \sTop \rightarrow{\rm c} \chiz$]{
-%      \includegraphics[width=0.44\textwidth]{figures/limits/v3/T2cc_latest_XSEC} 
-%    }
-%    \subfigure[\label{fig:t24b}${\rm p\bar{p}} \rightarrow \sTop\sTop^{*}, \sTop \rightarrow{\rm bf\bar{f}} \chiz$]{
-%      \includegraphics[width=0.44\textwidth]{figures/limits/v3/T2degen_latest_XSEC} 
-%    } \\
-%\vspace{-0.3cm}
-%    \subfigure[\label{fig:t2bw25}${\rm p\bar{p}} \rightarrow  \includegraphics[width=0.44\textwidth]{figures/limits/v4/T2bw0p75_latest_XSEC} 
-%    } \\
-%\vspace{-0.3cm}
-%    \subfigure[\label{fig:t2tt}${\rm p\bar{p}} \rightarrow \sTop\sTop^{*}, \sTop \rightarrow{\rm t} \chiz$]{
-%      \includegraphics[width=0.44\textwidth]{figures/limits/v4/T2tt_latest_XSEC} 
-%    }
-%    \subfigure[\label{fig:summary}Summary of expected and observed exclusions.]{
-%      \includegraphics[width=0.44\textwidth]{figures/limits/v4/summary} 
-%    } \\
-%\vspace{-0.1cm}
-%    \caption{ Observed upper limit on the production cross section at 95\% CL (indicated by the colour scale) as a function of the top squark% and $\chiz$ masses for (a) $\sTop \rightarrow{\rm c}
-%      \chiz$, (b) $\sTop \rightarrow{\rm bf\bar{f}} \chiz$, (c)
-%      $\ black lines reflecting the
-%      theoretical uncertainty on the production cross section.
-%The black solid thin lines represent the observed exclusions when
-%varying the production cross section by its theoretical uncertainty. 
-%The red thick dashed (thin dashed
-%      or dotted) line indicates the median (${\pm}1 \sigma$ or ${\pm}2
-%      \sigma$ experimental uncertainty) expected exclusion.
-%Figure (f) shows a summary of the central expected (dotted) and
-%observed (solid) exclusions.
-%      \label{fig:limits-sms} }
-%  \end{center}
-%\end{figure*}
+\begin{figure*}[tbhp]
 
+  \begin{center}
+    \caption{Observed upper limit on the gluino pair-production cross section at 95\% CL (indicated by the colour scale) as a function of the gluino
+      and $\chiz$ masses for gluino three body decays to (a) $qq\chiz$, (b) $bb\chiz$, and (c) $tt\chiz$.
+      The black solid thin lines represent the observed exclusions when
+      varying the production cross section by its theoretical uncertainty. 
+      The red thick dashed (thin dashed
+      or dotted) line indicates the median (${\pm}1 \sigma$ or ${\pm}2
+      \sigma$ experimental uncertainty) expected exclusion.
+      \label{fig:limits-sms} }
+  \end{center}
+\end{figure*}
 
 
 Figure~\ref{fig:limits-sms} shows the observed upper limit on the
@@ -234,6 +212,8 @@ observed excluded regions when varying the production cross section by
 its theoretical uncertainty, and the expected excluded region with
 both the ${\pm}1$ and ${\pm}2$ standard-deviation ($\sigma$)
 variations. 
+
+
 
 %The range of excluded top squark masses is sensitive to the both the
 %decay mode and $\dm(\sTop,\chiz_1$). For the decay $\sTop \rightarrow{\rm c} \chiz_1$,
