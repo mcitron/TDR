@@ -177,10 +177,6 @@ to the \znunu backgrounds. The closure tests used and motivated in
 Sec.~\ref{sec:closure-data-study} are split appropriately between the
 two sets. 
 
-At the current stage of the analysis the systematics quoted are only
-made from split sets of closure tests in multi-jet bins above
-$\scalht>400\gev$. 
-
 \subsection{Closure tests with $1.28~\ifb$ of data}
 \label{sec:closure-data-study}
 
@@ -209,7 +205,10 @@ predict high \mht event counts.
 % (such as the $\mj\rightarrow\mmj$ tests). 
 The set of tests used for
 this data study can be seen in the legends of
-Fig.~\ref{fig:ZinvclosureDataSym}.
+Figs.~\ref{fig:ZinvclosureDataSymlt400},
+\ref{fig:ZinvclosureDataSymgt400}, \ref{fig:ZinvclosureDataAsymlt400}, 
+\ref{fig:ZinvclosureDataAsymgt400}, \ref{fig:ttWclosureDataSym}, and 
+\ref{fig:ttWclosureDataAsym}.
 
 The $0$ b-tag $\rightarrow1$ b-tag and $1$ b-tag $\rightarrow2$ b-tag
 tests probe the
@@ -308,15 +307,25 @@ representative set that cover the main potential sources of bias in
 the transfer factors derived from simulation. 
 
 The closure tests are performed for each of the different jet
-categories. In Figs.~\ref{fig:ttWclosureDataSym}~and~\ref{fig:ZinvclosureDataSym} are the results of the
+categories. They are additionally split up based on background
+process, discussed in Sec.~\ref{sec:closure-split}. In the case of the
+tests designed to probe the \znunu background prediction different
+ensembles are defined for events with values either side of
+$\scalht=400\gev$. As the \gj control sample is only used when
+$\scalht>400\gev$ the closure tests involving this sample are only
+relevant at these higher \scalht values. Extra closure tests that
+probe extrapolations relevant to W + jets background prediction are
+therefore added to the \znunu closure test ensemble for
+$\scalht<400\gev$. In
+Figs.~\ref{fig:ttWclosureDataSym},~\ref{fig:ZinvclosureDataSymlt400}~and~\ref{fig:ZinvclosureDataSymgt400} are the results of the
 closure tests performed on events in the ``symmetric'' jet category
 and in
-Figs.~\ref{fig:ttWclosureDataAsym}~and~\ref{fig:ZinvclosureDataAsym} the results of the closure tests
+Figs.~\ref{fig:ttWclosureDataAsym},~\ref{fig:ZinvclosureDataAsymlt400}~and~\ref{fig:ZinvclosureDataAsymgt400} the results of the closure tests
 performed on events in the ``asymmetric'' jet
 category. For events in the ``mono-jet'' category, the closure tests
 that rely on more than one jet (such as the $1 b-tag\rightarrow\geq 2
 b-tag$ tests) are removed. The results of these tests are in
-Fig~\ref{fig:closureDataMono}.
+Fig~\ref{fig:closureDataMono}. 
 
 Prior to deriving uncertainties, each individual set of closure tests
 (as a function of \scalht) have been inspected for closure. Zero and first order
@@ -405,7 +414,7 @@ improve with the application of the scale factors.
       $\scalht<400\gev$ are used in the analysis. All events fit 
       into the ``symmetric'' jet
       category}
-    \label{fig:ZinvclosureDataSym}
+    \label{fig:ZinvclosureDataSymlt400}
   \end{center} 
 \end{figure}
 
@@ -427,7 +436,7 @@ improve with the application of the scale factors.
       $\scalht>400\gev$ are used in the analysis. All events fit 
       into the ``symmetric'' jet
       category}
-    \label{fig:ZinvclosureDataSym}
+    \label{fig:ZinvclosureDataSymgt400}
   \end{center} 
 \end{figure}
 
@@ -469,7 +478,7 @@ improve with the application of the scale factors.
       $\scalht<400\gev$ are used in the analysis. All events fit 
       into the ``asymmetric'' jet
       category}
-    \label{fig:ZinvclosureDataSym}
+    \label{fig:ZinvclosureDataSymlt400}
   \end{center} 
 \end{figure}
 
@@ -491,7 +500,7 @@ improve with the application of the scale factors.
       $\scalht>400\gev$ are used in the analysis. All events fit 
       into the ``asymmetric'' jet
       category}
-    \label{fig:ZinvclosureDataSym}
+    \label{fig:ZinvclosureDataSymgt400}
   \end{center} 
 \end{figure}
 
@@ -516,7 +525,7 @@ improve with the application of the scale factors.
 With these data studies we calculate the observed systematics as in
 Sec.~\ref{sec:syst-from-closure},
 this procedure yields the values quoted in
-Fig.~\ref{tab:systs}. In the kinematically restricted bins, such
+Tab.~\ref{tab:systs}. In the kinematically restricted bins, such
 as those with a high jet multiplicity and low value of \scalht, the
 limited statistics leads to large systematic errors. As a minimum number of
 events is required for each bin considered in the final stages of the
@@ -540,15 +549,15 @@ $40\%$.
 % compatible with this hypothesis, observed divided by expected values
 % scattered around $1$, with the majority slightly above. 
 
-In addition to
-the zero and first order polynomial fits mentioned above, a comparison
-of the magnitude of the systematic found in data with that expected
-from simulation (\ie in the absence of bias) provides an
-additional indication of any genuine bias. The fact
-that the observed and expected errors are compatible further supports
-the conclusion that there is no extreme source of bias in the closure
-tests carried out with data. In the case of bias, we would expect a
-much inflated observed systematic.
+% In addition to
+% the zero and first order polynomial fits mentioned above, a comparison
+% of the magnitude of the systematic found in data with that expected
+% from simulation (\ie in the absence of bias) provides an
+% additional indication of any genuine bias. The fact
+% that the observed and expected errors are compatible further supports
+% the conclusion that there is no extreme source of bias in the closure
+% tests carried out with data. In the case of bias, we would expect a
+% much inflated observed systematic.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % table of systematic numbers
@@ -613,10 +622,6 @@ much inflated observed systematic.
     \hline
   \end{tabular}
 \end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FIXME explicitly mention which closure tests went where
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Dedicated \alphat closure test}
 
@@ -683,6 +688,11 @@ derive the systematic in this case.
 \subsubsection{Closure tests for cross checks}
 \label{sec:closureCrossCheck}
 
+Along with the closure tests used to derive the systematics,
+additional tests are carried out to cross check other potential
+instances of mismodelling. If any of these tests demonstrate a source
+of bias, further investigation into this effect is carried out.
+
 The closure tests in Fig.~\ref{fig:closureBDPhi} probe the
 modelling of the $\Delta\phi *$ distribution in genuine \met events as a
 function of \scalht. This is important to verify the approach of using
@@ -691,6 +701,12 @@ make background predictions in the signal region. The tests confront
 data yields in a \mj (\mmj) samples with an $\Delta\phi *$ requirement against
 predictions determined in a \mj (\mmj) sample with the $\Delta\phi *$ requirement
 inverted. 
+
+The closure tests in Fig.~\ref{fig:closureLooseLep} probe the effects
+of the extrapolation in the lepton definition used for the veto in the
+signal region, as described in Sec.~\ref{sec:closure-data-study}.
+These tests are included in the systematic calculation for the W and
+\ttbar + jets backgrounds, but can be seen in isolation here.
 
 \begin{figure}[h!]
   \begin{center}
