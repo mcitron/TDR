@@ -12,36 +12,48 @@ jet reconstruction within the HLT which, in conjunction with a reduction of clus
 parameter $\Delta R = 0.4$, provides improvements in jet energy resolution in high-pileup 
 conditions and mitigates the effects of pileup contamination within the jet cone.
 
-A suite of $\scalht$-$\alphat$ cross-triggers with a requirement on the minimum average \pt of 
-the leading two jets, $\pt^{\rm \left<j1,j2\right>}$, are utilised in the selection of events in 
-the hadronic signal region, labelled: \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a 
-dijet average threshold provides an improved suppression of QCD multijet events within the trigger,
-enabling looser \alphat thresholds to be utilised whilst maintaining acceptance to events exhibiting asymmetric jet 
-topologies such as monojet-like signatures of compressed spectrum and DM models. 
-It should be noted that for the asymmetric jet topologies, the use of a dijet average threshold of 90 \GeV
-results in certain events, where the leading jet \pt is soft in regards to a monojet-like signature, being
-rejected. While it is possible to reduce the threshold of the dijet average and recover trigger efficiency,
-it was not possible to ensure the rate of this lowered threshold remained low. It was found that a dijet average
-threshold of 90 \GeV ensured the optimum performance when balancing efficiency and rate, with both the $\scalht$ and $\alphat$
-thresholds. 
+The RA1 analysis utilises a range of triggers for the selection of events in the hadronic signal region
+to provide coverage over a wide range of event topologies. A guiding principle of the analysis is to be as
+inclusive as possible by probing low thresholds, necessitating operation in or near the trigger turn-on.
+Events in the hadronic monojet signal region are selected with the use of a single \mht-\met cross-trigger, 
+\verb!HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight!, which is cross-cleaned of muons in the computation 
+of event variables in the HLT. 
 
-The Level-1 seeds for the HLT paths are given by the disjunction of the lowest 
+The hadronic multijet signal region is selected by a suite of $\scalht$-$\alphat$ cross-triggers 
+with a requirement on the average \pt of the leading two jets, $\pt^{\rm \left<j1,j2\right>}$, labelled: 
+\verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ!. The use of a dijet average threshold provides an improved 
+suppression of QCD multijet events within the trigger,
+enabling looser \alphat thresholds to be utilised whilst maintaining acceptance to events exhibiting asymmetric jet 
+topologies such as monojet-like signatures of compressed spectrum and DM models. It was found that a dijet average
+threshold of 90 \GeV ensured the optimum performance when balancing efficiency and rate, with both the $\scalht$ and $\alphat$
+thresholds across all jet toplogies. The dijet average requirement does however lead to a loss in efficiency for 
+asymmetric jet events where the sub-leading jet is soft. This loss in efficiency is mitigated by taking the 
+disjunction of the \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ! and the monojet triggers which provides a recovery 
+of efficiency in the turn-on and close to the plateau for the low-\scalht asymmetric jet selection. 
+The $\scalht$-$\alphat$ triggers seed all signal multijet offline 
+bins in the range for $\scalht > 200$ \GeV. Above $\scalht > 800$ an additional pure \scalht trigger, \verb!HLT_PFHT800!, 
+is also utilised which has no explicit dependence on $\alphat$ or dijet average threshold. 
+
+These triggers form the primary signal selection menu for the analysis, in addition a set of secondary triggers with 
+higher thresholds were in operation to provide redundancy for higher luminosity scenarios. In Run 2 however the primary 
+triggers sufficiently suppressed trigger rates such that the use of secondary triggers in the analysis are not required.
+
+
+The Level-1 seeds for the $\scalht$-$\alphat$ HLT paths are given by the disjunction of the lowest 
 unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for 
 the given run scenario. A loose calorimeter trigger prefilter is utilised to reduce the pass-through 
 rate prior to track-based reconstruction, ensuring the PF-based filters meet timing requirements. The calorimeter prefilter 
 utilises loose \scalht and dijet average \pt requirements in addition to a new variable \alphat', 
 defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better correlates \alphat 
-between calorimeter and PF-based reconstruction.
+between calorimeter and PF-based reconstruction. The monojet and \verb!HLT_HT800! triggers use the
+\verb!ETM50! and \verb!HTT175! seeds respectively with loose \mht and \scalht prefilters to suppress pass-through rate.
 
-The thresholds of the signal triggers, shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}, are 
-tuned to maintain acceptance for a range of signal topologies whilst effectively suppressing QCD 
-multijet events to maintain acceptable trigger rates. These triggers uniquely seed individual offline \scalht 
-bins with the exception of the highest-\scalht \scalht-\alphat cross-trigger which is utilised for analysis 
-bins in the range: 
-$400 < \scalht < 800$ \GeV. Above $\scalht > 800$ a pure \scalht trigger, \verb!HLT_PFHT800!, is utilised 
-which has no explicit dependence on $\alphat$ or dijet average threshold. These triggers form the primary 
-signal selection menu, in addition a set of secondary triggers with higher \alphat thresholds provide redundancy 
-for higher luminosity scenarios. 
+The thresholds of the signal triggers are shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}. The choice of threshold for 
+the \scalht-\alphat triggers were tuned to maintain acceptance for a range of signal topologies whilst effectively suppressing QCD 
+multijet events to maintain acceptable trigger rates. 
+
+
+
 
 % TABLE : 2015 triggers
 %----------------------------------------------------------------------
@@ -55,117 +67,125 @@ for higher luminosity scenarios.
 \hline
 \hline
 HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                                                \\
-    &        & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$) \\ %& (Hz) \\[0.7 ex] 
+    &        & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$, \met) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$, \met) \\ %& (Hz) \\[0.7 ex] 
 \hline
- \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57! & \verb!HTT125 OR ETM50! & 150, 0.540, 70 & 200, 0.570, 90 \\ %& \\ % 11.0 $\pm$ 3.0 \\
- \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55! & \verb!HTT125 OR ETM50! & 200, 0.535, 70 & 250, 0.550, 90 \\ %& \\ % 8.5  $\pm$ 3.0 \\
- \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53! & \verb!HTT125 OR ETM50! & 250, 0.525, 70 & 300, 0.530, 90 \\ %& \\ % 9.5  $\pm$ 3.0 \\
- \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52! & \verb!HTT125 OR ETM50! & 300, 0.520, 70 & 350, 0.520, 90 \\ %& \\ % 10.0 $\pm$ 3.0 \\
- \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51! & \verb!HTT125 OR ETM50! & 370, 0.510, 70 & 400, 0.510, 90 \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
- \verb!HLT_PFHT800!                         & \verb!HTT175!          & 650, -, -      & 800, -, -      \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+{\scriptsize \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57!} & {\scriptsize \verb!HTT125 OR ETM50!} & 150, 0.540, 70, - & 200, 0.570, 90, - \\ %& \\ % 11.0 $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55!} & {\scriptsize \verb!HTT125 OR ETM50!} & 200, 0.535, 70, - & 250, 0.550, 90, - \\ %& \\ % 8.5  $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53!} & {\scriptsize \verb!HTT125 OR ETM50!} & 250, 0.525, 70, - & 300, 0.530, 90, - \\ %& \\ % 9.5  $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52!} & {\scriptsize \verb!HTT125 OR ETM50!} & 300, 0.520, 70, - & 350, 0.520, 90, - \\ %& \\ % 10.0 $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51!} & {\scriptsize \verb!HTT125 OR ETM50!} & 370, 0.510, 70, - & 400, 0.510, 90, - \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+{\scriptsize \verb!HLT_PFHT800!}                         & {\scriptsize \verb!HTT175!}          & 650, -, -, -      & 800, -, -, -, -   \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+{\scriptsize \verb!HLT_PFMETNoMu90_PFMHTNoMu90_IDTight!} & {\scriptsize \verb!ETM50!}           &  -, -, -, -, 65   & -, -, -, -, 90    \\
+%% L1sL1ETM70ORETM60ORETM50
+%% hltMET, MHT 65
 \hline
 \hline
 \end{tabular}
 \label{tab:2015_Hadronic_Signal_Triggers}
 \end{table}
 
-Based on simulation studies, the signal triggers demonstrate high
-efficiencies for a range of benchmark signal models and SM processes
-with genuine \met. The trigger efficiency for two benchmark signal
-models, \texttt{T2tt} (425,325) and \texttt{T1tttt} (1200,800), are
-shown in Figs.~\ref{fig:T1ttt_Trigger_Efficiency} for the low and
-high jet multiplicity analysis bins, respectively, which illustrate a
-``representative'' performance for each of the respective models.
-  
-The use of a dijet average threshold is fully efficient for the
-categories with ``symmetric'' \Pt selection requirements on the
-leading two jets, as illustrated in
-Fig.~\ref{fig:T1ttt_Trigger_Efficiency_DijetAve}. In the case of the
-``asymmetric'' scenario, when the second leading jet satisfied $40 <
-\Pt < 100\gev$, some inefficiencies are observed due to this
-challenging class of event, where both the leading and second jet
-are relatively soft and the \scalht is low. The figure shows the
-efficiencies for the lowest \scalht bin, $200 < \scalht < 250\gev$, 
-which improve significantly for the higher \scalht bins in the region
-$\scalht < 250\gev$. 
 
-However, an important goal of the analysis is to have good acceptance
+An important goal of the analysis is to have good acceptance
 to compressed SUSY and general DM models. It is therefore critical
 that we operate in the trigger turn on regions for the lower
-thresholds. We have already successfully exercised this approach with
-the Run~1 analysis and are thus confident that we can do this again
-during Run~2. As in Run~1, multiple efficiency measurements are
+thresholds. We have already successfully exercised this approach with 
+the Run 1 analysis and will repeat this mode or operating during Run 2.
+As in Run~1, multiple efficiency measurements are
 employed, which are performed with data and propagated through to the
-analysis with cross checks in simulation.
+analysis with cross checks in simulation. A summary of estimates of a 
+selection of signal models in simulation is presented in Appendix~\ref{app:signalModelTriggerEfficiencies}.
 
-However, it is noted that for the majority of models accessible by the
-"Early Analysis", such as gluino-induced production and decay, the
-most sensitive bins are typically at higher values of MHT, for which
-the triggers perform close to full efficiency. Lower MHT bins are
-subject to trigger efficiency corrections based on measurements in
-data, as discussed above. 
-
-
-% FIGURE: Trigger efficiencies
-%----------------------------------------------------------------------
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet = 2$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_eq2j_ht_vs_alphaT_Cumul.pdf}} ~~
-    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/T1tttt_1200_800_ge5j_ht_vs_alphaT_Cumul.pdf}} \\
-    \subfigure[$\njet \geq 2$]   {\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_Sym_ht_vs_mht_Cumul.pdf}} ~~
-    \subfigure[$\njet \geq 5$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/T1tttt_1200_800_ge5j_ht_vs_mht_Cumul.pdf}} \\
-    \caption{
-Cumulative trigger efficiency for the T2tt(425,325) and T1tttt(1200,800) simplified models after signal selection in the \alphat-\scalht and \mht-\scalht planes for representative analysis jet multiplicity bins.}
-    \label{fig:T1ttt_Trigger_Efficiency}
-  \end{center} 
-\end{figure}
-
-
-% FIGURE: Trigger efficiencies - Dijet average
-%----------------------------------------------------------------------
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[Symmetric-$\njet$ requirement]  {\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_Sym_j1vsj2_cumulEff.pdf}} ~~
-    \subfigure[Asymmetric-$\njet$ requirement]{\includegraphics[width=0.5\textwidth]{figures/Trigger/T2tt_425_325_Asym_j1vsj2_cumulEff.pdf}} \\
-    \caption{
-Cumulative trigger efficiency for the T2tt(425,325) simplified model after signal selection as a function of leading and second jet threshold for the symmetric and asymmetric selection requirements for the lowest-\scalht bin.}
-    \label{fig:T1ttt_Trigger_Efficiency_DijetAve}
-  \end{center} 
-\end{figure}
-
+%% However, it is noted that for the majority of models accessible by the
+%% "Early Analysis", such as gluino-induced production and decay, the
+%% most sensitive bins are typically at higher values of MHT, for which
+%% the triggers perform close to full efficiency. Lower MHT bins are
+%% subject to trigger efficiency corrections based on measurements in
+%% data, as discussed above. 
 
 
 % 
-\subsubsection{Measurement of trigger efficiency with data}
-\label{sec:trigger_eff_data}
-The measurements of signal trigger efficiency in data are performed with an electron sample, selected by the
-unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger. To remain consistent with the reconstruction 
-of electrons in the trigger, no cross-cleaning of electrons from jets are performed offline, with
-the electron being included in the computation of event-level jet energy sums, such as \scalht, \MHT and \alt. 
-The offline selection requires at least 2 jets with $\pt > 100$ GeV, a veto for forward ($|\eta|>3$) jets with $\pt > 40$ GeV 
-and a $\mhtmet < 1.25$ requirement. 
-Each \scalht bin in the analysis is seeded by a single trigger, so an offline \scalht cut is applied to ensure the selection to be on the plateau of the \scalht leg. 
-For the \verb!HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57! trigger an offline cut $\scalht > 300$ GeV is applied, corresponding to a gap between the trigger and the offline selection 
-of 100 GeV. For all the other triggers a 50 GeV gap is found to be enough to be in the plateau for the \scalht leg.
-The trigger ``turn-ons'' for the \alt leg are shown in Figure \ref{fig:alphat_turnons}, with the offline selection described above.
-The \verb!HLT_PFHT800! trigger, used to seed the analysis bin $\scalht > 800$ GeV, has no \alt requirement and thus no \alt turn-on is shown for this path.
+
+The efficiency of the signal triggers are measured in data using electron and muon samples 
+selected by the unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! and \verb!HLT_IsoMu20! 
+reference triggers with a signal selection. Biases in these measurements can be introduced 
+due to the contamination in the computation of event variables and different treatments 
+between trigger and offline reconstructions, the degree of which varies with \scalht and \njet.
+
+The monojet trigger performs a cross-cleaning of muons online, enabling its efficiency to measured
+in an unbiased manner using a muon sample. Electrons however cannot be disentangled and to remain 
+consisent with the trigger must be measured with offline cross-cleaning disabled. A comparison of 
+the estimate of the monojet trigger efficiency using muon and electron samples is shown in Fig.~\ref{fig:monojet_turnons}.
+With consistent cross-cleaning of the muon online and offline the monojet trigger is measured to be fully efficienct
+by \scalht = 300 consistent with measurements in simulation. Measured in an electron sample with no cross-cleaning however
+the trigger is measured to have an inefficiency which increases with \scalht. The bias leptons introduce when no cross-cleaning
+is appled is dominant for low-\scalht resulting in the disagreement between samples, this however becomes less important at high
+\scalht and \njet. With a proper of cross-cleaning of muons online a muon sample is thought to provide a faster
+turn-on.
+
+
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[HLT\_PFHT200\_DiPFJetAve90\_PFAlphaT0p57 ($\scalht>300$~GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57_MoM_HT300_alphaT}} ~~
-    \subfigure[HLT\_PFHT250\_DiPFJetAve90\_PFAlphaT0p55 ($\scalht>300$~GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT250_DiPFJetAve90_PFAlphaT0p55_MoM_HT300_alphaT}} \\
-    \subfigure[HLT\_PFHT300\_DiPFJetAve90\_PFAlphaT0p53 ($\scalht>350$~GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT300_DiPFJetAve90_PFAlphaT0p53_MoM_HT350_alphaT}} ~~
-    \subfigure[HLT\_PFHT350\_DiPFJetAve90\_PFAlphaT0p52 ($\scalht>400$~GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT350_DiPFJetAve90_PFAlphaT0p52_MoM_HT400_alphaT}} \\
-    \subfigure[HLT\_PFHT400\_DiPFJetAve90\_PFAlphaT0p51 ($\scalht>450$~GeV)]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_PFHT400_DiPFJetAve90_PFAlphaT0p51_MoM_HT450_alphaT}} ~~
-    \caption{
-      The trigger efficiency measured in the data as a function of \alt for the \scalht-\alt triggers used to seed the analysis bins in the signal region. The offline \scalht is also specified. 
-    }
+    \subfigure[Muon sample]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_IsoMu20/HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight_MoM_Mono_MHT0_ht.pdf}} ~~     
+    \subfigure[Electron sample]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_PFMETNoMu90_JetIdCleaned_PFMHTNoMu90_IDTight_MoM_Mono_MHT0_ht.pdf}} \\
+    \caption{Trigger efficiency of the monojet trigger measured in muon and electron samples.
+          }
+    \label{fig:monojet_turnons}
+  \end{center} 
+\end{figure}
+
+
+The multijet triggers do not have the muon cross-cleaning applied online so their efficiency measurement in data 
+is primarily performed with the use of an electron sample. To remain consistent with the 
+reconstruction of electrons in the trigger, no cross-cleaning of electrons from jets 
+are performed offline, with the electron being included in the computation of event-level jet energy sums, such as 
+\scalht, \MHT and \alt. The turn-on for the individual \scalht-\alphat triggers are shown in Appendix~\ref{app:alphaTTriggerEfficiencies}
+
+The trigger efficiency of the multijet triggers in the \mht dimension after a full signal selection 
+is shown in Fig.~\ref{fig:alphat_turnons} which is shown to be close to or at the plateau when taking 
+the disjunction of the triggers for \scalht < 800 \GeV. The efficiency without a proper cross-cleaning
+is predicted to be exceed that measured with electron bias. A full efficiency is therefore assumed for 
+these triggers with a systematic to this estimate assigned equal to the
+inefficiency estimated by the respective reference trigger. 
+
+triggers for \scalht $< 800$ \GeV. Full efficiency is therefore assumed for these triggers with a systematic to this estimate assigned equal to the 
+inefficiency estimated by the respective reference trigger. For \scalht $> 800$ \GeV, where the bias of electrons is a smaller effect, the trigger 
+efficiency is measured for the disjunction of the \scalht-\alphat and \verb!HLT_HT800! triggers, inclusively on jet multiplicity, and a correction applied which is shown in Fig.~\ref{fig:ht800_turnons}. 
+
+
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$200 < \scalht < 250$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_AlphaTMonoAll_MoM_200to250_mht}} ~~\
+    \subfigure[$250 < \scalht < 300$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_AlphaTMonoAll_MoM_250to300_mht}} \\
+    \subfigure[$300 < \scalht < 350$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_AlphaTMonoAll_MoM_300to350_mht}} ~~\
+    \subfigure[$350 < \scalht < 400$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_AlphaTMonoAll_MoM_350to400_mht}} \\
+    \subfigure[$400 < \scalht < 600$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_AlphaTMonoAll_MoM_400to600_mht}} ~~\
+    \subfigure[$600 < \scalht < 800$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_AlphaTMonoAll_MoM_600to800_mht}} \\
+    \caption{ Signal trigger efficiency in the \mht dimension measured with an electron sample.
+          }
     \label{fig:alphat_turnons}
   \end{center} 
 \end{figure}
 
 
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[$800 < \scalht < 850$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_HT800AlphaTAll_MoM_800to850_mht}} ~~\
+    \subfigure[$850 < \scalht < 900$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_HT800AlphaTAll_MoM_850to900_mht}} \\
+    \subfigure[$\scalht > 900$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/HLT_Ele23_eta2p1_WPLoose_Gsf/HLT_HT800AlphaTAll_MoM_900to999999_mht}} ~~ \\
+    \caption{ Signal trigger efficiency in the \mht dimension measured with an electron sample.
+          }
+    \label{fig:ht800_turnons}
+  \end{center} 
+\end{figure}
 
+
+
+
+
+\newpage
 
 % Control region triggers
 \subsection{Control samples\label{sec:control_samples}}
@@ -207,7 +227,7 @@ HLT path & \multicolumn{1}{c}{Prescale} \\
 The non-hadronic control regions are seeded by the lowest-threshold unprescaled 
 triggers available in the given run scenario. In the high-luminosity scenario The 
 \mj and \mmj control samples are selected with the \verb!HLT_IsoMu20! trigger,
-and the \gj control sample by the \verb!HLT_Photon125! trigger. 
+and the \gj control sample by the \verb!HLT_Photon175! trigger. 
 %The \ej and \eej control samples may be seeded by the \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! trigger.
 
 The efficiency of the control triggers is measured with data-driven methods
@@ -217,82 +237,6 @@ is utilised in the measurement of the photon trigger efficiency. For the results
 this note for the muon control regions the emulated trigger bit in MC is used to simulate 
 the trigger. An offline \Pt requirement of 200\GeV is made on the photon
 to ensure it is in the efficiency plateau of the trigger.
-
-
-
-
-
-
-
-
-\subsection{Low-$\scalht$ Level-1 seeds}
-
-Some models of new physics, such as supersymmetric compressed spectrum models, are challenging to select at the trigger level due to low-hadronic energy visible in the final state. Sensitivity to such models require low trigger thresholds which is difficult to achieve without incurring a large increase in the Level-1 trigger rate. New Level-1 seeds which enable low thresholds to be utilised by actively vetoing QCD event topologies have been studied and are shown to have higher efficiencies for such models than can be achieved with the current Level-1 menu.
-
-The $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ seed exploits the typical dijet topologies exhibited in QCD dijet production by vetoing events where the azimuthal separation of the leading jets exceeds eight calorimeter regions, corresponding to a veto of: $\Delta\phi(j_{1}^{L1},j_{2}^{L1}) \ge 160^{\circ}$, where a jet threshold of $\pt > 32$ GeV is imposed on the second jet. This enables a much lower threshold on the $\scalht$-leg to be achieved, with a small increase in other thresholds in the menu, enabling for example the rate neutral trigger: \verb!L1_DoubleJetC32_WdPhi7_HTT125! to be utilised.
-
-An alternate $\mht/\scalht$ 'reduced-MHT' seed exploits the correlation in missing hadronic energy and visible hadronic energy typical of decays with genuine $\met$ and the decorrelation of these quantities for QCD with fake-$\met$ by requiring a minimum $\mht/\scalht$ ratio. This again enables triggers with a significant reduction in the threshold on the $\scalht$-leg, for example with the rate neutral trigger: \verb!L1_HTT125_rHTM0p3!.
-
-The logical disjunction of these two seeds can further improve signal efficiency whilst maintaining an effective suppression of QCD events by increasing acceptance to additional topologies. ISR-dominated final states for instance typically have large $\mht/\scalht$ but may fail the $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ selection, where as events with high jet multiplicities typically have high $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ but may fail the $\mht/\scalht$ threshold due to the breakdown in $\mht/\scalht$ at high jet multiplicities. Combined these seeds allow even smaller thresholds to be used on the $\scalht$-leg without loss of efficiency to ISR-dominated or high jet multiplicity events, for example with the trigger:\\ \verb!L1_HTT110_rHTM0p6_rHTM0p0_WdPhi6!.
-
-The new trigger seeds is implemented in the trigger hardware by repurposing the bits currently utilised for $\mht$ and $\phi({\mht})$ trigger primitives with the new $\mht/\scalht$ and $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ primitives respectively. These changes have been discussed with trigger experts and are deemed to be relatively simple to implement in the calorimeter trigger firmware and has little impact on the operation global trigger. The latest version of the Level-1 trigger emulator currently has the \verb!L1_DoubleJetC32_WdPhi7_HTT125!, \verb!L1_HTT125_rHTM0p3! and \\ \verb!L1_HTT110_rHTM0p6_rHTM0p0_WdPhi6! low-$\scalht$ trigger primitives implemented, enabling a wider study within the collaboration.
-
-The performance after the full offline selection of the low-$\scalht$ Level-1 seeds was studied for a range of signal models in the lowest $\scalht$ and $\njet$ analysis bins which are predominantly populated by compressed models. Performance was measured relative to the current PU40bx25 Level-1 hadronic menu, {\verb!HTT175! \verb!OR! \verb!DoubleJetC100! \verb!OR! \verb!QuadJetC60! \verb!OR! \verb!ETM70!}, with the rate equivalent low-$\scalht$ menues defined as: Low-$\scalht$ seed {\verb!OR! \verb!HTT200! \verb!OR! \verb!DoubleJetC120! \verb!OR! \verb!QuadJetC60! \verb!OR! \verb!ETM70!}. The efficiencies of the proposed menues for $\njet = 2$ and $\njet = 3$, shown in Table~\ref{tab:LowHT_Seed_Signal_2Jet} and Table~\ref{tab:LowHT_Seed_Signal_3Jet} respectively, show significant improvements in trigger efficiency utilising the low-$\scalht$ seeds with respect to the current hadronic menu and similar performance to what could be obtained by reducing the $\met$ threshold without the additional 3 kHz Level-1 trigger rate this would incur.
-
-It is important to note that the new L1 seeds discussed in this
-section are currently only potential alternatives to the existing L1
-\texttt{ETM} and \texttt{HTT} seeds. Their inclusive may require some
-rate balancing within the existing menus at the expense of other
-seeds. Studies have considered the re-allocation of rate ($\sim$5~kHz)
-from the \texttt{DoubleJetC} seed. The inclusion of these new seeds
-may be a beneficial strategy to employ if the thresholds on the
-\texttt{ETM} and \texttt{HTT} seeds are to be raised due to increasing
-instantaneous luminosity and/or pileup conditions later in the run of
-2015.
-
-% TABLE : Low-HT seed efficiencies - NJet = 2
-%----------------------------------------------------------------------
-\begin{table}[h!]
-\topcaption{Trigger efficiency for $\njet = 2$, $200 < \scalht \le 300$ analysis bin and corresponding rate of the current Level-1 hadronic menu and proposed low-$\scalht$ trigger menues for a range of compressed signal models.} %sparticle and LSP masses represented by the first and second bracketed term respectively.}
-\footnotesize
-\centering
-\begin{tabular}{cccccc} 
-\hline
-\hline
-  Signal model & Hadronic menu & $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ & $\mht/\scalht$ &$\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ \verb!OR! $\mht/\scalht$ & Hadronic menu \verb!OR ETM60! \\
-\hline
-  T2cc(250, 210)   & 0.60 & 0.86 & 0.91 & 0.94 & 0.95 \\
-  T2qq(400, 400)   & 0.63 & 0.82 & 0.88 & 0.95 & 0.94 \\
-  T2tt(300, 200)   & 0.53 & 0.91 & 0.95 & 0.99 & 0.96 \\
-\hline
-  Menu rate (kHz) & 15   & 15   & 15   & 15   & 19   \\
-\hline
-\hline
-\end{tabular}
-\label{tab:LowHT_Seed_Signal_2Jet}
-\end{table}
-
-% TABLE : Low-HT seed efficiencies - NJet = 3
-%----------------------------------------------------------------------
-\begin{table}[h!]
-\topcaption{Trigger efficiency for $\njet = 3$, $200 < \scalht \le 300$ analysis bin and corresponding rate of the current Level-1 hadronic menu and proposed low-$\scalht$ trigger menues for a range of compressed signal models.} %sparticle and LSP masses represented by the first and second bracketed term respectively.}
-\footnotesize
-\centering
-\begin{tabular}{cccccc} 
-\hline
-\hline
-  Signal model & Hadronic menu & $\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ & $\mht/\scalht$ &$\Delta\phi(j_{1}^{L1},j_{2}^{L1})$ \verb!OR! $\mht/\scalht$ & Hadronic menu \verb!OR ETM60! \\
-\hline
-  T2cc(250, 210)   & 0.45 & 0.74 & 0.74 & 0.83 & 0.94 \\
-  T2qq(400, 400)   & 0.46 & 0.88 & 0.88 & 0.93 & 0.92 \\
-  T2tt(300, 200)   & 0.41 & 0.76 & 0.83 & 0.84 & 0.86 \\
-\hline
-  Menu rate (kHz) & 15   & 15   & 15   & 15   & 19   \\
-\hline
-\hline
-\end{tabular}
-\label{tab:LowHT_Seed_Signal_3Jet}
-\end{table}
 
 
 
