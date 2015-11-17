@@ -409,6 +409,18 @@ Such spurious events are suppressed by requiring at least 10\% of the leading
 jet's energy to originate from charged hadrons, $CHF>0.1$. The effectiveness of this selection
 is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
 
+Beyond the filter available in the data ntuples, the JetMET POG have
+provided lists of events that should fail the CSC beam halo and bad
+ECAL super cluster filters. These extra events are vetoed and the
+efficiency of events in the signal region (Sec.~\ref{sec:had-signal})
+and single muon control region (Sec.~\ref{subsec:mucontrolSelection})
+that pass this veto for each analysis bin are plotted in
+Fig.~\ref{fig:cscFilterEfficiencies}. In the vast majority of bins the
+extra filters are $100\%$ efficient, with a few bins with an
+inefficiency at the $2-3\%$ level. This confirms that the $CHF$ cut is
+already effectively removing spurious events that are present due to
+beam halo effects. 
+
 \begin{figure}[h!]
     \begin{center}
         {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetChf_all_before.pdf}}
@@ -423,6 +435,18 @@ is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
     \end{center}
 \end{figure}
 
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Signal region
+    selection]{\includegraphics[width=0.5\textwidth]{figures/selection/Signal_Data_CSCEfficiency.pdf}} ~~
+    \subfigure[Single muon control region
+    selection]{\includegraphics[width=0.5\textwidth]{figures/selection/SingleMu_Data_CSCEfficiency.pdf}} \\
+    \caption{Efficiencies of the CSC beam halo and bad ECAL super
+    cluster filters applied on $1.26\ifb$ of data passing the single
+    muon and signal region selections.}
+    \label{fig:cscFilterEfficiencies}
+  \end{center} 
+\end{figure}
 
 {\bf Summary of signal region selection.} 
 
