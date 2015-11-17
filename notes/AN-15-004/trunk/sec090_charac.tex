@@ -1,68 +1,63 @@
-%%____________________________________________________________________________||
 \section{Characterisation of the signal and control regions}
 \label{sec:yields}
 
-%%____________________________________________________________________________||
-\subsection{Distributions for key analysis variables \label{sec:mc-data-comp}}
+The event selection criteria for the signal and control regions are
+detailed in Sec.~\ref{sec:selection}. A selection of relevant data/MC
+comparison plots are presented here. The distributions are shown
+separetely according three \njet categories: symmetric, asymmetric,
+and monojet. The distributions are intended to provide a qualitative
+understanding of the simulation modelling for key variables. However,
+the analysis is not sensitive due the reliance on simulation via
+ratios only (\ie transfer factors) and the one-to-one mapping of
+(\njet,~\nb,~\scalht) binning between the control and signal
+regions. The simulated distributions are normalized to an integrated
+luminosity of 1280.2~$\ifb$ (the data/MC scale factors are also shown
+in all plots).
 
-The hadronic signal region selection and control regions are detailed in Sec.~\ref{sec:selection}. The relevant data/MC plots are presented here, corresponding to symmetric, asymmetric and monojet selection. The distributions help to understand the MC modeling of key variables. The MC distributions are normalised to their corresponding luminosities in Run 2015D. These luminosities are calculated  with the consideration of the HLT triggers used in each region. The data/MC scale factors are shown in all figures.
+In addition to distributions, the binned yields in the \mj, \mmj, and
+\gj control samples can be found in
+Tables~\ref{tab:yieldssep_mu_data_sym}-\ref{tab:yieldssep_mu_data_asym},
+\ref{tab:yieldssep_mumu_data_sym}-\ref{tab:yieldssep_mumu_data_asym},
+and \ref{tab:yieldssep_gj_data_sym}-\ref{tab:yieldssep_gj_data_asym},
+respectively, which correspond to an integrated luminosity of 1.28
+\ifb. (Projected yields for 3\ifb are found in
+App.~\ref{app:yields3fb}.) Finally,
+Tables~\ref{tab:yieldsnodata_comb_sig_sym} and
+\ref{tab:yieldsnodata_comb_sig_asym} summarise the expected yields, as
+determined from simulation, in the signal region for an integrated
+luminosity of 1.28 \ifb.
 
-%%____________________________________________________________________________||
-\begin{figure}
-    \begin{center}
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/alphaT_sym.pdf}} ~~
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/ht40_sym.pdf}} \\
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/mht40_pt_sym.pdf}} ~~
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_pt[0]_sym.pdf}} \\
-        \caption{Key analysis variables for hadronic signal region (symmetric bins)}
-        \label{fig:distribution_signal_sym}
-    \end{center}
-\end{figure}
+\clearpage
+\subsection{Yields and distributions for the $\mu$ + jets control sample}
 
-\begin{figure}
-    \begin{center}
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/alphaT_asym.pdf}} ~~
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/ht40_asym.pdf}} \\
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/mht40_pt_asym.pdf}} ~~
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_pt[0]_asym.pdf}} \\
-        \caption{Key analysis variables for hadronic signal region (asymmetric bins)}
-        \label{fig:distribution_signal_asym}
-    \end{center}
-\end{figure}
+\input{tables/dataLumi/yieldssep_mu_data_sym.tex}
+\input{tables/dataLumi/yieldssep_mu_data_asym.tex}
 
-\begin{figure}
-    \begin{center}
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_pt[0]_eq1j.pdf}} ~~
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_eta[0]_eq1j.pdf}} \\
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/met_pt_eq1j.pdf}} ~~
-        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/biasedDPhi20_eq1j.pdf}} \\
-        \caption{Key analysis variables for hadronic signal region (monojet bins)}
-        \label{fig:distribution_signal_mono}
-    \end{center}
-\end{figure}
-%%____________________________________________________________________________||
+\clearpage
 \begin{figure}
     \begin{center}
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/alphaT_sym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/ht40_sym.pdf}} \\
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/mht40_pt_sym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/jet_pt[0]_sym.pdf}} \\
-        \caption{Key analysis variables for single muon control region (symmetric bins)}
+        \caption{Key analysis variables for single muon control region (symmetric \njet bins)}
         \label{fig:distribution_singlemu_sym}
     \end{center}
 \end{figure}
 
+\clearpage
 \begin{figure}
     \begin{center}
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/alphaT_asym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/ht40_asym.pdf}} \\
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/mht40_pt_asym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SingleMu/jet_pt[0]_asym.pdf}} \\
-        \caption{Key analysis variables for single muon control region (asymmetric bins)}
+        \caption{Key analysis variables for single muon control region (asymmetric \njet bins)}
         \label{fig:distribution_singlemu_asym}
     \end{center}
 \end{figure}
 
+\clearpage
 \begin{figure}
     \begin{center}
         
@@ -74,25 +69,33 @@ The hadronic signal region selection and control regions are detailed in Sec.~\r
         \label{fig:distribution_singlemu_mono}
     \end{center}
 \end{figure}
-%%____________________________________________________________________________||
+
+\clearpage
+\subsection{Yields and distributions for the $\mu\mu$ + jets control sample}
+
+\input{tables/dataLumi/yieldssep_mumu_data_sym.tex}
+\input{tables/dataLumi/yieldssep_mumu_data_asym.tex}
+
+\clearpage
 \begin{figure}
     \begin{center}
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/alphaT_sym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/ht40_sym.pdf}} \\
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/mht40_pt_sym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/jet_pt[0]_sym.pdf}} \\
-        \caption{Key analysis variables for double muon control region (symmetric bins)}
+        \caption{Key analysis variables for double muon control region (symmetric \njet bins)}
         \label{fig:distribution_doublemu_sym}
     \end{center}
 \end{figure}
 
+\clearpage
 \begin{figure}
     \begin{center}
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/alphaT_asym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/ht40_asym.pdf}} \\
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/mht40_pt_asym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/jet_pt[0]_asym.pdf}} \\
-        \caption{Key analysis variables for double muon control region (asymmetric bins)}
+        \caption{Key analysis variables for double muon control region (asymmetric \njet bins)}
         \label{fig:distribution_doublemu_asym}
     \end{center}
 \end{figure}
@@ -107,29 +110,38 @@ The hadronic signal region selection and control regions are detailed in Sec.~\r
         \label{fig:distribution_doublemu_mono}
     \end{center}
 \end{figure}
-%%____________________________________________________________________________||
+
+\clearpage
+\subsection{Yields and distributions for the photon + jets control sample}
+
+\input{tables/dataLumi/yieldssep_gj_data_sym.tex}
+\input{tables/dataLumi/yieldssep_gj_data_asym.tex}
+
+\clearpage
 \begin{figure}
     \begin{center}
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/alphaT_sym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/ht40_sym.pdf}} \\
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/mht40_pt_sym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/jet_pt[0]_sym.pdf}} \\
-        \caption{Key analysis variables for single photon control region (symmetric bins)}
+        \caption{Key analysis variables for single photon control region (symmetric \njet bins)}
         \label{fig:distribution_singlephoton_sym}
     \end{center}
 \end{figure}
 
+\clearpage
 \begin{figure}[h]
     \begin{center}
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/alphaT_asym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/ht40_asym.pdf}} \\
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/mht40_pt_asym.pdf}} ~~
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/jet_pt[0]_asym.pdf}} \\
-        \caption{Key analysis variables for single photon control region (asymmetric bins)}
+        \caption{Key analysis variables for single photon control region (asymmetric \njet bins)}
         \label{fig:distribution_singlephoton_asym}
     \end{center}
 \end{figure}
 
+\clearpage
 \begin{figure}
     \begin{center} 
         \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/SinglePhoton/jet_pt[0]_eq1j.pdf}} ~~
@@ -142,91 +154,68 @@ The hadronic signal region selection and control regions are detailed in Sec.~\r
 \end{figure}
 
 \clearpage
-
-%%____________________________________________________________________________||
-\subsection{Breakdown of SM backgrounds in the hadronic signal
-  region\label{sec:bkgd-comp}}
+\subsection{Expected yields and distributions in the signal region}
 
 In the absence of multijet events from QCD, the remaining significant
 backgrounds in the signal region are expected to stem from SM
 processes with genuine \met in the final state. For the low jet
 multiplicity categories, the largest backgrounds with genuine \met are
- from the associated production of W or Z bosons with jets,
-followed by either the weak decays \znunu\ or \wtaunu, where the
-$\tau$ decays hadronically and is identified as a jet, or by leptonic
-decays that are outside acceptance or not rejected by the dedicated
-electron or muon vetoes. For the higher jet multiplicity categories,
-top quark production followed by semileptonic weak top quark decay
-becomes dominant. The relative contribution from \ttbar is depending on 
-the jet multiplicity with increase importance for large jet multiplicities.
+from the associated production of W or Z bosons with jets, followed by
+either the weak decays \znunu\ or \wtaunu, where the $\tau$ decays
+hadronically and is identified as a jet, or by leptonic decays that
+are outside acceptance or not rejected by the dedicated electron or
+muon vetoes. For the higher jet multiplicity categories, top quark
+production followed by semileptonic weak top quark decay becomes
+dominant. The relative contribution from \ttbar depends on the jet
+multiplicity with increase importance for large jet multiplicities.
 
-% A breakdown
-% of the relative contributions of the SM backgrounds, as given by
-% simulation, in the different (\njet, \nb, \scalht) bins can be found
-% in Table~\ref{tab:backgrounds}. 
-Tables showing the yields for these electroweak backgrounds can be seen in Table~\ref{tab:yields_ewk_sig}.
-An overview of the three dominant channels, \ttbar, \zInv~ and W~+~jets, are shown in Tables \ref{tab:yields_tt_sig}, 
-\ref{tab:yields_zinv_sig} and \ref{tab:yields_wjetstolnuht_sig} respectively for 1.28\ifb 
-(yields for 3\ifb are in Appendix~\ref{app:yields3fb}). The contribution from
-other sources, such as the single top and diboson channels, was found to be
-negligible so are not shown.
+Tables~\ref{tab:yieldsnodata_comb_sig_sym} and
+\ref{tab:yieldsnodata_comb_sig_asym} summarise the expected yields, as
+determined from simulation, in the signal region for an integrated
+luminosity of 1.28 \ifb. In addition to the total expected yield (SM)
+per (\njet,~\nb,~\scalht) bin, the $\ttbar$W and \znunu\ contributions
+are also shown (the former of which contains all residual
+contributions from sub-dominant processes such as \eg diboson
+production). These numbers are indicative only.
 
-%\begin{landscape}
+\clearpage
+\input{tables/dataLumi/yieldsnodata_sig_comb_sym.tex}
+\clearpage
+\input{tables/dataLumi/yieldsnodata_sig_comb_asym.tex}
 
-% \newpage
-% \input{tables/dataLumi/yields_sig_sym_ewk.tex}
-% \newpage
-% \input{tables/dataLumi/yields_sig_sym_tt.tex}
-% \newpage
-% \input{tables/dataLumi/yields_sig_s_wjetstolnuht.tex}
-% \newpage
-% \input{tables/dataLumi/yields_sig_zinv.tex}
+\clearpage
+\begin{figure}
+    \begin{center}
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/alphaT_sym.pdf}} ~~
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/ht40_sym.pdf}} \\
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/mht40_pt_sym.pdf}} ~~
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_pt[0]_sym.pdf}} \\
+        \caption{Key analysis variables for hadronic signal region (symmetric \njet bins)}
+        \label{fig:distribution_signal_sym}
+    \end{center}
+\end{figure}
 
-%%____________________________________________________________________________||
-\newpage
-\subsection{Yields in the control samples}
+\clearpage
+\begin{figure}
+    \begin{center}
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/alphaT_asym.pdf}} ~~
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/ht40_asym.pdf}} \\
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/mht40_pt_asym.pdf}} ~~
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_pt[0]_asym.pdf}} \\
+        \caption{Key analysis variables for hadronic signal region (asymmetric \njet bins)}
+        \label{fig:distribution_signal_asym}
+    \end{center}
+\end{figure}
 
-The yields in the \mj, \mmj, \ej, \eej and \gj control samples can be found in
-Tables~\ref{tab:yields_ewk_mu}, \ref{tab:yields_ewk_mumu},
-and \ref{tab:yields_ewk_gj} respectively for 1.28 \ifb (yields for 3\ifb are in Appendix~\ref{app:yields3fb}). 
-The number of events in each of these regions is important to determine how these analysis regions can be extended. We require to 
-each control region to have sufficiently populated control regions to enable a robust data driven background prediction.
-
-
-% \input{tables/dataLumi/yields_mu_ewk.tex}
-% \newpage
-% \input{tables/dataLumi/yields_mumu_ewk.tex}
-% \newpage
-% \input{tables/dataLumi/yields_gj_ewk.tex}
-% \newpage
-
-%%____________________________________________________________________________||
-\subsection{Signal acceptance from asymmetric jet \Pt thresholds}
-
-For a typical compressed model, Fig.~\ref{fig:asymMotivation} shows the second jet \PT
-distribution for two different \HT bins. In the low \HT case a large portion of
-the events are killed by requiring the second jet to have $\ET>100\gev$. 
-
-We therefore add an new analysis category where the leading jet is required to fulfil 
-momenta of jet $\ET>100\gev$ and sub-leading jet $40\gev<\ET<100\gev$. This new category 
-results in new asymmetric jet bins split also in $\njet$, $\nb$ and \HT. The asymmetric jet bin
-results in much larger acceptance for monojet-type and ISR induced event topologies like DM signals
-and compresses SUSY scenarios. 
-For the simplified model T2tt with $m_{\rm stop}=425\gev$ and $m_{\rm LSP}=325\gev$, 
-including these bins increases signal acceptance by around a factor 3, for the DM models a factor of five is observed.
-The addition of the asymmetric bin can only lead in combination to improvements or constant sensitivities.
-\begin{figure}[h!]
-  \centering
-  \subfigure[Second jet \PT for $200\gev<\HT<250\gev$, $\alphat>0.65$]{
-    \includegraphics[width=0.5\textwidth]{figures/asymPlots/secondJetPtlowHT}
-  }~~
-  \subfigure[Second jet \PT for $400\gev<\HT>500\gev$, $\alphat>0.52$]{
-    \includegraphics[width=0.5\textwidth]{figures/asymPlots/secondJetPthigherHT}
-  }
-  \\
-  \caption{\label{fig:asymMotivation} The second leading jet \PT for different
-  cases of \HT after a baseline signal selection: $\njet\geq2$, lead jet
-  $\ET>100\gev$, lepton vetoes. Made with the T2tt ($m_{\rm
-    stop}=425\gev$, $m_{\rm LSP}=325\gev$) simplified model sample.}
+\clearpage
+\begin{figure}
+    \begin{center}
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_pt[0]_eq1j.pdf}} ~~
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/jet_eta[0]_eq1j.pdf}} \\
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/met_pt_eq1j.pdf}} ~~
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/Signal/biasedDPhi20_eq1j.pdf}} \\
+        \caption{Key analysis variables for hadronic signal region (monojet bins)}
+        \label{fig:distribution_signal_mono}
+    \end{center}
 \end{figure}
 
