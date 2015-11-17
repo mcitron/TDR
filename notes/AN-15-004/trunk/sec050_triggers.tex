@@ -31,16 +31,14 @@ threshold of 90 \GeV ensured the optimum performance when balancing efficiency a
 thresholds across all jet toplogies. The dijet average requirement does however lead to a loss in efficiency for 
 asymmetric jet events where the sub-leading jet is soft. This loss in efficiency is mitigated by taking the 
 disjunction of the \verb!HLT_PFHTXXX_PFDijetYYY_AlphaT0pZZ! and the monojet triggers which provides a recovery 
-of efficiency in the turn-on and close to the plateau.
-
-Above $\scalht > 800$ a pure \scalht trigger, \verb!HLT_PFHT800!, is utilised which has no explicit dependence 
-on $\alphat$ or dijet average threshold. To regain efficiency in the region $800 < \scalht < 900$ where the trigger
-is in the turn on
-
+of efficiency in the turn-on and close to the plateau. The $\scalht$-$\alphat$ triggers seed all signal multijet offline 
+bins in the range for $\scalht > 200$ \GeV. Above $\scalht > 800$ an additional pure \scalht trigger, \verb!HLT_PFHT800!, 
+is utilised which has no explicit dependence on $\alphat$ or dijet average threshold. 
 
 These triggers form the primary signal selection menu for the analysis, in addition a set of secondary triggers with 
 higher thresholds were in operation to provide redundancy for higher luminosity scenarios. In Run 2 however the primary 
 triggers sufficiently suppressed trigger rates such that the use of secondary triggers in the analysis are not required.
+
 
 The Level-1 seeds for the HLT paths are given by the disjunction of the lowest 
 unprescaled Level-1 hadronic scalar energy and missing energy sum seeds (\verb!HTTXXX_OR_ETMYYY!) for 
@@ -50,15 +48,12 @@ utilises loose \scalht and dijet average \pt requirements in addition to a new v
 defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which better correlates \alphat 
 between calorimeter and PF-based reconstruction.
 
-The thresholds of the signal triggers, shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}, are 
-tuned to maintain acceptance for a range of signal topologies whilst effectively suppressing QCD 
-multijet events to maintain acceptable trigger rates. These triggers uniquely seed individual offline \scalht 
-bins with the exception of the highest-\scalht \scalht-\alphat cross-trigger which is utilised for analysis 
-bins in the range: 
-$400 < \scalht < 800$ \GeV. Above $\scalht > 800$ a pure \scalht trigger, \verb!HLT_PFHT800!, is utilised 
-which has no explicit dependence on $\alphat$ or dijet average threshold. These triggers form the primary 
-signal selection menu, in addition a set of secondary triggers with higher \alphat thresholds provide redundancy 
-for higher luminosity scenarios. 
+The thresholds of the signal triggers are shown in Table~\ref{tab:2015_Hadronic_Signal_Triggers}. The choice of threshold for 
+the \scalht-\alphat triggers were tuned to maintain acceptance for a range of signal topologies whilst effectively suppressing QCD 
+multijet events to maintain acceptable trigger rates. 
+
+
+
 
 % TABLE : 2015 triggers
 %----------------------------------------------------------------------
