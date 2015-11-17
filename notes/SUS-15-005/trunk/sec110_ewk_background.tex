@@ -2,4 +2,71 @@
 \section{Non-multijet backgrounds}
 \label{sec:ewk_background}
 
+In the absence of multijet events, the background counts in the signal
+region arise from SM processes with significant \met in the final
+state. In events with low counts of jets and b-quark jets, the largest
+backgrounds with genuine \met are from the associated production of W
+or Z bosons with jets, followed by either the weak decays \znunu or
+\wtaunu, where the $\tau$ decays hadronically and is identified as a
+jet; or by leptonic decays that are not rejected by the dedicated
+electron or muon vetoes. The veto of events containing isolated tracks
+is efficient at further suppressing these backgrounds as well as the
+single-prong hadronic decay of the tau lepton. At higher jet and
+b-quark jet multiplicities, top quark production followed by
+semileptonic weak top quark decay becomes important. 
+
+The production of W and Z bosons in association with jets, \ttbar and \gj processes are simulated
+with the \MADGRAPH V5~\cite{madgraph} event generator. The production
+of single-top quark events is generated with
+\POWHEG~\cite{powheg}, and diboson events are produced with
+\PYTHIA8.1~\cite{pythia8}. For all simulated samples, \PYTHIA8.1 is
+used to describe parton showering and hadronisation. All samples are
+generated using the \textsc{cteq6l1}~\cite{Pumplin:2002vw} parton
+distribution functions (PDF). The description of the detector response
+is implemented using the \GEANTfour~\cite{geant} package. The
+simulated samples are normalised using the most accurate cross section
+calculations currently available, usually with
+next-to-next-to-leading-order (NNLO) accuracy. To model the effects of
+pileup, the simulated events are generated with a nominal distribution
+of pp interactions per bunch crossing and then reweighted to match the
+pileup distribution as measured in data.
+
+The method to estimate the non-multijet backgrounds in the signal
+region relies on the use of transfer factors (TF), which are
+constructed per bin (in terms of \njet, \nb, and \scalht) per data
+control sample. The TFs are determined from the simulated event
+samples and are ratios of expected yields in the corresponding bins of
+the signal region and control samples. The TFs are used to extrapolate
+from the event yields measured in a data control samples to an
+expectation for the total background event yields in the signal
+region. 
+
+Two independent estimates of the irreducible background of \znunu +
+jets events are determined from the \gj and \mmj data control samples.
+The \gj and \zmumu + jets processes have similar kinematic properties
+when the photon or muons are ignored~\cite{Bern:2011pa} albeit
+different acceptances. In addition, the \gj process has a larger
+production cross section than \znunu + jets events.
+
+The \mj data sample provides an estimate for the total
+contribution from all other SM processes, which is dominated by \ttbar
+and W-boson production. Residual contributions from processes such as
+single-top-quark, diboson, and Drell-Yan production are also included.
+
+The uncertainty in the transfer factors derived from simulation is
+probed through closure tests based on data control
+samples~\cite{RA1Paper2012}. Each closure test inspects the
+compatability of yields in two disjoint control samples and a corresponding TF
+derived from simulation. A large ensemble of tests are performed to
+probe key ingredients of the simulation modelling that may introduce a
+source of mismodelling in the transfer factors.
+
+The closure tests reveal no significant biases or dependencies on
+\njet or \scalht for all individual tests. Systematic uncertainties in
+the transfer factors are determined from the statistically-weighted
+variance in the level of closure for collections of
+tests.
+
+Monte Carlo based templates are used to predict the background in the \mht distrbution. Control regions are used to evaluate the degree to which the Monte Carlo describes the variable in data and assign appropriate systematic uncertainties.
+
 %%__________________________________________________________________||
