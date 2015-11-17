@@ -98,7 +98,7 @@ jets is currently taken directly from simulation.
 %precision than obtained directly from simulation, particularly for
 %events with high counts of b-quark jets.
 
-{\bf \HT requirements and binning.} 
+{\bf \HT,\mht requirements and binning.} 
 
 Events are required to have significant hadronic activity by requiring
 $\scalht > 200\GeV$. Despite an increase in both multijet production
@@ -113,6 +113,12 @@ bins in the range $200 < \HT < 400\gev$, 100\gev bins in the range
 $400 < \HT < 600\gev$, a 200\gev bin $600<\HT<800\gev$ and a final 
 inclusive bin $\HT > 800\gev$.
 
+Events are also required to have appreciable missing hadronic energy
+by requiring $\mht>130\gev$. This ensures that all events used within
+the analysis have a degree of missing energy similar to that required
+in the signal region via an \alphat cut. This is outlined in
+Sec.~\ref{sec:had-signal}. 
+
 The lower threshold of the last (inclusive) \HT bin is not forced to
 $800\gev$, it is instead determined
 independently for each (\njet,\nb) event category and is chosen to
@@ -122,11 +128,12 @@ events in the corresponding event category and \HT bin of the data
 control samples. This ensures that all bins in the data control
 samples are sufficiently populated to ensure a statistically
 significant prediction in each of the corresponding signal region
-bins. Currently, this is achieved by requiring sufficient events
-($\sim 10$) to yield a statistical uncertainty on the total background
-prediction of $\lesssim30\%$. Events from high \HT bins are combined
+bins. Currently, this is achieved by requiring at least $10$ predicted
+events in each \HT and \njet category of the control regions
+along with the requirement that there is at least one observed
+event per \nb category. If this is not the case, events from high \HT bins are combined
 into a single inclusive bin that satisfies this metric. This metric
-also ensures that there are sufficient events in the control samples
+ensures that there are sufficient events in the control samples
 to probe for potential systematic effects with closure tests between
 simulation and data, as described in Sec.~\ref{sec:systematics}.
 
@@ -146,6 +153,7 @@ simulation and data, as described in Sec.~\ref{sec:systematics}.
     Lead jet acceptance           & $\PT > 100\gev$, $|\eta| <    2.5$                                     \\
     Second jet acceptance         & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$                       \\
     Loosest \HT requirement       & $\HT > 200\gev$                                                        \\
+    Loosest \mht requirement      & $>130\gev$                                                     \\  
     Baseline \HT binning          & 200--250, 250--300, 300--350, 350--400, 400--500, 500--600, 600--800, $>$800\gev \\
     Baseline \njet multiplicities & 1 (mono-jet), 2, 3, 4, $\geq$5 (both symmetric and asymmetric)                       \\
     Baseline \nb multiplicities   & 0, 1, 2, $\geq3$ ($\nb \leq \njet$)                                    \\
@@ -170,7 +178,9 @@ of 1.28\ifb.
   \caption{Threshold (GeV) of the final \HT bin as a function of event
     category (\njet,\nb), which is always aligned with respect
     to one of the baseline boundaries (motivated primarily by the trigger) of
-    200, 250, 300, 350, 400, 600, 800\gev. This is the projected choice for 3\fbinv.}
+    200, 250, 300, 350, 400, 600, 800\gev. 
+    %This is the projected choice for 3\fbinv.
+    }
   \label{tab:binning-3fb}
   \centering
   \footnotesize
@@ -215,7 +225,7 @@ requirement is made such that events are not vetoed due to the
 presence of a track from the well identified leptons, by requiring
 $\Delta R(\textrm{track},\textrm{lepton}) > 0.02$.
 
-Finally, to select a pure multijet topology and to allow for a
+Finally, to select a purely hadronic topology and to allow for a
 orthogonal control region, events are vetoed in which an isolated photon
 with $\pt > 25\GeV$ and $|\eta| < 2.5$ is identified.
 
@@ -246,8 +256,8 @@ to an increasing \HT scale means that looser \alphat thresholds can be
 used at higher values of \HT.
 
 A useful approximate conversion between \alphat and \mht can be
-obtained by calculating \alphat while forcing $\dht = 0\gev$, as
-described by Eq.~\ref{eq:alphat3}. Hence, using this metric, the
+obtained by calculating \alphat, as described by Eq.~\ref{eq:alphat3}, 
+while forcing $\dht = 0\gev$,. Hence, using this metric, the
 dependence of the \alphat requirement as a function of the \HT bin can
 be determined such that the effective requirement on \mht is
 comparable, \ie roughly constant, across all \HT bins. The values
@@ -263,7 +273,7 @@ on \njet nor \nb that are used to define the event categories.
 \begin{table}[h!]
   \caption{\alphat and corresponding ``effective'' \mht (GeV) thresholds versus
     lower bound of \scalht bin. For all \HT bins satisfying $\HT > 800
-    \gev$, a direct requirement of $\mht > 130\gev$ is imposed rather
+    \gev$, the direct requirement of $\mht > 130\gev$ is imposed rather
     than a requirement on \alphat. No \alphat requirement is imposed in the
     monojet bins.}
   \label{tab:alphat-thresholds}
@@ -281,13 +291,13 @@ on \njet nor \nb that are used to define the event categories.
   \end{tabular}
 \end{table}
 
-For Run~2, all signal region bins satisfying $\HT > 800\gev$ is
+For Run~2, all signal region bins satisfying $\HT > 800\gev$ are
 seeded by the single-object \texttt{HLT\_HT800} trigger, which is
 expected to be unprescaled. For these high \HT bins, no \alphat
 threshold is required, which removes the inefficiencies of this
 variable for high jet multiplicity events. Instead, the following
-requirements are imposed to control the multijet background: $\mht >
-130\gev$ and $\bdphi > 0.5$ (described below).
+$\mht >130\gev$ requirement helps to control the multijet background
+along with the imposition of $\bdphi > 0.5$ (described below).
 
 {\bf \bdphi requirement.} 
 
@@ -316,7 +326,8 @@ characterised by the presence of significant \met.
 
 {\bf $\mht/\met$ cleaning filter.} 
 
-To protect against multiple jets failing the $\Et$ threshold, the jet-based
+To protect against multiple jets failing the $\Et$ threshold or
+falling out of detector acceptance, the jet-based
 estimate of the missing transverse energy, \mht, is compared to the
 missing transverse energy variable, $\met$, and events with $R_{\rm
   miss}=\mht/\met > 1.25$ are rejected.
@@ -326,26 +337,52 @@ missing transverse energy variable, $\met$, and events with $R_{\rm
 Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count)
 or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause 
 severe energy losses. A data-driven method is developed to identify dead cells. The 
-procedure is as follows. For each jet in the inclusive jet collection with
+procedure is carried out on events that pass a loose selection of one good primary vertex,
+$\njet>1$ and $\scalht>150\gev$. For each identified jet with
 $\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
-recomputed ${\mhtvec}$ is determined, same as the procedure to compute the \bdphi 
-variable. A $\eta-\phi$ map is constructed with each jet which gives $\Delta\phi_{jet} < 0.3$.
-Finally, a $\eta-\phi$ map is also made with all jets in the inclusive jet collection and
-a 2D ratio map is obtained with the numerator being the former and the denumerator being 
-the latter. Jets pointing to dead cells are likely to give $\Delta\phi_{jet} < 0.3$, so the
-location of dead cells in $\eta$ and $\phi$ has a higher value in the 2D ratio map. 
+recomputed ${\mhtvec}$ is determined, in the same way as in the procedure to compute the \bdphi 
+variable. The positions of all jets which give $\bdphi < 0.3$ are plotted in
+an $\eta-\phi$ map. Subsequently, the positions of all jets with
+$\pt>20\gev$ are plotted in a second $\eta-\phi$ map.
+These two maps are then divided to form a 2D ratio map, taking the
+first map as the numerator and second as the denominator.
+Jets pointing to dead cells are likely to give $\bdphi < 0.3$, so the
+location of dead cells in $\eta$ and $\phi$ have higher values in this 2D ratio map. 
+
 Figure~\ref{fig:2dRatioMap} is the 2D ratio map made with unblinded signal region with luminosity of 
-149.49~$\text{pb}^{-1}$.
+149.49~$\text{pb}^{-1}$. In the lower left region of the plot, two
+areas with significant instrumental effects are clear. To ensure these
+effects are filtered out by all cleaning cuts within the analysis, an
+$\eta-\phi$ map of all jets with $\pt>20\gev$ and $\bdphi<0.3$ are
+plotted after the signal region selection (as described in
+Sec.~\ref{sec:had-signal}), shown in
+Fig.~\ref{fig:jetMapPostSignalSelection}. The areas with significant
+instrumental effects visible in Fig.~\ref{fig:2dRatioMap} do not appear
+to remain in Fig.~\ref{fig:jetMapPostSignalSelection}. This implies the current suite of cleaning cuts
+is enough to remove any localised detector effects.
 
 \begin{figure}[h!]
     \begin{center}
         {\includegraphics[width=0.7\textwidth]{figures/selection/EtaPhiMap.pdf}}
-        \caption{2D ratio map, with unblinded signal region with luminosity of 149.49~$\text{pb}^{-1}$}
+        \caption{The 2D ratio of jets ($\pt>20\gev$) with $\bdphi<0.3$ plotted in the
+        $\eta-\phi$ plane, divided by all jets that satisfy $\pt>20\gev$. 
+        Made with 149.49~$\text{pb}^{-1}$ of
+        events that pass a loose selection of one good primary vertex,
+        $\njet>1$ and $\scalht>150\gev$.}
         \label{fig:2dRatioMap}
     \end{center}
 \end{figure}
 
-
+\begin{figure}[h!]
+    \begin{center}
+        {\includegraphics[width=0.7\textwidth]{figures/selection/bDPhilt0p3AfterSelection.pdf}}
+        \caption{Jets ($\pt>20\gev$) with $\bdphi<0.3$ plotted in the
+        $\eta-\phi$ plane. 
+        Made with $1.26\ifb$ of
+        events that pass the full signal region selection.}
+        \label{fig:jetMapPostSignalSelection}
+    \end{center}
+\end{figure}
 
 %To protect against severe energy losses caused by masked regions in the ECAL (which
 %amount to about 1\% of the ECAL channel count) or HCAL, or by missing
@@ -372,6 +409,18 @@ Such spurious events are suppressed by requiring at least 10\% of the leading
 jet's energy to originate from charged hadrons, $CHF>0.1$. The effectiveness of this selection
 is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
 
+Beyond the filter available in the data ntuples, the JetMET POG have
+provided lists of events that should fail the CSC beam halo and bad
+ECAL super cluster filters. These extra events are vetoed and the
+efficiency of events in the signal region (Sec.~\ref{sec:had-signal})
+and single muon control region (Sec.~\ref{subsec:mucontrolSelection})
+that pass this veto for each analysis bin are plotted in
+Fig.~\ref{fig:cscFilterEfficiencies}. In the vast majority of bins the
+extra filters are $100\%$ efficient, with a few bins with an
+inefficiency at the $2-3\%$ level. This confirms that the $CHF$ cut is
+already effectively removing spurious events that are present due to
+beam halo effects. 
+
 \begin{figure}[h!]
     \begin{center}
         {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetChf_all_before.pdf}}
@@ -386,6 +435,18 @@ is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
     \end{center}
 \end{figure}
 
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Signal region
+    selection]{\includegraphics[width=0.5\textwidth]{figures/selection/Signal_Data_CSCEfficiency.pdf}} ~~
+    \subfigure[Single muon control region
+    selection]{\includegraphics[width=0.5\textwidth]{figures/selection/SingleMu_Data_CSCEfficiency.pdf}} \\
+    \caption{Efficiencies of the CSC beam halo and bad ECAL super
+    cluster filters applied on $1.26\ifb$ of data passing the single
+    muon and signal region selections.}
+    \label{fig:cscFilterEfficiencies}
+  \end{center} 
+\end{figure}
 
 {\bf Summary of signal region selection.} 
 
@@ -405,7 +466,6 @@ in Table~\ref{tab:sr-selections}.
     Selection             & Requirement                                                    \\
     \hline
     \alphat               & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 800\gev$ \\
-    \mht                  & $>130\gev$ for region $\HT > 800\gev$                          \\  
     \bdphi                & $>0.5$                                                         \\
     \mht/\met             & $<1.25$                                                        \\
     ``Dead ECAL filter''  & (see text)                                                     \\
@@ -552,6 +612,7 @@ the \met is adjusted to account for the transverse momentum of the
 identified, isolated muon.
 
 \subsection{The \texorpdfstring{\mmj}{di-muon plus jets} control sample}
+\label{subsec:mumucontrolSelection}
 
 %The \znunu\ + jets process forms an irreducible background and can be
 %estimated using the \zmumu + jets process, which has similar kinematic
