@@ -92,33 +92,30 @@ thresholds. We have already successfully exercised this approach with
 the Run~1 analysis and are thus confident that we can do this again
 during Run~2. As in Run~1, multiple efficiency measurements are
 employed, which are performed with data and propagated through to the
-analysis with cross checks in simulation.
+analysis with cross checks in simulation. A summary of estimates of a 
+selection of signal models in simulation is presented in Appendix~\ref{app:signalModelTriggerEfficiencies}.
 
-However, it is noted that for the majority of models accessible by the
-"Early Analysis", such as gluino-induced production and decay, the
-most sensitive bins are typically at higher values of MHT, for which
-the triggers perform close to full efficiency. Lower MHT bins are
-subject to trigger efficiency corrections based on measurements in
-data, as discussed above. A summary of estimates of a selection of signal 
-models is presented in \ref{app:signalModelTriggerEfficiencies}.
-
-
+%% However, it is noted that for the majority of models accessible by the
+%% "Early Analysis", such as gluino-induced production and decay, the
+%% most sensitive bins are typically at higher values of MHT, for which
+%% the triggers perform close to full efficiency. Lower MHT bins are
+%% subject to trigger efficiency corrections based on measurements in
+%% data, as discussed above. 
 
 
 % 
-\subsubsection{Measurement of trigger efficiency with data}
-\label{sec:trigger_eff_data}
-The measurements of signal trigger efficiency in data are performed with an electron sample, selected by the
-unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger. To remain consistent with the reconstruction 
+The trigger efficiency measurement of the multijet signal triggers in data are primarily performed with the use of 
+an electron sample, selected by the unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger. 
+To remain consistent with the reconstruction 
 of electrons in the trigger, no cross-cleaning of electrons from jets are performed offline, with
 the electron being included in the computation of event-level jet energy sums, such as \scalht, \MHT and \alt. 
 The offline selection requires at least 2 jets with $\pt > 100$ GeV, a veto for forward ($|\eta|>3$) jets with $\pt > 40$ GeV 
 and a $\mhtmet < 1.25$ requirement. 
-Each \scalht bin in the analysis is seeded by a single trigger, so an offline \scalht cut is applied to ensure the selection to be on the plateau of the \scalht leg. 
-For the \verb!HLT_PFHT200_DiPFJetAve90_PFAlphaT0p57! trigger an offline cut $\scalht > 300$ GeV is applied, corresponding to a gap between the trigger and the offline selection 
-of 100 GeV. For all the other triggers a 50 GeV gap is found to be enough to be in the plateau for the \scalht leg.
-The trigger ``turn-ons'' for the \alt leg are shown in Figure \ref{fig:alphat_turnons}, with the offline selection described above.
-The \verb!HLT_PFHT800! trigger, used to seed the analysis bin $\scalht > 800$ GeV, has no \alt requirement and thus no \alt turn-on is shown for this path.
+
+The efficiency of the individual legs of the \scalht-\alphat triggers are measured by applying an offline requirement to ensure 
+fully efficiency in the opposing leg. The \scalht-\alphat trigger turn-ons for the \alt leg are shown in Figure \ref{fig:alphat_turnons}, 
+with the offline selection described above. The \verb!HLT_PFHT800! trigger, used to seed the analysis bin $\scalht > 800$ GeV, 
+has no \alt requirement and thus no \alt turn-on is shown for this path.
 
 
 \begin{figure}[h!]
