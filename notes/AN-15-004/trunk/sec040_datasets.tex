@@ -4,24 +4,48 @@
 
 \subsection{Data}
 
-In this note, we use proton-proton collision data at $\sqrt{s} =$ 13~TeV
-being collected in 2015. Table~\ref{tab:datasets_data} lists the names of
-the data sets relevant for the analysis. The integrated luminosities
-shown in the table are the sizes of the certified data for each data set
-at the time of writing. Since the data collection for the year 2015 and
-the certification of the data are ongoing, the sizes of the data sets
-that will be used in the final analysis will be larger than the sizes indicated in the table.
 
-This version of the note uses subsets of the data listed in the table.
-As the analysis is ongoing, different sections of this note
-might use different sizes of the data. The data sizes used in particular
-studies in the note might be indicated in relevant sections, tables or
-figures.
+In this note, we use proton-proton collision data at $\sqrt{s} =$
+13~TeV collected in 2015. This version of the note uses 1.2~\ifb of
+data certified by the physics validation group. The JSON file listed
+in Table~\ref{tab:cert_json} specifies the periods of the time in
+which these certified data are collected.
+Table~\ref{tab:datasets_data} lists the names of the data sets
+relevant for the analysis, along with the integrated luminosities for
+each data set. Since the certification of the data collected in 2015
+is ongoing, we will use more data in the final version of the note.
 
-We are performing a blind analysis. In this version of the note, the
-data in the signal region is largely blinded with the exception of
-149.48 \ipb of the certified data agreed to unblind in the SUS PAG. These are used to commission
-the analysis. No data in the control regions is blinded.
+We perform a blind analysis. In the previous version of the note, the
+data in the signal region is blinded with the exception of 149.48~\ipb
+of the certified data specified by the JSON file in
+Table~\ref{tab:cert_unblind_json}. Data in the control regions is
+never blinded. These bliding policies are agree in the SUS PAG.
+
+In the review of the previous version of the note and related
+presentations in the SUS PAG, it becomes clear that we understand the
+data in the control regions and a small fraction of the unblinded data
+in the signal region well enough to predict the backgrounds in the
+signal region. As a result, no data in the signal region is blinded in
+this version of the note.
+
+\begin{table}[!h]
+\topcaption{The JSON file that specifies the periods of the time in
+which 1.2~\ifb of the certified data are collected} \footnotesize
+\input{tables/datasets/cert_json.tex} \label{tab:cert_json}
+\end{table}
+
+\begin{table}[!h]
+\topcaption{Data sets}
+\footnotesize \input{tables/datasets/c140607_c151022_l001.tex}
+\label{tab:datasets_data}
+\end{table}
+
+\begin{table}[!h]
+\topcaption{The JSON file specifying the 149.48~\ipb of the certified
+data that we never blind} \footnotesize
+\input{tables/datasets/cert_unblind_json.tex}
+\label{tab:cert_unblind_json}
+\end{table}
 
 \subsection{Simulation}
 
@@ -33,23 +57,105 @@ interactions per bunch-crossing (in-time pileup). The expected detector
 signal from previous or following bunch crossings (out-of-time pileup)
 with 25ns bunch spacing is overlapped.
 
+ \begin{table}[!h]
+  \centering
+  \topcaption{Simulated background samples}
+  \scriptsize
+  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
+  \label{tab:datasets_bkg}
+ \end{table}
 
-\begin{table}[!h]
-\topcaption{Data sets}
-\footnotesize \input{tables/datasets/c140607_c151022_l001.tex}
-\label{tab:datasets_data}
+\begin{table}[!p]
+ \centering
+ \topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1qqqq.tex}}
+%\label{tab:datasets_bkg}
 \end{table}
 
-\begin{landscape}
-\begin{table}[!h]
-\topcaption{Simulated background samples}
-\tiny \input{tables/datasets/c140607_c151022_l002.tex}
-\label{tab:datasets_bkg}
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1tttt.tex}}
+%\label{tab:datasets_bkg}
 \end{table}
-\end{landscape}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1bbbb.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMV_NNPDF30_Vector.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \tiny
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMV_NNPDF30_Axial.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMS_NNPDF30_Scalar.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMS_NNPDF30_Pseudoscalar.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_BBbarDMJets_scalar.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_BBbarDMJets_pseudoscalar.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+ \topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_TTbarDMJets_scalar.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+ \topcaption{Simulated samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_TTbarDMJets_pseudoscalar.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\clearpage
 
 \subsection{Pileup reweighting}
-
 
 The distribution of the numbers of the pileup interactions in the
 simulated events is different from that in the data; the simulated
