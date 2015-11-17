@@ -105,25 +105,40 @@ selection of signal models in simulation is presented in Appendix~\ref{app:signa
 
 
 % 
-The trigger efficiency measurement of the multijet signal triggers in data are primarily performed with the use of 
-an electron sample, selected by the unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger. 
-To remain consistent with the reconstruction of electrons in the trigger, no cross-cleaning of electrons from jets 
-are performed offline, with the electron being included in the computation of event-level jet energy sums, such as 
-\scalht, \MHT and \alt. As the monojet trigger performs cross-cleaning of muons online, its efficiency is measured 
-with a muon sample, selected by the unprescaled \verb!HLT_IsoMu20! reference trigger, with cross-cleaning performed offline.
 
-The offline selection for the multijet signal region requires at least 2 jets with $\pt > 100$ GeV, a veto for forward ($|\eta|>3$) 
-jets with $\pt > 40$ GeV 
-and a $\mhtmet < 1.25$ requirement. The efficiency of the individual legs of the \scalht-\alphat triggers are measured 
-by applying an offline requirement to ensure fully efficiency in the opposing leg. The \scalht-\alphat trigger turn-ons for the 
-\alt leg are shown in Figure \ref{fig:alphat_turnons}, with the offline selection described above. The \verb!HLT_PFHT800! 
-trigger, used to seed the analysis bin $\scalht > 800$ GeV, 
-has no \alt requirement and thus no \alt turn-on is shown for this path.
+The efficiency of the signal triggers are measured in data using electron and muon samples 
+selected by the unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! and \verb!HLT_IsoMu20! 
+reference triggers with a signal selection. Biases in these measurements can be introduced 
+due to the contamination in the computation of event variables and different treatments 
+between trigger and offline reconstructions, the degree of which varies with \scalht and \njet.
 
-{\color{blue} Compare monojet muon and electron (turnons) state bias in electron sample has decreasing importance for increasing HT, NJet. 
+The monojet trigger performs a cross-cleaning of muons online, enabling its efficiency to measured
+in an unbiased manner using a muon sample. Electrons however cannot be disentangled and to remain 
+consisent with the trigger must be measured with offline cross-cleaning disabled. A comparison of 
+the estimate of the monojet trigger efficiency using muon and electron samples is shown in Fig.~\ref{fig:gjets_HTsideband}.
+
+
+Compare monojet muon and electron (turnons) 
+
+
+state bias in electron sample has decreasing importance for increasing HT, NJet. 
 Our belief is that the proper treatment of cross-cleaning online with a muon sample (as shown in the monojet case) would produvde faster
 turn ons, however the multijet triggers do not have the muon cross-cleaning. 
 
+
+
+
+The trigger efficiency measurement of the multijet signal triggers in data are primarily performed with the use of 
+an electron sample, selected by the unprescaled \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! reference trigger with a cross. 
+To remain consistent with the reconstruction of electrons in the trigger, no cross-cleaning of electrons from jets 
+are performed offline, with the electron being included in the computation of event-level jet energy sums, such as 
+\scalht, \MHT and \alt. 
+
+The \verb!HLT_PFHT800! 
+trigger, used to seed the analysis bin $\scalht > 800$ GeV, 
+has no \alt requirement and thus no \alt turn-on is shown for this path.
+
+{
 The trigger efficiency estimates with the electron reference trigger are found to be close to or at the plateau when taking the disjunction of the 
 triggers for \scalht < 800 \GeV. Full efficiency is therefore assume for these triggers with a systematic to this estimate assigned equal to the 
 inefficiency estimated by the respective reference trigger. For \scalht > 800 \GeV, where the bias of electrons is a smaller effect, the trigger 
