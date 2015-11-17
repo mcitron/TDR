@@ -23,31 +23,25 @@ The expected number of events from SM processes is determined from a
 simultaneous fit to the signal region and up to three control
 samples. The likelihood function is maximised over all fit parameters
 under the SM-only hypothesis.
-Table~\ref{tab:fit-result} summarises 
-the observed yields and expected event counts in bins of \scalht for events
+Tables~\ref{tab:yieldsall_sig_comb_sym} and \ref{tab:yieldsall_sig_comb_asym} and
+\ref{tab:yieldsall_sig_comb_mono} summarise
+the observed yields and post fit predicted event counts in bins of \scalht for events
 in the signal region categorised according to \njet and \nb. 
 No significant tension is observed between the signal and control
 regions, which are well described by the SM-only hypothesis.
 
-\begin{table}[h!]
-  \caption{Observed event yields and expected SM-only event counts
-    with associated uncertainties in bins of \scalht for events in the
-    signal region that are categorised according to \njet and \nb.}
-  \label{tab:fit-result}
-  \centering
-  \tiny
-  \begin{tabular}{ llllllllllllll }
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
+\input{yieldsall_sig_comb_sym}
+\input{yieldsall_sig_comb_asym}
+\input{yieldsall_sig_comb_mono}
+\clearpage
+
 
 The results of this search are interpreted in terms of limits in the
 parent sparticle and LSP mass parameter space of simplified
 models~\cite{Alwall:2008ag, Alwall:2008va, sms} that represent the pair production of gluinos and their subsequent decays to four quarks 
 and an LSP. Models in which the gluinos decay inclusively to all quark flavours, and models in which the decay is to four top and bottom quarks, respectively, are considered. 
 Only a subset of the event categories, chosen according to expected sensitivity, are used for
-each interpretation.
+each interpretation. 
 
 The event samples for the simplified models are generated 
 with \MADGRAPH V5~\cite{madgraph}.
@@ -70,11 +64,12 @@ of which is assumed to follow a lognormal distribution.
 \begin{figure*}[tbhp]
 
   \begin{center}
+    \includegraphics[width=0.8\textwidth]{xs_contour_withHisto.pdf}
     \caption{Observed upper limit on the gluino pair-production cross section at 95\% CL (indicated by the colour scale) as a function of the gluino
       and $\chiz$ masses for gluino three body decays to (a) $qq\chiz$, (b) $bb\chiz$, and (c) $tt\chiz$.
-      The black solid thin lines represent the observed exclusions when
+      The red solid thick line represents the observed exclusions when
       varying the production cross section by its theoretical uncertainty. 
-      The red thick dashed (thin dashed
+      The black solid line (thin dashed
       or dotted) line indicates the median (${\pm}1 \sigma$ or ${\pm}2
       \sigma$ experimental uncertainty) expected exclusion.
       \label{fig:limits-sms} }
