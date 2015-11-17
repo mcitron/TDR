@@ -6,7 +6,7 @@
 
 
 In this note, we use proton-proton collision data at $\sqrt{s} =$
-13~TeV collected in 2015. This version of the note uses 1.2~\ifb of
+13~TeV collected in 2015. This version of the note uses 1.3~\ifb of
 data certified by the physics validation group. The JSON file listed
 in Table~\ref{tab:cert_json} specifies the periods of the time in
 which these certified data are collected.
@@ -49,33 +49,35 @@ data that we never blind} \footnotesize
 
 \subsection{Simulation}
 
-Table~\ref{tab:datasets_bkg} lists the data sets of simulated events
-of the standard model background processes used in this note. In these
-data sets, in addition to the main interaction, each event contains on
-average 20 minimum bias interactions which simulate multiple
-interactions per bunch-crossing (in-time pileup). The expected detector
-signal from previous or following bunch crossings (out-of-time pileup)
-with 25ns bunch spacing is overlapped.
+Table~\ref{tab:datasets_bkg} lists the data sets of simulated events of
+the standard model background processes used in this note. Tables from
+\ref{tab:datasets_SMS_T1qqqq} to
+\ref{tab:datasets_dm_ttbar_pseudoscalar} lists those of the signal
+processes. In these data sets, in addition to the main interaction, each
+event contains on average 20 minimum bias interactions which simulate
+multiple interactions per bunch-crossing (in-time pileup). The expected
+detector signal from previous or following bunch crossings (out-of-time
+pileup) with 25ns bunch spacing is overlapped.
 
- \begin{table}[!h]
-  \centering
-  \topcaption{Simulated background samples}
-  \scriptsize
-  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
-  \label{tab:datasets_bkg}
- \end{table}
-
-\begin{table}[!p]
+\begin{table}[!h]
  \centering
- \topcaption{Simulated samples}
+ \topcaption{Simulated background samples}
  \scriptsize
- \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1qqqq.tex}}
-%\label{tab:datasets_bkg}
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
+ \label{tab:datasets_bkg}
 \end{table}
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+ \topcaption{Simulated signal samples: SMS T1qqqq}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1qqqq.tex}}
+\label{tab:datasets_SMS_T1qqqq}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated signal samples: SMS T1tttt}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1tttt.tex}}
 %\label{tab:datasets_bkg}
@@ -83,7 +85,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: SMS T1bbbb}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1bbbb.tex}}
 %\label{tab:datasets_bkg}
@@ -91,7 +93,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: DM Vector}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMV_NNPDF30_Vector.tex}}
 %\label{tab:datasets_bkg}
@@ -99,7 +101,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: DM Axial}
  \tiny
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMV_NNPDF30_Axial.tex}}
 %\label{tab:datasets_bkg}
@@ -107,7 +109,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: DM Scalar}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMS_NNPDF30_Scalar.tex}}
 %\label{tab:datasets_bkg}
@@ -115,7 +117,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: DM Pseudoscalar}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_DMS_NNPDF30_Pseudoscalar.tex}}
 %\label{tab:datasets_bkg}
@@ -123,7 +125,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: DM \bbbar Scalar}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_BBbarDMJets_scalar.tex}}
 %\label{tab:datasets_bkg}
@@ -131,7 +133,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
-\topcaption{Simulated samples}
+\topcaption{Simulated signal samples: DM \bbbar Pseudoscalar}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_BBbarDMJets_pseudoscalar.tex}}
 %\label{tab:datasets_bkg}
@@ -139,7 +141,7 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
- \topcaption{Simulated samples}
+ \topcaption{Simulated signal samples: DM \ttbar Scalar}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_TTbarDMJets_scalar.tex}}
 %\label{tab:datasets_bkg}
@@ -147,10 +149,10 @@ with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
- \topcaption{Simulated samples}
+ \topcaption{Simulated signal samples: DM \ttbar Pseudoscalar}
  \scriptsize
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l004_TTbarDMJets_pseudoscalar.tex}}
-%\label{tab:datasets_bkg}
+ \label{tab:datasets_dm_ttbar_pseudoscalar}
 \end{table}
 
 \clearpage
