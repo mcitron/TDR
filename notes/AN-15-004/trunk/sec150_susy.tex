@@ -198,18 +198,24 @@ The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechn
 All the statistical results are produced using the \textit{combine} tool, 
 provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. 
 
-Due to CPU constraints, only a subset of event categories (but all \scalht bins
-within a category) are considered to extract the final result. 
-The categories entering the final fit are chosen based as the 10 most sensitive ones according to the expected discovery significance.
+%Due to CPU constraints, only a subset of event categories (but all \scalht bins
+%within a category) are considered to extract the final result. 
+%The categories entering the final fit are chosen based as the 10 most sensitive ones according to the expected discovery significance.
 
-In Figure \ref{fig:T1bbbb_plane_expected} the expected upper limits on the cross section are shown for 3 \ifb of integrated luminosity, in the $(m_{Gluino},m_{LSP})$ plane, for the \texttt{T1bbbb} model. 
-The exclusion contour is also shown together with $\pm1\sigma$ uncertainty from the expected limit. 
+In Figure ~\ref{fig:T1bbbb_plane_xs} and ~\ref{fig:T1bbbb_plane_mu} the expected upper limits on the cross section and the signal strength $\mu=\sigma/\sigma_{\mathrm{theory}}$ are shown for 1.26 \ifb of integrated luminosity, in the $(m_{Gluino},m_{LSP})$ plane, for the \texttt{T1bbbb} model. 
+The exclusion contour is also shown together with $\pm1\sigma$ uncertainty (dashed lines) from the expected limit. 
 
 \begin{figure}
+  \caption{95\% C.L. expected (solid black line) oberved (solid red line) upper limit on the cross section for the \texttt{T1bbbb} model.\label{fig:T1bbbb_plane_xs}}
   \begin{center}
-    \includegraphics[width=0.5\textwidth]{figures/susyResults/xs_contour_withHisto} \\
-    \caption{Expected upper limit on the cross section and exclusion contour for the \texttt{T1bbbb} model.}
-    \label{fig:T1bbbb_plane_expected}
+    \includegraphics[width=0.8\textwidth]{figures/susyResults/xs_contour_withHisto}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \caption{95\% C.L. expected (solid black line) oberved (solid red line) upper limit on the signal strength for the \texttt{T1bbbb} model.\label{fig:T1bbbb_plane_mu}}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/susyResults/mu_contour_withHisto}
   \end{center}
 \end{figure}
 
