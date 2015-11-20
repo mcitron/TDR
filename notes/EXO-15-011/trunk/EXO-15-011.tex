@@ -1,109 +1,119 @@
-%%____________________________________________________________________________||
+%%__________________________________________________________________||
 
-%%____________________________________________________________________________||
-\RCS$Revision: 310950 $
-\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-15-004/trunk/AN-15-004.tex $
-\RCS$Id: AN-15-004.tex 310950 2015-11-17 23:34:16Z sakuma $
+%%__________________________________________________________________||
+\RCS$Revision: 310955 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/SUS-15-005/trunk/SUS-15-005.tex $
+\RCS$Id: SUS-15-005.tex 310955 2015-11-17 23:57:25Z sakuma $
 
-%%____________________________________________________________________________||
+%%__________________________________________________________________||
+\cmsNoteHeader{SUS-15-005}
+
+%%__________________________________________________________________||
+\title{Search for dark matter candidates in final states with jets and missing
+transverse momentum in $\sqrt{s}$ = 13~TeV pp collisions with the
+$\alpha_{\text{T}}$ variable}
+
+%%__________________________________________________________________||
+\address[cern]{CERN}
+\author[cern]{The CMS Collaboration}
+
+%%__________________________________________________________________||
+\date{\today}
+
+%%__________________________________________________________________||
+\abstract{An inclusive search for supersymmetric processes that produce
+final states with jets and missing transverse energy is performed in pp
+collisions at a centre-of-mass energy of 13 TeV. A dimensionless
+kinematic variable, $\alpha_{\text{T}}$, is used to discriminate between
+events with genuine and misreconstructed missing transverse energy. A
+data sample corresponding to an integrated luminosity of
+1.3~$\text{fb}^{-1}$, recorded by the CMS experiment at the LHC, is
+analysed. The observed signal candidate event counts are found to be in
+agreement with the expected contributions from standard model processes
+and the result is interpreted in the parameter space of simplified
+models.}
+
+% 1. **DO NOT use \include or \input** to include the abstract: our
+%    abstract extractor will not search through other files than this
+%    one.
+% 2. **DO NOT use %** to comment out sections of the abstract: the
+%    extractor will still grab those lines (and they won't be
+%    comments any longer!).
+% 3. For PASs: **DO NOT use tex macros** in the abstract: CDS MathJax
+%    processor used on the abstract doesn't understand them _and_ will
+%    only look within $$. The abstracts for papers are hand formatted
+%    so macros are okay.
+
+
+%%__________________________________________________________________||
+%\input{mydefs}
+%\input{symbols}
+
+%%__________________________________________________________________||
 \newlength\cmsFigWidth
 \ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
 
-%%____________________________________________________________________________||
-\cmsNoteHeader{EXO-15-011}
+\newcommand{\eslash}{{\hbox{$E$\kern-0.6em\lower-.05ex\hbox{/}\kern0.10em}}}
+\newcommand{\met}{\mbox{$\eslash_\text{T}$}\xspace}
+\newcommand{\cls}{\mbox{CL$_s$}\xspace}
+\newcommand{\wtaunu}{\ensuremath{\PW \rightarrow \Pgt\cPgn}}
+\newcommand{\Et}{\ensuremath{{E_{\text T}}}\xspace}
+\newcommand{\Hslash}{{\hbox{$H$\kern-0.8em\lower-.05ex\hbox{/}\kern0.10em}}}
 
-%%____________________________________________________________________________||
-\title{Inclusive WIMP searches using $\alpha_\textrm{T}$ in final states with jets and missing transverse momentum at $\sqrt{s}$ = 13~TeV pp collisions }
+\newcommand{\scalht}{\mbox{$H_\text{T}$}\xspace}
+\newcommand{\mht}{\mbox{$\Hslash_\text{T}$}\xspace}
+\newcommand{\dht}{\ensuremath{\Delta\scalht}\xspace}
+\newcommand{\alphat}{\ensuremath{\alpha_{\text T}}\xspace}
+\newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
+\newcommand{\njetlow}{\ensuremath{2 \leq \njet \leq 3}\xspace}
+\newcommand{\njethigh}{\ensuremath{\njet \geq 4}\xspace}
+\newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
+\newcommand{\mj}{\ensuremath{\mu + \text{jets}}\xspace}
+\newcommand{\mmj}{\ensuremath{\mu\mu + \text{jets}}\xspace}
+\newcommand{\gj}{\ensuremath{\gamma + \text{jets}}\xspace}
+\newcommand{\znunu}{\ensuremath{\cPZ \rightarrow \cPgn\cPagn}\xspace}
+\newcommand{\zmumu}{\ensuremath{\cPZ \rightarrow \mu\mu}\xspace}
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+\def\mhtmet{\mbox{$\Hslash_\text{T} / \eslash_\text{T}$}\xspace}
+\newcommand{\Pt}{\ensuremath{{p_{\text T}}}\xspace}
+\newcommand{\dphi}{\ensuremath{\Delta\phi^{*}_{\rm min}}\xspace}
+\newcommand{\dm}{\ensuremath{\Delta m}\xspace}
 
-%%____________________________________________________________________________||
-%\author[bristol]{R.~Aggleton}
-\author[imperial]{M.~Baber}
-\author[imperial]{R.~Bainbridge}
-\author[vub]{F.~Blekman}
-\author[imperial]{O.~Buchm\"uller}
-\author[bristol]{J.~Brooke}
-\author[imperial]{S.~Casasso}
-\author[imperial]{M.~Citron}
-\author[imperial]{A.~Elwood}
-\author[bristol]{H.~Fl\"acher}
-\author[rochester]{A.~Garcia-Bellido}
-\author[imperial]{C.~Laner}
-\author[rochester]{K.H.~Lo}
-%\author[bristol]{C.~Lucas}
-\author[imperial]{S.A.~Malik}
-\author[imperial]{B.~Penning}
-\author[bristol]{T.~Sakuma}
-\author[vub]{D.~Smith^{1,}}
-\author[imperial]{A.~Tapper}
-
-\address[bristol]{University of Bristol, Bristol, UK}
-\address[imperial]{Imperial College, London, UK}
-\address[vub]{Vrije Universiteit Brussel, Brussel, BE}
-\address[rochester]{University of Rochester, NY, US}
-
-%%____________________________________________________________________________||
-\date{\today}
-
-%%____________________________________________________________________________||
-\abstract{This note summarises an inclusive search for dark matter candidates in
- final states with jets and missing transverse
-energy in pp collisions at a centre-of-mass energy of $\sqrt{s}$ =
-13~TeV. In this search, a dimensionless kinematic variable,
-$\alpha_{\text{T}}$, provides powerful discriminating power between
-events with genuine and misreconstructed missing transverse energy,
-which allows the use of soft final-state objects in the definition of
-the trigger and candidate signal event selections. The search is based
-on the total number of jets per event, the number of jets originating
-from bottom quarks per event and the scalar and vector sum of transverse
-momenta of these jets. We analyse 1.3~$\text{fb}^{-1}$ of data and
-provide interpretations in minimal simplified dark matter models.}
-
-%%____________________________________________________________________________||
-\hypersetup{ 
-  pdfauthor={Robin Aggleton, Mark Baber, Robert Bainbridge, Freya
-Blekman, Oliver Buchmueller, Jim Brooke, Stefano Casasso, Matthew
-Citron, Adam Elwood, Henning Flaecher, Aran Garcia-Bellido, Christian
-Laner, Kin Ho Lo, Chris Lucas, Sarah Alam Malik, Bjoern Penning, Tai
-Sakuma, Dominic Smith, Alex Tapper.},
-  pdftitle={Search for new physics in final states with jets and missing
-  transverse momentum in 13 TeV pp collisions with the AlphaT variable:
-  the Early Analysis exercise},
-  pdfsubject={CMS, jets, missing transverse momentum, supersymmetry,
-  dark matter, AlphaT},
-  pdfkeywords={CMS, jets, missing transverse momentum, supersymmetry,
-  dark matter, AlphaT},
+%%__________________________________________________________________||
+\hypersetup{
+pdfauthor={Mark Baber, Robert Bainbridge, Freya Blekman, Oliver
+Buchmueller, Jim Brooke, Stefano Casasso, Matthew Citron, Adam Elwood,
+Henning Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo,
+Sarah Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
+Tapper},
+pdftitle={Search for new physics in final states with jets and missing
+transverse momentum in sqrt(s) = 13 TeV pp collisions with the alphaT
+variable},
+pdfsubject={CMS},
+pdfkeywords={CMS, jets, missing transverse momentum, supersymmetry,
+dark matter, AlphaT}
 }
 
-%%____________________________________________________________________________||
+
+%%__________________________________________________________________||
 \maketitle
 
-%%____________________________________________________________________________||
-\tableofcontents
+%%__________________________________________________________________||
+% \tableofcontents
 
-%%____________________________________________________________________________||
-\input{mydefs}
-\input{symbols}
+\input{sec010_introduction}
+\input{sec020_detector}
+\input{sec050_event_selection}
+\input{sec080_qcd_background}
+\input{sec110_ewk_background}
+\input{sec140_interpretation}
+\input{sec200_summary}
 
-%%____________________________________________________________________________||
-\include{intro}
-\include{strategy_alphat}
-\include{datasets}
-\include{selection}
-\include{control_regions}
-\include{signal_regions}
-\include{background_qcd}
-\include{background_ewk}
-\include{systematics}
-\include{darkmatter}
-\include{summary}
-
-%%____________________________________________________________________________||
+%%__________________________________________________________________||
+% \nocite{*}
 \bibliography{auto_generated}
 
-%%____________________________________________________________________________||
-%\appendix
-%\include{secA10_fig_sig}
-
-
+%%__________________________________________________________________||
