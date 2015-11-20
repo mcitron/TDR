@@ -5,16 +5,17 @@
 
 
 In Run~2 the RA1 analysis retains the low-thresholds of Run~1 with developments 
-to the trigger selection, maintaining sensitivity to signatures of new physics with hadronic 
-energies as low as $\scalht = 200$ GeV. This in part is achieved by a migration to PF-based 
-jet reconstruction within the HLT which, in conjunction with a reduction of clustering radius 
-parameter $\Delta R = 0.4$, provides improvements in jet energy resolution in high-pileup 
-conditions and mitigates the effects of pileup contamination within the jet cone.
+to the trigger selection, maintaining sensitivity to signatures with hadronic 
+energies as low as $\scalht = 200$ GeV. 
 
-This analysis utilises a range of triggers for the selection of events in the hadronic signal region
-to provide coverage over a wide range of event topologies. 
+%This in part is achieved by a migration to PF-based 
+%jet reconstruction within the HLT which, in conjunction with a reduction of clustering radius 
+%parameter $\Delta R = 0.4$, provides improvements in jet energy resolution in high-pileup 
+%conditions and mitigates the effects of pileup contamination within the jet cone.
+
+%This analysis utilises a range of triggers for the selection of events in the hadronic signal region
+%to provide coverage over a wide range of event topologies. 
 Events in the hadronic monojet signal region are selected with the use of a single \mht-\met cross-trigger.
-
 The hadronic multijet signal region is selected by a suite of $\scalht$-$\alphat$ cross-triggers 
 with a requirement on the average \pt of the leading two jets, $\pt^{\rm \left<j1,j2\right>}$
 The use of a dijet average threshold provides an improved  suppression of QCD multijet events within the trigger,
@@ -24,13 +25,8 @@ threshold of 90 \GeV ensured the optimum performance when balancing efficiency a
 thresholds across all jet toplogies. 
 
 The $\scalht$-$\alphat$ triggers seed all signal multijet offline bins in the range for $\scalht > 200$ \GeV. 
-Above $\scalht > 800$ an additional pure \scalht trigger, \verb!HLT_PFHT800!, is also utilised which has
+Above $\scalht > 800$ an additional pure \scalht trigger is also utilised which has
  no explicit dependence on $\alphat$ or dijet average threshold. 
-
-These triggers form the primary signal selection menu for the analysis, in addition a set of secondary triggers with 
-higher thresholds were in operation to provide redundancy for higher luminosity scenarios. In Run 2 however the primary 
-triggers sufficiently suppressed trigger rates such that the use of secondary triggers in the analysis are not required.
-
 
 Table~\ref{tab:2015_Hadronic_Signal_Triggers} gives the triggers used in this analysis.
 
@@ -67,13 +63,13 @@ HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                     
 
 
 The analysis selection are defined such that we are oprating on or close to the trigger plateaus. Trigger weights are measured and applied
-as appropriate. Details regarding trigger efficiencies and turn-on curves can be found in Ref.~\cite{alpaTnote}
+as appropriate. Details regarding trigger efficiencies and turn-on curves can be found in Ref.~\cite{alphaTnote}
 
 
 Control regions are selected in hadronic, electron- and muon final states. For the hadronic region 
 prescaled $\scalht$ triggers, and a prescaled  $\scalht$-$\alphat$ cross-trigger, are utilised.
 These triggers share the same Level-1 seeds and $\scalht$ threshold of the signal cross-triggers and are similarly each mapped 
-to a unique offline bin. The efficiency of these triggers are similarly measured from an electron 
+to a unique offline bin. The efficiency of these triggers are measured from an electron 
 reference trigger in addition to an independent measurement with the \verb!HLT_Physics! 
 minimum bias trigger.
 
@@ -82,10 +78,10 @@ The non-hadronic control regions are seeded by the lowest-threshold unprescaled 
 \mj and \mmj control samples are selected with the \verb!HLT_IsoMu20! trigger, and the \gj control sample by the \verb!HLT_Photon175! trigger. 
 %The \ej and \eej control samples may be seeded by the \verb!HLT_Ele23_eta2p1_WPLoose_Gsf! trigger.
 
-The efficiency of the control triggers is measured with data-driven methods (provided by the relevant POG). The tag and probe method is used in the measurement of
-efficiencies of the muon and electron triggers and a loose photon reference trigger  is utilised in the measurement of the photon trigger efficiency. For the results in 
-this note for the muon control regions the emulated trigger bit in MC is used to simulate  the trigger. An offline \Pt requirement of 200\GeV is made on the photon
-to ensure it is in the efficiency plateau of the trigger.
+%The efficiency of the control triggers is measured with data-driven methods (provided by the relevant POG). The tag and probe method is used in the measurement of
+%efficiencies of the muon and electron triggers and a loose photon reference trigger  is utilised in the measurement of the photon trigger efficiency. For the results in 
+%this note for the muon control regions the emulated trigger bit in MC is used to simulate  the trigger. An offline \Pt requirement of 200\GeV is made on the photon
+%to ensure it is in the efficiency plateau of the trigger.
 
 
 
@@ -95,13 +91,12 @@ to ensure it is in the efficiency plateau of the trigger.
 
 \subsection{Object Defintions}
 
-All selection are based on POG recommended object definitions. Specificially:
+All selection are based on POG recommended object definitions. A short overview is given in the following:
 
 \begin{itemize}
-  \item{\bf Jets}: This analysis uses particle-flow (PF) candidates clustered by the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp} using a cone radius of 0.4. All corrections
-    like charged hadron subtraction and jet energy are applied. The ``loose'' working point jet-ID selection is used.
+  \item{\bf Jets}: This analysis uses particle-flow (PF) candidates clustered by the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp} using a cone radius of 0.4. The ``loose'' working point jet-ID selection is used. All recommended corrections and cleaning procedures are applied.   %  like charged hadron subtraction and jet energy are applied. 
     
-  \item{\bf $b$-quarks:} The Combined Secondary Vertex tagger V2 $b$-jet identification algorithm is used ith its ``medium'' working point. This results in a light-quark mis-tag rate of $\sim$1 \%  and a $b$-tag signal efficiency of about 80 \%.   
+  \item{\bf $b$-quarks:} The  ``medium'' working point of the 'Combined Secondary Vertex tagger V2' $b$-jet identification algorithm is used. This results in a light-quark mis-tag rate of $\sim$1 \%  and a $b$-tag signal efficiency of about 80 \%.   
 
   \item{\bf Muons} Muons are identified according to the ``medium'' working point definition of the recommended identification algorithm, which provides $\sim$ 98 $\%$ efficiency. 
 Muons are also required to be isolated, i.e. with a low activity in the vicinity of their track. In the hadronic signal region, a PF-based relative isolation is used with a variable cone size, which is referred to as ``mini-isolation''. 
@@ -127,7 +122,7 @@ Muon, Electrons, Photons aren taus are vetoed in the definition of the hadronic 
 
 This section first outlines the set of ``pre-selection'' requirements that are common to all signal and control regions, before defining the
 selection criteria that are specific to each region. 
-All ``MET filters'' recommended by the JetMET POG and SUSY PAG are applied to remove beam- and detector-related effects. 
+All ``MET filters'' recommended by the JetMET POG and SUSY POG are applied to remove beam- and detector-related effects. 
 Jets are required to satisfy $\PT>40\gev$ and $|\eta|<3.0$. Events containing jets in the forward region that
 satisfy the requirements $\PT>40\gev$ and $|\eta|>3.0$ are rejected in order to control background contributions from SM processes, without
 introducing a significant reduction in signal acceptance. 
@@ -139,33 +134,14 @@ If the trailing jets satisfies $\PT > 100\gev$  events are assigned to a ``symme
 jet satisfies $40 < \PT < 100\gev$ events are assigned to an ``asymmetric'' \njet category. Finally, if there is no second leading
 jet with $\PT>40\gev$, events are assigned to the ``mono-jet'' category. 
 
-These asymmetric and mono-jet categories - more than doubling the analysis signal regions and covering challenging kinematic regions - have been added to
-the analysis to help improve acceptance to a range of DM models.
+These asymmetric and mono-jet categories - more than doubling the analysis signal regions and covering challenging kinematic regions - have been added to the analysis to help improve acceptance to a range of DM models. Events in the hadronic signal and all control regions are categorised identically and according to the number of jets (\njet) reconstructed in each event and the number of jets identified as originating from bottom quarks (\nb) in each event. 
 
-
-
-Events in the hadronic signal and all control regions (described
-below) are categorised identically and according to the number of jets
-(\njet) reconstructed in each event and the number of jets identified
-as originating from bottom quarks (\nb) in each event. 
-
-As a baseline, the resulting sub-samples comprise events containing exactly one, two,
-three, four, or at least five jets. These are further split into the aforementioned  ``monojet'', 
-``symmetric'' or ``asymmetric'' \njet categories.
-
-Events are also categorised according to the the number of b-tagged jets (``b-jets''), by
-requiring exactly zero, one, two, or at least three b-tagged jets. 
-
-Events are required to have significant hadronic activity by requiring
-$\scalht > 200\GeV$.  Events in all samples are binned identically, according to the
-\HT variable. The choice of binning in \HT is driven primarily by the trigger strategy: 50\gev
+Events are required to have significant hadronic activity by requiring $\scalht > 200\GeV$.  Events in all samples are binned identically, according to the \HT variable. The choice of binning in \HT is driven primarily by the trigger strategy: 50\gev
 bins in the range $200 < \HT < 400\gev$, 100\gev bins in the range $400 < \HT < 600\gev$, a 200\gev bin $600<\HT<800\gev$ and a final 
-inclusive bin $\HT > 800\gev$.
+inclusive bin $\HT > 800\gev$. The resulting sub-samples comprise events containing exactly one, two, three, four, or at least five jets. These are further split into the aforementioned  ``monojet'',  ``symmetric'' or ``asymmetric'' \njet categories. Events are as well categorised according to the the number of b-tagged jets (``b-jets''), by requiring exactly zero, one, two, or at least three b-tagged jets. 
 
-Events are also required to have appreciable missing hadronic energy by requiring $\mht>130\gev$. This ensures that all events used within
-the analysis have a degree of missing energy similar to that required in the signal region via an \alphat cut. 
 
-An overview of all selection criteria is given in Table~\ref{tab:pre-selections}.
+Events are also required to have appreciable missing hadronic energy by requiring $\mht>130\gev$. This ensures that all events used within the analysis have a degree of missing energy similar to that required in the signal region via an \alphat cut. An overview of all selection criteria is given in Table~\ref{tab:pre-selections}.
 
 \begin{table}[h!]
   \topcaption{Summary of the pre-selection criteria.}
@@ -204,8 +180,7 @@ An overview of all selection criteria is given in Table~\ref{tab:pre-selections}
 
 To select a sample of events in the hadronic final state and to suppress SM processes with genuine \met from neutrinos, events
 containing an isolated electron with $\pt > 10\GeV$ and $|\eta| < 2.5$ or an isolated muon with $\pt > 10\GeV$ and $|\eta| < 2.5$ are
-vetoed. Further, to reduce the ``lost leptons'' backgrounds from \wj and \ttbar, events containing single isolated tracks with $\pt >
-10\GeV$ and $|\eta| < 2.5$ are rejected. In the case of the single and di-lepton control samples, a further
+vetoed. Further, to reduce backgrounds from \wj and \ttbar due to mis-reconstructed leptons, events containing single isolated tracks with $\pt > 10\GeV$ and $|\eta| < 2.5$ are rejected. In the case of the single and di-lepton control samples, a further
 requirement is made such that events are not vetoed due to the presence of a track from the well identified leptons, by requiring
 $\Delta R(\textrm{track},\textrm{lepton}) > 0.02$. Finally, to select a purely hadronic topology and to allow for a 
 orthogonal control region, events are vetoed in which an isolated photon with $\pt > 25\GeV$ and $|\eta| < 2.5$ is identified.
@@ -220,8 +195,8 @@ orthogonal control region, events are vetoed in which an isolated photon with $\
 %improving jet resolutions and a reduced jet threshold effect relative to an increasing \HT scale means that looser \alphat thresholds can be
 %used at higher values of \HT.
 
-A useful approximate conversion between \alphat and \mht can be obtained by calculating \alphat, as described by Eq.~\ref{eq:alphat3}, 
-while forcing $\dht = 0\gev$. Using this dependence of \alphat as a function of the \HT one can rquired that \mht is roughly constant across all \HT bins. 
+%A useful approximate conversion between \alphat and \mht can be obtained by calculating \alphat, as described by Eq.~\ref{eq:alphat3}, while forcing $\dht = 0\gev$. Using this dependence of
+One can exploits the dependence of  \alphat as a function of the \HT such that \mht is roughly constant across all \HT bins. 
 The values typically fall in the range $\sim110 < \mht < \sim160\gev$. This approximate levelling of the ``effective'' \mht threshold implies
 increasingly tighter requirements against instrumental effects versus \HT, while maximising signala cceptance. 
 Table~\ref{tab:alphat-thresholds} shows the expected \alphat thresholds and corresponding ``effective'' \mht thresholds for each \HT bin. 
@@ -274,27 +249,17 @@ estimate of the missing transverse energy, \mht, is compared to the missing tran
   
 Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count)
 or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause 
-severe energy losses. A data-driven method is developed to identify dead cells. The 
-procedure is carried out on events that pass a loose selection of one good primary vertex,
-$\njet>1$ and $\scalht>150\gev$. For each identified jet with $\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
-recomputed ${\mhtvec}$ is determined, in the same way as in the procedure to compute the \bdphi 
-variable. The positions of all jets which give $\bdphi < 0.3$ are plotted in an $\eta-\phi$ map. Subsequently, the positions of all jets with
-$\pt>20\gev$ are plotted in a second $\eta-\phi$ map. These two maps are then divided to form a 2D ratio map, taking the
-first map as the numerator and second as the denominator. Jets pointing to dead cells are likely to give $\bdphi < 0.3$, so the
-location of dead cells in $\eta$ and $\phi$ have higher values in this 2D ratio map. Fig
-
-
-
+severe energy losses. A data-driven method is developed to identify dead cells. The procedure is outlined in 
+Ref.~\cite{alphaTnote}.
+% The procedure is carried out on events that pass a loose selection of one good primary vertex,
+%$\njet>1$ and $\scalht>150\gev$. For each identified jet with $\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
+%recomputed ${\mhtvec}$ is determined, in the same way as in the procedure to compute the \bdphi 
+%variable. The positions of all jets which give $\bdphi < 0.3$ are plotted in an $\eta-\phi$ map. Subsequently, the positions of all jets with
+%$\pt>20\gev$ are plotted in a second $\eta-\phi$ map. These two maps are then divided to form a 2D ratio map, taking the
+%first map as the numerator and second as the denominator. Jets pointing to dead cells are likely to give $\bdphi < 0.3$, so the
+%location of dead cells in $\eta$ and $\phi$ have higher values in this 2D ratio map. Fig
 The CSC beam halo filter has been found to be less efficient during the early Run 2 data-taking period compared to the previous run.
-Beam halo events manifest themselves as single energy deposits in the calorimeters, which introduces large amounts of ``fake'' \met. This effect is
-especially prominent in the signal region monojet category, particularly at $\phi$ coordinates of 0 and $\pi$ because of the tendency of halo particles to
-lie within the plane of the LHC ring. 
-Such spurious events are suppressed by requiring at least 10\% of the leading jet's energy to originate from charged hadrons, $CHF>0.1$. 
-
-{\bf Summary of signal region selection.} 
-
-The requirements that define the hadronic signal region are summarised
-in Table~\ref{tab:sr-selections}.
+Beam halo events manifest themselves as single energy deposits in the calorimeters, which introduces large amounts of ``fake'' \met. This effect is especially prominent in the signal region monojet category, particularly at $\phi$ coordinates of 0 and $\pi$ because of the tendency of halo particles to lie within the plane of the LHC ring.  Such spurious events are suppressed by requiring at least 10\% of the leading jet's energy to originate from charged hadrons, $CHF>0.1$.  The requirements that define the hadronic signal region are summarised in Table~\ref{tab:sr-selections}.
 
 \begin{table}[h!]
   \topcaption{Summary of the signal region selection criteria, applied
