@@ -1,22 +1,6 @@
 %____________________________________________________________________________||
-\section{Results} \label{sec:darkmatter}
+\section{Interpretation in Dark Matter models} \label{sec:darkmatter}
 
-A likelihood model of the observations in all data samples is used to obtain a consistent pre-
-diction of the SM backgrounds and to test for the presence of a variety of signal models.
-In each bin of HT, the observation is modelled as a Poisson-distributed variable around the sum
-of the SM expectation and a potential signal contribution (assumed to be zero in the following
-discussion).  The systematic uncertainties associated with the transfer factors are accommodated 
-in the likelihood function by a nuisance parameter per transfer factor. 
-The measurements of these parameters are assumed to follow a log-normal
-distribution. The $CL_s$ technique was used to set limits using asymptotic formulae.
-The expected number of events from SM processes is determined from a simultaneous fit to
-the signal region and up to three control samples. The likelihood function is maximised over
-all fit parameters under the SM-only hypothesis. Table 2 summarises the observed yields and
-expected event counts in bins of HT for events in the signal region categorised according to $n_{\rm jet}$ 
- and $n_{\rm b}$. No excess is observed between between expected and observed number of events.
-
-The results of this search are interpreted as constraints on the mass of the DM and the mediator particle 
-a set of DM models.
 
 
 \subsection{Light flavour models} \label{sec:dm_lightjet}
@@ -34,17 +18,6 @@ An example Feynman diagram is shown in Fig.~\ref{fig:DMfeynman}.
 
 
 
-\begin{figure}[h!] \centering
-\subfigure{\includegraphics[width=0.35\textwidth]{figures/DMplots/feynman_light_jet.pdf}}
-\caption{Representative Feynman diagram showing the pair production of Dark
-Matter particles in association with a parton from the initial state via a
-vector or axial-vector mediator. The cross section and kinematics depend upon
-the mediator and Dark Matter masses, and the mediator couplings to Dark Matter
-and quarks respectively: ($m_{\Phi} ,\ m_\textrm{DM} ,\, g_{\textrm DM} ,\,
-g_{\textrm SM})$. \cite{Abercrombie:2015wmb}} \label{fig:DMfeynman} \end{figure}
-
-
-
 Assuming 2~\ifb of data we list the cross sections, yields and selection 
 efficiencies for the four light jet models in
 Tables~\ref{tab:dm_V_g1_2fb}-\ref{tab:dm_P_g1_2fb}. The signal selection
@@ -54,11 +27,21 @@ The asymmetric and monojet categories are seen to almost double the acceptance
 to these models compared to the Run~1 symmetric categories alone, justifying the
 inclusion of these selections into the analysis.
 
+
+
+
 \clearpage 
-\input{tables/DM/summaryTableAN_DMV_g1p0_2p0fb.tex} \clearpage
-\input{tables/DM/summaryTableAN_DMA_g1p0_2p0fb.tex} \clearpage
-\input{tables/DM/summaryTableAN_DMS_g1p0_2p0fb.tex} \clearpage
-\input{tables/DM/summaryTableAN_DMP_g1p0_2p0fb.tex} \clearpage
+\input{tables/DM/summaryTableAN_DMV_xs10_g0p25_2p1fb_exp.tex} \clearpage
+\input{tables/DM/summaryTableAN_DMA_xs10_g0p25_2p1fb_exp.tex} \clearpage
+\input{tables/DM/summaryTableAN_DMP_xs10_g1p0_2p1fb_exp.tex} \clearpage
+\input{tables/DM/summaryTableAN_DMS_xs10_g1p0_2p1fb_exp.tex} \clearpage
+
+\clearpage
+For comparisons with past results we also include the axial-vector samples using $g_{\rm SM} = 1.0$ although they are not included in the 
+'ATLAS-CMS-Pheno DM' Forum. The key characteristics for this sample are shown in Table~\ref{summaryTableAN_DMA_xs10_g1p0_2p1fb_exp}.
+
+\input{tables/DM/summaryTableAN_DMA_xs10_g1p0_2p1fb_exp.tex} \clearpage
+
 
 
 \subsubsection{Projected sensitivities}
@@ -66,29 +49,47 @@ inclusion of these selections into the analysis.
 The expected 95\% CL signal strength limits at an integrated luminosity of 2~\ifb for
 the available samples of the four light jet simplified dark matter models are
 presented in
-Tables~\ref{tab:dm_V_g1_2fb_limits}-\ref{tab:dm_P_g1_2fb_limits}.
+%Tables~\ref{tab:dm_V_g1_2fb_limits}-\ref{tab:dm_P_g1_2fb_limits}.
+Tables~\ref{limits_DMV_xs10_g0p25_2p1fb_exp}-\ref{limits_DMP_xs10_g1p0_2p1fb_exp}.
+Currently we are assuming an uncertainty of 20\% for the vector and axial-vector samples, and 30\% are used 
+for the scalar and pseudo-scalar samples.
+
 
 Figures~\ref{fig:dm_A_g1_2fb_2dlimits} and \ref{fig:dm_P_g1_2fb_2dlimits} show
 the corresponding interpolated axial-vector and pseudoscalar expected exclusion 
-contours in the {\mphi-\mchi} mass plane.
+contours in the {\mphi-\mchi} mass plane. For all samples $g_{\rm}=0.25$ is used.
 
-Tables~\ref{tab:MSB_V_g1_2fb}-\ref{tab:MSB_P_g1_2fb} summarise the most sensitive
-{(\njet,\nb,\scalht,\mht)} signal region 
-bins for a representative mass point (near the exclusion boundary) of each light
-jet model. As expected, the sensitivity for these models mostly lies at low jet
-multiplicities, low-medium \scalht, and at \mht values close to the upper bound
-of the relevant \scalht bin Note that the \mht dimension is not utilised within 
-the monojet category. Also note that, for convenience, all signal models have 
-been normalised to a cross section of 10 pb in these tables.
+
+
+%gDM=1 results
+\clearpage
+%\input{tables/DM/limitsAN_DMV_g1p0_2p0fb.tex}
+%\input{tables/DM/limitsAN_DMA_g1p0_2p0fb.tex} 
+%\clearpage
+%\input{tables/DM/limitsAN_DMS_g1p0_2p0fb.tex}
+%\input{tables/DM/limitsAN_DMP_g1p0_2p0fb.tex}
+
+\input{tables/DM/limits_DMV_xs10_g0p25_2p1fb_exp.tex}
+\input{tables/DM/limits_DMA_xs10_g0p25_2p1fb_exp.tex} 
+\input{tables/DM/limits_DMS_xs10_g1p0_2p1fb_exp.tex} 
+\input{tables/DM/limits_DMP_xs10_g1p0_2p1fb_exp.tex} 
 
 \clearpage
-\input{tables/DM/limitsAN_DMV_g1p0_2p0fb.tex}
-\input{tables/DM/limitsAN_DMA_g1p0_2p0fb.tex} 
-\clearpage
-\input{tables/DM/limitsAN_DMS_g1p0_2p0fb.tex}
-\input{tables/DM/limitsAN_DMP_g1p0_2p0fb.tex}
+For comparison again we show the expected sensitivity for $g_{\rm SM}=1.0$ for the axial-vector sample in Tab.~\ref{limits_DMA_xs10_g1p0_2p1fb_exp}.
 
+\input{tables/DM/limits_DMA_xs10_g1p0_2p1fb_exp.tex} 
 \clearpage
+The corresponding observed limits for 2~\ifb are shown in Tables
+~\ref{limits_DMV_xs10_g0p25_2p1fb_obs}-\ref{limits_DMP_xs10_g1p0_2p1fb_obs}
+
+
+\input{tables/DM/limits_DMV_xs10_g0p25_2p1fb_obs.tex}
+\input{tables/DM/limits_DMA_xs10_g1p0_2p1fb_obs.tex} 
+\input{tables/DM/limits_DMS_xs10_g1p0_2p1fb_obs.tex} 
+\input{tables/DM/limits_DMP_xs10_g1p0_2p1fb_obs.tex} 
+
+
+
 
 \begin{figure}
 \begin{center}
@@ -108,93 +109,11 @@ contour for the pseudoscalar light flavour model with unity couplings at 2~\ifb.
 \end{center}
 \end{figure}
 
-\clearpage
 
-\begin{table}
-\small
-\begin{center}
-\caption{Background and signal yields, and signal significance for a vector light jet model point}
-\label{tab:MSB_V_g1_2fb}
-\begin{tabular}{|l|l|l|l|l|}
-\textbf{Vector Mphi-1000 Mchi-50 gSM-1p0 gDM-1p0}   &  bgTtw    &  bgZinv   &  Signal &
-Significance \\ 
-\hline
-htBin 250-300 cat eq1j eq0b mht 0 &     36.75    &  205.88   &  31.90   &0.42 \\ 
-htBin 300-350 cat eq1j eq0b mht 0 &     16.52    &  118.02   &  18.35   &0.42 \\ 
-htBin 250-300 cat eq2a eq0b mht 250 &   15.77    &  51.84    &  8.99    &0.38 \\ 
-htBin 250-300 cat eq3a eq0b mht 225 &   7.59     &  23.80    &  3.84    &0.33 \\ 
-htBin 250-300 cat eq3j eq0b mht 0 &     2.80     &  7.88     &  1.59    &0.29 \\ 
-\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}
-\small
-\begin{center}
-\caption{Background and signal yields, and signal significance for an axial-vector light jet model point}
-\label{tab:MSB_A_g1_2fb}
-\begin{tabular}{|l|l|l|l|l|}
-\textbf{Axial Mphi-1000 Mchi-50 gSM-1p0 gDM-1p0}    &  bgTtw    &  bgZinv   &  Signal &
-Significance \\ 
-\hline
-htBin 300-350 cat eq1j eq0b mht 0 &     16.52    &  118.02   &  15.93   &0.37 \\ 
-htBin 250-300 cat eq1j eq0b mht 0 &     36.75    &  205.88   &  28.19   &0.37 \\ 
-htBin 250-300 cat eq2j eq0b mht 200 &   11.97    &  37.94    &  5.28    &0.31 \\ 
-htBin 200-250 cat eq1j eq0b mht 0 &     102.20   &  480.39   &  46.04   &0.26 \\ 
-htBin 200-250 cat eq2a eq0b mht 225 &   13.86    &  42.53    &  5.41    &0.25 \\ 
-\end{tabular}
-\end{center}
-\end{table}
-
-\clearpage
-
-\begin{table}
-\small
-\begin{center}
-\caption{Background and signal yields, and signal significance for a scalar light jet model point}
-\label{tab:MSB_S_g1_2fb}
-\begin{tabular}{|l|l|l|l|l|}
-\textbf{Scalar Mphi-100 Mchi-10 gSM-1p0 gDM-1p0}    &  bgTtw    &  bgZinv   &  Signal &
-Significance \\ 
-\hline
-htBin 200-250 cat eq2a eq0b mht 225 &   13.86    &  42.53    &  1.08    &0.03 \\ 
-htBin 200-250 cat eq2a eq0b mht 175 &   48.97    &  128.23   &  1.90    &0.03 \\ 
-htBin 200-250 cat eq2a eq1b mht 225 &   1.89     &  3.02     &  0.18    &0.03 \\ 
-htBin 200-250 cat eq1j eq0b mht 0 &     102.20   &  480.39   &  6.39    &0.03 \\ 
-htBin 350-400 cat ge5a eq0b mht 0 &     2.01     &  5.92     &  0.09    &0.02 \\ 
-\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}
-\small
-\begin{center}
-\caption{Background and signal yields, and signal significance for a pseudoscalar light jet model point}
-\label{tab:MSB_P_g1_2fb}
-\begin{tabular}{|l|l|l|l|l|}
-\textbf{Pseudoscalar Mphi-100 Mchi-10 gSM-1p0 gDM-1p0}  &  bgTtw    &  bgZinv   &  Signal &
-Significance \\ 
-\hline
-htBin 200-250 cat eq3a eq0b mht 175 &   12.68    &  33.18    &  1.18    &0.07 \\ 
-htBin 250-300 cat eq3a eq0b mht 225 &   7.59     &  23.80    &  0.63    &0.06 \\ 
-htBin 200-250 cat eq1j eq0b mht 0 &     102.20   &  480.39   &  7.66    &0.04 \\ 
-htBin 200-250 cat eq2a eq2b mht 175 &   1.07     &  0.87     &  0.09    &0.04 \\ 
-htBin 200-250 cat eq2a eq0b mht 225 &   13.86    &  42.53    &  0.63    &0.03 \\ 
-\end{tabular}
-\end{center}
-\end{table}
 
 
 \clearpage
-
-%\begin{figure}[h!] \centering
-%\subfigure{\includegraphics[width=0.5\textwidth]{figures/DMplots/bla.pdf}}
-%\subfigure{\includegraphics[width=0.5\textwidth]{figures/DMplots/bla.pdf}}
-%\caption{\label{fig:limits_S} Expected exclusion contours at 95\% CL for
-%3\fbinv and 10\fbinv using scalar couplings. } \end{figure}
-
-
-\clearpage \subsection{Heavy flavour models} \label{sec:dm_heavyjet}
+ \subsection{Heavy flavour models} \label{sec:dm_heavyjet}
 
 Owing to the principal of Minimal Flavor Violation (MFV), top and bottom quarks
 can play important roles in the phenomenology of dark matter. Scalar and
@@ -215,88 +134,70 @@ association with $t\bar{t}$ or $b\bar{b}$. \cite{Abercrombie:2015wmb}}
 
 
 The cross sections, signal yields and efficiencies for scalar and pseudoscalar
-\DMtt models expected with 2~\ifb of data are shown in
-Tables~\ref{tab:dm_DMttS_2fb}~and~\ref{tab:dm_DMttP_2fb}. The selection
-efficiencies for these models are around $\sim 10$\%, and the improvement
+\DMtt models expected with 2~\ifb of data are shown in 
+Tables~\ref{summaryTableAN_DMttP_xs10_2p1fb_exp}~and~\ref{summaryTableAN_DMttS_xs10_2p1fb_exp} for \DMtt. 
+
+The selection efficiencies for these models are around $\sim 10$\%, and the improvement
 provided by the new asymmetric and monojet categories is again evident.
 
 \clearpage 
-\input{tables/DM/summaryTableAN_DMttS_2p0fb.tex}
-%\clearpage
-\input{tables/DM/summaryTableAN_DMttP_2p0fb.tex} 
+\input{tables/DM/summaryTableAN_DMttP_xs10_2p1fb_exp.tex}
+\input{tables/DM/summaryTableAN_DMttS_xs10_2p1fb_exp.tex} 
 \clearpage
 
 
-\subsubsection{Projected sensitivities}
+The yields and efficiencies for \DMbb are shown in Tables~\ref{summaryTableAN_DMbbP_xs10_2p1fb_exp}~and~\ref{summaryTableAN_DMbbS_xs10_2p1fb_exp}, respectively. 
+\input{tables/DM/summaryTableAN_DMbbP_xs10_2p1fb_exp.tex}
+\input{tables/DM/summaryTableAN_DMbbS_xs10_2p1fb_exp.tex} 
+\clearpage
+
+
+\subsubsection{Expected and observed sensitivities for DM+$t\bar{t}$}
 
 The expected 95\% CL signal strength limits for simplified \DMtt models with scalar and
-pseudo-scalar couplings are calculated for 2~\ifb. These are shown in
-Tables~\ref{tab:dm_DMttS_2fb_limits}~and~\ref{tab:dm_DMttP_2fb_limits}. At this
-integrated luminosity, the sensitivity approaches scalar mediator masses of up 
-to 100~GeV and DM masses of about 10 GeV, whereas it is insufficient to
-significantly exclude the pseudoscalar model, which has generally smaller cross
-sections.
+pseudo-scalar couplings are calculated for 2~\ifb. An uncertainty of 20\% is assumed for all 
+heavy quark samples.
+
+
+%These are shown in Tables~\ref{tab:dm_DMttS_2fb_limits}~and~\ref{tab:dm_DMttP_2fb_limits}. At this
+%integrated luminosity, the sensitivity approaches scalar mediator masses of up 
+%to 100~GeV and DM masses of about 10 GeV, whereas it is insufficient to
+%significantly exclude the pseudoscalar model, which has generally smaller cross
+%sections.
+
+%Figure~\ref{fig:dm_DMttS_2fb_2dlimits} shows the interpolated scalar expected exclusion contour in the {\mphi-\mchi} mass plane.
+
+
+\clearpage
+Expected limits obtained for DM+$t\bar{t}$ are given in Tables~\ref{limits_DMttP_xs10_2p1fb_exp}-\ref{limits_DMttS_xs10_2p1fb_exp}, corresponding observed limits are shown in Tables~\ref{limits_DMttP_xs10_2p1fb_obs}-\ref{limits_DMttS_xs10_2p1fb_obs}.
+\input{tables/DM/limits_DMttP_xs10_2p1fb_exp.tex}
+\input{tables/DM/limits_DMttS_xs10_2p1fb_exp.tex}
+
+\input{tables/DM/limits_DMttP_xs10_2p1fb_obs.tex}
+\input{tables/DM/limits_DMttS_xs10_2p1fb_obs.tex}
+
+
+Appendix~\ref{sec:dm_checklist} contains additional validation of the \DMj DM samples like signal and background yields for the most sensitive bins and sensitivities.
+
+\subsubsection{Expected and observed sensitivities for DM+$b(\bar{b})$}
+
+The expected 95\% CL signal strength limits for simplified DM+$t(\bar{t})$ models with scalar and
+pseudo-scalar couplings are calculated for 2~\ifb. An uncertainty of 20\% is assumed for all 
+heavy quark samples.
+
 
 Figure~\ref{fig:dm_DMttS_2fb_2dlimits} shows the interpolated scalar expected 
 exclusion contour in the {\mphi-\mchi} mass plane.
 
-Tables~\ref{tab:MSB_DMttS_2fb} and \ref{tab:MSB_DMttP_2fb} summarise the most sensitive 
-{(\njet,\nb,\scalht,\mht)} signal region
-bins for a representative mass point (near the exclusion boundary) of each \DMtt
-model. As expected, the sensitivity for these models mostly lies at large jet and b-jet
-multiplicities, medium-high \scalht, and at \mht values closer to the lower bound
-of the relevant \scalht bin. Note that, for convenience, all signal models have
-been normalised to a cross section of 10 pb in these tables.
-
 
 \clearpage
-\input{tables/DM/limitsAN_DMttS_2p0fb.tex}
-\input{tables/DM/limitsAN_DMttP_2p0fb.tex}
-\clearpage
+Expected limits obtained for DM+$t\bar{t}$ are given in Tables~\ref{limits_DMbbP_xs10_2p1fb_exp}-\ref{limits_DMbbS_xs10_2p1fb_exp}, corresponding observed limits are shown in Tables~\ref{limits_DMbbP_xs10_2p1fb_obs}-\ref{limits_DMbbS_xs10_2p1fb_ob}.
+\input{tables/DM/limits_DMbbP_xs10_2p1fb_exp.tex}
+\input{tables/DM/limits_DMbbS_xs10_2p1fb_exp.tex}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.75\textwidth]{figures/DMplots/dm_DMttS_2p0fb_2dlimits.png} \\
-\caption{Expected 95\% CL upper limit on the cross section, and exclusion
-contour for the scalar \DMtt model with unity couplings at 2~\ifb.}
-\label{fig:dm_DMttS_2fb_2dlimits}
-\end{center}
-\end{figure}
+\input{tables/DM/limits_DMbbP_xs10_2p1fb_obs.tex}
+\input{tables/DM/limits_DMbbS_xs10_2p1fb_obs.tex}
 
-\clearpage
 
-\begin{table}
-\small
-\begin{center}
-\caption{Background and signal yields, and signal significance for a scalar \DMtt model point}
-\label{tab:MSB_DMttS_2fb}
-\begin{tabular}{|l|l|l|l|l|}
-\textbf{TTbarDMJets scalar Mchi-10 Mphi-100 25ns mht}    &  bgTtw    &  bgZinv   &  Signal &     Significance \\ 
-\hline
-htBin 400-500 cat ge5a eq2b mht 0 &     0.65     &  0.69     &  11.76   &7.88 \\ 
-htBin 400-500 cat ge5a eq1b mht 150 &   1.77     &  2.77     &  15.81   &6.12 \\ 
-htBin 300-350 cat eq4a eq1b mht 175 &   2.53     &  2.24     &  13.79   &5.10 \\ 
-htBin 400-500 cat ge5j eq1b mht 150 &   1.69     &  3.89     &  14.60   &5.00 \\ 
-htBin 350-400 cat ge5a eq2b mht 0 &     0.53     &  0.23     &  6.89    &4.67 \\ 
-\end{tabular}
-\end{center}
-\end{table}
-
-\begin{table}
-\small
-\begin{center}
-\caption{Background and signal yields, and signal significance for a pseudoscalar \DMtt jet model point}
-\label{tab:MSB_DMttP_2fb}
-\begin{tabular}{|l|l|l|l|l|}
-\textbf{TTbarDMJets pseudoscalar Mchi-10 Mphi-100 25ns mht}  &  bgTtw    &  bgZinv   &  Signal &     Significance \\ 
-\hline
-htBin 500-600 cat ge5j eq2b mht 225 &   0.39     &  1.03     &  28.23   &18.36 \\ 
-htBin 350-400 cat ge5a eq1b mht 0 &     1.23     &  1.12     &  30.25   &16.90 \\ 
-htBin 400-500 cat ge5a eq1b mht 150 &   1.77     &  2.77     &  42.35   &16.42 \\ 
-htBin 400-500 cat ge5a eq2b mht 0 &     0.65     &  0.69     &  23.80   &15.98 \\ 
-htBin 400-500 cat ge5j eq2b mht 150 &   0.69     &  0.67     &  24.60   &15.88 \\ 
-\end{tabular}
-\end{center}
-\end{table}
-
+Appendix~\ref{sec:dm_checklist} contains additional validation for the \DMtt and \DMtt DM samples like signal and background yields for the most sensitive bins and sensitivities.
 
