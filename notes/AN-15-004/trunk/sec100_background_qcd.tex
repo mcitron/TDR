@@ -40,7 +40,49 @@ that exhibit significant \met due to the production of neutrinos
 (collinear with a jet axis) in semileptonic heavy-flavour decays. Both
 variables are individually capable of reducing the yields from
 multijet events by several orders of magnitude, and combined provide
-an extremely robust method to reject multijet events. 
+an extremely robust method to reject multijet events.
+
+In Fig.~\ref{fig:bDPhi_mhtJetPhi} a comparison of the abilities of the \bdphi variable to 
+control the QCD multijet background with 
+a similar jet-\mht angular variable \dphimhtj, the minimum azimuthal separation between the \mht-vector and the leading four
+jets, is presented. The \bdphi variable exhibits a distribution that is more sharply peaked 
+at low values and faster falling than \dphimhtj, providing a better control
+of the QCD multijet background. \dphimhtj for QCD conversely has a broader 
+distribution with a larger leakage for a comparable azimuthal selection. 
+Additionally the \bdphi variable displays robustness in the 
+presence of severe event mismeasurement. A mismeasurement is simulated by artificially lowering 
+the \pt of the jet that minimises the azimuthal separation variable to 41 \GeV and the event 
+variables recomputed. Due to the removal of the probe jet from the computation of \bdphi, the 
+distribution of angular separation Fig.~\ref{fig:shifted_bDPhi_dist} is 
+remains unchanged under severe mismeasurement the \dphimhtj variable however is more sensitive and 
+the distribution becomes broader Fig.~\ref{fig:shifted_DPhiMht_dist}.
+
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[QCD \bdphi distribution.\label{fig:bDPhi_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/biasedDPhi_all_800}
+  } 
+  \subfigure[QCD \dphimhtj distribution.\label{fig:DPhiMht_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/minDeltaPhiMht_all_800}
+  } \\
+  \subfigure[QCD \bdphi distribution with mismeasurement.\label{fig:shifted_bDPhi_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/shiftedMinBDPhi_all_800}
+  } 
+  \subfigure[QCD \dphimhtj distribution with mismeasurement.\label{fig:shifted_DPhiMht_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/shiftedMinDeltaPhiMht_all_800}
+  } \\
+  \caption{\bDPhi and \dphimhtj distributions of QCD multijet simulation after analysis selections
+    for \ht $> 800$ \GeV in the case of nominal reconstruction (a), (b) and severe mismeasurement (c), (d).
+    The total number of events that pass a $\Delta\phi > 0.5$ selection of the respective quantity 
+    are indicated.
+}
+  \label{fig:bDPhi_mhtJetPhi}
+\end{figure}
+
+
+
+
 
 In Run~1, the \alphat and \bdphi thresholds required to control
 multijet contamination to the required level were determined by a
@@ -138,7 +180,7 @@ sideband, as determined from simulation.
     (V+jets and \ttbar plus other residual non-multijet backgrounds)
     that the fail the $\mhtmet < 1.25$ requirement, again determined
     from simulation and binned according to \njet and \scalht.}
-  \label{fig:qcd_plots}
+  \label{fig:qcd_plots2}
 \end{figure}
 
 The data counts in the \mhtmet sideband are collected with the
