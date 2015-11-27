@@ -1,3 +1,3 @@
 eval `../../tdr runtime -sh` 
-tdr --style pas b SUS-15-005
-cp ../../tmp/SUS-15-005_temp.pdf ~/www
+tdr --style pas b EXO-15-011
+cp ../../tmp/EXO-15-011_temp.pdf ~/www
