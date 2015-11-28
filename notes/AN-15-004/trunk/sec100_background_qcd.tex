@@ -5,10 +5,6 @@
 
 \section{Estimation for QCD multijet events \label{sec:qcd}}
 
-%{\bf It is noted that these studies will be updated in time for the
-%  Full Status report with increased luminosity and additional cross
-%  checks. }
-
 One of the major challenges for searches of new physics in the jets +
 \met final state is the control of background events from QCD multijet
 production. The difficulties in the determination of precise estimates
@@ -34,7 +30,7 @@ henceforth labelled as non-multijet processes.
 
 Any contamination from QCD multijet events is controlled primarily
 through the \alphat and \bdphi variables. The \alphat variable is able
-to distiguish with high efficiency the sources of ``fake'' \met, such
+to distinguish with high efficiency the sources of ``fake'' \met, such
 as jet energy mismeasurement, from those with ``genuine'' \met, such
 as neutrinos. The \bdphi variable is also very efficient at
 identifying jets that suffer under-measurements, as well as
@@ -44,7 +40,50 @@ that exhibit significant \met due to the production of neutrinos
 (collinear with a jet axis) in semileptonic heavy-flavour decays. Both
 variables are individually capable of reducing the yields from
 multijet events by several orders of magnitude, and combined provide
-an extremely robust method to reject multijet events. 
+an extremely robust method to reject multijet events.
+
+In Fig.~\ref{fig:bDPhi_mhtJetPhi} a comparison of the abilities of the \bdphi variable to 
+control the QCD multijet background with 
+a similar jet-\mht angular variable \dphimhtj, the minimum azimuthal separation between the \mht-vector and the leading four
+jets, is presented. The \bdphi variable exhibits a distribution that is more sharply peaked 
+at low values and faster falling than \dphimhtj, providing a better control
+of the QCD multijet background. \dphimhtj for QCD conversely has a broader 
+distribution with a larger leakage for a comparable azimuthal selection. 
+Additionally the \bdphi variable displays robustness in the 
+presence of severe event mismeasurement. A mismeasurement is simulated by artificially lowering 
+the \pt of the jet that minimises the azimuthal separation variable to 41 \GeV and the event 
+variables recomputed. Due to the removal of the probe jet from the computation of \bdphi, the 
+distribution of angular separation Fig.~\ref{fig:shifted_bDPhi_dist} is 
+remains unchanged under severe mismeasurement. The \dphimhtj variable is sensitive to such mismeasurement
+as both \mht and the rank of the leading four jets are affected, resulting in a broader distribution with
+increased leakage Fig.~\ref{fig:shifted_DPhiMht_dist}.
+
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[QCD \bdphi distribution.\label{fig:bDPhi_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/biasedDPhi_all_800}
+  } 
+  \subfigure[QCD \dphimhtj distribution.\label{fig:DPhiMht_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/minDeltaPhiMht_all_800}
+  } \\
+  \subfigure[QCD \bdphi distribution with mismeasurement.\label{fig:shifted_bDPhi_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/shiftedMinBDPhi_all_800}
+  } 
+  \subfigure[QCD \dphimhtj distribution with mismeasurement.\label{fig:shifted_DPhiMht_dist}]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/shiftedMinDeltaPhiMht_all_800}
+  } \\
+  \caption{\bDPhi and \dphimhtj distributions of QCD multijet simulation after analysis selections
+    for \ht $> 800$ \GeV in the case of nominal reconstruction (a), (b) and severe mismeasurement (c), (d).
+    The total number of events that pass a $\Delta\phi > 0.5$ selection of the respective quantity 
+    are indicated.
+}
+  \label{fig:bDPhi_mhtJetPhi}
+\end{figure}
+
+
+
+
 
 In Run~1, the \alphat and \bdphi thresholds required to control
 multijet contamination to the required level were determined by a
@@ -89,19 +128,20 @@ currently made inclusively with respect to the \nb\ and \mht for each
 \begin{figure}[!h]
   \centering
   \subfigure[QCD events in signal region.\label{fig:qcd_pass}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/QCD/SigTrig_PassMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/QCD/SigTrig_PassMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } 
   \subfigure[QCD events in \mhtmet sideband.\label{fig:qcd_fail}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/QCD/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/QCD/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \subfigure[Ratio \rmhtmet for QCD events.\label{fig:qcd_ratio}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/QCD/SigTrig_RMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/QCD/SigTrig_RMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } 
   \subfigure[EWK events in \mhtmet sideband.\label{fig:ewk_fail}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/Ewk/EwkPred_SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+   %    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \caption{Expected number of QCD multijet events determined from
-    simulation, binned according to \njet and \scalht, that (a) satify
+    simulation, binned according to \njet and \scalht, that (a) satisfy
     and (b) fail the requirement $\mhtmet < 1.25$. Also shown in (c)
     is the ratio \rmhtmet for QCD multijets, again determined from
     simulation. Finally, (d) shows the expected number of EWK events
@@ -122,16 +162,16 @@ sideband, as determined from simulation.
 \begin{figure}[!h]
   \centering
   \subfigure[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } 
   \subfigure[Corrected data counts in \mhtmet sideband.\label{fig:data_corr}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/DataNoEwk_SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/DataNoEwk_SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \subfigure[QCD multijet predictions in the signal region.\label{fig:qcd_pred}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/DataNoEwk_SigTrig_QCDPred_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/DataNoEwk_SigTrig_QCDPred_NJet_vs_HT_bDPhigt0p5_Log}
   } 
   \subfigure[Ratio of predicted multijet and non-multijet yields.\label{fig:qcd_ewk_ratio}]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/v2/DataNoEwk_SigTrig_QCDPredDivEwk_NJet_vs_HT_bDPhigt0p5_Log}
+    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/DataNoEwk_SigTrig_QCDPredDivEwk_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
   \caption{Expected number of QCD multijet events determined from
     simulation, binned according to \njet and \scalht that (a) fail
@@ -141,7 +181,7 @@ sideband, as determined from simulation.
     (V+jets and \ttbar plus other residual non-multijet backgrounds)
     that the fail the $\mhtmet < 1.25$ requirement, again determined
     from simulation and binned according to \njet and \scalht.}
-  \label{fig:qcd_plots}
+  \label{fig:qcd_plots2}
 \end{figure}
 
 The data counts in the \mhtmet sideband are collected with the
@@ -176,6 +216,6 @@ contamination in all bins of the signal region to the sub-percent with
 respect to the total non-multijet background. With this level of
 suppression, it is expected that the uncertainty associated with the
 residual multijet contamination to be sub-dominant with respect to,
-and fully aborbed by, the systematic uncertainties on the non-multijet
+and fully absorbed by, the systematic uncertainties on the non-multijet
 backgrounds, which are expected to be at the level of $\sim$10\% or
 larger. 
