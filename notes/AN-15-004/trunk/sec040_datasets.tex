@@ -30,7 +30,7 @@ this version of the note.
 
 \begin{table}[!h]
 \topcaption{The JSON file that specifies the periods of the time in
-which 1.2~\ifb of the certified data are collected} \footnotesize
+which 1.3~\ifb of the certified data are collected} \footnotesize
 \input{tables/datasets/cert_json.tex} \label{tab:cert_json}
 \end{table}
 
@@ -162,63 +162,52 @@ pileup) with 25ns bunch spacing is overlapped.
 The distribution of the numbers of the pileup interactions in the
 simulated events is different from that in the data; the simulated
 events contain, on average, a larger number of pileup interactions than
-the data. We reweight simulated events to reproduce  for this difference.
+the data. We reweight simulated events to correct for this difference.
 This procedure is called \textit{pileup reweighting}.
 
-In analyses in CMS, the pileup reweighting is, in general, done in the
-method recommended by the physics validation group
-\cite{twiki-PdmVPileUpDescription}. However, since, at the time of
-writing, no official recommendation is available we currently use a private reweighting.
-Once available we will update to use the recommended method.
+In deriving the pileup reweighting factors, we follow the
+recommendation by the physics validation group
+\cite{twiki-PdmVPileUpDescription, twiki-PileupJSONFileforData}. In
+the recommendation, the reweighting factors are a function of the
+variable called \verb!nTrueInt!.
 
-The reweighting factors used in this version of the note is a function
-of the number of the reconstructed vertices derived by comparing the
-data and simulated events. Events passing the trigger path
-\verb!HLT_ZeroBias! are used for this derivation. The condition of this
-trigger path is a bunch crossing. Therefore, the events virtually
-contain only pileup interactions. For the simulated event sample, we use
-the so-called neutrino guns, listed in
-Table~\ref{tab:datasets_neutrinoguns}. This sample also virtually
-contain only pileup interactions. In contrast, the events in the signal
-and control regions each has, in addition to the pileup interactions, the
-main interaction that produces high-\PT jets, muons, electrons, photons,
-or missing transverse momentum as described in
-Sec.~\ref{sec:selection}.
+This variable \verb!nTrueInt! is the parameter of the Poisson
+distribution from which the numbers of pileup interactions are drown
+as random numbers. In each simulated event, the number of the in-time
+pileup interactions and the number of the interactions in each
+neighboring bunch crossing to simulate of the out-of-time pileup are
+random numbers from the Poisson distribution with the same parameter,
+\verb!nTrueInt!. The value of \verb!nTrueInt! is not a constant of the
+data set. It is a random number from the distribution specified in
+Ref. \cite{github-mix_2015_25ns_Startup_PoissonOOTPU_cfi}.
 
+The \verb!nTrueInt! in the data is the average pileup interactions for
+a colliding bunch pair in a lumi section. The distribution of
+\verb!nTrueInt! in the data is derived from the measured instantaneous
+luminosity for each colliding bunch pair in each lumi section and the
+cross section of the total inelastic pp interaction. We use the method
+in Ref. \cite{twiki-PileupJSONFileforData} in deriving the
+distribution with the recommended value of 69~mb as the minimum bias
+cross section.
 
-\begin{table}[!h]
-\topcaption{Simulated sample used in deriving pileup reweighting factors}
-\footnotesize \input{tables/datasets/dataset_neutrinoguns.tex}
-\label{tab:datasets_neutrinoguns}
-\end{table}
+The pileup reweighting factors are the ratios of the distributions of
+\verb!nTrueInt! in the data and in the simulated events and are
+normalised so as to preserved the number of the simulated events.
+
+Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
+of \verb!nTrueInt! in the data, simulated events and reweighted
+simulated events. The figure demonstrates that the reweighted
+simulated events have the distribution of \verb!nTrueInt! nearly
+identical to that in the data.
 
 \begin{figure}[!b]
 \centering
-\includegraphics[scale=1.00]{figures/pileup_reweighting/f042_corr_nVert_data_mc_norm}
-\caption{The distributions of the number of the reconstructed vertices
-in the data, the simulated events, and the reweighted simulated events.
-One is added to the the number of the reconstructed vertices.}
-\label{f042_corr_nVert_data_mc_norm}
+\includegraphics[scale=1.00]{figures/pileup_reweighting/f044_corr_nTrueInt_data_mc_norm}
+\caption{The distribution of the average numbers of the inelastic
+interactions per colliding bunch pair per lumi section in the data,
+corresponding distribution in the simulated events, and that of the
+reweighted simulated events.} \label{f044_corr_nTrueInt_data_mc_norm}
 \end{figure}
-
-The reweighting factors are derived as follows. First, we create the
-distributions of the numbers of the reconstructed vertices for the data
-and simulated sample. In creating these distributions, we add one to the
-number of the reconstructed vertices. This is because these events do
-not have the vertex for the main interaction while the events in the
-signal and control regions do. Second, we smooth each distribution with
-the smoothing spline. Third, we take the ratio of the two distributions,
-i.e., the data over the simulated sample. The ratio is a function of the
-number of reconstructed vertices. The ratio becomes reweighting factors
-after normalised. The reweighting factors are normalised so as to
-preserve the number of the generated events.
-
-Figure~\ref{f042_corr_nVert_data_mc_norm} shows the distributions of the
-number of the reconstructed vertices in the data, the simulated events,
-and the reweighted simulated events. In the figure, one is added to the
-the number of the reconstructed vertices. The figure demonstrates that
-the reweighted simulated events have the distribution of the number of
-the reconstructed vertices nearly identical to that in the data.
 
 
 \subsection{Cross sections for SM samples}
