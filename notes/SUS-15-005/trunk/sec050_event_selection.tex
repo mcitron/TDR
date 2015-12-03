@@ -60,21 +60,22 @@ are vetoed. Furthermore, events containing an isolated
 track~\cite{single-lepton-stop} with $\Pt > 10\gev$ are also vetoed.
 
 Jets are reconstructed using the particle-flow (PF) reconstruction
-algorithm~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-001} and 
-clustered by the anti-$k_{\rm T}$ algorithm~\cite{antikt} with
-a size parameter of $0.4$. The jet energies are corrected to account for the effects of pileup
-and to establish a uniform relative response in $\eta$ and a
+algorithm~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-001} and clustered
+by the anti-$k_{\rm T}$ algorithm~\cite{antikt} with a size parameter
+of $0.4$. The jet energies are corrected to account for the effects of
+pileup and to establish a uniform relative response in $\eta$ and a
 calibrated absolute response in transverse momentum
-\pt~\cite{2011arXiv1107.4277C}.
+\pt~\cite{2011arXiv1107.4277C}. Jets considered in the analysis are
+required to have a transverse energy above $40\gev$ and $|\eta| < 3$.
 
-Jets considered in the analysis are required to have a transverse
-energy above $40\gev$ and $|\eta| < 3$. Significant hadronic activity
-in the event is ensured by requiring $\scalht > 200\GeV$, which also
-ensures high efficiency for the trigger conditions, described below,
-that record the event sample.Events are vetoed if rare, spurious signals are identified in the
-calorimeters~\cite{1748-0221-5-03-T03014, CMS-NOTE-2010-012} or if any
-additional jet satisfies $\Et > 40\GeV$ and $|\eta| > 3$, in order to
-maintain the performance of the variable \mht as an estimator of \met.
+Significant hadronic activity in the event is ensured by requiring
+$\scalht > 200\GeV$, which also ensures high efficiency for the
+trigger conditions, described below, that record the event
+sample.Events are vetoed if rare, spurious signals are identified in
+the calorimeters~\cite{1748-0221-5-03-T03014, CMS-NOTE-2010-012} or if
+any additional jet satisfies $\Et > 40\GeV$ and $|\eta| > 3$, in order
+to maintain the performance of the variable \mht as an estimator of
+\met.
 
 Events are categorised according to the number of jets per event,
 and the number of reconstructed b-quark jets
@@ -90,7 +91,11 @@ calorimetric measurements of jet energies can lead to values of
 \alphat slightly above 0.5. The edge at 0.5 sharpens with increasing
 \scalht for multijet events, primarily due to a corresponding increase
 in the average jet energy and thus an improvement in the jet energy
-resolution, but also because the effect of jets with \et below the threshold for inclusion in the \alphat calculation decreases. This motivates a \scalht dependent \alphat requirement which is shown in Table~\ref{tab:thresholds}.
+resolution, but also because the effect of jets with \et below the
+threshold for inclusion in the \alphat calculation decreases. This
+motivates a \scalht dependent \alphat requirement that varies in the
+range 0.52--0.65. 
+%which is shown in Table~\ref{tab:thresholds}. 
 
 %\begin{figure}[bht]
 %  \begin{center} 
@@ -112,21 +117,21 @@ resolution, but also because the effect of jets with \et below the threshold for
 %    \end{center}
 %\end{figure}
 
-\begin{table}[h!]                                                                                                  
-  \caption{Thresholds on \alphat for \scalht bins.\label{tab:thresholds}}                                     
-  \centering                                                                                                       
-      {\small
-  \begin{tabular}{ lcccccccc }                                                                                         
-    \hline                                                                                                         
-    \hline                                                                                                         
-    \scalht (GeV)        & 200--250      & 250--300      & 300--350      & 350 -- 400 & 400 -- 500 & 500--600 & 600--800 & $>$800        \\           
-    \hline                                                                                                         
-    \alphat              & 0.65          & 0.60          & 0.55          & 0.53       & 0.52      & 0.52     & 0.52 & 0        \\                        
-    \hline                                                                                                         
-    \hline   
-  \end{tabular}                                                                                                    
-}
-\end{table}     
+%\begin{table}[h!]                                                                                                  
+%  \caption{Thresholds on \alphat for \scalht bins.\label{tab:thresholds}}                                     
+%  \centering                                                                                                       
+%      {\small
+%  \begin{tabular}{ lcccccccc }                                                                                         
+%    \hline                                                                                                         
+%    \hline                                                                                                         
+%    \scalht (GeV)        & 200--250      & 250--300      & 300--350      & 350 -- 400 & 400 -- 500 & 500--600 & 600--800 & $>$800        \\           
+%    \hline                                                                                                         
+%    \alphat              & 0.65          & 0.60          & 0.55          & 0.53       & 0.52      & 0.52     & 0.52 & 0        \\                        
+%    \hline                                                                                                         
+%    \hline   
+%  \end{tabular}                                                                                                    
+%}
+%\end{table}     
 
 A number of beam- and detector-related effects can lead to events with
 values of \alphat greater than the applied threshold, such as beam halo, reconstruction
@@ -146,15 +151,17 @@ background, typical of multijet events, is suppressed while
 maintaining high efficiency for SM or new physics processes with
 genuine, significant \met by requiring $\mht / \met < 1.25$. 
 
-The second veto considers the minimum azimuthal angular separation of
-a jet and the \mht vector derived from all other jets in the event,
-known as \dphi~\cite{RA1Paper}. This variable is employed to suppress
-any potential contribution from energetic multijet events that can
-yield significant \met due to the production of neutrinos in
+The second veto is based on the aforementioned \dphi variable, which
+considers the minimum azimuthal angular separation of a jet and the
+\mht vector derived from all other jets in the event. This variable is
+employed in addition to \alphat to suppress any potential contribution
+from rare energetic multijet events that yield high jet multiplicities
+and significant \met due to high-multiplicity neutrino production in
 semileptonic heavy-flavour decays. The neutrinos are typically
-collinear with respect to the axis of a jet and the requirement $\dphi
-> 0.5$ has been demonstrated with data control samples to suppress
-effectively this background source.
+collinear with respect to the axis of a jet and carry a significant
+fraction of the energy. The requirement $\dphi > 0.5$ has been
+demonstrated with data control samples to suppress effectively this
+background source.
 
 Signal candidate events are recorded with multiple jet-based trigger
 conditions that require both \scalht and \alphat to satisfy
