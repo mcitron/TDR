@@ -44,9 +44,9 @@ topology of pair-produced sparticles. If the second most energetic jet
 satisfies $40 < \Pt < 100\gev$ or $\Pt < 40\gev$, then these
 categories are labelled as an ``asymmetric'' or ``monojet'' topology,
 respectively. The final two topologies target primarily DM and nearly
-mass-degenerate SUSY models. Events are further categorised according to
-the number of jets per event (\njet), and the number of reconstructed
-b-quark jets per event (\nb). 
+mass-degenerate SUSY models. Events are further categorised according
+to the number of jets per event (\njet), and the number of
+reconstructed jets identified as originating from a b-quark (\nb).
 
 A number of beam- and detector-related effects can lead to events with
 large values of \ETmiss, such as beam halo, reconstruction failures,
@@ -57,7 +57,7 @@ dedicated vetoes~\cite{RA1Paper2012, cms-met}.
 
 \begin{table}[h!]
   \topcaption{Summary of the selection criteria and
-    categorisation used on the definitions of the signal and control
+    categorisation used in the definitions of the signal and control
     regions.} 
   \label{tab:selections}
   \centering
@@ -112,7 +112,7 @@ transverse energies of back-to-back jets, \alphat is reduced to a
 value smaller than 0.5, which gives the variable its intrinsic
 robustness. Values significantly greater than 0.5 are observed when
 the two jets are not back to back and are recoiling against
-significant, genuine \ETmiss. The definition of the \alphat variable 
+significant, genuine \ETmiss. The definition of the \alphat variable
 can be generalised for events with two or more jets, as described in
 Ref.~\cite{RA1Paper2012}.
 
@@ -128,69 +128,78 @@ improvement in the jet energy resolution, but also because the
 threshold effect of jets below the \Pt threshold contributing
 significantly to \mht decreases with increasing \scalht. This
 motivates a \scalht-dependent \alphat requirement that varies in the
-range 0.52--0.65 for the region $\scalht > 800\gev$. For the region
-$\scalht > 800\gev$, the necessary control of the QCD multijet
-background is achieved solely with the \dphi variable.
-%Figure~\ref{fig:alphat} shows characteristic \alphat and \dphi
-%distributions for QCD multijet and other SM processes that generate
-%genuine \ETmiss. 
+range 0.52--0.65 for the region $\scalht > 800\gev$. 
+%For the region $\scalht > 800\gev$, the necessary control of the QCD
+%multijet background is achieved solely with the \dphi variable.
 
-%\begin{figure}[bht]
-%  \begin{center} 
-%    \includegraphics{AlphaT}
-%    \caption{\label{fig:alphat} The distribution of \alphat,
-%      described in the text, for events in data with two or more jets
-%      (black dots with error bars representing the statistical
-%      uncertainties), after all event selection criteria except
-%      \alphat are applied. For
-%      illustrative purposes only, expected yields from simulation are
-%      also shown for QCD multi-jet events (dotted-dashed line),
-%      associated production of top quarks, W, or Z with jets
-%      (long-dashed line), the sum of all aforementioned SM processes
-%      (solid line).
-%      The uncertainties for the SM expectation, due to the limited
-%      accuracy of the available simulation datasets and jet energy
-%      calibrations, are represented by the hatched area. The highest
-%      bin contains the overflows.}
-%    \end{center}
-%\end{figure}
-
-%\begin{table}[h!]                                                                                                  
-%  \caption{Thresholds on \alphat for \scalht bins.\label{tab:thresholds}}                                     
-%  \centering                                                                                                       
-%      {\small
-%  \begin{tabular}{ lcccccccc }                                                                                         
-%    \hline                                                                                                         
-%    \hline                                                                                                         
-%    \scalht (GeV)        & 200--250      & 250--300      & 300--350      & 350 -- 400 & 400 -- 500 & 500--600 & 600--800 & $>$800        \\           
-%    \hline                                                                                                         
-%    \alphat              & 0.65          & 0.60          & 0.55          & 0.53       & 0.52      & 0.52     & 0.52 & 0        \\                        
-%    \hline                                                                                                         
-%    \hline   
-%  \end{tabular}                                                                                                    
-%}
-%\end{table}     
-
-Two further dedicated event vetoes are employed to suppress the QCD
-multijet background to a negligible level. The first veto is based on
-the aforementioned \dphi variable, which considers the minimum
-azimuthal angular separation of a jet and the \mht vector derived from
-all other jets in the event. This variable is employed to suppress any
+%Two further dedicated event vetoes are employed to suppress the QCD
+%multijet background to a negligible level. 
+The \dphi variable considers the minimum azimuthal angular separation
+of a jet and the \mht vector derived from all other jets in the
+event. The \dphi variable provides powerful discriminating power
+between final states with genuine \ETmiss and mismeasured QCD multijet
+events. The variable is also highly efficient at suppressing any
 potential contribution from rare energetic multijet events that yield
 high jet multiplicities and significant \ETmiss due to
 high-multiplicity neutrino production in semileptonic heavy-flavour
 decays. The neutrinos are typically collinear with respect to the axis
 of a jet and carry a significant fraction of the energy. The
-requirement $\dphi > 0.5$ has been demonstrated with a data control
-sample to suppress effectively this background source.
+requirement $\dphi > 0.5$ is sufficient to suppress effectively the
+multijet background. 
 
-The second veto concerns the rare circumstance in which several jets
-with transverse energies below the \Et thresholds and collinear in
-$\phi$ can result in significant \mht relative to \ETmiss, the latter
-of which is less sensitive to jet thresholds. This type of background,
-typical of multijet events, is suppressed while maintaining high
-efficiency for SM or new physics processes with genuine, significant
-missing transverse momentum by requiring $\mht / \ETmiss < 1.25$. 
+For the region $\scalht < 800\gev$, the requirements on both the
+\alphat and \dphi variables are utilised, whereas for the region
+$\scalht > 800\gev$, the necessary control of the QCD multijet
+background is achieved solely with the \dphi
+requirement. Figure~\ref{fig:alphat-bdphi} shows the \alphat and \dphi
+distributions observed in data for events that satisfy $\scalht >
+300\gev$ and $\scalht > 800\gev$, respectively.
+
+\begin{figure*}[tbhp]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{alphaT_v4} \,
+    \includegraphics[width=0.49\textwidth]{bDPhi_v4} \\
+  \end{center}
+  \caption{(Left) The \alphat distribution observed in data for events
+    that satisfy the baseline selection criteria for the region
+    $\scalht > 300\gev$ plus the following modifications: for events
+    that satisfy $\alphat < 0.55$, an unbiased set of \scalht trigger
+    conditions are used to record the events and no \mht requirement
+    is made; for events that satisfy $\alphat > 0.55$, all other
+    signal region selection criteria are imposed. (Right) The
+    \dphi distribution observed in data for events that satisfy the
+    full signal region selection criteria and $\scalht > 800\gev$.
+    The distributions for the QCD multijet backgrounds are determined
+    from simulation while all other SM backgrounds are estimated using
+    a $\mu+jets$ data control sample. The uncertainties in the SM
+    expectation are dominated by the statistical uncertainties 
+    associated with the limited sample of simulated multijet events.
+    \label{fig:alphat-bdphi} 
+  }
+\end{figure*}
+
+%Two further dedicated event vetoes are employed to suppress the QCD
+%multijet background to a negligible level. The first veto is based on
+%the aforementioned \dphi variable, which considers the minimum
+%azimuthal angular separation of a jet and the \mht vector derived from
+%all other jets in the event. This variable is employed to suppress any
+%potential contribution from rare energetic multijet events that yield
+%high jet multiplicities and significant \ETmiss due to
+%high-multiplicity neutrino production in semileptonic heavy-flavour
+%decays. The neutrinos are typically collinear with respect to the axis
+%of a jet and carry a significant fraction of the energy. The
+%requirement $\dphi > 0.5$ has been demonstrated with a data control
+%sample to suppress effectively this background source.
+
+%The second veto concerns ...
+A final dedicated veto is employed to deal with the rare circumstance
+in which several jets with transverse energies below the \Et
+thresholds and collinear in $\phi$ can result in significant \mht
+relative to \ETmiss, the latter of which is less sensitive to jet
+thresholds. This type of background, typical of multijet events, is
+suppressed while maintaining high efficiency for SM or new physics
+processes with genuine, significant missing transverse momentum by
+requiring $\mht / \ETmiss < 1.25$. 
 
 The aforementioned requirements complete the definition of the signal
 region. Signal candidate events are recorded with multiple jet-based
@@ -209,8 +218,3 @@ discriminant between the dominant SM backgrounds and new physics
 signatures. The \mht templates are derived from simulation that are
 extensively validated in multiple data control regions and from which
 systematic uncertainties are established.
-%The \mht distribution is examined above $\mht > 130\gev$ with a
-%minimum bin width of $50\gev$ to minimise the number of events
-%migrating between bins due to resolution effects, and a dedicated
-%study is employed to assign a systematic uncertainty to the SM
-%predictions in the \mht dimension.
