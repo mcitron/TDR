@@ -1,5 +1,6 @@
+\clearpage
 %%__________________________________________________________________||
-\section{Results and interpretation}
+\section{Results}
 \label{sec:interpretation}
 
 A likelihood model of the observations in all data samples is used to
@@ -9,37 +10,38 @@ for events in the same category of \njet and \nb, the observation is
 modelled as a Poisson-distributed variable around the sum of the SM
 expectation and a potential signal contribution (assumed to be zero in
 the following discussion). The SM expectation is related to the
-expected yields in the \mj, \mmj, and \gj control samples via the
-transfer factors derived from simulation. Likelihood functions
-describe the yields in the \scalht bins of the \mj, \mmj, and \gj
-control samples in the same category of \njet and \nb as the signal
-region. The systematic uncertainties summarised in
-Table~\ref{tab:bkgd_systs} are accommodated in the likelihood function
-by nuisance parameters, the measurements of which are assumed to
-follow a log-normal distribution. In the presence of a non-zero signal
-contribution, the CL$_{\mathrm{s}}$ technique~\cite{read,
-  Cowan:2010js} is used to determine upper limits on production cross
-section using asymptotic formulae.
+expected yields in the \mj, \mmj, and \gj control samples via transfer
+factors derived from simulation. Likelihood functions describe the
+yields in the \scalht bins of the \mj, \mmj, and \gj control samples
+in the same category of \njet and \nb as the signal region. The
+systematic uncertainties summarised in Table~\ref{tab:bkgd_systs} are
+accommodated in the likelihood function by nuisance parameters, the
+measurements of which are assumed to follow a log-normal
+distribution. In the presence of a non-zero signal contribution, the
+CL$_{\mathrm{s}}$ technique~\cite{read, Cowan:2010js} is used to
+determine upper limits on production cross section using asymptotic
+formulae.
 
 The expected number of events from SM processes is determined from a
 simultaneous fit to the signal region and up to three control
 samples. The likelihood function is maximised over all fit parameters
 under the SM-only hypothesis.
-Tables~\ref{tab:predewkdata_sig_comb_sym} and
-\ref{tab:predewkdata_sig_comb_asym} and
-\ref{tab:predewkdata_sig_comb_mono} summarise the observed yields and
-``a priori'' and ``a posteriori'' SM expectations in bins of \scalht
-for events in the signal region categorised according to \njet and
-\nb.  No significant tension is observed between the predictions and
-data in the signal region, which is well described by the SM-only
-hypothesis.
+Tables~\ref{tab:predewkdata_sig_comb_mono}--\ref{tab:predewkdata_sig_comb_sym} 
+summarise the observed yields and ``a priori'' and ``a posteriori'' SM
+expectations for signal candidate events in the monojet, asymmetric,
+and symmetric categories, respectively. No significant tension is
+observed between the predictions and data in the signal region, which
+is well described by the SM-only hypothesis.
 
-\input{predewkdata_sig_comb_sym_twiki}
+\input{predewkdata_sig_comb_mono_twiki}
 \clearpage
 \input{predewkdata_sig_comb_asym_twiki}
 \clearpage
-\input{predewkdata_sig_comb_mono_twiki}
-%\clearpage
+\input{predewkdata_sig_comb_sym_twiki}
+\clearpage
+
+%%__________________________________________________________________||
+\section{Interpretation}
 
 The results of this search are interpreted in terms of upper limits in
 the production cross section as a function of the parent sparticle and
@@ -96,30 +98,30 @@ benchmark signal model.
 
 \begin{figure*}[tbhp]
   \begin{center}
-    \includegraphics[width=0.48\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit} \,
-    \includegraphics[width=0.48\textwidth]{postFitShape_eq2b_ge5j_600_800_prefit} \\
+    \includegraphics[width=0.5\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit} \\
+    \includegraphics[width=0.5\textwidth]{postFitShape_eq2b_ge5j_600_800_prefit} \\
   \end{center}
-    \caption{ The \mht distribution of data observations and the expected
-      distribution for the sum of all SM background processes in two
-      representative event categories at high \scalht. The expected
-      distributions for an example benchmark models with a large (small)
-      mass splitting between the gluino and LSP is also shown in the left
-      (right) figure. \label{fig:mht-templates} } 
-  \end{figure*}
-
+  \caption{ The \mht distribution observed in data and the expected
+    distribution for the sum of all SM background processes in two
+    representative event categories at high \scalht. The expected
+    distribution for an example benchmark models with a large (small)
+    mass splitting between the gluino and LSP is also shown in the top
+    (bottom) figure. \label{fig:mht-templates} }
+\end{figure*}
+  
 \begin{figure*}[thp!]
   \begin{center}
     \includegraphics[width=0.65\textwidth]{t1bbbbRA1XSEC.pdf} 
     \includegraphics[width=0.65\textwidth]{t1qqqqRA1XSEC.pdf} \\
     \caption{Observed upper limit on the gluino pair-production cross
       section at 95\% CL (indicated by the colour scale) as a function
-      of the gluino and $\chiz$ masses for gluino three-body decays to
-      $bb\chiz$ (top) and $qq\chiz$ (bottom). The black solid thick
-      line indicates the observed mass exclusion region assuming
-      NLO+NLL SUSY production cross sections, with the thin 
-      black lines reflecting the theoretical uncertainty in the production
-      cross section. The red thick dashed (thin dashed) line indicates the
-      median (${\pm}1 \sigma$ experimental uncertainty) expected exclusion. 
+      of the gluino and $\chiz_{1}$ masses for gluino three-body
+      decays to $b\bar{b}\chiz_{1}$ (top) and $q\bar{q}\chiz_{1}$
+      (bottom). The black solid thick line indicates the observed mass
+      exclusion region, with the thin black lines reflecting the theoretical
+      uncertainty in the production cross section. The red thick
+      dashed (thin dashed) line indicates the median (${\pm}1 \sigma$
+      experimental uncertainty) expected exclusion.
       \label{fig:limits-sms} }
   \end{center}
 \end{figure*}
@@ -128,13 +130,12 @@ Figure~\ref{fig:limits-sms} shows the observed upper limit on the
 production cross section at 95\% confidence level (CL) as a function
 of the gluino and LSP masses for a range of simplified models assuming
 pair production of gluinos. The observed excluded regions are
-determined with NLO+NLL cross sections for gluino pair production
-assuming decoupled squarks. Also shown are the observed excluded
-regions when varying the production cross section by its theoretical
-uncertainty, and the expected excluded region with the ${\pm}1$
-standard-deviation ($\sigma$) variations. The search places stringent
-limits in the mass parameter space, with observed exclusions in gluino
-and LSP masses as high as $\sim$1550\gev and $\sim$950\gev,
-respectively.
+determined for gluino pair production assuming decoupled squarks. Also
+shown are the observed excluded regions when varying the production
+cross section by its theoretical uncertainty, and the expected
+excluded region with the ${\pm}1$ standard-deviation ($\sigma$)
+variations. The search places stringent limits in the mass parameter
+space, with observed exclusions in gluino and LSP masses as high as
+$\sim$1550\gev and $\sim$950\gev, respectively.
 
 %%__________________________________________________________________||
