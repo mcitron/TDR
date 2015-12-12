@@ -2,103 +2,139 @@
 \section{Results and interpretation}
 \label{sec:interpretation}
 
-A likelihood model of the observations in all data samples is
-used to obtain a consistent prediction of the SM backgrounds and to
-test for the presence of a variety of signal models.
-
-In each bin of \scalht, the observation is modelled as a
-Poisson-distributed variable around the sum of the SM expectation and a
-potential signal contribution (assumed to be zero in the following
-discussion). The SM expectation is related to the expected yields in
-the \mj, \mmj, and \gj control samples via the transfer factors
-derived from simulation. Likelihood functions describe the yields in the \scalht bins
-of the \mj, \mmj, and \gj control samples in the same category of
-\njet and \nb as the signal region. The systematic uncertainties
-associated with the transfer factors are accommodated in the
-likelihood function by a nuisance parameter per transfer factor. The
-measurements of these parameters are assumed to follow a log-normal
-distribution. The CL$_{\mathrm{s}}$ technique~\cite{read, Cowan:2010js} was used to set limits using asymptotic formulae.
+A likelihood model of the observations in all data samples is used to
+obtain a consistent prediction of the SM backgrounds and to test for
+the presence of a variety of signal models.  In each bin of \scalht
+for events in the same category of \njet and \nb, the observation is
+modelled as a Poisson-distributed variable around the sum of the SM
+expectation and a potential signal contribution (assumed to be zero in
+the following discussion). The SM expectation is related to the
+expected yields in the \mj, \mmj, and \gj control samples via the
+transfer factors derived from simulation. Likelihood functions
+describe the yields in the \scalht bins of the \mj, \mmj, and \gj
+control samples in the same category of \njet and \nb as the signal
+region. The systematic uncertainties summarised in
+Table~\ref{tab:bkgd_systs} are accommodated in the likelihood function
+by nuisance parameters, the measurements of which are assumed to
+follow a log-normal distribution. In the presence of a non-zero signal
+contribution, the CL$_{\mathrm{s}}$ technique~\cite{read,
+  Cowan:2010js} is used to determine upper limits on production cross
+section using asymptotic formulae.
 
 The expected number of events from SM processes is determined from a
 simultaneous fit to the signal region and up to three control
 samples. The likelihood function is maximised over all fit parameters
 under the SM-only hypothesis.
-Tables~\ref{tab:predewkdata_sig_comb_sym} and \ref{tab:predewkdata_sig_comb_asym} and
-\ref{tab:predewkdata_sig_comb_mono} summarise
-the observed yields and pre-fit results with associated errors in bins of \scalht for events in the signal region
-categorised according to \njet and \nb. 
-No significant tension is observed between the predictions and data in the
-signal region which is well described by the SM-only hypothesis.
+Tables~\ref{tab:predewkdata_sig_comb_sym} and
+\ref{tab:predewkdata_sig_comb_asym} and
+\ref{tab:predewkdata_sig_comb_mono} summarise the observed yields and
+``a priori'' and ``a posteriori'' SM expectations in bins of \scalht
+for events in the signal region categorised according to \njet and
+\nb.  No significant tension is observed between the predictions and
+data in the signal region, which is well described by the SM-only
+hypothesis.
 
-\input{predewkdata_sig_comb_sym}
-\input{predewkdata_sig_comb_asym}
-\input{predewkdata_sig_comb_mono}
+\input{predewkdata_sig_comb_sym_twiki}
 \clearpage
+\input{predewkdata_sig_comb_asym_twiki}
+\clearpage
+\input{predewkdata_sig_comb_mono_twiki}
+%\clearpage
 
+The results of this search are interpreted in terms of upper limits in
+the production cross section as a function of the parent sparticle and
+LSP mass for simplified models~\cite{Alwall:2008ag, Alwall:2008va,
+  sms} that represent the pair production of gluinos and their
+subsequent decays to four quarks and two LSPs. The event samples for
+the simplified models are generated with \MADGRAPH V5~\cite{madgraph}.
+Inclusive, process-dependent, NLO calculations of SUSY production
+cross sections, with next-to-leading-logarithmic (NLL) corrections,
+are obtained with the program \PROSPINO~\cite{Beenakker:1996ch,
+  PhysRevD.80.095004,PhysRevLett.102.111802, PhysRevD.80.095004,
+  1126-6708-2009-12-041, doi:10.1142/S0217751X11053560,
+  susy-nlo-nll}. The samples are generated using the
+CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The distribution of the number of
+pp interactions per bunch crossing for the simulated samples matches
+that observed in data. Various uncertainties in the experimental
+acceptance are considered, for which typical magnitudes are summarised
+in Table~\ref{tab:signal_systs}.
 
-The results of this search are interpreted in terms of limits in the
-parent sparticle and LSP mass parameter space of simplified
-models~\cite{Alwall:2008ag, Alwall:2008va, sms} that represent the pair production of gluinos and their subsequent decays to four quarks 
-and an LSP. Models in which the gluinos decay inclusively to all quark flavours, and models in which the decay is to four top and bottom quarks, respectively, are considered. 
-%Only a subset of the event categories, chosen according to expected sensitivity, are used for
-%each interpretation. 
+\begin{table}[h!]
+  \caption{%CMS {\it Simulation}. 
+    Typical magnitudes of systematic uncertainties in the experimental
+    acceptance for the signal models considered.
+  }
+  \label{tab:signal_systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lccc }
+    \hline
+    \hline
+    Systematic source              & Type          & Correlated & Typical magnitude (\%) \\
+    \hline
+    Luminosity                     & Normalisation & Yes        & 4.6                    \\
+    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
+    Initial state radiation        & Norm. + shape & Yes        & 0--30                  \\
+    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
+    Pile-up                        & Norm. + shape & Yes        & 0-5                    \\
+    Trigger                        & Norm. + shape & Yes        & 0--10                  \\
+    Parton density functions       & Normalisation & No         & 10                     \\
+%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
+    b-tag scale factors            & Norm. + shape & Yes        & 5--30                  \\
+    Lepton scale factors           & Normalisation & Yes        & $<$5                   \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 
-The event samples for the simplified models are generated 
-with \MADGRAPH V5~\cite{madgraph}.
-Inclusive, process-dependent, NLO
-calculations of SUSY production cross sections, with
-next-to-leading-logarithmic (NLL) corrections, are obtained with the
-program \PROSPINO~\cite{Beenakker:1996ch, PhysRevD.80.095004,PhysRevLett.102.111802, PhysRevD.80.095004, 1126-6708-2009-12-041,
-  doi:10.1142/S0217751X11053560, susy-nlo-nll}. The samples are
-generated using the CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The
-distribution of the number of pp interactions per bunch crossing for
-the simulated samples matches that observed in data.
-
-Various experimental uncertainties on the expected signal yields are
-considered. Contributions arise from sources such as the uncertainties in the PDFs, jet energy
-scale, the modelling of the efficiency and mistag probability of
-b-quark jets in simulation, and the modelling of initial-state-radiation in the simulation.
-%Such uncertainties are accounted for with a nuisance parameter, the measurement 
-%of which is assumed to follow a lognormal distribution.
-
-The \mht templates for the background and the signal are shown in Figure \ref{fig:mht-templates} for two of the most sensitive analysis bins.
-Two benchmark models for T1bbbb are displayed, representatives of the ``compressed'' and ``uncompressed'' scenarios, 
-both lying around the expected exclusion reach of the analysis with the amount of data collected so far. 
-Both the central value and the uncertainties in this plots are pre-fit.
+Figure~\ref{fig:mht-templates} shows for two categories in \njet and
+\nb at high \scalht that are expected to provide good sensitivity to
+gluino models the distribution of the data observations as a function
+of the \mht variable, the expected distribution for the sum of all SM
+background processes, and the expected distribution for an example
+benchmark signal model.
 
 \begin{figure*}[tbhp]
-    \caption{ Templates for the \mht dimension in 2 representatives \njet,\nb,\scalht bins. An example of benchmark model with large (small) mass-splitting is shown in the left (right) plot. \label{fig:mht-templates} }
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit_uncompressed} \hspace{1cm}
-    \includegraphics[width=0.45\textwidth]{postFitShape_eq2b_ge5j_600_800_prefit_compressed} \\
+    \includegraphics[width=0.48\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit} \,
+    \includegraphics[width=0.48\textwidth]{postFitShape_eq2b_ge5j_600_800_prefit} \\
   \end{center}
-\end{figure*}
+    \caption{ The \mht distribution of data observations and the expected
+      distribution for the sum of all SM background processes in two
+      representative event categories at high \scalht. The expected
+      distributions for an example benchmark models with a large (small)
+      mass splitting between the gluino and LSP is also shown in the left
+      (right) figure. \label{fig:mht-templates} } 
+  \end{figure*}
 
-
-\begin{figure*}[tbhp]
-
+\begin{figure*}[thp!]
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{xs_contour_withHisto.pdf}
-    \caption{Observed upper limit on the gluino pair-production cross section at 95\% CL (indicated by the colour scale) as a function of the gluino
-      and $\chiz$ masses for gluino three body decays to $bb\chiz$
-      The red solid thick line represents the observed exclusions when
-      varying the production cross section by its theoretical uncertainty. 
-      The black solid line (thin dashed) line indicates the median (${\pm}1 \sigma$ 
-      experimental uncertainty) expected exclusion.
+    \includegraphics[width=0.65\textwidth]{t1bbbbRA1XSEC.pdf} 
+    \includegraphics[width=0.65\textwidth]{t1qqqqRA1XSEC.pdf} \\
+    \caption{Observed upper limit on the gluino pair-production cross
+      section at 95\% CL (indicated by the colour scale) as a function
+      of the gluino and $\chiz$ masses for gluino three-body decays to
+      $bb\chiz$ (top) and $qq\chiz$ (bottom). The black solid thick
+      line indicates the observed mass exclusion region assuming
+      NLO+NLL SUSY production cross sections, with the thin 
+      black lines reflecting the theoretical uncertainty in the production
+      cross section. The red thick dashed (thin dashed) line indicates the
+      median (${\pm}1 \sigma$ experimental uncertainty) expected exclusion. 
       \label{fig:limits-sms} }
   \end{center}
 \end{figure*}
 
-
 Figure~\ref{fig:limits-sms} shows the observed upper limit on the
 production cross section at 95\% confidence level (CL) as a function
-of the gluino and LSP masses for
-a range of simplified models assuming pair production of gluinos. 
-The analysis places stringent limits in the mass parameter space, with observed exclusions in gluino and LSP masses as high as $\sim$1.5 \TeV and $\sim$900 \GeV, respectively.
-The observed excluded regions are determined with NLO+NLL
-cross sections for gluino pair production assuming decoupled squarks. Also shown are the
-observed excluded regions when varying the production cross section by
-its theoretical uncertainty, and the expected excluded region 
-with the ${\pm}1$ standard-deviation ($\sigma$) variations. 
+of the gluino and LSP masses for a range of simplified models assuming
+pair production of gluinos. The observed excluded regions are
+determined with NLO+NLL cross sections for gluino pair production
+assuming decoupled squarks. Also shown are the observed excluded
+regions when varying the production cross section by its theoretical
+uncertainty, and the expected excluded region with the ${\pm}1$
+standard-deviation ($\sigma$) variations. The search places stringent
+limits in the mass parameter space, with observed exclusions in gluino
+and LSP masses as high as $\sim$1550\gev and $\sim$950\gev,
+respectively.
 
 %%__________________________________________________________________||
