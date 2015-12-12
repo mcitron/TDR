@@ -1,27 +1,27 @@
 %%__________________________________________________________________||
-\section{Non-multijet backgrounds}
+\section{Background estimation for SM processes with genuine \ETmiss}
 \label{sec:ewk_background}
 
 In the absence of multijet events, the background counts in the signal
-region arise from SM processes with significant \met in the final
+region arise from SM processes with significant \ETmiss in the final
 state. In events with low counts of jets and b-quark jets, the largest
-backgrounds with genuine \met are from the associated production of W
-or Z bosons with jets, followed by either the weak decays \znunu or
+backgrounds with genuine \ETmiss are from the associated production of
+W or Z bosons with jets, followed by either the weak decays \znunu or
 \wtaunu, where the $\tau$ decays hadronically and is identified as a
 jet; or by leptonic decays that are not rejected by the dedicated
 electron or muon vetoes. The veto of events containing isolated tracks
 is efficient at further suppressing these backgrounds as well as the
 single-prong hadronic decay of the tau lepton. At higher jet and
 b-quark jet multiplicities, top quark production followed by
-semileptonic weak top quark decay becomes important. 
+semileptonic weak top quark decay becomes important.
 
-The production of W and Z bosons in association with jets, \ttbar and \gj processes are simulated
-with the \MADGRAPH V5~\cite{madgraph} event generator. The production
-of single-top quark events is generated with
-\POWHEG~\cite{powheg}, and diboson events are produced with
-\PYTHIA8.1~\cite{pythia8}. For all simulated samples, \PYTHIA8.1 is
-used to describe parton showering and hadronisation. All samples are
-generated using the \textsc{cteq6l1}~\cite{Pumplin:2002vw} parton
+The production of W and Z bosons in association with jets, \ttbar and
+\gj processes are simulated with the \MADGRAPH V5~\cite{madgraph}
+event generator. The production of single-top quark events is
+generated with \POWHEG~\cite{powheg}, and diboson events are produced
+with \PYTHIA8.1~\cite{pythia8}. For all simulated samples, \PYTHIA8.1
+is used to describe parton showering and hadronisation. All samples
+are generated using the \textsc{cteq6l1}~\cite{Pumplin:2002vw} parton
 distribution functions (PDF). The description of the detector response
 is implemented using the \GEANTfour~\cite{geant} package. The
 simulated samples are normalised using the most accurate cross section
@@ -32,41 +32,135 @@ of pp interactions per bunch crossing and then reweighted to match the
 pileup distribution as measured in data.
 
 The method to estimate the non-multijet backgrounds in the signal
-region relies on the use of transfer factors (TF), which are
-constructed per bin (in terms of \njet, \nb, and \scalht) per data
-control sample. The TFs are determined from the simulated event
+region relies on the use of transfer factors, which are constructed
+per bin (in terms of \njet, \nb, and \scalht) per data control
+sample. The transfer factors are determined from the simulated event
 samples and are ratios of expected yields in the corresponding bins of
-the signal region and control samples. The TFs are used to extrapolate
-from the event yields measured in a data control samples to an
-expectation for the total background event yields in the signal
-region. 
+the signal region and control samples. The transfer factors are used
+to extrapolate from the event yields measured in a data control
+samples to an expectation for the total background event yields in the
+signal region.
+
+Three disjoint data control regions, binned identically to the signal
+region, are used to estimate the contributions from the various
+remaining SM background processes. The control regions are defined by
+a selection of \mj, \mmj, and \gj events. The selection criteria are
+chosen such that the SM processes and their kinematic properties
+resemble as closely as possible the SM background behaviour in the
+signal region once the muon, dimuon system, or photon are ignored when
+computing quantities such as \scalht, \mht and \alphat. The baseline
+selection criteria and binning definition described in
+Table~\ref{tab:selections} are applied to all control samples, except
+for the lepton and photon vetoes, which are inverted and tightened to
+improve purity. The event selection criteria are defined to also
+ensure that any potential contamination from multijet events or a wide
+variety of SUSY models (\ie signal contamination) is negligible.
+
+The \mj sample is recorded using a trigger condition that requires an
+isolated muon and the event selection criteria are chosen in order to
+ensure high trigger efficiency. Furthermore, the muon is required to
+be well separated from the jets in the event and the transverse mass
+($M_{\rm T}$) of the muon and \ETmiss~\cite{CMS-PAS-PFT-09-001,
+  CMS-PAS-PFT-10-001} system must satisfy $30 < M_{\rm T} < 125\gev$
+to ensure a sample rich in W bosons (produced promptly or from the
+decay of top quarks). The \mmj sample uses similar selection criteria
+as the \mj sample and the same trigger condition. Exactly two
+oppositely-charged, isolated muons are required, the muons must be
+distanced from the jets in the event, and the invariant mass of the
+dimuon system must be within a window of $\pm 25\GeV$ around the mass
+of the Z boson. For both the muon and dimuon samples, no requirement
+is made on the variable \alphat in order to increase the statistical
+precision of the predictions derived from these samples.  The \gj
+sample is recorded using a single photon trigger condition. The event
+selection criteria comprise an isolated photon with $\Et > 200\gev$
+and $\scalht > 400\GeV$.
 
 Three independent estimates of the irreducible background of \znunu +
 jets events are determined from the \gj, \mmj, amd \mj data control
-samples.  The \gj and \zmumu + jets processes have similar kinematic
+samples. The \gj and \zmumu + jets processes have similar kinematic
 properties when the photon or muons are ignored~\cite{Bern:2011pa}
 albeit different acceptances. In addition, the \gj process has a
 larger production cross section than \znunu + jets events. The \mj
-data sample is also used to provide an estimate for the \znunu\ + jets
+data sample is used to provide an estimate for the \znunu\ + jets
 contribution as well as the other dominant SM processes, \ttbar and W
 boson production. Residual contributions from processes such as
 single-top-quark, diboson, and Drell-Yan production are also included.
 
+\begin{table}[thp!]
+  \caption{%CMS {\it Preliminary}, $\mathcal{L}_{\mathrm{int}} =
+    % 2.2\fbinv$, $\sqrt{s} = 13\TeV$. 
+    % \newline
+    Systematic uncertainties (percent) in the estimates of the
+    normalisation of the SM background components as a function of
+    \njet, as determined from ensembles of closure tests based on
+    multiple data control samples. The quoted ranges correspond to the 
+    variations determined across the \scalht bins of a given \njet
+    category. The additional contributions listed at the foot of the
+    table are added in quadrature to the \njet-dependent contributions
+    for each SM background component. } 
+  \label{tab:bkgd_systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcc }
+    \hline
+    \hline
+    \njet                         & \multicolumn{2}{c}{Background component}     \\
+    \cline{2-3}
+                                  & \ttbar, W+jets, residual SM & \znunu\ + jets \\
+    \hline
+    \multicolumn{2}{l}{``Monojet'':}                                             \\
+    1                             & 9--36                       & 9--36          \\
+    \hline
+    \multicolumn{2}{l}{``Asymmetric'':}                                          \\
+    2                             & 11--105                     & 9--46          \\
+    3                             & 12--86                      & 12--78         \\
+    4                             & 16--52                      & 13--43         \\
+    $\geq$5                       & 19--47                      & 27--73         \\
+    \hline
+    \multicolumn{2}{l}{``Symmetric'':}                                           \\
+    2                             & 7--34                       & 11--30         \\
+    3                             & 9--31                       & 13--44         \\
+    4                             & 13--36                      & 8--34          \\
+    $\geq$5                       & 15--22                      & 17--28         \\
+    \hline
+    \multicolumn{2}{l}{Additional contributions:}                                \\
+    \alphat ($\scalht < 800\gev$) & 10-27                       & 10-27          \\
+    \dphi ($\scalht > 800\gev$)   & 22                          & 22             \\
+    b-tagging scale factors       & $<$5                        & $<$5           \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
 The uncertainty in the transfer factors derived from simulation is
 probed through closure tests based on data control
 samples~\cite{RA1Paper2012}. Each closure test inspects the
-compatibility of yields in two disjoint control samples and a
-corresponding TF derived from simulation. A large ensemble of tests
-are performed to probe key ingredients of the simulation modelling
-that may introduce a source of mismodelling in the transfer
-factors. The closure tests reveal no significant biases or
-dependencies on \njet or \scalht for all individual tests. Systematic
-uncertainties in the transfer factors are determined from the
-statistically-weighted variance in the level of closure for
-collections of tests. Templates derived from simulation are used to
-predict the background counts in the \mht dimension. Multiple data
-control regions are used to evaluate the degree to which the
-simulation describes the \mht distributions observed in data and to
-assign appropriate systematic uncertainties.
+compatibility of yields in two disjoint data control samples and a
+corresponding transfer factor derived from simulation. A large
+ensemble of tests are performed to probe the simulation modelling of a
+range of key physics effects that may lead to potential biases in the
+transfer factors~\cite{RA1Paper2012}. For the analysed data sample,
+the closure tests reveal no significant biases or dependencies on
+\njet or \scalht for all individual tests. Systematic uncertainties in
+the transfer factors are typically determined from ensembles of
+closure tests, which can be considered as ``normalisation''
+uncertainties for a given component of background events categorised
+according to \njet, \nb, and \scalht.  Table~\ref{tab:bkgd_systs}
+summarises typical values for the systematic uncertainties in
+experimental acceptance effects for the dominant SM background
+components. These uncertainties are assumed to be fully uncorrelated
+for events catogorised differently in \njet, \nb, and \scalht. The
+uncertainties associated with extrapolations in the \alphat and \dphi
+variables, and the simulation modelling of the efficiency and mistag
+rates for identifying jets originating from b quarks or light-flavour
+partons are also listed, which are assumed to be fully correlated
+across the \nb dimension only.
+
+Templates derived from simulation are used to predict the background
+counts in the \mht dimension. Multiple data control regions are used
+to evaluate the degree to which the simulation describes the \mht
+distributions observed in data and to assign appropriate systematic
+uncertainties, which can be in excess of $>100\%$ in the most
+sensitive \mht bins.
 
 %%__________________________________________________________________||
