@@ -13,7 +13,7 @@ use XML::Twig;
 use Text::Balanced qw (extract_bracketed);
 #use PDF::API2; #not installed on lxplus
 
-my $VERSION = sprintf "%d.%03d", q$Revision: 284866 $ =~ /(\d+)/g;
+my $VERSION = sprintf "%d.%03d", q$Revision: 312882 $ =~ /(\d+)/g;
 my $verbose;
 my $texFile = 'D:/tdr2/papers/XXX-08-000/trunk/XXX-08-000.tex';
 my $doc = 'XXX-08-000_temp.pdf';
@@ -137,10 +137,10 @@ EOD
    $_ .= do { local( $/ ); <FILE> }; #grab entire content!
    close(FILE);
    # extract svn info: exemplars-- (note that these are the real values for this file)
-   # \RCS$Revision: 284866 $
-   # \RCS$Date: 2015-04-16 17:00:13 +0200 (Thu, 16 Apr 2015) $
+   # \RCS$Revision: 312882 $
+   # \RCS$Date: 2015-12-01 16:52:25 +0000 (Tue, 01 Dec 2015) $
    # \RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/utils/trunk/general/makeManifest.pl $
-   # \RCS$Id: makeManifest.pl 284866 2015-04-16 15:00:13Z alverson $
+   # \RCS$Id: makeManifest.pl 312882 2015-12-01 16:52:25Z alverson $
    # -- what it looked like under cvs, with the dollar signs removed
    #\RCS Revision: 1.4 
    #\RCS Date: 2008/07/31 09:20:05 
@@ -415,6 +415,7 @@ EOD
       $doc_tag->paste('last_child',$fft_tag);
       $fft_tag->paste('last_child',$record);
 
+      my $start = time;
       # add each figure
       my $convertCmd = "";
       if ($thumbnails) 
@@ -517,7 +518,7 @@ EOD
                     $outFile =~ m/^(\S+)\.\S{3,4}$/s;
                     $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"d"},$1);
                     $doc_tag->paste('last_child',$fft_tag);
-                    my @convertArgs = ("-trim", "-sample", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png");
+                    my @convertArgs = ("-trim", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png");
                     if ($thumbnails) 
                     {
                       system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?"; 
@@ -526,8 +527,10 @@ EOD
                     }
                     if (0)
                     {
-                      @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1.png"); 
+                      @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png"); 
                       system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
+                      $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
+                      $doc_tag->paste('last_child',$fft_tag);
                     }
                     $fft_tag->paste('last_child',$record);
                 }
@@ -550,7 +553,7 @@ EOD
           $outFile =~ m/^(\S+)\.\S{3,4}$/s;
           $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"d"},$1);
           $doc_tag->paste('last_child',$fft_tag);
-          my @convertArgs = ("$outDir/$outFile", "-trim", "-sample", "240", "$outDir/$1-thumb.png");
+          my @convertArgs = ("$outDir/$outFile", "-trim", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$1-thumb.png");
           if ($thumbnails)
           {
               system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?"; 
@@ -559,12 +562,15 @@ EOD
           }
           if (0)
           {
-            @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1.png"); 
+            @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png"); 
             system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
+            $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
+            $doc_tag->paste('last_child',$fft_tag);
           }
           $fft_tag->paste('last_child',$record);                    
       }
 #      $record->paste('last_child',$collection);  #: from J-Y LM, 2008/07/18
+#debug      print("Thumbnail generation time: ",time - $start, "\n");
 
       my $MANIFEST = IO::File->new("> ".$outDir."/manifest.xml") or die $!;
       if ($verbose) {print "> Going to print out XML Manifest to $outDir/manifest.xml\n";}

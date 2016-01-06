@@ -1,7 +1,7 @@
 \def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
 \def\Filedate$#1: #2-#3-#4 #5 ${\gdef\filedate{#2/#3/#4}}
-\Fileversion$Revision: 290728 $
-\Filedate$Date: 2015-05-30 18:10:14 +0200 (Sat, 30 May 2015) $
+\Fileversion$Revision: 305436 $
+\Filedate$Date: 2015-10-07 16:50:29 +0100 (Wed, 07 Oct 2015) $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  CMS Common definitions style file
@@ -195,7 +195,7 @@
 % future symbols from heppennames2
 \providecommand{\PH}{\ensuremath{\cmsSymbolFace{H}}\xspace} % plain Higgs
 \providecommand{\Ph}{\ensuremath{\cmsSymbolFace{h}}\xspace} % SUSY Higgs
-\providecommand{\Pa}{\ensuremath{\cmsSymbolFace{a}}\xspace}  
+\providecommand{\Pa}{\ensuremath{\cmsSymbolFace{a}}\xspace}
 \providecommand{\PJGy}{\ensuremath{\cmsSymbolFace{J}\hspace{-.08em}/\hspace{-.14em}\psi}\xspace} % J/Psi (no mass)
 \providecommand{\PBzs}{\ensuremath{\cmsSymbolFace{B}^0_\cmsSymbolFace{s}}\xspace} % B^0_s
 \providecommand{\Pg}{\ensuremath{\cmsSymbolFace{g}}\xspace} % generic gluon
@@ -232,6 +232,7 @@
 \providecommand{\PASQt}{\ensuremath{\overline{\widetilde{\cmsSymbolFace{t}}}}\xspace} % anti stop
 \providecommand{\PASQb}{\ensuremath{\overline{\widetilde{\cmsSymbolFace{b}}}}\xspace} % anti sbottom
 \providecommand{\PSGt}{\ensuremath{\widetilde{\tau}}\xspace} % stau
+\providecommand{\PZ}{\ensuremath{\cmsSymbolFace{Z}}\xspace} % may have some confusion with the \xspace...
 \providecommand{\PZpr}{\ensuremath{\cmsSymbolFace{Z}^\prime}\xspace} % plain Z' using prime
 \renewcommand{\PWpr}{\ensuremath{\cmsSymbolFace{W}^\prime}\xspace} % use prime like pennames2
 \providecommand{\PGn}{\ensuremath{\nu}\xspace} % generic neutrino
@@ -264,7 +265,8 @@
 \providecommand{\PAGnGm}{\ensuremath{\overline{\nu}_\PGm}\xspace} % anti-muon neutrino
 \providecommand{\PGnGt}{\ensuremath{\nu_\PGt}\xspace} % tau neutrino
 \providecommand{\PAGnGt}{\ensuremath{\overline{\nu}_\PGt}\xspace} % anti-tau neutrino
-
+% our extensions for pennames2
+\providecommand{\Pepm}{\ensuremath{\cmsSymbolFace{e}^\pm}\xspace}
 % for APS style tables
 \ifthenelse{\boolean{cms@external}}{%
 \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
@@ -283,9 +285,10 @@
 \newcommand{\kt}{\ensuremath{k_{\mathrm{T}}}\xspace}
 
 \newcommand{\BC}{\ensuremath{\cmsSymbolFace{B_{c}}}\xspace}
-\newcommand{\bbarc}{\ensuremath{\cPqb\cPaqc}\xspace}
-\newcommand{\bbbar}{\ensuremath{\cPqb\cPaqb}\xspace}
-\newcommand{\ccbar}{\ensuremath{\cPqc\cPaqc}\xspace}
+\newcommand{\bbarc}{\ensuremath{\PQb\PAQc}\xspace}
+\newcommand{\bbbar}{\ensuremath{\PQb\PAQb}\xspace}
+\newcommand{\ccbar}{\ensuremath{\PQc\PAQc}\xspace}
+\newcommand{\qqbar}{\ensuremath{\PQq\PAQq}\xspace}
 \newcommand{\bspsiphi}{\ensuremath{\cmsSymbolFace{B_s} \to \JPsi\, \phi}\xspace}
 \newcommand{\EE}{\ensuremath{\Pep\Pem}\xspace}
 \newcommand{\MM}{\ensuremath{\Pgmp\Pgmm}\xspace}
