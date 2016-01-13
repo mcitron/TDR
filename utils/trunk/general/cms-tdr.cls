@@ -1,7 +1,7 @@
 \def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
 \def\Filedate$#1: #2 #3 ${\gdef\filedate{#2}}
-\Fileversion$Revision: 282999 $
-\Filedate$Date: 2015-04-01 12:31:49 +0200 (Wed, 01 Apr 2015) $
+\Fileversion$Revision: 306882 $
+\Filedate$Date: 2015-10-26 11:26:15 +0000 (Mon, 26 Oct 2015) $
 
 %\def\fileversion{1.0.0}\def\filedate{21 December 2006}
 
@@ -87,7 +87,6 @@
 %
 %\usepackage{layout}% for debugging layouts
 %\usepackage{nag} % to remind of obsolete usage
-%\usepackage{trace}% for plain debugging
 \usepackage{fancybox}%         e.g. for calling out requirements, etc.
 \usepackage{multicol}%         multiple columns (e.g. glossary)
 \usepackage{longtable}% GOA: added 1 Jun 2007 for Christos
@@ -113,6 +112,7 @@
 \DeclareMathOperator{\erf}{erf}% just missing
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\Arg}{Arg}
 \usepackage{pennames-pazo}% particle names: converted from pennames for mathpazo
 
 \usepackage{topcapt}% for captions at top, i.e., tables
@@ -142,6 +142,7 @@
 \usepackage{helvet}%      Choose default sans serif
 \usepackage{sectsty}%     Change style of headings (should precede section redefinitions below)
 \allsectionsfont{\sffamily}% Set sans serif for all headings
+%\usepackage{trace}% for plain debugging---should be last package loaded
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %

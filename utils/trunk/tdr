@@ -33,13 +33,14 @@ use Cwd; # like Unix pwd but more portable
 use Cwd 'abs_path';
 use File::Glob 'bsd_glob';
 use Text::Balanced qw (extract_bracketed);
+use LWP::UserAgent; #for URL handling
 
 
 #############################################################################
 # Main:
 #############################################################################
 
-my $VERSION = sprintf "%6d", q$Revision: 290429 $ =~ /(\d+)/g;
+my $VERSION = sprintf "%6d", q$Revision: 306882 $ =~ /(\d+)/g;
 
 my $verbose = '';
 my $help = '';
@@ -561,6 +562,9 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
           if ($journal) {
               rewriteBib($tmp_dir, $target, $apsStyle);
               system ("bibtex $dirstring $temp_stemq 1> $temp_biboutq 2> $temp_biberrq");}
+          elsif ($arxiv) {
+               rewriteBib($tmp_dir, $target, 0);
+              system ("bibtex $dirstring $temp_stemq 1> $temp_biboutq 2> $temp_biberrq");}
           print ("2nd pass TeXing file: $temp_texq\n");
           system ("$texProgram -interaction=batchmode -synctex=0 -draftmode $dirstring $temp_texq 1> NUL 2> NUL");
           print ("final (3rd pass) TeXing file: $temp_texq\n");
@@ -587,7 +591,11 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
               rewriteBib($tmp_dir, $target, $apsStyle);
               print ("Re-BibTeXing file: $temp_stem\n");
               system ("bibtex $dirstring $temp_stemq");}
-          print ("2nd pass TeXing file: $temp_texq\n");
+           elsif ($arxiv) {
+              rewriteBib($tmp_dir, $target, 0);
+              print ("Re-BibTeXing file: $temp_stem\n");
+              system ("bibtex $dirstring $temp_stemq");}
+         print ("2nd pass TeXing file: $temp_texq\n");
           system ("$texProgram -interaction=batchmode -synctex=0  -draftmode $dirstring $temp_texq");
           print ("final (3rd pass) TeXing file: $temp_texq\n");
           system ("$texProgram -interaction=batchmode -synctex=1 $dirstring $temp_texq");
@@ -643,6 +651,9 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
           if ($journal) {
               rewriteBib($tmp_dir, $target, $apsStyle);
               system ( "bibtex $temp_stem ");}
+          elsif ($arxiv) {
+              rewriteBib($tmp_dir, $target, 0);
+              system ( "bibtex $temp_stem ");}
           print ("\n===============================================================\n");
           print ("Second pass TeXing file: $temp_texq\n\n");
           system ( "$texProgram -interaction=batchmode $temp_tex 1> /dev/null 2> /dev/null ");
@@ -667,6 +678,10 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
           system ( "bibtex $temp_stem");
           if ($journal) {
               rewriteBib($tmp_dir, $target, $apsStyle);
+              print ("Re-BibTeXing file: $temp_texq\n\n");
+             system ( "bibtex $temp_stem");}
+          elsif ($arxiv) {
+              rewriteBib($tmp_dir, $target, 0);
               print ("Re-BibTeXing file: $temp_texq\n\n");
              system ( "bibtex $temp_stem");}
           print ("\n===============================================================\n");
@@ -1011,6 +1026,7 @@ sub export_arxiv {
         $tmpstr =~ s/\n//; # strip out any \n
         $tmpstr =~ m/(.*?)(\.\w+)?\s+(\d+|A|B)/; # pick up files in first 2 appendices, A or B
         $tmpstr = $1;
+        $tmpstr =~ s/\+/\\\+/;# protect against + in filename
         my $pattern = qr/\G.*?File:\s*($tmpstr\.\w+)\s/ms; # full search string name.ext_
         # The 789 line will break at length=72, the File line at length=75; the File has .ext_n... added at the end
         # breaks within basename File: wraps 2 characters later
@@ -1092,6 +1108,8 @@ sub export_arxiv {
         }
         else
         {
+            if ($plbStyle) {copy("$gen_dir/elsarticle-num-names.bst", "$exp_dir/elsarticle-num-names.bst"); }
+            if ($epjcStyle) {copy("$gen_dir/svepj.clo", "$exp_dir/svepj.clo"); copy("$gen_dir/svjour.cls", "$exp_dir/svjour.cls") ;}
             my $texLocalDir = "/afs/cern.ch/cms/external/tex/texlive/texmf-local/tex/latex/local"; # assume have /afs connectivity
             if ($^O eq "MSWin32") {
             $texLocalDir = $ENV{"ProgramData"}."/Local TeX/tex/latex";} # no guarantee for this path whatsoever
@@ -1207,64 +1225,61 @@ sub export_arxiv {
 
     my $current_dir = getcwd();
     print "\nCreating export directory $current_dir\n";
+    my $outdir = $ENV{HOME};
+    my $outfile = my $outfile = $outdir."/CMS-".$target.".zip";
+    my $outpdf = "../../../../".$target."-arXiv.pdf";
+    # these are currently set up for production running: output goes in home directory or desktop
     if ($^O eq "MSWin32") {
-        print "Export directory ready.\n";
-        # this next works with W7 and the WinZip command line option. Nothing else has been tested.
-        # Could also try Archive::Zip (see this file)
-        my $outfile = $ENV{HOMEDRIVE}.$ENV{HOMEPATH}."\\Desktop\\CMS-".$target.".zip";
-        # specific for production: put on switch - TODO
         $outdir = $ENV{HOMEDRIVE}.$ENV{HOMEPATH}."\\Desktop\\HIGGSP~1";
-        my $outfile = $outdir."\\CMS-".$target.".zip";
-        my $outpdf = "../../../../".$target."-arXiv.pdf";
+        $outfile = $outdir."\\CMS-".$target.".zip";
+        # on windows/etc, we keep the final output in the svn tree
+        $outpdf = "../../../../".$target."-arXiv.pdf";
         if ($journal || $jhepStyle || $npahaStyle)
         {
             $outfile = $outdir."\\CMS-".$target."-jnl.zip";
             $outpdf = "../../../../".$target."-jnl.pdf";
         }
-        $outfile2 = $outfile;
-        $outfile2 =~ s|\\|/|g;
-        if (-e $outfile2) {unlink($outfile2);}
         copy($temp_pdf,$outpdf); #|| die "Failed to move files: $!";
-        my $useArchive = eval {require Archive::Zip};
-        if ($useArchive)
-        {
-            my $zip = Archive::Zip->new();
-            $zip->addTree('.');
-            my $status = $zip->writeToFileNamed($outfile2);
-            if ( $status != AZ_OK )
-            {
-                print "Can't write zip to file $outfile2: $!\n";
-            }
-            if (1)
-            {
-                my @archNames = $zip->memberNames();
-                print "Contents of $outfile2:\n---------\n";
-                print join("\n",@archNames);
-            }
-        }
-        else
-        {
-            my $tarfile = Archive::Tar->new;
-            $tarfile->add_files(bsd_glob('*.*'));
-            tarfile->write($outfile);
-            if ($verbose) {print "Created archive file $outfile.\n"};
-        }
     }
     else {
-        chdir ("..");
-        system("tar --gzip --create --file $exp_name.tgz $exp_dir")==0 or die "Error creating tar file. Sorry";
-        if (-e "$exp_name.tgz") {
-            unlink(bsd_glob("$exp_dir/*"));
-            rmdir($exp_dir);
-            my $exp_path = Cwd::abs_path;
-            print "Export tarball $exp_path/$exp_name.tgz is ready.\n";
-            if ($verbose) {
-                print "Contents of tar archive:\n";
-                system("tar --gzip --list --file export.tgz");
-            }
+        if ($journal || $jhepStyle || $npahaStyle)
+        {
+            $outfile = $outdir."/CMS-".$target."-jnl.zip";
+            $outpdf = "../../../../".$target."-jnl.pdf";
         }
-        else {
-          print "Sorry, something has prevented creation of the tarball.\n";
+    }
+    $outfile2 = $outfile;
+    $outfile2 =~ s|\\|/|g;
+    if (-e $outfile2) {unlink($outfile2);}
+    my $useArchive = eval {require Archive::Zip};
+    if ($useArchive)
+    {
+        my $zip = Archive::Zip->new();
+        $zip->addTree('.');
+        my $status = $zip->writeToFileNamed($outfile2);
+        if ( $status != AZ_OK )
+        {
+            print "Can't write zip to file $outfile2: $!\n";
+        }
+        if (1)
+        {
+            my @archNames = $zip->memberNames();
+            print "Contents of $outfile2:\n---------\n";
+            print join("\n",@archNames);
+        }
+    }
+    else
+    {
+        # Use command line version in preference to perl built-in (which often isn't)
+        #my $tarfile = Archive::Tar->new;
+        #$tarfile->add_files(bsd_glob('*.*'));
+        #tarfile->write($outfile);
+        $outfile  =~ s|zip|tgz|g;
+        system("tar --gzip --create --file $outfile .")==0 or die "Error creating tar file. Sorry";
+        print "Created archive file $outfile.\nContents:\n";
+        if (1)
+        {
+            system("tar --gzip --list --file  $outfile")==0 or die "Can't find output tar file $outfile!";
         }
     }
     chdir ($orig_dir);
@@ -1603,12 +1618,19 @@ sub myCollab {
    {$tagfile = $tag.'-authorlistN.'.$type;}
    else
    {$tagfile = $tag.'-authorlist.'.$type;}
+   my $body;
    my $url = 'https://cms-secr.web.cern.ch/cms-secr/Documents/authorListCMS/'.$tagfile;
-   my $body = &get_url ($url);
-   if (!defined $body)
+   my $response = &get_url ($url);
+   if (!$response->is_success)
    {
-        print "::: Authorlist for $tag not found! ($tagfile) :::\n::: Bailing out :::\n";
-        return 0; #should die?
+     print "::: $url not found :::\n";
+     print("    Status: ",$response->status_line);
+     print "\n::::::\n";
+     return 0; #should die?
+   }
+   else
+   {
+       $body = $response->decoded_content;
    }
    if ($type =~ 'tex') {$body =~ s/(\w\,*)~(\w)/$1 $2/g; $body =~ s/,/, /g; } #allow normal spacing and line breaking
    # save the authorlist
@@ -1630,8 +1652,10 @@ sub get_url{
 
     use strict;
     use warnings;
-    use LWP::Simple;
-    return my $doc = get $url;
+    use IO::Socket::SSL; 
+       
+    my $ua = LWP::UserAgent->new(ssl_opts=>{verify_hostname=>0, SSL_verify_mode => IO::Socket::SSL::SSL_VERIFY_NONE});
+    return $ua->get($url);
     }
 ##############################################################################
 #
@@ -1706,9 +1730,10 @@ sub makeAPS{
 \\DeclareMathOperator{\\sign}{sign}% for those who insist on sign instead
 \\DeclareMathOperator{\\erf}{erf} % and the erf operator
 \\DeclareMathOperator{\\Tr}{Tr}
+\\DeclareMathOperator{\\Arg}{Arg}
 \\providecommand{\\cmsNoteHeader}[1]{\\preprint{#1}}
 \\providecommand{\\cmsNoteContact}[1]{\\relax}
-\\providecommand{\\cmsCollabName}{\\relax}
+\\providecommand{\\cmsCollabName}{The CMS Collaboration}
 \\providecommand{\\cmsNUMBER}{\\relax}
 \\providecommand{\\cmslogo}{\\relax}
 \\providecommand{\\cmsTag}{\\relax}
@@ -1812,6 +1837,7 @@ sub makePLB{
 \\DeclareMathOperator{\\sign}{sign}% for those who insist on sign instead
 \\DeclareMathOperator{\\sgn}{sgn}% Declare the sgn operator
 \\DeclareMathOperator{\\erf}{erf} % and the erf operator
+\\DeclareMathOperator{\\cov}{cov}
 \\DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG}
 \\let\\subfigure\\subfloat % subfigure subfig compatibility
 % to allow external commands, embed in an ifthen testing on cms@external
@@ -1901,6 +1927,7 @@ sub makeEPJC{
    my $preface = <<EOD;
 \\documentclass[epj,nopacs,$style]{svjour}
 \\journalname{European Physical Journal C}
+\\def\\vec{\\mathaccent\\mathchar"017E }%this allows amsmath to set the \vec style, overwriting the EPJC class
 \\usepackage{amsmath,amssymb}
 \\usepackage{xspace}
 \\usepackage[bookmarksnumbered,bookmarksopen,bookmarksopenlevel=1,colorlinks=false,plainpages=false,pdfpagelabels]{hyperref}

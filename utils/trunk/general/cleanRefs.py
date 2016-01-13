@@ -4,9 +4,10 @@
     """
 from __future__ import print_function
 
-__version__ = "$Revision: Test$"
-#$HeadURL: $
-#$Id:$
+__version__ = "$Revision: 323 $"
+#$LastChangedDate: 2015-09-23 12:18:25 -0400 (Wed, 23 Sep 2015) $
+#$Id: $
+
 
 import re
 import shutil
@@ -35,21 +36,9 @@ def f5(seq, idfun=None):
        seen[marker] = 1
        result.append(item)
     return result
-def checkForDuplicates(checkItems, checkTag):
+
     # duplicate entry check (use doi as unique marker)
     # python 2.7 and later only
-    if (sys.version_info[0] > 2 or (sys.version_info[0]==2  and sys.version_info[1]>6)) :
-        chklist = [v[checkTag] for v in (vv[1] for i, vv in checkItems.items()) if checkTag in v]
-        if (len(chklist) > len(set(chklist))):
-            print('Have duplicate ',checkTag,'s',sep="")
-            print([v for v, vv in collections.Counter(chklist).items() if vv > 1])
-    else:
-        chklist = [v[checkTag] for v in (vv[1] for i, vv in checkItems.iteritems()) if checkTag in v]
-        if (len(chklist) > len(set(chklist))):
-            print('Have duplicate ',checkTag,'s',sep="")
-            for i in range(len(chklist)): #need ordered iterator
-                if chklist[i] in chklist[i+1:]:
-                    print(chklist[i])
 
 def extractBalanced(text, delim):
     """ Extract a delimited section of text: available opening delimiters are '{', '"', and  '<'.
@@ -106,6 +95,8 @@ class cleanRefs:
                        ('JOURNAL',re.compile('~'), 'Found ~ in a journal name--don\'t override BibTeX','Error'),
                        ('ISSUE',re.compile('.*'), 'Don\'t normally use the ISSUE field','Warning'),
                        ('EPRINT',re.compile('(?<!/)[0-9]{7}'), 'Old style arXiv ref requires the archive class (see http://arxiv.org/help/arxiv_identifier)','Error'),
+                       ('EPRINT',re.compile('1101\.0536'), 'Check you\'ve followed the guidelines at https://twiki.cern.ch/twiki/bin/view/CMS/Internal/PubGuidelines for citing PDFs, including specific sets','Warning'),
+                       ('EPRINT',re.compile('1101\.0538'), 'Check you\'ve followed the guidelines at https://twiki.cern.ch/twiki/bin/view/CMS/Internal/PubGuidelines for citing PDFs, including specific sets','Warning'),
                        ('TITLE',re.compile('(?i)MadGraph.*v4'), 'MadGraph v5 references are preferred over v4 (unless v4 was what was actually used)','Warning'),                       
                        ('TITLE',re.compile('(?i)MadGraph.*5'), 'Consider using arXiv:1405.0301, MadGraph5_aMC@NLO?','Warning'),                       
                        ('TITLE',re.compile('POWHEG'), 'Is POWHEG (BOX) correctly referenced? See http://powhegbox.mib.infn.it','Warning'),                       
@@ -217,6 +208,54 @@ class cleanRefs:
 
         return entry
 
+    def checkForDuplicates(self, checkItems, checkTag):
+        # duplicate entry check (use doi as unique marker)
+        # python 2.7 and later only
+        if (sys.version_info[0] > 2 or (sys.version_info[0]==2  and sys.version_info[1]>6)) :
+            chklist = [v[checkTag] for (v,j) in ((vv[1],i) for i, vv in checkItems.items()) if checkTag in v and j in self._refs]
+            if (len(chklist) > len(set(chklist))):
+                print('Have duplicate used ',checkTag,'s',sep="")
+                print([v for v, vv in collections.Counter(chklist).items() if vv > 1])
+            else:
+                print('No duplicate ',checkTag,'s used.',sep="")
+            c = dict()
+            for k,v in self._bib.items():
+                if (checkTag in v[1].keys()):
+                    t = v[1][checkTag]
+                    if t in c:
+                        c[t].append(k)
+                    else:
+                        c[t] = [k,]
+            print('All duplicate ',checkTag,'s',' found in the bibfile...',sep="")
+            dupes = False
+            for k,v in c.items():
+                if len(v)>1:
+                    print("\t",k,": ",v)
+                    dupes = True
+            if not dupes:
+                print('\t...none')
+        else:
+            chklist = [v[checkTag] for (v,j) in ((vv[1],i) for i, vv in checkItems.iteritems()) if checkTag in v and j in self._refs]
+            if (len(chklist) > len(set(chklist))):
+                print('Have duplicate used ',checkTag,'s',sep="")
+                for i in range(len(chklist)): #need ordered iterator
+                    if chklist[i] in chklist[i+1:]:
+                        print(chklist[i])
+            else:
+                print('No duplicate ',checkTag,'s used.',sep="")
+            c = dict()
+            for k,v in self._bib.iteritems():
+                if (checkTag in v[1].keys()):
+                    t = v[1][checkTag]
+                    if t in c:
+                        c[t].append(k)
+                    else:
+                        c[t] = [k,]
+            print('All duplicate ',checkTag,'s',' found in the bibfile...',sep="")
+            for k,v in c.iteritems():
+                if len(v)>1:
+                    print("\t",k,": ",v)
+
 
     def checkRefs(self):
         """Correlate citations against bib file and check for common errors"""
@@ -295,8 +334,8 @@ class cleanRefs:
                 #print(self.printCite(key))
         # duplicate entry check (use doi as unique marker)
         # python 2.7 and later only
-        checkForDuplicates(self._bib,'DOI')
-        checkForDuplicates(self._bib,'EPRINT')
+        self.checkForDuplicates(self._bib,'DOI')
+        self.checkForDuplicates(self._bib,'EPRINT')
 
 
 
@@ -329,7 +368,7 @@ class cleanRefs:
             else:
                 print("\n> Skipping citation {0}".format(key))
         f.close()
-        
+
     def printCite(self, key):
         """Print out a complete bibtex entry"""
         t = ["\t"+zi[0]+"=\t\""+zi[1]+"\",\n" for zi in self._bib[key][1].items()]
