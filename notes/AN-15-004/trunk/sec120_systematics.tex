@@ -163,8 +163,6 @@ effect is very small, at the percent level or less, and is
 sub-dominant with respect to the systematic errors derived from the 
 closure tests.
 
-
-
 \subsubsection{Pileup reweighting}
 
 As the distribution of pileup events differs between simulation and
@@ -206,26 +204,15 @@ Sec.~\ref{sec:closure-tests}).
 \subsubsection{Definition of a closure test}
 \label{sec:closure-tests-desc}
 
-The background estimates determined in each (\njet,~\nb,~\scalht) bin
-rely on transfer factors to extrapolate data counts in control region
-bins to predictions in the corresponding signal region bins, as
-described in Sec.~\ref{sec:ewk-method}. Since the transfer factors are
-obtained from simulation, an appropriate systematic uncertainty is
-assigned to each transfer factor to account for limitations in the
-simulation modelling of event kinematics and instrumental effects. The
-next sections describe how the systematic uncertainties are determined
-from closure tests in data.
-
-The sensitivity of the transfer factors to potential limitations in
-the simulation modelling is established through sets of closure tests,
-which confront data yields measured in one data control (sub-)sample
+Along with the MC variation tests described in Sec.~\ref{sec:mc-systematics}, 
+the sensitivity of the transfer factors to potential limitations in
+the simulation modelling is established through sets of closure tests.
+These tests confront data yields measured in one data control (sub-)sample
 against the predictions determined from another data control
-(sub-)sample as a function of \scalht. \ie, an extrapolation is made
+(sub-)sample as a function of \scalht. An extrapolation is made
 from one control (sub-)sample to another (rather than to the signal
 region) in bins of \scalht via transfer factors determined from
-simulation. A large ensemble (\ie hundreds) of closure tests are
-performed between a number of control (sub-)samples to identify any
-potential sources of bias in the transfer factors.
+simulation. 
 
 The level of statistical consistency between the predicted and
 observed yields of each closure test in the ensemble is inspected. The
@@ -235,14 +222,14 @@ the statistical uncertainties on \npre and \nobs. Therefore, the level
 of closure is defined by the statistical significance of a deviation
 in the ratio from zero. A ``set'' of closure tests includes
 statistically independent tests determined as a function of \scalht
-(according to the \scalht binning used in the control and signal
+and \njet (according to the \scalht and \njet binning used in the control and signal
 regions). In this way, a set of closure tests allows one to establish
 the presence of significant biases or dependence on
-\scalht. Importantly, if statistically significant biases are
+\scalht or \njet. Importantly, if statistically significant biases are
 observed, further studies are required to understand and correct for
-these biases. %The metrics used to determine \fixme{HERE!!!!!!!!}. 
+these biases. 
 
-Under the assumption of closure for each test of the ensemble,
+Under the assumption of closure for each test of the set,
 systematic uncertainties on the transfer factors are derived for each
 (\njet,~\nb) category and \scalht bin. The treatment for estimating
 the systematic uncertainties on the transfer factors is described in
@@ -254,11 +241,6 @@ as defined in Secs.~\ref{subsec:mucontrolSelection},
 \ref{subsec:photoncontrolSelection}. (The \ej and \eej control samples
 are not currently used.)
 
-The following closure tests are not the only ones considered or
-checked, \ie, the list above is not exhaustive. However, they are a
-representative set that cover the main potential sources of bias in
-the transfer factors derived from simulation. 
-
 \subsubsection{Systematic uncertainties from closure tests\label{sec:syst-from-closure}}
 
 Each set of closure tests should demonstrate in data, within the
@@ -267,14 +249,13 @@ biases or dependencies on \njet nor \scalht inherent in the transfer
 factors obtained from simulation. 
 Once it is established that no significant bias or trend is observed
 for any set of closure tests, the systematic uncertainties associated
-with the transfer factors are determined from ensembles of closure
-tests. The statistical precision of the closure tests are considered
+with the transfer factors are determined from tests per \scalht bin
+integrated over the \njet dimension. The statistical precision of the 
+closure tests are considered
 when determining the systematic uncertainties that are assigned to the
 transfer factors, as it is only the statistical uncertainties
 associated with the tests that limit our knowledge of whether closure
-is actually achieved or otherwise. Ensembles comprising several tests
-are considered in bins of (\njet,\scalht) to derive a systematic
-uncertainty for that bin. 
+is actually achieved or otherwise. 
 
 The systematic uncertainties in the transfer factors are considered as
 a ``normalisation'' uncertainty in the SM background predictions,
@@ -486,7 +467,7 @@ prediction}
 \subsubsection{Changes to the transfer factors after simulation
 variation studies}
 
-\subsubsubsection{Lost lepton uncertainty}
+\subsubsection{Lost lepton uncertainty}
 
 \subsubsection{Data-driven Tests}
 
