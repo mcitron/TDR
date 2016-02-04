@@ -39,661 +39,9 @@ Sec.~\ref{sec:closureCrossCheck}. Finally,
 Sec.~\ref{sec:mc-systematics} outlines simulation-based studies of the
 effects of potential sources of bias on the transfer factors.
 
-%The assumptions made in the projections of physics reach that are
-%detailed in Sec.~\ref{sec:susy} are also outlined.
-
-\subsection{Definition of a closure test}
-\label{sec:closure-tests-desc}
-\label{sec:bkgdnorm-syst}
-
-The background estimates determined in each (\njet,~\nb,~\scalht) bin
-rely on transfer factors to extrapolate data counts in control region
-bins to predictions in the corresponding signal region bins, as
-described in Sec.~\ref{sec:ewk-method}. Since the transfer factors are
-obtained from simulation, an appropriate systematic uncertainty is
-assigned to each transfer factor to account for limitations in the
-simulation modelling of event kinematics and instrumental effects. The
-next sections describe how the systematic uncertainties are determined
-from closure tests in data.
-
-The sensitivity of the transfer factors to potential limitations in
-the simulation modelling is established through sets of closure tests,
-which confront data yields measured in one data control (sub-)sample
-against the predictions determined from another data control
-(sub-)sample as a function of \scalht. \ie, an extrapolation is made
-from one control (sub-)sample to another (rather than to the signal
-region) in bins of \scalht via transfer factors determined from
-simulation. A large ensemble (\ie hundreds) of closure tests are
-performed between a number of control (sub-)samples to identify any
-potential sources of bias in the transfer factors.
-
-The level of statistical consistency between the predicted and
-observed yields of each closure test in the ensemble is inspected. The
-level of agreement between the predicted and observed yields is
-expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
-the statistical uncertainties on \npre and \nobs. Therefore, the level
-of closure is defined by the statistical significance of a deviation
-in the ratio from zero. A ``set'' of closure tests includes
-statistically independent tests determined as a function of \scalht
-(according to the \scalht binning used in the control and signal
-regions). In this way, a set of closure tests allows one to establish
-the presence of significant biases or dependence on
-\scalht. Importantly, if statistically significant biases are
-observed, further studies are required to understand and correct for
-these biases. %The metrics used to determine \fixme{HERE!!!!!!!!}. 
-
-Under the assumption of closure for each test of the ensemble,
-systematic uncertainties on the transfer factors are derived for each
-(\njet,~\nb) category and \scalht bin. The treatment for estimating
-the systematic uncertainties on the transfer factors is described in
-Sec.~\ref{sec:syst-from-closure}.
-
-%In the case that there are no statistics in a control region (sub-)sample
-%to perform one of the closure tests, the bin in question would not be 
-%used in the statistical interpretation of the analysis.
-
-\subsection{Definition of the ``core'' closure tests}
-\label{sec:closure-test-def}
-
-The core closure tests rely on the \mj, \mmj, and \gj control samples,
-as defined in Secs.~\ref{subsec:mucontrolSelection},
-\ref{subsec:mumucontrolSelection}, and
-\ref{subsec:photoncontrolSelection}. (The \ej and \eej control samples
-are not currently used.)
-
-The \mj $\rightarrow$ $\gamma$ + jets tests deal with the consistency
-of the prediction of \wej with $\gamma$ + jets, even in the presence
-of contamination from \ttbar. This is important for understanding the
-consistency of the \znunu + jets background predictions from both \wej
-and \gj events along with the associated assumptions (such as the
-negligible effect of the vector boson mass on kinematic distributions
-from the V + jets and \gj samples under sufficient boost). Similarly,
-the $\mj \rightarrow \mmj$ tests also addresses the modelling of
-vector boson production, also in the presence of contamination from
-\ttbar). Finally, the $\mmj \rightarrow \gj$ tests deal with the
-consistency between the \zee + jets and $\gamma$ + jets samples, which
-is a further check on the validity of using the \gj process to predict
-the \znunu\, + jets process. The muon trigger and reconstruction
-efficiencies are also indirectly probed, given that different numbers
-of muons are required in each of the two sub-samples.
-%However, dedicated data-driven methods are used to measure the muon
-%trigger and reconstruction efficiencies, with values taken from the
-%muon POG.
-
-Additionally, to test the prediction of \znunu + jets processes with
-the $W$-enriched \mj control sample, we introduce the
-$\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
-Sec.~\ref{sec:backgroundmet}. The production mechanism of $W$ from pp
-collisions means high $p_T$ $W$ bosons are predominantly left handed
-\cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$ decays to
-the left handed neutrino along its direction of motion while the
-lepton is pointing backward. The opposite behaviour is expected for
-the $W^-$. The lepton is therefore more boosted (and the neutrino less
-boosted) in $W^+$ decays than $W^-$ decays.  This leads to a larger
-number of $W^+$ decays in the single lepton control regions (which
-relies on the lepton $p_T$ for acceptance) than in the signal region
-(which relies on the neutrino $p_T$ for acceptance). The new closure
-test checks if this leads to a bias in the prediction of the \znunu +
-jets background. 
-
-The control of the \znunu\ + jets background, established via the
-tests described above, is also validated with the full Run~1 data set
-at $\sqrt{s} = 8\tev$, as described in
-Appendix~\ref{app:zInvBgControl}.
-
-The $0$ b-tag $\rightarrow1$ b-tag and $1$ b-tag $\rightarrow2$ b-tag
-tests probe the sensitivity of the transfer factors to the relative
-admixture of events from the $W$ + jets and \ttbar processes by
-varying the number of b-tagged jets within the \mj sample. These tests
-are conservative, as the admixture changes little between the \mj
-sample and the signal region (as there is no extrapolation in \nb),
-whereas the closure tests use sub-samples with different \nb bins and
-therefore different admixtures of $W$ + jets and \ttbar events. \eg,
-the former uses a $W$-enriched sub-sample (selected by requiring zero
-b-jets) to predict yields in a \ttbar-enriched sub-sample (selected by
-requiring one b-jet).
-
-The aforementioned two b-tag related tests also probe the modelling of
-the reconstruction of b-quark jets, although this is addressed more
-precisely by dedicated studies involving varying the uncertainties in
-b-tag scale factors, as the one performed in the previous analysis,
-see for instance \cite{CMS_AN_2013-366}. Until the formula method is
-applied, the b-tag SFs will be applied and their uncertainties
-propagated through to the transfer factors. These variations will be
-taken as an additional contribution to the total normalisation
-systematic uncertainties per (\njet,~\nb,~\scalht) bin. However, based
-on the behaviour observed during Run~1, these are a sub-dominant
-contribution to the total systematic uncertainties.
-
-The $\njet=2\rightarrow\njet=3$ and $\njet=4\rightarrow\njet\geq5$
-tests are an aggressive test of the simulation modelling of jet
-multiplicities in the \mj, \mmj and \gj samples, which is checked due
-to the exclusive binning in jet multiplicity. The different \njet
-requirements also lead to different admixture of W + jets and \ttbar
-in the case of the \mj sample.
-
-The TT$\rightarrow$TL closure tests are designed to test the effects
-of the extrapolation in the lepton definition used for the veto in the
-signal region (see Sec.~\ref{sec:vetoes}) and the selection in the
-muon control regions (see Sec.~\ref{subsec:mucontrolSelection} and
-\ref{subsec:mumucontrolSelection}). Two di-muon samples are defined
-that pass the \mmj control region selection, minus the single isolated
-track veto and $M_{ll}$ requirement. One sample is required to have
-two muons that pass the tight criteria defined for the muon control
-region (TT), the other sample is required to have one muon that passes
-this tight criteria and one muon that passes the loose criteria
-defined for the signal region veto (TL). The TT sample is then used to
-predict the TL sample for these closure tests.
-%Along with the $\mj \rightarrow \mmj$ and $\mj \rightarrow \gj$
-%closure tests, this addresses the uncertainties associated with the
-%modelling of lost leptons in the MC.
-
-Finally, closure tests that probe the modelling of the \alphat and
-\bdphi extrapolations in the analysis are also performed. In both
-cases, the test checks if events with genuine \met found in the core
-of the variable distribution below some threshold value can be used to
-predict the events in the tail (above the same threshold value). 
-
-The aforementioned closure tests are not the only ones considered or
-checked, \ie, the list above is not exhaustive. However, they are a
-representative set that cover the main potential sources of bias in
-the transfer factors derived from simulation. 
-
-\subsection{Systematic uncertainties from ensembles of closure tests\label{sec:syst-from-closure}}
-
-Each set of closure tests should demonstrate in data, within the
-statistical precision of each test, that there are no significant
-biases or dependencies on \njet nor \scalht inherent in the transfer
-factors obtained from simulation. 
-Once it is established that no significant bias or trend is observed
-for any set of closure tests, the systematic uncertainties associated
-with the transfer factors are determined from ensembles of closure
-tests. The statistical precision of the closure tests are considered
-when determining the systematic uncertainties that are assigned to the
-transfer factors, as it is only the statistical uncertainties
-associated with the tests that limit our knowledge of whether closure
-is actually achieved or otherwise. Ensembles comprising several tests
-are considered in bins of (\njet,\scalht) to derive a systematic
-uncertainty for that bin. 
-
-The systematic uncertainties in the transfer factors are considered as
-a ``normalisation'' uncertainty in the SM background predictions,
-which are determined per (\njet,~\nb) category per \scalht bin and are
-assumed to be fully uncorrelated between the different (\njet,~\nb)
-categories and \scalht bins. Further details or the likelihood model
-are provided in Section \ref{sec:likelihood}. The systematic
-uncertainty is estimated by taking the quadrature sum of the weighted
-mean and (square root of) weighted sample variance for the closure
-tests within the given \scalht bin.
-
-In order to find ``expected systematics'', \nobs and \npre are
-determined from the same sample of simulated events (that guarantees
-closure) with statistical uncertainties errors are taken from the
-unweighted and weighted counts, respectively. The expected systematic
-uncertainty is then taken as the weighted mean of the error on the
-ensemble of closure tests. This is an estimator of the expected
-variance, assuming no bias is found in data.
-
-We note the behaviour of the magnitude of the systematic uncertainties
-on the integrated luminosity, which reduce with increasing
-luminosity. This is a reflection of the fully statistical nature of
-the ``systematic'' in the absence of bias.
-
-\subsection{Closure test ensembles for specific backgrounds\label{sec:closure-split}}
-
-Several versions of this search have derived a single set of
-process-independent systematic uncertainties as a function of
-(\njet,~\nb,~\scalht) based on a single ensemble of a core set of
-closure tests. 
-
-During the Early Analysis review, an alternative approach was advised,
-which involves splitting the closure tests into different ensembles,
-each specific to a particular process or effect and containing only
-the most relevant closure tests. This allows for the independent
-derivation of systematic errors that is specific to a background
-process.
-
-% Table~\ref{tab:closureTests} summarises lists of closure tests
-% ensembles used to derive normalisation systematic uncertainties for:
-% the total SM background in the monojet category (over the full \scalht
-% range); the $\ttbar$W background components for the symmetric and
-% asymmetric \njet bins (over the full \scalht range); and the \znunu\
-% background components for the symmetric and asymmetric \njet bins for
-% the two regions $\scalht < 400\gev$ and $\scalht > 400\gev$.
-
-%%\begin{table}[h!]
-%%  \caption{The ensembles of closure tests used for the determination
-%%    of systematic errors for different parts of the analysis. In the
-%%    labels, the control region sub-sample to the left of the arrow is
-%%    used to predict yields in the control region sub-sample to the
-%%    tight of the arrow. Samples in parentheses refer to both
-%%    sub-samples. The ``TT $\rightarrow$ TL'' closure test is defined
-%%    in the text.}  
-%%  \label{tab:closureTests}
-%%  \centering
-%%  \scriptsize
-%%  \begin{tabular}{ cccc }
-%%    \hline
-%%    \hline
-%%    \multicolumn{4}{c}{Closure test ensemble}                                                                                                                    \\
-%%    \hline
-%%    Mono-jet                           & W + jets and \ttbar                   & \znunu ($\scalht<400\gev$)             & \znunu, ($\scalht>400\gev$)            \\
-%%    \hline
-%%    $\mj\rightarrow\mmj$               & -                                     & $\mj\rightarrow\mmj$                   & $\mj\rightarrow\mmj$                   \\
-%%    $\mmj\rightarrow\gj$               & -                                     & $\mmj\rightarrow\gj$                   & $\mmj\rightarrow\gj$                   \\
-%%    $\mj\rightarrow\gj$                & -                                     & $\mj\rightarrow\gj$                    & $\mj\rightarrow\gj$                    \\
-%%    $\mu^{+}\rightarrow\mu^{-}$ (\mj)  & $\mu^{+}\rightarrow\mu^{-}$ (\mj)     & $\mu^{+}\rightarrow\mu^{-}$ (\mj)      & -                                      \\
-%%    TT$\rightarrow$TL                  & TT$\rightarrow$TL                     & -                                      & -                                      \\
-%%    0 b-tags$\rightarrow$1 b-tag (\mj) & 0 b-tags$\rightarrow$1 b-tag (\mj)    & 0 b-tags$\rightarrow$1 b-tag (\mj)     & -                                      \\
-%%    -                                  & 1 b-tags$\rightarrow$2 b-tags (\mj)   & 1 b-tags$\rightarrow$2 b-tags (\mj)    & -                                      \\
-%%    -                                  & $\njet = 2\rightarrow\njet = 3$ (\mj) & -                                      & -                                      \\
-%%    -                                  & $\njet = 3\rightarrow\njet = 4$ (\mj) & -                                      & -                                      \\
-%%    -                                  & -                                     & $\njet = 2\rightarrow\njet = 3$ (\mmj) & $\njet = 2\rightarrow\njet = 3$ (\mmj) \\
-%%    -                                  & -                                     & $\njet = 3\rightarrow\njet = 4$ (\mmj) & $\njet = 3\rightarrow\njet = 4$ (\mmj) \\
-%%    -                                  & -                                     & $\njet = 2\rightarrow\njet = 3$ (\gj)  & $\njet = 2\rightarrow\njet = 3$ (\gj)  \\
-%%    -                                  & -                                     & $\njet = 3\rightarrow\njet = 4$ (\gj)  & $\njet = 3\rightarrow\njet = 4$ (\gj)  \\
-%%    \hline
-%%    \hline
-%%  \end{tabular}
-%%\end{table}
-
-\subsection{Closure tests based on $2.1~\ifb$}
-\label{sec:closure-data-study}
-
-The core set of closure tests used by this search are shown in
-Figs.~\ref{fig:ttWclosureDataSym}, \ref{fig:ttWclosureDataAsym},
-\ref{fig:ZinvclosureDataSymlt400}, \ref{fig:ZinvclosureDataSymgt400},
-\ref{fig:ZinvclosureDataAsymlt400}, and
-\ref{fig:ZinvclosureDataAsymgt400}, identifiable by the legends. The
-closure tests ensembles are defined according to
-Sec.~\ref{sec:closure-split} and per \njet category. 
-
-In the case of the tests designed to probe the \znunu background
-prediction, different ensembles are defined for events with values
-below and above the threshold $\scalht=400\gev$. 
-%As the \gj control sample is only used when $\scalht>400\gev$ the
-%closure tests involving this sample are only relevant at these higher
-%\scalht values. Extra closure tests that probe extrapolations relevant
-%to W + jets background prediction are therefore added to the \znunu
-%closure test ensemble for $\scalht<400\gev$. 
-Figures.~\ref{fig:ttWclosureDataSym},
-\ref{fig:ZinvclosureDataSymlt400}, and
-\ref{fig:ZinvclosureDataSymgt400} show the results of the closure
-tests performed on events in the ``symmetric'' jet category and in
-Figs.~\ref{fig:ttWclosureDataAsym}, \ref{fig:ZinvclosureDataAsymlt400}
-and \ref{fig:ZinvclosureDataAsymgt400} the results of the closure
-tests performed on events in the ``asymmetric'' jet category. For
-events in the ``mono-jet'' category, the closure tests that rely on
-more than one jet (such as the $1 b-tag\rightarrow\geq 2 b-tag$ tests)
-are removed. The results of these tests are in shown in
-Fig~\ref{fig:closureDataMono}.
-
-Prior to deriving uncertainties, each individual set of closure tests
-(as a function of \scalht) have been inspected for closure. Zero and
-first order polynomial fits are performed along the \scalht dimension
-for each set of closure tests per jet category. The fits are inspected
-for any indication of bias averaged over \scalht as well as any
-\scalht-dependant bias. In the case of the closure tests presented in
-this section, all tests demonstrate an acceptable level of closure
-given the current understanding of the detector performance. 
-% One
-% visible bias is due to the lack of b-tag scale factors. Simulated
-% events will be reweighted when these scale factors become available,
-% but for now we notice a slight deficit in the number of b-tags
-% observed than predicted. This is manifest in the $0 b-tag \rightarrow
-% 1 b-tag$ and $1 b-tag \rightarrow \geq 2 b-tag$ closure tests, that
-% exhibit consistently negative values. We expect this to improve with
-% the application of the scale factors.
-
-\clearpage
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_eq2j}} ~~
-    \subfigure[$\njet =
-    3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_eq3j}} \\
-    \subfigure[$\njet =
-    4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_eq4j}} ~~
-    \subfigure[$\njet \geq
-    5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_ge5j}} \\
-    \caption{Sets of closure tests (open symbols) designed to probe
-      the W and \ttbar + jets background, overlaid on top of
-      the systematic uncertainty estimates used for each of the seven
-      \scalht bins (shaded bands) carried out with $2.1\ifb$ of
-      $13\tev$ data. All events fit into the ``symmetric'' jet
-      category.}
-    \label{fig:ttWclosureDataSym}
-  \end{center} 
-\end{figure}
-
-\clearpage
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_eq2a}} ~~
-    \subfigure[$\njet =
-    3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_eq3a}} \\
-    \subfigure[$\njet =
-    4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_eq4a}} ~~
-    \subfigure[$\njet \geq
-    5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ttW_ge5a}} \\
-    \caption{Sets of closure tests (open symbols) designed to probe
-      the W and \ttbar + jets background, overlaid on top of
-      the systematic uncertainty estimates used for each of the seven
-      \scalht bins (shaded bands) carried out with $2.1\ifb$ of
-      $13\tev$ data. All events fit into the ``asymmetric'' jet
-      category.}
-    \label{fig:ttWclosureDataAsym}
-  \end{center} 
-\end{figure}
-
-\clearpage
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_eq2j}} ~~
-    \subfigure[$\njet =
-    3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_eq3j}} \\
-    \subfigure[$\njet =
-    4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_eq4j}} ~~
-    \subfigure[$\njet \geq
-    5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_ge5j}} \\
-    \caption{Sets of closure tests (open symbols) designed to probe
-      the \znunu + jets background, overlaid on top of
-      the systematic uncertainty estimates for each of the seven
-      \scalht bins (shaded bands) carried out with $2.1\ifb$ of
-      $13\tev$ data. {\bf Only systematics in these plots with
-      $\scalht<400\gev$ are used in the analysis.} All events fit 
-      into the ``symmetric'' jet
-      category.}
-    \label{fig:ZinvclosureDataSymlt400}
-  \end{center} 
-\end{figure}
-
-\clearpage
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_eq2j}} ~~
-    \subfigure[$\njet =
-    3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_eq3j}} \\
-    \subfigure[$\njet =
-    4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_eq4j}} ~~
-    \subfigure[$\njet \geq
-    5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_ge5j}} \\
-    \caption{Sets of closure tests (open symbols) designed to probe
-      the \znunu + jets background, overlaid on top of
-      the systematic uncertainty estimates for each of the seven
-      \scalht bins (shaded bands) carried out with $2.12.1\ifb$ of
-      $13\tev$ data. {\bf Only systematics in these plots with
-      $\scalht>400\gev$ are used in the analysis.} All events fit 
-      into the ``symmetric'' jet
-      category.}
-    \label{fig:ZinvclosureDataSymgt400}
-  \end{center} 
-\end{figure}
-
-\clearpage
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_eq2a}} ~~
-    \subfigure[$\njet =
-    3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_eq3a}} \\
-    \subfigure[$\njet =
-    4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_eq4a}} ~~
-    \subfigure[$\njet \geq
-    5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvLt400_ge5a}} \\
-    \caption{Sets of closure tests (open symbols) designed to probe
-      the \znunu + jets background, overlaid on top of
-      the systematic uncertainty estimates for each of the seven
-      \scalht bins (shaded bands) carried out with $2.1\ifb$ of
-      $13\tev$ data. {\bf Only systematics in these plots with
-      $\scalht<400\gev$ are used in the analysis.} All events fit 
-      into the ``asymmetric'' jet
-      category.}
-    \label{fig:ZinvclosureDataAsymlt400}
-  \end{center} 
-\end{figure}
-
-\clearpage
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    2$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_eq2a}} ~~
-    \subfigure[$\njet =
-    3$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_eq3a}} \\
-    \subfigure[$\njet =
-    4$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_eq4a}} ~~
-    \subfigure[$\njet \geq
-    5$]{\includegraphics[width=0.5\textwidth]{figures/closureTests/newJamboree/summaryPlots/ZinvGt400_ge5a}} \\
-    \caption{Sets of closure tests (open symbols) designed to probe
-      the \znunu + jets background, overlaid on top of
-      the systematic uncertainty estimates for each of the seven
-      \scalht bins (shaded bands) carried out with $2.1\ifb$ of
-      $13\tev$ data. {\bf Only systematics in these plots with
-      $\scalht>400\gev$ are used in the analysis.} All events fit 
-      into the ``asymmetric'' jet
-      category.}
-    \label{fig:ZinvclosureDataAsymgt400}
-  \end{center} 
-\end{figure}
-
-\clearpage 
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[$\njet =
-    1$]{\includegraphics[width=0.7\textwidth]{figures/closureTests/newJamboree/summaryPlots/all_eq1j.pdf}} 
-    \caption{Sets of closure tests (open symbols) overlaid on top of
-      the systematic uncertainty estimates used for each of the seven
-      \scalht bins (shaded bands) carried out with $2.1\ifb$ of
-      $13\tev$ data. All events fit into the ``mono-jet'' jet
-      category.}
-    \label{fig:closureDataMono}
-  \end{center} 
-\end{figure}
-
-\clearpage
-\subsection{Normalisation systematic uncertainties based on $2.1~\ifb$}
-\label{sec:closure-test-syst}
-
-Normalisation systematics are derived from the closure test ensembles,
-described above, based on the current data set, which are summarised
-in Table~\ref{tab:systs}. In the kinematically restricted bins, such
-as those with a high jet multiplicity and low value of \scalht, the
-limited statistics leads to large systematic errors. These bins are
-not used in the analysis. 
-%As a minimum number of events is required for each bin considered in
-%the final stages of the analysis, these large systematic errors are
-%unlikely to be a problem.  
-In the bins populated with a reasonable number of events, the
-systematic errors determined from the closure tests vary from $10$ to
-$40\%$.
-
-\begin{table}[h!]
-  \caption{Systematic uncertainties (percent) in the predictions
-    of the $\ttbar$W and $\znunu$ (the latter in parentheses) background
-    components as a function of \njet, \nb, and \scalht, as determined
-    from ensembles of closure tests based on multiple data control
-    samples. The data control samples correspond to an integrated
-    luminosity of 2.1\fbinv. }
-  \label{tab:systs}
-  \centering
-  \footnotesize
-  \begin{tabular}{ ccccccccc }
-    \hline
-    \hline
-    Category & \multicolumn{8}{c}{\scalht bin} \\
-    \cline{2-9} 
-    
-    (\njet,\nb) & 200     & 250     & 300     & 350     & 400     & 500     & 600      & 800       \\
-    \hline
-    \multicolumn{8}{c}{Monojet:}                                                                   \\
-    (1,0)       & 7  (7)  & 11 (11) & 9 (9) & 18 (18) & 16 (16) & 24 (24) & 38 (38)  & 44 (44)         \\
-    (1,1)       & 7  (7)  & 11 (11) & 9 (9) & 18 (18) & 16 (16) & 24 (24) & 38 (38)  & 44 (44)         \\
-    \hline
-    \multicolumn{8}{c}{Symmetric:}                                                                 \\
-    (2,0)       & 17 (17) & 20 (20) & 13 (16) & 14 (23) & 4 (6) & 16 (14) & 13 (31) & 13 (20)\\
-    (2,1)       & 17 (17) & 20 (20) & 13 (16) & 14 (23) & 4 (6) & 16 (14) & 13 (31) & 13 (20)\\
-    (2,2)       & 17 (17) & 20 (20) & 13 (16) & 14 (23) & 4 (6) & 16 (14) & 13 (31) & 13 (20)\\
-    (3,0)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
-    (3,1)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
-    (3,2)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
-    (3,3)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
-    (4,0)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
-    (4,1)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
-    (4,2)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
-    (4,$\geq$3)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
-    (5,0)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
-    (5,1)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
-    (5,2)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
-    (5,$\geq$3)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
-    \hline
-    \multicolumn{8}{c}{Asymmetric:}                                                                \\
-    (2,0)       &11 (8) & 10 (11) & 10 (10) & 9 (22) & 11 (10) & 14 (16) & 123 (40) & 58 (35) \\
-    (2,1)       &11 (8) & 10 (11) & 10 (10) & 9 (22) & 11 (10) & 14 (16) & 123 (40) & 58 (35) \\
-    (2,2)       &11 (8) & 10 (11) & 10 (10) & 9 (22) & 11 (10) & 14 (16) & 123 (40) & 58 (35) \\
-    (3,0)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
-    (3,1)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
-    (3,2)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
-    (3,3)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
-    (4,0)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
-    (4,1)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
-    (4,2)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
-    (4,$\geq$3)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
-    (5,0)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
-    (5,1)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
-    (5,2)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
-    (5,$\geq$3)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
-
-\subsection{Dedicated closure test ensemble and systematic for \alphat modelling}
-\label{sec:alphat_closure} 
-
-The closure tests in Fig.~\ref{fig:closureAlphaT} probe the modelling
-of the \alphat distribution (following the application of the $\mht >
-130\gev$ requirement in the control and signal regions) in genuine
-\met events as a function of \scalht. This is important to verify the
-approach of using \mj and \mmj samples without an \alphat requirement
-to make background predictions in the signal region. The tests
-confront data yields in a \mj (\mmj) samples with an \alphat
-requirement against predictions determined in a \mj (\mmj) sample with
-the \alphat requirement inverted. As usual, corresponding expectations
-from simulation are obtained to construct the transfer factors
-required to make the predictions.
-
-These closure tests are not considered in the ensembles presented in
-Sec.~\ref{sec:closure-tests-data} (as was normally the case for
-previous iterations of the analysis) and instead added as a new
-separate ensemble from which an additional contribution to the total
-systematic uncertainty per (\njet,~\nb,~\scalht) bin is derived. These
-contributions are assumed be be fully correlated across \nb (and
-uncorrelated as a function of \njet and \scalht). The magnitude of
-these contributions are presented in Table~\ref{tab:alphaTSyst}. For
-$\scalht<800\gev$ these numbers are derived from the \alphat closure
-tests. However, as there is no \alphat requirement for
-$\scalht>800\gev$, the $\Delta\phi *$ closure tests in
-Sec.~\ref{sec:closureCrossCheck} are used to derive the systematic in
-this case.
-
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/alphaTOnlyTest.pdf}}
-    ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/alphaTPulls.pdf}} 
-    \caption{Closure tests probing the \alphat extrapolation for each
-      \njet category (open symbols) overlaid on top of the systematic
-      uncertainty estimates used for each of the seven \scalht bins
-      (shaded bands) carried out with $2.1\ifb$ of $13\tev$
-      data. Also shown are the pulls for each closure test.}
-    \label{fig:closureAlphaT}
-  \end{center} 
-\end{figure}
-
-\begin{table}[h!]
-  \caption{Systematic uncertainties (percent) in the
-    predictions of the $\ttbar$W and $\znunu$ (the latter in
-    parentheses) background components as a function of \scalht due to
-    the extrapolation in the \alphat (\bdphi) variable in the region
-    $\scalht > 800\gev$ ($\scalht > 800\gev$), as determined from
-    ensembles of closure tests in multiple data control samples. The
-    data control samples correspond to an integrated luminosity of
-    2.1\fbinv.} 
-  \label{tab:alphaTSyst}
-  \centering
-  \footnotesize
-  \begin{tabular}{ cccccccc }
-    \hline
-    \hline
-    \multicolumn{8}{c}{\scalht bin (GeV)}                                       \\
-    \hline
-    200   & 250     & 300     & 350     & 400     & 500     & 600     & 800     \\
-    10 (10) & 7 (7) & 8 (8) & 17 (17) & 14 (14) & 24 (24) & 27 (27) & 22 (22) \\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
-
-
-\subsection{Additional ensembles as cross checks}
-\label{sec:closureCrossCheck}
-
-Along with the closure tests used to derive the systematics,
-additional tests are carried out to cross check other potential
-instances of mismodelling. If any of these tests demonstrate a source
-of bias, further investigation into this effect is carried out. 
-
-The closure tests in Fig.~\ref{fig:closureBDPhi} probe the modelling
-of the $\Delta\phi *$ distribution in genuine \met events as a
-function of \scalht. This is important to verify the approach of using
-\mj and \mmj samples without an $\Delta\phi *$ requirement to make
-background predictions in the signal region. The tests confront data
-yields in a \mj (\mmj) samples with an $\Delta\phi *$ requirement
-against predictions determined in a \mj (\mmj) sample with the
-$\Delta\phi *$ requirement inverted. 
-
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[Closure
-    tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/bDPhiCrossCheck.pdf}}
-    ~~
-    \subfigure[Pulls of closure
-    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/bDPhiPulls.pdf}} 
-    \caption{Closure tests probing the $\Delta\phi *$ extrapolation for each
-    \njet category (open symbols) and their pulls fit with a gaussian.
-    Made with the \mj control sample, carried out with $2.1\ifb$ of
-      $13\tev$ data. }
-    \label{fig:closureBDPhi}
-  \end{center} 
-\end{figure}
-
-The closure tests in Fig.~\ref{fig:closureLooseLep} probe the effects
-of the extrapolation in the lepton definition used for the veto in the
-signal region, as described in Sec.~\ref{sec:closure-tests-data}.
-These tests are included in the systematic calculation for the W and
-\ttbar + jets backgrounds, but can be seen in isolation here. 
-
-\begin{figure}
-  \begin{center}
-    \subfigure[Closure tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/looseLeptonCrossCheck.pdf}}
-    ~~
-    \subfigure[Pulls of closure
-    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/looseLeptonPulls.pdf}} 
-    \caption{Closure tests probing the effect of lost leptons in the
-    analysis for each
-    \njet category (open symbols) and their pulls fit with a gaussian.
-    Carried out with $2.1\ifb$ of
-      $13\tev$ data. Events with two muons that pass the control
-      region (tight) muon criteria are used to predict events with one
-      tight muon and one muon that passes the signal region veto
-      criteria (loose)}
-    \label{fig:closureLooseLep}
-  \end{center} 
-\end{figure}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MC systs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Simulation-based studies of normalisation systematic uncertainties}
 \label{sec:mc-systematics}
@@ -859,4 +207,405 @@ that there is no significant bias in the background predictions.
 %uncertainty will be carried out in the near future. If not
 %sub-dominant, these additional uncertainties will be propagated
 %through to the final total.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Closure tests
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Data driven systematics with closure tests}
+\subsubsection{Definition of a closure test}
+\label{sec:closure-tests-desc}
+\label{sec:bkgdnorm-syst}
+
+The background estimates determined in each (\njet,~\nb,~\scalht) bin
+rely on transfer factors to extrapolate data counts in control region
+bins to predictions in the corresponding signal region bins, as
+described in Sec.~\ref{sec:ewk-method}. Since the transfer factors are
+obtained from simulation, an appropriate systematic uncertainty is
+assigned to each transfer factor to account for limitations in the
+simulation modelling of event kinematics and instrumental effects. The
+next sections describe how the systematic uncertainties are determined
+from closure tests in data.
+
+The sensitivity of the transfer factors to potential limitations in
+the simulation modelling is established through sets of closure tests,
+which confront data yields measured in one data control (sub-)sample
+against the predictions determined from another data control
+(sub-)sample as a function of \scalht. \ie, an extrapolation is made
+from one control (sub-)sample to another (rather than to the signal
+region) in bins of \scalht via transfer factors determined from
+simulation. A large ensemble (\ie hundreds) of closure tests are
+performed between a number of control (sub-)samples to identify any
+potential sources of bias in the transfer factors.
+
+The level of statistical consistency between the predicted and
+observed yields of each closure test in the ensemble is inspected. The
+level of agreement between the predicted and observed yields is
+expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
+the statistical uncertainties on \npre and \nobs. Therefore, the level
+of closure is defined by the statistical significance of a deviation
+in the ratio from zero. A ``set'' of closure tests includes
+statistically independent tests determined as a function of \scalht
+(according to the \scalht binning used in the control and signal
+regions). In this way, a set of closure tests allows one to establish
+the presence of significant biases or dependence on
+\scalht. Importantly, if statistically significant biases are
+observed, further studies are required to understand and correct for
+these biases. %The metrics used to determine \fixme{HERE!!!!!!!!}. 
+
+Under the assumption of closure for each test of the ensemble,
+systematic uncertainties on the transfer factors are derived for each
+(\njet,~\nb) category and \scalht bin. The treatment for estimating
+the systematic uncertainties on the transfer factors is described in
+Sec.~\ref{sec:syst-from-closure}.
+
+The closure tests rely on the \mj, \mmj, and \gj control samples,
+as defined in Secs.~\ref{subsec:mucontrolSelection},
+\ref{subsec:mumucontrolSelection}, and
+\ref{subsec:photoncontrolSelection}. (The \ej and \eej control samples
+are not currently used.)
+
+The following closure tests are not the only ones considered or
+checked, \ie, the list above is not exhaustive. However, they are a
+representative set that cover the main potential sources of bias in
+the transfer factors derived from simulation. 
+
+\subsubsection{Systematic uncertainties from closure tests\label{sec:syst-from-closure}}
+
+Each set of closure tests should demonstrate in data, within the
+statistical precision of each test, that there are no significant
+biases or dependencies on \njet nor \scalht inherent in the transfer
+factors obtained from simulation. 
+Once it is established that no significant bias or trend is observed
+for any set of closure tests, the systematic uncertainties associated
+with the transfer factors are determined from ensembles of closure
+tests. The statistical precision of the closure tests are considered
+when determining the systematic uncertainties that are assigned to the
+transfer factors, as it is only the statistical uncertainties
+associated with the tests that limit our knowledge of whether closure
+is actually achieved or otherwise. Ensembles comprising several tests
+are considered in bins of (\njet,\scalht) to derive a systematic
+uncertainty for that bin. 
+
+The systematic uncertainties in the transfer factors are considered as
+a ``normalisation'' uncertainty in the SM background predictions,
+which are determined per (\njet,~\nb) category per \scalht bin and are
+assumed to be fully uncorrelated between the different (\njet,~\nb)
+categories and \scalht bins. Further details or the likelihood model
+are provided in Section \ref{sec:likelihood}. The systematic
+uncertainty is estimated by taking the quadrature sum of the weighted
+mean and (square root of) weighted sample variance for the closure
+tests within the given \scalht bin.
+
+In order to find ``expected systematics'', \nobs and \npre are
+determined from the same sample of simulated events (that guarantees
+closure) with statistical uncertainties errors are taken from the
+unweighted and weighted counts, respectively. The expected systematic
+uncertainty is then taken as the weighted mean of the error on the
+ensemble of closure tests. This is an estimator of the expected
+variance, assuming no bias is found in data.
+
+We note the behaviour of the magnitude of the systematic uncertainties
+on the integrated luminosity, which reduce with increasing
+luminosity. This is a reflection of the fully statistical nature of
+the ``systematic'' in the absence of bias.
+
+Several versions of this search have derived a single set of
+process-independent systematic uncertainties as a function of
+(\njet,~\nb,~\scalht) based on a single ensemble of a core set of
+closure tests. 
+
+During the Early Analysis review, an alternative approach was advised,
+which involves splitting the closure tests into different ensembles,
+each specific to a particular process or effect and containing only
+the most relevant closure tests. This allows for the independent
+derivation of systematic errors that is specific to a background
+process.
+
+\subsubsection{Tests probing the prediction of the \znunu
+background with the \mmj control sample}
+
+Closure tests that probe the modelling of the \alphat and
+\bdphi extrapolations in the analysis are also performed. In both
+cases, the test checks if events with genuine \met found in the core
+of the variable distribution below some threshold value can be used to
+predict the events in the tail (above the same threshold value). 
+
+The closure tests in Fig.~\ref{fig:closureAlphaT} probe the modelling
+of the \alphat distribution (following the application of the $\mht >
+130\gev$ requirement in the control and signal regions) in genuine
+\met events as a function of \scalht. This is important to verify the
+approach of using \mj and \mmj samples without an \alphat requirement
+to make background predictions in the signal region. The tests
+confront data yields in a \mj (\mmj) samples with an \alphat
+requirement against predictions determined in a \mj (\mmj) sample with
+the \alphat requirement inverted. As usual, corresponding expectations
+from simulation are obtained to construct the transfer factors
+required to make the predictions.
+
+These closure tests are not considered in the ensembles presented in
+Sec.~\ref{sec:closure-tests-data} (as was normally the case for
+previous iterations of the analysis) and instead added as a new
+separate ensemble from which an additional contribution to the total
+systematic uncertainty per (\njet,~\nb,~\scalht) bin is derived. These
+contributions are assumed be be fully correlated across \nb (and
+uncorrelated as a function of \njet and \scalht). The magnitude of
+these contributions are presented in Table~\ref{tab:alphaTSyst}. For
+$\scalht<800\gev$ these numbers are derived from the \alphat closure
+tests. However, as there is no \alphat requirement for
+$\scalht>800\gev$, the $\Delta\phi *$ closure tests in
+Sec.~\ref{sec:closureCrossCheck} are used to derive the systematic in
+this case.
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/alphaTOnlyTest.pdf}}
+    ~~
+    \subfigure[]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/alphaTPulls.pdf}} 
+    \caption{Closure tests probing the \alphat extrapolation for each
+      \njet category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht bins
+      (shaded bands) carried out with $2.1\ifb$ of $13\tev$
+      data. Also shown are the pulls for each closure test.}
+    \label{fig:closureAlphaT}
+  \end{center} 
+\end{figure}
+
+\begin{table}[h!]
+  \caption{Systematic uncertainties (percent) in the
+    predictions of the $\ttbar$W and $\znunu$ (the latter in
+    parentheses) background components as a function of \scalht due to
+    the extrapolation in the \alphat (\bdphi) variable in the region
+    $\scalht > 800\gev$ ($\scalht > 800\gev$), as determined from
+    ensembles of closure tests in multiple data control samples. The
+    data control samples correspond to an integrated luminosity of
+    2.1\fbinv.} 
+  \label{tab:alphaTSyst}
+  \centering
+  \footnotesize
+  \begin{tabular}{ cccccccc }
+    \hline
+    \hline
+    \multicolumn{8}{c}{\scalht bin (GeV)}                                       \\
+    \hline
+    200   & 250     & 300     & 350     & 400     & 500     & 600     & 800     \\
+    10 (10) & 7 (7) & 8 (8) & 17 (17) & 14 (14) & 24 (24) & 27 (27) & 22 (22) \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+The closure tests in Fig.~\ref{fig:closureBDPhi} probe the modelling
+of the $\Delta\phi *$ distribution in genuine \met events as a
+function of \scalht. This is important to verify the approach of using
+\mj and \mmj samples without an $\Delta\phi *$ requirement to make
+background predictions in the signal region. The tests confront data
+yields in a \mj (\mmj) samples with an $\Delta\phi *$ requirement
+against predictions determined in a \mj (\mmj) sample with the
+$\Delta\phi *$ requirement inverted. 
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[Closure
+    tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/bDPhiCrossCheck.pdf}}
+    ~~
+    \subfigure[Pulls of closure
+    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/bDPhiPulls.pdf}} 
+    \caption{Closure tests probing the $\Delta\phi *$ extrapolation for each
+    \njet category (open symbols) and their pulls fit with a gaussian.
+    Made with the \mj control sample, carried out with $2.1\ifb$ of
+      $13\tev$ data. }
+    \label{fig:closureBDPhi}
+  \end{center} 
+\end{figure}
+
+\subsubsection{Tests probing the prediction of the \znunu
+background with the \mj control sample}
+
+The $\mj \rightarrow \mmj$ tests deal with the consistency
+of the prediction of \wej with $\gamma$ + jets, even in the presence
+of contamination from \ttbar. This is important for understanding the
+consistency of the \znunu + jets background prediction from \wej
+events along with the associated assumptions.
+
+Additionally, to test the prediction of \znunu + jets processes with
+the $W$-enriched \mj control sample, we introduce the
+$\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
+Sec.~\ref{sec:backgroundmet}. The production mechanism of $W$ from pp
+collisions means high $p_T$ $W$ bosons are predominantly left handed
+\cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$ decays to
+the left handed neutrino along its direction of motion while the
+lepton is pointing backward. The opposite behaviour is expected for
+the $W^-$. The lepton is therefore more boosted (and the neutrino less
+boosted) in $W^+$ decays than $W^-$ decays.  This leads to a larger
+number of $W^+$ decays in the single lepton control regions (which
+relies on the lepton $p_T$ for acceptance) than in the signal region
+(which relies on the neutrino $p_T$ for acceptance). The new closure
+test checks if this leads to a bias in the prediction of the \znunu +
+jets background. 
+
+
+\subsubsection{Tests probing the prediction of the \znunu
+background with the \gj control sample}
+
+The $\gj \rightarrow \mmj$ tests deal with the
+consistency between the \zee + jets and $\gamma$ + jets samples, which
+is a further check on the validity of using the \gj process to predict
+the \znunu\, + jets process. The muon trigger and reconstruction
+efficiencies are also indirectly probed, given that different numbers
+of muons are required in each of the two sub-samples.
+%However, dedicated data-driven methods are used to measure the muon
+%trigger and reconstruction efficiencies, with values taken from the
+%muon POG.
+
+The control of the \znunu\ + jets background, established via the
+tests described above, is also validated with the full Run~1 data set
+at $\sqrt{s} = 8\tev$, as described in
+Appendix~\ref{app:zInvBgControl}.
+
+\subsubsection{Tests probing the prediction of the W and \ttbar
+backgrounds with the \mj control sample}
+
+The $0$ b-tag $\rightarrow1$ b-tag
+tests probe the sensitivity of the transfer factors to the relative
+admixture of events from the $W$ + jets and \ttbar processes by
+varying the number of b-tagged jets within the \mj sample. These tests
+are conservative, as the admixture changes little between the \mj
+sample and the signal region (as there is no extrapolation in \nb),
+whereas the closure tests use sub-samples with different \nb bins and
+therefore different admixtures of $W$ + jets and \ttbar events. \eg,
+the former uses a $W$-enriched sub-sample (selected by requiring zero
+b-jets) to predict yields in a \ttbar-enriched sub-sample (selected by
+requiring one b-jet).
+
+The aforementioned two b-tag related tests also probe the modelling of
+the reconstruction of b-quark jets, although this is addressed more
+precisely by dedicated studies involving varying the uncertainties in
+b-tag scale factors, as the one performed in the previous analysis,
+see for instance \cite{CMS_AN_2013-366}. Until the formula method is
+applied, the b-tag SFs will be applied and their uncertainties
+propagated through to the transfer factors. These variations will be
+taken as an additional contribution to the total normalisation
+systematic uncertainties per (\njet,~\nb,~\scalht) bin. However, based
+on the behaviour observed during Run~1, these are a sub-dominant
+contribution to the total systematic uncertainties.
+
+The $\mu^{+}\rightarrow\mu^{-}$ is also employed here to ensure there
+any asymmetries introduced from W polarisation effects are covered by
+an appropriate systematic.
+
+
+\subsection{Summary of normalisation systematic uncertainties based on $2.1~\ifb$}
+\label{sec:closure-test-syst}
+
+%%%%%%%% FIXME PUT IN CLOSURE TEST MATPLOTLIB PLOTS AS WELL
+
+Normalisation systematics are derived from the closure test ensembles,
+described above, based on the current data set, which are summarised
+in Table~\ref{tab:systs}. In the kinematically restricted bins, such
+as those with a high jet multiplicity and low value of \scalht, the
+limited statistics leads to large systematic errors. These bins are
+not used in the analysis. 
+%As a minimum number of events is required for each bin considered in
+%the final stages of the analysis, these large systematic errors are
+%unlikely to be a problem.  
+In the bins populated with a reasonable number of events, the
+systematic errors determined from the closure tests vary from $10$ to
+$40\%$.
+
+\begin{table}[h!]
+  \caption{Systematic uncertainties (percent) in the predictions
+    of the $\ttbar$W and $\znunu$ (the latter in parentheses) background
+    components as a function of \njet, \nb, and \scalht, as determined
+    from ensembles of closure tests based on multiple data control
+    samples. The data control samples correspond to an integrated
+    luminosity of 2.1\fbinv. }
+  \label{tab:systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ccccccccc }
+    \hline
+    \hline
+    Category & \multicolumn{8}{c}{\scalht bin} \\
+    \cline{2-9} 
+    
+    (\njet,\nb) & 200     & 250     & 300     & 350     & 400     & 500     & 600      & 800       \\
+    \hline
+    \multicolumn{8}{c}{Monojet:}                                                                   \\
+    (1,0)       & 7  (7)  & 11 (11) & 9 (9) & 18 (18) & 16 (16) & 24 (24) & 38 (38)  & 44 (44)         \\
+    (1,1)       & 7  (7)  & 11 (11) & 9 (9) & 18 (18) & 16 (16) & 24 (24) & 38 (38)  & 44 (44)         \\
+    \hline
+    \multicolumn{8}{c}{Symmetric:}                                                                 \\
+    (2,0)       & 17 (17) & 20 (20) & 13 (16) & 14 (23) & 4 (6) & 16 (14) & 13 (31) & 13 (20)\\
+    (2,1)       & 17 (17) & 20 (20) & 13 (16) & 14 (23) & 4 (6) & 16 (14) & 13 (31) & 13 (20)\\
+    (2,2)       & 17 (17) & 20 (20) & 13 (16) & 14 (23) & 4 (6) & 16 (14) & 13 (31) & 13 (20)\\
+    (3,0)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
+    (3,1)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
+    (3,2)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
+    (3,3)       & 78 (100) & 7 (18) & 16 (18) & 5 (17) & 7 (13) & 9 (8) & 10 (31) & 16 (10) \\
+    (4,0)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
+    (4,1)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
+    (4,2)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
+    (4,$\geq$3)       & - & - & 18 (28) & 23 (71) & 9 (28) & 13 (28) & 14 (15) & 21 (14)\\
+    (5,0)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
+    (5,1)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
+    (5,2)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
+    (5,$\geq$3)       &- & - & - & 34 (214) & 11 (31) & 7 (24) & 14 (21) & 12 (38)   \\
+    \hline
+    \multicolumn{8}{c}{Asymmetric:}                                                                \\
+    (2,0)       &11 (8) & 10 (11) & 10 (10) & 9 (22) & 11 (10) & 14 (16) & 123 (40) & 58 (35) \\
+    (2,1)       &11 (8) & 10 (11) & 10 (10) & 9 (22) & 11 (10) & 14 (16) & 123 (40) & 58 (35) \\
+    (2,2)       &11 (8) & 10 (11) & 10 (10) & 9 (22) & 11 (10) & 14 (16) & 123 (40) & 58 (35) \\
+    (3,0)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
+    (3,1)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
+    (3,2)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
+    (3,3)       & 15 (15) & 7 (5) & 14 (12) & 16 (20) & 9 (27) & 11 (37) & 42 (94) & 40 (66) \\
+    (4,0)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
+    (4,1)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
+    (4,2)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
+    (4,$\geq$3)       & 17 (20) & 23 (27) & 6 (12) & 6 (14) & 17 (32) & 23 (37) & 40 (47) & 77 (234) \\
+    (5,0)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
+    (5,1)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
+    (5,2)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
+    (5,$\geq$3)       &- & 59 (60) & 15 (34) & 19 (22) & 13 (18) & 25 (58) & 26 (39) & 95 (99)\\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\subsubsection{Additional closure tests as cross checks}
+\label{sec:closureCrossCheck}
+
+Along with the closure tests used to derive the systematics,
+additional tests are carried out to cross check other potential
+instances of mismodelling. If any of these tests demonstrate a source
+of bias, further investigation into this effect is carried out. 
+
+The closure tests in Fig.~\ref{fig:closureLooseLep} probe the effects
+of the extrapolation in the lepton definition used for the veto in the
+signal region, as described in Sec.~\ref{sec:closure-tests-data}.
+These tests are included in the systematic calculation for the W and
+\ttbar + jets backgrounds, but can be seen in isolation here. 
+
+\begin{figure}
+  \begin{center}
+    \subfigure[Closure tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/looseLeptonCrossCheck.pdf}}
+    ~~
+    \subfigure[Pulls of closure
+    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/looseLeptonPulls.pdf}} 
+    \caption{Closure tests probing the effect of lost leptons in the
+    analysis for each
+    \njet category (open symbols) and their pulls fit with a gaussian.
+    Carried out with $2.1\ifb$ of
+      $13\tev$ data. Events with two muons that pass the control
+      region (tight) muon criteria are used to predict events with one
+      tight muon and one muon that passes the signal region veto
+      criteria (loose)}
+    \label{fig:closureLooseLep}
+  \end{center} 
+\end{figure}
+
+
 
