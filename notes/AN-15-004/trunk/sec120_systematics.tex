@@ -23,21 +23,18 @@ Sec.~\ref{sec:syst-on-shape}.
 
 This chapter covers in detail the normalisation systematic
 uncertainties associated with predictions per (\njet,~\nb,~\scalht)
-bins. The use of ensembles of ``closure tests'' to derive systematic
-uncertainties are described in detail in Secs.~\ref{sec:bkgdnorm-syst}
-and \ref{sec:syst-from-closure}. The definition of ensembles geared
-towards the specific background processes is provided in
-Sec.~\ref{sec:closure-split}. The observed level of closure in data
-and the resulting systematic uncertainties, based on control samples
-corresponding to $2.1~\ifb$ of integrated luminosity, is covered in
-Sec.~\ref{sec:closure-data-study}. Additional contributions to the
-total normalisation systematics that are based on dedicated ensembles
-to cover the \alphat extrapolation made in the search are described in
-Sec.~\ref{sec:alphat_closure}. Further dedicated ensembles that
-provide additional cross checks are covered in
-Sec.~\ref{sec:closureCrossCheck}. Finally,
-Sec.~\ref{sec:mc-systematics} outlines simulation-based studies of the
+bins. Sec.~\ref{sec:mc-systematics} outlines simulation-based studies of the
 effects of potential sources of bias on the transfer factors.
+The use of ``closure tests'' to derive additional, data driven, systematic
+uncertainties are described in detail in Secs.~\ref{sec:bkgdnorm-syst}
+and \ref{sec:syst-from-closure}. The definition of tests geared
+towards the specific background processes are outlined. The observed level 
+of closure in data
+and the resulting systematic uncertainties, based on control samples
+corresponding to $2.1~\ifb$ of integrated luminosity are shown.
+Further dedicated closure tests that
+provide additional cross checks are covered in
+Sec.~\ref{sec:closureCrossCheck}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MC systs
@@ -46,30 +43,34 @@ effects of potential sources of bias on the transfer factors.
 \subsection{Simulation-based studies of normalisation systematic uncertainties}
 \label{sec:mc-systematics}
 
-As described in Secs.~\ref{sec:backgroundmet}
-and~\ref{sec:closure-tests-desc}, the non-multijet background yields
+As described in Secs.~\ref{sec:backgroundmet}, the non-multijet background yields
 per $(\njet,\nb,\scalht)$ bin are estimated through the use of control
 regions and appropriate MC-based transfer factors. This approach aims
 to minimise the sensitivity to simulation mismodelling, as many
 systematic biases are expected to cancel to a large extent in the
-ratios defining the transfer factors. Systematic uncertainties on the
-transfer factors accounting for residual biases are derived from the
-data-driven closure tests.
+ratios defining the transfer factors. However, residual biases may
+still remain if problems in the simulation are equivalently modelled
+in the numerator and denominator of the transfer factors. To address
+and quantify these uncertainties the effect of the transfer factors is
+observed after appropriately varying MC yields based on relevant
+uncertainties. These investigations are presented in this section. 
 
-We still consider a wide range of systematic effects arising from
-uncertainties in jet energy scales, b-tag scale factors, parton
-distribution functions, lepton and photon identification, etc. These
-are all expected to be sub-dominant with respect to the systematic
-uncertainties derived from the closure tests, and we check that this
-is the case.
+We consider a wide range of systematic effects arising from
+uncertainties in jet energy scales, b-tag scale factors, pileup
+reweighting, top $p_T$ reweighting lepton and photon identification, etc. 
+On top of the MC studies, additional data-driven systematic 
+uncertainties are derived from closure tests, described in
+Sec.~\ref{sec:closure-tests}.
 
 The procedure to determine the effect of these sources of systematic
 uncertainties is to construct the transfer factors when varying in
 turn each source by their up and down one sigma uncertainties, and
 express this as a percentage difference relative to the nominal
-transfer factors.
+transfer factors. These systematics are encoded in the likelihood
+model as shape uncertainties where the parameter is fully correlated
+but with a different magnitude in each \njet,\nb and \scalht bin.
 
-These sources of systematic uncertainty can affect both the
+These sources of systematic uncertainty can effect both the
 experimental acceptance of the signal and control regions, as well as
 event migration between analysis bins. 
 %The former is accounted for by cross section corrections derived from
@@ -78,17 +79,17 @@ The aim in this case is to assess the relative changes in the transfer
 factors across bins as the variations are performed and the overall
 integrated yields are fixed.
 
-{\bf Jet energy corrections}
+\subsubsection{Jet energy corrections}
 
-As a preliminary study, the effect of varying the jet energy scale in
+The effect of varying the jet energy scale in
 the \mj and \mmj control regions is investigated.  The energies of
 jets used in the analysis are corrected as a function of their \pt and
 $\eta$ via the procedure recommended by the JetMET POG. These
 corrections have an associated uncertainty, which can propagate
 through the analysis.  As the analysis is designed such that bins with
 the same value of \scalht and jet multiplicity in the control regions
-are used to predict the background in the signal region, we expect to
-be protected against many of the effects caused by these jet energy
+are used to predict the background in the signal region, this analysis
+expects to be protected against many of the effects caused by these jet energy
 scale uncertainties. However, the jet energy scale can still have an
 effect, due to jets moving in and out acceptance (above and below
 $40\gev$).
@@ -144,7 +145,7 @@ fluctuations in bins with a small number of events.
   control sample.}
 \end{figure}
 
-{\bf b-tagging efficiency scale factors}
+\subsubsection{b-tagging efficiency scale factors}
 
 Scale factors provided by the BTV POG are applied to the MC samples
 to correct for differences in the b-tagging efficiencies and 
@@ -185,9 +186,19 @@ closure tests.
   of this source of systematic on the background prediction.}
 \end{figure}
 
+\subsubsection{Pileup reweighting}
+
+As the distribution of pileup events differs between simulation and
+data a reweighting is carried out as described in
+Sec.~\ref{sec:pileup-reweighting}. There is an uncertainty associated
+with the reweighting factors. The factors are therefore varied based
+on this uncertainty and the effect of the variation included as a
+systematic uncertainty on the transfer factors.
+
+\subsubsection{Top $p_T$ reweighting}
 
 
-{\bf QCD contamination}
+\subsubsection{QCD contamination}
 
 A check has also been performed on the systematic effect on the
 background prediction due to QCD contamination in the control samples,
@@ -197,26 +208,22 @@ control regions. Applying an arbitrarily large variation of $\pm
 variation on the transfer factors of at most 5\% in the majority of
 bins.
 
-These preliminary studies suggest that the jet energy scale and QCD
-uncertainties are small and should be covered by the systematics
-derived from the closure tests in
-Sec.~\ref{sec:closure-tests-data}. The closure tests are therefore a
-conservative estimate to which it can be established, based on data,
-that there is no significant bias in the background predictions. 
-%A more thorough study of these and additional source of systematic
-%uncertainty will be carried out in the near future. If not
-%sub-dominant, these additional uncertainties will be propagated
-%through to the final total.
+This preliminary study suggest that effects from the QCD
+uncertainties are small and should be covered by other systematics
+(particularly those derived from the closure tests in
+Sec.~\ref{sec:closure-tests}).
 
+\subsubsection{Lost lepton uncertainty}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Closure tests
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Data driven systematics with closure tests}
+\label{sec:closure-tests}
+
 \subsubsection{Definition of a closure test}
 \label{sec:closure-tests-desc}
-\label{sec:bkgdnorm-syst}
 
 The background estimates determined in each (\njet,~\nb,~\scalht) bin
 rely on transfer factors to extrapolate data counts in control region
@@ -495,6 +502,37 @@ The $\mu^{+}\rightarrow\mu^{-}$ is also employed here to ensure there
 any asymmetries introduced from W polarisation effects are covered by
 an appropriate systematic.
 
+\subsubsection{Additional closure tests as cross checks}
+\label{sec:closureCrossCheck}
+
+Along with the closure tests used to derive the systematics,
+additional tests are carried out to cross check other potential
+instances of mismodelling. If any of these tests demonstrate a source
+of bias, further investigation into this effect is carried out. 
+
+The closure tests in Fig.~\ref{fig:closureLooseLep} probe the effects
+of the extrapolation in the lepton definition used for the veto in the
+signal region, as described in Sec.~\ref{sec:closure-tests-data}.
+These tests are included in the systematic calculation for the W and
+\ttbar + jets backgrounds, but can be seen in isolation here. 
+
+\begin{figure}
+  \begin{center}
+    \subfigure[Closure tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/looseLeptonCrossCheck.pdf}}
+    ~~
+    \subfigure[Pulls of closure
+    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/looseLeptonPulls.pdf}} 
+    \caption{Closure tests probing the effect of lost leptons in the
+    analysis for each
+    \njet category (open symbols) and their pulls fit with a gaussian.
+    Carried out with $2.1\ifb$ of
+      $13\tev$ data. Events with two muons that pass the control
+      region (tight) muon criteria are used to predict events with one
+      tight muon and one muon that passes the signal region veto
+      criteria (loose)}
+    \label{fig:closureLooseLep}
+  \end{center} 
+\end{figure}
 
 \subsection{Summary of normalisation systematic uncertainties based on $2.1~\ifb$}
 \label{sec:closure-test-syst}
@@ -573,39 +611,4 @@ $40\%$.
     \hline
   \end{tabular}
 \end{table}
-
-
-\subsubsection{Additional closure tests as cross checks}
-\label{sec:closureCrossCheck}
-
-Along with the closure tests used to derive the systematics,
-additional tests are carried out to cross check other potential
-instances of mismodelling. If any of these tests demonstrate a source
-of bias, further investigation into this effect is carried out. 
-
-The closure tests in Fig.~\ref{fig:closureLooseLep} probe the effects
-of the extrapolation in the lepton definition used for the veto in the
-signal region, as described in Sec.~\ref{sec:closure-tests-data}.
-These tests are included in the systematic calculation for the W and
-\ttbar + jets backgrounds, but can be seen in isolation here. 
-
-\begin{figure}
-  \begin{center}
-    \subfigure[Closure tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/looseLeptonCrossCheck.pdf}}
-    ~~
-    \subfigure[Pulls of closure
-    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/looseLeptonPulls.pdf}} 
-    \caption{Closure tests probing the effect of lost leptons in the
-    analysis for each
-    \njet category (open symbols) and their pulls fit with a gaussian.
-    Carried out with $2.1\ifb$ of
-      $13\tev$ data. Events with two muons that pass the control
-      region (tight) muon criteria are used to predict events with one
-      tight muon and one muon that passes the signal region veto
-      criteria (loose)}
-    \label{fig:closureLooseLep}
-  \end{center} 
-\end{figure}
-
-
 
