@@ -112,39 +112,6 @@ small. With variations in the pseudo transfer factors being typically
 less than $10\%$. Any larger effects are likely due to statistical
 fluctuations in bins with a small number of events.
 
-
-\begin{figure}[]
-  \centering
-  \subfigure[The relative change in transfer factors per \scalht bin
-  and jet category]{
-    \includegraphics[width=0.55\textwidth]{figures/jesSystematics/SingleMu_MC_TF_Comp.pdf}
-  } ~~
-  \subfigure[The relative change in transfer factors for every
-  analysis bin with an \alphat cut, inclusive on b-tags]{
-    \includegraphics[width=0.44\textwidth]{figures/jesSystematics/SingleMu_MC_Systematics1D.pdf}
-  }
-  \caption{\label{fig:jes-syst-singleMu} The change in pseudo transfer
-  factors when calculating them with nominal jet energy corrections
-  and the minus one sigma level jet energy corrections in the \mj
-  control sample.}
-\end{figure}
-
-\begin{figure}[]
-  \centering
-  \subfigure[The relative change in transfer factors per \scalht bin
-  and jet category]{
-    \includegraphics[width=0.55\textwidth]{figures/jesSystematics/DoubleMu_MC_TF_Comp.pdf}
-  } ~~
-  \subfigure[The relative change in transfer factors for every
-  analysis bin with an \alphat cut, inclusive on b-tags]{
-    \includegraphics[width=0.45\textwidth]{figures/jesSystematics/DoubleMu_MC_Systematics1D.pdf}
-  }
-  \caption{\label{fig:jes-syst-doubleMu} The change in pseudo transfer
-  factors when calculating them with nominal jet energy corrections
-  and the minus one sigma level jet energy corrections in the \mmj
-  control sample.}
-\end{figure}
-
 \subsubsection{b-tagging efficiency scale factors}
 
 Scale factors provided by the BTV POG are applied to the MC samples
@@ -296,13 +263,65 @@ background with the \mj control sample}
 All the MC variations described in Sec~\ref{sec:mc-systematics} are
 carried out for the transfer factors from the \mj control region to
 the \znunu background prediction. The results are shown in
-Fig.~\ref{muZnunuTF}.
+Fig.~\ref{fig:muZnunuTF}.
+
+\begin{figure}[]
+  \centering
+  \subfigure[Jet energy scale varied up]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+  } ~~
+  \subfigure[Jet energy scale varied down]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  }\\
+  \subfigure[B-tag scale factors varied up]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
+  } ~~
+  \subfigure[B-tag scale factors varied down]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  }\\
+  \subfigure[Pileup weights factors varied up]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
+  } ~~
+  \subfigure[Pileup weights factors varied down]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+  }\\
+  \subfigure[Top $p_{T}$ weights varied up]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+  } ~~
+  \subfigure[Top $p_{T}$ weights varied down]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+  }\\
+  \caption{\label{fig:muZnunuTF} The change in \mj to \znunu transfer
+  factors when varying various parameters in the MC simulation by
+  there upwards and downwards one sigma values. }
+\end{figure}
 
 {\bf Data-driven systematics}
 
 To test the use of \wej and \ttbar dominated \mj events to predict the \znunu
 background, $\mj \rightarrow \mmj$ closure tests are performed. These
-tests also indirectly test muon acceptance effects. Additionally, to 
+tests also indirectly test muon acceptance effects. The results can be seen in
+Fig.~\ref{fig:closureMuToMuMu}. In this test pairs of \scalht bins are
+merged due to the low statistics in the \mmj control sample.
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/mu_mumusym_half_fit.pdf}}
+    ~~
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/mu_mumuasym_half_fit.pdf}} 
+    \caption{Closure tests probing the use of the \mj control sample
+      to predict the \znunu background for each
+      \njet category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht bins
+      (shaded bands) carried out with $2.2\ifb$ of $13\tev$
+      data. The two closure tests are separated based on topology.
+      Each test is fit with a linear orthogonal polynomial with the
+      fit parameters on the plot.}
+    \label{fig:closureMuToMuMu}
+  \end{center} 
+\end{figure}
+
+Additionally, to 
 test the prediction of \znunu + jets processes with
 the $W$-enriched \mj control sample, we introduce the
 $\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
@@ -317,13 +336,35 @@ number of $W^+$ decays in the single lepton control regions (which
 relies on the lepton $p_T$ for acceptance) than in the signal region
 (which relies on the neutrino $p_T$ for acceptance). The new closure
 test checks if this leads to a bias in the prediction of the \znunu +
-jets background. 
+jets background. This test can be seen in
+Fig.~\ref{figclosureMuPToMuM}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/muplus_muminussym_half_fit.pdf}}
+    ~~
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/muplus_muminusasym_half_fit.pdf}} 
+    \caption{Closure tests probing the W polarisation effects that are
+    relevant when using the \mj control sample for background
+    prediction. These are shown for each
+      \njet category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht bins
+      (shaded bands) carried out with $2.2\ifb$ of $13\tev$
+      data. The two closure tests are separated based on topology.
+      Each test is fit with a linear orthogonal polynomial with the
+      fit parameters on the plot.}
+    \label{fig:closureMuPToMuM}
+  \end{center} 
+\end{figure}
 
 The modelling of the \alphat and
 \bdphi extrapolations are also tested with dedicated closure tests. In both
 cases, it is checked that events with genuine \met found in the core
 of the variable distribution below some threshold value can be used to
-predict the events in the tail (above the same threshold value). 
+predict the events in the tail (above the same threshold value). The
+contribution to the systematic error for \met extrapolation is taken
+from the \alphat closure tests for bins with $\scalht<800\gev$ and
+the \bdphi tests for bins with $\scalht>800\gev$.
 
 The closure tests in Fig.~\ref{fig:closureAlphaT} probe the modelling
 of the \alphat distribution (following the application of the $\mht >
@@ -339,14 +380,16 @@ required to make the predictions.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/alphaTOnlyTest.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/alphaTsym__fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/alphaTPulls.pdf}} 
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/alphaTasym__fit.pdf}} 
     \caption{Closure tests probing the \alphat extrapolation for each
       \njet category (open symbols) overlaid on top of the systematic
       uncertainty estimates used for each of the seven \scalht bins
-      (shaded bands) carried out with $2.1\ifb$ of $13\tev$
-      data. Also shown are the pulls for each closure test.}
+      (shaded bands) carried out with $2.2\ifb$ of $13\tev$
+      data. The two closure tests are separated based on topology.
+      Each test is fit with a linear orthogonal polynomial with the
+      fit parameters on the plot.}
     \label{fig:closureAlphaT}
   \end{center} 
 \end{figure}
@@ -386,19 +429,19 @@ $\Delta\phi *$ requirement inverted.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[Closure
-    tests]{\includegraphics[width=0.6\textwidth]{figures/closureTests/newJamboree/bDPhiCrossCheck.pdf}}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhisym__fit.pdf}}
     ~~
-    \subfigure[Pulls of closure
-    tests]{\includegraphics[width=0.4\textwidth]{figures/closureTests/newJamboree/bDPhiPulls.pdf}} 
-    \caption{Closure tests probing the $\Delta\phi *$ extrapolation for each
-    \njet category (open symbols) and their pulls fit with a gaussian.
-    Made with the \mj control sample, carried out with $2.1\ifb$ of
-      $13\tev$ data. }
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhiasym__fit.pdf}} 
+    \caption{Closure tests probing the \bdphi extrapolation for each
+      \njet category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht bins
+      (shaded bands) carried out with $2.2\ifb$ of $13\tev$
+      data. The two closure tests are separated based on topology.
+      Each test is fit with a linear orthogonal polynomial with the
+      fit parameters on the plot.}
     \label{fig:closureBDPhi}
   \end{center} 
 \end{figure}
-
 
 \subsubsection{Uncertainties the prediction of the \znunu
 background with the \mmj control sample}
@@ -429,7 +472,25 @@ Fig.~\ref{gZnunuTF}.
 
 To test the use of a \gj sample to predict the \zinv background, $\gj
 \rightarrow \mmj$
-tests are performed.
+tests are performed. They probe the Z and $\gamma$ cross section
+ratios. The tests can be seen in Fig.~\ref{fig:closurePhoToMuMu}
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/phot_mumusym_half_fit.pdf}}
+    ~~
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/phot_mumuasym_half_fit.pdf}} 
+    \caption{Closure tests probing the use of the \gj control sample
+      to predict the \znunu background for each
+      \njet category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht bins
+      (shaded bands) carried out with $2.2\ifb$ of $13\tev$
+      data. The two closure tests are separated based on topology.
+      Each test is fit with a linear orthogonal polynomial with the
+      fit parameters on the plot.}
+    \label{fig:closurePhoToMuMu}
+  \end{center} 
+\end{figure}
 
 \subsection{Systematic uncertainties for the W and \ttbar background
 prediction}
@@ -456,7 +517,8 @@ whereas the closure tests use sub-samples with different \nb bins and
 therefore different admixtures of $W$ + jets and \ttbar events. \eg,
 the former uses a $W$-enriched sub-sample (selected by requiring zero
 b-jets) to predict yields in a \ttbar-enriched sub-sample (selected by
-requiring one b-jet).
+requiring one b-jet). These tests can be seen in
+Fig.~\ref{fig:closureBTag}.
 
 The aforementioned b-tag related tests also probe the modelling of
 the reconstruction of b-quark jets, although this is addressed more
@@ -466,7 +528,25 @@ see for instance \cite{CMS_AN_2013-366}. Until the formula method is
 applied, the b-tag SFs will be applied and their uncertainties
 propagated through to the transfer factors.
 
-The $\mu^{+}\rightarrow\mu^{-}$ tests are also considered, ensuring
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/eq0b_eq1b_muonsym_fit.pdf}}
+    ~~
+    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/eq0b_eq1b_muonasym_fit.pdf}} 
+    \caption{Closure tests probing the W and \ttbar admixture through
+      b-tag extrapolation are shown for each
+      \njet category (open symbols) overlaid on top of the systematic
+      uncertainty estimates used for each of the seven \scalht bins
+      (shaded bands) carried out with $2.2\ifb$ of $13\tev$
+      data. The two closure tests are separated based on topology.
+      Each test is fit with a linear orthogonal polynomial with the
+      fit parameters on the plot.}
+    \label{fig:closureBTag}
+  \end{center} 
+\end{figure}
+
+The $\mu^{+}\rightarrow\mu^{-}$ tests, as described in Sec.~\ref{sec:muZnunu} are also
+considered. These ensure
 that any asymmetries introduced from W polarisation effects are covered by
 an appropriate systematic.
 
