@@ -282,21 +282,46 @@ the ``systematic'' in the absence of bias.
 \subsection{Systematic uncertainties for the \znunu background
 prediction}
 
-\subsubsection{Uncertainties the prediction of the \znunu
-background with the \mmj control sample}
+The control of the \znunu\ + jets background, established via the
+tests described below, are also validated with the full Run~1 data set
+at $\sqrt{s} = 8\tev$, as described in
+Appendix~\ref{app:zInvBgControl}.
+
+\subsubsection{Tests probing the prediction of the \znunu
+background with the \mj control sample}
+\label{sec:muZnunu}
 
 {\bf Variations on the transfer factors from simulation}
 
 All the MC variations described in Sec~\ref{sec:mc-systematics} are
-carried out for the transfer factors from the \mmj control region to
+carried out for the transfer factors from the \mj control region to
 the \znunu background prediction. The results are shown in
-Fig.~\ref{mumuZnunuTF}.
+Fig.~\ref{muZnunuTF}.
 
 {\bf Data-driven systematics}
 
-Closure tests that probe the modelling of the \alphat and
-\bdphi extrapolations in the analysis are also performed. In both
-cases, the test checks if events with genuine \met found in the core
+To test the use of \wej and \ttbar dominated \mj events to predict the \znunu
+background, $\mj \rightarrow \mmj$ closure tests are performed. These
+tests also indirectly test muon acceptance effects. Additionally, to 
+test the prediction of \znunu + jets processes with
+the $W$-enriched \mj control sample, we introduce the
+$\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
+Sec.~\ref{sec:backgroundmet}. The production mechanism of $W$ from pp
+collisions means high $p_T$ $W$ bosons are predominantly left handed
+\cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$ decays to
+the left handed neutrino along its direction of motion while the
+lepton is pointing backward. The opposite behaviour is expected for
+the $W^-$. The lepton is therefore more boosted (and the neutrino less
+boosted) in $W^+$ decays than $W^-$ decays.  This leads to a larger
+number of $W^+$ decays in the single lepton control regions (which
+relies on the lepton $p_T$ for acceptance) than in the signal region
+(which relies on the neutrino $p_T$ for acceptance). The new closure
+test checks if this leads to a bias in the prediction of the \znunu +
+jets background. 
+
+The modelling of the \alphat and
+\bdphi extrapolations are also tested with dedicated closure tests. In both
+cases, it is checked that events with genuine \met found in the core
 of the variable distribution below some threshold value can be used to
 predict the events in the tail (above the same threshold value). 
 
@@ -306,25 +331,11 @@ of the \alphat distribution (following the application of the $\mht >
 \met events as a function of \scalht. This is important to verify the
 approach of using \mj and \mmj samples without an \alphat requirement
 to make background predictions in the signal region. The tests
-confront data yields in a \mj (\mmj) samples with an \alphat
-requirement against predictions determined in a \mj (\mmj) sample with
+confront data yields in a \mj  samples with an \alphat
+requirement against predictions determined in a \mj sample with
 the \alphat requirement inverted. As usual, corresponding expectations
 from simulation are obtained to construct the transfer factors
 required to make the predictions.
-
-These closure tests are not considered in the ensembles presented in
-Sec.~\ref{sec:closure-tests-data} (as was normally the case for
-previous iterations of the analysis) and instead added as a new
-separate ensemble from which an additional contribution to the total
-systematic uncertainty per (\njet,~\nb,~\scalht) bin is derived. These
-contributions are assumed be be fully correlated across \nb (and
-uncorrelated as a function of \njet and \scalht). The magnitude of
-these contributions are presented in Table~\ref{tab:alphaTSyst}. For
-$\scalht<800\gev$ these numbers are derived from the \alphat closure
-tests. However, as there is no \alphat requirement for
-$\scalht>800\gev$, the $\Delta\phi *$ closure tests in
-Sec.~\ref{sec:closureCrossCheck} are used to derive the systematic in
-this case.
 
 \begin{figure}[h!]
   \begin{center}
@@ -340,29 +351,29 @@ this case.
   \end{center} 
 \end{figure}
 
-\begin{table}[h!]
-  \caption{Systematic uncertainties (percent) in the
-    predictions of the $\ttbar$W and $\znunu$ (the latter in
-    parentheses) background components as a function of \scalht due to
-    the extrapolation in the \alphat (\bdphi) variable in the region
-    $\scalht > 800\gev$ ($\scalht > 800\gev$), as determined from
-    ensembles of closure tests in multiple data control samples. The
-    data control samples correspond to an integrated luminosity of
-    2.1\fbinv.} 
-  \label{tab:alphaTSyst}
-  \centering
-  \footnotesize
-  \begin{tabular}{ cccccccc }
-    \hline
-    \hline
-    \multicolumn{8}{c}{\scalht bin (GeV)}                                       \\
-    \hline
-    200   & 250     & 300     & 350     & 400     & 500     & 600     & 800     \\
-    10 (10) & 7 (7) & 8 (8) & 17 (17) & 14 (14) & 24 (24) & 27 (27) & 22 (22) \\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
+% \begin{table}[h!]
+%   \caption{Systematic uncertainties (percent) in the
+%     predictions of the $\ttbar$W and $\znunu$ (the latter in
+%     parentheses) background components as a function of \scalht due to
+%     the extrapolation in the \alphat (\bdphi) variable in the region
+%     $\scalht > 800\gev$ ($\scalht > 800\gev$), as determined from
+%     ensembles of closure tests in multiple data control samples. The
+%     data control samples correspond to an integrated luminosity of
+%     2.1\fbinv.} 
+%   \label{tab:alphaTSyst}
+%   \centering
+%   \footnotesize
+%   \begin{tabular}{ cccccccc }
+%     \hline
+%     \hline
+%     \multicolumn{8}{c}{\scalht bin (GeV)}                                       \\
+%     \hline
+%     200   & 250     & 300     & 350     & 400     & 500     & 600     & 800     \\
+%     10 (10) & 7 (7) & 8 (8) & 17 (17) & 14 (14) & 24 (24) & 27 (27) & 22 (22) \\
+%     \hline
+%     \hline
+%   \end{tabular}
+% \end{table}
 
 The closure tests in Fig.~\ref{fig:closureBDPhi} probe the modelling
 of the $\Delta\phi *$ distribution in genuine \met events as a
@@ -388,39 +399,21 @@ $\Delta\phi *$ requirement inverted.
   \end{center} 
 \end{figure}
 
-\subsubsection{Tests probing the prediction of the \znunu
-background with the \mj control sample}
+
+\subsubsection{Uncertainties the prediction of the \znunu
+background with the \mmj control sample}
 
 {\bf Variations on the transfer factors from simulation}
 
 All the MC variations described in Sec~\ref{sec:mc-systematics} are
-carried out for the transfer factors from the \mj control region to
+carried out for the transfer factors from the \mmj control region to
 the \znunu background prediction. The results are shown in
-Fig.~\ref{muZnunuTF}.
+Fig.~\ref{mumuZnunuTF}.
 
 {\bf Data-driven systematics}
 
-The $\mj \rightarrow \mmj$ tests deal with the consistency
-of the prediction of \wej with $\gamma$ + jets, even in the presence
-of contamination from \ttbar. This is important for understanding the
-consistency of the \znunu + jets background prediction from \wej
-events along with the associated assumptions.
-
-Additionally, to test the prediction of \znunu + jets processes with
-the $W$-enriched \mj control sample, we introduce the
-$\mu^{+}\rightarrow\mu^{-}$ closure test, as mentioned in
-Sec.~\ref{sec:backgroundmet}. The production mechanism of $W$ from pp
-collisions means high $p_T$ $W$ bosons are predominantly left handed
-\cite{WPol}.  For high $p_T$ bosons, this implies that $W^+$ decays to
-the left handed neutrino along its direction of motion while the
-lepton is pointing backward. The opposite behaviour is expected for
-the $W^-$. The lepton is therefore more boosted (and the neutrino less
-boosted) in $W^+$ decays than $W^-$ decays.  This leads to a larger
-number of $W^+$ decays in the single lepton control regions (which
-relies on the lepton $p_T$ for acceptance) than in the signal region
-(which relies on the neutrino $p_T$ for acceptance). The new closure
-test checks if this leads to a bias in the prediction of the \znunu +
-jets background. 
+The result of the \alphat and $\Delta\phi *$ closure tests contribute
+to the systematic uncertainty as described in Sec.~\ref{sec:muZnunu}.
 
 \subsubsection{Tests probing the prediction of the \znunu
 background with the \gj control sample}
@@ -434,20 +427,8 @@ Fig.~\ref{gZnunuTF}.
 
 {\bf Data-driven systematics}
 
-The $\gj \rightarrow \mmj$ tests deal with the
-consistency between the \zee + jets and $\gamma$ + jets samples, which
-is a further check on the validity of using the \gj process to predict
-the \znunu\, + jets process. The muon trigger and reconstruction
-efficiencies are also indirectly probed, given that different numbers
-of muons are required in each of the two sub-samples.
-%However, dedicated data-driven methods are used to measure the muon
-%trigger and reconstruction efficiencies, with values taken from the
-%muon POG.
-
-The control of the \znunu\ + jets background, established via the
-tests described above, is also validated with the full Run~1 data set
-at $\sqrt{s} = 8\tev$, as described in
-Appendix~\ref{app:zInvBgControl}.
+To test the use of a \gj sample to predict the \zinv background, $\mmj \rightarrow \gj$
+tests are performed.
 
 \subsection{Systematic uncertainties for the W and \ttbar background
 prediction}
@@ -461,7 +442,10 @@ in Fig.~\ref{muTtwTF}.
 
 {\bf Data-driven systematics}
 
-The $0$ b-tag $\rightarrow1$ b-tag
+The result of the \alphat and $\Delta\phi *$ closure tests contribute
+to the systematic uncertainty as described in Sec.~\ref{sec:muZnunu}.
+
+Additionally, the $0$ b-tag $\rightarrow1$ b-tag
 tests probe the sensitivity of the transfer factors to the relative
 admixture of events from the $W$ + jets and \ttbar processes by
 varying the number of b-tagged jets within the \mj sample. These tests
@@ -473,20 +457,16 @@ the former uses a $W$-enriched sub-sample (selected by requiring zero
 b-jets) to predict yields in a \ttbar-enriched sub-sample (selected by
 requiring one b-jet).
 
-The aforementioned two b-tag related tests also probe the modelling of
+The aforementioned b-tag related tests also probe the modelling of
 the reconstruction of b-quark jets, although this is addressed more
 precisely by dedicated studies involving varying the uncertainties in
 b-tag scale factors, as the one performed in the previous analysis,
 see for instance \cite{CMS_AN_2013-366}. Until the formula method is
 applied, the b-tag SFs will be applied and their uncertainties
-propagated through to the transfer factors. These variations will be
-taken as an additional contribution to the total normalisation
-systematic uncertainties per (\njet,~\nb,~\scalht) bin. However, based
-on the behaviour observed during Run~1, these are a sub-dominant
-contribution to the total systematic uncertainties.
+propagated through to the transfer factors.
 
-The $\mu^{+}\rightarrow\mu^{-}$ is also employed here to ensure there
-any asymmetries introduced from W polarisation effects are covered by
+The $\mu^{+}\rightarrow\mu^{-}$ tests are also considered, ensuring
+that any asymmetries introduced from W polarisation effects are covered by
 an appropriate systematic.
 
 \subsubsection{Lost lepton uncertainty}
