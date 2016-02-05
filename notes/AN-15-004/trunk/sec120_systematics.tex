@@ -216,14 +216,15 @@ simulation.
 
 The level of statistical consistency between the predicted and
 observed yields of each closure test in the ensemble is inspected. The
-level of agreement between the predicted and observed yields is
+agreement between the predicted and observed yields is
 expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
 the statistical uncertainties on \npre and \nobs. Therefore, the level
 of closure is defined by the statistical significance of a deviation
 in the ratio from zero. A ``set'' of closure tests includes
 statistically independent tests determined as a function of \scalht
 and \njet (according to the \scalht and \njet binning used in the control and signal
-regions). In this way, a set of closure tests allows one to establish
+regions), in most cases integrated over \nb. In this way, a set of closure 
+tests allows one to establish
 the presence of significant biases or dependence on
 \scalht or \njet. Importantly, if statistically significant biases are
 observed, further studies are required to understand and correct for
@@ -259,70 +260,39 @@ is actually achieved or otherwise.
 
 The systematic uncertainties in the transfer factors are considered as
 a ``normalisation'' uncertainty in the SM background predictions,
-which are determined per (\njet,~\nb) category per \scalht bin and are
-assumed to be fully uncorrelated between the different (\njet,~\nb)
-categories and \scalht bins. Further details or the likelihood model
+which are determined per \scalht bin and are
+assumed to be fully correlated between the different (\njet,\nb)
+categories and fully uncorrelated between the different \scalht bins. 
+Further details or the likelihood model
 are provided in Section \ref{sec:likelihood}. The systematic
-uncertainty is estimated by taking the quadrature sum of the weighted
-mean and (square root of) weighted sample variance for the closure
-tests within the given \scalht bin.
+uncertainty is estimated by taking the quadrature sum of the 
+mean and the propagated statistical error for the tests integrated
+over \njet in each \scalht bin.
 
-In order to find ``expected systematics'', \nobs and \npre are
+In order to find ``expected systematics'' from the closure tests, \nobs and \npre are
 determined from the same sample of simulated events (that guarantees
 closure) with statistical uncertainties errors are taken from the
-unweighted and weighted counts, respectively. The expected systematic
-uncertainty is then taken as the weighted mean of the error on the
-ensemble of closure tests. This is an estimator of the expected
-variance, assuming no bias is found in data.
+unweighted and weighted counts, respectively. 
 
 We note the behaviour of the magnitude of the systematic uncertainties
 on the integrated luminosity, which reduce with increasing
 luminosity. This is a reflection of the fully statistical nature of
 the ``systematic'' in the absence of bias.
 
-Several versions of this search have derived a single set of
-process-independent systematic uncertainties as a function of
-(\njet,~\nb,~\scalht) based on a single ensemble of a core set of
-closure tests. 
-
-During the Early Analysis review, an alternative approach was advised,
-which involves splitting the closure tests into different ensembles,
-each specific to a particular process or effect and containing only
-the most relevant closure tests. This allows for the independent
-derivation of systematic errors that is specific to a background
-process.
-
 \subsection{Systematic uncertainties for the \znunu background
 prediction}
 
-\subsubsection{Changes to the transfer factors after simulation
-variation studies}
-
-% \begin{figure}[]
-%   \centering
-%   \subfigure[]{
-%     \includegraphics[width=0.5\textwidth]{figures/btagSFSystematics/Single_Muon_Ewk_Yields_SystematicDown.pdf}
-%   } ~~
-%   \subfigure[]{
-%     \includegraphics[width=0.5\textwidth]{figures/btagSFSystematics/Single_Muon_Ewk_Yields_SystematicUp.pdf}
-%   }
-%   \newline
-%   \subfigure[]{
-%     \includegraphics[width=0.5\textwidth]{figures/btagSFSystematics/Single_Muon_Systematics1D.pdf}
-%   }
-%
-%   \caption{\label{fig:btagSF-syst-singleMu} The percentage change in
-%   transfer factors in the \mj control region in each
-%   $(\njet,\nb,\scalht)$ bin when calculating them with
-%   minus one sigma b-tag scale factors (a) and plus one sigma
-%   b-tag scale factors (b), relative to the nominal scale
-%   factors, as well as the one-dimensional distribution of these
-%   systematic changes over all bins (c), demonstrating the small effect
-%   of this source of systematic on the background prediction.}
-% \end{figure}
-
-\subsubsection{Data-driven tests probing the prediction of the \znunu
+\subsubsection{Uncertainties the prediction of the \znunu
 background with the \mmj control sample}
+
+{\bf Variations on the transfer factors from simulation}
+
+All the MC variations described in Sec~\ref{sec:mc-systematics} are
+carried out for the transfer factors from the \mmj control region to
+the \znunu background prediction. The results are shown in
+Fig.~\ref{mumuZnunuTF}.
+
+{\bf Data-driven systematics}
 
 Closure tests that probe the modelling of the \alphat and
 \bdphi extrapolations in the analysis are also performed. In both
@@ -421,6 +391,15 @@ $\Delta\phi *$ requirement inverted.
 \subsubsection{Tests probing the prediction of the \znunu
 background with the \mj control sample}
 
+{\bf Variations on the transfer factors from simulation}
+
+All the MC variations described in Sec~\ref{sec:mc-systematics} are
+carried out for the transfer factors from the \mj control region to
+the \znunu background prediction. The results are shown in
+Fig.~\ref{muZnunuTF}.
+
+{\bf Data-driven systematics}
+
 The $\mj \rightarrow \mmj$ tests deal with the consistency
 of the prediction of \wej with $\gamma$ + jets, even in the presence
 of contamination from \ttbar. This is important for understanding the
@@ -446,6 +425,15 @@ jets background.
 \subsubsection{Tests probing the prediction of the \znunu
 background with the \gj control sample}
 
+{\bf Variations on the transfer factors from simulation}
+
+All the MC variations described in Sec~\ref{sec:mc-systematics} are
+carried out for the transfer factors from the \gj control region to
+the \znunu background prediction. The results are shown in
+Fig.~\ref{gZnunuTF}.
+
+{\bf Data-driven systematics}
+
 The $\gj \rightarrow \mmj$ tests deal with the
 consistency between the \zee + jets and $\gamma$ + jets samples, which
 is a further check on the validity of using the \gj process to predict
@@ -464,12 +452,14 @@ Appendix~\ref{app:zInvBgControl}.
 \subsection{Systematic uncertainties for the W and \ttbar background
 prediction}
 
-\subsubsection{Changes to the transfer factors after simulation
-variation studies}
+{\bf Variations on the transfer factors from simulation}
 
-\subsubsection{Lost lepton uncertainty}
+All the MC variations described in Sec~\ref{sec:mc-systematics} are
+carried out for the transfer factors from the \mj control region to
+the $W$ + jets and \ttbar background prediction. The results are shown 
+in Fig.~\ref{muTtwTF}.
 
-\subsubsection{Data-driven Tests}
+{\bf Data-driven systematics}
 
 The $0$ b-tag $\rightarrow1$ b-tag
 tests probe the sensitivity of the transfer factors to the relative
@@ -499,6 +489,7 @@ The $\mu^{+}\rightarrow\mu^{-}$ is also employed here to ensure there
 any asymmetries introduced from W polarisation effects are covered by
 an appropriate systematic.
 
+\subsubsection{Lost lepton uncertainty}
 
 \subsection{Additional closure tests as cross checks}
 \label{sec:closureCrossCheck}
