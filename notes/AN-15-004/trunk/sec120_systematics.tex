@@ -470,14 +470,20 @@ The $\mu^{+}\rightarrow\mu^{-}$ tests are also considered, ensuring
 that any asymmetries introduced from W polarisation effects are covered by
 an appropriate systematic.
 
-\subsubsection{Lost lepton uncertainty}
-The W and \ttbar lost lepton background comes from leptons out of detector 
+\subsubsection{Uncertainty on the lost lepton background}
+
+Leptons out of detector 
 acceptance or below the $p_{T}$ threshold, or leptons within detector
 acceptance but not idenfitied properly by lepton ID or isolation
-requirements. The fraction of events associated to the former ($f_{sample}$)
-is calculated from MC for each MC sample. The uncertainties associated 
-with the latter are determined by varying each lepton ID and isolation data/MC
-scale factor uncertainty.
+requirements lead to a W and \ttbar lost lepton background. The
+fraction of events with leptons out of acceptance ($f_{sample}$)
+is calculated from generator truth level information for each MC
+sample. Differences in efficiencies between data and simulation are
+accounted for with POG provided lepton scale
+factors for lepton ID and isolation~\cite{twiki-leptonSF}. The
+uncertainties on the transfer factors associated 
+with these scale factors are determined by varying each of them by
+their associated errors.
 
 The lost lepton background contribution for each category (\njet, \nb, \scalht), to 
 transfer factors is summarised as:
@@ -490,13 +496,13 @@ $N^{GEN}_{sample}$ is the total MC events for the category, $\epsilon_{Tight}$
 and $\epsilon_{Loose}$ are the lepton efficiency for Tight and Loose working 
 point. The variable $y$ is computed for each category. For the numerator, full
 signal selection except the lepton veto to mimic signal region phase space as
-closely as possible. For the denumerator, the full selection for \mj + jets 
+closely as possible. For the denominator, the full selection for \mj + jets 
 control sample is applied.
 
 The variation on the variable $y$ is computed by varying the lepton scale factor
 up and down according to each systematic and statistic uncertainty from lepton
 ID and isolation, according to the POG recommendation. Then the up and down 
-variations are added by quadrature respectively, to give a overall systematic 
+variations are added in quadrature respectively, to give an overall systematic 
 uncertainty. The procedure is repeated separately for muon and electron.
 
 \subsection{Additional closure tests as cross checks}
@@ -536,18 +542,14 @@ These tests are included in the systematic calculation for the W and
 
 %%%%%%%% FIXME PUT IN CLOSURE TEST MATPLOTLIB PLOTS AS WELL
 
-Normalisation systematics are derived from the closure test ensembles,
-described above, based on the current data set, which are summarised
-in Table~\ref{tab:systs}. In the kinematically restricted bins, such
+Normalisation systematics are derived from the MC studies and closure
+test methods as described earlier in this section. The final numbers are summarised
+in Table~\ref{tab:systs}. For the data-driven bins, in the kinematically restricted bins, such
 as those with a high jet multiplicity and low value of \scalht, the
-limited statistics leads to large systematic errors. These bins are
-not used in the analysis. 
-%As a minimum number of events is required for each bin considered in
-%the final stages of the analysis, these large systematic errors are
-%unlikely to be a problem.  
-In the bins populated with a reasonable number of events, the
-systematic errors determined from the closure tests vary from $10$ to
-$40\%$.
+limited statistics leads to large systematic errors. In the bins populated 
+with a reasonable number of events, the
+systematic errors determined from the closure tests vary from $XX$ to
+$XX\%$.
 
 \begin{table}[h!]
   \caption{Systematic uncertainties (percent) in the predictions
