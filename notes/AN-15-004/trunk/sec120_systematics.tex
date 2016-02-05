@@ -470,6 +470,33 @@ that any asymmetries introduced from W polarisation effects are covered by
 an appropriate systematic.
 
 \subsubsection{Lost lepton uncertainty}
+The W and \ttbar lost lepton background comes from leptons out of detector 
+acceptance or below the $p_{T}$ threshold, or leptons within detector
+acceptance but not idenfitied properly by lepton ID or isolation
+requirements. The fraction of events associated to the former ($f_{sample}$)
+is calculated from MC for each MC sample. The uncertainties associated 
+with the latter are determined by varying each lepton ID and isolation data/MC
+scale factor uncertainty.
+
+The lost lepton background contribution for each category (\njet, \nb, \scalht), to 
+transfer factors is summarised as:
+\begin{equation}
+    \label{eq:lostLepTF}
+    y = \frac{\sum_{sample} [ R_{sample} \times f_{sample} \times N^{GEN}_{sample} \times ( 1 - \epsilon_{Loose} ) + ( 1 - f_{sample} ) \times N^{GEN}_{sample} ]}{ \sum_{sample} N^{GEN}_{sample} \times \epsilon_{Tight} \times R_{sample} }
+\end{equation}
+where $R_{sample}$ is the cross section reweighting factor for each sample, 
+$N^{GEN}_{sample}$ is the total MC events for the category, $\epsilon_{Tight}$
+and $\epsilon_{Loose}$ are the lepton efficiency for Tight and Loose working 
+point. The variable $y$ is computed for each category. For the numerator, full
+signal selection except the lepton veto to mimic signal region phase space as
+closely as possible. For the denumerator, the full selection for \mj + jets 
+control sample is applied.
+
+The variation on the variable $y$ is computed by varying the lepton scale factor
+up and down according to each systematic and statistic uncertainty from lepton
+ID and isolation, according to the POG recommendation. Then the up and down 
+variations are added by quadrature respectively, to give a overall systematic 
+uncertainty. The procedure is repeated separately for muon and electron.
 
 \subsection{Additional closure tests as cross checks}
 \label{sec:closureCrossCheck}
