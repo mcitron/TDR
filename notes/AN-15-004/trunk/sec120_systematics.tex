@@ -4,9 +4,10 @@
 
 This section addresses the estimation of systematic uncertainties in
 the estimation of event counts from non-multijet backgrounds. This
-analysis aims to rely as much as possible on the data control samples
-to check for sources of bias in the transfer factors described in
-Sec.~\ref{sec:ewk-method} and derive the associated systematic
+analysis relies on a combination of simulation based studies as well
+as the data control samples
+to check for sources of bias in the transfer factors, described in
+Sec.~\ref{sec:ewk-method}, and derive the associated systematic
 uncertainties. The strategies that are employed to ascertain the
 presence of biases or otherwise, and the procedures used to derive
 systematic uncertainties, are described below.
@@ -26,12 +27,12 @@ uncertainties associated with predictions per (\njet,~\nb,~\scalht)
 bins. Sec.~\ref{sec:mc-systematics} outlines simulation-based studies of the
 effects of potential sources of bias on the transfer factors.
 The use of ``closure tests'' to derive additional, data driven, systematic
-uncertainties are described in detail in Secs.~\ref{sec:bkgdnorm-syst}
-and \ref{sec:syst-from-closure}. The definition of tests geared
+uncertainties are described in detail in Sec.~\ref{sec:closure-tests}. 
+The definition of tests geared
 towards the specific background processes are outlined. The observed level 
 of closure in data
 and the resulting systematic uncertainties, based on control samples
-corresponding to $2.1~\ifb$ of integrated luminosity are shown.
+corresponding to $2.2~\ifb$ of integrated luminosity are shown.
 % Further dedicated closure tests that
 % provide additional cross checks are covered in
 % Sec.~\ref{sec:closureCrossCheck}. 
@@ -55,9 +56,9 @@ and quantify these uncertainties the effect of the transfer factors is
 observed after appropriately varying MC yields based on relevant
 uncertainties. These investigations are presented in this section. 
 
-We consider a wide range of systematic effects arising from
+Wide range of systematic effects are considered, arising from
 uncertainties in jet energy scales, b-tag scale factors, pileup
-reweighting, top $p_T$ reweighting lepton and photon identification, etc. 
+reweighting, top $p_T$ reweighting, etc. 
 On top of the MC studies, additional data-driven systematic 
 uncertainties are derived from closure tests, described in
 Sec.~\ref{sec:closure-tests}.
@@ -81,36 +82,26 @@ integrated yields are fixed.
 
 \subsubsection{Jet energy corrections}
 
-The effect of varying the jet energy scale in
-the \mj and \mmj control regions is investigated.  The energies of
+The effect of varying the jet energy scale across the analysis
+is investigated.  The energies of
 jets used in the analysis are corrected as a function of their \pt and
 $\eta$ via the procedure recommended by the JetMET POG. These
 corrections have an associated uncertainty, which can propagate
 through the analysis.  As the analysis is designed such that bins with
 the same value of \scalht and jet multiplicity in the control regions
-are used to predict the background in the signal region, this analysis
-expects to be protected against many of the effects caused by these jet energy
+are used to predict the background in the signal region, it is
+expected to be protected against many of the effects caused by these jet energy
 scale uncertainties. However, the jet energy scale can still have an
 effect, due to jets moving in and out acceptance (above and below
 $40\gev$).
 
 Full selection, as described in Sec.~\ref{sec:selection}, is required.
-If any control region bin has fewer than $1$ predicted events at
-$1280\ipb$ it is left out of the study.  Pseudo transfer factors are
-calculated in each analysis bin, defined as the number of events in a
-signal region after passing the signal region \alphat cut in a
-particular bin divided by the total number of events in that bin. This
+Transfer factors are
+calculated in each analysis bin. This
 is carried out using the jet energy corrections with their nominal,
 most likely, value and with their minus one sigma, lower bound,
 value. The relative change in these two transfer factors is then
-calculated. For the \mj control region, these values are shown in
-Fig.~\ref{fig:jes-syst-singleMu}. For the \mmj control region, these
-values are shown in Fig.~\ref{fig:jes-syst-doubleMu}.
-
-Overall, the effect of varying the jet energy scale down appears to be
-small. With variations in the pseudo transfer factors being typically
-less than $10\%$. Any larger effects are likely due to statistical
-fluctuations in bins with a small number of events.
+calculated. 
 
 \subsubsection{b-tagging efficiency scale factors}
 
@@ -123,17 +114,13 @@ probability of obtaining a particular jet configuration in data
 and simulation, as determined by the b-tagging efficiencies computed
 in the MC samples and the scale factors measured in data.
 
-Figure ~\ref{fig:btagSF-syst-singleMu} shows the effect on the transfer
-factors in the \mj control region of varying the b-tag scale factors 
-up and down by their corresponding uncertainties. The systematic
-effect is very small, at the percent level or less, and is
-sub-dominant with respect to the systematic errors derived from the 
-closure tests.
+To test this effect the change in the transfer factors is measured
+given upwards and downwards b-tag scale factor variations.
 
 \subsubsection{Pileup reweighting}
 
 As the distribution of pileup events differs between simulation and
-data a reweighting is carried out as described in
+data, a reweighting is carried out as described in
 Sec.~\ref{sec:pileup-reweighting}. There is an uncertainty associated
 with the reweighting factors. The factors are therefore varied based
 on this uncertainty and the effect of the variation included as a
@@ -142,8 +129,9 @@ systematic uncertainty on the transfer factors.
 \subsubsection{Top $p_T$ reweighting}
 
 Variations in the reweighting top $p_{T}$ distribution, as first outlined in 
-Sec.~\ref{sec:SMxs}, are studied and the effect on the transfer
-factors used to determine a systematic uncertainty.
+Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
+uncertainty is taken as the change in transfer
+factors with and without the application of top $p_T$ reweighting.
 
 \subsubsection{QCD contamination}
 
@@ -184,7 +172,7 @@ simulation.
 The level of statistical consistency between the predicted and
 observed yields of each closure test in the ensemble is inspected. The
 agreement between the predicted and observed yields is
-expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
+expressed as the ratio $(\nobs - \npre)/\npre$ while considering 
 the statistical uncertainties on \npre and \nobs. Therefore, the level
 of closure is defined by the statistical significance of a deviation
 in the ratio from zero. A ``set'' of closure tests includes
@@ -193,8 +181,9 @@ and \njet (according to the \scalht and \njet binning used in the control and si
 regions), in most cases integrated over \nb. In this way, a set of closure 
 tests allows one to establish
 the presence of significant biases or dependence on
-\scalht or \njet. Importantly, if statistically significant biases are
-observed, further studies are required to understand and correct for
+\scalht or \njet. If significant biases are
+observed, further studies are carried out to understand and, where
+appropriate, correct for
 these biases. 
 
 Under the assumption of closure for each test of the set,
