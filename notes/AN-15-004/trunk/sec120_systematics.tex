@@ -2,96 +2,54 @@
 \section{Systematic uncertainties in the transfer factors}
 \label{sec:systematics}
 
-This section addresses the estimation of systematic uncertainties in
-the estimation of event counts from non-multijet backgrounds. This
-analysis aims to rely as much as possible on the data control samples
-to check for sources of bias in the transfer factors described in
-Sec.~\ref{sec:ewk-method} and derive the associated systematic
-uncertainties. The strategies that are employed to ascertain the
-presence of biases or otherwise, and the procedures used to derive
-systematic uncertainties, are described below.
+This section addresses the estimation of systematic uncertainties affecting the transfer factors \ref{equ:tf-ratio} 
+for non-multijet backgrounds. 
+These uncertainties will be often referred to as \textit{``normalisation uncertainties''}, 
+as opposed to the \textit{``template uncertainties''} described in Sec.~\ref{sec:syst-on-shape}. 
+The former affect the total number of events in each (\njet,~\nb,~\scalht) bin (integrating over \mht), 
+while the latter encode the limited knowledge on how these events distribute in the \mht dimension.
 
-Two types of systematic uncertainty are considered separately. First,
-we consider ``normalisation'' uncertainties in the predictions of
-background counts in each (\njet,~\nb,~\scalht) bin, integrated over
-\mht, of the signal region. Second, systematic uncertainties
-associated with the \mht templates obtained from simulation for each
-individual (\njet,~\nb,~\scalht) bin are determined from multiple data
-control samples. The determination and validation of the \mht
-templates and their associated uncertainties are described fully in
-Sec.~\ref{sec:syst-on-shape}.
+Two approaches are used to derive uncertainties from specific sources:
+one based on variations in simulation, the other makes use of control samples in data.
 
-This chapter covers in detail the normalisation systematic
-uncertainties associated with predictions per (\njet,~\nb,~\scalht)
-bins. Sec.~\ref{sec:mc-systematics} outlines simulation-based studies of the
-effects of potential sources of bias on the transfer factors.
-The use of ``closure tests'' to derive additional, data driven, systematic
-uncertainties are described in detail in Secs.~\ref{sec:bkgdnorm-syst}
-and \ref{sec:syst-from-closure}. The definition of tests geared
-towards the specific background processes are outlined. The observed level 
-of closure in data
-and the resulting systematic uncertainties, based on control samples
-corresponding to $2.1~\ifb$ of integrated luminosity are shown.
-% Further dedicated closure tests that
-% provide additional cross checks are covered in
-% Sec.~\ref{sec:closureCrossCheck}. 
+When corrections are applied to the simulation, like in the case of b-tag efficiency 
+or jet energy scale, those corrections are varied within their uncertainties and propagated to 
+the trasfer factors. The binning of the analysis is chosen in order to minimise the impact of 
+these systematic sources, which are expected to be sub-dominant.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% MC systs
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This analysis aims to rely as much as possible on the data control samples
+to check for sources of bias in the transfer factors due to potential limitations in
+the simulation modelling. 
+Therefore, along with the MC variations mentioned above, tests are performed 
+in which the number of events in a given data control sample is predicted 
+using events from another data control sample and the corresponding transfer factor built in MC. 
+The agreement between the predicted and observed yields is
+expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
+the statistical uncertainties on \npre and \nobs. Therefore, the level
+of closure is defined by the statistical significance of a deviation
+in the ratio from zero.
+These tests are performed separately for each \nj category, as a function of \scalht. 
+The systematic uncertainty in each \scalht bin is derived by summing in quadrature the ratio 
+defined above with its statistical error, after merging the \nj categories into symmetric and asymmetric topologies. 
+Pairs of \scalht bins are merged when the $\mu\mu$+jets sample is used, in order to gain statistics. 
+Since the uncertainties derived with this approach are statistics in nature, 
+these systematics are considered un-correlated in each \scalht bin and jet topology. 
 
-\subsection{Simulation-based studies of normalisation systematic uncertainties}
-\label{sec:mc-systematics}
+The systematic sources considered, the method used to derive uncertainties and the 
+correlation assumed in the fit is described below.
+A summary of the uncertainties is given in table \ref{tab:systs}.
 
-As described in Secs.~\ref{sec:backgroundmet}, the non-multijet background yields
-per $(\njet,\nb,\scalht)$ bin are estimated through the use of control
-regions and appropriate MC-based transfer factors. This approach aims
-to minimise the sensitivity to simulation mismodelling, as many
-systematic biases are expected to cancel to a large extent in the
-ratios defining the transfer factors. However, residual biases may
-still remain if problems in the simulation are equivalently modelled
-in the numerator and denominator of the transfer factors. To address
-and quantify these uncertainties the effect of the transfer factors is
-observed after appropriately varying MC yields based on relevant
-uncertainties. These investigations are presented in this section. 
-
-We consider a wide range of systematic effects arising from
-uncertainties in jet energy scales, b-tag scale factors, pileup
-reweighting, top $p_T$ reweighting lepton and photon identification, etc. 
-On top of the MC studies, additional data-driven systematic 
-uncertainties are derived from closure tests, described in
-Sec.~\ref{sec:closure-tests}.
-
-The procedure to determine the effect of these sources of systematic
-uncertainties is to construct the transfer factors when varying in
-turn each source by their up and down one sigma uncertainties, and
-express this as a percentage difference relative to the nominal
-transfer factors. These systematics are encoded in the likelihood
-model as shape uncertainties where the parameter is fully correlated
-but with a different magnitude in each \njet,\nb and \scalht bin.
-
-These sources of systematic uncertainty can effect both the
-experimental acceptance of the signal and control regions, as well as
-event migration between analysis bins. 
-%The former is accounted for by cross section corrections derived from
-%sidebands and NNLO calculations. 
-The aim in this case is to assess the relative changes in the transfer
-factors across bins as the variations are performed and the overall
-integrated yields are fixed.
 
 \subsubsection{Jet energy corrections}
-
 The effect of varying the jet energy scale in
 the \mj and \mmj control regions is investigated.  The energies of
 jets used in the analysis are corrected as a function of their \pt and
 $\eta$ via the procedure recommended by the JetMET POG. These
-corrections have an associated uncertainty, which can propagate
-through the analysis.  As the analysis is designed such that bins with
-the same value of \scalht and jet multiplicity in the control regions
-are used to predict the background in the signal region, this analysis
-expects to be protected against many of the effects caused by these jet energy
-scale uncertainties. However, the jet energy scale can still have an
-effect, due to jets moving in and out acceptance (above and below
+corrections have an associated uncertainty, which is propagated through the analysis. 
+As the \scalht and jet multiplicity binning is mirrored in signal and control regions, 
+the effect of jet energy scale on the transfer factor is expected to be small. 
+However, the jet energy scale can still have an
+effect due to jets moving in and out acceptance (above and below
 $40\gev$).
 
 Full selection, as described in Sec.~\ref{sec:selection}, is required.
