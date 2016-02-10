@@ -53,22 +53,12 @@ effect due to jets moving in and out acceptance (above and below
 $40\gev$).
 
 Full selection, as described in Sec.~\ref{sec:selection}, is required.
-If any control region bin has fewer than $1$ predicted events at
-$1280\ipb$ it is left out of the study.  Pseudo transfer factors are
-calculated in each analysis bin, defined as the number of events in a
-signal region after passing the signal region \alphat cut in a
-particular bin divided by the total number of events in that bin. This
+Transfer factors are
+calculated in each analysis bin. This
 is carried out using the jet energy corrections with their nominal,
 most likely, value and with their minus one sigma, lower bound,
 value. The relative change in these two transfer factors is then
-calculated. For the \mj control region, these values are shown in
-Fig.~\ref{fig:jes-syst-singleMu}. For the \mmj control region, these
-values are shown in Fig.~\ref{fig:jes-syst-doubleMu}.
-
-Overall, the effect of varying the jet energy scale down appears to be
-small. With variations in the pseudo transfer factors being typically
-less than $10\%$. Any larger effects are likely due to statistical
-fluctuations in bins with a small number of events.
+calculated. 
 
 \subsubsection{b-tagging efficiency scale factors}
 
@@ -81,17 +71,13 @@ probability of obtaining a particular jet configuration in data
 and simulation, as determined by the b-tagging efficiencies computed
 in the MC samples and the scale factors measured in data.
 
-Figure ~\ref{fig:btagSF-syst-singleMu} shows the effect on the transfer
-factors in the \mj control region of varying the b-tag scale factors 
-up and down by their corresponding uncertainties. The systematic
-effect is very small, at the percent level or less, and is
-sub-dominant with respect to the systematic errors derived from the 
-closure tests.
+To test this effect the change in the transfer factors is measured
+given upwards and downwards b-tag scale factor variations.
 
 \subsubsection{Pileup reweighting}
 
 As the distribution of pileup events differs between simulation and
-data a reweighting is carried out as described in
+data, a reweighting is carried out as described in
 Sec.~\ref{sec:pileup-reweighting}. There is an uncertainty associated
 with the reweighting factors. The factors are therefore varied based
 on this uncertainty and the effect of the variation included as a
@@ -100,8 +86,9 @@ systematic uncertainty on the transfer factors.
 \subsubsection{Top $p_T$ reweighting}
 
 Variations in the reweighting top $p_{T}$ distribution, as first outlined in 
-Sec.~\ref{sec:SMxs}, are studied and the effect on the transfer
-factors used to determine a systematic uncertainty.
+Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
+uncertainty is taken as the change in transfer
+factors with and without the application of top $p_T$ reweighting.
 
 \subsubsection{QCD contamination}
 
@@ -142,7 +129,7 @@ simulation.
 The level of statistical consistency between the predicted and
 observed yields of each closure test in the ensemble is inspected. The
 agreement between the predicted and observed yields is
-expressed as the ratio $(\nobs - \npre)/\npre$ while considering only
+expressed as the ratio $(\nobs - \npre)/\npre$ while considering 
 the statistical uncertainties on \npre and \nobs. Therefore, the level
 of closure is defined by the statistical significance of a deviation
 in the ratio from zero. A ``set'' of closure tests includes
@@ -151,8 +138,9 @@ and \njet (according to the \scalht and \njet binning used in the control and si
 regions), in most cases integrated over \nb. In this way, a set of closure 
 tests allows one to establish
 the presence of significant biases or dependence on
-\scalht or \njet. Importantly, if statistically significant biases are
-observed, further studies are required to understand and correct for
+\scalht or \njet. If significant biases are
+observed, further studies are carried out to understand and, where
+appropriate, correct for
 these biases. 
 
 Under the assumption of closure for each test of the set,
@@ -264,9 +252,9 @@ merged due to the low statistics in the \mmj control sample.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/mu_mumusym_half_fit.pdf}}
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/mu_mumusym_half_fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/mu_mumuasym_half_fit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/mu_mumuasym_half_fit.pdf}} 
     \caption{Closure tests probing the use of the \mj control sample
       to predict the \znunu background for each
       \njet category (open symbols) overlaid on top of the systematic
@@ -295,13 +283,13 @@ relies on the lepton $p_T$ for acceptance) than in the signal region
 (which relies on the neutrino $p_T$ for acceptance). The new closure
 test checks if this leads to a bias in the prediction of the \znunu +
 jets background. This test can be seen in
-Fig.~\ref{figclosureMuPToMuM}.
+Fig.~\ref{fig:closureMuPToMuM}.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/muplus_muminussym__fit.pdf}}
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/muplus_muminussym__fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/muplus_muminusasym__fit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/muplus_muminusasym__fit.pdf}} 
     \caption{Closure tests probing the W polarisation effects that are
     relevant when using the \mj control sample for background
     prediction. These are shown for each
@@ -332,15 +320,13 @@ approach of using \mj and \mmj samples without an \alphat requirement
 to make background predictions in the signal region. The tests
 confront data yields in a \mj  samples with an \alphat
 requirement against predictions determined in a \mj sample with
-the \alphat requirement inverted. As usual, corresponding expectations
-from simulation are obtained to construct the transfer factors
-required to make the predictions.
+the \alphat requirement inverted. 
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/alphaTsym__fit.pdf}}
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/alphaTsym__fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/alphaTasym__fit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/alphaTasym__fit.pdf}} 
     \caption{Closure tests probing the \alphat extrapolation for each
       \njet category (open symbols) overlaid on top of the systematic
       uncertainty estimates used for each of the seven \scalht bins
@@ -387,9 +373,9 @@ $\Delta\phi *$ requirement inverted.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhisym__fit.pdf}}
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/bDPhisym__fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhiasym__fit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/bDPhiasym__fit.pdf}} 
     \caption{Closure tests probing the \bdphi extrapolation for each
       \njet category (open symbols) overlaid on top of the systematic
       uncertainty estimates used for each of the seven \scalht bins
@@ -409,7 +395,7 @@ background with the \mmj control sample}
 All the MC variations described in Sec~\ref{sec:mc-systematics} are
 carried out for the transfer factors from the \mmj control region to
 the \znunu background prediction. The results are shown in
-Fig.~\ref{mumuZnunuTF}.
+Fig.~\ref{fig:mumuZnunuTF}.
 
 \begin{figure}[]
   \centering
@@ -455,7 +441,7 @@ background with the \gj control sample}
 All the MC variations described in Sec~\ref{sec:mc-systematics} are
 carried out for the transfer factors from the \gj control region to
 the \znunu background prediction. The results are shown in
-Fig.~\ref{gZnunuTF}.
+Fig.~\ref{fig:gZnunuTF}.
 
 \begin{figure}[]
   \centering
@@ -497,9 +483,9 @@ ratios. The tests can be seen in Fig.~\ref{fig:closurePhoToMuMu}
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/phot_mumusym_half_fit.pdf}}
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/phot_mumusym_half_fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/phot_mumuasym_half_fit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/phot_mumuasym_half_fit.pdf}} 
     \caption{Closure tests probing the use of the \gj control sample
       to predict the \znunu background for each
       \njet category (open symbols) overlaid on top of the systematic
@@ -520,7 +506,7 @@ prediction}
 All the MC variations described in Sec~\ref{sec:mc-systematics} are
 carried out for the transfer factors from the \mj control region to
 the $W$ + jets and \ttbar background prediction. The results are shown 
-in Fig.~\ref{muTtwTF}.
+in Fig.~\ref{fig:muTtwTF}.
 
 \begin{figure}[]
   \centering
@@ -581,9 +567,9 @@ propagated through to the transfer factors.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/eq0b_eq1b_muonsym__fit.pdf}}
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq0b_eq1b_muonsym__fit.pdf}}
     ~~
-    \subfigure[]{\includegraphics[width=0.45\textwidth]{figures/closureTests/eq0b_eq1b_muonasym__fit.pdf}} 
+    \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/closureTests/eq0b_eq1b_muonasym__fit.pdf}} 
     \caption{Closure tests probing the W and \ttbar admixture through
       b-tag extrapolation are shown for each
       \njet category (open symbols) overlaid on top of the systematic
@@ -634,7 +620,8 @@ The variation on the variable $y$ is computed by varying the lepton scale factor
 up and down according to each systematic and statistic uncertainty from lepton
 ID and isolation, according to the POG recommendation. Then the up and down 
 variations are added in quadrature respectively, to give an overall systematic 
-uncertainty. The procedure is repeated separately for muon and electron.
+uncertainty. The procedure is repeated separately for muon and
+electron. The results can be seen in Fig.~\ref{fig:lostLepton}.
 
 \begin{figure}[]
   \centering
@@ -698,15 +685,15 @@ in Table~\ref{tab:systs}. For the data-driven bins, in the kinematically restric
 as those with a high jet multiplicity and low value of \scalht, the
 limited statistics leads to large systematic errors. In the bins populated 
 with a reasonable number of events, the
-systematic errors determined from the closure tests vary from $XX$ to
-$XX\%$.
+systematic errors determined from the closure tests vary from $1$ to
+$100\%$.
 
 \begin{table}[h!]
   \caption{Systematic uncertainty ranges in the predictions
     of the $\ttbar$, W and $\znunu$  background
     components for each independent source of uncertainty considered.
     The data control samples correspond to an integrated
-    luminosity of 2.1\fbinv. }\\
+    luminosity of 2.1\fbinv. }\\\\
   \label{tab:systs}
   \centering
   \footnotesize
@@ -715,7 +702,7 @@ $XX\%$.
     \hline
     Systematic Source & \multicolumn{4}{c}{Transfer factor} \\
     
-    (\njet,\nb,\scalht) & \mj to \zinv  & \mmj to \zinv & \gj to \zinv & \mj to W and \ttbar   \\
+    (\njet,\nb,\scalht) & \mj to \znunu  & \mmj to \znunu & \gj to \znunu & \mj to W and \ttbar   \\
     \hline
     \alphat and \bdphi closure tests & $0.05-0.3$ & $0.05-0.3$ & - & $0.05-0.3$ \\
     \mj to \mmj closure tests & $0.1-0.25$ & - & - & - \\
