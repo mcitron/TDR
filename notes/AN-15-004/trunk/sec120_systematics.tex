@@ -2,7 +2,8 @@
 \section{Systematic uncertainties in the transfer factors}
 \label{sec:systematics}
 
-This section addresses the estimation of systematic uncertainties affecting the transfer factors \ref{equ:tf-ratio} 
+This section addresses the estimation of systematic uncertainties
+affecting the transfer factors (equation~\ref{equ:tf-ratio})
 for non-multijet backgrounds. 
 These uncertainties will be often referred to as \textit{``normalisation uncertainties''}, 
 as opposed to the \textit{``template uncertainties''} described in Sec.~\ref{sec:syst-on-shape}. 
@@ -10,10 +11,10 @@ The former affect the total number of events in each (\njet,~\nb,~\scalht) bin (
 while the latter encode the limited knowledge on how these events distribute in the \mht dimension.
 
 Two approaches are used to derive uncertainties from specific sources:
-one is based on variations in simulation (Sec. ~\ref{sec:mc-variations}), the other makes use of control samples in data (Sec. ~\ref{sec:closure-tests}).
+one is based on variations in simulation (Sec.~\ref{sec:mc-variations}), the other makes use of control samples in data (Sec.~\ref{sec:closure-tests}).
 Each systematic source considered in the analysis is described below, 
 together with the method used to derive the corresponding uncertainties and the correlation model. 
-A summary of the all the uncertainties is given in table \ref{tab:systs}.
+A summary of the all the uncertainties is given in Tab.~\ref{tab:systs}.
 
 
 
@@ -24,11 +25,13 @@ A summary of the all the uncertainties is given in table \ref{tab:systs}.
 \label{sec:mc-variations}
 A set of corrections are applied to the MC samples in order to improve the modelling 
 of detector effects (b-tagging efficency, jet energy response, etc.) 
-as well as the simulation of the kinematics of the processes (top $p_{T}$). 
-These corrections are described in Sec. ~\ref{sec:datasets}. \\
+as well as the simulation of the kinematics of certain processes (top $p_{T}$). 
+These corrections are described in Sec.~\ref{sec:datasets}. \\
 In this section the effect of varying these corrections within their uncertainties is 
 presented, focusing on the relative change in the 4 type of trasfer factors which are of interest 
-for the background prediction, namely: $\mj \rightarrow \znunu$, $\mmj \rightarrow \znunu$, $\gj \rightarrow \znunu$ and $\mj \rightarrow \mathrm{tt+W}$. 
+for the background prediction, namely: $\mj \rightarrow (\znunu)$,
+$\mmj \rightarrow (\znunu)$, $\gj \rightarrow (\znunu)$ and $\mj
+\rightarrow \mathrm{\ttbar+W}$. 
 The binning of the analysis is chosen in order to minimise the impact of 
 these systematic sources, which are expected to be sub-dominant. 
 However, they are propagated to the final results, taking into account correlations and bin migration effects.
@@ -45,10 +48,9 @@ As the \scalht and jet multiplicity binning is mirrored in signal and control re
 the effect of jet energy scale on the transfer factor is expected to be small. 
 However, the jet energy scale can still have an
 effect due to jets moving in and out acceptance (above and below
-$40\gev$).\\
-The relative change in the trasfer factors is presented as a function of \scalht and jet category 
+$40\gev$). The relative change in the trasfer factors is presented as a function of \scalht and jet category 
 in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
-%FIXME: add representative numbers
+The changes are typically in the range of $1-15\%$.
 
 
 \begin{figure}[]
@@ -60,7 +62,8 @@ in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_jec_muToZinv} The relative change in the $\mj \rightarrow \znunu$ transfer
+  \caption{\label{fig:tfSyst_jec_muToZinv} The relative change in the
+  $\mj \rightarrow (\znunu)$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -75,7 +78,8 @@ in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_jec_mumuToZinv} The relative change in the $\mmj \rightarrow \znunu$ transfer
+  \caption{\label{fig:tfSyst_jec_mumuToZinv} The relative change in
+  the $\mmj \rightarrow (\znunu)$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -90,7 +94,8 @@ in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_jec_gjToZinv} The relative change in the $\gj \rightarrow \znunu$ transfer
+  \caption{\label{fig:tfSyst_jec_gjToZinv} The relative change in the
+  $\gj \rightarrow (\znunu)$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -105,7 +110,8 @@ in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
+  $\mj \rightarrow \mathrm{\ttbar+W}$ transfer
   factors when varying JEC in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -126,12 +132,13 @@ probability of obtaining a particular jet configuration in data
 and simulation, as determined by the b-tagging efficiencies computed
 in the MC samples and the scale factors measured in data.
 Since no extrapolation is performed in the background prediction across different 
-\nb multiplicities, the analysis is expected to be robust against variation in the 
+\nb  multiplicities, the analysis is expected to be robust against variation in the 
 b-tag efficiency. 
 To test this effect the change in the transfer factors is measured
 by varying the scale factors within their uncertainties. 
 The relative change in the trasfer factors is presented as a function of \scalht and jet category 
 in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsf_muToTtw}.
+They are typically in the range of $1-5\%$.
 
 
 \begin{figure}[]
@@ -143,7 +150,8 @@ in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsf_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_bsf_muToZinv} The relative change in the $\mj \rightarrow \znunu$ transfer
+  \caption{\label{fig:tfSyst_bsf_muToZinv} The relative change in the
+  $\mj \rightarrow (\znunu)$ transfer
   factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -158,7 +166,8 @@ in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsf_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/mumu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_bsf_mumuToZinv} The relative change in the $\mmj \rightarrow \znunu$ transfer
+  \caption{\label{fig:tfSyst_bsf_mumuToZinv} The relative change in
+  the $\mmj \rightarrow (\znunu)$ transfer
   factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -173,7 +182,8 @@ in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsf_muToTtw}.
     \includegraphics[width=0.5\textwidth]{figures/mcSystematics/Zinv/gj/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
-  \caption{\label{fig:tfSyst_bsf_gjToZinv} The relative change in the $\gj \rightarrow \znunu$ transfer
+  \caption{\label{fig:tfSyst_bsf_gjToZinv} The relative change in the
+  $\gj \rightarrow (\znunu)$ transfer
   factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
@@ -233,15 +243,18 @@ A systematic uncertainty of 2\% on the muon trigger efficiency is taken.
 It is doubled with respect to the recommendations from the Muon POG, because the latter is derived using the 
 ``OR'' of the \verb!HLT_IsoMu20! and \verb!HLT_IsoTkMu20!, while the analysis makes use of the \verb!HLT_IsoMu20! path only. 
 A ~1\% systematic is propagated for the ``tight'' muon selection. 
-This uncertainty are taken as correlated between signal and control regions. \\
-Systematic uncertainties of 1\% and 5\% are assigned to the efficiency of the muon and electron veto working point efficiency and taken as correlated across all the signal region bins. \\
-Data/MC lepton scale factors have negligible statistical uncertainties. \\
+This uncertainty are taken as correlated between signal and control regions. 
+
+Systematic uncertainties of 1\% and 5\% are assigned to the efficiency of the muon and electron veto working point efficiency and taken as correlated across all the signal region bins. 
+Data/MC lepton scale factors have negligible statistical uncertainties. 
 The up and down variations are added in quadrature respectively. 
 The procedure is repeated separately for muons and
 electrons. 
 
 The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer factors 
-is presented in Fig. ~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}.
+is presented in Fig.
+~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
+total change is typically in the range $2-5\%$
 
 \begin{figure}[]
   \centering
@@ -269,10 +282,12 @@ is presented in Fig. ~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muTo
 \subsubsection*{Top $p_T$ reweighting}
 \label{sec:tfSyst_topPt}
 
-Variations in the reweighting top $p_{T}$ distribution, as first outlined in 
+Variations in the reweighting of top $p_{T}$ distribution, as first outlined in 
 Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
-uncertainty on this correction is taken as the size of the correction itself. \\
-The relative change in transfer factors is presented in Fig. ~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}.
+uncertainty on this correction is taken as the size of the correction itself. 
+The relative change in transfer factors is presented in Fig.
+~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
+variation is typically in the range $0-15\%$.
 
 \begin{figure}[]
   \centering
@@ -356,10 +371,11 @@ using the photon control region, described in Sec. ~\ref{sec:tfSyst_ZGratio}.
 \label{sec:tfSyst_pu}
 
 Events in simulation are reweighted in order to match the distribution 
-of primary vertex multiplicity observed in data, as described in Sec. ~\ref{sec:pileup-reweighting}.
+of the primary vertex multiplicity observed in data, as described in Sec. ~\ref{sec:pileup-reweighting}.
 A systematic uncertainty is derived by propagating 
-the 5\% uncertainty on the minimum bias cross section used in the reweighting procedure. \\
-The relative change in the transfer factors under this variation is small (~1\%)
+the 5\% uncertainty on the minimum bias cross section used in the reweighting procedure. 
+The relative change in the transfer factors under this variation is
+small (\~1-5\%)
 and shown in each analyis bin in Fig. ~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tfSyst_pu_muToTtw}.
 
 \begin{figure}[]
@@ -650,11 +666,14 @@ The uncertainty derived is therefore driven by the limited statistics available 
     Z/$\gamma$ ratio & data-driven tests & - & - & $0.1-0.3$ & - & un-correlated across \scalht/jet top. \\
     W/\ttbar admixture & data-driven tests & - & - & - & $0.05-1.0$ & un-correlated across \scalht/jet top. \\
     W polarisation & data-driven tests & $0.05-0.5$ & - & - & $0.05-0.5$ & un-correlated across \scalht/jet top. \\
-    Jet energy scale & MC variations & $<0.1$ & $<0.1$ & $<0.1$ & $<0.1$ & fully correlated \\
-    B-tagging efficiency & MC variations & $<0.05$ & $<0.02$ & $<0.02$ & $0.02-0.03$ & fully correlated \\
-    Pileup weights & MC variations & $0.01-0.02$  & $0.01-0.02$ & $0.01-0.02$ & $0.01-0.02$ & fully correlated \\
-    Top $p_{T}$ weights & MC variations & $<0.15$  & $<0.05$ & - & $<0.1$ & fully correlated \\
-    Lepton selection & MC variations & - & - & - & $0.01-0.03$ & fully correlated \\
+    Jet energy scale & MC variations & $<15\%$ & $<10\%$ & $<15\%$ &
+    $<15\%$ & fully correlated \\
+    B-tagging efficiency & MC variations & $<5\%$ & $<2\%$ & $<2\%$
+    & $<5\%$ & fully correlated \\
+    Pileup weights & MC variations & $<6\%$ & $<4\%$ & $<3\%$ & $<10\%$ & fully correlated \\
+    Top $p_{T}$ weights & MC variations & $<20\%$  & $<4\%$ & - &
+    $<5\%$ & fully correlated \\
+    Lepton selection & MC variations & - & - & - & $2-5\%$ & fully correlated \\
     \hline
     \hline
   \end{tabular}
