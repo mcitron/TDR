@@ -25,7 +25,7 @@ A summary of the all the uncertainties is given in table \ref{tab:systs}.
 A set of corrections are applied to the MC samples in order to improve the modelling 
 of detector effects (b-tagging efficency, jet energy response, etc.) 
 as well as the simulation of the kinematics of the processes (top $p_{T}$). 
-These corrections are described in Sec. ~\ref{}. \\
+These corrections are described in Sec. ~\ref{sec:datasets}. \\
 In this section the effect of varying these corrections within their uncertainties is 
 presented, focusing on the relative change in the 4 type of trasfer factors which are of interest 
 for the background prediction, namely: $\mj \rightarrow \znunu$, $\mmj \rightarrow \znunu$, $\gj \rightarrow \znunu$ and $\mj \rightarrow \mathrm{tt+W}$. 
@@ -35,6 +35,7 @@ However, they are propagated to the final results, taking into account correlati
 
 
 \subsubsection*{Jet energy scale}
+\label{sec:tfSyst_jec}
 The effect of varying the jet energy scale in
 the \mj and \mmj control regions is investigated.  The energies of
 jets used in the analysis are corrected as a function of their \pt and
@@ -115,6 +116,7 @@ in Fig. ~\ref{fig:tfSyst_jec_muToZinv}-\ref{fig:tfSyst_jec_muToTtw}.
 
 
 \subsubsection*{B-tagging efficiency}
+\label{sec:tfSyst_btag}
 Scale factors provided by the BTV POG are applied to the MC samples
 to correct for differences in the b-tagging efficiencies and 
 misidentifications between simulation and data. The method employed is
@@ -197,6 +199,7 @@ in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsf_muToTtw}.
 
 
 \subsubsection*{Lepton trigger/identification/isolation efficiency}
+\label{sec:tfSyst_lepton}
 
 Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
 acceptance but not idenfitied properly by lepton identification or isolation
@@ -264,6 +267,7 @@ is presented in Fig. ~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muTo
 
 
 \subsubsection*{Top $p_T$ reweighting}
+\label{sec:tfSyst_topPt}
 
 Variations in the reweighting top $p_{T}$ distribution, as first outlined in 
 Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
@@ -332,6 +336,7 @@ The relative change in transfer factors is presented in Fig. ~\ref{fig:tfSyst_to
 
 
 \subsubsection*{QCD contamination}
+\label{sec:tfSyst_qcdCont}
 
 A check has also been performed on the systematic effect on the
 background prediction due to QCD contamination in the control samples,
@@ -343,11 +348,12 @@ This preliminary study suggests that effect from QCD
 contamination in the \gj control region is small compared 
 to the total uncertainty assigned to transfer factors. 
 This systematic source is covered anyway in the data-driven study  
-using the photon control region, described in Sec. ~\ref{}.
+using the photon control region, described in Sec. ~\ref{sec:tfSyst_ZGratio}.
 
 
 
 \subsubsection*{PU reweighting}
+\label{sec:tfSyst_pu}
 
 Events in simulation are reweighted in order to match the distribution 
 of primary vertex multiplicity observed in data, as described in Sec. ~\ref{sec:pileup-reweighting}.
@@ -445,6 +451,7 @@ these systematics are considered un-correlated in each \scalht bin and jet topol
 
 
 \subsubsection*{Extrapolation in \alphat and \bdphi}
+\label{sec:tfSyst_alphaT}
 The modelling of the \alphat and
 \bdphi extrapolations are also tested with dedicated tests in data. 
 In both cases, it is checked that events with genuine \met found in the core
@@ -485,6 +492,7 @@ taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetr
 
 
 \subsubsection*{Modelling of the W/Z ratio}
+\label{sec:tfSyst_WZratio}
 To validate the use of \wmj and \ttbar dominated \mj events to predict the \znunu
 background, tests are performed in data using single-muon and double-muon control regions. 
 The events in the \mj control are used to predict events in the \mmj control regions, 
@@ -516,6 +524,7 @@ taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetr
 
 
 \subsubsection*{Modelling of the W/Z acceptance due to polarisation effects}
+\label{sec:tfSyst_Wpol}
 A data-driven test is introduced to check the modelling of the W polarisation in simulation. 
 In this study, carried on using events in the single-muon control region, $\mu^{+}$ events 
 are used to predict $\mu^{-}$ events, using transfer factor built in MC. 
@@ -558,6 +567,7 @@ taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetr
 
 
 \subsubsection*{Modelling of the Z/$\gamma$ ratio}
+\label{sec:tfSyst_ZGratio}
 To validate the use of \gj events to predict the \znunu
 background, tests are performed in data using the photon and double-muon control regions. 
 The events in the \gj control are used to predict events in the \mmj control regions, 
@@ -589,13 +599,14 @@ taken as un-correlated per each \scalht bin and jet topology (symmetric/asymmetr
 
 
 \subsubsection*{Modelling of the W/\ttbar admixture}
+\label{sec:tfSyst_WttAd}
 The $0$ b-tag $\rightarrow1$ b-tag data-driven tests in the \mj control region 
 probe the sensitivity of the transfer factors to the relative
 admixture of events from the $W$ + jets and \ttbar processes, 
 since they utilise a W-eniched sample to predict a \ttbar-enriched sample. 
 These tests indirectly probe also the modelling of the b-tagging efficiency, 
 although this systematic effect is expected to be smaller and is already addressed 
-by the dedicated study presented in Sec. ~\ref{}.
+by the dedicated study presented in Sec. ~\ref{sec:tfSyst_btag}.
 These tests are believed to give a conservative uncertainty, 
 as the admixture changes little between the \mj sample and the signal region, 
 given that no extrapolation between different b-tag multiplicities is performed 
