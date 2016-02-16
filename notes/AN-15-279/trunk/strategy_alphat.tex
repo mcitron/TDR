@@ -1,8 +1,6 @@
 \section{Analysis Strategy and the \alphat variable}
 
-The goal of this RA1 DM search is to be sensitive to a large range of potential DM models. The guiding principles are low thresholds, maximal coverage, robustness in early data and negligible QCD multijet backgrounds.
-
-Approximate kinematic thresholds of this analysis are:
+The goal of the RA1 analsyis is to be sensitive to a large a large range of potential DM plus jets models. The guiding principles are low kinematic thresholds, optimised coverage, robustness against systematic effects  and negligible QCD multijet backgrounds contamination. The analysis therefore uses only basic kinematic variables and prefer the used of $H^{miss}_\textrm{T}$ over \etmiss. Because the data taking is also seeded via dedicated trigger utilizing the main kinematic variables kinematic tresholds are as low as:
 
 \begin{itemize}
    \item  $H_\textrm{T}>200$~GeV
@@ -70,7 +68,26 @@ understand the relationship between \alphat and the ratio \mht/\scalht:
   \frac{\mht}{\scalht} \, = \, \sqrt{ 1 - \frac{1}{4 \cdot \alphat^2} }
 \end{equation}
 
-For reference, under the assumption of $\dht = 0$, the values of
-$\alphat = 0.55$, 0.60, and 0.65 map onto values of the ratio
-$\mht/\scalht = 0.42$, 0.55, and 0.64.
+For reference, under the assumption of $\dht = 0$, the values of $\alphat = 0.55$, 0.60, and 0.65 map onto values of the ratio
+$\mht/\scalht = 0.42$, 0.55, and 0.64. The \alphat is shown in Fig.~\ref{fig:strategy_alphaT}.
+
+
+\begin{figure}
+    \begin{center}
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/strategy/alphaT_v4.pdf}} ~~
+        \caption{\alphat~variable for the 2015 $13$~TeV data set of $2.2$\ifb}
+        \label{fig:strategy_alphaT}
+    \end{center}
+\end{figure}
+
+
+Another dedicated variable used is 'biased $\Delta \Phi$' (\bdphi) which is the minimal opening angle between any jet and the \mht vector without considering the tagged jet. This variable is more robust against mis-measurements of the jets compared to the traditional $\temrm{min}\Delta \Phi$ variable and leads to shorter tails as shown in Fig.~\ref{fig:strategy_bdphi}.
+
+ \begin{figure}
+    \begin{center}
+        \subfigure {\includegraphics[width=0.5\textwidth]{figures/strategy/bDPhi_v4.pdf}}
+        \caption{\bdphi~variable for the 2015 $13$~TeV data set of $2.2$\ifb}
+        \label{fig:strategy_bdphi}
+    \end{center}
+\end{figure}
 
