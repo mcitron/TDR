@@ -9,10 +9,7 @@ simulated samples for background processes are given in Ref.~\cite{alphaTnote}. 
 
 \subsection{Simulation}
 
-The generic signature of dark matter pair production in collider is missing
-transverse momentum from the dark matter along with recoiling energetic visible
-particles that are used to trigger the event. First analyses using contact 
-operators~\cite{Goodman:2010ku} in effective field theories (EFTs) calculated for a set of possible
+The generic signature of dark matter pair production in collider is missing transverse momentum from the dark matter along with recoiling energetic visible particles that are used to trigger the event. First analyses using contact operators~\cite{Goodman:2010ku} in effective field theories (EFTs) calculated for a set of possible
 couplings were used to interpret dark matter searches. Experimental limits using
 monojet final states have been published using 7 and 8 TeV LHC 
 data~\cite{Chatrchyan:2012me,ATLAS:2012ky}. 
@@ -25,33 +22,13 @@ searches in a relatively model-independent way~\cite{Buchmueller:2014yoa}.
 The \alphat analysis is sensitive to DM production in association with both
 light ($g,~u,~d,~c,~s$) and heavy flavour ($b,~t$) jets. 
 
-The simplified models we consider here correspond to the  ATLAS-CMS-Theory DM Forum 
-for early LHC Run~2 searches. These samples populate key regions of the
-{\mphi-\mchi} mass plane, as shown in Tab.~\ref{tab:DMgrid}
+The simplified models have been procuded in accordance to to the ATLAS-CMS-Theory DM Forum. The samples have been centrally produced using the \textsc{POWHEG} generator
+we produce samples binned in mediator mass $1 GeV \le \mphi\le 10000$ GEV and dark matter masses $\mchi$ between $1 \ge \mchi < 400$ GeV. We simulate (vector-)axial (A, AV)and (pseudo-)scalar (PS, S)
+couplings for the mediator and couplings to light quarks only or heavy quarks ($b, t$). The couplings of the mediator $\Phi$ to the dark matter particle $\chi$ $\gdm$ and the Standard Model $\gsm$ are assumed to be $\gdm=\gsm=1.0$ for scalar type couplings and $\gdm=1.0,~\gsm=0.25$ for (A)V interactions. The width is calculated using the minimal widht assumption, e.g. no decay to other particles is allowed.
 
-\begin{table}[h!] \centering \begin{tabular}{l|llllllllll}\hline \hline
-$m_\textrm{DM}$  & \multicolumn{10}{c}{$m_\Phi$}
-\\ \hline 1    & 10 & 20 & 50 & 100 & 200 & 300 & 500 & 1000 & 2000 & 10000 \\
-10   & 10 & 15 & 50 & 100 &     &     &     &      &      & 10000 \\ 50   & 10 &
-& 50 & 95  & 200 & 300 &     &      &      & 10000 \\ 150  & 10 &    &    &
-& 200 & 295 & 500 & 1000 &      & 10000 \\ 500  & 10 &    &    &     &     &
-& 500 & 995  &      & 10000 \\ 1000 & 10 &    &    &     &     &     &     &
-1000 & 1995 & 10000\\ \hline \hline \end{tabular} \caption{Benchmark dark
-matter and mediator masses. The parameter space follows the
-DM Forum recommendations~\cite{Abercrombie:2015wmb}. Points are chosen roughly
-equidistant on a logarithmic scale. Points on the on-shell diagonal are always 
-chosen to be 5 GeV away from the threshold to avoid numerical instabilities in 
-the event generation.} \label{tab:DMgrid} \end{table}
-
-
-\dub
-
-Centrally produced signal samples for (vector-)axial and (pseudo-)scalar with light and heavy quarks in the final states are used.
-These samples are given in Tables~\ref{datasets_dm_vector}-~\ref{tab:datasets_dm_ttbar_pseudoscalar}. In these data sets, in addition to the main interaction, each
-event contains on average 20 minimum bias interactions which simulate
-multiple interactions per bunch-crossing (in-time pileup). The expected
-detector signal from previous or following bunch crossings (out-of-time
-pileup) with 25ns bunch spacing is overlapped.
+%Centrally produced signal samples for (vector-)axial and (pseudo-)scalar with light and heavy quarks in the final states are used.
+A subset of the samples used is given in Tables~\ref{datasets_dm_vector}-~\ref{tab:datasets_dm_ttbar_pseudoscalar}. In these data sets, in addition to the main interaction, each
+event contains on average 20 minimum bias interactions which simulate multiple interactions per bunch-crossing (in-time pileup). The expected detector signal from previous or following bunch crossings (out-of-time pileup) with 25ns bunch spacing is overlapped.
 
 \begin{table}[!p]
  \centering
@@ -119,5 +96,5 @@ pileup) with 25ns bunch spacing is overlapped.
 
 
 
-All samples are corrected to reproduce the pileup interactions per bunch crossing observed in data
+
 
