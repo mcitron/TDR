@@ -184,3 +184,62 @@ Expected limits obtained for DM+$t\bar{t}$ are given in Tables~\ref{limits_DMbbP
 
 Appendix~\ref{sec:dm_checklist} contains additional validation for the \DMtt and \DMtt DM samples like signal and background yields for the most sensitive bins and sensitivities.
 
+
+
+
+\subsection{Delphes models}
+
+In a multidimensional analysis such as ours, it is not straightforward to
+perform a reweighting of the coarse DM Forum grid to interpolate limits
+across the entire plane. In addition, the 50,000 events generated per sample
+provides insufficient statistics in certain analysis bins, which can lead to
+erratic large-weight events inflating the sensitivity to these models.
+
+Hence, we plan to utilise a finer grid of samples ($\sim200$ mass points per
+model) with approximately 10 times more statistics, in order to aid the
+interpolation of limits in the mass plane. These are produced privately using the same 
+configurations in POWHEG-BOX as the CMS central samples. Pythia 8 is then used
+for parton showering and hadronisation. Finally, the detector simulation is 
+performed in Delphes 3 with a CMS detector card.
+
+The validation of our Delphes-based production is shown in Fig.~\ref{fig:delphesVSofficial}. We
+obtain very good agreement in all major analysis variables. Additionally, we
+also obtain consistent limits -- for a pseudoscalar sample with \mchi$=50$~GeV
+and \mphi$=1000$~GeV, generated with the same number of events and generator
+cuts as the corresponding central sample, we obtain an upper limit on the
+signal strength of 1.11 (for a `dummy' cross section of 10 pb), compared to 1.07 
+for the central sample.
+
+\begin{figure}
+    \begin{center}
+        \subfigure {\includegraphics[width=0.33\textwidth]{figures/DMplots/outputDelphesVsOfficial/athist.pdf}} ~~
+        \subfigure {\includegraphics[width=0.33\textwidth]{figures/DMplots/outputDelphesVsOfficial/mhthist.pdf}} ~~
+        \subfigure {\includegraphics[width=0.33\textwidth]{figures/DMplots/outputDelphesVsOfficial/njets.pdf}} ~~
+        %\subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/ht40_sym.pdf}} \\
+        %\subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/mht40_pt_sym.pdf}} ~~
+        %\subfigure {\includegraphics[width=0.5\textwidth]{figures/distributions/DoubleMu/nBJetMedium40_sym.pdf}} \\
+        \caption{Comparison of key analysis variables between Delphes and official CMS samples for a pseudoscalar model with \mchi$=50$~GeV and \mphi$=1000$~GeV}
+        \label{fig:delphesVSofficial}
+    \end{center}
+\end{figure}
+
+We show cross sections, yields, efficiencies, limits, and most sensitive 
+categories for the four Delphes models in 
+% FIXME: Tables~\ref{summary_ScorpionDMV}-\ref{msb_Scorpion_DMP}.
+Tables~\ref{tab:summary_ScorpionDMA}-\ref{tab:msb_ScorpionDMP}.
+
+%\input{tables/DM/summaryTableAN_ScorpionDMV_xs10_2p2fb_wMCStat_try2_exp_reduced}
+\input{tables/DM/summaryTableAN_ScorpionDMA_xs10_2p2fb_wMCStat_try2_exp_reduced}
+\input{tables/DM/summaryTableAN_ScorpionDMS_xs10_2p2fb_wMCStat_try2_exp_reduced}
+\input{tables/DM/summaryTableAN_ScorpionDMP_xs10_2p2fb_wMCStat_try2_exp_reduced}
+
+%\input{tables/DM/limits_ScorpionDMV_xs10_2p2fb_wMCStat_try2_exp}
+\input{tables/DM/limits_ScorpionDMA_xs10_2p2fb_wMCStat_try2_exp}
+\input{tables/DM/limits_ScorpionDMS_xs10_2p2fb_wMCStat_try2_exp}
+\input{tables/DM/limits_ScorpionDMP_xs10_2p2fb_wMCStat_try2_exp}
+
+%\input{tables/DM/msb_ScorpionDMV_xs10_2p2fb_wMCStat_try2_reduced}
+\input{tables/DM/msb_ScorpionDMA_xs10_2p2fb_wMCStat_try2_reduced}
+\input{tables/DM/msb_ScorpionDMS_xs10_2p2fb_wMCStat_try2_reduced}
+\input{tables/DM/msb_ScorpionDMP_xs10_2p2fb_wMCStat_try2_reduced}
+
