@@ -91,6 +91,7 @@ bunch spacing is overlapped.
 \clearpage
 
 \subsection{Pileup reweighting}
+\label{sec:pileup-reweighting}
 
 The distribution of the numbers of the pileup interactions in the
 simulated events is different from that in the data; the simulated
@@ -144,14 +145,21 @@ reweighted simulated events.} \label{f044_corr_nTrueInt_data_mc_norm}
 
 
 \subsection{Cross sections for SM samples}
+\label{sec:SMxs}
 Several MC samples of individual SM processes are binned according to a generator level quantity, such as the partonic \HT or bosonic \PT.
 This analysis chooses to use samples binned in partonic \HT, for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets) and $\hat{P_{T}}$
 for only the QCD sample.
 These binned samples are provided with LO cross sections. The \kfactors required to go from LO to NNLO cross section are typically determined using corresponding
 inclusive samples applied to each \HT binned sample.
 Further studies can provide additional corrections to the cross sections, which can prove important to the closure test procedures described in
-Section \ref{sec:closure-tests-desc}. As can be seen in Section \ref{sec:sideband_corrections}, residual cross section
+Section \ref{sec:closure-tests}. As can be seen in Section \ref{sec:sideband_corrections}, residual cross section
 corrections are measured using data in sidebands designed to enriched specific processes.
+
+In the $8\tev$ LHC results the shape of the top quark $p_{T}$ spectrum
+was found to differ between simulation and data. A reweighting is
+therefore applied to MC events that contain a generated top. The value of
+this correction is provided from the $8\tev$ results, as described in
+\cite{twiki-TopPtReweighting}.
 
 Following an inclusive selection, the distribution of the MC samples with respect to the binning variable $H_{T}^{parton}$ are shown in Fig.~\ref{fig:Lhe_Ht}, with
 also the $\hat{P_{T}}$ distribution for QCD.
@@ -160,7 +168,7 @@ As stated above, the distributions shown in Fig.~\ref{fig:Lhe_Ht} follow an incl
 from MC allows to merge the binned generator level variable, and exhibits a smooth shape with respect to the cross sections in question.
 
 A more in depth, data-driven investigation of the cross sections is shown in Sec.~\ref{sec:sideband_corrections}. Of which, an important point to note is that
-the corrections to the cross sections, derived with the data sidebands are only relevant for data/MC comparison plots and the suite of closure tests defined in Section \ref{sec:closure-tests-desc}.
+the corrections to the cross sections, derived with the data sidebands are only relevant for data/MC comparison plots and the suite of closure tests defined in Section \ref{sec:closure-tests}.
 
 \begin{figure}[!h]
   \begin{center}
