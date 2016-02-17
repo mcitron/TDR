@@ -8,7 +8,7 @@ state. In events with low counts of jets and b-quark jets, the largest
 backgrounds with genuine \ETmiss are from the associated production of
 W or Z bosons with jets, followed by either the weak decays \znunu or
 \wtaunu, where the $\tau$ decays hadronically and is identified as a
-jet; or by leptonic decays that are not rejected by the dedicated
+jet, or by leptonic decays that are not rejected by the dedicated
 electron or muon vetoes. The veto of events containing isolated tracks
 is efficient at further suppressing these backgrounds as well as the
 single-prong hadronic decay of the tau lepton. At higher jet and
@@ -26,15 +26,17 @@ distribution functions (PDF). The description of the detector response
 is implemented using the \GEANTfour~\cite{geant} package. The
 simulated samples are normalised using the most accurate cross section
 calculations currently available, usually with
-next-to-next-to-leading-order (NNLO) accuracy. To model the effects of
-pileup, the simulated events are generated with a nominal distribution
+next-to-leading-order (NLO) accuracy (NNLO in the case of \ttbar). \\
+Corrections to the cross sections are derived for \gj, W+jets, Z+jets and \ttbar 
+using sidebands in data.
+To model the effects of pileup, the simulated events are generated with a nominal distribution
 of pp interactions per bunch crossing and then reweighted to match the
 pileup distribution as measured in data.
 
 The method to estimate the non-multijet backgrounds in the signal
 region relies on the use of transfer factors, which are constructed
-per bin (in terms of \njet, \nb, and \scalht) per data control
-sample. The transfer factors are determined from the simulated event
+per bin (in terms of \njet, \nb, and \scalht), per data control
+sample and per background. The transfer factors are determined from the simulated event
 samples and are ratios of expected yields in the corresponding bins of
 the signal region and control samples. The transfer factors are used
 to extrapolate from the event yields measured in data control samples
@@ -87,75 +89,59 @@ contribution as well as the other dominant SM processes, \ttbar and W
 boson production. Residual contributions from processes such as
 single-top-quark, diboson, and Drell-Yan production are also included.
 
-\begin{table}[thp!]
-  \caption{%CMS {\it Preliminary}, $\mathcal{L}_{\mathrm{int}} =
-    % 2.2\fbinv$, $\sqrt{s} = 13\TeV$. 
-    % \newline
+\begin{table}[h!]
+  \caption{
     Systematic uncertainties (percent) in the estimates of the
-    normalisation of the SM background components as a function of
-    \njet, as determined from ensembles of closure tests based on
-    multiple data control samples. The quoted ranges correspond to the 
-    variations determined across the \nb and \scalht bins of a given \njet
-    category. The additional contributions listed at the foot of the
-    table are added in quadrature to the \njet-dependent contributions
-    for each SM background component. } 
+    normalisation of the SM background components using transfer factors. 
+    The quoted ranges correspond to the variations across \scalht bins 
+    and jet topology. 
+  } 
   \label{tab:bkgd_systs}
   \centering
   \footnotesize
-  \begin{tabular}{ lcc }
+  \begin{tabular}{ ccccc }
     \hline
     \hline
-    \njet                         & \multicolumn{2}{c}{Uncertainty (\%) in background component} \\
-    \cline{2-3}
-                                  & \ttbar, W+jets, residual SM & \znunu\ + jets                 \\
+    Systematic source & \multicolumn{4}{c}{Uncertainty (\%)} \\    
+     & $\mj \rightarrow \znunu$  & $\mmj \rightarrow \znunu$ & $\gj \rightarrow \znunu$ & $\mj \rightarrow \ttbar+W$\\
     \hline
-    \multicolumn{2}{l}{``Monojet'':}                                                             \\
-    1                             & 9--36                       & 9--36                          \\
-    \hline
-    \multicolumn{2}{l}{``Asymmetric'':}                                                          \\
-    2                             & 11--105                     & 9--46                          \\
-    3                             & 12--86                      & 12--78                         \\
-    4                             & 16--52                      & 13--43                         \\
-    $\geq$5                       & 19--47                      & 27--73                         \\
-    \hline
-    \multicolumn{2}{l}{``Symmetric'':}                                                           \\
-    2                             & 7--34                       & 11--30                         \\
-    3                             & 9--31                       & 13--44                         \\
-    4                             & 13--36                      & 8--34                          \\
-    $\geq$5                       & 15--22                      & 17--28                         \\
-    \hline
-    \multicolumn{2}{l}{Additional contributions:}                                                \\
-    \alphat ($\scalht < 800\gev$) & 10-27                       & 10-27                          \\
-    \dphi ($\scalht > 800\gev$)   & 22                          & 22                             \\
-    b-quark identification        & $<$5                        & $<$5                           \\
+    \alphat/\bdphi extrapolation & $5-80\%$ & $50-80\%$ & - & $5-80\%$ \\
+    W/Z ratio & $10-30\%$ & - & - & -  \\
+    Z/$\gamma$ ratio & - & - & $10-30\%$ & -  \\
+    W/\ttbar admixture & - & - & - & $10-100\%$  \\
+    W/Z acceptance & $5-50\%$ & - & - & $5-50\%$  \\
+    Jet energy scale & $<15\%$ & $<10\%$ & $<15\%$ & $<15\%$ \\
+    B-tagging efficiency & $<5\%$ & $<2\%$ & $<2\%$ & $<5\%$ \\
+    Pileup & $<6\%$ & $<4\%$ & $<3\%$ & $<10\%$ \\
+    Top $p_{T}$ weights & $<20\%$  & $<4\%$ & - & $<5\%$ \\
+    Lepton selection & - & - & - & $2-5\%$ \\
     \hline
     \hline
   \end{tabular}
 \end{table}
 
-The uncertainty in the transfer factors derived from simulation is
-probed through closure tests based on data control
-samples~\cite{RA1Paper2012}. Each closure test inspects the
-compatibility of yields in two disjoint data control samples and a
-corresponding transfer factor derived from simulation. A large
-ensemble of tests are performed to probe the simulation modelling of a
-range of key physics effects that may lead to potential biases in the
-transfer factors~\cite{RA1Paper2012}. For the analysed data sample,
-the closure tests reveal no significant biases or dependencies on
-\njet or \scalht for all individual tests. Systematic uncertainties in
-the transfer factors are typically determined from ensembles of
-closure tests, which can be considered as ``normalisation''
-uncertainties for a given component of background events categorised
-according to \njet, \nb, and \scalht.  Table~\ref{tab:bkgd_systs}
-summarises typical values for the systematic uncertainties in
-experimental acceptance effects for the dominant SM background
-components. These uncertainties are assumed to be fully uncorrelated
-for events catogorised differently in \njet, \nb, and \scalht. The
-uncertainties associated with extrapolations in the \alphat and \dphi
-variables, and the simulation modelling of the efficiency and mistag
-rates for identifying jets originating from b quarks or light-flavour
-partons are also listed, which are assumed to be fully correlated
-across the \nb dimension only.
+Several sources of uncertainties are considered in the trasfer factors 
+derived from simulation and they are summarised in Tab.~\ref{tab:bkgd_systs}. 
+When the simulation is corrected to match the data, 
+like for the b-tagging efficiency or the jet energy response, 
+the uncertainty on those weights is propagated to the transfer factors 
+and taken as fully correlated across the bins. 
+%% Some of them, like b-tagging efficiency, jet energy scale, lepton efficiency, 
+%% are estimated by varying the corresponding weights in the simulation and 
+%% recomputing the transfer factors. These uncertainties are taken as fully correlated 
+%% across all the analysis bins. 
+Other systematics effects are inspected through data-driven tests probing 
+the compatibility of yields in two disjoint data control samples and 
+a corresponding transfer factor derived from simulation~\cite{RA1Paper2012}. 
+Each of these tests is built to target specific key ingredients in the analysis, 
+like the $Z / \gamma$ ratio or the \alphat cut efficiency. 
+The level of closure and its statistical precision are 
+used to extract systematic uncertainties as a function of \scalht, 
+while considering ``asymmetric'' and ``symmetric'' jet topologies separately, 
+which are taken as uncorrelated. \\
+The systematic uncertainties in the transfer factors is propagated  
+to the yields for a given component of background in the signal region, 
+in each \njet, \nb, and \scalht bin. 
 
 Templates derived from simulation are used to predict the background
 counts in the \mht dimension. Multiple data control regions are used
