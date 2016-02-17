@@ -1,4 +1,5 @@
 %____________________________________________________________________________||
+%FIXME: undefined reference to new systematic section
 \section{Corrections to cross section for SM samples}
 \label{sec:sideband_corrections}
 The cross sections for the most relevant SM background are summarised in Table~\ref{tab:cross_sections_bkg}.
@@ -26,11 +27,11 @@ The cross sections for the most relevant SM background are summarised in Table~\
     DY+jets, $400 < \scalht < 600$ GeV & $5.5 \pm 0.2$ & LO & 1.23 \\
     DY+jets, $\scalht > 600$ GeV & $2.2 \pm 0.8$ & LO & 1.23 \\
     \hline
-    $\gamma$+jets, $40 < \scalht < 100$ GeV & $20730 \pm 66$ & LO & - \\
-    $\gamma$+jets, $100 < \scalht < 200$ GeV & $9226 \pm 36$ & LO & - \\
-    $\gamma$+jets, $200 < \scalht < 400$ GeV & $2281 \pm 47$ & LO & - \\
-    $\gamma$+jets, $400 < \scalht < 600$ GeV & $273 \pm 9$ & LO & - \\
-    $\gamma$+jets, $\scalht > 600$ GeV & $94.5 \pm 3.2$ & LO & - \\
+    \gj, $40 < \scalht < 100$ GeV & $20730 \pm 66$ & LO & - \\
+    \gj, $100 < \scalht < 200$ GeV & $9226 \pm 36$ & LO & - \\
+    \gj, $200 < \scalht < 400$ GeV & $2281 \pm 47$ & LO & - \\
+    \gj, $400 < \scalht < 600$ GeV & $273 \pm 9$ & LO & - \\
+    \gj, $\scalht > 600$ GeV & $94.5 \pm 3.2$ & LO & - \\
     \hline
     $Z\rightarrow \nu\nu$+jets, $100 < \scalht < 200$ GeV & $280.47$ & LO & 1.23 \\
     $Z\rightarrow \nu\nu$+jets, $200 < \scalht < 400$ GeV & $78.36$ & LO & 1.23 \\
@@ -48,87 +49,134 @@ Moreover, the cross section is known only to a limited number of perturbative or
 Nonetheless, the analysis strategy for the background predictions is built in such a way to be mildly, if not negligibly, dependent on these corrections. 
 The backgrounds are in fact estimated from control regions in data, and the effect of cross section corrections on the transfer factors is expected to largely cancel out, 
 because the background composition is very similar between the signal region and the control regions used to estimate each background. \\
-However, the effect could be sizeable for the closure test procedure described in Sec.~\ref{sec:closure-tests}, because in this case much more ``extreme'' translations are done. 
-For instance, the test carried on in the single muon control sample, where events with no b-tags are used to predict events with 1 b-tag maps 
-a $W$-enriched sample to a $t\bar{t}$-enriched one and is sensitive to the relative corrections of $W$ with respect to $t\bar{t}$. 
-For this reason it's important to measure any residual cross section corrections. This is done using sidebands in data enriched in a specific process, as described in the following. 
+However, the ``data-driven'' tests described in Sec.~\ref{sec:closure-tests} would benefit from a better control of the normalisation of MC samples, 
+since more aggressive extrapolations are carried on there with respect to the background predictions in the analysis. 
+As an example, the $0 \rightarrow 1$ b-tag test carried on in the single muon control sample, utilises 
+a $W$-enriched sample to predict a $t\bar{t}$-enriched one and is thus sensitive to the relative corrections of $W$ with respect to $t\bar{t}$. 
+For this reason it's important to measure in data residual cross section corrections to the background processes. 
+This is done using sidebands in data enriched in a specific process, as described in the following. 
 
-\subsection{Correction to the $\gamma$+jets sample}
+The corrections derived with this study are summarise in Tab.~\ref{tab:sbCorrs}.\\
+No uncertainty is propagated on these corrections, since any systematic effect is expected to be accounted for by 
+dedicated systematic studies in data, which are described in Sec.~\ref{sec:closure-tests}.
+
+
+\subsection{Correction to the \gj sample}
 \label{sec:sideband_corrections_gjets}
-The situation is somehow different for $\gamma$+jets with respect to the other processes. 
-In fact the cross section for this process is known only at LO and no $k$-factor has been calculated yet for 13 TeV, 
-so a worse agreement is expected for the yields in the single photon control region.
+The situation is somehow different for \gj with respect to the other processes. 
+In fact the cross section for this process is known only at LO and no $k$-factor is available. 
+As a result, some disagreement between data and MC is expected in the single photon control region.
 The observation confirms indeed this hypothesis, with the simulation underestimating the yields by $\sim 20\%$. \\
-A correction is derived using a sideband in data, by selecting events in the region $350 < \scalht < 400$ GeV. 
+A correction is derived using a sideband in data, by inverting the \alphat cut. 
+For $\scalht < 400$ GeV, events are selected in the interval $0.50 < \alphat < 0.52$, 
+while for $\scalht \geq 400$ GeV the sideband is defined by the cut $0.50 < \alphat < 0.53$.
 The data yields are corrected for the small QCD contamination (taken from MC) and divided by the expected number of events in the simulation. 
-The sideband is shown in Fig.~\ref{fig:gjets_HTsideband} (left).
-The correction factor to be applied to the GJets sample found with this procedure is $1.30 \pm 0.08$, 
-which is in fair agreement with the $k-$factor used in the 8 TeV analysis ($\sim 1.21$). 
+
+The correction factor to be applied to the GJets sample found with this procedure is $1.25 \pm 0.05$ (statistical error only). 
+Cross-checks have been performed using other sidebands, obtained by inverting the \scalht and the \mhtmet cuts 
+and have shown to give compatible results within the statistical precision. 
+The sideband is shown in Fig.~\ref{fig:gjets_alphaTsideband}. 
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/htSideband_NMinusOne_HT_GJets}
-  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/ht_NMinusOne_HT_GJets}
-  \caption{The single photon events compared to the MC expectation in the sideband $350 < \scalht < 400$ GeV (left) and in the full \scalht range (right)}
-  \label{fig:gjets_HTsideband}
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/alphaTSideband_NMinusOne_AlphaT_GJets}
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/alphaT_NMinusOne_AlphaT_GJets}
+  \caption{The \alphat distribution in the \gj control region in data compared with MC expectations. 
+     The \alphat sideband used to derive the correction for the \gj process is shown on the left plot, while the full range is shown on the right.}
+  \label{fig:gjets_alphaTsideband}
 \end{figure}
 
 
 
-%\subsection{Correction to the $W$+jets, $t\bar{t}$+jets and $Z$+jets samples}
-%\label{sec:sideband_corrections_w_z_tt}
-%For the $W$+jets, $t\bar{t}$+jets and $Z$+jets samples we expect smaller corrections, because the cross section is known 
-%with better accuracy, either by complete calculation or via $k$-factors applied to the LO cross section. 
-%For this reason, the use of a sideband in \scalht is not optimal in this case, since it is more sensitive to the modelling 
-%of the \scalht shape in the LO MC samples (we plan to cross-check with NLO samples in the future). 
-%The low-\scalht sideband is suboptimal in particular for $t\bar{t}$, because 
-%it selects events with a rare topology for this kind of process, which comes with larger jet multiplicities and thus large value of \scalht. \\
-%Instead, the $\mhtmet > 1.25$ sideband is used, with the following selection:
-%\begin{itemize}
-%\item \wj: single muon, $\nj = 2,3$, $\nb = 0$
-%\item \zj: double muon, $\nj = 2,3$, $\nb = 0$
-%\item \ttj: single muon, $\nj \geq 2$, $\nb \geq 2$
-%\end{itemize}
-%
-%These selections give a purity of 78\%, 96\% and 92\% respectively for \wj, \zj and \ttj. All contaminations are estimated from MC.\\
-%The \mhtmet distributions for these three selection are shown in Fig.~\ref{fig:w_z_tt_MHTOverMETsideband}. \\
-%These distributions are not very well modelled by the simulation, pointing to possible reconstruction effects not yet understood in this first stage of data commissioning. 
-%The \ttj enriched distribution (right) also confirms the effect of missing b-tag scale factors, whose effect is also seen in the \nb  distribution. %FIXME: add reference!  
-%
-%\begin{figure}[!h]
-%  \centering
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/mhtDivMet_NMinusOne_MHTOverMET_WJets}
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/mhtDivMet_NMinusOne_MHTOverMET_DYJetsToLL}
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/mhtDivMet_NMinusOne_MHTOverMET_TTJets}
-%  \caption{The ``N-1'' distribution of \mhtmet for the \wj (left), \zj (center) and \ttj (right) selection.}
-%  \label{fig:w_z_tt_MHTOverMETsideband}
-%\end{figure}
-%
-%Given these features of the MC modelling, no conclusive correction is derived from the following studies. 
-%However, a preliminary investigation on the \scalht dependence of MC corrections is presented, 
-%with the aim of repeating it in the near future, where a better understanding of the detector will be available. 
-%
-%In Fig.~\ref{fig:sfVsHt}, the correction factor derived from the \mhtmet sideband is extracted in coarse bins in \scalht for the 3 processes. 
-%Since the analysis is sensitive to relative corrections rather than absolute ones, the 3 ratios of correction factors 
-%are showed in Fig.~\ref{fig:double_ratios}. They are compatible with flat within the statistical uncertainties. 
-%Therefore any \scalht dependence approximately cancels out in the ratio of transfer factors, thus any correction would have a negligible impact. \\
-%For an inclusive correction, as stated previously, a better understanding of detector effects is required and thus this study is postponed. 
-%
-%\begin{figure}[!h]
-%  \centering
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFvsHT_MHTOverMET_WJets}
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFvsHT_MHTOverMET_DYJetsToLL}
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFvsHT_MHTOverMET_TTJets}
-%  \caption{The correction factor as a function of \scalht for the \wj (left), \zj (center) and \ttj (right) selection.}
-%  \label{fig:sfVsHt}
-%\end{figure}
-%
-%\begin{figure}[!h]
-%  \centering
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFDR_w_z}
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFDR_tt_z}
-%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFDR_tt_w}
-%  \caption{The ratio of correction factors as a function of \scalht: \wj/\zj (left), \ttj/\zj (center) and \ttj/\wj (right).}
-%  \label{fig:double_ratios}
-%\end{figure}
+\subsection{Correction to the $W$+jets, \ttbar+jets and $Z$+jets samples}
+\label{sec:sideband_corrections_w_z_tt}
+For the $W$+jets, \ttbar+jets and $Z$+jets samples the cross section is know with better accuracy with respect to the \gj process, 
+with NLO QCD or better precision.
+However, some inconsinstency could arise from the different cross section calculations, since for \wj and \zj the LO cross sections 
+are corrected with NLO k-factor (1.21 and 1.23 respectively) while for \ttbar the full NNLO calculation is used. \\
+The corrections for these processes are derived using a sideband defined by inverting the \mht cut, namely 
+applying the selection $100 < \mht < 130$ GeV. 
+Results are cross-checked using the $\mhtmet > 1.25$ sideband and found to give compatible results, within the statistical uncertainties. \\
+In order to enrich the sidebands in each process, the following selection is applied for each sample:
+\begin{itemize}
+\item \wj: \mj, $\nj \leq 3$, $\nb = 0$
+\item \zj: \mmj, $\nb = 0$
+\item \ttj: \mj, $\nj \geq 2$, $\nb \geq 2$
+\end{itemize}
+These selections give a purity of 84\%, 93\% and 87\% respectively for \wj, \zj and \ttj. All contaminations are estimated from MC.
+
+The corrections for the three processes are summarised in Tab.~\ref{tab:sbCorrs}.
+The \mht distributions for these three selection are shown in Fig.~\ref{fig:wjets_MHTsideband}-\ref{fig:ttjets_MHTsideband}. \\
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/mhtSideband_NMinusOne_MHT_WJets}
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/mht_NMinusOne_MHT_WJets}
+  \caption{The \mht distribution in the \wj-enriched sample in the \mj control region in data compared with MC expectations. 
+     The \mht sideband used to derive the correction for the \wj process is shown on the left plot, while the full range is shown on the right.}
+  \label{fig:wjets_MHTsideband}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/mhtSideband_NMinusOne_MHT_DYJetsToLL}
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/mht_NMinusOne_MHT_DYJetsToLL}
+  \caption{The \mht distribution in the \zj-enriched sample in the \mmj control region in data compared with MC expectations. 
+     The \mht sideband used to derive the correction for the \zj process is shown on the left plot, while the full range is shown on the right.}
+  \label{fig:zjets_MHTsideband}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/mhtSideband_NMinusOne_MHT_TTJets}
+  \includegraphics[width=0.45\textwidth]{figures/sidebandCorr/mht_NMinusOne_MHT_TTJets}
+  \caption{The \mht distribution in the \ttbar-enriched sample in the \mj control region in data compared with MC expectations. 
+     The \mht sideband used to derive the correction for the \ttbar process is shown on the left plot, while the full range is shown on the right.}
+  \label{fig:ttjets_MHTsideband}
+\end{figure}
+
+
+\begin{table}[!h]
+  \scriptsize
+  \centering
+  \topcaption{Cross section corrections for SM backgrounds derived with sidebands in data. Uncertainty is statistical-only.}
+  \label{tab:sbCorrs}
+  \begin{tabular}
+    {cllc}
+    \hline\hline
+    \textbf{Process} & \textbf{Sideband} & \textbf{Selection} & \textbf{Corrrection} \\
+    \hline
+    \gj & $0.50 < \alphat < 0.52(0.53)$ & \gj & $1.25 \pm 0.10$ \\
+    \wj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj, $\nj \leq 3$, $\nb = 0$ & $1.12 \pm 0.03$ \\
+    \zj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj, $\nb = 0$ & $1.08 \pm 0.05$ \\
+    \ttbar + jets & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj, $\nj \geq 2$, $\nb \geq 2$ & $0.86 \pm 0.03$ \\
+    \hline \hline
+  \end{tabular}
+\end{table}
+
+
+
+%% In Fig.~\ref{fig:sfVsHt}, the correction factor derived from the \mhtmet sideband is extracted in coarse bins in \scalht for the 3 processes. 
+%% Since the analysis is sensitive to relative corrections rather than absolute ones, the 3 ratios of correction factors 
+%% are showed in Fig.~\ref{fig:double_ratios}. They are compatible with flat within the statistical uncertainties. 
+%% Therefore any \scalht dependence approximately cancels out in the ratio of transfer factors, thus any correction would have a negligible impact. \\
+%% For an inclusive correction, as stated previously, a better understanding of detector effects is required and thus this study is postponed. 
+
+%% \begin{figure}[!h]
+%%  \centering
+%%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFvsHT_MHTOverMET_WJets}
+%%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFvsHT_MHTOverMET_DYJetsToLL}
+%%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFvsHT_MHTOverMET_TTJets}
+%%  \caption{The correction factor as a function of \scalht for the \wj (left), \zj (center) and \ttj (right) selection.}
+%%  \label{fig:sfVsHt}
+%% \end{figure}
+
+%% \begin{figure}[!h]
+%%  \centering
+%%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFDR_w_z}
+%%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFDR_tt_z}
+%%  \includegraphics[width=0.31\textwidth]{figures/sidebandCorr/SFDR_tt_w}
+%%  \caption{The ratio of correction factors as a function of \scalht: \wj/\zj (left), \ttj/\zj (center) and \ttj/\wj (right).}
+%%  \label{fig:double_ratios}
+%% \end{figure}
 
