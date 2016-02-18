@@ -11,79 +11,75 @@ fundamental properties such as decay modes, production cross sections and sparti
 \subsection{Signal models}
 \label{subsec:susy_models}
 
-%% The full list of models considered is in Table\~ref{tab:simplified-models}. 
-Results are presented for gluino pair production followed by decay into four b-quarks, called T1bbbb throughout the text.
-This is at the moment the only simplified model available: we will update with the interpretation of other models as soon as they will become available.\\
-The signal efficiency times acceptance is determined per model per event
-category (\njet,\nb) per \HT bin. 
-Systematic uncertainties on the signal acceptance are taken from the 2012 analysis (see Sec.~\ref{sec:sig-syst}). 
-%% The categories included in the fit are the ten most sensitive 
-%% for each model and are listed in Tab.~\ref{tab:simplified-models}. 
-%% The following studies are yet based on Phys14 samples for the background processes and fast simulation for the signal samples. The final samples are currently being processed and will be soon.
+Interpretations are presented for pair production of gluino, stop, sbottom and light squarks, 
+with several different possibility for the decay chain. 
+All the models are summarised in Tab.~\ref{tab:simplified-models}. 
+Sketches of the production and decay in some of these models are shown in Fig.~\ref{fig:simplified-models}.
+Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:sig-syst}. 
 
-%% \begin{landscape}
+\begin{table}[h!]
+  \caption{A summary of the simplified models used in this analysis.}
+  \label{tab:simplified-models}
+  \scriptsize
+  \centering
+  \begin{tabular}{ llll }
+    \hline
+    \hline
+    Model & Production & Decay & Run 1 max. exclusion \\ 
+    \hline    
+    \hline    
+    T1bbbb & Gluino pair    & \Tonebbbb & $\sim$1350 GeV \\
+    T1qqqq & Gluino pair    & \Toneqqqq & $\sim$1320 GeV \\
+    T1tttt & Gluino pair    & \Tonetttt & $\sim$1320 GeV \\
+    T2tt   & Stop pair      & \Ttwott   & $\sim$760 GeV \\
+    T2cc   & Stop pair      & \Ttwocc   & $\sim$250 GeV \\
+    T2bb   & Sbottom pair   & \Ttwobb   & -- \\
+    T2qq   & Squark pair    & \Ttwoqq   & $\sim$920 GeV \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 
-%% \begin{table}[h!]
-%%   \caption{A summary of the simplified benchmark models considered in 
-%%     this exercise. The models labelled as ``T1'' correspond to the pair production of gluinos, while 
-%%     those labelled as ``T2'' correspond to the pair production of squarks (stop, sbottom or degenerate light flavour). 
-%%     The event categories considered for each model are listed. 
-%%     For the jet multiplicity categorisation, the ``$j$'' refers to the ``symmetric'' selection, while ``$a$'' refers to the ``asymmetric'' one.}  
-%%   \label{tab:simplified-models}
-%%   \scriptsize
-%%   %% \setlength{\extrarowheight}{2.5pt}
-%%   \centering
-%%   %% \begin{tabular*}{\textwidth}{ llcc }
-%%   \begin{tabular*}{1.4\textwidth}{ llcl }
-%%     \hline
-%%     \hline
-%%     %% Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\njet,\nb) event categories \\ 
-%%     Model & Production/decay mode & ($m_{\rm SUSY},m_{\rm LSP}$) [GeV] & (\nb,\njet) event categories \\ 
-%%     \hline    
-%%     \hline    
-%%     \multirow{2}{*}{T1bbbb 1500,100} & \multirow{2}{*}{\Tonebbbb} & \multirow{2}{*}{(1500,100)} & {\small $ (2b,\geq5j), (\geq3b,\geq5j), (1b,\geq5j), (2b,\geq5a)$} \\
-%%     & & & {\small $ (2b,4j), (1b,4j), (\geq3b,\geq5a), (2b,4a), (1b,3a), (2b,3j)$} \\ \hline
-%%     \multirow{2}{*}{T1bbbb 1000,900} & \multirow{2}{*}{\Tonebbbb} & \multirow{2}{*}{(1000,900)} & {\small $ (2b,\geq5j), (\geq3b,\geq5j), (1b,\geq5j), (2b,\geq5a)$} \\
-%%     & & & {\small $ (2b,4j), (1b,4j), (\geq3b,\geq5a), (2b,4a), (1b,3a), (2b,3j)$} \\ \hline
-%%     \multirow{2}{*}{T1qqqq 1400,100} & \multirow{2}{*}{\Toneqqqq} & \multirow{2}{*}{(1400,100)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,4j), (2b,\geq5j)$} \\
-%%     & & & {\small $ (1b,4j), (0b,3j), (2b,4j), (\geq3b,\geq5j), (1b,3j), (2b,3j)$} \\ \hline
-%%     \multirow{2}{*}{T1qqqq 1000,800} & \multirow{2}{*}{\Toneqqqq} & \multirow{2}{*}{(1000,800)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,4j), (0b,\geq5a)$} \\
-%%     & & & {\small $ (2b,\geq5j), (1b,4j), (0b,4a), (0b,3j), (0b,3a), (\geq3b,\geq5j)$} \\ \hline
-%%     \multirow{2}{*}{T1tttt 1500,100} & \multirow{2}{*}{\Tonetttt} & \multirow{2}{*}{(1500,100)} & {\small $ (\geq3b,\geq5j), (2b,\geq5j), (1b,\geq5j), (0b,\geq5j)$} \\
-%%     & & & {\small $ (2b,4j), (1b,4j), (\geq3b,4j), (2b,3j), (1b,\geq5a), (0b,4j)$} \\ \hline
-%%     \multirow{2}{*}{T1tttt 1200,800} & \multirow{2}{*}{\Tonetttt} & \multirow{2}{*}{(1200,800)} & {\small $ (\geq3b,\geq5j), (2b,\geq5j), (\geq3b,\geq5a), (1b,\geq5j)$} \\
-%%     & & & {\small $ (2b,\geq5a), (1b,\geq5a), (0b,\geq5j), (0b,\geq5a), (2b,4j), (\geq3b,4j)$} \\ \hline \hline
-%%     \multirow{2}{*}{T2tt 850,100}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(850,100)} & {\small $ (2b,\geq5j), (1b,\geq5j), (\geq3b,\geq5j), (2b,4j)$} \\
-%%     & & & {\small $ (1b,4j), (2b,3j), (0b,\geq5j), (1b,3j), (\geq3b,4j), (1b,\geq5a)$} \\ \hline
-%%     \multirow{2}{*}{T2tt 650,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(650,325)} & {\small $ (1b,\geq5j), (\geq3b,\geq5j), (2b,4j), (2b,\geq5a)$} \\
-%%     & & & {\small $ (1b,4j), (0b,\geq5j), (2b,4a), (\geq3b,\geq5a), (1b,4a), (1b,3j)$} \\ \hline
-%%     \multirow{2}{*}{T2tt 500,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(500,325)} & {\small $ (1b,\geq5j), (2b,\geq5j), (\geq3b,\geq5j), (2b,\geq5a)$} \\
-%%     & & & {\small $ (0b,\geq5j), (1b,4j), (\geq3b,\geq5a), (2b,4j), (0b,\geq5a), (1b,4a)$} \\ \hline
-%%     \multirow{2}{*}{T2tt 425,325}    & \multirow{2}{*}{\Ttwott}   & \multirow{2}{*}{(425,325)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,\geq5a), (0b,4j)$} \\
-%%     & & & {\small $ (2b,\geq5j), (1b,4j), (0b,4a), (0b,3j), (1b,4a), (0b,3a)$} \\ \hline
-%%     \multirow{2}{*}{T2qq 600,550}    & \multirow{2}{*}{\Ttwoqq}   & \multirow{2}{*}{(600,550)} & {\small $ (0b,\geq5j), (1b,\geq5j), (0b,4j), (0b,\geq5a)$} \\
-%%     & & & {\small $ (0b,4a), (0b,3j), (0b,3a), (1b,4j), (2b,\geq5j), (1b,4a)$} \\ \hline
-%%     \multirow{2}{*}{T2qq 1200,100}   & \multirow{2}{*}{\Ttwoqq}   & \multirow{2}{*}{(1200,100)} & {\small $ (0b,\geq5j), (0b,4j), (0b,3j), (0b,2j)$} \\
-%%     & & & {\small $ (1b,\geq5j), (1b,4j), (1b,3j), (1b,2j), (2b,\geq5j), (2b,4j)$} \\ \hline
-%%     \multirow{2}{*}{T2bb 900,100}    & \multirow{2}{*}{\Ttwobb}   & \multirow{2}{*}{(900,100)} & {\small $ (2b,3j), (2b,2j), (2b,\geq5j), (2b,4j)$} \\
-%%     & & & {\small $ (1b,2j), (1b,\geq5j), (1b,3j), (1b,4j), (\geq3b,\geq5j), (0b,\geq5j)$} \\ \hline
-%%     \multirow{2}{*}{T2bb 600,580}    & \multirow{2}{*}{\Ttwobb}   & \multirow{2}{*}{(600,580)} & {\small $ (1b,\geq5j), (0b,\geq5j), (0b,3j), (0b,4j)$} \\
-%%     & & & {\small $ (1b,4j), (1b,3j), (0b,2j), (2b,\geq5j), (0b,3a), (0b,2a)$} \\ 
-%%     \hline
-%%     \hline
-%%   \end{tabular*}
-%% \end{table}
 
-%% \end{landscape}
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[T1bbbb]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1bbbb_feyn}
+    } ~~
+    \subfigure[T1tttt]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
+    } ~~
+    \subfigure[T1qqqq]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1qqqq_feyn}
+    } \\
+    \subfigure[T2tt]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
+    } ~~
+    \subfigure[T2cc]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
+    } ~~
+    \subfigure[T2qq]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
+    } 
+    \caption{
+      Graphical representation of the production and decay of supersymmetric particles in the 
+      simplified models considered in the analysis. 
+    }
+    \label{fig:simplified-models}
+  \end{center}
+\end{figure}
+
+
 
 \subsection{Signal acceptance and contamination}
 
 The level of signal contamination in the control regions is expected to be negligible 
-for most of the models that are targeted by this all-hadronic search. 
-The requirement of one muon, two muons or one photon in the $\mu$+jets, $\mu\mu$+jets and $\gamma$+jets respectively 
-ensures that the control regions are depleted by any hadronic signature of the signal. 
-The only partial exception is the gluino pair production and stop pair production followed by decay into top quarks, named \texttt{T1tttt} and \texttt{T2tt} respectively. 
-In this case, when tops undergo a leptonic decay there may be a residual signal contamination in the muon control region. \\
+for most of the models that are targeted by this search. 
+The requirement of one muon, two muons or one photon in the \mj, \mmj and \gj respectively 
+ensures that the control regions are depleted signal events. 
+The only partial exception is the gluino pair production and stop pair production followed by decay into top quarks, 
+called T1tttt and T2tt respectively. 
+In this case, when top decays leptonically a residual signal contamination may be found in the muon control regions. \\
 Since the relevant signal samples are not yet available for the Spring15 campaign, the results shown in this section refer to the PHYS14 exercise. 
 They will be updated as soon as possible with the new MC samples. 
 
@@ -97,16 +93,16 @@ expected signal yield counts as a function of event category and
 \begin{figure}[h!]
   \begin{center}
     \subfigure[Expected counts in the signal region]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/h_ht_mht_all_SMS_T2tt_2J_mStop850_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/sigYields_had_SMS-T2tt_mStop-600_mLSP-100_25ns}
     } 
     \subfigure[Expected counts in the \mj control region]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/m_ht_mht_all_SMS_T2tt_2J_mStop850_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/sigYields_SingleMu_SMS-T2tt_mStop-600_mLSP-100_25ns}
     } \\
     \subfigure[Ratio of signal acceptance (\mj control region w.r.t. signal region)]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/relEff_singlemu_SMS_T2tt_2J_mStop850_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/relEff_SingleMu_SMS-T2tt_mStop-600_mLSP-100_25ns}
     }
     \subfigure[Ratio of S/B values (signal region w.r.t. \mj)]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/doubleRatio_singlemu_SMS_T2tt_2J_mStop850_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/doubleRatio_SingleMu_SMS-T2tt_mStop-600_mLSP-100_25ns}
     }
     \caption{Characterisation of signal acceptance and contamination
       in the signal and \mj control regions, respectively, for the
@@ -142,16 +138,16 @@ region relative to the \mj sample is still large, typically $\gg$10.
 \begin{figure}[h!]
   \begin{center}
     \subfigure[Expected counts in the signal region]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/h_ht_mht_all_SMS_T1tttt_2J_mGl1500_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/sigYields_had_SMS-T1tttt_mGluino-1400_mLSP-100_25ns}
     } 
     \subfigure[Expected counts in the \mj control region]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/m_ht_mht_all_SMS_T1tttt_2J_mGl1500_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/sigYields_SingleMu_SMS-T1tttt_mGluino-1400_mLSP-100_25ns}
     } \\
-    \subfigure[Ratio of signal acceptance (signal region w.r.t. \mj)]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/relEff_singlemu_SMS_T1tttt_2J_mGl1500_mLSP100}
+    \subfigure[Ratio of signal acceptance (\mj control region w.r.t. signal region)]{
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/relEff_SingleMu_SMS-T1tttt_mGluino-1400_mLSP-100_25ns}
     }
     \subfigure[Ratio of S/B values (signal region w.r.t. \mj)]{
-      \includegraphics[width=0.5\textwidth]{figures/sensitivityStudy/doubleRatio_singlemu_SMS_T1tttt_2J_mGl1500_mLSP100}
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/doubleRatio_SingleMu_SMS-T1tttt_mGluino-1400_mLSP-100_25ns}
     }
     \caption{Characterisation of signal acceptance and contamination
       in the signal and \mj control regions, respectively, for the
