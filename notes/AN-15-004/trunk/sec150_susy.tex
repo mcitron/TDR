@@ -9,18 +9,22 @@ topologies. These studies can be performed in terms of
 fundamental properties such as decay modes, production cross sections and sparticle masses. 
 
 \subsection{Signal models}
-\label{subsec:susy_models}
-
+\label{sec:susy_models}
 Interpretations are presented for pair production of gluino, stop, sbottom and light squarks, 
 with several different possibility for the decay chain. 
-All the models are summarised in Tab.~\ref{tab:simplified-models}. 
+The simplified models used in the analysis are summarised in Tab.~\ref{tab:simplified-models}. 
 Sketches of the production and decay in some of these models are shown in Fig.~\ref{fig:simplified-models}.
 Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:sig-syst}. 
+
+All the models are generated using the FastSim package \cite{Abdullin:2011zz}. 
+FastSim Monte Carlo samples are corrected using FastSim-to-FullSim scale factor, 
+accounting for difference in b-tag efficiency. 
+These scale factors are applied on top of the FullSim scale factors applied for the 
+other Monte Carlo samples.
 
 \begin{table}[h!]
   \caption{A summary of the simplified models used in this analysis.}
   \label{tab:simplified-models}
-  \scriptsize
   \centering
   \begin{tabular}{ llll }
     \hline
@@ -30,11 +34,11 @@ Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:
     \hline    
     T1bbbb & Gluino pair    & \Tonebbbb & $\sim$1350 GeV \\
     T1qqqq & Gluino pair    & \Toneqqqq & $\sim$1320 GeV \\
-    T1tttt & Gluino pair    & \Tonetttt & $\sim$1320 GeV \\
-    T2tt   & Stop pair      & \Ttwott   & $\sim$760 GeV \\
-    T2cc   & Stop pair      & \Ttwocc   & $\sim$250 GeV \\
-    T2bb   & Sbottom pair   & \Ttwobb   & -- \\
-    T2qq   & Squark pair    & \Ttwoqq   & $\sim$920 GeV \\
+    %% T1tttt & Gluino pair    & \Tonetttt & $\sim$1320 GeV \\
+    %% T2tt   & Stop pair      & \Ttwott   & $\sim$760 GeV \\
+    %% T2cc   & Stop pair      & \Ttwocc   & $\sim$250 GeV \\
+    %% T2bb   & Sbottom pair   & \Ttwobb   & -- \\
+    %% T2qq   & Squark pair    & \Ttwoqq   & $\sim$920 GeV \\
     \hline
     \hline
   \end{tabular}
@@ -46,21 +50,21 @@ Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:
     \subfigure[T1bbbb]{
       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1bbbb_feyn}
     } ~~
-    \subfigure[T1tttt]{
-      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
-    } ~~
     \subfigure[T1qqqq]{
       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1qqqq_feyn}
-    } \\
-    \subfigure[T2tt]{
-      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
     } ~~
-    \subfigure[T2cc]{
-      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
-    } ~~
-    \subfigure[T2qq]{
-      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
-    } 
+    %% \subfigure[T1tttt]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
+    %% } \\
+    %% \subfigure[T2tt]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
+    %% } ~~
+    %% \subfigure[T2cc]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
+    %% } ~~
+    %% \subfigure[T2qq]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
+    %% } 
     \caption{
       Graphical representation of the production and decay of supersymmetric particles in the 
       simplified models considered in the analysis. 
@@ -72,6 +76,37 @@ Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:
 
 
 \subsection{Signal acceptance and contamination}
+\label{sec:sig-accept-contam}
+The signal efficiency times acceptance for the simplified models used in the analysis 
+is shown in Fig.~\ref{fig:sig-eff}. 
+These efficiencies are computed including the 4 best categories used to extract the limits w(see Sec.~\ref{sec:susy_results}).
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[T1bbbb]{
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/T1bbbb_merging_4_cats.pdf}
+    } ~~
+    \subfigure[T1qqqq]{
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/T1qqqq_merging_4_cats.pdf}
+    } ~~
+    %% \subfigure[T1tttt]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
+    %% } \\
+    %% \subfigure[T2tt]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
+    %% } ~~
+    %% \subfigure[T2cc]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
+    %% } ~~
+    %% \subfigure[T2qq]{
+    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
+    %% } 
+    \caption{
+      Efficiency times acceptance for the signal models as a function of $m_{\mathrm{Susy}}$ and $m_{\mathrm{LSP}}$.
+    }
+    \label{fig:sig-eff}
+  \end{center}
+\end{figure}
 
 The level of signal contamination in the control regions is expected to be negligible 
 for most of the models that are targeted by this search. 
@@ -80,12 +115,10 @@ ensures that the control regions are depleted signal events.
 The only partial exception is the gluino pair production and stop pair production followed by decay into top quarks, 
 called T1tttt and T2tt respectively. 
 In this case, when top decays leptonically a residual signal contamination may be found in the muon control regions. \\
-Since the relevant signal samples are not yet available for the Spring15 campaign, the results shown in this section refer to the PHYS14 exercise. 
-They will be updated as soon as possible with the new MC samples. 
 
 Figure~\ref{fig:contamination} characterises the level of signal
 contamination in the \mj control sample for the benchmark model
-\texttt{T2tt} ($m_{Stop}=850$ GeV, $m_{LSP}=100$ GeV) relative to the signal acceptance in the
+T2tt ($m_{\mathrm{Stop}}=600$ GeV, $m_{\mathrm{LSP}}=100$ GeV) relative to the signal acceptance in the
 signal region. Figures~\ref{fig:contamination} (a) and (b) show the
 expected signal yield counts as a function of event category and
 \scalht bin in the signal and \mj control regions, respectively.
@@ -98,7 +131,7 @@ expected signal yield counts as a function of event category and
     \subfigure[Expected counts in the \mj control region]{
       \includegraphics[width=0.5\textwidth]{figures/susyResults/sigYields_SingleMu_SMS-T2tt_mStop-600_mLSP-100_25ns}
     } \\
-    \subfigure[Ratio of signal acceptance (\mj control region w.r.t. signal region)]{
+    \subfigure[Ratio of signal acceptance (\mj control region divided by signal region)]{
       \includegraphics[width=0.5\textwidth]{figures/susyResults/relEff_SingleMu_SMS-T2tt_mStop-600_mLSP-100_25ns}
     }
     \subfigure[Ratio of S/B values (signal region w.r.t. \mj)]{
@@ -106,7 +139,7 @@ expected signal yield counts as a function of event category and
     }
     \caption{Characterisation of signal acceptance and contamination
       in the signal and \mj control regions, respectively, for the
-      benchmark model \texttt{T2tt} (850,100).}
+      benchmark model T2tt (600,100).}
     \label{fig:contamination}
   \end{center}
 \end{figure}
@@ -126,8 +159,8 @@ function of the event category and \scalht bin.
 
 Figure~\ref{fig:contamination_t1tttt} characterises the level of
 signal contamination in the \mj control sample for the benchmark model
-\texttt{T1tttt} ($m_{Gluino}=1500$ GeV, $m_{LSP}=100$ GeV). A larger level of contamination is
-expected for this model (with respect to \texttt{T2tt}), due to the
+T1tttt ($m_{\mathrm{Gluino}}=1400$ GeV, $m_{\mathrm{LSP}}=100$ GeV). A larger level of contamination is
+expected for this model (with respect to T2tt), due to the
 presence of four W bosons produced in the decay of the gluino-pair
 system (via off-shell top squarks). The ratio of yields in the signal
 and \mj control regions is at the level of $\sim$10--20\% for the most
@@ -143,7 +176,7 @@ region relative to the \mj sample is still large, typically $\gg$10.
     \subfigure[Expected counts in the \mj control region]{
       \includegraphics[width=0.5\textwidth]{figures/susyResults/sigYields_SingleMu_SMS-T1tttt_mGluino-1400_mLSP-100_25ns}
     } \\
-    \subfigure[Ratio of signal acceptance (\mj control region w.r.t. signal region)]{
+    \subfigure[Ratio of signal acceptance (\mj control region divided by signal region)]{
       \includegraphics[width=0.5\textwidth]{figures/susyResults/relEff_SingleMu_SMS-T1tttt_mGluino-1400_mLSP-100_25ns}
     }
     \subfigure[Ratio of S/B values (signal region w.r.t. \mj)]{
@@ -151,12 +184,12 @@ region relative to the \mj sample is still large, typically $\gg$10.
     }
     \caption{Characterisation of signal acceptance and contamination
       in the signal and \mj control regions, respectively, for the
-      benchmark model \texttt{T1tttt} (1500,100).}
+      benchmark model T1tttt (1400,100).}
     \label{fig:contamination_t1tttt}
   \end{center}
 \end{figure}
 
-For both models (and in general), the level of contamination for the
+For both models the level of contamination for the
 \mmj sample is smaller still due to the requirement of a second
 muon. The contamination for the \gj sample is expected to be zero for
 the models under consideration. 
@@ -167,207 +200,117 @@ information on sensitivity to any given signal model.
 
 \subsection{Systematic uncertainties on signal efficiency times acceptance}
 \label{sec:sig-syst}
+The following sources of systematic uncertainty are propagated to the signal acceptance and shape, 
+according to the recommendations agreed on within the collaboration. 
+Relative effect on the yields are presented in Tab.~\ref{tab:sig-systematics} for some benchmark models. 
 
-For these results the same systematic uncertainty on the signal yield 
-as in the previous Run 1 analysis is assumed \cite{CMS_AN_2013-366}. 
-The following sources of uncertainty were considered: 
-luminosity, parton distribution
-functions, jet energy scale, initial state radiation, 
-efficiencies of the \mht/\met filter and ``dead ECAL'' filter. 
-Each contribution is considered to be independent and all contributions are
-summed in quadrature. \\
-The uncertainty applied is 30\% for all the mass point in the vicinity of the ``diagonal'', i.e. where $m_{Gluino}-m_{LSP}<m_{top}$, 
-and 15\% for all the other points. 
-The systematic is taken as fully correlated across all the bins (see Sec.~\ref{sec:likelihood}). 
-The uncorrelated approach has been checked to give very similar results. \\
-No uncertainty for the signal \MHT template is considered in these results, 
-but dedicated studies will be carried on in the future about this.
+\begin{itemize}
+  \item Luminosity: 4.6 \%, taken as correlated across all bins.
+  \item Trigger: conservatively, the size of the inefficiency is taken as systematic variation 
+    where not in the plateau (see Sec.~\ref{sec:triggers}). 
+  \item MC statistics:  uncorrelated bin-by-bin uncertainty, affecting the shape of the signal. 
+  \item Pileup reweighting: 5\% uncertainty on the minimum bias cross section (see Sec.~\ref{sec:pileup-reweighting}).
+  \item b-tag efficiency: uncertainty on the FullSim and FastSim b-tag scale factor is propagated and taken as correlated across the bins. 
+  \item Lepton efficiency: uncertainty on the lepton scale factors is propagated and taken as correlated across the bins. 
+  \item Jet energy scale: uncertainty on the jet energy corrections is propagated and taken as correlated across the bins.
+  \item Initial State Radiation (ISR): 15\% (30\%) uncertainty for the \Pt of the gluino-gluino system between 400-600 GeV (above 600 GeV). 
+\end{itemize}
 
 
-\subsection{Expected exclusion limits and discovery significance}
-\label{subsec:susy_results}
+\begin{table}[h!]
+  \caption{Representative range of uncertainty across the analysis bins 
+    for each source of signal systematic.
+    Two benchmark point are chosen for each model, 
+    corresponding to ``compressed'' and ``uncompressed'' scenarios, 
+    i.e. with small and large mass splitting between the mother particle and the LSP.
+  }
+  \label{tab:sig-systematics}
+  \centering
+  \begin{tabular}{ ccccc }
+    \hline
+    \hline
+    Systematic & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} \\ 
+                      & (1000,800) & (1500,100) & (900,700) & (1350,100) \\
+    \hline
+    Luminosity        & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%      \\ \hline
+    Trigger           & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%      \\ \hline
+    MC statistics     & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%     \\ \hline
+    PU reweighting    & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%      \\ \hline
+    B-tag efficiency  & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%     \\ \hline
+    Lepton efficiency & 10\%       & 10\%       & 10\%      & 10\%       \\ \hline
+    Jet energy scale  & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%     \\ \hline
+    ISR               & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%      \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+
+
+\subsection{Exclusion limits}
+\label{sec:susy_results}
 
 In order to extract the signal contribution in the fit, the distribution of events according to the \mht variable, 
 encoded as template histograms, is used as described in Sec.~\ref{sec:had-shape} and \ref{sec:likelihood}. \\
-Upper limits on the cross section and discovery significance are computed using the asymptotic formulae and the pre-fit Asimov datasets \cite{AsymptoticFormulae}. 
-The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
+Upper limits on the cross section are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. 
+Asymptotic formulae \cite{AsymptoticFormulae} are utilised to approximate the distribution of the test statistics. \\
 All the statistical results are produced using the \textit{combine} tool, 
 provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. 
 
-%Due to CPU constraints, only a subset of event categories (but all \scalht bins
-%within a category) are considered to extract the final result. 
-%The categories entering the final fit are chosen based as the 10 most sensitive ones according to the expected discovery significance.
+Due to CPU constraints, only 4 out of 9 jet categories (but all \nb/\scalht bins
+within each category) are considered to extract the final result. 
+To choose the 4 jet multiplicity categories that are combined, a raking procedure 
+is used based on the expected significance. 
+In Tab.~\ref{tab:sig-bestCats} the 4 jet categories used for the limits are shown for few benchmark models. 
 
-In Figure ~\ref{fig:T1bbbb_plane_xs} and ~\ref{fig:T1bbbb_plane_mu} the expected upper limits on the cross section and the signal strength $\mu=\sigma/\sigma_{\mathrm{theory}}$ are shown for 1.26 \ifb of integrated luminosity, in the $(m_{Gluino},m_{LSP})$ plane, for the \texttt{T1bbbb} model. 
-The exclusion contour is also shown together with $\pm1\sigma$ uncertainty (dashed lines) from the expected limit. 
+\begin{table}[h!]
+  \caption{
+    The 4 best jet categories, used in the combination providing the exclusion limits, 
+    for some benchmark models used in the analysis.
+  }
+  \label{tab:sig-bestCats}
+  \centering
+  \begin{tabular}{ lll }
+    \hline
+    \hline
+    Model & $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ & Best categories \\ 
+    \hline
+    T1bbbb & (1000,800) & $\geq5j,4j,\geq5a,4a$ \\
+    T1bbbb & (1500,100) & $\geq5j,4j,3j,2j$ \\
+    T1qqqq & (900,700)  & $\geq5j,4j,\geq5a,4a$ \\
+    T1bbbb & (1350,100) & $\geq5j,4j,3j,2j$ \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+In Figure ~\ref{fig:plane_xs} the 95\% C.L. upper limits on the cross section are shown 
+in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered in this interpretation. 
+These results correspond to 2.2 \ifb of integrated luminosity. 
+The exclusion contour is also shown together with $\pm1\sigma$ uncertainty. 
+The band around the expected exclusion reflects the experimental uncertainty, 
+while the band around the observed exclusion correspond to the theoretical 
+uncertainty on the signal cross section.
+
+Gluino masses up to $\sim$1550 GeV ($\sim$1350 GeV) are excluded in the T1bbbb (T1qqqq) models. 
+In both cases, the exclusion exceeds the one from Run 1. \\
+In general the observed exclusion is in agreement with the expectation. 
+A moderate excess in the $\njet\geq5, \nb\geq2, \scalht > 800 \, \mathrm{GeV}$ (see Tab.~\ref{tab:predallqcdpost_sig_comb_sym})
+causes the observed limits to be slightly weaker than expected for the T1bbbb model. 
+Event displays for collision events falling in these analysis bins have been carefully inspected 
+using the standard tools used in the collaboration, and they don't exhibit any problem, 
+thus making us confident that they are real physics events. 
 
 \begin{figure}
-  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for the \texttt{T1bbbb} model.\label{fig:T1bbbb_plane_xs}}
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{figures/susyResults/xs_contour_withHisto}
+  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for the T1bbbb model.\label{fig:plane_xs}}
+  \begin{center}    
+    \subfigure[T1bbbb]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1bbbbRA1XSEC}} ~~
+    \subfigure[T1qqqq]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1qqqqRA1XSEC}}
   \end{center}
 \end{figure}
 
-\begin{figure}
-  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the signal strength for the \texttt{T1bbbb} model.\label{fig:T1bbbb_plane_mu}}
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{figures/susyResults/mu_contour_withHisto}
-  \end{center}
-\end{figure}
 
 
-% FIXME: this needs update
-%% The \mht templates histograms for the backgrounds together with some benchmark models are shown in Figs.~\ref{fig:mht_eq0b_eq4j},\ref{fig:mht_eq0b_ge5j},\ref{fig:mht_eq0b_ge5a},\ref{fig:mht_eq1b_ge5j},\ref{fig:mht_eq2b_ge5a},\ref{fig:mht_ge3b_ge5j} for the most relevant \HT bins. 
-
-%% \begin{figure}
-%%   \begin{center}
-%%     \subfigure[$350 < \HT < 400  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_eq4j_350_400.pdf}} ~~
-%%     \subfigure[$400 < \HT < 600  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_eq4j_400_600.pdf}} \\
-%%     \subfigure[$600 < \HT < 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_eq4j_600_800.pdf}} ~~
-%%     \subfigure[$\HT > 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_eq4j_800_Inf.pdf}} \\
-%%     \caption{\mht templates for the $\njet=4$, $\nb=0$ category.}
-%%     \label{fig:mht_eq0b_eq4j}
-%%   \end{center}
-%% \end{figure}
-
-
-%% \begin{figure}
-%%   \begin{center}
-%%     \subfigure[$400 < \HT < 600  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_ge5j_400_600.pdf}} ~~
-%%     \subfigure[$600 < \HT < 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_ge5j_600_800.pdf}} \\
-%%     \subfigure[$\HT > 800 \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_ge5j_800_Inf.pdf}}
-%%     \caption{\mht templates for the $\njet\geq 5$, $\nb=0$ category.}
-%%     \label{fig:mht_eq0b_ge5j}
-%%   \end{center}
-%% \end{figure}
-
-
-%% \begin{figure}
-%%   \begin{center}
-%%     \subfigure[$350 < \HT < 400  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_ge5a_350_400.pdf}} ~~
-%%     \subfigure[$400 < \HT < 600  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq0b_ge5a_400_600.pdf}}
-%%     \caption{\mht templates for the $\njet\geq 5$ (asymmetric), $\nb=0$ category.}
-%%     \label{fig:mht_eq0b_ge5a}
-%%   \end{center}
-%% \end{figure}
-
-
-%% \begin{figure}
-%%   \begin{center}
-%%     \subfigure[$400 < \HT < 600  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq1b_ge5j_400_600.pdf}} ~~
-%%     \subfigure[$600 < \HT < 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq1b_ge5j_600_800.pdf}} \\
-%%     \subfigure[$\HT > 800 \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq1b_ge5j_800_Inf.pdf}}
-%%     \caption{\mht templates for the $\njet\geq 5$, $\nb=1$ category.}
-%%     \label{fig:mht_eq1b_ge5j}
-%%   \end{center}
-%% \end{figure}
-
-
-%% \begin{figure}
-%%   \begin{center}
-%%     \subfigure[$350 < \HT < 400  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq2b_ge5a_350_400.pdf}} ~~
-%%     \subfigure[$400 < \HT < 600  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq2b_ge5a_400_600.pdf}} \\
-%%     \subfigure[$600 < \HT < 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq2b_ge5a_600_800.pdf}} ~~
-%%     \subfigure[$\HT > 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_eq2b_ge5a_800_Inf.pdf}} \\
-%%     \caption{\mht templates for the $\njet=5$ (asymmetric), $\nb=2$ category.}
-%%     \label{fig:mht_eq2b_ge5a}
-%%   \end{center}
-%% \end{figure}
-
-
-%% \begin{figure}
-%%   \begin{center}
-%%     \subfigure[$400 < \HT < 600  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_ge3b_ge5j_400_600.pdf}} ~~
-%%     \subfigure[$600 < \HT < 800  \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_ge3b_ge5j_600_800.pdf}} \\
-%%     \subfigure[$\HT > 800 \gev$]{\includegraphics[width=0.5\textwidth]{figures/susyResults/MHT_ge3b_ge5j_800_Inf.pdf}}
-%%     \caption{\mht templates for the $\njet\geq 5$, $\nb\geq 3$ category.}
-%%     \label{fig:mht_ge3b_ge5j}
-%%   \end{center}
-%% \end{figure}
-
-
-%% Tables~\ref{tab:results_ul} and \ref{tab:results_signif} show, respectively, 
-%% the expected 95\% upper limit on the signal strength $\mu=\sigma/\sigma_{\mathrm{theory}}$ 
-%% and the expected discovery significance, for all the simplified models. 
-%% The projections are done for an integrated luminosity of 3 \ifb and 10 \ifb. 
-%% The effect of including a ``toy'' template uncertainty (Sec.~\ref{sec:syst-on-shape}) is compared to the result without any template systematic.  
-
-%% Both the significance and the limit are computed using the asymptotic formulae and the pre-fit Asimov datasets \cite{AsymptoticFormulae}. 
-%% The upper limits are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. \\
-%% All the statistical results are produced using the \textit{combine} tool, 
-%% provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. \\
-%% For each model, the categories used in the combination are listed in Table \ref{tab:simplified-models}. 
-
-%% \begin{table}
-%%   \centering
-%%   \caption{95\% C.L. upper limit on $\mu$ for the different benchmark models and the different luminosity scenarios. 
-%%   The main result is obtained by applying 
-%%   the ``toy'' template systematic described in Section~\ref{sec:syst-on-shape}, 
-%% while in parentheses the result without any template systematic is reported. 
-%% For T2qq, two degenerate light squark generations are assumed.}
-%%   \label{tab:results_ul}
-%%   \footnotesize
-%%   \begin{tabular}{lcc}
-%%     \hline
-%%     \hline
-%%     Signal model & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
-%%     \hline
-%%     \hline
-%%     T1bbbb 1500,100  & 0.68 (0.66) & 0.33 (0.31) \\ 
-%%     T1bbbb 1000,900  & 0.67 (0.62) & 0.35 (0.31) \\ 
-%%     T1qqqq 1400,100  & 0.98 (0.82) & 0.54 (0.41) \\ 
-%%     T1qqqq 1000,800  & 0.75 (0.65) & 0.42 (0.35) \\ 
-%%     T1tttt 1500,100  & 1.9 (1.84) & 0.92 (0.86) \\  
-%%     T1tttt 1200,800  & 3.89 (3.78) & 2.06 (1.93) \\ \hline
-%%     T2tt 850,100     & 2.07 (1.91) & 1.13 (0.98) \\ 
-%%     T2tt 650,325     & 2.3 (2.16) & 1.32 (1.18) \\  
-%%     T2tt 500,325     & 3.48 (3.39) & 1.88 (1.79) \\ 
-%%     T2tt 425,325     & 2.16 (2.02) & 1.19 (1.1) \\  
-%%     T2qq 1200,100    & 1.75 (1.43) & 0.91 (0.7) \\  
-%%     T2qq 600,550     & 0.57 (0.47) & 0.32 (0.24) \\ 
-%%     T2bb 900,100     & 1.84 (1.71) & 0.92 (0.82) \\ 
-%%     T2bb 600,580     & 4.89 (3.95) & 2.84 (2.13) \\ 
-%%     \hline
-%%     \hline
-%%   \end{tabular} 
-%% \end{table}
-
-
-%% \begin{table}
-%%   \centering
-%%   \caption{Expected significance for the different benchmark models and the different luminosity scenarios. 
-%%     The main result is obtained by applying 
-%%   the ``toy'' template systematic described in Sec.~\ref{sec:syst-on-shape},
-%% while in parentheses the result without any template systematic is reported. 
-%% For T2qq, two degenerate light squark generations are assumed.}
-
-%%   \label{tab:results_signif}
-%%   \footnotesize
-%%   \footnotesize
-%%   \begin{tabular}{lcc}
-%%     \hline
-%%     \hline
-%%     Signal model & $\mathcal{L} = 3 \ifb$ & $\mathcal{L} = 10 \ifb$ \\
-%%     \hline
-%%     \hline
-%%     T1bbbb 1500,100  & 3.0 (3.3) & 5.2 (5.9) \\  
-%%     T1bbbb 1000,900  & 3.0 (3.4) & 5.1 (6.2) \\  
-%%     T1qqqq 1400,100  & 1.9 (2.6) & 3.2 (4.8) \\  
-%%     T1qqqq 1000,800  & 2.6 (3.1) & 4.6 (5.6) \\  
-%%     T1tttt 1500,100  & 1.3 (1.4) & 2.2 (2.5) \\  
-%%     T1tttt 1200,800  & 0.6 (0.6) & 1.0 (1.1) \\  \hline
-%%     T2tt 850,100     & 1.0 (1.2) & 1.8 (2.1) \\  
-%%     T2tt 650,325     & 0.9 (1.0) & 1.5 (1.7) \\  
-%%     T2tt 500,325     & 0.6 (0.6) & 1.1 (1.2) \\  
-%%     T2tt 425,325     & 0.9 (1.0) & 1.7 (1.9) \\  
-%%     T2qq 1200,100    & 1.1 (1.5) & 2.1 (2.9) \\  
-%%     T2qq 600,550     & 3.3 (4.3) & 6.0 (8.0) \\  
-%%     T2bb 900,100     & 1.2 (1.3) & 2.2 (2.5) \\
-%%     T2bb 600,580     & 0.4 (0.5) & 0.7 (1.0) \\  
-%%     \hline
-%%     \hline
-%%   \end{tabular} 
-%% \end{table}
 
 
 %%____________________________________________________________________________||
