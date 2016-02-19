@@ -27,8 +27,8 @@ is implemented using the \GEANTfour~\cite{geant} package. The
 simulated samples are normalised using the most accurate cross section
 calculations currently available, usually with
 next-to-leading-order (NLO) accuracy (NNLO in the case of \ttbar). \\
-Corrections to the cross sections are derived for \gj, W+jets, Z+jets and \ttbar 
-using sidebands in data.
+Corrections to the normalisation of the \gj, W+jets, Z+jets and \ttbar+jets 
+processes are derived using sidebands in the \mht variable in data control samples. 
 To model the effects of pileup, the simulated events are generated with a nominal distribution
 of pp interactions per bunch crossing and then reweighted to match the
 pileup distribution as measured in data.
@@ -102,8 +102,8 @@ single-top-quark, diboson, and Drell-Yan production are also included.
   \begin{tabular}{ ccccc }
     \hline
     \hline
-    Systematic source & \multicolumn{4}{c}{Uncertainty (\%)} \\    
-     & $\mj \rightarrow \znunu$  & $\mmj \rightarrow \znunu$ & $\gj \rightarrow \znunu$ & $\mj \rightarrow \ttbar+W$\\
+    Systematic source & \multicolumn{4}{c}{Uncertainty} \\    
+     & $\mj \Rightarrow \znunu$  & $\mmj \Rightarrow \znunu$ & $\gj \Rightarrow \znunu$ & $\mj \Rightarrow \ttbar+W$\\
     \hline
     \alphat/\bdphi extrapolation & $5-80\%$ & $50-80\%$ & - & $5-80\%$ \\
     W/Z ratio & $10-30\%$ & - & - & -  \\
@@ -133,7 +133,7 @@ and taken as fully correlated across the bins.
 Other systematics effects are inspected through data-driven tests probing 
 the compatibility of yields in two disjoint data control samples and 
 a corresponding transfer factor derived from simulation~\cite{RA1Paper2012}. 
-Each of these tests is built to target specific key ingredients in the analysis, 
+Each of these tests is built to target specific key ingredients in the simulation modelling, 
 like the $Z / \gamma$ ratio or the \alphat cut efficiency. 
 The level of closure and its statistical precision are 
 used to extract systematic uncertainties as a function of \scalht, 

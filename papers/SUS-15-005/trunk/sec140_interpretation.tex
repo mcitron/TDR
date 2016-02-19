@@ -5,31 +5,30 @@
 
 A likelihood model of the observations in all data samples is used to
 obtain a consistent prediction of the SM backgrounds and to test for
-the presence of a variety of signal models.  In each bin of \scalht
-for events in the same category of \njet and \nb, the observation is
-modelled as a Poisson-distributed variable around the sum of the SM
-expectation and a potential signal contribution (assumed to be zero in
-the following discussion). The SM expectation is related to the
-expected yields in the \mj, \mmj, and \gj control samples via transfer
-factors derived from simulation. Likelihood functions describe the
-yields in the \scalht bins of the \mj, \mmj, and \gj control samples
-in the same category of \njet and \nb as the signal region. The
-systematic uncertainties summarised in Table~\ref{tab:bkgd_systs} are
-accommodated in the likelihood function by nuisance parameters, the
+the presence of a variety of signal models.  In each bin defined by the \njet, \nb, \scalht and \mht variables 
+the observation is modelled as a Poisson-distributed variable around the sum of the SM
+expectation. A potential signal contribution is considered when 
+interpreting the results in specific models, as presented in Sec.~\ref{sec:interpretation}. 
+The SM expectation is related to the expected yields in the \mj, \mmj, and \gj control samples via transfer
+factors derived from simulation. Poisson factors for the 
+observed yields in all the control samples  
+are included, for each \njet, \nb, \scalht bin, in order to 
+account for the correlations in the background predictions and uncertainties. 
+The systematic uncertainties summarised in Table~\ref{tab:bkgd_systs} are
+accommodated in the likelihood function through the use of nuisance parameters, the
 measurements of which are assumed to follow a log-normal
 distribution. In the presence of a non-zero signal contribution, the
 CL$_{\mathrm{s}}$ technique~\cite{read, Cowan:2010js} is used to
 determine upper limits on production cross section using asymptotic
 formulae.
 
-The expected number of events from SM processes is determined from a
-simultaneous fit to the signal region and up to three control
-samples. The likelihood function is maximised over all fit parameters
-under the SM-only hypothesis.
 Tables~\ref{tab:predewkdata_sig_comb_mono}--\ref{tab:predewkdata_sig_comb_sym}
 summarise the observed yields and ``pre-fit'' and ``post-fit'' SM
 expectations for signal candidate events in the monojet, asymmetric,
-and symmetric categories, respectively. No significant tension is
+and symmetric categories, respectively. 
+In the fit the likelihood function is maximised over all parameters
+under the SM-only hypothesis.
+No significant tension is
 observed between the predictions and data in the signal region, which
 is well described by the SM-only hypothesis.
 
@@ -59,31 +58,33 @@ CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The distribution of the number of
 pp interactions per bunch crossing for the simulated samples matches
 that observed in data. Various uncertainties in the experimental
 acceptance are considered, for which typical magnitudes are summarised
-in Table~\ref{tab:signal_systs}.
+in Table~\ref{tab:signal_systs}, for some benchmark models. 
 
 \begin{table}[h!]
-  \caption{%CMS {\it Simulation}. 
-    Typical magnitudes of systematic uncertainties in the experimental
-    acceptance for the signal models considered.
+  \caption{Representative range of uncertainty across the analysis bins 
+    for each source of systematic in the signal acceptance. 
+    Two benchmark point are chosen for each model, 
+    corresponding to ``compressed'' and ``uncompressed'' scenarios, 
+    i.e. with small and large mass splitting between the mother particle and the LSP.
   }
   \label{tab:signal_systs}
   \centering
-  \footnotesize
-  \begin{tabular}{ lccc }
+  \begin{tabular}{ ccccc }
     \hline
     \hline
-    Systematic source              & Type          & Correlated & Typical magnitude (\%) \\
+    Systematic & \multicolumn{4}{c}{Benchmark model} \\
     \hline
-    Luminosity                     & Normalisation & Yes        & 4.6                    \\
-    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
-    Initial state radiation        & Norm. + shape & Yes        & 0--30                  \\
-    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
-    Pile-up                        & Norm. + shape & Yes        & 0-5                    \\
-    Trigger                        & Norm. + shape & Yes        & 0--10                  \\
-    Parton density functions       & Normalisation & No         & 10                     \\
-%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
-    b-tag scale factors            & Norm. + shape & Yes        & 5--30                  \\
-    Lepton scale factors           & Normalisation & Yes        & $<$5                   \\
+    & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} \\ 
+    & compressed & uncompressed & compressed & uncompressed \\
+    \hline
+    Luminosity               & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%      \\ \hline
+    Trigger                  & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%      \\ \hline
+    MC statistics            & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%     \\ \hline
+    PU reweighting           & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%      \\ \hline
+    B-tag efficiency         & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%     \\ \hline
+    Lepton efficiency        & 10\%       & 10\%       & 10\%      & 10\%       \\ \hline
+    Jet energy scale         & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%     \\ \hline
+    Initial state radiation  & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%      \\
     \hline
     \hline
   \end{tabular}
