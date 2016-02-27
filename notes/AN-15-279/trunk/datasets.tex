@@ -4,31 +4,60 @@
 \subsection{Data}
 
 
-In this note, we use 2.1~\ifb proton-proton collision data at $\sqrt{s} =$ 13~TeV collected in 2015. The details of the data and
-simulated samples for background processes are given in Ref.~\cite{alphaTnote}. In this note we focus on DM related items, including the simulated DM samples. 
+In this note, we use 2.1~\ifb proton-proton collision data at $\sqrt{s} =$ 13~TeV collected in 2015. The specific datasets are given in 
+
+\begin{table}[!h]
+\topcaption{Data sets}
+\footnotesize \input{AN-15-004/trunk/tables/datasets/c140607_c151022_l001.tex}
+\label{tab:datasets_data}
+\end{table}
+
+Latest JSON files are applied. Further details are given in Ref.~\cite{alphaTnote}. 
+
+
 
 \subsection{Simulation}
 
-The generic signature of dark matter pair production in collider is missing transverse momentum from the dark matter along with recoiling energetic visible particles that are used to trigger the event. First analyses using contact operators~\cite{Goodman:2010ku} in effective field theories (EFTs) calculated for a set of possible
-couplings were used to interpret dark matter searches. Experimental limits using
-monojet final states have been published using 7 and 8 TeV LHC 
-data~\cite{Chatrchyan:2012me,ATLAS:2012ky}. 
+\subsection{Background}
 
-The lack of predictive information and severe validity constraints of EFTs have
-led to the development of improved minimal simplified dark matter (MSDM) models.
-These models enable the comparison between different experimental
-searches in a relatively model-independent way~\cite{Buchmueller:2014yoa}.
+A large range of possible background sources has been simulated, these are:
 
-The \alphat analysis is sensitive to DM production in association with both
-light ($g,~u,~d,~c,~s$) and heavy flavour ($b,~t$) jets. 
+\begin{center}
+  \begin{itemize}
+  \item[DY$\to \ell \ell$:] In bins of \HT from 100 GeV onwards
+  \item[$\gamma+\textrm{jets}$:] In bins of \HT from 100 GeV onewards
+  \item[$QCD$:] In bins of \HT from $100-2000$ GeV 
+  \item[$\ttj$:] Hadronic, single lepton and dileptonic final states
+  \item[$W+\textrm{jets}$:] In bins of \HT from 100 GeV onewards
+  \item[$Z+\textrm{jets}$:] In bins of \HT from 100 GeV onewards
+  \item[Diboson:] Inclusive $WW$, $WZ$ and $ZZ$ production
+  \end{itemize}
+\end{center}
 
-The simplified models have been procuded in accordance to to the ATLAS-CMS-Theory DM Forum. The samples have been centrally produced using the \textsc{POWHEG} generator
-we produce samples binned in mediator mass $1 GeV \le \mphi\le 10000$ GEV and dark matter masses $\mchi$ between $1 \ge \mchi < 400$ GeV. We simulate (vector-)axial (A, AV)and (pseudo-)scalar (PS, S)
-couplings for the mediator and couplings to light quarks only or heavy quarks ($b, t$). The couplings of the mediator $\Phi$ to the dark matter particle $\chi$ $\gdm$ and the Standard Model $\gsm$ are assumed to be $\gdm=\gsm=1.0$ for scalar type couplings and $\gdm=1.0,~\gsm=0.25$ for (A)V interactions. The width is calculated using the minimal widht assumption, e.g. no decay to other particles is allowed.
 
-%Centrally produced signal samples for (vector-)axial and (pseudo-)scalar with light and heavy quarks in the final states are used.
-A subset of the samples used is given in Tables~\ref{datasets_dm_vector}-~\ref{tab:datasets_dm_ttbar_pseudoscalar}. In these data sets, in addition to the main interaction, each
-event contains on average 20 minimum bias interactions which simulate multiple interactions per bunch-crossing (in-time pileup). The expected detector signal from previous or following bunch crossings (out-of-time pileup) with 25ns bunch spacing is overlapped.
+
+In these datasets in additoin to the main interaction, each event contains on average 20 minimum bias interactions which simulate multiple interactions per bunch-crossing (in-time pileup). The expected detector signal from previous or following bunch crossings (out-of-time pileup) with $25$ns bunch spacing is overlapped.
+
+
+The samples binned according to generator level quantities  
+($W+$jets,D$Y+$jets,$QCD$,$\gamm+$jets, $Z\to \nu \nu$+jets) are provided with LO cross sections only. The LO to (N)NLO corrections (\kfactors) are usually determined determined using corresponding inclusive samples applied to each HT binned sample. Further studies can provide corrections to the cross sections, which can prove important to the closure test procedures described later. Residual cross section corrections are measured using data in sidebands designed to enriched specific processes.
+
+
+In the $8$ TeV LHC results the top quark momentum spectrum was found to differ between
+simulation and data. A reweighting is therefore applied to MC events that contain a generated top. The value of this correction is provided from the 8 TeV results, as described in~\cite{twiki-TopPtReweighting}.
+
+\subsubsection{Signal}
+
+A list of possible dark matter simplified models are produced following the ATLAS-CMS-Theory DM Forum recommendations. The samples have been centrally produced using the \textsc{POWHEG} generator for mediator mass range of $1 GeV \le \mphi\le 10000$ GeV and dark matter masses $\mchi$ between $1 \ge \mchi < 400$ GeV. We simulate four possible interaction, (vector-)axial (A, AV)and (pseudo-)scalar (PS, S).
+
+Additionally we separately simulate light- ($u,~c,~d,~s$) and heavy quarks ($b,~t$) production. For all samples we assume for the couplings  $\gdm$ between mediator and dark maater $\gdm=1.0$. 
+
+For the coupling $\gsm$ between mediator and SM two values are assumed, $\gsm=1.0$ for scalar and pseudo-scalar couplings and $\gsm=0.25$ for (A)V interactions. In all casesd we assume the minimal width, e.g. no decay to other particles is allowed.
+
+Typically kinematics and expeced production cross section are comparable between V(A) couplings produced mostly via $q\bar{q}$-annihilation and (P)S production mainly from gluon-fusion.
+
+A subset of these samples is given in Tables~\ref{datasets_dm_vector}-~\ref{tab:datasets_dm_ttbar_pseudoscalar}. 
+
 
 \begin{table}[!p]
  \centering
