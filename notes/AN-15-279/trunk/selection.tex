@@ -63,14 +63,16 @@ jet satisfies $40 < \PT < 100\gev$ events are assigned to an ``asymmetric'' \nje
 jet with $\PT>40\gev$, events are assigned to the ``mono-jet'' category. 
 
 
-Expanding the analysis to consider a wide variety of DM final states has been the main focus for Run I. This results in the addition of two more jet categories, the monojet and asymmetric jet categories, that more than doubled the available signal regions. Because many DM signatures are ISR induced this included challenging soft kinematic regions. Events in the hadronic signal and all control regions are categorised identically and according to the number of jets (\njet) reconstructed in each event and the number of jets identified as originating from bottom quarks (\nb) in each event. 
-
 The baseline selection ('preselection') requires events have significant hadronic activity by requiring $\scalht > 200\GeV$.  Events in all samples are binned identically, according to the \HT variable. The choice of binning in \HT is driven primarily by the trigger strategy: 50\gev
 bins in the range $200 < \HT < 400\gev$, 100\gev bins in the range $400 < \HT < 600\gev$, a 200\gev bin $600<\HT<800\gev$ and a final 
 inclusive bin $\HT > 800\gev$. The resulting sub-samples comprise events containing exactly one, two, three, four, or at least five jets. These are further split into the aforementioned  ``monojet'',  ``symmetric'' or ``asymmetric'' \njet categories. Events are as well categorised according to the the number of b-tagged jets (``b-jets''), by requiring exactly zero, one, two, or at least three b-tagged jets. 
 
 
-Events are also required to have appreciable missing hadronic energy by requiring $\mht>130\gev$. This ensures that all events used within the analysis have a degree of missing energy similar to that required in the signal region via an \alphat cut. An overview of all selection criteria is given in Table~\ref{tab:pre-selections}.
+Events in the 'mono-jet' category and control regions that don't apply an \alphat selection have to fulfill $\mht>130\gev$ to ensures that all events used in the analysis have a comparable missing energy similar as introduced in the signal regions with \alphat cut. An overview of all selection criteria is given in Table~\ref{tab:pre-selections}.
+
+
+Expanding the analysis to consider a wide variety of DM final states has been the main focus for Run I. This results in the addition of two more jet categories, the monojet and asymmetric jet categories, that more than doubled the available signal regions. Because many DM signatures are ISR induced this included challenging soft kinematic regions. Events in the hadronic signal and all control regions are categorised identically and according to the number of jets (\njet) reconstructed in each event and the number of jets identified as originating from bottom quarks (\nb) in each event. 
+
 
 \begin{table}[h!]
   \topcaption{Summary of the pre-selection criteria.}
@@ -86,7 +88,7 @@ Events are also required to have appreciable missing hadronic energy by requirin
     Jet acceptance                & $\PT > 40\gev$, $|\eta| < 3$                                                         \\
 %    \njet                         & $\geq2$                                                                \\
     Lead jet acceptance           & $\PT > 100\gev$, $|\eta| <    2.5$                                     \\
-    Second jet acceptance         & $\PT > 100\gev$ \texttt{OR} $40 < \PT < 100\gev$                       \\
+    Second jet acceptance         & $\PT > 100\gev$ \testrm{or} $40 < \PT < 100\gev$                       \\
     Loosest \HT requirement       & $\HT > 200\gev$                                                        \\
     Loosest \mht requirement      & $>130\gev$                                                     \\  
     Baseline \HT binning          & 200--250, 250--300, 300--350, 350--400, 400--500, 500--600, 600--800, $>$800\gev \\
@@ -105,30 +107,16 @@ Events are also required to have appreciable missing hadronic energy by requirin
 
 
 %marcelle
-\subsection{The hadronic signal region}
+\subsection{The signal region}
 
-To select a sample of events in the hadronic final state and to suppress SM processes with genuine \met from neutrinos, events
-containing an isolated electron with $\pt > 10\GeV$ and $|\eta| < 2.5$ or an isolated muon with $\pt > 10\GeV$ and $|\eta| < 2.5$ are
-vetoed. Further, to reduce backgrounds from \wj and \ttbar due to mis-reconstructed leptons, events containing single isolated tracks with $\pt > 10\GeV$ and $|\eta| < 2.5$ are rejected. In the case of the single and di-lepton control samples, a further
-requirement is made such that events are not vetoed due to the presence of a track from the well identified leptons, by requiring
-$\Delta R(\textrm{track},\textrm{lepton}) > 0.02$. Finally, to select a purely hadronic topology and to allow for a 
-orthogonal control region, events are vetoed in which an isolated photon with $\pt > 25\GeV$ and $|\eta| < 2.5$ is identified.
+The hadronic signal regions is selected by rejecting events with an isolated electron with $\pt > 10\GeV$ and $|\eta| < 2.5$ or an isolated muon with $\pt > 10\GeV$ and $|\eta| < 2.5$. To furhter reduce backgrounds from \wj and \ttbar due to mis-reconstructed leptons, events with single isolated tracks with $\pt > 10\GeV$ and $|\eta| < 2.5$ are vetoed. In the case of the single and di-lepton control samples we do not veto events due to the presence of a track from the well identified leptons, by requiring $\Delta R(\textrm{track},\textrm{lepton}) > 0.02$. Finally, to select a purely hadronic topology and to allow for a orthogonal control region, events with an isolated photon with $\pt > 25\GeV$ and $|\eta| < 2.5$ are rejected.
 
 
-%Background events from multijet production populate the region $\alphat \lesssim 0.5$ and therefore can be rejected with very high
-%efficiency by requiring an appropriate cut on \alphat. In the Run~1 analyses, a minimum requirement of $\alphat > 0.55$ was imposed, with
-%a raised threshold (as high as 0.65) used at low \HT to control against a potential increase in contamination from multijet production
-%due to worsening resolution and jet \PT threshold effects.  (The latter effect refers to ``fake'' \mht arising from the rare occurrence
-%of multiple soft jets below threshold that are relatively collinear.)The minimum threshold of 0.55 was motivated primarily by the control
-%of the multijet background and considered conservative for mid to high regions in \HT, while maintaining good signal acceptance. However,
-%improving jet resolutions and a reduced jet threshold effect relative to an increasing \HT scale means that looser \alphat thresholds can be
-%used at higher values of \HT.
+The further selection is based on two powerful variables to discriminate instrumental and multijet background. These are the \alphat and \bdphi variables.
 
-%A useful approximate conversion between \alphat and \mht can be obtained by calculating \alphat, as described by Eq.~\ref{eq:alphat3}, while forcing $\dht = 0\gev$. Using this dependence of
-One can exploit the dependence of  \alphat as a function of the \HT such that \mht is roughly constant across all \HT bins. 
-The values typically fall in the range $\sim110 < \mht < \sim160\gev$. This approximate levelling of the ``effective'' \mht threshold implies
-increasingly tighter requirements against instrumental effects versus \HT, while maximising signal acceptance. 
-Table~\ref{tab:alphat-thresholds} shows the expected \alphat thresholds and corresponding ``effective'' \mht thresholds for each \HT bin. 
+\subsubsection*{\alphat}
+
+The \alphat dependence of \HT is used to adjust the \alphat requirement such that \mht is roughly constant across all \HT bins.  These are typically $\sim110 < \mht < \sim160\gev$. This approximate levelling of the ``effective'' \mht threshold implies increasingly tighter requirements against instrumental effects versus \HT, while maximising signal acceptance.  Table~\ref{tab:alphat-thresholds} shows the expected \alphat thresholds and corresponding ``effective'' \mht thresholds for each \HT bin. 
 The \alphat threshold is dependent only on \HT and not on \njet nor \nb that are used to define the event categories.
 
 
@@ -153,18 +141,14 @@ The \alphat threshold is dependent only on \HT and not on \njet nor \nb that are
   \end{tabular}
 \end{table}
 
-For Run~2, all signal region bins satisfying $\HT > 800\gev$ are seeded by the single-object \texttt{HLT\_HT800} trigger, which is
-expected to be unprescaled. For these high \HT bins, no \alphat threshold is required, which removes the inefficiencies of this
-variable for high jet multiplicity events. Instead, the following $\mht >130\gev$ requirement helps to control the multijet background
-along with the imposition of $\bdphi > 0.5$.
+All events satisfying $\HT > 800\gev$ are seeded by the single-object \texttt{HLT\_HT800} trigger, which is expected to be unprescaled. For these high \HT bins, no \alphat threshold is required, which removes the inefficiencies of this variable for high jet multiplicity events. Instead, the following $\mht >130\gev$ requirement helps to control the multijet background along with the imposition of $\bdphi > 0.5$.
 
 
 
-Further, an additional powerful variable \bdphi is used to suppress multijet contamination due to both instrumental effects and
-semi-leptonic heavy-flavour decays with genuine \met in the final state. The variable is determined as follows. The jet-based estimate
-of the missing transverse energy, ${\mhtvec}$, is recomputed while ignoring one of the reconstructed jets (the ``test'' jet). The
-difference in the azimuthal angle between the recomputed $\mhtvec$ and the ``test'' jet is then determined. This process is repeated for
-each jet in the event and the minimum of all the azimuthal differences, \bdphi, is determined. For monojet events, the calculation is 
+\subsubsection*{\bdphi}
+
+Further, an additional powerful variable \bdphi is used to suppress multijet contamination due to both instrumental effects and semi-leptonic heavy-flavour decays with genuine \met in the final state. The variable is determined as follows. The jet-based estimate of the missing transverse energy, ${\mhtvec}$, is recomputed while ignoring one of the reconstructed jets (the ``test'' jet). The
+difference in the azimuthal angle between the recomputed $\mhtvec$ and the ``test'' jet is then determined. This process is repeated for each jet in the event and the minimum of all the azimuthal differences, \bdphi, is determined. For monojet events, the calculation is 
 performed using all jets with $\Pt > 20\gev$. The ``test'' jet whose subtraction from the calculation $\mhtvec$ yields this minimum value, is
 identified as the jet that is most likely to have given rise to the missing transverse energy in the event. Events with significant \mht
 due to instrumental effects or heavy flavour decays populate the region $\bdphi \approx 0$ and so candidate signal event are accepted
@@ -172,13 +156,12 @@ only if they satisfy $\bdphi > 0.5$. The use of the \bdphi and \alphat variables
 contamination from multijet events and allow to maintain low jet \PT, \HT, and \mht thresholds, which in turn maximises signal acceptance
 for a large range of DM and SUSY models with final states characterised by the presence of significant \met.
 
-To protect against multiple jets failing the $\Et$ threshold or falling out of detector acceptance, the jet-based
-estimate of the missing transverse energy, \mht, is compared to the missing transverse energy variable, $\met$, and events with $R_{\rm
+
+\subsubsection*{Cleanup selections}
+To protect against multiple jets failing the $\Et$ threshold or falling out of detector acceptance, the jet-based estimate of the missing transverse energy, \mht, is compared to the missing transverse energy variable, $\met$, and events with $R_{\rm
   miss}=\mht/\met > 1.25$ are rejected. 
   
-Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count)
-or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause 
-severe energy losses. A data-driven method is developed to identify dead cells. The procedure is outlined in 
+Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count) or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause severe energy losses. A data-driven method is developed to identify dead cells. The procedure is outlined in 
 Ref.~\cite{alphaTnote}.
 % The procedure is carried out on events that pass a loose selection of one good primary vertex,
 %$\njet>1$ and $\scalht>150\gev$. For each identified jet with $\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
@@ -188,7 +171,11 @@ Ref.~\cite{alphaTnote}.
 %first map as the numerator and second as the denominator. Jets pointing to dead cells are likely to give $\bdphi < 0.3$, so the
 %location of dead cells in $\eta$ and $\phi$ have higher values in this 2D ratio map. Fig
 The CSC beam halo filter has been found to be less efficient during the early Run 2 data-taking period compared to the previous run.
-Beam halo events manifest themselves as single energy deposits in the calorimeters, which introduces large amounts of ``fake'' \met. This effect is especially prominent in the signal region monojet category, particularly at $\phi$ coordinates of 0 and $\pi$ because of the tendency of halo particles to lie within the plane of the LHC ring.  Such spurious events are suppressed by requiring at least 10\% of the leading jet's energy to originate from charged hadrons, $CHF>0.1$.  The requirements that define the hadronic signal region are summarised in Table~\ref{tab:sr-selections}.
+Beam halo events manifest themselves as single energy deposits in the calorimeters, which introduces large amounts of ``fake'' \met. This effect is especially prominent in the signal region monojet category, particularly at $\phi$ coordinates of 0 and $\pi$ because of the tendency of halo particles to lie within the plane of the LHC ring.  Such spurious events are suppressed by requiring at least 10\% of the leading jet's energy to originate from charged hadrons, $CHF>0.1$.  
+
+
+
+The requirements that define the hadronic signal region are summarised in Table~\ref{tab:sr-selections}.
 
 \begin{table}[h!]
   \topcaption{Summary of the signal region selection criteria, applied
@@ -213,7 +200,10 @@ Beam halo events manifest themselves as single energy deposits in the calorimete
   \end{tabular}
 \end{table}
 
-\subsection{The \texorpdfstring{\mht}{MHT} dimension}
+
+
+
+\subsection{The \texorpdfstring{\mht}{MHT} discriminator }
 
 As described above, and as used in Run~1, the analysis takes advantage of three discriminating variables, \njet, \nb, and \HT, to provide
 sensitivity to a large range of SUSY (and DM) models. No extrapolation in these variables is performed, with predictions of SM background
