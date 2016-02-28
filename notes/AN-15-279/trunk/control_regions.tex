@@ -1,54 +1,94 @@
 \subsection{Control Regions}
 
-Several control regions are defined to study modeling of important distributions and provide
-orthogonal selections to derive expected backgrounds in a data driven way.
+Five control regions are defined to study modeling of important distributions and provide orthogonal selections to derive expected backgrounds in a data driven way.
+These are \mj, \mmj, \gj, \eej and a hadronic control region. These control regions are designed to be kinematically close to the signal region in order to minimise the reliance on the simulation to model correctly the backgrounds and event kinematics in the control and signal samples.
 
 
-A hadronic control region that is enriched in multijet events and
-disjoint with respect to the signal region is obtained by applying both the pre-selection criteria and lepton/photon vetoes, as defined
-above, and inverting the (\HT-dependent) \alphat and/or \mhtmet requirements. 
-The sample of events populating this control region are used primarily to estimate any residual background contamination from QCD multijet production.
-
-Three more control regions are defined, with leptons or photons in the final state:: \mj, \mmj, and \gj. 
 
 The full pre-selection is applied as part of the definition of each of these control regions. The cuts on event-level jet-based quantities are identical to
-those applied in the hadronic search region and the same \njet, \nb, and \scalht binning is used. The lepton(s) or photon is not considered
-in the calculation of the event-level variables.
-
-The selection criteria of the various control regions are defined such that the background composition and event kinematics of the control
-regions mirror as closely as possible those for the signal region. This is done in order to minimise the reliance on the simulation to model correctly the backgrounds and event kinematics in
-the control and signal samples.
+those applied in the hadronic search region and the same \njet, \nb, and \scalht binning is used. The lepton(s) or photon is not considered in the calculation of the event-level variables. 
 
 Two exceptions are made. First, no \bdphi requirement is imposed as part of the selection criteria defining the control regions. Second,
-in the case of the four leptonic control regions, no requirement is made on \alphat. This is made possible by the remaining kinematic
-selection criteria, which are sufficiently selective to ensure that the leptonic event samples remain rich in events from the \wj, \ttbar
-and \zll processes with negligible contamination from QCD multijet events. Thus, the acceptance of the leptonic control regions can be
-significantly increased, which simultaneously improves their predictive power and further reduces the effect of any potential
-signal contamination.
-The lepton event samples can be used to predict components of the SM background across all \scalht bins, while the \gj sample can only be
-used for the region $\HT > 400\gev$ due to the photon trigger requirements. The following samples control regions are used:
+in the case of the leptonic control regions, no requirement is made on \alphat because the remaining selections ensure high purity in the \wj, \ttbar and \zll processes and only negligible  contamination from QCD multijet events. Therefore the \alphat selection has been removed to increase the statistics of the control samples selected. The lepton event samples can be used to predict components of the SM background across all \scalht bins, while the \gj sample can only be used for the region $\HT > 400\gev$ due to the photon trigger requirements. The following samples control regions are used:
+
 
 \begin{itemize}
+
+  \item{all jets} A hadronic control region that is enriched in multijet events and disjoint with respect to the signal region is obtained by applying both the pre-selection criteria and lepton/photon vetoes, as defined above, and inverting the (\HT-dependent) \alphat and/or \mhtmet requirements.  The sample of events populating this control region are used primarily to estimate any residual background contamination from QCD multijet production.
+
   \item{\mj} In order to select events containing W bosons, exactly one tight isolated muon within an acceptance of \PT $>$ 30 \gev and $|\eta| <$ 2.1 is required, and the transverse mass of the W candidate must satisfy $30 < \mt(\mu,\pfmet) < 125\gev$. 
 
   \item{\mmj} The selection criteria are identical to those for the \mj sample, while requiring two tightly isolated muons. The invariant mass of the two muons must satisfy $m_{Z} - 25 < M_{\mu_1\mu_2} < m_{Z} +25$ and they must have opposite charge.
 
-
   \item{\gj} The \gj sample is defined by requiring exactly one photon satisfying tight isolation criteria and within an acceptance of $\pt > 200\gev$ and $|\eta| < 1.45$. One important difference with respect to the leptonic control samples is the application of the \HT-dependent \alphat requirements imposed as part of the signal region definition. This is to ensure that the photon control sample and signal region are subject to identical kinematic requirements and the photon carries sufficient transverse energy so that the mass of the Z boson becomes a negligible effect when using the \gj sample to predict the kinematic distributions of the \znunu background. All cleaning requirements are applied. The \gj sample can only be used to predict background components the region $\HT > 400\gev$ due to trigger requirements.
 
+  \item{\eej} The selection criteria that defining the \eej control sample correspond to the selection of the \mjj region
 
 \end{itemize}
 
 
 
-\subsection{Cross section corrections}
+\subsection{Cross section and higher order corrections}
 
-The analysis strategy is such that there is little to no dependence to the normalization of simulated samples. Nevertheless if available NLO corrections (K-factors) are applied. These come either from theoretical calculations if available or enriched sidebands for the relevant process. 
-The $V$+jets ($V=W,Z$) process is known in LO and therefore only small corrections are expected. $V$+jet enriched light jet samples with two or three jets have been studied. The $\ttbar$ sample is studied in a sample of two or more jets and requiring at least two $b$-tagged jets. Results of all studies are inconclusive a the early stages of data commissioning and correction has been derived. 
+The cross sections for the most relevant SM background are summarised in Table~\ref{tab:cross_sections_bkg}.
 
-The \gjets process is known only in LO and no NLO cross section for 13 TeV has been calculated. Using a dedicated $350< \HT<400$~GeV sideband a K-factor of $1.30 \pm 0.08$ has been derived
+\begin{table}[!h]
+  \scriptsize
+  \centering
+  \topcaption{Cross sections for the main SM backgrounds.}
+  \label{tab:cross_sections_bkg}
+  \begin{tabular}
+    {c|c|c|c}
+    \hline\hline
+    \textbf{Sample} & \textbf{Cross section (pb)} & \textbf{Accuracy} & \textbf{K-factor} \\
+    \hline
+    W+jets, $100 < \scalht < 200$ GeV & $1347 \pm 2$ & LO & 1.21 \\
+    W+jets, $200 < \scalht < 400$ GeV & $360 \pm 1$ & LO & 1.21 \\
+    W+jets, $400 < \scalht < 600$ GeV & $48.9 \pm 0.17$ & LO & 1.21 \\
+    W+jets, $600 < \scalht < 800$ GeV & $12.8 \pm 0.4$ & LO & 1.21 \\
+    W+jets, $800 < \scalht < 1200$ GeV & $5.26 \pm 0.19$ & LO & 1.21 \\
+    W+jets, $1200 < \scalht < 2500$ GeV & $1.33 \pm 0.05$ & LO & 1.21 \\
+    W+jets, $\scalht > 2500$ GeV & $0.0309 \pm 0.0011$ & LO & 1.21 \\
+    \hline
+    DY+jets, $100 < \scalht < 200$ GeV & $139 \pm 4$ & LO & 1.23 \\
+    DY+jets, $200 < \scalht < 400$ GeV & $42.8 \pm 1.4$ & LO & 1.23 \\
+    DY+jets, $400 < \scalht < 600$ GeV & $5.5 \pm 0.2$ & LO & 1.23 \\
+    DY+jets, $\scalht > 600$ GeV & $2.2 \pm 0.8$ & LO & 1.23 \\
+    \hline
+    $\gamma$+jets, $40 < \scalht < 100$ GeV & $20730 \pm 66$ & LO & - \\
+    $\gamma$+jets, $100 < \scalht < 200$ GeV & $9226 \pm 36$ & LO & - \\
+    $\gamma$+jets, $200 < \scalht < 400$ GeV & $2281 \pm 47$ & LO & - \\
+    $\gamma$+jets, $400 < \scalht < 600$ GeV & $273 \pm 9$ & LO & - \\
+    $\gamma$+jets, $\scalht > 600$ GeV & $94.5 \pm 3.2$ & LO & - \\
+    \hline
+    $Z\rightarrow \nu\nu$+jets, $100 < \scalht < 200$ GeV & $280.47$ & LO & 1.23 \\
+    $Z\rightarrow \nu\nu$+jets, $200 < \scalht < 400$ GeV & $78.36$ & LO & 1.23 \\
+    $Z\rightarrow \nu\nu$+jets, $400 < \scalht < 600$ GeV & $10.94$ & LO & 1.23 \\
+    $Z\rightarrow \nu\nu$+jets, $\scalht > 600$ GeV & $4.20$ & LO & 1.23 \\
+    \hline
+    TTJets & $831.76^{+20}_{-30}$ & NNLO & - \\
+    \hline \hline
+  \end{tabular}
+\end{table}
 
-Yield and distributions for all control regions can be found in Ref.~\cite{alphaTnote}.
+
+The cross sections are known only to a limited number of perturbative orders and additional corrections might be sizeable. 
+If available NLO corrections (K-factors) are applied. These come either from theoretical calculations if available or enriched sidebands for the relevant process. 
+Furthermore the analysis strategy is such that there is little dependence to the normalization of simulated samples. Backgrounds normalisations are estimated
+from control regions in data, and the effect of cross section corrections on the transfer factors is expected to largely cancel out because of the similar background composition 
+between signal and the control regions. However, we want to avoid large extrapolations where possible. Therefore we
+measure in data residual cross section corrections to the background processes using sidebands enriched in a single process. This allows to apply these data driven separately and to compare where available the correction with available K-factors. We briefly list here the list of sidebands and resulting corrections. Details and control plots can be found again in ~\cite{alphaTnote}.
+
+\begin{itemize}
+
+  \item{\gj} The \gj sample is available only in LO accuracy and in contrast to all other samples no k-factor is available. As shown in Sec. 8 of \citee{alphaTnote} the expected yield from simulations differs from the expectation by about 20\%.  For $\ht < 400$ GeV, events are selected in the interval $0.50 < \alphat < 0.52$, and for $\ht>400$~GeV $ 0.50 <\alphat < 0.53$. The data yields are corrected for remaining QCD contaminations taken from simulations and the correction is determined.
+
+  \item{$V$+jets and \ttbar production} 
+ For the $V$+jets and \ttj samples the cross section are at known at NLO, NNLL accuracy respectively. The corrections for $V$+jets are about 1.2
+ We define a sideband by inverting \htmiss selection to $100<\htmiss<130$ and cross checked using the  $\htmiss/\etmiss > 1.25$ region. Both results are found to be compatible within the statistical
+ uncertainties. To increase purity the following additional selections are applied: For $W$+jets production we require one muon in the final state, not more than 2 jets and no identified $b$-jets. For $Z$+jets we require exactly two muons and no $b$-jets.  Finally to enrich \ttj production one muon, two light- and two $b$-jets are required.
+
+\end{itemiez}
 
 
 
