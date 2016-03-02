@@ -42,31 +42,78 @@ variables are individually capable of reducing the yields from
 multijet events by several orders of magnitude, and combined provide
 an extremely robust method to reject multijet events.
 
-In Fig.~\ref{fig:bDPhi_mhtJetPhi} a comparison of the abilities of the \bdphi variable to 
+In Fig.~\ref{fig:bDPhi_nominal} a comparison of the abilities of the \bdphi variable to 
 control the QCD multijet background with 
 a similar jet-\mht angular variable \dphimhtj, the minimum azimuthal separation between the \mht-vector and the leading four
-jets, is presented. The \bdphi variable exhibits a distribution that is more sharply peaked 
-at low values and faster falling than \dphimhtj, providing a better control
-of the QCD multijet background. \dphimhtj for QCD conversely has a broader 
-distribution with a larger leakage for a comparable azimuthal selection. 
+jets, is presented. The \bdphi variable exhibits a distribution that
+is more sharply peaked for the QCD multijet background 
+at low values and faster falling than \dphimhtj,  \dphimhtj for QCD conversely has a broader 
+distribution with a larger leakage for a comparable azimuthal
+selection. This demonstrates the ability of \bdphi to provide a better
+control of the QCD background while retaining acceptance of events with genuine \mht,
+in this case represented by the V+jets, \ttbar and other residual SM
+backgrounds with genuine \met. This is
+further demonstrated in Fig.~\ref{fig:bDPhi_roc}, where the efficiency
+of retaining processes with genuine \mht is plotted against the
+background efficiency for a series of \bdphi and \dphimhtj cuts. The
+points with a cut of $0.5$ are highlighted as stars on the plot. The
+general analysis strategy involves reducing the QCD multijet
+background to a negligible level while maximising signal acceptance. These plots demonstrate that this is
+most achievable with a cut on \bdphi. For the same threshold
+requirement of $0.5$ on each variable, the \bdphi variable provides an
+efficiency for multijet events that is approximately three orders of
+magnitude lower than for \dphimhtj at the cost of approximately a factor $3$
+reduction in signal efficiency. The threshold on dPhi required to give
+an approximately equivalent suppression of QCD achieved with the
+\dphimhtj
+variable is larger than 1.5, at the cost of a loss of a factor $5$ in
+signal acceptance w.r.t. \bdphi. This also holds true in the extreme
+case of a high jet multiplicity signal model.
+
 Additionally the \bdphi variable displays robustness in the 
 presence of severe event mismeasurement. A mismeasurement is simulated by artificially lowering 
 the \pt of the jet that minimises the azimuthal separation variable to 41 \GeV and the event 
 variables recomputed. Due to the removal of the probe jet from the computation of \bdphi, the 
 distribution of angular separation Fig.~\ref{fig:shifted_bDPhi_dist} is 
-remains unchanged under severe mismeasurement. The \dphimhtj variable is sensitive to such mismeasurement
-as both \mht and the rank of the leading four jets are affected, resulting in a broader distribution with
+remains unchanged under severe mismeasurement. The \dphimhtj variable is
+ sensitive to such mismeasurement as both \mht and the rank of the 
+leading four jets are affected, resulting in a broader distribution with
 increased leakage Fig.~\ref{fig:shifted_DPhiMht_dist}.
-
 
 \begin{figure}[!h]
  \centering
- \subfigure[QCD \bdphi distribution.\label{fig:bDPhi_dist}]{
- \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/biasedDPhi_all_800}
+ \subfigure[\bdphi distribution.\label{fig:bDPhi_dist}]{
+ \includegraphics[width=0.5\textwidth]{figures/qcd/biasedDPhi_all_800}
  }
- \subfigure[QCD \dphimhtj distribution.\label{fig:DPhiMht_dist}]{
- \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/minDeltaPhiMht_all_800}
+ \subfigure[\dphimhtj distribution.\label{fig:DPhiMht_dist}]{
+ \includegraphics[width=0.5\textwidth]{figures/qcd/minDeltaPhiMht_all_800}
  } \\
+ \caption{\bdphi and \dphimhtj distributions of MC simulation of the
+ dominant analysis backgrounds
+ after analysis selections for \scalht $> 800$ \GeV. }
+ \label{fig:bDPhi_nominal}
+\end{figure}
+
+\begin{figure}[!h]
+ \centering
+ \subfigure[Acceptance of SM backgrounds with genuine \met vs QCD
+ acceptance]{
+ \includegraphics[width=0.5\textwidth]{figures/qcd/rateEffEwkQCD}
+ }~
+ \subfigure[High jet multiplicity signal acceptance vs QCD acceptance]{
+ \includegraphics[width=0.5\textwidth]{figures/qcd/rateEffSignalQCD}
+ } \\
+ \caption{\bdphi and \dphimhtj efficiency for simulation of processes with genuine
+ \met vs QCD multijet background efficiency. The stars correspond to
+ efficiencies with a cut of $0.5$ on each variable. A generic case of
+ non-multijet process efficiency is considered in (a). In (b) we
+ consider an uncompressed T1tttt model, as the case in which \bdphi is
+ expected to have the lowest efficiency.}
+ \label{fig:bDPhi_roc}
+\end{figure}
+
+\begin{figure}[!h]
+ \centering
  \subfigure[QCD \bdphi distribution with mismeasurement.\label{fig:shifted_bDPhi_dist}]{
  \includegraphics[width=0.5\textwidth]{figures/qcd/v6/bDPhi/shiftedMinBDPhi_all_800}
  }
@@ -75,12 +122,13 @@ increased leakage Fig.~\ref{fig:shifted_DPhiMht_dist}.
  } \\
  \caption{\bdphi and \dphimhtj distributions of QCD multijet simulation
  after analysis selections for \scalht $> 800$ \GeV in the case of
- nominal reconstruction (a), (b) and severe mismeasurement (c), (d). The
+ severe mismeasurement. The
  total number of events that pass a $\Delta\phi > 0.5$ selection of the
- respective quantity are indicated. }
- \label{fig:bDPhi_mhtJetPhi}
+ respective quantity are indicated. (N.B. these plots were made with
+ an older iteration of the analysis and have not been fully updated,
+ although their conclusions remain true)}
+ \label{fig:bDPhi_mismeasured}
 \end{figure}
-
 
 
 In Run~1, the \alphat and \bdphi thresholds required to control
@@ -211,14 +259,21 @@ with QCD and EWK are compatible within the quoted statistical and systematic unc
 
 
 
-The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} support the
-expectation based on experience with 8~TeV data that the \HT-dependent
-\alphat thresholds defined in Table~\ref{tab:sr-selections} and the
-requirement of $\bdphi > 0.5$ are sufficient to reduce the multijet
-contamination in all bins of the signal region to the sub-percent with
-respect to the total non-multijet background. With this level of
-suppression, it is expected that the uncertainty associated with the
-residual multijet contamination to be sub-dominant with respect to,
-and fully absorbed by, the systematic uncertainties on the non-multijet
-backgrounds, which are expected to be at the level of $\sim$10\% or
-larger. 
+%% The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} support the
+%% expectation based on experience with 8~TeV data that the \HT-dependent
+%% \alphat thresholds defined in Table~\ref{tab:sr-selections} and the
+%% requirement of $\bdphi > 0.5$ are sufficient to reduce the multijet
+%% contamination in all bins of the signal region to the sub-percent with
+%% respect to the total non-multijet background. With this level of
+%% suppression, it is expected that the uncertainty associated with the
+%% residual multijet contamination to be sub-dominant with respect to,
+%% and fully absorbed by, the systematic uncertainties on the non-multijet
+%% backgrounds, which are expected to be at the level of $\sim$10\% or
+%% larger. 
+
+The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} show that 
+the \HT-dependent \alphat thresholds defined in Table~\ref{tab:sr-selections} 
+and the requirement of $\bdphi > 0.5$ suppress the multijet
+contamination in all bins of the signal region to percent-level or smaller with
+respect to the total non-multijet background. These predicted multijet events are 
+included as a background contribution to the likelihood model.
