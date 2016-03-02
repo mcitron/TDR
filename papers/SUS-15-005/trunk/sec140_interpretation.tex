@@ -69,22 +69,20 @@ in Table~\ref{tab:signal_systs}, for some benchmark models.
   }
   \label{tab:signal_systs}
   \centering
-  \begin{tabular}{ ccccc }
+  \begin{tabular}{ ccccccc }
     \hline
     \hline
-    Systematic & \multicolumn{4}{c}{Benchmark model} \\
+    Systematic & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} & \multicolumn{2}{c}{T1tttt}  \\ 
+                      & (1000,800) & (1500,100) & (900,700) & (1350,100) & (800,400) & (1300,100) \\
     \hline
-    & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} \\ 
-    & compressed & uncompressed & compressed & uncompressed \\
-    \hline
-    Luminosity               & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%      \\ \hline
-    Trigger                  & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%      \\ \hline
-    MC statistics            & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%     \\ \hline
-    PU reweighting           & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%      \\ \hline
-    B-tag efficiency         & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%     \\ \hline
-    Lepton efficiency        & 10\%       & 10\%       & 10\%      & 10\%       \\ \hline
-    Jet energy scale         & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%     \\ \hline
-    Initial state radiation  & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%      \\
+    Luminosity        & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%   & 4.6\%      & 4.6\%     \\ \hline
+    Trigger           & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%   & 0-15\%     & 3-5\%     \\ \hline
+    MC statistics     & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%  & 0-50\%     & 0-50\%    \\ \hline
+    PU reweighting    & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%   & 1-5\%      & 1-5\%     \\ \hline
+    B-tag efficiency  & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%  & 0-30\%     & 0-15\%    \\ \hline
+    Lepton efficiency & 10\%       & 10\%       & 10\%      & 10\%    & 10\%       & 10\%      \\ \hline
+    Jet energy scale  & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%  & 0-20\%     & 0-20\%    \\ \hline
+    ISR               & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%   & 0-8\%     & 1-5\%     \\
     \hline
     \hline
   \end{tabular}
@@ -99,27 +97,29 @@ benchmark signal model.
 
 \begin{figure*}[tbhp]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit} \,
-    \includegraphics[width=0.49\textwidth]{postFitShape_eq2b_ge5j_600_800_prefit} \\
+    \includegraphics[width=0.45\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit_T1bbbb_1400_100} ~~
+    \includegraphics[width=0.45\textwidth]{postFitShape_eq2b_ge5j_800_Inf_prefit_T1tttt_800_400} \\
+    \includegraphics[width=0.45\textwidth]{postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700}
   \end{center}
   \caption{ The \mht distribution observed in data and the expected
-    distribution for the sum of all SM background processes in two
+    distribution for the sum of all SM background processes in three 
     representative event categories at high \scalht. The expected
-    distribution for an example benchmark model with a large (small)
-    mass splitting between the gluino and LSP is also shown in the
-    left (right) figure. \label{fig:mht-templates} }
+    distributions for example benchmark models with different final state 
+    particles and different mass splitting between the gluino and LSP 
+    are also shown. \label{fig:mht-templates} }
 \end{figure*}
   
 \begin{figure*}[thp!]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{t1bbbbRA1XSEC.pdf} \,
+    \includegraphics[width=0.49\textwidth]{t1bbbbRA1XSEC.pdf}~~
     \includegraphics[width=0.49\textwidth]{t1qqqqRA1XSEC.pdf} \\
+    \includegraphics[width=0.49\textwidth]{t1ttttRA1XSEC.pdf}
     \caption{Observed upper limit in cross section at 95\% CL
       (indicated by the colour scale) for simplified models that
       assume the pair production of gluinos, as a function of the
       gluino and $\chiz_{1}$ masses for gluino three-body decays to
-      $b\bar{b}\chiz_{1}$ (left) and $q\bar{q}\chiz_{1}$ (right). The
-      black solid thick (thin) line indicates the observed mass
+      $b\bar{b}\chiz_{1}$ (top left), $q\bar{q}\chiz_{1}$ (top right) and $t\bar{t}\chiz_{1}$ (bottom center). 
+      The black solid thick (thin) line indicates the observed mass
       exclusion region assuming the nominal (${\pm}1 \sigma$ theory
       uncertainty) production cross section. The red dashed thick
       (thin) line indicates the median (${\pm}1 \sigma$ experimental
@@ -138,6 +138,14 @@ cross section by its theoretical uncertainty, and the expected
 excluded region with the ${\pm}1$ standard-deviation ($\sigma$)
 variations. The search places stringent limits in the mass parameter
 space, with observed exclusions in gluino and LSP masses as high as
-$\sim$1550\gev and $\sim$950\gev, respectively.
+$\sim$1550\gev and $\sim$950\gev, respectively. \\
+For the T1tttt interpretation, the observed exclusion limits are up to $\sim 2\sigma$ weaker 
+than the expected. This effect has been localised to a moderate 
+excess in the $\njet\geq5, \nb\geq2, \scalht > 800 \, \mathrm{GeV}$ 
+(see Tab.~\ref{tab:predewkdata_sig_comb_sym} and Fig.~\ref{fig:mht-templates} (top right)). 
+Nineteen events are selected in this region, which have been 
+carefully inspected and shown to come from genuine physics events. 
+Therefore, the most likely interpretation is that of a statistical fluctuation in data. 
+
 
 %%__________________________________________________________________||
