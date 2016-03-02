@@ -34,7 +34,7 @@ other Monte Carlo samples.
     \hline    
     T1bbbb & Gluino pair    & \Tonebbbb & $\sim$1350 GeV \\
     T1qqqq & Gluino pair    & \Toneqqqq & $\sim$1320 GeV \\
-    %% T1tttt & Gluino pair    & \Tonetttt & $\sim$1320 GeV \\
+    T1tttt & Gluino pair    & \Tonetttt & $\sim$1320 GeV \\
     %% T2tt   & Stop pair      & \Ttwott   & $\sim$760 GeV \\
     %% T2cc   & Stop pair      & \Ttwocc   & $\sim$250 GeV \\
     %% T2bb   & Sbottom pair   & \Ttwobb   & -- \\
@@ -53,9 +53,9 @@ other Monte Carlo samples.
     \subfigure[T1qqqq]{
       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1qqqq_feyn}
     } ~~
-    %% \subfigure[T1tttt]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
-    %% } \\
+    \subfigure[T1tttt]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
+    } \\
     %% \subfigure[T2tt]{
     %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
     %% } ~~
@@ -88,10 +88,10 @@ These efficiencies are computed including the 4 best categories used to extract 
     } ~~
     \subfigure[T1qqqq]{
       \includegraphics[width=0.5\textwidth]{figures/susyResults/T1qqqq_merging_4_cats.pdf}
-    } ~~
-    %% \subfigure[T1tttt]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
-    %% } \\
+    } \\
+    \subfigure[T1tttt]{
+      \includegraphics[width=0.5\textwidth]{figures/susyResults/T1tttt_merging_4_cats.pdf}
+    } \\
     %% \subfigure[T2tt]{
     %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
     %% } ~~
@@ -229,17 +229,17 @@ Relative effect on the yields are presented in Tab.~\ref{tab:sig-systematics} fo
   \begin{tabular}{ ccccc }
     \hline
     \hline
-    Systematic & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} \\ 
-                      & (1000,800) & (1500,100) & (900,700) & (1350,100) \\
+    Systematic & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} & \multicolumn{2}{c}{T1tttt}  \\ 
+                      & (1000,800) & (1500,100) & (900,700) & (1350,100) & (800,400) & (1300,100) \\
     \hline
-    Luminosity        & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%      \\ \hline
-    Trigger           & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%      \\ \hline
-    MC statistics     & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%     \\ \hline
-    PU reweighting    & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%      \\ \hline
-    B-tag efficiency  & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%     \\ \hline
-    Lepton efficiency & 10\%       & 10\%       & 10\%      & 10\%       \\ \hline
-    Jet energy scale  & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%     \\ \hline
-    ISR               & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%      \\
+    Luminosity        & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%   & 4.6\%      & 4.6\%     \\ \hline
+    Trigger           & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%   & 0-15\%     & 3-5\%     \\ \hline
+    MC statistics     & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%  & 0-50\%     & 0-50\%    \\ \hline
+    PU reweighting    & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%   & 1-5\%      & 1-5\%     \\ \hline
+    B-tag efficiency  & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%  & 0-30\%     & 0-15\%    \\ \hline
+    Lepton efficiency & 10\%       & 10\%       & 10\%      & 10\%    & 10\%       & 10\%      \\ \hline
+    Jet energy scale  & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%  & 0-20\%     & 0-20\%    \\ \hline
+    ISR               & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%   & 0-8\%     & 1-5\%     \\
     \hline
     \hline
   \end{tabular}
@@ -266,7 +266,7 @@ In Tab.~\ref{tab:sig-bestCats} the 4 jet categories used for the limits are show
 \begin{table}[h!]
   \caption{
     The 4 best jet categories, used in the combination providing the exclusion limits, 
-    for some benchmark models used in the analysis.
+    for some benchmark compressed and uncompressed models used in the analysis.
   }
   \label{tab:sig-bestCats}
   \centering
@@ -278,7 +278,9 @@ In Tab.~\ref{tab:sig-bestCats} the 4 jet categories used for the limits are show
     T1bbbb & (1000,800) & $\geq5j,4j,\geq5a,4a$ \\
     T1bbbb & (1500,100) & $\geq5j,4j,3j,2j$ \\
     T1qqqq & (900,700)  & $\geq5j,4j,\geq5a,4a$ \\
-    T1bbbb & (1350,100) & $\geq5j,4j,3j,2j$ \\
+    T1qqqq & (1350,100)  & $\geq5j,4j,3j,2j$ \\
+    T1tttt & (800,400) & $\geq5j,\geq5a,4j,4a$ \\
+    T1tttt & (1350,100) & $\geq5j,\geq5a,4j,3j$ \\
     \hline
     \hline
   \end{tabular}
@@ -292,20 +294,25 @@ The band around the expected exclusion reflects the experimental uncertainty,
 while the band around the observed exclusion correspond to the theoretical 
 uncertainty on the signal cross section.
 
-Gluino masses up to $\sim$1550 GeV ($\sim$1350 GeV) are excluded in the T1bbbb (T1qqqq) models. 
-In both cases, the exclusion exceeds the one from Run 1. \\
-In general the observed exclusion is in agreement with the expectation. 
+Gluino masses up to $\sim$1550 GeV, $\sim$1350 GeV, $\sim$1100 GeV are excluded in the T1bbbb, 
+T1qqqq and T1tttt models respectively. 
+For T1qqqq and T1bbbb, the exclusion exceeds the one from Run 1 \\
+and for these models the observed exclusion is in good agreement with the expectation. 
 A moderate excess in the $\njet\geq5, \nb\geq2, \scalht > 800 \, \mathrm{GeV}$ (see Tab.~\ref{tab:predallqcdpost_sig_comb_sym})
 causes the observed limits to be slightly weaker than expected for the T1bbbb model. 
-Event displays for collision events falling in these analysis bins have been carefully inspected 
-using the standard tools used in the collaboration, and they don't exhibit any problem, 
-thus making us confident that they are real physics events. 
+For T1tttt this excess has a more pronounced effect in the limit and the observed limit is $\sim 2\sigma$ 
+weaker than expected. The cause of this weaker than expected trend has been studied in more detail
+and localised to a fluctuation in these analysis bins. Event displays for collision events 
+falling in these analysis bins have been carefully inspected and are do not exhibit any 
+significant problems, thus making us confident that they are real physics events. Full details
+of these studies are included in Appendix~\ref{app:foundSusy}.
 
 \begin{figure}
   \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for the T1bbbb model.\label{fig:plane_xs}}
   \begin{center}    
     \subfigure[T1bbbb]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1bbbbRA1XSEC}} ~~
-    \subfigure[T1qqqq]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1qqqqRA1XSEC}}
+    \subfigure[T1qqqq]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1qqqqRA1XSEC}} \\
+    \subfigure[T1tttt]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1ttttRA1XSEC}}
   \end{center}
 \end{figure}
 
