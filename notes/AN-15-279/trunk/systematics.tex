@@ -2,31 +2,49 @@
 \section{Systematic uncertainties}
 \label{sec:systematics}
 
-
-Two types of systematic uncertainty are considered separately. Normalisation uncertainties 
-and uncertainties associated with the \mht templates for each individual (\njet,~\nb,~\scalht).
-
+We consider two types of uncertaintis, all are fully propagated to the likelyhood model.
+These are normalisation uncertainties and uncertainties associated with the \mht templates for each individual (\njet,~\nb,~\scalht).
 
 
-\subsection{Systematic uncertainties in the transfer factors}
 
-To derive the normalisation uncertainties for each (\njet,~\nb,~\scalht) bins we use use of ensembles of ``closure tests''.
+\subsection{Systematic uncertainties based on simulations}
 
+
+We apply several corrections to the simulated samples to correct for known mis-modelling, detector effiencies and higher order correctoins.
+These corrections are varied within uncertainties and the resulting variations are propagated through the full analysis, in particular their effect
+on the transfer factors as discussed in Sec.~\refe{sec:ewk-method}. The list of simulation based uncertainties is:
+
+\begin{itemize}
+  \item{\bf Jet Energy Scale} We vary the jet energy scale \mj and \mmj the μ + jets control regions.  The energies of jets used in the analysis are corrected as a function of their \Pt and $\eta$ following the \textsc{JetMET} POG recommendations. The associated uncertainties are propagated through the analysis.
+These uncertainties are typically in the order ofThe changes are typically about $1-15$\%.
+
+\item{\bf $b$-tagging} Events are reweighted according $b$-tagging efficiencies provided by the $b$-tagging POG.  To test this effect the change in the transfer factors is measured by varying the scale factors within their uncertainties. The relative change is typically about $1-5$\%.
+
+\item{\bf Lepton trigger/identification/isolation efficiency} Systematic uncertainties of 1\% and 5\% are assigned to the efficiency of the muon and electron veto working point efficiency and taken as correlated across all the signal region bin. Data/MC scale factors have negligibel scale factors. The procedure is separately applied in the eletron and muon channel. The effect on the $\mj \to \ttbar + $W transfer factos is between $2-5\%$.
+
+\item{\bf $p_\textrm{T}(t)$ reweighting} Variations in the reweighting of $\p_\textrm{T}(t)$ distribution are studied. A conservative systematic uncertainty on this correction is taken as the size of the correction itself.The variation is typically in the range $0-15\%$.
+
+\item{\bf QCD multijet contamination} The \gj control region has a QCD multijet conamination of about 5\%. By applying a large variation of $\pm 100\%$ on the number of QCD mulijet events from simulation we derive a conservative systematic uncertainty of 5\%. 
+
+\item{\bf PU reweightings} Events in simulation are reweighted in order to match the distribution of the primary vertex multiplicity observed in data.
+By propagating the 5\% systematic uncertainty on the minimum bias cross section used in the PU reweighting procedure we obtain a systematic variation of $1-5\%$.
+\end{itemize}
+
+
+Sec. 12.1 of ~\cite{alphaTnote} shows the exact results of each of these variations for all analysis bins.
+
+
+
+
+
+\subsection{Systematic uncertainties based on data driven methods}
 \label{sec:bkgdnorm-syst}
 
-The transfer factors are obtained from simulations and an appropriate systematic uncertainty has to be assigned
-for each transfer factor to account for limitations in the simulation modelling of event kinematics
- and instrumental effects. 
-
-The sensitivity of the transfer factors to systematic sources are determined by performing a set of closure test.
+To derive the normalisation uncertainties for each (\njet,~\nb,~\scalht) bins we use use of ensembles of closure tests. The transfer factors are obtained from simulations and an appropriate systematic uncertainty has to be assigned for each transfer factor to account for limitations in the simulation modelling of event kinematics and instrumental effects. The sensitivity of the transfer factors to systematic sources are determined by performing a set of closure test.
  A large ensemble (\ie hundreds) of closure tests are performed between a number of control (sub-)samples.
 
-Consitency of the set of predictions if then studied and expressed as the ratio $(\nobs - \npre)/\npre$, while considering only
-the statistical uncertainties on \npre and \nobs. 
-
-If statistically significant biases are observed, further studies are performed to understand and correct for
-these biases.
-
+Consistency of the set of predictions if then studied and expressed as the ratio $(\nobs - \npre)/\npre$, while considering only
+the statistical uncertainties on \npre and \nobs.  If statistically significant biases are observed, further studies are performed to understand and correct for these biases.
 
 The closure tests rely on the \mj, \mmj, and \gj control samples. Specific closure tests probe different sources of uncertainties. 
 For example the \mj $\rightarrow$ $\gamma$ + jets tests deal with the consistency
@@ -76,35 +94,13 @@ In the bins populated with a reasonable number of events, the systematic errors 
 $40\%$.
 
 
-\section{Systematic uncertainties in the \mht dimension}
+\subsection{Systematic uncertainties on the \mht variable}
 
 An additional systematic to be considered is the shape of the \mht distribution in each signal region category. 
 A data driven approach is utilised in which the shape of data driven control regions is compared to the \mht shape from simulations.
 For each Data/MC ratio of the shape in each signal category bin the first order polynomial is fitted. The result of this fit - a linear bias - 
 is then used as systematic uncertainty and propagated through the likelihood model.
 This approach has been validated in 8 TeV data. 
-
-
-%By anchoring the scale using binning in the \scalht dimension the remaining
-%bias should be negligible. In Figs.~\ref{fig:linearFits0bLe3} and \ref{fig:linearFits0bGe4} 
-%example fits of an orthogonal linear function to the data/MC ratio 
-%are shown for the three control regions. Comparing to the inclusive distribution 
-%the linear component can be seen to be compatible with the null hypothesis, 
-%i.e. no bias. In order to formalise this assertion 
-%the pull of the linear component from zero is calculated.
-%This pull distribution is shown for each of the three control regions in
-%in Fig.~\ref{fig:pulls} and can be seen in each case to have mean and sigma
-%consistent with zero and one respectively. This confirms that the linear component 
-%is compatible with zero ($p_1 = 0$), i.e. no significant bias is observed, 
-%and the uncertainty on the parameter is correctly estimated by the fit.
-%Fig.~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
-%in category and \scalht bins. Those anchored by \scalht are consistent
-%with zero (including inclusive jet categories) while the fits inclusive in \scalht
-%show very large pulls. This shows, as expected, the \scalht anchoring
-%is critical for removing bias in the \mht dimension. The linear fits to the
-%data/MC ratio additionally show a p-value following 
-%a uniform distribution between 0 and 1 as shown in Fig.~\ref{fig:pValues}.
-
 
 Each background in the signal region (\ttbar/W  and \zInv~) is predicted  using several control regions. 
 In order to determine the uncertainty in the \mht dimension a combined linear fit is made over all relevant control regions
@@ -119,11 +115,46 @@ on the linear parameter defining the template variations.
 
 
 
-\subsection{Expected systematic uncertainties for the 13 \texorpdfstring{\TeV} analysis}
-Using the method described expected relative uncertainties per \GeV from 13 \TeV MC for both \ttbar/$W$  and \zInv~ using all relevant control regions are
-shown in Fig.~\ref{fig:expected13} for 3\ifb. An example of the overall uncertainties on the \mht templates is shown
-in Figure~\ref{fig:exampleTemplate13}. The alternative templates derived with this method are folded into the 
-likelihood described in Section~\ref{sec:likelihood} to account for systematic uncertainties in the \mht dimension.
+
+\section{Summary of systematic uncertainties}
+
+Table~\ref{tab:systs} gives an overview of all systematic uncertainties and the correlation model used for the likelhood fit. 
+
+\begin{landscape}
+\begin{table}[h!]
+  \caption{Summary of the systematics on the transfer factors considered in the analysis,
+    with representatives ranges of uncertainties and the correlation assummed,
+    for the predictions of the $\ttbar$, W and $\znunu$  background
+    components.}
+  \label{tab:systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ccccccc }
+    \hline
+    \hline
+    Systematic & Method & \multicolumn{4}{c}{Relative uncertainty on transfer factor} & Correlation model \\
+     & & $\mj \rightarrow \znunu$  & $\mmj \rightarrow \znunu$ & $\gj \rightarrow \znunu$ & $\mj \rightarrow \ttbar+W$ & \\
+    \hline
+    \alphat/\bdphi extrapolation & data-driven tests & $5-80\%$ &
+    $50-80\%$ & - & $5-80\%$ & un-correlated across \scalht/jet top. \\
+    W/Z ratio & data-driven tests & $10-30\%$ & - & - & - & un-correlated across \scalht/jet top. \\
+    Z/$\gamma$ ratio & data-driven tests & - & - & $10-30\%$ & - & un-correlated across \scalht/jet top. \\
+    W/\ttbar admixture & data-driven tests & - & - & - & $10-100\%$ & un-correlated across \scalht/jet top. \\
+    W polarisation & data-driven tests & $5-50\%$ & - & - & $5-50\%$ & un-correlated across \scalht/jet top. \\
+    Jet energy scale & MC variations & $<15\%$ & $<10\%$ & $<15\%$ &
+    $<15\%$ & fully correlated \\
+    B-tagging efficiency & MC variations & $<5\%$ & $<2\%$ & $<2\%$
+    & $<5\%$ & fully correlated \\
+    Pileup weights & MC variations & $<6\%$ & $<4\%$ & $<3\%$ & $<10\%$ & fully correlated \\
+    Top $p_{T}$ weights & MC variations & $<20\%$  & $<4\%$ & - &
+    $<5\%$ & fully correlated \\
+    Lepton selection & MC variations & - & - & - & $2-5\%$ & fully correlated \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+\end{landscape}
+
 
 
 %\begin{figure}[h!]
@@ -146,4 +177,4 @@ likelihood described in Section~\ref{sec:likelihood} to account for systematic u
 %  \caption{\label{fig:exampleTemplate13} Example template for 0b,$\ge5$j and $\scalht > 800$\GeV showing the uncertainties from both
 %components of the background on the total background prediction.}
   
-\end{figure}
+
