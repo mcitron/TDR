@@ -2,29 +2,22 @@
 
 \section{Background estimation for processes with genuine \met}
 
-The dominant backgrounds with significant \met in the final state
-is $Z$+jets production with the $Z$ boson decaying to neutrinos, \znunu. 
+The dominant backgrounds with real \met is $Z$+jets production with the $Z$ boson decaying to neutrinos.
 Smaller contributions come from $Z\to \ell \ell$ decays with both leptons
-mis-reconstructed and therefore not vetoed by the lepton veto. The next largest
-background contribution is $W$+jets production where the $W$ decays into a tau lepton which
-then itself decays hadronically (\wtaunu). These background processes are dominated
-by light jet and low to intermediate jet multiplicities. For heavy quarks jets and larger jet 
-multiplicities the single-top-quark, $\ttbar$V or $\ttbar$H, diboson become more important.
+mis-reconstructed. The next largest background contribution is \wtaunu production. All of these background processes are dominated
+by light jet and low to intermediate jet multiplicities. For $b$-jets jets and larger jet 
+multiplicities contributions from single-top-quark, $\ttbar$V or $\ttbar$H and diboson production become relevant. We will refer
+to these backgrounds as non-multijet or electroweak background.
 
-These SM processes are collectively referred to as the non-multijet backgrounds.
-
-The background simulations are normalised using the most accurate cross
+The background simulations are normalised using the best known cross
 section calculations currently available, usually with next-to-next-to-leading-order (NNLO) accuracy. 
-Effects of pileup, the simulated events are generated with a nominal distribution
-of pp interactions per bunch crossing and are then corrected to reproduce the pileup distribution as measured in data. 
 
-\subsection{The ``transfer factor'' method}
+\subsection{Transfer Factors}
 \label{sec:ewk-method}
 
-The method used to estimate the aforementioned SM background contributions in the hadronic signal region relies on the use of a
-transfer factor (TF) determined from MC samples to derive from the observed yield in a given \scalht, jet (\njet) and $b$-tag (\nb)
-multiplicity bin of a control sample, $\nobs^{\rm control}(\njet,\nb,\scalht)$, into a predicted yield for the
-corresponding bin of the hadronic signal region, $\npre^{\rm  signal}(\njet,\nb,\scalht)$. 
+We use the transfer factor (TF) method to derive corrections to the background normalisations by testing their normalisations
+in control regions. These control regions are identical in their energy scale \scalht, jet multiplicity \njet and $b$-jet multiplicity \nb 
+as the signal region to be predicted. 
 
 Each transfer factor is simply a ratio of the yields obtained from MC
 simulation for the same bin of the signal region and a given control
@@ -48,45 +41,40 @@ made based on the various control samples:
 \end{equation}
 
 
-The selection criteria for the data control samples closely resemble
-those for the signal region, differing mainly through the use of a
-lepton or photon object {\it tag} (that is ignored in the calculation
-of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
-and minimal additional kinematic requirements (\eg invariant or
-transerve mass windows) to obtain W, Z, and \ttbar-enriched event
-samples. The same selection criteria are designed to suppress signal
-contamination in the control samples so that unbiased data-driven
-estimates for the SM backgrounds in the signal region can be
-made. 
+Here \nobs corresponds to the background yield measure in a control region bin in $(\njet,\nb,\scalht)$ used to predict the 
+ield \npre in the corresponding hadronic signal region bin $(\njet,\nb,\scalht)$.
 
-The transfer factors account for differences in cross sections and
-branching ratios, acceptance and reconstruction efficiencies, and/or
-kinematic requirements between the signal and control regions. Any
-dependence on \njet, \nb, or \HT is largely attributable to
-differences in acceptance due to the presence or otherwise of \alphat
-or \mht requirements.
+%The selection criteria for the data control samples closely resemble
+%those for the signal region, differing mainly through the use of a
+%lepton or photon object {\it tag} (that is ignored in the calculation
+%of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
+%and minimal additional kinematic requirements (\eg invariant or
+%transerve mass windows) to obtain W, Z, and \ttbar-enriched event
+%samples. The same selection criteria are designed to suppress signal
+%contamination in the control samples so that unbiased data-driven
+%estimates for the SM backgrounds in the signal region can be
+%made. 
 
-Many systematic effects are expected to cancel largely in the transfer
-factor. However, a systematic uncertainty is assigned to each transfer
-factor to account for theoretical uncertainties and effects such as
-the mis-modelling of kinematics (\eg acceptances) and instrumental
-effects (\eg reconstruction efficiencies).
 
-These methods are identical to e.g. the fit used in similar analyses which use $gjets$ to predict the \znunu background. 
-One sees in Table \ref{tab:tf_mu_zinv_sym} the transfer factors (TF) from $mj$ to $zinv$ in the signal region behave as expected.
-The uncertainty shown is from MC statistics only (the systematic uncertainty on the TFs is discussed in Sec.~\ref{sec:systematics}). 
+The transfer factors are designed to account for differences in cross sections times branching ratio, acceptance and reconstruction efficiencies and 
+kinematic requirements between control and signal regions. As discussed in Sec.~\ref{selection} the control regions closely resemble the kinematics of the signal selections with the exception mandated to enrich the desired processes. While by using transfer factors one can cancels many systematic effects one still has to assign systematic uncertainties due to mis-modelling of kinematics  (\eg acceptances) and instrumental effects (\eg reconstruction efficiencies.)
+
+
+The transfer factors from all four control regions are tabularized in Sec. 11 of \cite{alphaTnote}.
+%We give here as example the results for the \gj to \znunu transfer factors because they can be compared to similar methods in related WIMP searches.
+%These are shown in Tables~\ref{tab:tf_mu_zinv_asym}, \ref{tab:tf_mumu_zinv_sym}. 
+
+%\input{AN-15-004/trunk/tables/dataLumi/tf_gj_zinv_sym.tex}
+%\input{AN-15-004/trunk/tables/dataLumi/tf_gj_zinv_asym.tex}
+
+
+The uncertainty shown is from MC statistics only, the systematic uncertainty on the TFs is discussed in Sec.~\ref{sec:systematics}.
 The scale factor decreases for larger \HT and behaves consistently across all jet multiplicities and \HT bins. 
 The choice of a TF for each signal region bin is conservative as the prediction is made from control regions with similar kinematics
 to the signal region bin (without extrapolation) which leads to larger statistical uncertainties.
-All remaining transfer factors are shown detail in Ref.~\cite{alphaTnote}. 
 
-\input{tables/dataLumi/tf_mu_zinv_sym.tex}
-
-
-\subsection{Adding the \mht dimension}
-
-The aforementioned TF define the overall background normalisation in each signal region bin (\njet,\nb,\HT) bin that is
-integrated over \mht. The shape of the \mht distribution is taken from simulations and then propagated to the likelihood model. 
-A separate \mht template is used per (\njet,\nb,\HT) bin
+The transfer factors define the overall background normalisation in each signal region bin (\njet,\nb,\HT) bin. These bins are
+integrated over \mht. In each bin the shape of the \mht distribution is taken from simulations and then propagated to the likelihood model. 
+A separate \mht template is used per (\njet,\nb,\HT) bin.
 
 
