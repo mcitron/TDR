@@ -43,7 +43,7 @@ inclusion of these selections into the analysis.
 
 \clearpage
 For comparisons with past results we also include the axial-vector samples using $g_{\rm SM} = 1.0$ although they are not included in the 
-'ATLAS-CMS-Pheno DM' Forum. The key characteristics for this sample are shown in Table~\ref{summaryTableAN_DMA_xs10_g1p0_2p1fb_exp}.
+'ATLAS-CMS DM' Forum. The key characteristics for this sample are shown in Table~\ref{summaryTableAN_DMA_xs10_g1p0_2p1fb_exp}.
 
 %\input{tables/DM/summaryTableAN_DMA_xs10_g1p0_2p1fb_exp.tex} \clearpage
 
@@ -186,7 +186,7 @@ Appendix~\ref{sec:dm_checklist} contains additional validation for the \DMtt and
 
 
 
-\subsection{Delphes models}
+\subsection{Delphes simulated models}
 
 In a multidimensional analysis such as ours, it is not straightforward to
 perform a reweighting of the coarse DM Forum grid to interpolate limits
@@ -202,7 +202,7 @@ for parton showering and hadronisation. Finally, the detector simulation is
 performed in Delphes 3 with a CMS detector card.
 
 The validation of our Delphes-based production is shown in Fig.~\ref{fig:delphesVSofficial}. We
-obtain very good agreement in all major analysis variables. Additionally, we
+obtain very good agreement in all key analysis variables. Additionally, we
 also obtain consistent limits -- for a pseudoscalar sample with \mchi$=50$~GeV
 and \mphi$=1000$~GeV, generated with the same number of events and generator
 cuts as the corresponding central sample, we obtain an upper limit on the
@@ -223,7 +223,7 @@ for the central sample.
 \end{figure}
 
 We show cross sections, yields, efficiencies, limits, and most sensitive 
-categories for the four Delphes models in 
+categories for the four models simulated using Delphes in 
 % FIXME: Tables~\ref{summary_ScorpionDMV}-\ref{msb_Scorpion_DMP}.
 Tables~\ref{tab:summary_ScorpionDMA}-\ref{tab:msb_ScorpionDMP}.
 
@@ -242,3 +242,21 @@ Tables~\ref{tab:summary_ScorpionDMA}-\ref{tab:msb_ScorpionDMP}.
 \input{tables/DM/msb_ScorpionDMS_xs10_2p2fb_wMCStat_try2_reduced}
 \input{tables/DM/msb_ScorpionDMP_xs10_2p2fb_wMCStat_try2_reduced}
 
+The N$_{j}$ categories are ranked according to sensitivity, a ranking of 1 =  most sensitive category, for the entire plane of DM mass vs mediator mass for all 4 models. These are shown in Figure~\ref{fig:sensitivityAV}. The most sensitive jet categories for the vector and axialvector models are the lowest jet multiplicities, Nj=1, Nj=2, while for the scalar and pseudoscalar models the most sensitive categories are Nj=2, Nj=3. 
+
+\begin{figure}[h!] \centering
+  \subfigure{\includegraphics[width=0.65\textwidth]{figures/DMplots/jetrankings_AV.pdf}}
+  \caption{Sensitivity ranking of the jet categories for the axial vector model, a ranking of 1 denotes the most sensitive category. }
+  \label{fig:sensitivityAV} 
+\end{figure}
+
+\begin{figure}[h!] \centering
+  \subfigure{\includegraphics[width=0.65\textwidth]{figures/DMplots/jetrankings_PS.pdf}}
+  \caption{Sensitivity ranking of the jet categories for the pseudoscalar model, a ranking of 1 denotes the most sensitive category. }
+  \label{fig:sensitivityPS} 
+\end{figure}
+
+\subsection{Higher order corrections}
+%The RA1 analysis is designed to be robust to missing higher order corrections in MC. The normalisations in each $H_{T}, N_{j}, N_{b}$ bin are taken from control regions binn
+
+On request from the MET+X conveners, we evaluated the impact of higher order corrections on our analysis. The LO MC for the V+jets processes was reweighted according to corrections provided by the monojet group that account for higher order QCD and EWK corrections as a function of boson $p_T$. The effect of these corrections on our transfer factors to estimate the invisible Z background are shown in Figures. The Figure shows the ratio of the transfer factor calculated with and without applying these corrections, shown separately for QCD only and QCD+EWK. They have a small impact on our transfer factor for the monojet bin where studying the effect of these corrections is most applicable. The small a few \% effect observed is well covered by the systematic uncertainty on the transfer factor obtained from closure tests, which ranges from 10-30\% for the $\gamma$ to $Z$ ratio and 10-30\% for the $W$ to $Z$ ratio. 
