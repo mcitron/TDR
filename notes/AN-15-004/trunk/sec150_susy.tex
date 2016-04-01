@@ -22,27 +22,38 @@ accounting for difference in b-tag efficiency.
 These scale factors are applied on top of the FullSim scale factors applied for the 
 other Monte Carlo samples.
 
+
+\begin{landscape}
 \begin{table}[h!]
+  \scriptsize
   \caption{A summary of the simplified models used in this analysis.}
   \label{tab:simplified-models}
   \centering
-  \begin{tabular}{ llll }
+  \begin{tabular}{ llllll }
     \hline
     \hline
-    Model & Production & Decay & Run 1 max. exclusion \\ 
+    Model & Production & Decay & Branching Ratio & Notes & Run 1 \\ 
     \hline    
     \hline    
-    T1bbbb & Gluino pair    & \Tonebbbb & $\sim$1350 GeV \\
-    T1qqqq & Gluino pair    & \Toneqqqq & $\sim$1320 GeV \\
-    T1tttt & Gluino pair    & \Tonetttt & $\sim$1320 GeV \\
-    %% T2tt   & Stop pair      & \Ttwott   & $\sim$760 GeV \\
-    %% T2cc   & Stop pair      & \Ttwocc   & $\sim$250 GeV \\
-    %% T2bb   & Sbottom pair   & \Ttwobb   & -- \\
-    %% T2qq   & Squark pair    & \Ttwoqq   & $\sim$920 GeV \\
-    \hline
+    T1bbbb & \ppToGluGlu    & \gluToBBNo & 100\% & -- & $m_{\mathrm{Gluino}}>\sim 1350 \,\mathrm{GeV}$ \\ \hline
+    T1qqqq & \ppToGluGlu    & \gluToQQNo & 100\% & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ \\ \hline
+    T1tttt & \ppToGluGlu    & \gluToTTNo & 100\% & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ \\ \hline
+    T1ttbb & \ppToGluGlu    & \gluToTBAll & 50\%/25\%/25\% & -- & -- \\ \hline
+    T5ttcc & \ppToGluGlu    & \gluToTStop,\stopToCNo & 100\% & $\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$ & -- \\ \hline   
+    T5ttttDM175 & \ppToGluGlu  & \gluToTStop,\stopToTNo & 100\% & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$,\\$\Delta M(\mathrm{Stop},LSP)=175\,\mathrm{GeV}$}  & -- \\ \hline   
+    T5tttt\_degen & \ppToGluGlu  & \gluToTStop,\stopToTNo & 100\% & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$,\\$\Delta M(\mathrm{Stop},LSP)=20\,\mathrm{GeV}$} & -- \\ \hline   
+    T2tt   & \ppToStopStop      & \stopToTNo & 100\% & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 760 \,\mathrm{GeV}$ \\ \hline
+    T2cc   & \ppToStopStop      & \stopToCNo & 100\%  & -- &  \\ \hline
+    T2-4bd & \ppToStopStop      & \stopToBFFNo & 100\%  & -- &  \\ \hline
+    T2mixed & \ppToStopStop      & \stopToMixed & 50\%/50\%  & -- &  \\ \hline
+    T2tb & \ppToStopStop      & \stopToTB & 50\%/50\%  & -- & -- \\ \hline
+    T2bW\_X05 & \ppToStopStop      & \stopToBW & 100\%  & $m_{\chipm}=0.5(m_{\mathrm{Gluino}}+m_{\mathrm{\chiz}})$ & -- \\ \hline
+    T2bb   & \ppToSbotSbot   & \sbottomToB & 100\%  & -- & -- \\ \hline
+    T2qq   & \ppToSquaSqua    & \squarkToQ & 100\%   & considered bot 1-fold/8-fold squark degeneracy & -- \\ \hline
     \hline
   \end{tabular}
 \end{table}
+\end{landscape}
 
 
 \begin{figure}[h!]
@@ -56,17 +67,23 @@ other Monte Carlo samples.
     \subfigure[T1tttt]{
       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
     } \\
-    %% \subfigure[T2tt]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
-    %% } ~~
-    %% \subfigure[T2cc]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
-    %% } ~~
-    %% \subfigure[T2qq]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
-    %% } 
+    \subfigure[T1ttbb]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1ttbb_feyn.png}
+    } ~~
+    \subfigure[T5tttt]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T5tttt_feyn.png}
+    } ~~
+    \subfigure[T2tt]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
+    } \\
+    \subfigure[T2cc]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
+    } ~~
+    \subfigure[T2qq]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
+    } 
     \caption{
-      Graphical representation of the production and decay of supersymmetric particles in the 
+      Graphical representation of the production and decay of supersymmetric particles in some of the 
       simplified models considered in the analysis. 
     }
     \label{fig:simplified-models}
@@ -78,35 +95,215 @@ other Monte Carlo samples.
 \subsection{Signal acceptance and contamination}
 \label{sec:sig-accept-contam}
 The signal efficiency times acceptance for the simplified models used in the analysis 
-is shown in Fig.~\ref{fig:sig-eff}. 
-These efficiencies are computed including the 4 best categories used to extract the limits (see Sec.~\ref{sec:susy_results}).
+is shown in Fig.~\ref{fig:sig-eff-T1bbbb}-\ref{fig:sig-eff-T2qq}. \\
+The signal acceptance including only the 4 most sensitive jet multiplicity categories used to compute the exclusion 
+is compared with the acceptance of the whole signal region of the analysis. 
+For models with high jet multiplicity (T1tttt,T1ttbb,T5tttt) almost 100\% of the acceptance is 
+included in the $\geq5$ jet bin, and thus the restriction to 4 jet categories doesn't affect the signal efficiency 
+because this bin is always among the most sensitive.  
+For compressed, low jet mutiplicity models (T2cc,T2-4bd) the bins with larger signal acceptance often are not 
+selected among the top 4, due to the large background: in this case up to $\sim70$\% of the signal is not 
+considered in the limit computation. \\
+Tab. ~\ref{tab:sig-bestCats} shows the most sensitive categories for some benchmark models. 
+%% These efficiencies are computed including the 4 best categories used to extract the limits (see Sec.~\ref{sec:susy_results}).
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[T1bbbb]{
-      \includegraphics[width=0.5\textwidth]{figures/susyResults/T1bbbb_merging_4_cats.pdf}
-    } ~~
-    \subfigure[T1qqqq]{
-      \includegraphics[width=0.5\textwidth]{figures/susyResults/T1qqqq_merging_4_cats.pdf}
-    } \\
-    \subfigure[T1tttt]{
-      \includegraphics[width=0.5\textwidth]{figures/susyResults/T1tttt_merging_4_cats.pdf}
-    } \\
-    %% \subfigure[T2tt]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
-    %% } ~~
-    %% \subfigure[T2cc]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn.png}
-    %% } ~~
-    %% \subfigure[T2qq]{
-    %%   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2qq_feyn}
-    %% } 
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T1bbbb/eff/T1bbbb_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T1bbbb_doubleRatioAcceptance.pdf} \\
     \caption{
-      Efficiency times acceptance for the signal models as a function of $m_{\mathrm{Susy}}$ and $m_{\mathrm{LSP}}$.
+      Efficiency times acceptance for the T1bbbb model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$. 
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
     }
-    \label{fig:sig-eff}
+    \label{fig:sig-eff-T1bbbb}
   \end{center}
 \end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T1tttt/eff/T1tttt_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T1tttt_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T1tttt model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T1tttt}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T1qqqq/eff/T1qqqq_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T1qqqq_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T1qqqq model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T1qqqq}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T1ttbb/eff/T1ttbb_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T1ttbb_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T1ttbb model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T1ttbb}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T5ttttDM175/eff/T5ttttDM175_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T5ttttDM175_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T5ttttDM175 model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T5ttttDM175}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T5tttt_degen/eff/T5tttt_degen_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T5tttt_degen_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T5tttt\_degen model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T5tttt_degen}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T5ttcc/eff/T5ttcc_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T5ttcc_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T5ttcc model as a function of $m_{\mathrm{Gluino}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T5ttcc}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2tt/eff/T2tt_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2tt_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2tt model as a function of $m_{\mathrm{Stop}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2tt}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2cc/eff/T2cc_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2cc_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2cc model as a function of $m_{\mathrm{Stop}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2cc}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2-4bd/eff/T2-4bd_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2-4bd_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2-4bd model as a function of $m_{\mathrm{Stop}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2-4bd}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2mixed/eff/T2mixed_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2mixed_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2mixed model as a function of $m_{\mathrm{Stop}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2mixed}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2tb/eff/T2tb_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2tb_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2tb model as a function of $m_{\mathrm{Stop}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2tb}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2bW_X05/eff/T2bW_X05_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2bW_X05_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2bW\_X05 model as a function of $m_{\mathrm{Stop}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2bW_X05}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2bb/eff/T2bb_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2bb_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2bb model as a function of $m_{\mathrm{Sbottom}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2bb}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{figures/jetRanking/T2qq/eff/T2qq_merging_9_cats.pdf} ~~
+    \includegraphics[width=0.4\textwidth]{figures/susyResults/T2qq_doubleRatioAcceptance.pdf} \\
+    \caption{
+      Efficiency times acceptance for the T2qq model as a function of $m_{\mathrm{Squark}}$ and $m_{\mathrm{LSP}}$.
+      The left figure shows the signal acceptance using the shole signal region, 
+      while in the right figure the signal acceptance including only the 4 top jet categories used to extract the limits divided by the total acceptance is shown.
+    }
+    \label{fig:sig-eff-T2qq}
+  \end{center}
+\end{figure}
+
+
+
 
 The level of signal contamination in the control regions is expected to be negligible 
 for most of the models that are targeted by this search. 
@@ -282,12 +479,33 @@ Full results for the ranking procedure are included in Appendix~\ref{app:jetRank
     T1qqqq & (1350,100)  & $\geq5j,4j,3j,2j$ \\
     T1tttt & (800,400) & $\geq5j,\geq5a,4j,4a$ \\
     T1tttt & (1350,100) & $\geq5j,\geq5a,4j,3j$ \\
+    T1ttbb & (1500,100) & $\geq5j,4j,3j,\geq5a$ \\
+    T1ttbb & (1200,800) & $\geq5j,4j,\geq5a,3j$ \\
+    T5ttcc & (1100,100) & $\geq5j,4j,3j,\geq5a$ \\
+    T5ttcc & (750,625) & $\geq5j,\geq5a,4j,4a$ \\
+    T5ttttDM175 & (1500,100) & $\geq5j,4j,3j,\geq5a$ \\
+    T5ttttDM175 & (1200,800) & $\geq5j,\geq5a,4j,4a$ \\
+    T5tttt\_degen & (1500,100) & $\geq5j,4j,3j,\geq5a$ \\
+    T5tttt\_degen & (1200,800) & $\geq5j,4j,3j,\geq5a$ \\
+    T2tt & (800,50) & $\geq5j,4j,3j,\geq5a$ \\
+    T2tt & (375,300) & $\geq5j,4j,\geq5a,3j$ \\
+    T2cc & (400,360) & $\geq5j,4j,\geq5a,3j$ \\
+    T2-4bd & (375,305) & $\geq5j,4j,\geq5a,3j$ \\
+    T2mixed & (375,305) & $\geq5j,4j,\geq5a,4a$ \\
+    T2tb & (800,50) & $\geq5j,4j,3j,2j$ \\
+    T2tb & (350,225) & $\geq5j,4j,3j,3a$ \\
+    T2bW\_X05 & (800,50) & $\geq5j,4j,3j,2j$ \\
+    T2bW\_X05 & (350,225) & $\geq5j,\geq5a,4j,4a$ \\
+    T2bb & (800,50) & $2j,3j,4j,\geq5j$ \\
+    T2bb & (375,300) & $\geq5j,4j,3a,3j$ \\
+    T2qq & (800,50) & $\geq5j,3j,2j,4j$ \\
+    T2qq & (500,400) & $\geq5j,4j,\geq5a,4a$ \\
     \hline
     \hline
   \end{tabular}
 \end{table}
 
-In Figure ~\ref{fig:plane_xs} the 95\% C.L. upper limits on the cross section are shown 
+In Fig. ~\ref{fig:plane_xs_gluino}-\ref{fig:plane_xs_sbottom_squark} the 95\% C.L. upper limits on the cross section are shown 
 in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered in this interpretation. 
 These results correspond to 2.2 \ifb of integrated luminosity. 
 The exclusion contour is also shown together with $\pm1\sigma$ uncertainty. 
@@ -309,11 +527,41 @@ significant problems, thus making us confident that they are real physics events
 of these studies are included in Appendix~\ref{app:foundSusy}.
 
 \begin{figure}
-  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for the T1bbbb model.\label{fig:plane_xs}}
+  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for models of gluino pair-poduction.\label{fig:plane_xs_gluino}}
   \begin{center}    
-    \subfigure[T1bbbb]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1bbbbRA1XSEC}} ~~
-    \subfigure[T1qqqq]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1qqqqRA1XSEC}} \\
-    \subfigure[T1tttt]{\includegraphics[width=0.5\textwidth]{figures/susyResults/t1ttttRA1XSEC}}
+    \subfigure[T1bbbb]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T1bbbbXSEC}} ~~
+    \subfigure[T1qqqq]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T1qqqqXSEC}} \\
+    \subfigure[T1tttt]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T1ttttXSEC}} ~~
+    \subfigure[T1ttbb]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T1ttbbXSEC}} \\
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for models of gluino-mediated stop pair-poduction.\label{fig:plane_xs_gluinoToStop}}
+  \begin{center}    
+    \subfigure[T5ttttDM175]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T5ttttDM175XSEC}} ~~
+    \subfigure[T5tttt\_degen]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T5tttt_degenXSEC}} \\
+    \subfigure[T5ttcc]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T5ttccXSEC}} ~~
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for models of direct stop pair-poduction.\label{fig:plane_xs_stop}}
+  \begin{center}    
+    \subfigure[T2tt]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2ttXSEC}} ~~
+    \subfigure[T2tb]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2tbXSEC}} \\
+    \subfigure[T2bW\_X05]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2bW_X05XSEC}} ~~
+    \subfigure[T2-4bd]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2-4bdXSEC}} \\
+    \subfigure[T2cc]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2ccXSEC}} ~~
+    \subfigure[T2mixed]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2mixedXSEC}} \\
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \caption{95\% C.L. expected (solid black line) observed (solid red line) upper limit on the cross section for models of direct sbottom/squark pair-poduction.\label{fig:plane_xs_sbottom_squark}}
+  \begin{center}    
+    \subfigure[T2bb]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2bbXSEC}} ~~
+    \subfigure[T2qq]{\includegraphics[width=0.45\textwidth]{figures/susyResults/T2qqXSEC}} \\
   \end{center}
 \end{figure}
 
