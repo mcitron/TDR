@@ -23,37 +23,37 @@ These scale factors are applied on top of the FullSim scale factors applied for 
 other Monte Carlo samples.
 
 
-\begin{landscape}
+%% \begin{landscape}
 \begin{table}[h!]
   \scriptsize
   \caption{A summary of the simplified models used in this analysis.}
   \label{tab:simplified-models}
   \centering
-  \begin{tabular}{ llllll }
+  \begin{tabular}{ lllll }
     \hline
     \hline
-    Model & Production & Decay & Branching Ratio & Notes & Run 1 \\ 
+    Model & Production & Decay & Notes & Run 1 \\ 
     \hline    
     \hline    
-    T1bbbb & \ppToGluGlu    & \gluToBBNo & 100\% & -- & $m_{\mathrm{Gluino}}>\sim 1350 \,\mathrm{GeV}$ \\ \hline
-    T1qqqq & \ppToGluGlu    & \gluToQQNo & 100\% & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ \\ \hline
-    T1tttt & \ppToGluGlu    & \gluToTTNo & 100\% & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ \\ \hline
-    T1ttbb & \ppToGluGlu    & \gluToTBAll & 50\%/25\%/25\% & -- & -- \\ \hline
-    T5ttcc & \ppToGluGlu    & \gluToTStop,\stopToCNo & 100\% & $\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$ & -- \\ \hline   
-    T5ttttDM175 & \ppToGluGlu  & \gluToTStop,\stopToTNo & 100\% & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$,\\$\Delta M(\mathrm{Stop},LSP)=175\,\mathrm{GeV}$}  & -- \\ \hline   
-    T5tttt\_degen & \ppToGluGlu  & \gluToTStop,\stopToTNo & 100\% & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$,\\$\Delta M(\mathrm{Stop},LSP)=20\,\mathrm{GeV}$} & -- \\ \hline   
-    T2tt   & \ppToStopStop      & \stopToTNo & 100\% & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 760 \,\mathrm{GeV}$ \\ \hline
-    T2cc   & \ppToStopStop      & \stopToCNo & 100\%  & -- &  \\ \hline
-    T2-4bd & \ppToStopStop      & \stopToBFFNo & 100\%  & -- &  \\ \hline
-    T2mixed & \ppToStopStop      & \stopToMixed & 50\%/50\%  & -- &  \\ \hline
-    T2tb & \ppToStopStop      & \stopToTB & 50\%/50\%  & -- & -- \\ \hline
-    T2bW\_X05 & \ppToStopStop      & \stopToBW & 100\%  & $m_{\chipm}=0.5(m_{\mathrm{Gluino}}+m_{\mathrm{\chiz}})$ & -- \\ \hline
-    T2bb   & \ppToSbotSbot   & \sbottomToB & 100\%  & -- & -- \\ \hline
-    T2qq   & \ppToSquaSqua    & \squarkToQ & 100\%   & considered bot 1-fold/8-fold squark degeneracy & -- \\ \hline
+    T1bbbb & \ppToGluGlu    & \gluToBBNo & -- & $m_{\mathrm{Gluino}}>\sim 1350 \,\mathrm{GeV}$ \\ \hline
+    T1tttt & \ppToGluGlu    & \gluToTTNo & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ \\ \hline
+    T1ttbb & \ppToGluGlu    & \gluToTBWNo & $\Delta M(\chipm,\chiz)=5\,\mathrm{GeV}}$ & -- \\ \hline
+    T1qqqq & \ppToGluGlu    & \gluToQQNo & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ \\ \hline
+    T5ttcc & \ppToGluGlu    & \gluToTStop,\stopToCNo & $\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$ & -- \\ \hline   
+    T5ttttDM175 & \ppToGluGlu  & \gluToTStop,\stopToTNo & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$,\\$\Delta M(\mathrm{Stop},LSP)=175\,\mathrm{GeV}$}  & -- \\ \hline   
+    T5tttt\_degen & \ppToGluGlu  & \gluToTStop,\stopToTNo & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$,\\$\Delta M(\mathrm{Stop},LSP)=20\,\mathrm{GeV}$} & -- \\ \hline   
+    T2cc   & \ppToStopStop      & \stopToCNo & -- &  \\ \hline
+    T2-4bd & \ppToStopStop      & \stopToBFFNo & -- &  \\ \hline
+    T2mixed & \ppToStopStop      & \stopToMixed & -- &  \\ \hline
+    T2tt   & \ppToStopStop      & \stopToTNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 760 \,\mathrm{GeV}$ \\ \hline
+    T2tb & \ppToStopStop      & \stopToTB & -- & -- \\ \hline
+    T2bb   & \ppToSbotSbot   & \sbottomToB & -- & -- \\ \hline
+    T2bW\_X05 & \ppToStopStop      & \stopToBW & $m_{\chipm}=0.5(m_{\mathrm{Gluino}}+m_{\chiz})$ & -- \\ \hline
+    T2qq   & \ppToSquaSqua    & \squarkToQ &  considered both 1-fold/8-fold squark degeneracy & -- \\ \hline
     \hline
   \end{tabular}
 \end{table}
-\end{landscape}
+%% \end{landscape}
 
 
 \begin{figure}[h!]
