@@ -1,0 +1,58 @@
+%%__________________________________________________________________||
+\section{Event reconstruction}
+\label{sec:event_reconstruction}
+
+The global event reconstruction (also called particle-flow event
+reconstruction~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}) consists
+in reconstructing and identifying each single particle with an
+optimized combination of all subdetector information. In this process,
+the identification of the particle type (photon, electron, muon,
+charged hadron, neutral hadron) plays an important r\^ole in the
+determination of the particle direction and energy. Photons (\eg
+coming from \Pgpz\ decays or from electron bremsstrahlung) are
+identified as ECAL energy clusters not linked to the extrapolation of
+any charged particle trajectory to the ECAL. Electrons (\eg coming
+from photon conversions in the tracker material or from \cPqb-hadron
+semileptonic decays) are identified as a primary charged particle
+track and potentially many ECAL energy clusters corresponding to this
+track extrapolation to the ECAL and to possible bremsstrahlung photons
+emitted along the way through the tracker material. Muons (\eg from
+\cPqb-hadron semileptonic decays) are identified as a track in the
+central tracker consistent with either a track or several hits in the
+muon system, associated with an energy deficit in the
+calorimeters. Charged hadrons are identified as charged particle
+tracks neither identified as electrons, nor as muons. Finally, neutral
+hadrons are identified as HCAL energy clusters not linked to any
+charged hadron trajectory, or as ECAL and HCAL energy excesses with
+respect to the expected charged hadron energy deposit.
+
+The energy of photons is directly obtained from the ECAL measurement,
+corrected for zero-suppression effects. The energy of electrons is
+determined from a combination of the track momentum at the main
+interaction vertex, the corresponding ECAL cluster energy, and the
+energy sum of all bremsstrahlung photons attached to the track. The
+energy of muons is obtained from the corresponding track momentum. The
+energy of charged hadrons is determined from a combination of the
+track momentum and the corresponding ECAL and HCAL energy, corrected
+for zero-suppression effects and for the response function of the
+calorimeters to hadronic showers. Finally, the energy of neutral
+hadrons is obtained from the corresponding corrected ECAL and HCAL
+energy.
+
+For each event, hadronic jets are clustered from these reconstructed
+particles with the infrared and collinear safe anti-\kt algorithm,
+operated with a size parameter $R$ of 0.5. The jet momentum is
+determined as the vectorial sum of all particle momenta in this jet,
+and is found in the simulation to be within 5 to 10\% of the true
+momentum over the whole \pt spectrum and detector acceptance. Jet
+energy corrections are derived from the simulation, and are confirmed
+with in situ measurements with the energy balance of dijet and photon
++ jet events~\cite{Chatrchyan:2011ds}. The jet energy resolution
+amounts typically to 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV,
+to be compared to about 40\%, 12\%, and 5\% obtained when the
+calorimeters alone are used for jet clustering.
+
+The missing transverse momentum vector \ptvecmiss is defined as the
+projection on the plane perpendicular to the beams of the negative
+vector sum of the momenta of all reconstructed particles in an
+event. Its magnitude is referred to as \ETmiss.
