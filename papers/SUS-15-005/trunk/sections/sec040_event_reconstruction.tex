@@ -2,57 +2,123 @@
 \section{Event reconstruction}
 \label{sec:event_reconstruction}
 
-The global event reconstruction (also called particle-flow event
-reconstruction~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}) consists
-in reconstructing and identifying each single particle with an
-optimized combination of all subdetector information. In this process,
-the identification of the particle type (photon, electron, muon,
-charged hadron, neutral hadron) plays an important r\^ole in the
-determination of the particle direction and energy. Photons (\eg
-coming from \Pgpz\ decays or from electron bremsstrahlung) are
-identified as ECAL energy clusters not linked to the extrapolation of
-any charged particle trajectory to the ECAL. Electrons (\eg coming
-from photon conversions in the tracker material or from \cPqb-hadron
-semileptonic decays) are identified as a primary charged particle
-track and potentially many ECAL energy clusters corresponding to this
-track extrapolation to the ECAL and to possible bremsstrahlung photons
-emitted along the way through the tracker material. Muons (\eg from
-\cPqb-hadron semileptonic decays) are identified as a track in the
-central tracker consistent with either a track or several hits in the
-muon system, associated with an energy deficit in the
-calorimeters. Charged hadrons are identified as charged particle
-tracks neither identified as electrons, nor as muons. Finally, neutral
-hadrons are identified as HCAL energy clusters not linked to any
-charged hadron trajectory, or as ECAL and HCAL energy excesses with
-respect to the expected charged hadron energy deposit.
+\fixme{COMPLETE. NEEDS CHECKING. NEEDS POLISHING.}
 
-The energy of photons is directly obtained from the ECAL measurement,
-corrected for zero-suppression effects. The energy of electrons is
-determined from a combination of the track momentum at the main
-interaction vertex, the corresponding ECAL cluster energy, and the
-energy sum of all bremsstrahlung photons attached to the track. The
-energy of muons is obtained from the corresponding track momentum. The
-energy of charged hadrons is determined from a combination of the
-track momentum and the corresponding ECAL and HCAL energy, corrected
-for zero-suppression effects and for the response function of the
-calorimeters to hadronic showers. Finally, the energy of neutral
-hadrons is obtained from the corresponding corrected ECAL and HCAL
-energy.
+Global event reconstruction is provided by the particle-flow (PF)
+algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, which aims to
+identify each single particle using an optimized combination of
+information from all detector systems. In this process, the
+identification of the particle type (photon, electron, muon, charged
+hadron, neutral hadron) plays an important r\^ole in the determination
+of the particle direction and energy.
 
-For each event, hadronic jets are clustered from these reconstructed
-particles with the infrared and collinear safe anti-\kt algorithm,
-operated with a size parameter $R$ of 0.5. The jet momentum is
-determined as the vectorial sum of all particle momenta in this jet,
-and is found in the simulation to be within 5 to 10\% of the true
-momentum over the whole \pt spectrum and detector acceptance. Jet
-energy corrections are derived from the simulation, and are confirmed
-with in situ measurements with the energy balance of dijet and photon
-+ jet events~\cite{Chatrchyan:2011ds}. The jet energy resolution
-amounts typically to 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV,
-to be compared to about 40\%, 12\%, and 5\% obtained when the
-calorimeters alone are used for jet clustering.
+The primary vertex (PV) for each recorded event is assumed to be the
+reconstructed vertex with the largest sum of charged-track $\pt^2$
+values that is found within 24\unit{cm} and 2\unit{cm} of the center
+of the detector in the direction, respectively, along and
+perpendicular to the beam axis. Charged tracks associated to
+reconstructed vertices coincident with the beam axis from other pp
+interactions within the same or neighbouring bunch crossings
+(``pileup'') are not considered by the PF algorithm as part of the
+global event reconstruction.
+
+Photons~\cite{CMS:EGM-14-001} are identified as ECAL energy clusters
+not linked to the extrapolation of any charged particle trajectory to
+the ECAL. The energy of photons is directly obtained from the ECAL
+measurement, corrected for zero-suppression and pileup effects.
+Electrons~\cite{Khachatryan:2015hwa} are identified as a charged
+particle track associated with an ECAL cluster compatible with the
+track trajectory, as well as many additional ECAL energy clusters from
+potential bremsstrahlung photons emitted as the electron traverses
+material of the silicon tracker. The energy of electrons is determined
+from a combination of the track momentum at the main interaction
+vertex, the corresponding ECAL cluster energy, and the energy sum of
+all bremsstrahlung photons attached to the track.
+Muons~\cite{Chatrchyan:2012xi} are identified as a track in the
+silicon tracker consistent with either a track or several hits in the
+muon system and associated with an energy deficit in the calorimeters.
+The energy of muons is obtained from the corresponding track momentum.
+Charged hadrons are identified as charged particle tracks neither
+identified as electrons, nor as muons. The energy of charged hadrons
+is determined from a combination of the track momentum and the
+corresponding ECAL and HCAL energy, corrected for zero-suppression
+effects and for the response function of the calorimeters to hadronic
+showers. Neutral hadrons are identified as HCAL energy clusters not
+linked to any charged hadron trajectory, or as ECAL and HCAL energy
+excesses with respect to the expected charged hadron energy deposit.
+The energy of neutral hadrons is obtained from the corresponding
+corrected ECAL and HCAL energy.
+
+Various quality-related criteria must be satisfied in order to
+identify photons with high efficiency while minimising the
+misidentification of electrons and associated bremstrahlung, jets,
+% (\eg $\pi^0$ decay), 
+or ECAL noise as photons. The criteria include the following: the
+shower shape of the energy deposition in the ECAL must be consistent
+with that expected from a photon, the energy detected in the HCAL
+behind the photon shower must not exceed 5\% of the photon energy, and
+no matched hits in the pixel tracker must be found. Similar criteria
+related to the ECAL shower shape and the relative contributions to the
+total energy deposited in the ECAL and HCAL must be satisfied to
+identify electrons, with additional requirements on the associated
+track that consider the track quality, energy-momentum matching, and
+compatibility with the PV in terms of the transverse and longitudinal
+impact parameters.
+
+Photons are required to be isolated from other activity in the event,
+such as charged and neutral hadrons, within a cone $\Delta R =
+\sqrt{(\Delta\phi)^2 + (\Delta\eta)^2} = 0.3$ around the photon
+trajectory, corrected for pileup effects and for contributions from
+the photon itself. Electrons and muons are also required to be
+isolated from other activity in the event, primarily to suppress
+background contributions from semileptonic heavy flavour decays in
+multijet events. The isolation $I^\text{mini}_\text{rel}$ is defined
+as the scalar \Pt sum of all charged and neutral hadrons and photons
+within a cone $\Delta R = 0.3$ around the lepton direction, divided by
+the lepton \Pt. The variable $I^\text{mini}_\text{rel}$ excludes
+contributions from the lepton itself and is corrected for the effects
+of pileup. The cone radius is dependent on the lepton \Pt, primarily
+to identify with high efficiency the collimated daughter particles of
+leptonically decaying Lorentz-boosted top quarks, according to the
+following: $R = 0.2$ and 0.05 for, respectively, $\Pt < 50\GeV$ and
+$\Pt > 200\GeV$, and $R = 10\GeV / \Pt$ for $50 < \Pt < 200\GeV$. The
+isolation for electrons and muons is required to satisfy,
+respectively, $I^\text{mini}_\text{rel} < 0.1$ and 0.2 when
+considering events with nonleptonic final states. A tighter definition
+of muon isolation, $I^{\mu}_\text{rel}$, is used when events are
+required to contain at least one muon. The variable
+$I^{\mu}_\text{rel}$ is determined identically to
+$I^\text{mini}_\text{rel}$ except that a cone of fixed radius $R =
+0.3$ is assumed.
+
+Electron and muon candidates identified by the PF algorithm that do
+not satisfy the quality criteria or the $I^\text{mini}_\text{rel}$
+isolation requirements described above, as well as charged hadrons,
+are collectively labeled as ``single isolated tracks'' if they are
+isolated from neighbouring charged tracks associated to the PV. The
+isolation $I^\text{track}_\text{rel}$ is defined as the scalar \Pt sum
+of charged tracks (excluding the track under consideration) within a
+cone $\Delta R < 0.3$ around the track direction, divided by the track
+\Pt. The requirement $I^\text{track}_\text{rel} < 0.1$ is imposed.
+
+Jets are clustered from the PF candidate particles with the infrared
+and collinear safe anti-$k_t$ algorithm~\cite{antikt}, operated with a
+radius parameter $R$ of 0.4. The jet momentum is determined as the
+vectorial sum of all particle momenta in this jet, and is found in the
+simulation to be within 5 to 10\% of the true momentum over the whole
+\pt spectrum and detector acceptance. Jet energy corrections, to
+account for pileup~\cite{pileup} and to establish a uniform relative
+response in $\eta$ and a calibrated absolute response in \Pt, are
+derived from the simulation, and are confirmed with in situ
+measurements with the energy balance of dijet and photon+jet
+events~\cite{Chatrchyan:2011ds}. The jet energy resolution amounts
+typically to 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV, to be
+compared to about 40\%, 12\%, and 5\% obtained when the calorimeters
+alone are used for jet clustering.
+% Jet quality criteria as described in Ref. [32] are applied to
+% eliminate, for example, spurious events caused by calorimeter noise.
 
 The missing transverse momentum vector \ptvecmiss is defined as the
 projection on the plane perpendicular to the beams of the negative
-vector sum of the momenta of all reconstructed particles in an
-event. Its magnitude is referred to as \ETmiss.
+vector sum of the momenta of all PF candidate particles in an event.
+Its magnitude is referred to as \ETmiss.
