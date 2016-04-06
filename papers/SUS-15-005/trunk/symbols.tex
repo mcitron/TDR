@@ -1,14 +1,57 @@
 \newcommand\rs{\raisebox{1.0ex}[-1.0ex]}
+
+% PROCESSES
+
 \newcommand{\ra}{\ensuremath{\rightarrow}}
-%\newcommand{\znunu}{\ensuremath{{\text Z} \ra \nu\bar{\nu}}\xspace}
-\newcommand{\znunu}{\ensuremath{\cPZ \rightarrow \cPgn\cPagn}\xspace}
-\newcommand{\zll}{\ensuremath{{\text Z} \ra \ell\ell}\xspace}
-%\newcommand{\zmumu}{\ensuremath{{\text Z} \ra \mu\mu}\xspace}
-\newcommand{\zmumu}{\ensuremath{\cPZ \rightarrow \mu\mu}\xspace}
-\newcommand{\zee}{\ensuremath{{\text Z} \ra ee}\xspace}
-\newcommand{\wmunu}{\ensuremath{{\text W} \ra \mu\nu}}
-%\newcommand{\wtaunu}{\ensuremath{{\text W} \ra \tau\nu}}
-\newcommand{\wtaunu}{\ensuremath{\PW \rightarrow \Pgt\cPgn}}
+\newcommand{\jets}{\ensuremath{\text{jets}}}
+
+\newcommand{\lj}{\ensuremath{\ell\! +\! \jets}\xspace}
+\newcommand{\mj}{\ensuremath{\mu\! +\! \jets}\xspace}
+\newcommand{\ej}{\ensuremath{e\! +\! \jets}\xspace}
+
+\newcommand{\llj}{\ensuremath{\ell\ell\! +\! \jets}\xspace}
+\newcommand{\mmj}{\ensuremath{\mu\mu\! +\! \jets}\xspace}
+\newcommand{\eej}{\ensuremath{ee\! +\! \jets}\xspace}
+
+\newcommand{\gj}{\ensuremath{\gamma\! +\! \jets}\xspace}
+
+\newcommand{\wj}{\ensuremath{\PW\! +\! \jets}\xspace}
+\newcommand{\wlj}{\ensuremath{\PW\! (\ra\! \ell\nu)\! +\! \textrm{jets}}\xspace}
+\newcommand{\wmj}{\ensuremath{\PW\! (\ra\! \mu\nu)\! +\! \textrm{jets}}\xspace}
+\newcommand{\wej}{\ensuremath{\PW\! (\ra\! e\nu)\! +\! \textrm{jets}}\xspace}
+
+\newcommand{\wlnu}{\ensuremath{\PW\! \ra\! \ell\nu}\xspace}
+\newcommand{\wmunu}{\ensuremath{\PW\! \ra\! \mu\nu}\xspace}
+\newcommand{\wenu}{\ensuremath{\PW\! \ra\! e\nu}\xspace}
+\newcommand{\wtaunu}{\ensuremath{\PW \rightarrow \Pgt\cPgn}\xspace}
+
+\newcommand{\zj}{\ensuremath{\cPZ\! +\! \jets}\xspace}
+\newcommand{\zllj}{\ensuremath{\cPZ\! (\ra\! \ell\ell)\! + \! \jets}\xspace}
+\newcommand{\zmumuj}{\ensuremath{\cPZ\! (\ra\! \mu\mu)\! +\! \jets}\xspace}
+\newcommand{\zeej}{\ensuremath{\cPZ\! (\ra\! ee)\! +\! \jets}\xspace}
+\newcommand{\znunuj}{\ensuremath{\cPZ\! (\ra\! \cPgn\cPagn)\! +\! \jets}\xspace}
+
+\newcommand{\zll}{\ensuremath{\cPZ\! \ra\! \ell\ell}\xspace}
+\newcommand{\zmumu}{\ensuremath{\cPZ\! \ra\! \mu\mu}\xspace}
+\newcommand{\zee}{\ensuremath{\cPZ\! \ra\! ee}\xspace}
+\newcommand{\znunu}{\ensuremath{\cPZ\! \ra\! \cPgn\cPagn}\xspace}
+
+\newcommand{\ttj}{\ensuremath{\ttbar\! +\! \jets}\xspace}
+\newcommand{\ttw}{\ensuremath{\ttbar\PW}\xspace}
+\newcommand{\ttz}{\ensuremath{\ttbar\cPZ}\xspace}
+
+% SIGNAL 
+
+\newcommand{\Ttwocc}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{c}\chiz\,\bar{\text{c}}\chiz}}
+\newcommand{\Ttwodegen}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{b}ff'\chiz \,\text{b}ff'\chiz}}
+\newcommand{\Ttwobw}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{b}W\chiz \,\bar{\text{b}}W\chiz}}
+\newcommand{\Ttwott}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{t}\chiz\,\bar{\text{t}}\chiz}}
+\newcommand{\Ttwobb}{\ensuremath{\text{pp}\,\ra\,\sBot\sBot^{*}\,\ra\,\text{b}\chiz\,\bar{\text{b}}\chiz}}
+\newcommand{\Ttwoqq}{\ensuremath{\text{pp}\,\ra\,\sQua\sQua^{*}\,\ra\,\text{q}\chiz\,\bar{\text{q}}\chiz}}
+\newcommand{\Tonebbbb}{\ensuremath{\text{pp}\,\ra\,\sGlunew\sGlunew^{*}\,\ra\,\bar{\text{b}}\text{b}\chiz\,\bar{\text{b}}\text{b}\chiz}}
+\newcommand{\Toneqqqq}{\ensuremath{\text{pp}\,\ra\,\sGlunew\sGlunew^{*}\,\ra\,\bar{\text{q}}\text{q}\chiz\,\bar{\text{q}}\text{q}\chiz}}
+\newcommand{\Tonetttt}{\ensuremath{\text{pp}\,\ra\,\sGlunew\sGlunew^{*}\,\ra\,\bar{\text{t}}\text{t}\chiz\,\bar{\text{t}}\text{t}\chiz}}
+
 %\newcommand{\dphi}{\ensuremath{\Delta \phi}}
 \newcommand{\dphi}{\ensuremath{\Delta\phi^{*}_{\rm min}}\xspace}
 \newcommand{\dphijj}{\ensuremath{\Delta \phi_{ j1,j2}}}
@@ -21,21 +64,12 @@
 \newcommand{\etajf}{\ensuremath{\eta^{ {\rm j}_1} }}
 \newcommand{\etajs}{\ensuremath{\eta^{ {\rm j}_2} }}
 \newcommand{\etajt}{\ensuremath{\eta^{ {\rm j}_3} }}
-\newcommand{\ttj}{\ensuremath{\rm{t}\bar{\rm{t}} + jets}\xspace}
-\newcommand{\wj}{\ensuremath{\rm W + \textrm{jets}}\xspace}
-\newcommand{\wej}{\ensuremath{{\rm W}(\rightarrow{\rm e}\nu) + \textrm{jets}}\xspace}
-\newcommand{\wmj}{\ensuremath{{\rm W}(\rightarrow\mu\nu) + \textrm{jets}}\xspace}
-\newcommand{\zj}{\ensuremath{{\rm Z} + \textrm{jets}}\xspace}
-\newcommand{\zmmj}{\ensuremath{{\rm Z}(\rightarrow\mu\mu) + \textrm{jets}}\xspace}
-\newcommand{\zeej}{\ensuremath{{\rm Z}(\rightarrow{\rm ee}) + \textrm{jets}}\xspace}
-
 \newcommand{\al}{\ensuremath{\alpha}}
 \newcommand{\alt}{\ensuremath{\alpha_{\text{T}}}\xspace}
 \newcommand{\etaabs}{\ensuremath{|\eta|}}
 %\newcommand{\gev}{\ensuremath{\mathrm{\,Ge\kern -0.1em V}}}
 \newcommand{\pb}{\ensuremath{pb^{-1}}}
 \newcommand{\mjj}{\ensuremath{M_{\text{inv}}^{j1,j2}}}
-%\newcommand{\ttbar}{\ensuremath{t\bar{t}}}
 \newcommand{\chiznew}{\ensuremath{\chi^{0}}\xspace}
 \newcommand{\chipnew}{\ensuremath{\chi^{+}}\xspace}
 \newcommand{\sQuanew}{\ensuremath{\tilde{\rm q}}\xspace}
@@ -51,16 +85,6 @@
 
 \newcommand{\raT}{\ensuremath{R_{\alt}}}
 \newcommand{\RaT}{\ensuremath{R_{\alt}}\xspace}
-
-\newcommand{\Ttwocc}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{c}\chiz\,\bar{\text{c}}\chiz}}
-\newcommand{\Ttwodegen}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{b}ff'\chiz \,\text{b}ff'\chiz}}
-\newcommand{\Ttwobw}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{b}W\chiz \,\bar{\text{b}}W\chiz}}
-\newcommand{\Ttwott}{\ensuremath{\text{pp}\,\ra\,\sTop\sTop^{*}\,\ra\,\text{t}\chiz\,\bar{\text{t}}\chiz}}
-\newcommand{\Ttwobb}{\ensuremath{\text{pp}\,\ra\,\sBot\sBot^{*}\,\ra\,\text{b}\chiz\,\bar{\text{b}}\chiz}}
-\newcommand{\Ttwoqq}{\ensuremath{\text{pp}\,\ra\,\sQua\sQua^{*}\,\ra\,\text{q}\chiz\,\bar{\text{q}}\chiz}}
-\newcommand{\Tonebbbb}{\ensuremath{\text{pp}\,\ra\,\sGlunew\sGlunew^{*}\,\ra\,\bar{\text{b}}\text{b}\chiz\,\bar{\text{b}}\text{b}\chiz}}
-\newcommand{\Toneqqqq}{\ensuremath{\text{pp}\,\ra\,\sGlunew\sGlunew^{*}\,\ra\,\bar{\text{q}}\text{q}\chiz\,\bar{\text{q}}\text{q}\chiz}}
-\newcommand{\Tonetttt}{\ensuremath{\text{pp}\,\ra\,\sGlunew\sGlunew^{*}\,\ra\,\bar{\text{t}}\text{t}\chiz\,\bar{\text{t}}\text{t}\chiz}}
 
 \newcommand\T{\rule{0pt}{2.6ex}}
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
