@@ -17,7 +17,7 @@ L2Relative, and L3Absolute \cite{Chatrchyan:2011ds}.
 
 It should be noted that the early L1 FastJet corrections require
 improvements at this stage, and as a result can impact the L2 and L3
-corrections. The ``loose'' working point Jet-Id selection criteria was
+corrections. The ``loose'' working point Jet-Id selection criteria is
 chosen.
 
 \subsection{b-tagged jets}
@@ -28,23 +28,31 @@ This results in a gluon/light-quark mis-tag rate of $\sim$1 \% (where ``light'' 
 
 \subsection{Muons}
 \label{sec:muon-id}
-Muons are identified according to the ``medium'' working point definition of the recommended identification algorithm, which provides $\sim$ 98 $\%$ efficiency. 
+Muons are identified according to the ``loose'' working point definition of the recommended identification algorithm, which provides $\sim$ 98 $\%$ efficiency. 
 Muons are also required to be well isolated, i.e. with a low activity in the vicinity of their track. 
 
 In the hadronic signal region, a PF-based relative isolation is used with a variable cone size, which is referred to as ``mini-isolation''. 
 This isolation algorithm helps in recovering some efficiency in the lepton selection for boosted topology of top quark decays, 
 in which the muon's track may be found close to the jet activity due to the boost of the parent top. 
 Therefore, the cone size used for the calculation of the lepton isolation is reduced as a function of 
-the lepton \Pt, as follows: $R=0.2$ for $\Pt_{\ell}\leq50\gev$, $0.05<R<0.2$ for $50 \gev < \Pt_{\ell} < 200\gev$ and $R=0.05$ for $\Pt_{\ell} > 200 \gev$.
+the lepton \Pt, as follows: $R=0.2$ for $\Pt_{\ell}\leq50\gev$,
+$R=10\gev/\Pt_{\ell}$ for $50 \gev < \Pt_{\ell} < 200\gev$ and $R=0.05$ for $\Pt_{\ell} > 200 \gev$.
 
-In the \mj and \mmj samples, to have better QCD background control, the standard PF-based relative isolation is used, with a cone size of 0.4.
+In the \mj and \mmj samples, to have better QCD background control,
+the standard PF-based relative isolation is used, with a cone size of
+0.4. Additionally muons are required to satisfy the ``tight'' working
+point definition of the recommended identification algorithm. This
+slightly reduces the efficiency but additionally reduces the fake
+rate.
 
 The transverse momenta of PF neutral and charged candidates within a cone around the lepton are summed. 
 The relative combined isolation $I^{rel}_{comb}$ is then defined as 
-the ratio of this scalar sum to the transverse momentum of the lepton candidate. 
-The neutral hadron and photon contribution to the isolation is corrected 
-by subtracting the expected neutral contribution from PU collisions, $\Delta\beta=1/2\sum_{\mathrm{PU}}^{\mathrm{ch had}}{\pt}$. 
-The factor 1/2 takes into account the neutral to charged ratio as measured in \cite{CMS-PFT-10-002}. 
+the ratio of this scalar sum to the transverse momentum of the lepton
+candidate. Additionally, $\rho\times A_{eff}$ corrections are applied to
+remove the effects of pileup.
+% The neutral hadron and photon contribution to the isolation is corrected 
+% by subtracting the expected neutral contribution from PU collisions, $\Delta\beta=1/2\sum_{\mathrm{PU}}^{\mathrm{ch had}}{\pt}$. 
+% The factor 1/2 takes into account the neutral to charged ratio as measured in \cite{CMS-PFT-10-002}. 
 
 Muons are defined as isolated when they have $I^{mini}_{Iso} < 0.2$ within $R$ for mini-isolation, and $I^{rel}_{comb} < 0.12$ .
 
@@ -78,7 +86,8 @@ as described in Sec.~\ref{subsec:mucontrolSelection}.
 Photons are identified according to the ``tight'' working point definition ($\sim$ 71 $\%$ efficiency) 
 of the simple cut-based photon identification algorithm \cite{photon-id} 
 and required to be well isolated. 
-A PF-based isolation is used with a cone size $\Delta R$ $<$ 0.3 and $\rho$ x $A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. 
+A PF-based isolation is used with a cone size $\Delta R$ $<$ 0.3 and
+$\rho\times A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. 
 Table \ref{tab:photon-id-gamma} summarises the identification and isolation selection used. 
 
 Photons are vetoed in the definition of the hadronic signal region, 
@@ -114,10 +123,14 @@ Electrons are identified according to the ``loose'' working point definition ($\
 of the cut-based identification \cite{electron-id} for the purpose of the electron veto in the signal region, while the ``tight'' working point ($\sim$ 70 $\%$ efficiency) is used for the selection of electron in the corresponding control regions. 
 
 Electrons are also require required to be well isolated. 
-Similar to muons, in the hadronic signal regions, a PF-based isolation \cite{pf-photon} is used with a cone size determined by the mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\Delta \beta$ corrections are applied to remove the effects of pileup.
+Similar to muons, in the hadronic signal regions, a PF-based isolation
+\cite{pf-photon} is used with a cone size determined by the mini
+isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\rho\times A_{eff}$ 
+corrections are applied to remove the effects of pileup.
 %, while in \ej and \eej control regions, a PF-based isolation with a fixed cone size of 0.4 is used.
 
-Table \ref{tab:ele-id} summarises the identification and isolation selection used for the PHYS14 exercise. In the future it is intended to move to a $\rho$ x $A_{eff}$ pileup correction method as recommended by the electron POG.
+Table \ref{tab:ele-id} summarises the identification and isolation
+selection used. 
 
 Electrons are vetoed in the definition of the hadronic signal region, 
 as described in Sec.~\ref{sec:preSelection}.%, while 
@@ -181,7 +194,7 @@ as described in Sec.~\ref{sec:preSelection}.
 %%   \end{table}
 
 \subsection{Missing transverse momentum}
-Missing transverse momentum (\met) is defined as the opposite of the vector sum
+Missing transverse momentum (\met) is defined as the negative vector sum
 of the transverse momentum of all particle-flow candidates in the event.
 The Type-I \met correction \cite{Khachatryan:2014gga} is applied, i.e., the transverse momentum of
 the particle-flow candidates clustered as jets are replaced with the
