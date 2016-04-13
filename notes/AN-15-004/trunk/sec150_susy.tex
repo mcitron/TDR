@@ -161,9 +161,9 @@ other Monte Carlo samples.
 \subsection{Signal acceptance and contamination}
 \label{sec:sig-accept-contam}
 In Tab. \ref{tab:sig-eff-bestCat} the signal efficiency for benchmark mass points for all the models is summarised, 
-together with the 4 categories used in the limit setting. \\
+together with the 4 categories used in the limit setting, identified with the rankin procedure described in Sec.~\ref{sec:likelihood}. \\
 The signal efficiency across the whole ($m_{\mathrm{Susy}},m_{\mathrm{LSP}}$) for the simplified models used in the analysis 
-is shown in Sec. (see for instance Fig.~\ref{fig:T1bbbb_eff}). 
+is shown in Fig.~\ref{fig:T1bbbb_eff}-\ref{fig:T2qq_eff}. 
 The signal acceptance including only the 4 most sensitive jet multiplicity categories used to compute the exclusion 
 is compared with the acceptance of the whole signal region of the analysis (see for example Fig.~\ref{fig:T1bbbb_eff_doubleRatio}). 
 For models with high jet multiplicity (T1tttt,T1ttbb,T5tttt) almost 100\% of the acceptance is 
@@ -330,7 +330,7 @@ Fig. ~\ref{fig:contamination_T2tt_doubleRatio} (~\ref{fig:contamination_T1tttt_d
 The effect of signal contamination can be sizeable in these particular scenario for T2tt, 
 as shown in Fig.~\ref{fig:contamination_T2tt_doubleRatio}, where in the most sensitive bins 
 (high \nb, high \nj) the contribution of the control region sensitivity is comparable to 
-the one of the signal region. Howeverm this is not an issue in the analysis, as 
+the one of the signal region. However this is not an issue in the analysis, as 
 the potential for signal contamination in all control samples
 is fully accounted for in the likelihood model used to extract
 the statistical interpretation (see Sec.~\ref{sec:likelihood}). 
@@ -422,8 +422,6 @@ Model & ($m_{\mathrm{Susy}},m_{\mathrm{LSP}}$) & Luminosity & ISR & JEC & PU & b
 
 
 
-
-
 \subsection{Exclusion limits}
 \label{sec:susy_results}
 
@@ -435,9 +433,7 @@ All the statistical results are produced using the \textit{combine} tool,
 provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. 
 
 Due to CPU constraints, only 4 out of 9 jet categories (but all \nb/\scalht bins
-within each category) are considered to extract the final result. 
-To choose the 4 jet multiplicity categories that are combined, a ranking procedure 
-is used based on the expected significance. 
+within each category) are considered to extract the final result, as explained in Sec.~\ref{sec:likelihood}. 
 In Tab.~\ref{tab:sig-eff-bestCat} the 4 jet categories used for the limits are shown for some benchmark models. 
 Full results for the ranking procedure are included in Appendix~\ref{app:jetRanking}. 
 
@@ -450,7 +446,7 @@ while the band around the observed exclusion correspond to the theoretical
 uncertainty on the signal cross section.\\
 In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (bottom left) the signal acceptance 
 including the 4 most excluding jet categories is shown. \\
-In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (bottom left) the signal acceptance 
+In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (bottom right) the signal acceptance 
 including the whole signal region is shown.
 
 The models are grouped according to the following categorisation:
@@ -462,7 +458,7 @@ The models are grouped according to the following categorisation:
 \item \textbf{Direct production of 3rd generation squarks}: stop/sbottom pair production, with several possibility for the decay (see Tab.~\ref{tab:simplified-models}). 
   It includes T2tt, T2cc, T2-4bd, T2mixed, T2tb, T2bW\_X05, T2bb. 
 \item \textbf{Gluino-mediated production of on-shell stops and charginos (``natural models'')}: gluino pair production followed by the decay to $t\sTop$. 2-body decay to $c\chiz$ and $t\chiz$ as well as  
-  the 4-body decay to $bff'\chiz$ are considered. It includes T5ttttDM175, T5tttt\_degen, T5ttcc. 
+  the 4-body decay to $bff'\chiz$ for the stop are considered. It includes T5ttttDM175, T5tttt\_degen, T5ttcc. 
 \end{itemize} 
 
 Summary exclusion plots according to this categorisation are presented in Fig.~\ref{fig:summary-excl-plots}. 
@@ -872,7 +868,7 @@ A moderate excess in the $\njet\geq5, \nb\geq2, \scalht > 800 \, \mathrm{GeV}$ (
 causes the observed limits to be slightly weaker than expected for the models favouring high \nb, high \nj and high \scalht. \\
 In Tab.~\ref{tab:sigBenchmarksYields_excess} some benchmark points for different models are listed, 
 which are expected to be excluded by this search but are not with the current dataset, due to this excess. \\
-For T1tttt/T5ttttDM175 this excess has a more pronounced effect in the limit and the observed limit is $\sim 2\sigma$ 
+For T1tttt, T5ttttDM175 this excess has a more pronounced effect in the limit and the observed limit is $\sim 2\sigma$ 
 weaker than expected. The cause of this weaker than expected trend has been studied in more detail
 and localised to a fluctuation in these analysis bins. Event displays for collision events 
 falling in these analysis bins have been carefully inspected and are do not exhibit any 
