@@ -1,15 +1,18 @@
-\section{Investigation of weaker than expected limit for T1tttt \label{app:foundSusy}}
-
-As shown in Fig.~\ref{fig:plane_xs} the T1tttt has an observed limit $\sim 2\sigma$ weaker 
-than expected. This section details studies to localise the cause of this weaker than expected
+\section{Investigation of weaker than expected limit for T1tttt/T5ttttDM175/T2bb \label{app:foundSusy}}
+As shown in Fig.~\ref{fig:T1tttt_excl} and \ref{fig:T5ttttDM175_excl} the T1tttt and T5ttttDM175 have 
+an observed limit $\sim 2\sigma$ weaker than expected. 
+This section details studies to localise the cause of this weaker than expected
 limit and to show that this is due to a fluctuation and not a systematic bias or instrumental
-effect. 
+effect. \\
+A check is also performed on the T2bb interpretation, which shows a $\sim1.5\sigma$ 
+effect at moderate mass splittings.
 
-As shown in Fig.~\ref{fig:T1ttttMountainRange} the bins providing 
-sensitivity for T1tttt compressed and uncompressed models are $\scalht > 800$,$\geq5j$,$\eq2b$ and 
-$\geq3b$. The predicted yields and observations for these as well as
+As shown in Fig.~\ref{fig:T1ttttMountainRange} and Tab.~\ref{tab:sigBenchmarksYields_T1tttt} (\ref{tab:sigBenchmarksYields_T5ttttDM175}) 
+the bins providing sensitivity for T1tttt (T5ttttDM175) compressed and uncompressed 
+models are $\scalht > 800$, $\geq5j$, $2b$ and $\geq3b$. 
+The predicted yields and observations for these as well as
 adjacent \njet and \scalht bins are shown in Table~\ref{tab:yieldsExcessBins}.
-The $\scalht > 800$,$\geq5j$,$\eq2b$ and $\geq3b$ bins exhibit a moderate excess. 
+The $\scalht > 800$, $\geq5j$, $2b$ and $\geq3b$ bins exhibit a moderate excess. 
 The adjacent bins have good data agreement with prediction implying that 
 the excess is not due to a systematic bias in the prediction of these bins.
 
@@ -46,13 +49,23 @@ the excess is not due to a systematic bias in the prediction of these bins.
 To show that the cause of the weaker than expected trend is localised to the high 
 \scalht, \njet and \nb bins the excess is removed by setting the normalisation
 of the \mht distribution to the observation in these bins. As shown in 
-Fig.~\ref{fig:removeExcessByHand} this restores good agreement in the 
-observed and expected limit, confirming these bins are resposible for the under exclusion.
+Fig.~\ref{fig:removeExcessByHand_T1tttt} (\ref{fig:removeExcessByHand_T5ttttDM175}) this restores good agreement in the 
+observed and expected limit for both the T1tttt (T5ttttDM175) model, confirming these bins are resposible for the under exclusion. \\
+Residual discrepancy are due to the distribution of the observed events in the MHT dimension, 
+which can still discriminate between background and signal, even after matching the normalisation of the 
+background prediction to the observation in data. 
 
 \begin{figure}[tbhp]
-  \caption{Limit plane for T1tttt after setting normalisation of prediction to data for bins with excess \label{fig:removeExcessByHand}} 
+  \caption{Limit plane for T1tttt after setting normalisation of prediction to data for bins with excess \label{fig:removeExcessByHand_T1tttt}} 
   \begin{center}    
-    \includegraphics[width=0.8\textwidth]{figures/susyResults/finalCanvasObsLimitXs_excessRemovedByHand}
+    \includegraphics[width=0.8\textwidth]{figures/susyResults/finalCanvasObsLimitXs_excessRemovedByHand_T1tttt}
+  \end{center}
+\end{figure}
+
+\begin{figure}[tbhp]
+  \caption{Limit plane for T5ttttDM175 after setting normalisation of prediction to data for bins with excess \label{fig:removeExcessByHand_T5ttttDM175}} 
+  \begin{center}    
+    \includegraphics[width=0.8\textwidth]{figures/susyResults/finalCanvasObsLimitXs_excessRemovedByHand_T5ttttDM175}
   \end{center}
 \end{figure}
 
@@ -65,7 +78,7 @@ the Ewk background.
 
 \begin{figure}[tbhp]
     \caption{\mht distributions for bins exhibiting excess showing good agreement between data and prediction}
-      \label{fig:mhtDistributionExcessBins}}
+      \label{fig:mhtDistributionExcessBins}
   \begin{center}
     \subfigure[$\geq3b$]{ \includegraphics[width=0.45\textwidth]{figures/susyResults/postFitShape_ge3b_ge5j_800_Inf_prefit.pdf} } ~~
     \subfigure[$2b$]{ \includegraphics[width=0.45\textwidth]{figures/susyResults/postFitShape_eq2b_ge5j_800_Inf_prefit} }
@@ -105,6 +118,8 @@ instrumental/beam halo effects was observed from the studies detailed above
 and so the excess is concluded to be due to a statistical fluctuation 
 in two bins at high \njet, \nb and \scalht. 
 
+
+
 \begin{figure}[tbhp]
   \caption{Event display for run 259810, lumi 82, event 136409363 (summary view)}
   \label{fig:cmsShow_001}
@@ -124,5 +139,20 @@ in two bins at high \njet, \nb and \scalht.
   \label{fig:cmsShow_003}
   \begin{center}    
     \includegraphics[width=0.8\textwidth]{figures/susyResults/cmsShow_003}
+  \end{center}
+\end{figure}
+
+A weaker-than-expected exclusion is also found for the T2bb interpretation at moderate mass splitting. 
+As shown in Fig.~\ref{tab:sigBenchmarksYields_excess} for the point (600,350), the two most sensitive bins, 
+which are $\nj=2,\nb=2,350<H_{T}<500\,\mathrm{GeV}$ exhibit a slight excess, driving the trend in the observed limit. \\
+We have investigated the effect of these bins by removing by hand the excess, as it had been done 
+for the T1tttt and T5ttttDM175 models (see Fig.~\ref{fig:removeExcessByHand_T1tttt},\ref{fig:removeExcessByHand_T5ttttDM175}).
+Also in this case a good agreement between expected and observed exclusion is found after matching 
+the data and the background expectation in the bins with the excess, as it is shown in Fig.~\ref{fig:removeExcessByHand_T2bb}.
+
+\begin{figure}[tbhp]
+  \caption{Limit plane for T2bb after setting normalisation of prediction to data for bins with excess \label{fig:removeExcessByHand_T2bb}} 
+  \begin{center}    
+    \includegraphics[width=0.8\textwidth]{figures/susyResults/finalCanvasObsLimitXs_excessRemovedByHand_T2bb}
   \end{center}
 \end{figure}
