@@ -1,14 +1,14 @@
 \section{Event selections}
 \label{sec:event_selection}
 
-\fixme{COMPLETE. NEEDS CHECKING \& POLISHING.}
+{\bf NOT FINISHED. NEEDS CHECKING \& POLISHING.}
 
 The kinematical selection criteria used to define the signal region
 that contains candidate signal events, as well as a number of control
 regions in data, are described below. The criteria are based on the
 physics objects (leptons, jets, \ETmiss, \etc) defined by the event
 reconstruction algorithms described in
-Sec.~\ref{sec:event_reconstruction}.
+Section~\ref{sec:event_reconstruction}.
 
 \subsection{Baseline preselection}
 \label{sec:baseline}
@@ -88,7 +88,7 @@ transverse momentum.
     \hline
     \multicolumn{2}{l}{\bf Baseline preselection (PRE)}                                                                                                      \\
     \ETmiss cleaning             & Filters related to beam and instrumental effects                                                                          \\ 
-    Lepton/photon vetoes         & $\Pt > 10,\, 10,\, 25\GeV$ for leptons, isolated tracks, photons (respectively) and $\abs{\eta} < 2.5$                    \\ 
+    Lepton/photon vetoes         & $\Pt > 10,\, 10,\, 25\GeV$ for isolated tracks, leptons, photons (respectively) and $\abs{\eta} < 2.5$                    \\ 
     Jet $j_\text{i}$ acceptance  & Consider each jet $j_\text{i}$ that satisfies $\Pt^{j_\text{i}} > 40\GeV$ and $\abs{\eta^{j_\text{1}}} < 3$               \\
     Jet $j_\text{1}$ acceptance  & $\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$                                                          \\
     Jet $j_\text{2}$ acceptance  & 
@@ -109,20 +109,21 @@ transverse momentum.
     QCD multijet rejection       & $\bdphi > 0.5$ (for the region $\scalht > 200\GeV$)                                                                       \\[0.5ex]
     \hline
     \multicolumn{2}{l}{{\bf Control regions (CR)}}                                                                                                           \\
-    Multijet-enriched            & 
-    SR + $\HTmiss/\ETmiss > 1.25$ (inverted)                                                                                                                 \\  
-    \mj                          & 
-    PRE + 1 muon with $\Pt > 30\GeV$ and $\abs{\eta} < 2.1$, 
-    $\Delta R(\mu,j_{\text{i}}) > 0.5$, 
-    $50 < m_\text{T}(\ptvec^\mu,\ptvecmiss) < 120\GeV$                                                                                                                 \\
-    \mmjpm                       & 
-    PRE + 2 muons with $\Pt > 30\GeV$ and $\abs{\eta} < 2.1$, 
-    $\Delta R(\mu_{1,2},j_{\text{i}}) > 0.5$, 
-    $ \abs{m_{\mu_1\mu_2} - m_\text{Z}} < 25\GeV$                                                                                                            \\
+    Multijet-enriched            & SR + $\HTmiss/\ETmiss > 1.25$ (inverted)                                                                                  \\  
     \gj                          & 
-    PRE + 1 photon with $\Pt > 200\GeV$ and $\abs{\eta} < 1.45$, 
+    PRE + 1$\gamma$ with $\Pt > 200\GeV$, $\abs{\eta} < 1.45$, 
     $\Delta R(\gamma,j_{\text{i}}) > 1.0$, 
-    same \alphat requirements as SR                                                                                                                          \\[0.5ex]
+    $\scalht > 400\GeV$, same \alphat requirements as SR                                                                                                     \\[0.5ex]
+    \mj                          & 
+    PRE + 1$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
+    $I^{\mu}_\text{rel} < 0.1$, 
+    $\Delta R(\mu,j_{\text{i}}) > 0.5$,
+    $50 < m_\text{T}(\ptvec^\mu,\ptvecmiss) < 120\GeV$                                                                                                       \\[0.5ex]
+    \mmjpm                       & 
+    PRE + 2$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
+    $I^{\mu}_\text{rel} < 0.1$, 
+    $\Delta R(\mu_{1,2},j_{\text{i}}) > 0.5$, 
+    $ \abs{m_{\mu\mu} - m_\text{Z}} < 25\GeV$                                                                                                                \\[0.5ex]
     \hline
   \end{tabular}
 \end{table*}
@@ -383,7 +384,7 @@ near 100\% for all bins in the signal region. The trigger conditions
 used for different event categories and \scalht bins in the signal
 region are summarised in Table~\ref{tab:trigger}.
 
-\begin{table}[tb]
+\begin{table*}[tb]
   \topcaption{A summary of the trigger conditions used to record
     candidate signal events. A single trigger condition is met if an
     event satisfies all threshold requirements specified in a given 
@@ -413,7 +414,7 @@ region are summarised in Table~\ref{tab:trigger}.
     $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 800     & -                                                   & -       \\
     \hline
   \end{tabular}
-\end{table}
+\end{table*}
 
 \subsection{Using \HTmiss as a discriminating variable}
 
@@ -457,45 +458,58 @@ inverted requirement $\HTmiss / \ETmiss > 1.25$. The events are
 recorded with the signal triggers described above, and the sample is
 used to estimate the multijet background in the signal region.
  
-Three additional control regions are defined by inverting one of the
-lepton or photon vetoes to select samples of \mj, \mmj, or \gj
-events. 
+Three additional control regions are used to estimate background
+contributions from SM processes with final states containing genuine
+\ptvecmiss, and are defined by inverting one of the photon or lepton
+vetoes to select samples of \gj, \mj, or \mmj events. Additional
+kinematic requirements are employed to ensure the control samples are
+enriched in the same SM processes that contribute to background events
+in the signal region, and are depleted in contributions from multijet
+production or a wide variety of SUSY models (\ie so-called signal
+contamination).  The samples are defined, and their events are
+identically categorised and binned, such that the kinematic properties
+of events in the control regions and the signal candidate events
+resemble as closely as possible one another, once the photon, muon, or
+dimuon system is ignored in the calculation of quantities such as
+\scalht and \HTmiss. The selections are summarised in
+Table~\ref{tab:selections} and described below.
 
-The selection criteria are chosen such that the SM processes and their
-kinematic properties resemble as closely as possible the SM background
-behaviour in the signal region, once the muon, dimuon system, or
-photon are ignored in quantities such as \scalht and \alphat. 
+The \gj event sample is defined by the baseline preselection
+requirements, but the photon veto is inverted and each event is
+required to contain a single isolated photon, as defined in
+Section~\ref{sec:event_reconstruction}, that satisfies $\Pt > 200\gev$
+and $\abs{\eta} < 1.45$ and well separated from each jet
+$j_{\text{i}}$ in the event according to $\Delta
+R(\gamma,j_{\text{i}}) > 1.0$. In addition, events must satisfy
+$\scalht > 400\GeV$, as well as the same \scalht-dependent \alphat
+requirements used to define the signal region. The events are recorded
+using a single-photon trigger condition and the selections result in a
+trigger efficiency of~$\gtrsim$99\%.
 
-Minimal additioanl kinematic requirements are employed to ensure the
-control regions are depleted in multijet 
-
-The event selection criteria are defined to ensure that any potential
-contribution from multijet events or a wide variety of SUSY models
-(\ie so-called signal contamination) is negligible.
-
-, and 
-
-The
-event samples are used to estimate background contributions from SM
-processes with final states containing genuine \ptvecmiss.  
-
-
-
-The \mj sample is recorded using a trigger that requires an isolated
-muon. The event selection criteria are chosen so that the trigger is
-maximally efficient ($\approx$90\%). Furthermore, the muon is required
-to be well separated from the jets in the event, and the transverse
-mass formed by the muon and \ETmiss system must lie between 30 and
-125\GeV to ensure a sample rich in W bosons (produced promptly or from
-the decay of top quarks). The \mmj sample uses the same trigger
-condition (efficiency $\approx$99\%) and similar selection criteria as
-the \mj sample, specifically requiring two oppositely charged isolated
-muons that are well separated from the jets in the event, and with a
-dilepton invariant mass within a $\pm 25\GeV$ window around the
-nominal mass of the Z boson. For both the muon and dimuon samples, no
-requirement is made on \alphat, in order to increase the statistical
-precision of the predictions from these samples.  The \gj events are
-recorded using a single-photon trigger condition. The event selection
-criteria require an isolated photon with $\Pt > 165\gev$, $\scalht >
-375\GeV$, and $\alphat > 0.55$, yielding a trigger efficiency
-of~$\gtrsim$99\%.
+The \mj event sample is defined by the baseline preselection
+requirements, but the muon veto is inverted and each event is required
+to contain a single isolated muon, as defined in
+Section~\ref{sec:event_reconstruction}, that satisfies $\Pt > 30\gev$
+and $\abs{\eta} < 2.1$ and well separated from each jet $j_{\text{i}}$
+in the event according to $\Delta R(\mu,j_{\text{i}}) > 0.5$.
+%Furthermore, the muon is required to be well separated from the jets
+%in the event, with a separation in the solid angle between direction
+%of the muon and all jets in the event that satisfies $\Delta
+%R(\mu,j_{\text{i}}) > 0.5$.
+The transverse mass formed by the tranvserve momenta of the muon and
+\ptvecmiss system must satisfy $50 < m_\text{T} < 120\GeV$ to select a
+sample of events rich in W bosons, produced promptly or from the decay
+of top quarks. The \mmj sample uses a similar set of selection
+criteria as the \mj sample, but specifically requires two oppositely
+charged isolated muons that both satisfy $\Pt > 30\gev$ and
+$\abs{\eta} < 2.1$ and are well separated from the jets in the event
+($\Delta R(\mu_{1,2},j_{\text{i}}) > 0.5$). The muons are also
+required to have a dilepton invariant mass within a $\pm 25\GeV$
+window around the nominal mass of the Z boson. For both the muon and
+dimuon samples, no requirement is made on \alphat, in order to
+increase the statistical precision of the predictions from these
+samples. Both the \mj and \mmj samples are recorded using a trigger
+that requires an isolated muon. The selection criteria of the \mj and
+\mmj event samples are chosen so that the trigger is maximally
+efficient with values in the region, respectively, $\approx$90\% and
+$\approx$99\%.
