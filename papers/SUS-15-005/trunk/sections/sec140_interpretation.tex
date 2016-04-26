@@ -1,46 +1,81 @@
 \clearpage
-\section{Results}
-\label{sec:interpretation}
+\section{Results and interpretation}
+\label{sec:result}
 
-A likelihood model of the observations in all data samples is used to
-obtain a consistent prediction of the SM backgrounds and to test for
-the presence of a variety of signal models.  In each bin defined by
-the \njet, \nb, \scalht and \mht variables the observation is modelled
-as a Poisson-distributed variable around the sum of the SM
-expectation. A potential signal contribution is considered when
-interpreting the results in specific models, as presented in
-Section~\ref{sec:interpretation}.  The SM expectation is related to
-the expected yields in the \mj, \mmj, and \gj control samples via
-transfer factors derived from simulation. Poisson factors for the
-observed yields in all the control samples are included, for each
-\njet, \nb, \scalht bin, in order to account for the correlations in
-the background predictions and uncertainties.  The systematic
-uncertainties summarised in Table~\ref{tab:bkgd_systs} are
-accommodated in the likelihood function through the use of nuisance
-parameters, the measurements of which are assumed to follow a
-log-normal distribution. In the presence of a non-zero signal
-contribution, the CL$_{\mathrm{s}}$ technique~\cite{read,
-  Cowan:2010js} is used to determine upper limits on production cross
-section using asymptotic formulae.
+A model of the observations in all data samples, described by a
+likelihood function, is used to obtain a consistent prediction of the
+SM backgrounds, and to test for the presence of new-physics signals if
+the signal region is included in the maximum-likelihood fit. The
+observation in each bin defined by the \njet, \nb, \scalht, and \mht
+variables is modelled as a Poisson-distributed variable around the SM
+expectation and a potential signal contribution (assumed to be zero in
+the following discussion), where the SM expectation is the sum over
+the estimated contributions from all background processes according to
+the methods described in Section~\ref{}. 
 
-Tables~\ref{tab:predewkdata_sig_comb_mono}--\ref{tab:predewkdata_sig_comb_sym}
-summarise the observed yields and ``pre-fit'' and ``post-fit'' SM
-expectations for signal candidate events in the monojet, asymmetric,
-and symmetric categories, respectively. 
-In the fit the likelihood function is maximised over all parameters
-under the SM-only hypothesis.
-No significant tension is
-observed between the predictions and data in the signal region, which
-is well described by the SM-only hypothesis.
+The non-multijet backgrounds, which comprise the \wlj and \ttj (``lost
+lepton'') backgrounds, the residual contributions from other
+processes, such as single top, diboson, and Drell-Yan production, and
+the irreducible \znunuj background, are related to the expected yields
+in the \mj, \mmj, and \gj control samples via the transfer factors
+derived from simulation, as described in
+Section~\ref{needreftocontrolregions}. For event categories that
+satisfy $\nb < 2$, all three of the aforementioned control samples are
+considered in the estimation of the \znunuj background. For events
+with $\nb > 1$, only the \mj control sample is used to determine the
+total contribution from all non-multijet backgrounds in the signal
+region. 
+Estimates of the contribution from multijet events in the control and
+signal regions are determined, respectively, directly from simulation
+or according to the method described in Section~\ref{sec:qcd}, and are
+included in the likelihood function.
 
-\input{tables/result/v0/predewkdata_sig_comb_mono_twiki}
-\clearpage
-\input{tables/result/v0/predewkdata_sig_comb_asym_twiki}
-\clearpage
-\input{tables/result/v0/predewkdata_sig_comb_sym_twiki}
-\clearpage
+The systematic uncertainties summarised in Table~\ref{tab:bkgd_systs}
+are accommodated in the likelihood function through the use of
+nuisance parameters, the measurements of which are assumed to follow a
+log-normal distribution, and alternative templates that describe the
+uncertainties in the \mht distributions.
 
-\section{Interpretation}
+The ``pre-fit'' result of this search, which considers the
+observations in the control regions only, is summarised in
+Tables~\ref{tab:mono}, \ref{tab:asym}, and \ref{tab:sym} for,
+respectively, the monojet, asymmetric, and symmetric topologies. This
+result is based on an estimate of the \znunuj background using
+observations in multiple control regions as described by the
+likelihood function, maximised over all fit
+parameters. Tables~\ref{tab:mono}, \ref{tab:asym}, and \ref{tab:sym}
+also summarise the ``post-fit'' result, which is based on a
+maximum-likelihood fit to observations in the signal region as well as
+the control regions.  In this case, a saturated likelihood
+model~\cite{} is used as a goodness-of-fit test to determine the
+compatibility of the observed yields with the expectations from only
+SM processes (\ie the background-only hypothesis). No significant
+tension is observed between the data and SM expectations in the signal
+region (and control regions), and the data are well described by the
+background-only hypothesis. A $p$-value of 0.XX\% is observed for the
+fit over the full signal region, and $p$-values uniformly distributed
+in the range 0.XX--0.YY\% when considering separately events
+categorised according to \njet.
+
+Under the background + signal hypothesis, and in the presence of a
+non-zero signal contribution, a modified frequentist approach, based
+on the one-sided (LHC-style) profile likelihood ratio as the test
+statistic, the CL$_{\mathrm{s}}$ criterion~\cite{junk, read}, and an
+asymptotic formulation~\cite{Cowan:2010js}, is used to determine upper
+limits on the cross section for producing pairs of supersymmetric
+particles. The potential contributions from a new-physics signal to
+each of the signal and control regions are considered, even though the
+only significant contribution occurs in the signal region and not the
+control region.
+
+
+
+
+
+
+Various uncertainties in the experimental acceptance are considered,
+for which typical magnitudes are summarised in
+Table~\ref{tab:signal_systs}, for some benchmark models.
 
 %We evaluate systematic uncertainties in the signal model
 %predictions. Those that are relevant for the selection efficiency are
@@ -78,51 +113,42 @@ is well described by the SM-only hypothesis.
 %potentially alter the signal distribution shapes. The systematic
 %uncertainty in the determination of the integrated luminosity is 4.6\%.
 
-The results of this search are interpreted in terms of upper limits in
-the production cross section as a function of the parent sparticle and
-LSP mass for simplified models~\cite{Alwall:2008ag, Alwall:2008va,
-  sms} that represent the pair production of gluinos and their
-subsequent decays to four quarks and two LSPs. The event samples for
-the simplified models are generated with \MADGRAPH V5~\cite{madgraph}.
-Inclusive, process-dependent, NLO calculations of SUSY production
-cross sections, with next-to-leading-logarithmic (NLL) corrections,
-are obtained with the program \PROSPINO~\cite{Beenakker:1996ch,
-  PhysRevD.80.095004,PhysRevLett.102.111802, PhysRevD.80.095004,
-  1126-6708-2009-12-041, doi:10.1142/S0217751X11053560,
-  susy-nlo-nll}. The samples are generated using the
-CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The distribution of the number of
-pp interactions per bunch crossing for the simulated samples matches
-that observed in data. Various uncertainties in the experimental
-acceptance are considered, for which typical magnitudes are summarised
-in Table~\ref{tab:signal_systs}, for some benchmark models. 
 
-\begin{table}[h!]
-  \caption{Representative range of uncertainty across the analysis bins 
-    for each source of systematic in the signal acceptance. 
-    Two benchmark point are chosen for each model, 
-    corresponding to ``compressed'' and ``uncompressed'' scenarios, 
-    i.e. with small and large mass splitting between the mother particle and the LSP.
-  }
-  \label{tab:signal_systs}
-  \centering
-  \begin{tabular}{ ccccccc }
-    \hline
-    \hline
-    Systematic & \multicolumn{2}{c}{T1bbbb} & \multicolumn{2}{c}{T1qqqq} & \multicolumn{2}{c}{T1tttt}  \\ 
-                      & (1000,800) & (1500,100) & (900,700) & (1350,100) & (800,400) & (1300,100) \\
-    \hline
-    Luminosity        & 4.6\%      & 4.6\%      & 4.6\%     & 4.6\%   & 4.6\%      & 4.6\%     \\ \hline
-    Trigger           & 0-15\%     & 3-5\%      & 0-15\%    & 3-5\%   & 0-15\%     & 3-5\%     \\ \hline
-    MC statistics     & 0-50\%     & 0-50\%     & 0-50\%    & 0-50\%  & 0-50\%     & 0-50\%    \\ \hline
-    PU reweighting    & 1-5\%      & 1-5\%      & 1-5\%     & 1-5\%   & 1-5\%      & 1-5\%     \\ \hline
-    B-tag efficiency  & 0-10\%     & 0-20\%     & 0-10\%    & 0-10\%  & 0-30\%     & 0-15\%    \\ \hline
-    Lepton efficiency & 10\%       & 10\%       & 10\%      & 10\%    & 10\%       & 10\%      \\ \hline
-    Jet energy scale  & 5-20\%     & 0-10\%     & 5-20\%    & 0-10\%  & 0-20\%     & 0-20\%    \\ \hline
-    ISR               & 0-15\%     & 1-2\%      & 0-15\%    & 1-2\%   & 0-8\%     & 1-5\%     \\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
+The result of this search is interpreted using simplified
+supersymmetric models~\cite{Alwall:2008ag, Alwall:2008va, sms} that
+cover various topologies determined by the production and decay
+modes. Both gluino and squark pair production with decays of the
+parent sparticles to final states comprising SM particles and two LSPs
+($\chiz_1$) are considered. The decays contain intermediate sparticle
+states for a subset of the models. An upper limit at 95\% confidence
+level (CL) on the cross section is determined as a function of the
+parent sparticle and LSP mass, which is computed using the \cls
+criterion~\cite{read,junk}. Asymptotic formulae~\cite{Cowan:2010js}
+are utilised to approximate the distributions of the test statistics
+under the SM background-only and signal + background hypotheses. 
+%The sampling distributions for the test statistic are constructed from
+%likelihoods based on generated pseudo-experiments, using the
+%respective maximum likelihood values of nuisance parameters extracted
+%under the SM background-only and signal + background hypotheses. 
+The potential contributions from signal processes to the observed
+events counts in each of the signal and control samples are
+considered, but the only significant contribution occurs in the signal
+region and not the control samples.
+
+Fifteen simplified models are considered, the properties of which are
+summarised in Table~\ref{tab:simplified-models}, which loosely fall
+into four classes of models.
+
+
+
+Furthermore, interpretations are provided for top squarks that decay
+to the $\chiz_1$ either directly in association with a top quark
+($\sTop\!  \rightarrow\! \text{t} \chiz_1$), or via an intermediate
+lightest chargino $\chipm_1$ in association with a bottom quark (b
+quark), with the subsequent decay of the $\chipm_1$ to the $\chiz_1$
+and a W boson ($\sTop\!  \rightarrow\! \text{b} \chipm_1\!
+\rightarrow\!  \text{bW}^{\pm(*)} \chiz_1$).
+
 
 Figure~\ref{fig:mht-templates} shows for two categories in \njet and
 \nb at high \scalht that are expected to provide good sensitivity to
@@ -131,20 +157,222 @@ of the \mht variable, the expected distribution for the sum of all SM
 background processes, and the expected distribution for an example
 benchmark signal model.
 
-\begin{figure*}[tbhp]
+Figure~\ref{fig:limits-sms} shows the observed upper limit on the
+production cross section at 95\% confidence level (CL) as a function
+of the gluino and LSP masses for a range of simplified models assuming
+pair production of gluinos. The observed excluded regions are
+determined for gluino pair production assuming decoupled squarks. Also
+shown are the observed excluded regions when varying the production
+cross section by its theoretical uncertainty, and the expected
+excluded region with the ${\pm}1$ standard-deviation ($\sigma$)
+variations. The search places stringent limits in the mass parameter
+space, with observed exclusions in gluino and LSP masses as high as
+$\sim$1550\gev and $\sim$950\gev, respectively. \\
+For the T1tttt interpretation, the observed exclusion limits are up to
+$\sim 2\sigma$ weaker than the expected. This effect has been
+localised to a moderate excess in the $\njet\geq5, \nb\geq2, \scalht >
+800 \, \mathrm{GeV}$ (see Tab.~\ref{tab:predewkdata_sig_comb_sym} and
+Fig.~\ref{fig:mht-templates} (top right)).  Nineteen events are
+selected in this region, which have been carefully inspected and shown
+to come from genuine physics events.  Therefore, the most likely
+interpretation is that of a statistical fluctuation in data.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\input{tables/result/v0/predewkdata_sig_comb_mono_twiki}
+\input{tables/result/v0/predewkdata_sig_comb_asym_twiki}
+\clearpage
+\input{tables/result/v0/predewkdata_sig_comb_sym_twiki}
+
+%\clearpage
+%\begin{figure*}[tb]
+%  \begin{center}
+%    \subfigure[\texttt{T1qqqq}]{
+%      \includegraphics[width=0.50\textwidth]{figures/result/summaryPlot_Monojet_prefit_overlay_fit_b}
+%      \label{fig:result_mono}
+%    } \\
+%    \subfigure[\texttt{T2qq}]{
+%      \includegraphics[width=0.90\textwidth]{figures/result/summaryPlot_Asymmetric_prefit_overlay_fit_b}
+%      \label{fig:result_asym}
+%    } \\
+%    \subfigure[\texttt{T1bbbb}]{
+%      \includegraphics[width=0.90\textwidth]{figures/result/summaryPlot_Symmetric_prefit_overlay_fit_b}
+%      \label{fig:result_symm}
+%    } 
+%    \caption{Caption here. 
+%    }
+%    \label{fig:result}
+%  \end{center}
+%\end{figure*}
+
+\clearpage
+\begin{table*}[tb]
+  \topcaption{A summary of the simplified models used in this
+    analysis. All on-shell sparticles in the decay are stated.}
+  \label{tab:simplified-models}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lllll }
+    \hline
+Topology               & Fig.
+                       & Production
+                       & Decay
+                       & Additional assumptions                                                         \\ [0.5ex]
+\hline
+\multicolumn{5}{l}{\it Gluino-mediated and direct production of decoupled light-flavour squarks:}       \\ [0.5ex]
+\texttt{T1qqqq}        & \ref{fig:T1qqqq_feyn}                                                  
+                       & $\text{pp}\ra\sGlu\sGlu$
+                       & $\sGlu\ra\cPaq\cPq\chiz_1$
+                       & --                                                                             \\ [0.5ex]
+\texttt{T2qq\_8fold}   & \ref{fig:T2qq_feyn}                     
+                       & $\text{pp}\ra\PSQ\PASQ$        
+                       & $\PSQ\ra\cPq\chiz_1$
+                       & $m_{\PSQ} = m_{\PSQ_\cmsSymbolFace{L}} = m_{\PSQ_\cmsSymbolFace{R}}$,
+                       $\PSQ = \{ \PSQu, \PSQd, \PSQs, \PSQc \}$                                        \\ [0.5ex]
+\texttt{T2qq\_1fold}   & \ref{fig:T2qq_feyn}                                                  
+                       & $\text{pp}\ra\PSQ\PASQ$         
+                       & $\PSQ\ra\cPq\chiz_1$
+                       & $m_{\PSQ (\PSQ \neq \PSQu_\cmsSymbolFace{L})} \gg m_{\PSQu_\cmsSymbolFace{L}}$ \\ [0.5ex]
+\multicolumn{5}{l}{\it Gluino-mediated production of decoupled third-generation squarks:}               \\ [0.5ex]
+\texttt{T1bbbb}        & \ref{fig:T1bbbb_feyn}                                                   
+                       & $\text{pp}\ra\sGlu\sGlu$       
+                       & $\sGlu\ra\cPaqb\cPqb\chiz_1$
+                       & --                                                                             \\ [0.5ex]
+\texttt{T1tttt}        & \ref{fig:T1tttt_feyn}
+                       & $\text{pp}\ra\sGlu\sGlu$       
+                       & $\sGlu\ra\cPaqt\PSQt^*\ra\cPaqt\cPqt\chiz_1$
+                       & --                                                                             \\ [0.5ex]
+\texttt{T1ttbb}        & \ref{fig:T1ttbb_feyn} 
+                       & $\text{pp}\ra\sGlu\sGlu$      
+                       & $\sGlu\ra\cPaqt\cPqb\chipm_1\ra\cPaqt\cPqb\PW^*\chiz_1$
+                       & $m_{\chipm_1} - m_{\chiz_1} = 5\GeV$                                           \\ [0.5ex]
+\multicolumn{5}{l}{\it Natural gluino-mediated production of on-shell top squarks:}                     \\ [0.5ex]
+\texttt{T5tttt}        & \ref{fig:T5tttt_feyn}
+                       & $\text{pp}\ra\sGlu\sGlu$      
+                       & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqt\chiz_1$ 
+                       & $m_{\,\PSQt} - m_{\chiz_1} = 175\GeV$                                          \\ [0.5ex]
+\texttt{T5ttcc}        & \ref{fig:T5ttcc_feyn}            
+                       & $\text{pp}\ra\sGlu\sGlu$       
+                       & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqc\chiz_1$ 
+                       & $m_{\,\PSQt} - m_{\chiz_1} = 20\GeV$                                           \\ [0.5ex]
+\texttt{T5tttt\_degen} & \ref{fig:T5tttt_degen_feyn}
+                       & $\text{pp}\ra\sGlu\sGlu$      
+                       & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqb\PW^*\chiz_1$
+                       & $m_{\,\PSQt} - m_{\chiz_1} = 20\GeV$                                           \\ [0.5ex]
+\multicolumn{5}{l}{\it Direct production of on-shell third-generation squarks:}                         \\ [0.5ex]
+\texttt{T2bb}          & \ref{fig:T2bb_feyn}
+                       & $\text{pp}\ra\PSQb\PASQb$     
+                       & $\PSQb\ra\cPqb\chiz_1$
+                       & --                                                                             \\ [0.5ex]
+\texttt{T2tb}          & \ref{fig:T2tb_feyn}
+                       & $\text{pp}\ra\PSQt\PASQt$     
+                       & $\PSQt\ra\cPqt\chiz_1 \;\text{or}\; \cPqb\chipm_1\ra\cPqb\PW^*\chiz_1$
+                       & $\mathcal{BR} = 50/50\%$, $m_{\chipm_1} - m_{\chiz_1} = 5\GeV$                 \\ [0.5ex]
+\texttt{T2tt}          & \ref{fig:T2tt_feyn}
+                       & $\text{pp}\ra\PSQt\PASQt$
+                       & $\PSQt\ra\cPqt\chiz_1$
+                       & --                                                                             \\ [0.5ex]
+\texttt{T2cc}          & \ref{fig:T2cc_feyn}
+                       & $\text{pp}\ra\PSQt\PASQt$      
+                       & $\PSQt\ra\cPqc\chiz_1$
+                       & $10 < m_{\,\PSQt} - m_{\chiz_1} < 80\GeV$                                      \\ [0.5ex]
+\texttt{T2tt\_degen}   & \ref{fig:T2tt_degen_feyn}
+                       & $\text{pp}\ra\PSQt\PASQt$      
+                       & $\PSQt\ra\cPqb\PW^*\chiz_1$
+                       & $10 < m_{\,\PSQt} - m_{\chiz_1} < 80\GeV$                                      \\ [0.5ex]
+\texttt{T2tt\_mixed}   & \ref{fig:T2tt_mixed_feyn}
+                       & $\text{pp}\ra\PSQt\PASQt$      
+                       & $\PSQt\ra\cPqc\chiz_1 \;\text{or}\; \cPqb\PW^*\chiz_1$
+                       & $\mathcal{BR} = 50/50\%$, $10 < m_{\,\PSQt} - m_{\chiz_1} < 80\GeV$            \\ [0.5ex]
+    \hline
+  \end{tabular}
+\end{table*}
+
+\clearpage
+\begin{figure*}[tb]
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_ge3b_ge5j_800_Inf_prefit_T1bbbb_1400_100} ~~
-    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_eq2b_ge5j_800_Inf_prefit_T1tttt_800_400} \\
-    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700}
+    \subfigure[\texttt{T1qqqq}]{
+      \includegraphics[height=0.15\textwidth]{figures/CMS_logo}%diagrams/misc/T1qqqq_feyn}
+      \label{fig:T1qqqq_feyn}
+    } ~~
+    \subfigure[\texttt{T2qq}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/alexis/feyn/T2qq_feyn}
+      \label{fig:T2qq_feyn}
+    } ~~
+    \subfigure[\texttt{T1bbbb}]{
+      \includegraphics[height=0.15\textwidth]{figures/CMS_logo}%diagrams/misc/T1bbbb_feyn}
+      \label{fig:T1bbbb_feyn}
+    } ~~
+    \subfigure[\texttt{T1tttt}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/alexis/feyn/T1tttt_feyn}
+      \label{fig:T1tttt_feyn}
+    } ~~
+    \subfigure[\texttt{T1ttbb}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/alexis/feyn/T5ttbb_feyn}
+      \label{fig:T1ttbb_feyn}
+    } \\
+    \subfigure[\texttt{T5tttt}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/alexis/feyn/T5tttt_feyn}
+      \label{fig:T5tttt_feyn}
+    } ~~
+    \subfigure[\texttt{T5ttcc}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/misc/T5ttcc_feyn}
+      \label{fig:T5ttcc_feyn}
+    } ~~
+    \subfigure[\texttt{T5tttt\_degen}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/misc/T5tttt_degen_feyn}
+      \label{fig:T5tttt_degen_feyn}
+    } ~~
+    \subfigure[\texttt{T2bb}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/alexis/feyn/T2bb_feyn}
+      \label{fig:T2bb_feyn}
+    } ~~
+    \subfigure[\texttt{T2tb}]{
+      \includegraphics[height=0.15\textwidth]{figures/CMS_logo}%diagrams/misc/T2tb_feyn}
+      \label{fig:T2tb_feyn}
+    } \\
+    \subfigure[\texttt{T2tt}]{
+      \includegraphics[height=0.15\textwidth]{figures/diagrams/alexis/feyn/T2tt_feyn}
+      \label{fig:T2tt_feyn}
+    } ~~
+    \subfigure[\texttt{T2cc}]{
+      \includegraphics[height=0.15\textwidth]{figures/CMS_logo}%diagrams/misc/T2cc_feyn}
+      \label{fig:T2cc_feyn}
+    } ~~
+    \subfigure[\texttt{T2tt\_degen}]{
+      \includegraphics[height=0.15\textwidth]{figures/CMS_logo}
+      \label{fig:T2tt_degen_feyn}
+    } ~~
+    \subfigure[\texttt{T2tt\_mixed}]{
+      \includegraphics[height=0.15\textwidth]{figures/CMS_logo}
+      \label{fig:T2tt_mixed_feyn}
+    } ~~
+    \caption{ Simplified model diagrams that represent unique
+      production and decay modes of supersymmetric
+      particles. Three-body decays of gluinos are assumed to proceed
+      through off-shell squarks. Additional assumptions concerning the
+      mass relations and branching ratios are specified in
+      Table~\ref{tab:simplified-models}. The diagrams labelled
+      \texttt{T1qqqq} and \texttt{T2qq} depict, respectively, the
+      gluino-mediated and direct production of light-flavour
+      squarks. The diagrams labelled \texttt{T1bbbb}, \texttt{T1tttt},
+      and \texttt{T1ttbb} depict models involving the gluino-mediated
+      production of decoupled third-generation squarks. The diagrams
+      labelled \texttt{T5tttt}, \texttt{T5ttcc}, and
+      \texttt{T5tttt\_degen} depict ``natural'' models comprising
+      gluino-mediated production of on-shell top squarks. Finally, the
+      remaining six diagrams depict the direct production of on-shell
+      third-generation squarks, decaying via a range of channels.  }
+    \label{fig:simplified-models}
   \end{center}
-  \caption{ The \mht distribution observed in data and the expected
-    distribution for the sum of all SM background processes in three 
-    representative event categories at high \scalht. The expected
-    distributions for example benchmark models with different final state 
-    particles and different mass splitting between the gluino and LSP 
-    are also shown. \label{fig:mht-templates} }
 \end{figure*}
-  
+
+\clearpage
 \begin{figure*}[thp!]
   \begin{center}
 %    \includegraphics[width=0.49\textwidth]{figures/limits/v0/t1bbbbRA1XSEC.pdf}~~
@@ -168,24 +396,82 @@ benchmark signal model.
   \end{center}
 \end{figure*}
 
-Figure~\ref{fig:limits-sms} shows the observed upper limit on the
-production cross section at 95\% confidence level (CL) as a function
-of the gluino and LSP masses for a range of simplified models assuming
-pair production of gluinos. The observed excluded regions are
-determined for gluino pair production assuming decoupled squarks. Also
-shown are the observed excluded regions when varying the production
-cross section by its theoretical uncertainty, and the expected
-excluded region with the ${\pm}1$ standard-deviation ($\sigma$)
-variations. The search places stringent limits in the mass parameter
-space, with observed exclusions in gluino and LSP masses as high as
-$\sim$1550\gev and $\sim$950\gev, respectively. \\
-For the T1tttt interpretation, the observed exclusion limits are up to $\sim 2\sigma$ weaker 
-than the expected. This effect has been localised to a moderate 
-excess in the $\njet\geq5, \nb\geq2, \scalht > 800 \, \mathrm{GeV}$ 
-(see Tab.~\ref{tab:predewkdata_sig_comb_sym} and Fig.~\ref{fig:mht-templates} (top right)). 
-Nineteen events are selected in this region, which have been 
-carefully inspected and shown to come from genuine physics events. 
-Therefore, the most likely interpretation is that of a statistical fluctuation in data. 
+\clearpage
+\begin{table*}[tb]
+  \topcaption{Signal efficiency and list of the 4 most excluding jet
+    multiplicity categories for compressed and uncompressed models
+    used in the analysis. }
+  \label{tab:signal-eff}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lllcrrrrrr }
+    \hline
+    \multicolumn{2}{l}{Topology and benchmark} & Most sensitive
+                                               & $\varepsilon_\text{sig}$
+                                               & \multicolumn{6}{c}{Systematic uncertainties [\%]}                                                      \\ [0.3ex]
+                                               \cline{5-10}
+    \multicolumn{2}{l}{models $(m_{\text{SUSY}}, m_{\mathrm{LSP}})$ [GeV]} 
+                                               & \njet categories
+                                               & [\%]    
+                                               & ISR         & JEC                      & PU             & b-tag & Trigger & MC stat.                   \\ [0.3ex] 
+                                               \hline
+    \multirow{2}{*}{\texttt{T1bbbb}}                                         
+                                               & (1500, 100) & $\geq$5, 4, 3, 2         & 10.1           & 1-2   & 1-12    & 1-4  & 2-22 & 1-3  & 5-17  \\
+                                               & (1000, 800) & $\geq$5, 4, $\geq$5a, 4a & \phantom{1}4.9 & 1-17  & 1-40    & 1-20 & 1-14 & 1-15 & 8-31  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T1tttt}}                                                                                                                     
+                                               & (1300, 100) & $\geq$5, $\geq$5a, 4, 3  & \phantom{1}2.4 & 1-2   & 2-7     & 1-4  & 2-12 & 1-3  & 7-16  \\
+                                               & (800, 400)  & $\geq$5, $\geq$5a, 4, 4a & \phantom{1}0.6 & 1-2   & 3-45    & 1-13 & 1-8  & 1-10 & 7-27  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T1ttbb}}                                                                                                                     
+                                               & (1300, 100) & $\geq$5, 4, 3, $\geq$5a  & \phantom{1}3.8 & 1-2   & 3-16    & 1-18 & 2-19 & 1-4  & 9-32  \\
+                                               & (1000, 700) & $\geq$5, $\geq$5a, 4, 3  & \phantom{1}3.4 & 1-9   & 3-65    & 1-12 & 1-14 & 1-14 & 9-30  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T5ttcc}}                                                                                                                     
+                                               & (1200, 200) & $\geq$5, 4, 3, $\geq$5a  & \phantom{1}4.9 & 5-25  & 3-21    & 1-9  & 1-24 & 2-6  & 6-25  \\
+                                               & (750, 600)  & $\geq$5, $\geq$5a, 4, 4a & \phantom{1}1.0 & 1-4   & 5-21    & 1-8  & 1-3  & 4-7  & 9-23  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T5tttt}}                                                                                                                     
+                                               & (800, 100)  & $\geq$5, $\geq$5a, 3, 4  & \phantom{1}0.2 & 2-4   & 3-5     & 2-6  & 1-6  & 3-6  & 12-20 \\
+                                               & (700, 400)  &
+                                               $\geq$5, $\geq$5a, 4, 4a%, 1
+                                               & \phantom{1}0.2 & 2-10  & 10-10   & 4-4  & 2-2  & 3-10 & 20-20 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T5tttt\_degen}}                                                                                                              
+                                               & (1100, 100) & $\geq$5, 4, 3, 4a        & \phantom{1}1.3 & 12-16 & 6-11    & 3-5  & 4-15 & 3-4  & 15-21 \\
+                                               & (800, 600)  & $\geq$5, $\geq$5a, 4a, 4 & \phantom{1}1.9 & 1-8   & 1-34    & 1-20 & 1-7  & 1-11 & 5-32  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2tt}}                                                                                                                       
+                                               & (700, 50)   & $\geq$5, 4, 3, $\geq$5a  & \phantom{1}8.1 & 1-4   & 2-22    & 1-13 & 1-21 & 2-11 & 8-33  \\
+                                               & (350, 100)  & $\geq$5, $\geq$5a, 4a, 4 & \phantom{1}1.4 & 1-1   & 1-28    & 1-10 & 1-7  & 5-9  & 7-31  \\ [0.5ex]
+    \multirow{1}{*}{\texttt{T2cc}}                                                                                                                       
+                                               & (325, 305)  & $\geq$5, 4, 3, 2         & \phantom{1}0.8 & 1-27  & 1-27    & 1-26 & 1-12 & 5-16 & 3-32  \\ [0.5ex]
+    \multirow{1}{*}{\texttt{T2tt\_degen}}                                                                                                                
+                                               & (300, 290)  & 3, 4, $\geq$5, 2         & \phantom{1}0.9 & 1-27  & 1-25    & 1-11 & 1-12 & 2-18 & 2-27  \\ [0.5ex]
+    \multirow{1}{*}{\texttt{T2tt\_mixed}}                                                                                                                
+                                               & (300, 250)  & $\geq$5, 4, $\geq$5a, 4a & \phantom{1}0.4 & 1-27  & 1-33    & 1-22 & 1-13 & 2-16 & 3-33  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2tb}}                                                                                                                       
+                                               & (600, 50)   & $\geq$5, 4, 3, 2         & \phantom{1}6.1 & 1-3   & 1-22    & 1-8  & 1-17 & 1-12 & 3-28  \\
+                                               & (350, 225)  & $\geq$5, 4, 3, 3a        & \phantom{1}1.0 & 1-4   & 2-41    & 1-12 & 1-8  & 5-7  & 9-33  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2bb}}                                                                                                                       
+                                               & (800, 50)   & 2, 3, 4, $\geq$5         & \phantom{1}1.5 & 2-6   & 1-21    & 1-16 & 1-23 & 2-12 & 5-31  \\
+                                               & (375, 300)  & $\geq$5, 4, 3a, 3        & \phantom{1}0.1 & 1-10  & 3-25    & 1-11 & 1-7  & 3-3  & 8-33  \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T1qqqq}}                                                                                                                     
+                                               & (1300, 100) & $\geq$5, 4, 3, 2         & \phantom{1}9.4 & 2-2   & 4-21    & 1-5  & 2-14 & 1-3  & 7-30  \\
+                                               & (900, 700)  & $\geq$5, $\geq$5a, 4, 4a & \phantom{1}5.6 & 1-13  & 1-26    & 1-9  & 1-10 & 5-13 & 10-33 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2qq}}                                                                                                                       
+                                               & (1050, 100) & $\geq$5, 3, 2, 4         & 17.9           & 2-5   & 3-16    & 1-10 & 1-11 & 1-6  & 7-33  \\
+                                               & (650, 550)  & $\geq$5, 4, $\geq$5a, 4a & \phantom{1}2.6 & 3-9   & 2-28    & 1-15 & 1-6  & 3-12 & 10-28 \\ [0.5ex]
+     \hline
+  \end{tabular}
+\end{table*}
 
+\clearpage
+\begin{figure*}[tbhp]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_ge3b_ge5j_800_Inf_prefit_T1bbbb_1400_100} ~~
+    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_eq2b_ge5j_800_Inf_prefit_T1tttt_800_400} \\
+    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700}
+  \end{center}
+  \caption{ The \mht distribution observed in data and the expected
+    distribution for the sum of all SM background processes in three 
+    representative event categories at high \scalht. The expected
+    distributions for example benchmark models with different final state 
+    particles and different mass splitting between the gluino and LSP 
+    are also shown. \label{fig:mht-templates} }
+\end{figure*}
 
-%%__________________________________________________________________||
