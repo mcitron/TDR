@@ -1,8 +1,6 @@
 \section{Event selections}
 \label{sec:event_selection}
 
-{\bf NOT FINISHED. NEEDS CHECKING \& POLISHING.}
-
 The kinematical selection criteria used to define the signal region
 that contains candidate signal events, as well as a number of control
 regions in data, are described below. The criteria are based on the
@@ -93,8 +91,8 @@ transverse momentum.
     Jet $j_\text{1}$ acceptance  & $\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$                                                          \\
     Jet $j_\text{2}$ acceptance  & 
     $\Pt^{j_\text{2}} < 40\GeV$ (monojet), 
-    or $40 < \Pt^{j_\text{2}} < 100\GeV$ (asymmetric), 
-    or $\Pt^{j_\text{2}} > 100\GeV$ (symmetric)                                                                                                              \\
+    $40 < \Pt^{j_\text{2}} < 100\GeV$ (asymmetric), 
+    $\Pt^{j_\text{2}} > 100\GeV$ (symmetric)                                                                                                              \\
     Forward jet veto             & Veto events containing jet satisfying $\Pt > 40\GeV$ and $\abs{\eta} > 3$                                                 \\
     Jets below threshold         & $\HTmiss / \ETmiss < 1.25$                                                                                                \\
     Energy sums                  & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                               \\
@@ -102,25 +100,25 @@ transverse momentum.
     \multicolumn{2}{l}{\bf Event categorisation}                                                                                                             \\
     \njet                        & 1 (monojet), 2, 3, 4, $\geq$5 (asymmetric), 2, 3, 4, $\geq$5 (symmetric)                                                  \\
     \nb                          & 0, 1, 2, $\geq$3 ($\nb \leq \njet$)                                                                                       \\
-    \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>$800\GeV (bins can be dropped or merged \vs \njet, \nb, see Table~\ref{tab:binning}) \\
+    \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>$800\GeV (bins can be dropped/merged \vs \njet, see Table~\ref{tab:binning}) \\
     \hline
     \multicolumn{2}{l}{\bf Signal region (SR)}                                                                                                               \\
-    QCD multijet rejection \quad & $\alphat > 0.65$, 0.60, 0.55, 0.53, 0.52, 0.52, 0.52 (mapped to \scalht bins in the range $200 < \scalht < 800\GeV$)      \\
+    QCD multijet rejection \quad & $\alphat > 0.65$, 0.60, 0.55, 0.53, 0.52, 0.52, 0.52 (mapped to \scalht bins in range $200 < \scalht < 800\GeV$)      \\
     QCD multijet rejection       & $\bdphi > 0.5$ (for the region $\scalht > 200\GeV$)                                                                       \\[0.5ex]
     \hline
-    \multicolumn{2}{l}{{\bf Control regions (CR)}}                                                                                                           \\
+    \multicolumn{2}{l}{{\bf Control regions (CR)}, preselection +}                                                                                                           \\
     Multijet-enriched            & SR + $\HTmiss/\ETmiss > 1.25$ (inverted)                                                                                  \\  
     \gj                          & 
-    PRE + 1$\gamma$ with $\Pt > 200\GeV$, $\abs{\eta} < 1.45$, 
+    1$\gamma$ with $\Pt > 200\GeV$, $\abs{\eta} < 1.45$, 
     $\Delta R(\gamma,j_{\text{i}}) > 1.0$, 
-    $\scalht > 400\GeV$, same \alphat requirements as SR                                                                                                     \\[0.5ex]
+    $\scalht > 400\GeV$, same \alphat req. as SR                                                                                                     \\[0.5ex]
     \mj                          & 
-    PRE + 1$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
+    1$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
     $I^{\mu}_\text{rel} < 0.1$, 
     $\Delta R(\mu,j_{\text{i}}) > 0.5$,
     $50 < m_\text{T}(\ptvec^\mu,\ptvecmiss) < 120\GeV$                                                                                                       \\[0.5ex]
     \mmjpm                       & 
-    PRE + 2$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
+    2$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
     $I^{\mu}_\text{rel} < 0.1$, 
     $\Delta R(\mu_{1,2},j_{\text{i}}) > 0.5$, 
     $ \abs{m_{\mu\mu} - m_\text{Z}} < 25\GeV$                                                                                                                \\[0.5ex]
@@ -150,9 +148,7 @@ to estimate SM backgrounds, provide checks, and validate assumptions
 within the methods. The lower bounds of the first and last (open) bins
 in \scalht are summarised in Table~\ref{tab:binning}. As a result, the
 search employs 191 statistically independent bins in \scalht across 32
-categories in (\njet,\nb).
-
-\fixme{Comment on number of bins.}
+categories in (\njet,\nb). FIXME. Need a comment on number of bins.
 
 \begin{table}[tb]
   \topcaption{32 categories.}
@@ -286,12 +282,18 @@ convert to values of $110 < \HTmiss < 160\GeV$ for the range $200 <
 
 A further variable considers the minimum azimuthal separation between
 a jet and the negative vector \ptvec sum derived from all other jets
-in the event, $\bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
-\Delta\phi(\ptvec^{j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
-\ptvec^{\,j_\text{i}} + \ptvec^{j_\text{k}})$~\cite{RA1Paper}. The
-variable discriminates between final states with genuine \ptvecmiss,
-\eg from the leptonic decay of the W boson, and energetic multijet
-events that have significant \ptvecmiss through jet energy
+in the event~\cite{RA1Paper}, 
+
+\begin{equation}
+  \bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
+  \Delta\phi(\ptvec^{\,j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
+  \ptvec^{\,j_\text{i}} + \ptvec^{\,j_\text{k}}).   
+  \label{eq:bdphi}
+\end{equation}
+
+This variable discriminates between final states with genuine
+\ptvecmiss, \eg from the leptonic decay of the W boson, and energetic
+multijet events that have significant \ptvecmiss through jet energy
 mismeasurements or through the production of neutrinos, collinear with
 the axis of a jet, from semileptonic heavy-flavour decays. Multijet
 events populate the region $\bdphi < 0.5$, with the multijet
@@ -303,11 +305,17 @@ algorithm. Events with a genuine source of \ptvecmiss exhibit a long
 tail in \bdphi with values as large as $\pi$. The \bdphi variable
 provides comparable or better performance in terms of discrimination
 according to a simple signal-to-background metric for a wide range of
-signal models with respect to more widely used variables such as
-$\min_{\,\forall\, j_\text{k} \,\in\, \njet}
-\Delta\phi(\ptvec^{j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
-\ptvec^{\,j_\text{i}})$ and $\min_{\,\forall\, j_\text{k} \,\in\,
-  \njet} \Delta\phi(\ptvec^{j_\text{k}}, \ptvecmiss)$.
+signal models with respect to more widely used variables such as:
+
+\begin{equation}
+  \Delta\phi_\text{min} = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
+  \Delta\phi(\ptvec^{\,j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
+  \ptvec^{\,j_\text{i}}).
+  \label{eq:dphi}
+\end{equation}
+
+%and $\min_{\,\forall\, j_\text{k} \,\in\, \njet}
+%\Delta\phi(\ptvec^{j_\text{k}}, \ptvecmiss)$.
 
 The requirement $\bdphi > 0.5$ is sufficient to effectively suppress
 the multijet background to a negligible level while maintaining high
@@ -380,41 +388,41 @@ further trigger condition comprising the presence of significant
 \HTmiss and \ETmiss is used to record monojet events. The
 trigger-level jet energies are corrected to account for energy scale
 and pileup effects. The trigger strategy provides efficiencies at or
-near 100\% for all bins in the signal region. The trigger conditions
-used for different event categories and \scalht bins in the signal
-region are summarised in Table~\ref{tab:trigger}.
+near 100\% for all bins in the signal region. 
+%The trigger conditions used for different event categories and \scalht
+%bins in the signal region are summarised in Table~\ref{tab:trigger}.
 
-\begin{table*}[tb]
-  \topcaption{A summary of the trigger conditions used to record
-    candidate signal events. A single trigger condition is met if an
-    event satisfies all threshold requirements specified in a given 
-    row. Events in a given category and \scalht bin of the signal
-    region may be recorded by the logical \textsc{or} of multiple
-    trigger conditions. }
-  \label{tab:trigger}
-  \centering
-  \footnotesize
-  \begin{tabular}{ ccccccccc }
-    \hline
-    \multicolumn{3}{c}{Categories and bins} & &
-    \multicolumn{5}{c}{Thresholds for trigger quantities} \\
-    \cline{1-3} \cline{5-9} 
-
-    \njet   & \nb     & \scalht region &  & \HTmiss & \ETmiss & \scalht & $\langle\Pt^{j_\text{1}} + \Pt^{j_\text{2}}\rangle$ & \alphat \\
-            &         & (GeV)          &  & (GeV)   & (GeV)   & (GeV)   & (GeV)                                               &         \\
-    \hline                                                   
-    1       & $\geq$0 & $>$200         &  & 90      & 90      & -       & -                                                   & -       \\
-    $\geq$2 & $\geq$0 & 200--800       &  & 90      & 90      & -       & -                                                   & -       \\
-    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 200     & 90                                                  & 0.57    \\
-    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 250     & 90                                                  & 0.55    \\
-    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 300     & 90                                                  & 0.53    \\
-    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 350     & 90                                                  & 0.52    \\
-    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 400     & 90                                                  & 0.51    \\
-    $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 400     & 90                                                  & 0.51    \\
-    $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 800     & -                                                   & -       \\
-    \hline
-  \end{tabular}
-\end{table*}
+%\begin{table}[tb]
+%  \topcaption{A summary of the trigger conditions used to record
+%    candidate signal events. A single trigger condition is met if an
+%    event satisfies all threshold requirements specified in a given 
+%    row. Events in a given category and \scalht bin of the signal
+%    region may be recorded by the logical \textsc{or} of multiple
+%    trigger conditions. }
+%  \label{tab:trigger}
+%  \centering
+%  \footnotesize
+%  \begin{tabular}{ ccccccccc }
+%    \hline
+%    \multicolumn{3}{c}{Categories and bins} & &
+%    \multicolumn{5}{c}{Thresholds for trigger quantities} \\
+%    \cline{1-3} \cline{5-9} 
+%
+%    \njet   & \nb     & \scalht region &  & \HTmiss & \ETmiss & \scalht & $\langle\Pt^{j_\text{1}} + \Pt^{j_\text{2}}\rangle$ & \alphat \\
+%            &         & (GeV)          &  & (GeV)   & (GeV)   & (GeV)   & (GeV)                                               &         \\
+%    \hline                                                   
+%    1       & $\geq$0 & $>$200         &  & 90      & 90      & -       & -                                                   & -       \\
+%    $\geq$2 & $\geq$0 & 200--800       &  & 90      & 90      & -       & -                                                   & -       \\
+%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 200     & 90                                                  & 0.57    \\
+%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 250     & 90                                                  & 0.55    \\
+%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 300     & 90                                                  & 0.53    \\
+%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 350     & 90                                                  & 0.52    \\
+%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 400     & 90                                                  & 0.51    \\
+%    $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 400     & 90                                                  & 0.51    \\
+%    $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 800     & -                                                   & -       \\
+%    \hline
+%  \end{tabular}
+%\end{table}
 
 \subsection{Using \HTmiss as a discriminating variable}
 
@@ -442,7 +450,7 @@ templates are extensively validated against data in multiple control
 regions, and these studies are used to establish an additional
 contribution to the uncertainties in the templates, as described in
 Section~\ref{sec:mhtsysts}.
-\fixme{push how far? data validation? how many bins?}
+FIXME. push how far? data validation? how many bins?
 
 \subsection{Control regions}
 \label{sec:control_regions}
