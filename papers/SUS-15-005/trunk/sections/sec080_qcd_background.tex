@@ -1,34 +1,86 @@
-%%__________________________________________________________________||
-\section{Background estimation for QCD multijet production}
+\section{Estimation of backgrounds}
+\label{sec:backgrounds}
+
+\subsection{Multijets background}
 \label{sec:qcd_background}
 
-The signal region is defined such that the expected contribution from
-multijet events is suppressed to the percent level with respect to the
-total expected background counts from other SM processes for all event
-categories and \scalht bins. This is achieved through very tight
-requirements on the variables \alphat, \dphi, and $\mht / \ETmiss$, as
-described above. 
+The signal region is defined in a manner to suppress the expected
+contribution from multijet production to the percent level with
+respect to the total expected background counts from other SM
+processes for all event categories, defined in terms of \njet and \nb,
+and all bins, defined in \scalht and \HTmiss. This is achieved
+primarily through the application of very tight requirements on the
+variables \alphat and \dphi, as described in Section~\ref{}, as well
+as the requirement $\mhtmet < 1.25$. In this section, we discuss these
+requirements further, and the estimate of the suppression of the
+multijet background.
 
-Potential contamination from multijet events in the signal region is
-estimated by exploiting the ratio of multijet events that satisfy or
-fail the requirement $\mhtmet < 1.25$. This ratio is determined from
-simulated events categorised according to \njet and \scalht and
-validated in a multijet-enriched data sideband defined by $\dphi <
-0.5$. Estimates of the QCD multijet background counts, binned
-according to \njet and \scalht, are determined in a further data
-sideband, defined by the requirement $\mhtmet > 1.25$, by correcting
-the observed counts in data to account for contamination from vector
-boson and \ttbar production (plus residual contributions from other SM
-processes). The product of the corrected counts and ratios provide an
-independent estimate of the QCD multijet contamination as a function
-of \njet and \scalht, with an assumed systematic uncertainty of 100\%
-based on the validation in the multijet-enriched data sidebands. The
-estimates are found to negligible, typically at the percent level,
-relative to the sum of all other SM backgrounds in each bin across the
-full signal region phase space. The distribution of any residual
-contamination as a function of \nb and \mht is determined from
-simulation. Finally, data control variables are inspected to provide
-confidence that any multijet contamination due to instrumental effects
-is negligible.
+The contamination from multijet events in the signal region is
+estimated using a multijet-enriched data sideband to the signal
+region, defined by the (inverted) requirement $\mhtmet > 1.25$. The
+observed counts in data are categorised according to \njet and \scalht
+and are corrected to account for contamination from vector boson and
+\ttbar production, and residual contributions from other SM processes,
+which are estimated using the \mj control region with the method
+described in Section~\ref{sec:ewk}.  The corrected data counts
+$\mathcal{N}^\text{data}(\njet, \scalht)$ are used to estimate the
+multijet background in the signal region $\mathcal{P}(\njet, \scalht)$
+through multiplication with the ratio $\mathcal{R}^\text{QCD}(\njet,
+\scalht)$ of multijet events that satisfy the requirement $\mhtmet <
+1.25$ to those that fail, which is determined independently for events
+categorised according to \njet and \scalht from simulation. Finally,
+the differential distribution of $\mathcal{P}(\njet, \scalht)$ as a
+function of \nb and \HTmiss is described by the multiplier term
+$\mathcal{K}_{\njet, \scalht}(\nb, \HTmiss)$, which is assumed to
+exhibit the same distribution as the nonmultijet backgrounds, as
+determined from simulation. Assuming $i$, $j$, $k$, and $l$ are the
+bin indices for, respectively, \njet, \scalht, \nb, and \HTmiss:
 
-%%__________________________________________________________________||
+\begin{equation}
+  \label{eq:qcd}
+  \mathcal{P}( i, j, k, l ) =
+  \mathcal{N}^\text{data}( i, j )\;
+  \mathcal{R}^\text{QCD}( i, j )\;
+  \mathcal{K}_{i,j}( k, l ).
+\end{equation}
+
+The use of simulation to determine $\mathcal{R}^\text{QCD}(\njet,
+\scalht)$ is validated using a multijet-enriched data sideband defined
+by $\bdphi < 0.5$.
+%and an \alphat requirement identical to that used for the signal
+%region, which is dependent on the value \scalht, as summarised in
+%Table~\ref{}. 
+The ratio $\mathcal{R}^\text{data}(\njet, \scalht)$ is constructed
+from data counts, corrected to account for contributions from
+nonmultijet processes, and compared with
+$\mathcal{R}^\text{QCD}(\njet, \scalht)$, determined from simulation,
+through the double ratio
+$\mathcal{R}^\text{data}/\mathcal{R}^\text{QCD}$, as shown in
+Fig.~\ref{fig:qcd}. The double ratios are observed to be close to, or
+statistically compatible with, unity across the full phase space of
+the signal region, including the bins at high \scalht, which exhibit
+the highest statistical precision. An uncertainty of 100\% in
+$\mathcal{R}^\text{QCD}$ is assumed to adequately cover the observed
+level of agreement for the full signal region phase space.
+
+\begin{figure}[!t]
+  \begin{center}
+%    \includegraphics[width=0.49\textwidth]{figures/qcd/v0/qcd_pred} \,
+    \includegraphics[width=0.49\textwidth]{figures/qcd/v1/DoubleRatioQCD_noEmpty} \\
+  \end{center}
+  \caption{Validation of the ratio $\mathcal{R}^\text{QCD}$ determined
+    from simulation in bins of \njet and \scalht by comparing with an
+    equivalent ratio $\mathcal{R}^\text{data}$ constructed from data 
+    in a multijet-enriched sideband to the signal region. A value of
+    unity is expected for the double ratio $\mathcal{R}^\text{data} /
+    \mathcal{R}^\text{QCD}$, and the grey shaded band represents the
+    assumed systematic uncertainty of 100\% in
+    $\mathcal{R}^\text{QCD}$. 
+  }
+  \label{fig:qcd} 
+\end{figure}
+
+Finally, data control variables, such as $\bdphimod$, are inspected
+for localised populations in $(\eta,\phi)$-space to provide confidence
+that any multijet contamination due to instrumental effects is
+negligible.
