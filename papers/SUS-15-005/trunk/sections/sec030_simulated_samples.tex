@@ -1,18 +1,23 @@
 \section{Simulated event samples}
 \label{sec:simulation}
 
-\fixme{NEEDS CHECKING. NEEDS POLISHING.}
-
-The search relies on multiple control regions in data and simulated
-event samples to estimate contributions from SM backgrounds. The
-definitions of the control regions in data and the background
-estimation procedures are described in
-Sec.~\ref{needtoaddthisref}. The dominant SM backgrounds for the
-search are QCD multijet production, top-antitop (\ttbar), single top,
-and vector boson (W, Z, and $\gamma$) production. Residual
+The search relies on multiple event samples, in data or generated from
+Monte Carlo (MC) simulations, to estimate the contributions from SM
+backgrounds, as described in Section~\ref{sec:event_selection}. 
+%The search relies on multiple control regions in data and simulated
+%event samples to estimate contributions from SM backgrounds. 
+%The definitions of the control regions in data and the background
+%estimation procedures are described in
+%Section~\ref{needtoaddthisref}. 
+The dominant SM backgrounds for the search are QCD multijet
+production, and the associated production of jets and top-antitop
+(\ttbar), single top, and vector boson (W, \znunu). Residual
 contributions from other processes, such as WW, WZ, ZZ (diboson)
 production and the associated production of \ttbar and a vector boson
-(W and Z), are also considered.
+(W and Z), are also considered. Other processes, such as Drell-Yan
+($\cPq\bar{\cPq}\!  \rightarrow\! \PZ/\gamma^*\! \rightarrow\!
+\ell^+\ell^-$) and \gj production, are also relevant for some control
+regions, defined in Section~\ref{sec:control_regions}.
 
 The \MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall2014} event generator code is
 used at leading order (LO) accuracy to produce samples of \wj, \zj,
@@ -23,19 +28,20 @@ NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is used to
 describe WW events and the Wt-channel production of single top
 events. The simulated samples are normalised according to production
 cross sections that are calculated with NLO and next-to-NLO
-precision~\cite{nloxs, wphys, fewz, wwxs, top++, nlotop,
+precision~\cite{Alwall2014, wphys, fewz, wwxs, top++, nlotop,
   powheg_top_Wt}. The description of the detector response is
 implemented using the \GEANTfour~\cite{geant} package.
 
 Event samples for signal models involving gluino or squark pair
 production, in association with up to two additional partons, are
-generated at leading order with \MADGRAPH5 aMC@NLO, and the sparticles
-are decayed with \PYTHIA8~\cite{pythia}. The signal production cross
-sections are calculated with NLO plus next-to-leading-logarithm (NLL)
+generated at leading order with \MADGRAPH5 aMC@NLO, and the decay of
+the sparticles is performed with \PYTHIA 8.2~\cite{pythia}. Inclusive,
+process-dependent, signal production cross sections are calculated
+with NLO plus next-to-leading-logarithm (NLL)
 accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
   PhysRevD.80.095004, 1126-6708-2009-12-041,
   doi:10.1142/S0217751X11053560, susynlo}. The detector response is
-provided by the CMS fast simulation package~\cite{fastsim}. 
+provided by the CMS fast simulation package~\cite{fastsim}.
 
 %which yields consistent results compared with the GEANT4-based
 %simulation, except that we apply a correction of 1\% to account for
@@ -51,8 +57,7 @@ simulated samples. To model the effects of multiple pp collisions
 within the same or neighboring bunch crossings (pileup), all simulated
 events are generated with a nominal distribution of pp interactions
 per bunch crossing and then reweighted to match the pileup
-distribution as measured in data.
-
-%Corrections to the normalisation of the \gj, W+jets, Z+jets and
-%\ttbar+jets processes are derived using sidebands in the \mht variable
-%in data control samples.
+distribution as measured in data. Finally, (near-unity) corrections to
+the normalisation of the simulated samples for the \gj, \wmj, \ttbar,
+and \zmumuj, and, equivalently, \znunuj processes are derived using a
+data sideband to the control regions.

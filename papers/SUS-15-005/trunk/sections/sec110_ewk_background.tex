@@ -1,157 +1,331 @@
 %%__________________________________________________________________||
-\section{Background estimation for SM processes with genuine \texorpdfstring{\ETmiss}{MET}}
+\subsection{Backgrounds with genuine \texorpdfstring{\ETmiss}{MET}}
 \label{sec:ewk_background}
 
-In the absence of multijet events, the background counts in the signal
-region arise from SM processes with significant \ETmiss in the final
-state. In events with low counts of jets and b-quark jets, the largest
-backgrounds with genuine \ETmiss are from the associated production of
-W or Z bosons with jets, followed by either the weak decays \znunu or
-\wtaunu, where the $\tau$ decays hadronically and is identified as a
-jet, or by leptonic decays that are not rejected by the dedicated
-electron or muon vetoes. The veto of events containing isolated tracks
-is efficient at further suppressing these backgrounds as well as the
-single-prong hadronic decay of the tau lepton. At higher jet and
-b-quark jet multiplicities, top quark production followed by
-semileptonic weak top quark decay becomes important.
+Following the suppression of multijet events through the use of the
+\alphat and \bdphi variables, the dominant nonmultijet backgrounds
+involve SM processes that produce high-\Pt neutrinos in the final
+state. In events with few jets or few b quark jets, the associated
+production of W or Z bosons and jets, with the decays $\PW^\pm
+\!\rightarrow\! \ell\nu$ ($\ell=\Pe$, $\Pgm$, $\Pgt$) or \znunu,
+dominate the background counts. For W boson decays that yield a muon
+or electron (possibly originating from leptonic $\Pgt$ decays), the
+background arises when the event containing the $\Pgm$ or $\Pe$ is not
+rejected by the lepton vetoes. Background also arises when the $\tau$
+lepton decays to hadrons, identified as a jet, and neutrinos. The veto
+of events containing at least one isolated track is efficient at
+further suppressing these backgrounds, including those from
+single-prong $\tau$-lepton decays. At higher jet or b quark jet
+multiplicities, single top and \ttbar production, followed by
+semileptonic top quark decay, also become an important source of
+background.
 
-The production of W and Z bosons in association with jets, \ttbar and
-\gj processes are simulated with the \MADGRAPH V5~\cite{madgraph}
-event generator. The production of single-top quark events is
-generated with \POWHEG~\cite{powheg}, and diboson events are produced
-with \PYTHIA8.1~\cite{pythia8}. For all simulated samples, \PYTHIA8.1
-is used to describe parton showering and hadronisation. All samples
-are generated using the \textsc{cteq6l1}~\cite{Pumplin:2002vw} parton
-distribution functions (PDF). The description of the detector response
-is implemented using the \GEANTfour~\cite{geant} package. The
-simulated samples are normalised using the most accurate cross section
-calculations currently available, usually with
-next-to-leading-order (NLO) accuracy (NNLO in the case of \ttbar). \\
-Corrections to the normalisation of the \gj, W+jets, Z+jets and \ttbar+jets 
-processes are derived using sidebands in the \mht variable in data control samples. 
-To model the effects of pileup, the simulated events are generated with a nominal distribution
-of pp interactions per bunch crossing and then reweighted to match the
-pileup distribution as measured in data.
+The method to estimate the nonmultijet backgrounds in the signal
+region relies on the use of transfer factors determined from
+simulation that are constructed per bin (in terms of \njet, \nb, and
+\scalht) per control region. Each transfer factor is defined as the
+ratio of the expected yields in the same (\njet, \nb, \scalht) bins of
+the signal region $\mathcal{N}^\text{SR}_\text{MC}$ and one of the
+control regions $\mathcal{N}^\text{CR}_\text{MC}$. The transfer
+factors are used to extrapolate from the event yields observed in each
+bin of a data control sample $\mathcal{N}^\text{CR}_\text{data}$ to
+provide an estimate for the background, intergrated over \HTmiss, from
+a particular SM process or processes in the corresponding bin of the
+signal region $\mathcal{N}^\text{SR}_\text{data}$. The superscript SR
+or CR refers to, respectively, the process or processes being
+estimated and one of the \mj, \mmj, and \gj control regions, described
+in Section~\ref{sec:control_regions}. The subscript refers to whether
+the counts are obtained from data, simulation (``MC'') or an estimate
+(``pred'').
 
-The method to estimate the non-multijet backgrounds in the signal
-region relies on the use of transfer factors, which are constructed
-per bin (in terms of \njet, \nb, and \scalht), per data control
-sample and per background. The transfer factors are determined from the simulated event
-samples and are ratios of expected yields in the corresponding bins of
-the signal region and control samples. The transfer factors are used
-to extrapolate from the event yields measured in data control samples
-to an expectation for the total background event yields in the signal
-region.
-
-Three disjoint data control regions, binned identically to the signal
-region, are used to estimate the contributions from the various
-remaining SM background processes. The control regions are defined by
-a selection of \mj, \mmj, and \gj events. The selection criteria are
-chosen such that the SM processes and their kinematic properties
-resemble as closely as possible the SM background behaviour in the
-signal region once the muon, dimuon system, or photon are ignored when
-computing quantities such as \scalht, \mht and \alphat. The baseline
-selection criteria and binning definition described in
-Table~\ref{tab:selections} are applied to all control samples, except
-for the lepton and photon vetoes, which are inverted and tightened to
-improve purity. The event selection criteria are defined to also
-ensure that any potential contamination from multijet events or a wide
-variety of SUSY models (\ie signal contamination) is negligible.
-
-The \mj sample is recorded using a trigger condition that requires an
-isolated muon and the event selection criteria are chosen in order to
-ensure high trigger efficiency. Furthermore, the muon is required to
-be well separated from the jets in the event and the transverse mass
-($M_{\rm T}$) of the muon and \ETmiss~\cite{CMS-PAS-PFT-09-001,
-  CMS-PAS-PFT-10-001} system must satisfy $30 < M_{\rm T} < 125\gev$
-to ensure a sample rich in W bosons (produced promptly or from the
-decay of top quarks). The \mmj sample uses similar selection criteria
-as the \mj sample and the same trigger condition. Exactly two
-oppositely-charged, isolated muons are required, the muons must be
-distanced from the jets in the event, and the invariant mass of the
-dimuon system must be within a window of $\pm 25\GeV$ around the mass
-of the Z boson. For both the muon and dimuon samples, no requirement
-is made on the variable \alphat in order to increase the statistical
-precision of the predictions derived from these samples, in constrast
-to the identical \alphat requirements made for the signal region and
-photon control sample. The \gj sample is recorded using a single
-photon trigger condition. The event selection criteria comprise an
-isolated photon with $\Et > 200\gev$ and $\scalht > 400\GeV$.
+The method aims to minimise the effects of simulation mismodelling, as
+many systematic biases in the simulation are expected to largely
+cancel in the transfer factors, given that the events in any given
+(\njet, \nb, \scalht) bin of the control regions closely mirror those
+in the corresponding bin in the signal region, in terms of the event
+scale and topology, the kinematical phase, and the relative background
+compositions. In short, minimal extrapolations are made. Uncertainties
+in the transfers factors are determined from a data-derived approach,
+described below.
 
 Three independent estimates of the irreducible background of \znunu +
 jets events are determined from the \gj, \mmj, amd \mj data control
 samples. The \gj and \zmumu + jets processes have similar kinematic
-properties when the photon or muons are ignored~\cite{Bern:2011pa}, 
+properties when the photon or muons are ignored~\cite{Bern:2011pa},
 albeit different acceptances. In addition, the \gj process has a
 larger production cross section than \znunu + jets events. The \mj
-data sample is used to provide an estimate for the \znunu\ + jets
-contribution as well as the other dominant SM processes, \ttbar and W
-boson production. Residual contributions from processes such as
-single-top-quark, diboson, and Drell-Yan production are also included.
+data sample is used to provide an estimate for both the \znunu\ + jets
+background, as well as the other dominant SM processes, \ttbar and W
+boson production (labelled collectively as $\PW/\ttbar$). Residual
+contributions from all other SM relevant processes, such as
+single-top-quark, diboson, and Drell-Yan production, are also included
+as part of the $\PW/\ttbar$ estimate from the \mj sample. The
+definition of the various transfer factors used in the search are
+given below:
 
-\begin{table}[h!]
+\begin{eqnarray} 
+  \mathcal{N}^\text{\PW/\ttbar}_\text{pred} & = & 
+  \bigg( 
+  \frac{\,\mathcal{N}^\text{\PW/\ttbar}_\text{MC}\,}
+  {\mathcal{N}^\text{\mj}_\text{MC}}
+  \bigg)\,
+  \mathcal{N}^\text{\mj}_\text{data} \\
+  \mathcal{N}^\text{\znunu}_\text{pred} & = & 
+  \bigg( 
+  \frac{\,\mathcal{N}^\text{\znunu}_\text{MC}\,}
+  {\mathcal{N}^\text{\mj}_\text{MC}}
+  \bigg)\,
+  \mathcal{N}^\text{\mj}_\text{data} \\
+  \mathcal{N}^\text{\znunu}_\text{pred} & = & 
+  \bigg( 
+  \frac{\,\mathcal{N}^\text{\znunu}_\text{MC}\,}
+  {\mathcal{N}^\text{\mmj}_\text{MC}}
+  \bigg)\,
+  \mathcal{N}^\text{\mmj}_\text{data} \\
+  \mathcal{N}^\text{\znunu}_\text{pred} & = & 
+  \bigg( 
+  \frac{\,\mathcal{N}^\text{\znunu}_\text{MC}\,}
+  {\mathcal{N}^\text{\gj}_\text{MC}}
+  \bigg)\,
+  \mathcal{N}^\text{\gj}_\text{data} 
+\end{eqnarray} 
+
+The likelihood function, described in Section~\ref{sec:result},
+encodes the estimate via the transfer factors of the $\PW/\ttbar$
+background, as well as the three independent estimates of the \znunu
+background, which are considered simultaneously.
+
+\newcommand{\phh}{\ensuremath{\phantom{1-}}}
+\begin{table*}[h!]
   \caption{
-    Systematic uncertainties (percent) in the estimates of the
-    normalisation of the SM background components using transfer factors. 
-    The quoted ranges correspond to the variations across \scalht bins 
-    and jet topology. 
+    Systematic uncertainties (percent) in the transfer factors used in
+    the method to estimate the SM backgrounds with genuine \ptvecmiss
+    in the signal region. The quoted ranges provide representative
+    values of the observed variations as a function of \njet and
+    \scalht. 
   } 
   \label{tab:bkgd_systs}
   \centering
   \footnotesize
-  \begin{tabular}{ ccccc }
+  \begin{tabular}{ lrrrr }
     \hline
-    \hline
-    Systematic source & \multicolumn{4}{c}{Uncertainty} \\    
-     & $\mj \Rightarrow \znunu$  & $\mmj \Rightarrow \znunu$ & $\gj \Rightarrow \znunu$ & $\mj \Rightarrow \ttbar+W$\\
-    \hline
-    \alphat/\bdphi extrapolation & $5-80\%$ & $50-80\%$ & - & $5-80\%$ \\
-    W/Z ratio & $10-30\%$ & - & - & -  \\
-    Z/$\gamma$ ratio & - & - & $10-30\%$ & -  \\
-    W/\ttbar admixture & - & - & - & $10-100\%$  \\
-    W/Z acceptance & $5-50\%$ & - & - & $5-50\%$  \\
-    Jet energy scale & $<15\%$ & $<10\%$ & $<15\%$ & $<15\%$ \\
-    B-tagging efficiency & $<5\%$ & $<2\%$ & $<2\%$ & $<5\%$ \\
-    Pileup & $<6\%$ & $<4\%$ & $<3\%$ & $<10\%$ \\
-    Top $p_{T}$ weights & $<20\%$  & $<4\%$ & - & $<5\%$ \\
-    Lepton selection & - & - & - & $2-5\%$ \\
-    \hline
+    Systematic           & \multicolumn{4}{c}{Uncertainty in transfer factor [\%]} \\
+    \cline{2-5} 
+    source               & $\mj \Rightarrow \ttbar/\PW$ 
+                         & $\mj \Rightarrow \znunu$ 
+                         & $\mmj \Rightarrow \znunu$ 
+                         & $\gj \Rightarrow \znunu$                                \\
+    \hline                                                    
+    \multicolumn{5}{l}{\it Scale factors (applied to simulation):}                 \\
+    Jet energy scale     & $<15\%$    & $<15\%$   & $<10\%$   & $<15\%$            \\
+    b-tag eff. \ mistag  & $<5\%$     & $<5\%$    & $<2\%$    & $<2\%$             \\
+    Lepton SFs           & $2-5\%$    & $2-5\%$   & $2-5\%$   & $-$                \\
+    Pileup               & $<10\%$    & $<6\%$    & $<4\%$    & $<3\%$             \\
+    Top quark \Pt        & $<5\%$     & $<20\%$   & $<4\%$    & $-$                \\ [0.5ex]
+    \multicolumn{5}{l}{\it Closure tests:}                                         \\
+    W/Z ratio            & $-$        & $10-30\%$ & $-$       & $-$                \\
+    Z/$\gamma$ ratio     & $-$        & $-$       & $-$       & $10-30\%$          \\
+    W/\ttbar composition & $10-100\%$ & $-$       & $-$       & $-$                \\
+    W polarisation       & $5-50\%$   & $5-50\%$  & $-$       & $-$                \\
+    $\alphat\,/\,\bdphi$ & $5-80\%$   & $5-80\%$  & $50-80\%$ & $-$                \\
     \hline
   \end{tabular}
-\end{table}
+\end{table*}
 
-Several sources of uncertainties are considered in the transfer factors 
-derived from simulation and they are summarised in Tab.~\ref{tab:bkgd_systs}. 
-When the simulation is corrected to match the data, 
-like for the b-tagging efficiency or the jet energy response, 
-the uncertainty on those weights is propagated to the transfer factors 
-and taken as fully correlated across the bins. 
-%% Some of them, like b-tagging efficiency, jet energy scale, lepton efficiency, 
-%% are estimated by varying the corresponding weights in the simulation and 
-%% recomputing the transfer factors. These uncertainties are taken as fully correlated 
-%% across all the analysis bins. 
-Other systematics effects are inspected through data-driven tests probing 
-the compatibility of yields in two disjoint data control samples and 
-a corresponding transfer factor derived from simulation~\cite{RA1Paper2012}. 
-Each of these tests is built to target specific key ingredients in the simulation modelling, 
-like the $Z / \gamma$ ratio or the \alphat cut efficiency. 
-The level of closure and its statistical precision are 
-used to extract systematic uncertainties as a function of \scalht, 
-while considering ``asymmetric'' and ``symmetric'' jet topologies separately, 
-which are taken as uncorrelated. \\
-The systematic uncertainties in the transfer factors is propagated  
-to the yields for a given component of background in the signal region, 
-in each \njet, \nb, and \scalht bin. 
+Several sources of uncertainty in the transfer factors are evaluated.
+The most relevant effects are discussed below, and generally fall into
+one of two categories. The first category concerns uncertainties in
+``scale factor'' corrections applied to simulation, which are
+determined using inclusive data samples that are defined by loose
+selection criteria, to account for the mismodelling of theoretical and
+experimental parameters. The second category concerns ``closure
+tests'' in data that probe various aspects of the accuracy of the
+simulation to model correctly the transfer factors in the phase space
+of this search.
 
-Templates derived from simulation are used to predict the background
-counts in the \mht dimension. Multiple data control regions are used
-to evaluate the degree to which the simulation describes the \mht
-distributions observed in data, and to assign appropriate systematic
-uncertainties that can be in excess of $>100\%$ in the most sensitive
-\mht bins. Independent systematic uncertainties in the templates for
-the \znunu + jets background and the W + jets and \ttbar backgrounds
-are treated as fully uncorrelated across \njet and \nb categories and
-\scalht bins, and with respect to the ``normalisation'' systematic
-uncertainties summarised in Table~\ref{tab:bkgd_systs}.
+The uncertainties in the transfer factors are studied for variations
+in scale factors related to: the jet energy scale (that result in
+changes as large as $\sim$15\%), the efficiency and misidentification
+probability of b quark jets (up to 5\%), and the efficiency to
+identify well-reconstructed, isolated leptons (up to $\sim$5\%). A 5\%
+uncertainty in the minimum bias cross section, $\sigma_\text{MB} =
+69.0 \pm 3.5\unit{mb}$, is assumed and propagated through to the
+reweighting procedure to account for differences between the simulated
+and data-derived measurements of the pileup distributions, which
+results in changes of up to $\sim$10\%. The modelling of the
+transverse momentum of top quarks ($\Pt^\text{t}$) is evaluated by
+comparing the simulated and measured \Pt spectra of reconstructed top
+objects in \ttbar events, using the technique described in
+Ref.~\cite{}. Simulated events are reweighted according to scale
+factors that decrease from a value of $\sim$1.2 to $\sim$0.7, with
+uncertainties of $\sim$0.1, within the range $0 < \Pt^\text{t} <
+400\GeV$. The resulting change in the transfer factors is as large as
+$\sim$20\%. These uncertainties, resulting from variations in scale
+factors, are summarised in Table~\ref{tab:bkgd_systs}, along with
+representative magnitudes. Each source of uncertainty is assumed to
+vary with a fully correlated behaviour across the full phase space of
+the signal and control regions.
 
-%%__________________________________________________________________||
+The second category of sources of uncertainty are determined from sets
+of ``closure tests'' based on data control
+samples~\cite{RA1Paper2012}. Each set uses the observed event counts
+in up to eight bins in \scalht for each of the nine \njet event
+categories in one of the three independent data control regions, along
+with the corresponding transfer factors determined from simulation, to
+obtain a prediction, $\mathcal{N}^\text{pred}(\njet, \scalht)$, of the
+observed yields, $\mathcal{N}^\text{obs}(\njet, \scalht)$, in another
+control sample (or, in one case, \nb event category).
+
+Each set of tests is designed to target a specific (potential) source
+of bias in the simulation modelling that may introduce an \njet- or
+\scalht-dependent source of systematic bias in the transfer
+factors~\cite{RA1Paper2012}. Several sets of tests are performed. The
+$\PZ/\gamma$ ratio determined from simulation is tested against the
+same ratio measured using \zmumuj events and the \gj sample. The
+$\PW/\PZ$ ratio is also probed using the \mj and \mmj samples. A
+further set probes the modelling of the relative composition between
+\wlj and \ttbar events using \mj events containing exactly zero or
+one more b-tagged jets, which represents a larger extrapolation in
+relative composition than used in the search.  The effects of W
+polarisation are probed by using \mj events with a positively charged
+muon to predict those containing a negatively charged muon. Finally,
+the accuracy of the modelling of the efficiencies of the \alphat and
+\bdphi requirements are estimated using the \mj sample.
+
+For each set of tests, the level of closure, %$\mathcal{C} =
+($\mathcal{N}^\text{obs} - \mathcal{N}^\text{pred}) /
+\mathcal{N}^\text{obs}$, which considers only statistical
+uncertainties, is inspected to ensure no statistically significant
+biases are observed as a function of the nine \njet categories or the
+eight \scalht bins. In the absence of such a bias, the level of
+closure is recomputed by integrating over either all monojet and
+asymmetric \njet categories, or the symmetric \njet categories. The
+level of closure and its statistical uncertainty are combined in
+quadrature to determine additional contributions to the uncertainties
+in the transfer factors. These uncertainties are considered to be
+fully correlated between the monojet and asymmetric \njet categories
+or the symmetric \njet categories, and fully uncorrelated between
+these two regions in \njet and \scalht bins. If the closure tests use
+the \mmj sample, the level of closure is determined by additionally
+integrating over pairs of adjacent \scalht bins. These uncertainties,
+derived from the closure tests in data, are summarised in
+Table~\ref{tab:bkgd_systs}, along with representative
+magnitudes. These uncertainties are the dominant contribution to the
+total, due to the limited number of events in the data control
+regions.
+
+%%%%%
+
+% and to
+%assign appropriate systematic uncertainties that can be in excess of
+%$>100\%$ in the most sensitive \HTmiss bins. Independent systematic
+%uncertainties in the templates for the \znunu + jets background and
+%the W + jets and \ttbar backgrounds are treated as fully uncorrelated
+%across \njet and \nb categories and \scalht bins, and with respect to
+%the ``normalisation'' systematic uncertainties summarised in
+%Table~\ref{tab:bkgd_systs}.
+
+%%%%%
+
+As introduced in Section~\ref{sec:mht_templates}, templates are
+derived from simulation to predict the background counts in the
+\HTmiss dimension. The uncertainties in the transfer factors are used
+to constrain the normalisation of the \HTmiss templates. The
+uncertainties in the \HTmiss shape are discussed below.
+
+%The highly granular binning in \njet and \scalht ensures that events
+%categorised by \njet and within the same \scalht bin are produced at a
+%similar scale. The effects of missing higher-order calculations in the
+%simulated samples are largely mitigated through the transfer factor
+%approach and the reliance of measurements in data from multiple
+%control regions. Hence, the scale, which is manifest in the
+%normalisation of the expected counts integrated over \HTmiss, is
+%controlled accurately via the use of transfer factors and measurements
+%in data control regions. As a consequence, the simulation is expected
+%to accurately model the \HTmiss distribution in data. This assumption is
+%based on the expectation that the simulation is able to accurately
+%describe the kinematics of events at a similar scale. Conversely, an
+%accurate kinematical description is not expected if events of
+%different scales are allowed to mix.
+
+The accuracy to which the simulation describes the \HTmiss distributions
+is evaluated with respect to data, in each (\njet,\nb, \scalht) bin in
+each of the \mj, \mmj, and \gj data control regions. %
+The level of agreement between data and simulation as a function of
+\HTmiss is parameterised using an orthogonal first-order polynomial,
+$f(x) = p_0 + p_1(\bar{x}-x)$, and described by two uncorrelated
+parameters, $p_0$ and $p_1$. A binned likelihood fit is performed in
+each (\njet, \nb, \scalht) bin of each control region, and the best
+fit value $p_1$ and its uncertainty is used to determine the presence
+of biases dependent on \HTmiss. The pull of $p_1$ from a value of zero
+is defined as the best fit value over its standard deviation,
+considering only statistical uncertainties associated with the finite
+size of the data and simulated samples.
+
+The lower bound of the final (open) bin in \HTmiss is not more than
+800\GeV and is bounded from above by the upper bound of the \scalht
+bin in question. The lower bound of the final \HTmiss bin is merged
+with lower bins if fewer than ten events in the data control regions
+are observed. If a bin in (\njet,\nb, \scalht) contains fewer than ten
+events, the \HTmiss template is not used. The merging of bins is
+typically only relevant for event categories that satisfy $\nb \geq
+2$.
+
+The presence or otherwise of systematic biases is evaluated at a
+statistical level, by considering the distribution of pulls obtained
+from each control region, which are consistent with statistical
+fluctuations, with no indication of trends across the full phase space
+of each control region. The $p$-values obtained from the fits are
+uniformly distributed. 
+
+The uncertainty in the \HTmiss modelling is extracted under the
+hypothesis of no bias. This is done using the maximum likelihood (ML)
+values of the fit parameters to determine the statistical precision to
+which this hypothesis can be confirmed. The quadrature sum of the ML
+value and its uncertainty for $p_1$ from each fit is used to define
+alternative templates that represent $\pm1\sigma$ variations to the
+nominal \HTmiss template. These alternative templates are encoded in
+the likelihood function, as described in Section~\ref{sec:result}. The
+observed variations are compatible with the expected values obtained
+from studies relying only on simulated event samples. The
+uncertainties in the final \HTmiss bin of the templates depend on the
+event category and \scalht bin, but are typically found to be in the
+range $\sim$10--100\%.
+
+The effect on the \HTmiss templates is determined under $\pm1\sigma$
+variations in the jet energy scale, the efficiency and
+misidentification probability of b quark jets, the efficiency to
+identify well-reconstructed, isolated leptons, the pileup reweighting,
+and the modelling in the top quark transverse momentum. These effects
+are easily covered by the data-derived uncertainties, described above,
+across the full phase space of the control regions, which mirror
+closely that of the signal region.
+
+
+
+
+% A check has also been performed on the systematic effect on the
+% background prediction due to QCD contamination in the control
+% samples, which has been found to be at the 5\% level for the gamma +
+% jets control region. Applying an arbitrarily large variation of
+% +/-100\% on the number of Monte Carlo QCD events leads to a
+% systematic variation on the transfer factors of at most 5%
+% in the majority of bins. This preliminary study suggests that effect
+% from QCD contamination in the gamma + jets control region is small
+% compared to the total uncertainty assigned to transfer factors. This
+% systematic source is covered anyway in the data-driven study using
+% the photon control region, described in Sec. 12.2.
+
+%The choice of PDF set, or variations therein, predominantly affects
+%$\mathcal{A}\times\varepsilon$ through changes in the \Pt spectrum of
+%the system recoil. Uncertainties in $\mathcal{A}\times\varepsilon$ due
+%to variations in the renormalisation and factorisation scales are
+%determined to be relatively small. In both cases, contributions to the
+%uncertainty in the theory production cross section are considered.
+
+%Uncertainties in the acceptance associated with the PDFs,
+%including those related to the renormalization and factorization
+%scales, are evaluated by varying the PDF sets used to produce the
+%simulated samples. These uncertainties are defined by the maximum
+%deviations observed from 100 variations of the NNPDF3.0LO PDFs for tt
+%and W+jets events. 
