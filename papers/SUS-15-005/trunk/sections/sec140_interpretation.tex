@@ -1,3 +1,4 @@
+\clearpage
 \section{Interpretations} 
 \label{sec:interpretations}
 
@@ -16,7 +17,32 @@ gluinos are assumed to occur via off-shell squarks of light or heavy
 flavour. All SM particles with a finite lifetime, such as the W boson,
 are assumed to decay naturally.
 
-\begin{table*}[tb]
+Fourteen unique production and decay modes are considered, which yield
+a range of topologies and final states (with only the all-jet final
+state considered in this search). Scans in the gluino or squark
+($m_{\sGlu} / m_{\PSQ}$) and LSP ($m_{\chiz_1}$) mass parameter space
+are performed for each model. Each class of simplified model is
+identified by a label that indicates the topology and final state.
+%and the production and decay mode is indicated by the diagrams shown
+%in Fig.~\ref{fig:simplified-models}. 
+Table~\ref{tab:simplified-models} summarises the production and decay
+modes, as well as any additional assumptions that define each
+simplified model. The models can be categorised according to the
+following descriptions: the gluino-mediated and direct production of
+light-flavour squarks; the gluino-mediated production of off-shell
+third-generation squarks; the ``natural'' gluino-mediated production
+of on-shell top squarks; and the direct production of on-shell
+third-generation squarks. In the case of direct pair production of
+light-flavour squarks, two different assumptions on the theory
+production cross section are made. For the ``eightfold'' scenario
+(\texttt{T2qq\_8fold}), the scalar partners to left- and right-handed
+quarks of the u, d, s, and c flavours are assumed to be light and
+degenerate in mass, with other squark states decoupled to a high
+mass. For the ``onefold'' scenario (\texttt{T2qq\_1fold}), only a
+single light squark is assumed to particate in the interaction and all
+other squarks are decoupled to a high mass.
+
+\begin{table*}[!t]
   \topcaption{A summary of the simplified supersymmetric models used
     to interpret the results of this search. All on-shell sparticles
     in the decay are stated.} 
@@ -58,7 +84,7 @@ Topology               & Fig.
                        & $\sGlu\ra\cPaqt\cPqb\chipm_1\ra\cPaqt\cPqb\PW^*\chiz_1$
                        & $m_{\chipm_1} - m_{\chiz_1} = 5\GeV$                                           \\ [0.5ex]
 \multicolumn{4}{l}{\it Natural gluino-mediated production of on-shell top squarks}                     \\ [0.5ex]
-\texttt{T5tttt}        %& \ref{fig:T5tttt_feyn}
+\texttt{T5tttt\_DM175}        %& \ref{fig:T5tttt_feyn}
                        & $\text{pp}\ra\sGlu\sGlu$      
                        & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqt\chiz_1$ 
                        & $m_{\,\PSQt} - m_{\chiz_1} = 175\GeV$                                          \\ [0.5ex]
@@ -66,10 +92,10 @@ Topology               & Fig.
                        & $\text{pp}\ra\sGlu\sGlu$       
                        & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqc\chiz_1$ 
                        & $m_{\,\PSQt} - m_{\chiz_1} = 20\GeV$                                           \\ [0.5ex]
-\texttt{T5tttt\_degen} %& \ref{fig:T5tttt_degen_feyn}
-                       & $\text{pp}\ra\sGlu\sGlu$      
-                       & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqb\PW^*\chiz_1$
-                       & $m_{\,\PSQt} - m_{\chiz_1} = 20\GeV$                                           \\ [0.5ex]
+%\texttt{T5tttt\_degen} %& \ref{fig:T5tttt_degen_feyn}
+%                       & $\text{pp}\ra\sGlu\sGlu$      
+%                       & $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqb\PW^*\chiz_1$
+%                       & $m_{\,\PSQt} - m_{\chiz_1} = 20\GeV$                                           \\ [0.5ex]
 \multicolumn{4}{l}{\it Direct production of on-shell third-generation squarks}                         \\ [0.5ex]
 \texttt{T2bb}          %& \ref{fig:T2bb_feyn}
                        & $\text{pp}\ra\PSQb\PASQb$     
@@ -98,31 +124,6 @@ Topology               & Fig.
     \hline
   \end{tabular}
 \end{table*}
-
-Fifteen unique production and decay modes are considered, which yield
-a range of topologies and final states (with only the all-jet final
-state considered in this search). Scans in the gluino or squark
-($m_{\sGlu} / m_{\PSQ}$) and LSP ($m_{\chiz_1}$) mass parameter space
-are performed for each model. Each class of simplified model is
-identified by a label that indicates the topology and final state. 
-%and the production and decay mode is indicated by the diagrams shown
-%in Fig.~\ref{fig:simplified-models}. 
-Table~\ref{tab:simplified-models} summarises the production and decay
-modes, as well as any additional assumptions that define each
-simplified model. The models can be categorised according to the
-following descriptions: the gluino-mediated and direct production of
-light-flavour squarks; the gluino-mediated production of off-shell
-third-generation squarks; the ``natural'' gluino-mediated production
-of on-shell top squarks; and the direct production of on-shell
-third-generation squarks. In the case of direct pair production of
-light-flavour squarks, two different assumptions on the theory
-production cross section are made. For the ``eightfold'' scenario
-(\texttt{T2qq\_8fold}), the scalar partners to left- and right-handed
-quarks of the u, d, s, and c flavours are assumed to be light and
-degenerate in mass, with other squark states decoupled to a high
-mass. For the ``onefold'' scenario (\texttt{T2qq\_1fold}), only a
-single light squark is assumed to particate in the interaction and all
-other squarks are decoupled to a high mass.
 
 Under the background + signal hypothesis, and in the presence of a
 non-zero signal contribution, a modified frequentist approach is used
@@ -198,7 +199,7 @@ signal + background hypotheses.
     \multirow{2}{*}{\texttt{T1ttbb}}
   & (1300, 100) & $\geq$5, 4, 3, $\geq$5a  & \phantom{1}3.8 & 9-32  & 1-2   & 3-16  & 2-19 & 46.1 & 0.60 & 0.91 \\
   & (1000, 700) & $\geq$5, $\geq$5a, 4, 3  & \phantom{1}3.4 & 9-30  & 1-9   & 3-65  & 1-14 & 325  & 0.51 & 0.70 \\ [0.5ex]
-    \multirow{2}{*}{\texttt{T5tttt}}
+    \multirow{2}{*}{\texttt{T5tttt\_DM175}}
   & (800, 100)  & $\geq$5, $\geq$5a, 3, 4  & \phantom{1}0.2 & 12-20 & 2-4   & 3-5   & 1-6  & 1490 & 0.69 & 1.19 \\
   & (700, 400)  & $\geq$5, $\geq$5a, 4, 4a & \phantom{1}0.2 & 20-29 & 2-10  & 8-10  & 1-2  & 3530 & 1.00 & 1.35 \\ [0.5ex]
 % & (700, 400)  & $\geq$5, $\geq$5a, 4, 4a & \phantom{1}0.2 & 20-20 & 2-10  & 10-10 & 2-2  &      & 1.00 & 1.35 \\ [0.5ex]
@@ -213,9 +214,9 @@ signal + background hypotheses.
     \multirow{2}{*}{\texttt{T5ttcc}}  
   & (1200, 200) & $\geq$5, 4, 3, $\geq$5a  & \phantom{1}4.9 & 6-25  & 5-25  & 3-21  & 1-24 & 85.6 & 0.58 & 0.87 \\
   & (750, 600)  & $\geq$5, $\geq$5a, 4, 4a & \phantom{1}1.0 & 9-23  & 1-4   & 5-21  & 1-3  & 2270 & 0.89 & 0.72 \\ [0.5ex]
-    \multirow{2}{*}{\texttt{T5tttt\_degen}} 
-  & (1100, 100) & $\geq$5, 4, 3, 4a        & \phantom{1}1.3 & 15-21 & 12-16 & 6-11  & 4-15 & 16.3 & 0.89 & 2.55 \\
-  & (800, 600)  & $\geq$5, $\geq$5a, 4a, 4 & \phantom{1}1.9 & 5-32  & 1-8   & 1-34  & 1-7  & 1490 & 0.66 & 0.70 \\ [0.5ex]
+%    \multirow{2}{*}{\texttt{T5tttt\_degen}} 
+%  & (1100, 100) & $\geq$5, 4, 3, 4a        & \phantom{1}1.3 & 15-21 & 12-16 & 6-11  & 4-15 & 16.3 & 0.89 & 2.55 \\
+%  & (800, 600)  & $\geq$5, $\geq$5a, 4a, 4 & \phantom{1}1.9 & 5-32  & 1-8   & 1-34  & 1-7  & 1490 & 0.66 & 0.70 \\ [0.5ex]
     \multirow{2}{*}{\texttt{T2bb}}
   & (800, 50)   & 2, 3, 4, $\geq$5         & \phantom{1}1.5 & 5-31  & 2-6   & 1-21  & 1-23 & 28.3 & 0.96 & 1.06 \\
   & (375, 300)  & $\geq$5, 4, 3a, 3        & \phantom{1}0.1 & 8-33  & 1-10  & 3-25  & 1-7  & 2610 & 0.67 & 0.87 \\ [0.5ex]
@@ -264,15 +265,15 @@ alternative \HTmiss templates, described in Section~\ref{sec:result},
 is also used for the simulated signal samples.
 
 In addition to the uncertainty in the integrated luminosity of
-4.6\%~\cite{lumi}, the following sources of uncertainty are dominant:
-the statistical uncertainty arising from the finite size of simulated
-signal samples, the modelling of initial-state radiation (ISR), the
-corrections to jet energies (JEC) evaluated in simulation, and the
-modelling of scale factors ($\text{SF}_\text{b-tag}$) applied to
-simulated event samples that correct for differences in the efficiency
-and misidentification probability of b quark jets. The magnitude of
-each contribution depends on the model and the masses of the parent
-sparticle and LSP. 
+4.6\%, %~\cite{lumi}, 
+the following sources of uncertainty are dominant: the statistical
+uncertainty arising from the finite size of simulated signal samples,
+the modelling of initial-state radiation (ISR), the corrections to jet
+energies (JEC) evaluated in simulation, and the modelling of scale
+factors ($\text{SF}_\text{b-tag}$) applied to simulated event samples
+that correct for differences in the efficiency and misidentification
+probability of b quark jets. The magnitude of each contribution
+depends on the model and the masses of the parent sparticle and LSP.
 
 The $\mathcal{A}\times\varepsilon$ for models with small mass
 splittings (\eg $m_{\PSQ} - m_{\chiz_1} \lesssim m_{\text t}$) is due
@@ -327,10 +328,10 @@ around the expected $\mu$ values, with some models exhibiting a
 moderately weaker-than-expected limit due to fluctuations in data, as
 discussed below.
 
-\begin{figure*}[!h]
+\begin{figure*}[h!]
   \begin{center}
-    \includegraphics[width=0.55\textwidth]{figures/limits/v1/mixSUMMARY.pdf}
-    \includegraphics[width=0.55\textwidth]{figures/limits/v1/gluinoSUMMARY.pdf} 
+    \includegraphics[width=0.55\textwidth]{figures/limits/v2/mixSUMMARY.pdf}
+    \includegraphics[width=0.55\textwidth]{figures/limits/v2/gluinoSUMMARY.pdf} 
     \caption{Observed and expected mass exclusions at 95\% CL
       (indicated, respectively, by solid and dashed contours) for
       a number of simplified models. (Top) The pair production of
@@ -347,28 +348,26 @@ discussed below.
       (\texttt{T1tbb}). 
 }
     \label{fig:limits-sms-1} 
-    \vspace{1.0cm} % hack to remove text from same page
+    \vspace{2.0cm} % hack to remove text from same page
   \end{center}
 \end{figure*}
 
-\begin{figure*}[!h]
+\begin{figure*}[h!]
   \begin{center}
-    \includegraphics[width=0.55\textwidth]{figures/limits/v1/naturalWT1SUMMARY.pdf}
-%    \includegraphics[width=0.6\textwidth]{figures/limits/v1/naturalSUMMARY.pdf}
-    \includegraphics[width=0.55\textwidth]{figures/limits/v1/allThirdGenSUMMARY.pdf} 
+    \includegraphics[width=0.55\textwidth]{figures/limits/v2/naturalWT1SUMMARY.pdf}
+%    \includegraphics[width=0.6\textwidth]{figures/limits/v2/naturalSUMMARY.pdf}
+    \includegraphics[width=0.55\textwidth]{figures/limits/v2/allThirdGenSUMMARY.pdf} 
     \caption{ Observed and expected mass exclusions at 95\% CL
       (indicated, respectively, by solid and dashed contours) for a
-      number of simplified models. (Top) Three scenarios involving the
+      number of simplified models. (Top) Two scenarios involving the
       gluino-mediated pair production of on-shell top squarks:
       $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqt\chiz_1$ with $m_{\,\PSQt} -
-      m_{\chiz_1} = 175\GeV$ (\texttt{T5tttt}),
+      m_{\chiz_1} = 175\GeV$ (\texttt{T5tttt\_DM175}) and
       $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqc\chiz_1$ with $m_{\,\PSQt} -
-      m_{\chiz_1} = 20\GeV$ (\texttt{T5ttcc}), and
-      $\sGlu\ra\cPaqt\PSQt\ra\cPaqt\cPqb\PW^*\chiz_1$ with
-      $m_{\,\PSQt} - m_{\chiz_1} = 20\GeV$
-      (\texttt{T5tttt\_degen}). (Bottom) Six scenarios involving the
-      direct pair production of third-generation squarks. The first
-      scenario involves the pair production of bottom squarks,
+      m_{\chiz_1} = 20\GeV$ (\texttt{T5ttcc}). Also shown, for
+      comparison, is \texttt{T1tttt}. (Bottom) Six scenarios involving
+      the direct pair production of third-generation squarks. The
+      first scenario involves the pair production of bottom squarks,
       $\PSQb\ra\cPqb\chiz_1$ (\texttt{T2bb}). Two scenarios involve
       the decay of top squark pairs as follows: $\PSQt\ra\cPqt\chiz_1$
       or $\PSQt\ra\cPqb\chipm_1\ra\cPqb\PW^*\chiz_1$ with
@@ -385,7 +384,7 @@ discussed below.
 \end{figure*}
 
 Figures~\ref{fig:limits-sms-1} and~\ref{fig:limits-sms-2} summarise
-the disfavoured regions of the mass parameter space for fifteen
+the disfavoured regions of the mass parameter space for fourteen 
 simplified models. These regions are derived by comparing the upper
 limits on the measured fiducial cross section, corrected for the
 experimental $\mathcal{A}\times\varepsilon$, with the theory cross
@@ -457,16 +456,17 @@ models that assume gluino pair production, with each gluino decaying
 to a top quark and an on-shell top squark, the latter of which decays
 to SM particles and the LSP, $\chiz_1$. As discussed earlier, these
 models can be considered as representations of a ``natural'' solution
-to the little hierarchy problem. Three different scenarios are
-considered for the decay of the top squarks. The \texttt{T5tttt} model
-assumes a two-body decay to a top quark and the $\chiz_1$, with the
-top squark mass defined relative to the $\chiz_1$ as $m_{\PSQt} -
-m_{\chiz_1} = m_\text{t}$. The \texttt{T5ttcc} and
-\texttt{T5tttt\_degen} models assume $m_{\PSQt} - m_{\chiz_1} =
-20\GeV$ and two- and four-body decays to, respectively, a charm quark
-and the $\chiz_1$, or to bf$\bar{\text{f}}'\chiz_1$ via an off-shell W
-boson. These two decays are the only modes open to the top squark
-under this near-mass-degenerate scenario.
+to the little hierarchy problem. Two different scenarios are
+considered for the decay of the top squarks. The
+\texttt{T5tttt\_DM175} model assumes a two-body decay to a top quark
+and the $\chiz_1$, with the top squark mass defined relative to the
+$\chiz_1$ as $m_{\PSQt} - m_{\chiz_1} = m_\text{t}$. Models that
+satisfy $m_{\chiz_1} < 50\GeV$ are not considered here, as the
+$\chiz_0$ particles carry very little momentum.  The \texttt{T5ttcc}
+model assumes $m_{\PSQt} - m_{\chiz_1} = 20\GeV$ and two-body decays
+to a charm quark and the $\chiz_1$. 
+%This decay is one of two modes open to the top squark under this
+%near-mass-degenerate scenario.
 %For comparison, the limit contours for \texttt{T1tttt}, which assumes
 %an off-shell top squark that is decoupled to a high mass, are also
 %shown in Fig.~\ref{fig:limits-sms-2} (top). 
@@ -484,9 +484,13 @@ respectively, a top quark and the $\chiz_1$ when $m_{\PSQt} -
 m_{\chiz_1} > m_\text{t}$ is satisfied, or a b quark, an on-shell W
 boson, and the $\chiz_1$ for the condition $m_{\PW} < m_{\PSQt} -
 m_{\chiz_1} < m_\text{t}$. Models that satisfy $\abs{m_{\PSQt} -
-  m_\text{t} - m_{\chiz_1}} < 25\GeV$ are not considered here. The
-model \texttt{T2tb} also assumes the pair production of top squarks,
-with each undergoing a two-body decay to either a top quark and the
+  m_\text{t} - m_{\chiz_1}} < 25\GeV$ are not considered here, as
+$\sigma_\text{UL}$ is a strong function of $m_{\PSQt} - m_{\chiz_1}$
+due to the high levels of signal contamination found in the \mj
+control region for models that resemble the \ttbar background in terms
+of their topological and kinematical properties. The model
+\texttt{T2tb} also assumes the pair production of top squarks, with
+each undergoing a two-body decay to either a top quark and the
 $\chiz_1$, or a bottom quark and the $\chipm_1$, with equal branching
 ratios $\mathcal{BR}(\PSQt \ra \text{t}\chiz_1) = \mathcal{BR}(\PSQt
 \ra \text{b}\chipm_1) = 50\%$. As for the \texttt{T1ttbb} model, the
@@ -540,7 +544,7 @@ expected and observed excluded $m_{\sGlu}$ or $m_{\PSQ}$ and
 $m_{\chiz_1}$ masses for each simplified model.
 
 \begin{table}[tb]
-  \topcaption{Summary of the mass limits obtained for the fifteen
+  \topcaption{Summary of the mass limits obtained for the fourteen 
     simplified models. The limits indicate the strongest observed and
     expected (in parentheses) mass exclusions in $\sGlu$, $\PSQ$,
     $\PSQb$, $\PSQt$, and $\chiz_1$. The quoted values have
@@ -566,9 +570,9 @@ $m_{\chiz_1}$ masses for each simplified model.
     \texttt{T1bbbb}        & $\sGlu$   & 1575 \ph(1575)                 & 975 (1025)   \\ 
     \texttt{T1tttt}        & $\sGlu$   & 1125 \ph(1325)                 & 475 \ph(600) \\ 
     \texttt{T1ttbb}        & $\sGlu$   & 1375 \ph(1450)                 & 750 \ph(850) \\ 
-    \texttt{T5tttt}        & $\sGlu$   & \ph800 \ph(1000)               & 300 \ph(450) \\ 
+    \texttt{T5tttt\_DM175}        & $\sGlu$   & \ph800 \ph(1000)               & 300 \ph(450) \\ 
     \texttt{T5ttcc}        & $\sGlu$   & 1350 \ph(1350)                 & 700 \ph(800) \\ 
-    \texttt{T5tttt\_degen} & $\sGlu$   & 1150 \ph(1275)                 & 650 \ph(725) \\ 
+%    \texttt{T5tttt\_degen} & $\sGlu$   & 1150 \ph(1275)                 & 650 \ph(725) \\ 
     \texttt{T2bb}          & $\PSQb$   & \ph800 \ph\ph(800)             & 360 \ph(400) \\ 
     \texttt{T2tb}          & $\PSQt$   & \ph610 \ph\ph(690)             & 240 \ph(300) \\ 
     \texttt{T2tt} (3-body) & $\PSQt$   & \ph670 \ph\ph(720)             & 210 \ph(240) \\
@@ -624,7 +628,7 @@ $m_{\chiz_1}$ masses for each simplified model.
 %      \includegraphics[height=0.15\textwidth]{figures/diagrams/T5ttbb_feyn}
 %      \label{fig:T1ttbb_feyn}
 %    } \\
-%    \subfigure[\texttt{T5tttt}]{
+%    \subfigure[\texttt{T5tttt\_DM175}]{
 %      \includegraphics[height=0.15\textwidth]{figures/diagrams/T5tttt_feyn}
 %      \label{fig:T5tttt_feyn}
 %    } ~~
@@ -671,7 +675,7 @@ $m_{\chiz_1}$ masses for each simplified model.
 %      squarks. The diagrams labelled \texttt{T1bbbb}, \texttt{T1tttt},
 %      and \texttt{T1ttbb} depict models involving the gluino-mediated
 %      production of off-shell third-generation squarks. The diagrams
-%      labelled \texttt{T5tttt}, \texttt{T5ttcc}, and
+%      labelled \texttt{T5tttt\_DM175}, \texttt{T5ttcc}, and
 %      \texttt{T5tttt\_degen} depict ``natural'' models comprising
 %      gluino-mediated production of on-shell top squarks. Finally, the
 %      remaining six diagrams depict the direct production of on-shell
@@ -726,10 +730,10 @@ $m_{\chiz_1}$ masses for each simplified model.
 %\clearpage
 %\begin{figure*}[thp!]
 %  \begin{center}
-%    \includegraphics[width=0.49\textwidth]{figures/limits/v1/mixSUMMARY.pdf}
-%    \includegraphics[width=0.49\textwidth]{figures/limits/v1/gluinoSUMMARY.pdf} \\
-%    \includegraphics[width=0.49\textwidth]{figures/limits/v1/naturalSUMMARY.pdf}
-%    \includegraphics[width=0.49\textwidth]{figures/limits/v1/allThirdGenSUMMARY.pdf} \\
+%    \includegraphics[width=0.49\textwidth]{figures/limits/v2/mixSUMMARY.pdf}
+%    \includegraphics[width=0.49\textwidth]{figures/limits/v2/gluinoSUMMARY.pdf} \\
+%    \includegraphics[width=0.49\textwidth]{figures/limits/v2/naturalSUMMARY.pdf}
+%    \includegraphics[width=0.49\textwidth]{figures/limits/v2/allThirdGenSUMMARY.pdf} \\
 %    \caption{Observed upper limit in cross section at 95\% CL
 %      (indicated by the colour scale) for simplified models that
 %      assume the pair production of gluinos, as a function of the
