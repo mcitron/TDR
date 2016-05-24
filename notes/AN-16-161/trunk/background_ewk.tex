@@ -1,0 +1,230 @@
+%%____________________________________________________________________________||
+
+\section{Background estimation for processes with genuine \met}
+\label{sec:backgroundmet}
+\subsection{Overview of SM background processes}
+
+Once all the signal region selection requirements have been imposed,
+the contribution from QCD multijet events is expected to be
+negligible, as demonstrated in Appendix~\ref{sec:kisigplot}. In the absence of
+multijet events, the background counts in the signal region arise from
+SM processes with significant \met in the final state. In events with
+low statistics of jets and b-quark jets, the largest backgrounds with
+genuine \met are from the associated production of W or Z bosons with
+jets, followed by either the weak decays \znunu or \wtaunu, where the
+$\tau$ decays hadronically and is identified as a jet; or by leptonic
+decays that are not rejected by the dedicated electron or muon
+vetoes. The veto of events containing isolated tracks is efficient at
+further suppressing these backgrounds as well as the single-prong
+hadronic decay of the tau lepton. At higher jet and b-quark jet
+multiplicities, top quark production followed by semileptonic weak top
+quark decay becomes important.  Residual contributions from processes
+such as single-top-quark, $\ttbar$V or $\ttbar$H, diboson, and
+Drell-Yan production are also expected. These SM processes are
+collectively referred to as the non-multijet backgrounds.
+
+%The production of W and Z bosons in association with jets is simulated
+%with the \MADGRAPH V5~\cite{madgraph} event generator. The production
+%of \ttbar and single-top quark events is generated with
+%\POWHEG~\cite{powheg}, and diboson events are produced with
+%\PYTHIA6.4~\cite{pythia}. For all simulated samples, \PYTHIA6.4 is
+%used to describe parton showering and hadronisation. All samples are
+%generated using the \textsc{cteq6l1}~\cite{Pumplin:2002vw} parton
+%distribution functions (PDF). The description of the detector response
+%is implemented using the \GEANTfour~\cite{geant} package. 
+The simulated samples are normalised using the most accurate cross
+section calculations currently available, usually with
+next-to-next-to-leading-order (NNLO) accuracy. To model the effects of
+pileup, the simulated events are generated with a nominal distribution
+of pp interactions per bunch crossing, which are then reweighted
+to match the pileup distribution as measured in data. 
+
+\subsection{The ``transfer factor'' method}
+\label{sec:ewk-method}
+
+The method used to estimate the aforementioned SM background
+contributions in the hadronic signal region relies on the use of a
+transfer factor (TF) determined from MC samples to transform the
+observed yield in a given \scalht, jet (\njet) and b-tag (\nb)
+multiplicity bin of a control sample, $\nobs^{\rm
+  control}(\njet,\nb,\scalht)$, into a predicted yield for the
+corresponding bin of the hadronic signal region, $\npre^{\rm
+  signal}(\njet,\nb,\scalht)$. The choice of \njet and \nb~event
+categorisation and \scalht binning in the control samples is identical
+to that for the signal region, as defined in
+Sec.~\ref{sec:selection}. 
+
+Each transfer factor is simply a ratio of the yields obtained from MC
+simulation for the same bin of the signal region and a given control
+sample:
+
+\begin{equation}
+  \label{equ:tf-ratio}
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
+      MC}^{\rm control}(\njet,\nb,\scalht)} 
+\end{equation}
+
+In this way, predictions of background counts from SM processes can be
+made based on the various control samples:
+
+\begin{equation}
+  \label{equ:pred-method}
+  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
+      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
+      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
+    control}(\njet,\nb,\scalht)   
+\end{equation}
+
+When constructing the transfer factors, the MC expectations for the
+following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar
++ jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets
+($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets
+production via the $s$, $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or
+$\ttbar$H ($N_{\rm {\ttbar}X}$). Details on the MC
+samples used are given in Sec.~\ref{sec:datasets}. All MC samples
+are normalised to the integrated luminosity of the appropriate data
+sample.
+
+The selection criteria for the data control samples closely resemble
+those for the signal region, differing mainly through the use of a
+lepton or photon object {\it tag} (that is ignored in the calculation
+of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
+and minimal additional kinematic requirements (\eg invariant or
+transverse mass windows) to obtain W, Z, and \ttbar-enriched event
+samples. The same selection criteria are designed to suppress signal
+contamination in the control samples so that unbiased data-driven
+estimates for the SM backgrounds in the signal region can be
+made. More detail on the selection criteria can be found in Sec.~\ref{sec:selection}.
+
+The transfer factors account for differences in cross sections and
+branching ratios, acceptance and reconstruction efficiencies, and/or
+kinematic requirements between the signal and control regions. Any
+dependence on \njet, \nb, or \HT is largely attributable to
+differences in acceptance due to the presence or otherwise of \alphat
+or \mht requirements.
+
+Many systematic effects are expected to cancel largely in the transfer
+factor. However, a systematic uncertainty is assigned to each transfer
+factor to account for theoretical uncertainties and effects such as
+the mismodelling of kinematics (\eg acceptances) and instrumental
+effects (\eg reconstruction efficiencies).
+
+In the end, a fitting procedure that provides the final result is
+defined formally by the likelihood model described in
+Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
+(defined in terms of the variables \njet, \nb, and \scalht) of the
+signal sample is modelled as Poisson-distributed about the sum of a SM
+expectation (and a potential signal contribution). The components of
+this SM expectation are related to the expected yields in the control
+samples via transfer factors derived from simulation. The observations
+in each bin (again defined by \njet, \nb, and \scalht) of the control
+samples are similarly modelled as Poisson-distributed about the
+expected yields for each control sample. In this way, for a given
+bin, the observed yields in the signal and control samples are
+connected via the transfer factors derived from simulation. 
+
+The transfer factors are shown in Tables~\ref{tab:tf_mu_zinv_sym}-
+\ref{tab:tf_mumu_zinv_mono}. The procedure to determine the systematic
+uncertainties associated with these transfer factors is described in
+Sec.~\ref{sec:systematics}.
+
+
+The transfer factors are shown in tables below.
+
+\input{tables/dataLumi/tf_mu_zinv_sym.tex}
+\input{tables/dataLumi/tf_mu_zinv_asym.tex}
+\input{tables/dataLumi/tf_mu_zinv_mono.tex}
+\input{tables/dataLumi/tf_gj_zinv_sym.tex}
+\input{tables/dataLumi/tf_gj_zinv_asym.tex}
+\input{tables/dataLumi/tf_gj_zinv_mono.tex}
+\input{tables/dataLumi/tf_mu_ttw_sym.tex}
+\input{tables/dataLumi/tf_mu_ttw_asym.tex}
+\input{tables/dataLumi/tf_mu_ttw_mono.tex}
+\input{tables/dataLumi/tf_mumu_zinv_sym.tex}
+\input{tables/dataLumi/tf_mumu_zinv_asym.tex}
+\input{tables/dataLumi/tf_mumu_zinv_mono.tex}
+
+\clearpage
+
+\subsection{Adding the \mht dimension}
+
+The aforementioned description of the TFs provide an estimate of the
+total SM background as a function of the (\njet,\nb,\HT) bin that is
+integrated over \mht. However, the analysis takes advantage of \mht
+distribution obtained from simulation. This information is propagated
+to the likelihood model via an \mht template per (\njet,\nb,\HT) bin,
+which is equivalent to dicing the numerator of the TF according to
+\mht, \ie $N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht,\mht)$. In this
+regard, the TFs described above provide an estimate of the
+normalisation for each \mht template.
+
+\subsection{Data control samples used in the method}
+
+To estimate the contributions from these backgrounds, three data
+control regions are used, which are binned identically to the signal
+region: \mj, \mmj and \gj.  Their definitions are provided
+in Sec.~\ref{sec:selection}. The \ej and \eej control regions are not
+used now, but are investigated to be used analogously to the \mj and \mmj regions in
+the future. The selection criteria for these
+control regions are defined such that any potential contamination from
+new physics processes or QCD multijets is negligible.
+
+In previous versions of this analysis, the \mmj and \gj control
+samples are used to predict the \znunu +jets background. We plan to
+extend this approach by relying on all (and not just a sub-set of)
+relevant control samples to predict the two dominant components of the
+total SM background (\wj and \ttbar, or \znunu + jets). Specifically,
+we are using the \mj sample to predict the \wj and \ttbar backgrounds
+(across all \nb bins) and up to three samples comprising \zmmj,
+\gj and \wmj to predict the \znunu + jets background for events
+containing exactly zero or one b-tagged jets. Any correlations are
+appropriately handled by the likelihood model (via the
+\texttt{Combine} tool).
+
+The predictions of the \znunu + jets background based on the \zmmj
+control samples exhibits significantly larger statistical
+uncertainties at high \njet, \nb, \scalht, or \mht due to lower event
+counts arising from the lower Z cross section (w.r.t. \gj and
+\wj). Regardless, these samples are included in the likelihood fit
+to provide additional confidence in the control of the \znunu + jets
+background.
+
+Concerning the use of $W$-enriched samples to predict the \znunu +jets
+background, we have studied this approach
+in detail with the 8\TeV dataset. Based on the outcome of these studies,
+we have decided to proceed with this approach, as part
+of the baseline likelihood description. Studies were
+based on data-driven tests with 8\TeV data
+(as described in Sec.~\ref{sec:closure-tests}). Closure tests are a critical
+tool to determine which samples can be used to predict the SM
+background components. In particular, we have studied the effect of
+new closure tests designed to test the $W$-enriched to $Z$-enriched
+extrapolation, specifically \mj to \gj, \mj to \mmj
+and $\mu^{+}$ to $\mu^{-}$ closure tests. This study is detailed in Appendix~\ref{app:zInvBgControl}.
+If further studies of the closure tests with $13\tev$
+data suggest that using the \mj control region to predict the \znunu
+background is not feasible, we will revert back to the approach
+used in Run~I analysis (\ie relying solely on the \zll and \gj
+samples). Early investigations suggest there are not any major problems.
+%The closure tests provide important event samples for probing the
+%accuracy of the simulation modelling implicit in the transfer factors.
+%Specific examples include ``\mj to predict \mmj'' and ``zeej to
+%predict \gj'' with events containing exactly zero or one b-tagged
+%jets. The former test relies on a \wmj-enriched sample to predict
+%yields in the \zmmj sample (in the presence of some ``\ttbar
+%contamination'' for events with $\nb = 1$). The latter test is a
+%consistency check between a dilepton and a \gj sample (as done in
+%previous iterations of the analysis).
+Most importantly, we retain full flexibility in our approach and the
+control samples used to predict the various background components.
+
+Currently, the projected sensitivity, as described in the current
+version of this note, is based on predictions of SM background
+components made from control regions as follows. For events containing
+exactly zero or one b-tagged jets, the \mj (enriched in \wej), \gj and
+\mmj control samples are used to estimate the irreducible \znunu + jets
+background, while the \mj control sample is used to estimate all
+remaining SM processes (predominately \wj and \ttbar). For events
+containing two or more b-tagged jets, the \mj sample is
+used to predict the total SM background (dominated by \ttbar).
+

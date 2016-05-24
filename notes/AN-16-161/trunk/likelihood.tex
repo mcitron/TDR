@@ -1,0 +1,92 @@
+%%____________________________________________________________________________||
+\section{Likelihood model}
+\label{sec:likelihood}
+
+Consider a given category of event as defined by \njet, \nb~and \scalht, which are in the following identified with \htcat. 
+In each category, the signal is extracted using the discriminating variable \mht. 
+Histogram templates of the \mht distribution are built for the signal and the background processes 
+using the MC samples described in Sec.~\ref{sec:datasets}. 
+The binning of the templates is chosen taking into account both the limited statistics in the simulation and 
+the control of the background in data. \\
+A maximum MC statistical uncertainty of 50\% (or around 4 unweighted events) is required in each bin of the MC histogram template, 
+in order to ensure a reasonable prediction. A minimum bin width constraint of 50 GeV is applied, 
+in order to reduce the bin-by-bin migration due to the finite \mht resolution.\\
+%% The binning of the \mht templates for all the \htcat is given in Appendix~\ref{sec:mht_templates}.
+
+
+For each category \htcat and \mht bin, $i$, in the signal region, let $n^{\htcat}_{\mathrm{had},i}$ be the number of observed events, 
+$b^{\htcat}_{\mathrm{had},i}$ the number of predicted background events and $s^{\htcat}_{\mathrm{had},i}$ the expected number of signal events. \\
+The likelihood function for the hadronic signal region is, in each \htcat:
+
+\begin{equation}
+\mathcal{L}^{\htcat}_{\mathrm{had}}=\prod_i \mathrm{Poisson}(n^{\htcat}_{\mathrm{had},i} |\, b^{\htcat}_{\mathrm{had},i} + s^{\htcat}_{\mathrm{had},i})
+\label{eq:hadronicLikelihood}
+\end{equation}
+
+The control regions are not split in the \mht dimension, and their information is only used to constrain the normalisation of the background processes 
+in the signal region, as described in Sec.~\ref{sec:backgroundmet}. 
+Their likelihood is therefore written as:
+
+\begin{equation}
+\mathcal{L}^{\htcat}_{\mathrm{CR,j}}=\mathrm{Pois}(n^{\htcat}_{\mathrm{CR,j}} |\, b^{\htcat}_{\mathrm{CR,j}} + s^{\htcat}_{\mathrm{CR,j}})
+\label{eq:controlLikelihood}
+\end{equation}
+
+In Eq.~\ref{eq:controlLikelihood}, $n^{\htcat}_{\mathrm{CR,j}}$ is the number of observed events, $b^{\htcat}_{\mathrm{CR,j}}$ the number of predicted 
+background events and $s^{\htcat}_{\mathrm{CR,j}}$ the expected number of signal events in the control region $j$. \\
+Eq.~\ref{eq:controlLikelihood} applies to all the control region used for the background estimation, 
+as defined in Sec.~\ref{sec:selection}. \\
+Notice that the signal contribution $s^{\htcat}_{\mathrm{CR,j}}$ in Eq.~\ref{eq:controlLikelihood}, as estimated from MC, is in general negligible. 
+Where the signal contamination is sizeable, it is included in the likelihood as an additional process contributing to the event yield in that particular bin.
+
+The prediction of the background yields in the signal region and in the corresponding control samples are connected 
+by means of transfer factors, as explained in Sec.~\ref{sec:backgroundmet}. 
+This connection is implemented by introducing a floating parameter, which is correlated 
+between the signal region and the control regions, one floating parameter is used for both background 
+processes ($Z_{\mathrm{inv.}}$, \ttbar/W), \footnote{In the following we use $Z_{\mathrm{inv}}$ to indicate 
+the $Z\to \mathrm{inv}$ process and \ttbar/W to indicate the sum of the yields of the $t\bar{t}$ and $W+\mathrm{jets}$ processes.}
+giving a prediction for each background sources depending on the relevant nuisances described below. \\
+This binds the background yields in the signal and control regions to float together, 
+taking into account the statistical uncertainty associated with the counts in the control samples. 
+
+The systematic uncertainties affecting the transfer factors, described in Sec.~\ref{sec:systematics}, 
+are incorporated in the likelihood by means of guassian nuisance parameters, which act on the floating
+parameter. These depend on the background process and the control region used for the prediction and
+are taken as uncorrelated between each of the \htcat bins. Additionally, systematic effects based on
+known sources of uncertainty are included as shape uncertainties on the transfer factors in that they a
+are completely correlated across all bins but have different sizes depending on the bin. The effects 
+of these systematics are determined using the method described in Sec~\ref{sec:systematics}.
+The uncertainties on the signal efficiency times acceptance, described in Sec.~\ref{sec:susy_results}, 
+are also taken as shape uncertainties correlated across all the \htcat bins. 
+The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented 
+providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. 
+The procedure to assess the alternative templates is described in detail in Sec.~\ref{sec:syst-on-shape}. \\
+The uncertainty due to the limited statistics in the MC samples used to populate the template histograms is incorporated 
+as additional nuisance parameters, one per template bin, taken as uncorrelated across the histogram bins. 
+
+The total likelihood is the product over all the \htcat bins and all the control regions, and can be written as:
+
+\begin{equation}
+\label{eq:total_likelihood}
+\mathcal{L} = \prod_{\htcat} \mathcal{L}_{\text{had}}^{\htcat} \times \prod_{\text{j}} \mathcal{L}_{\text{CR,j}}^{\htcat}
+\end{equation}
+
+The fit is carried on in two steps. 
+In the first, the background prediction for the signal region $b^{\htcat}_{\mathrm{had},i}$ are extracted from a likelihood fit 
+using the control regions only in Eq.~\ref{eq:controlLikelihood}. 
+In the second step, the fit is done using the full likelihood (Eq.~\ref{eq:total_likelihood}) and all 
+the correlations between the backgrounds in control regions and signal region are taken into account, 
+together with the statistical uncertainty associated to the finite number of events in the control region. \\
+The likelihood is profiled against all nuisance parameters in order to derive expected exclusion limits and sensitivity. 
+These are shown in Sec.~\ref{sec:susy}. 
+
+For technical limitations, only a subset of jet multiplicity categories are combined to derive the exclusion limits. 
+Four out of nine \nj categories are included, while considering all the \nb, \scalht, \mht bins within each \nj category. 
+These four categories are chosen as the ones providing the best expected exclusion for each signal point separately. \\
+In App.~\ref{app:jetRanking}, the details of this ranking are given for all the models considered in the analysis. 
+The four categories used in the limits are also shown in tabular format for some benchmark models in Tab.~\ref{tab:sig-eff-bestCat}.
+
+
+
+
+%%____________________________________________________________________________||

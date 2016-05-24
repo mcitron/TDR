@@ -1,0 +1,354 @@
+%%____________________________________________________________________________||
+\section{Analysis strategy}
+\label{sec:strategy}
+
+\subsection{The analysis during Run~1}
+
+While the analysis strategy has evolved significantly since the
+beginning of Run~1, certain design features have remained central to
+the RA1 analysis throughout Run~1 and will continue to do so during
+Run~2. These features, along with some of the more important recent
+developments, are outlined below.
+
+{\bf Model-independent search for new physics:}
+
+The analysis is designed to be sensitive to a range of beyond standard
+model (BSM) physics scenarios with signatures that are characterised
+by jets and significant \met in the final state. The search is one of
+the original Reference Analyses (RAs) that formed the basis of the CMS
+SUSY search program at the beginning of Run~1. The program was
+designed to be inclusive, model-independent (as much as possible), and
+topology-based. 
+
+The current incarnation of the RA1 search still retains its generic,
+inclusive nature. A binned signal region, defined by a set of
+inclusive selection criteria, is employed to provide sensitivity to a
+range of new physics models. By the end of Run~1, three discriminating
+variables were used to categorise signal event candidates: \scalht,
+\njet, and \nb. In the case of SUSY, this choice of variables provides
+sensitivity to the direct pair-production of all flavours of squarks
+(including the third generation), as well as pair-produced gluinos and
+their decays via all favours of quarks. The large dynamic range in
+\scalht provides sensitivity to a large range of mass splittings
+between the parent sparticle and the LSP.
+
+{\bf Robust performance under Start-Up conditions:}
+
+The search relies on the \alphat variable, which strongly suppresses
+the dominant background of multijet production from QCD, while
+maintaining acceptance to new physics signatures with genuine \met in
+the final state. At the beginning of Run~1, the \alphat variable was
+chosen because it was shown to be extremely effective at operating
+under Start-Up conditions, when the beam conditions and detector
+performance were poorly understood. For example, multijet
+events with significant \met from jet mismeasurements due to
+instrumental effects are penalised to lower values of \alphat, hence
+the variable exhibits an intrinsic robustness against potential
+sources of ``fake'' \met.
+
+% Further, the analysis did not use directly the \met variables and
+% relied instead solely on calorimeter-based jets (with relatively
+% high thresholds of \Pt > 50\gev) to
+
+While the Collaboration now has a good understanding of the detector
+performance under Run~1 conditions, the strategy we employ is still
+ very relevant when exploring the new high-energy, high-luminosity
+frontier in Run~2.
+
+{\bf Inclusive trigger strategy with low thresholds:}
+
+The trigger strategy has made use of the \alphat variable at the HLT
+since 2011. Given the rejection power of \alphat for multijet events,
+we employ this variable (crossed with \scalht) at the trigger level,
+which allows to push to lower thresholds for a given trigger rate with
+respect to other discriminating variables typically used in jets +
+\met searches (\eg \met, \mht, etc). A suite of \scalht-\alphat cross
+triggers allowed the RA1 search to push as low as $\scalht > 200\gev$
+and (effectively) $\mht \gtrsim 100\gev$ at the trigger, and as low as
+$\scalht > 200\gev$ and (effectively) $\mht \gtrsim 130\gev$ in the
+signal region definition, with near-maximum signal efficiency at the
+cost of $\sim25$~Hz (of which $\sim$15 was ``parked''). 
+
+{\bf Multijet-free signal region.}
+
+As the analysis has evolved, the event selection has been tailored to
+provide a multijet-free sample of signal event candidates. This is
+achieved by applying a \scalht-dependent \alphat threshold, tuned to
+suppress the multijet contribution to the sub-percent level with
+respect to the total background counts per signal region bin. This is
+extremely important for the lowest \scalht bins, which provide a
+significant contribution to the overall sensitivity to compressed SUSY
+or Dark Matter models. Additional studies of the ``parked data'' led
+to the addition of another powerful variable to further discriminate
+against heavy flavour decays in QCD multijet events, known as \bdphi,
+which inspects the azimuthal separation of jets and \met.
+
+{\bf Access to new physics via initial state radiation:}
+
+The analysis acceptance to compressed SUSY models relies not on
+the detection of very soft objects (often failing acceptance cuts)
+produced in the decay of the sparticles, but instead on the presence
+of jets from initial state radiation. The signal acceptance times
+efficiency for this mechanism is typically at the sub-percent level.
+Further, the signal is characterised by a very broad shape in \scalht,
+with significant counts at low \scalht, as well low values of \njet,
+\nb, and \mht. Hence, the highest signal counts are typically found in
+the bins with the highest background counts, typically populated by
+events from W + jets and Z$\ra\nu\nu$ + jets, which results in a poor
+S/B. Hence, the signal shape over many bins has to be considered in
+order to achieve reasonable sensitivity to such signatures. One
+distinguishing feature with respect to the SM backgrounds, which is
+most pronounced for (near-)degenerate spectra, is that while the
+values of \scalht and \mht are typically small, the ratio $\mht /
+\scalht$ is large with respect to SM backgrounds.
+
+This mechanism of signal acceptance was the focus of the ``parked
+analysis'' in Ref~\cite{CMS_AN_2013-366}. While the interpretations of
+this result focused on strongly-produced compressed SUSY models, the
+same mechanism can be used to access the direct production of a Dark
+Matter candidate. Sensitivity to this
+class of models relies heavily on tight background control and low
+thresholds. This is the motivation for the strategies of developing
+high-performance triggers with low thresholds, tuning the event
+selection to provide a multijet-free signal region, and relying on a
+large ensemble of closure tests in data to demonstrate excellent
+control of the non-multijet backgrounds in the signal region.
+
+{\bf Data-driven background estimation methods and closure tests:}
+
+The analysis relies on multiple data control samples to predict the
+non-multijet backgrounds. The control samples have a composition
+similar to the signal region, cover a similar kinematic phase
+space, have a large acceptance, and are signal-depleted. The analysis
+relies on transfer factors constructed from MC to extrapolate from the
+control regions to the signal region. The extrapolation is minimised
+by using identical binning in all samples. Potential residual biases
+in the transfer factors, \eg from MC mismodelling, are probed though a
+large ensemble of closure tests performed between numerous data
+control sub-samples. Several hundred statistically independent tests
+are performed, which cover a wide range of potential biases. 
+
+These closure tests are one of the most crucial components of this
+analysis, as they provide an understanding of the reliance on MC (in
+the form of ratios, \ie transfer factors) that is {\it founded on
+  comparison with data}. Any potential biases or dependencies on the
+discriminating variables used to categorise the signal events must be
+understood prior to unblinding the signal region. There are concrete
+examples in the past when the closure tests have revealed problems,
+which had to be understood and solved prior to continuing with the
+analysis.
+
+In the absence of any significant biases, the closure tests are then
+used to determine systematic uncertainties on the transfer factors,
+which are propagated through to the analysis result via the likelihood
+model. These systematic uncertainties are therefore motivated through
+comparisons with control data and are, ultimately, statistically
+limited by the data counts in the control samples. With increasing
+integrated luminosity, we expect the closure tests to be increasingly
+statistically-significant probes of potential biases and, in the
+absence of bias, the systematic uncertainties will correspondingly
+reduce.
+
+\subsection{Developments for Run~2}
+\label{sec:changes}
+
+Building on the experience gained during Run~1, we developed the
+analysis to provide improved sensitivity to a range of new physics
+models. These developments fall broadly under three categories:
+
+\begin{itemize}
+\item general optimisations concerning trigger, event reconstruction and
+  selection;
+\item improvements concerning simplified Dark Matter models and compressed SUSY
+  models. 
+\item improvements in the sensitivity to heavy objects, such as gluinos 
+\end{itemize}
+
+Some of these changes have already been studied and/or implemented
+during supplementary studies to the Run~1 ``parked analysis'', as
+described in Ref.~\cite{CMS_AN_2013-366}. Others, like an extensive addition of new
+jet categories are presented for the first time. These additions constitute a significant effort and aim to achieve very good 
+sensitivity for DM signatures recommended by the ATLAS-CMS DM Forum~\cite{Abercrombie:2015wmb}.
+The status will be noted at appropriate points in this document. A summary of these changes are
+listed below. This list is not exhaustive and some developments are
+still subject to (minor) change.
+
+{\bf Particle Flow event reconstruction:}
+
+The analysis switched from relying on jets reconstructed solely
+from calorimeter information to the use of jets from the Particle Flow
+(PF) reconstruction algorithm. This change provides performance
+improvements for jet-based variables (including \scalht, \mht, and
+\alphat) and, in particular, better mitigate any effects relating to
+pileup.
+
+{\bf General event selection optimisation:}
+
+In addition to the switch to PF, all event selection criteria for the
+signal region and control samples have been reviewed. The jet
+\Pt threshold is no longer scaled at low \scalht as during Run~1, and
+the binning in \scalht has been simplified. Also binning choice in the
+signal region had evolved to consider the anticipated integrated luminosity and 
+data taking conditions.  We also plan to investigate developments concerning 
+\eg boosted objects.
+
+{\bf Trigger strategy:}
+
+The trigger strategy is similar to that of Run~1, and continues
+to rely on a suite of \scalht-\alphat cross triggers at the HLT. The
+trigger decision is now based on PF jets, rather than
+calorimeter-based jets as during Run~1. The \HT and \alphat thresholds
+used at the end of Run~1 have been maintained, which fall in the range
+of $200 < \scalht < 400\gev$ and $0.57 > \alphat > 0.51$. The \Pt
+requirements on the lead two jets have been raised, in order to help
+control rate, while maintaining acceptance to events with soft second
+jets. 
+
+The highest \scalht bins in the analysis is seeded by the lowest
+unprescaled \scalht trigger, which currently has a threshold of
+$\scalht > 800\gev$.
+
+Single object muon, electron, photon, and (prescaled) \HT triggers
+are used to seed the control samples. 
+
+There have also been developments of novel L1 seeds to improve
+efficiencies at low \scalht. The performance of the
+L1 cross triggers based on these seeds provides very high efficiency 
+down to $\scalht > 200\gev$.
+
+{\bf \scalht-dependent \alphat thresholds:}
+
+During Run-1, the \alphat thresholds were raised as high as $\alphat >
+0.65$ for the lowest \scalht bins to suppress potential contamination
+from multijet events to the sub-percent level with respect to the
+total background counts. A constant threshold of $\alphat > 0.55$ was
+used for all bins satisfying $\scalht > 325\gev$. However, \alphat is
+a relative quantity that relates \scalht and \mht (and \dht) such that
+there is an effective lower bound on \mht that increases linearly with
+\scalht. In order to maximise signal acceptance, while maintaining at
+least the same level of multijet rejection as in the lowest \scalht
+bins, the \alphat threshold is lowered as a function of \scalht
+in line with the thresholds for the suite of HLT triggers. This
+approach allows an \alphat threshold as low as 0.52 for the
+region $\scalht > 400\gev$, which corresponds to a lower bound on \mht
+of $\sim110\gev$. This (approximate) requirement on \mht is
+(indirectly) imposed on all bins in the low \scalht region through an
+appropriate choice of \alphat threshold.
+
+This dependence on \scalht of the \alphat thresholds allows improve acceptance, 
+particularly to ``jetty'' signatures which are a
+characteristic of gluino pair-production and decay. The approach
+allows to maintain an approximately constant \mht requirement of
+$\sim130\gev$ through the full range of $\scalht > 200\gev$.
+
+For the region $\scalht > 800\gev$, events are collected with the
+lowest unprescaled \scalht trigger in the HLT menu. As there is no
+\alphat requirement in the trigger, we choose to drop the \alphat
+requirement in the event selection and instead employ only a
+requirement on the variable \bdphi to control any potential multijet
+contamination, in conjunction with a loose baseline requirement of
+$\mht > 130\gev$ (which corresponds to an \alphat threshold of
+$\sim0.507$). While the use of \alphat is necessary to push to low
+values of \scalht and \mht, we opt for only the \bdphi and \mht
+requirements at high \scalht, as this approach improves the signal
+efficiency in the high jet multiplicity environment while still
+controlling multijet contamination.
+
+{\bf Adding the \mht dimension:}
+
+During Run~1, events in the signal region were categorised according
+to three discriminating variables: \scalht, \njet, and \nb. While
+\scalht has historically been used in many searches for new physics at
+the LHC as an estimator for the mass scale of new physics, another
+characteristic signature for (R-parity conserving) SUSY and other
+models involving the direct production of a Dark Matter candidate is
+the presence of significant \met.
+
+Early in the \texttt{PHYS14} exercise, we explored the options for an
+additional discriminating variable that improves the analysis
+sensitivity to both the strong production of heavy objects such as
+gluinos and squarks as well as compressed SUSY models and Dark Matter
+candidates. The variable \mht was chosen, given its generally good
+performance with respect to the other variables that were
+investigated, plus this variable fits naturally with the current
+``robust'' analysis strategy of relying solely on jets as input
+(rather than \eg \met). Events are binned according to this
+variable, which supersedes the ``effective'' single bin approach
+employed in Run~1 via the \alphat requirement that, depending on the
+\HT scale, translated into an ``effective'' minimum \mht requirement
+of $\sim$130--500\gev.
+
+{\bf Additional \njet categories:}
+
+We adopted a more granular jet multiplicity binning in Run~2, in
+which events are categorised according to whether they contain
+exactly one, two, three, four, or at least five jets. This compares with
+the two categories of $\njet = 2-3$ and $\njet \geq 4$ used during
+Run~1. Events are also categorised according to the number of jets
+that are tagged as originating from b-quarks, with up to as many as
+four b-tags (as during Run~1). This improved granularity in the number of
+jets helps to improve the sensitivity to a wide range of models,
+including compressed SUSY scenarios, collider production of Dark
+Matter, and gluino-mediated models.
+
+{\bf ``Asymmetric'' jet \Pt thresholds:}
+
+The nominal event selection criteria for the signal region include an increased
+ threshold of $100\gev$ for the two hardest jets in the
+event. This raised threshold is aimed at reducing the V + jets
+backgrounds while maintaining acceptance to SUSY models due to the
+assumed pair-production of sparticles. (The decay of each
+sparticle is assumed to result in at least one hard jet.) 
+
+However, for compressed SUSY and Dark Matter models, signal acceptance
+is largely due to the presence of jets from initial state
+radiation. Under this scenario, it is beneficial to relax the
+requirements on the second leading jet in the event in order to
+maximise acceptance. Hence, in addition to each ``nominal'' \njet
+category, there is now a new orthogonal ``asymmetric'' \njet category
+that still requires a hard leading jet but also requires a soft second
+jet. The ``asymmetric'' dijet category is therefore comparable to the
+dijet bin of the monojet analysis~\cite{Chatrchyan:2011nd,
+Chatrchyan:2012me, Khachatryan:2014rra}. Given that a minimum of two
+jets are still required, the method of using \alphat to suppress
+multijet contamination is still applicable.
+
+{\bf ``Monojet'' selection:}
+
+In order to achieve a complete coverage of the jet multiplicity phase space,
+and further improve acceptance to low WIMP and mediator masses
+in simplified SUSY and DM models, we also lowered the jet multiplicity 
+requirement of the analysis to include the ``monojet'' category, in which
+exactly one jet above the $100\gev$ is required. In this case, a requirement on
+$\bdphi$ alone, and not \alphat, is sufficient to suppress the multijet
+background to a negligible level.
+
+{\bf Additional electron data control samples:}
+
+Preliminary studies have been performed to
+add the \ej and \eej data control samples. These two
+samples closely mirror their \mj and \mmj counterparts. Further, we
+mirrored the \scalht-dependent \alphat thresholds of the signal
+region in the \gj sample. The overall aim is to maximise the data
+counts in multiple control samples to allow better control of the
+predictions made in the analysis. Primarily, the additional samples
+provide additional redundancy and potential cross checks via the
+``RA1-style'' closure tests. Further, the additional control samples
+will help to reduce the statistical uncertainties associated with the
+predictions in the signal region. While the electron selections are fully
+implemented they are not yet considered in the final analysis to further validate
+multijet background predictions in these final states.
+
+{\bf Developments concerning closure tests:}
+
+As in Run~1, closure tests are performed in bins of \njet and
+\scalht. These tests allow to identify any biases or dependencies
+in the predictions. 
+Two new closure test have been developed to test the estimations of the $Z \to \nu \nu$
+background and the $W$ charge asymmetry. Also the addition of two electron control samples
+will allow for additional closure tests, further improving the understanding of the transfer factors constructed
+from MC, with the ultimate aim of reducing their associated systematic
+uncertainties. %Further cross checks in data to probe the modelling of
+%the \mht variable also is employed.
+
+%%____________________________________________________________________________||
