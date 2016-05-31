@@ -1,0 +1,137 @@
+%%____________________________________________________________________________||
+
+%%____________________________________________________________________________||
+\RCS$Revision: 339081 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-16-161/trunk/AN-16-161.tex $
+\RCS$Id: AN-15-161.tex 339081 2016-04-18 15:39:58Z sakuma $
+
+%%____________________________________________________________________________||
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+
+%%____________________________________________________________________________||
+\cmsNoteHeader{AN-16-161}
+
+%%____________________________________________________________________________||
+\title{Search for new physics in final states with jets and missing
+transverse momentum in $\sqrt{s}$ = 13~TeV pp collisions with the
+$\alpha_{\text{T}}$ variable}
+
+%%____________________________________________________________________________||
+%\author[bristol]{R.~Aggleton}
+%% \author[imperial]{M.~Baber}
+\author[imperial]{R.~Bainbridge}
+\author[vub]{F.~Blekman}
+\author[imperial]{S.~Breeze}
+\author[imperial]{O.~Buchm\"uller}
+%% \author[bristol]{J.~Brooke}
+\author[imperial]{S.~Casasso}
+\author[imperial]{M.~Citron}
+\author[imperial]{A.~Elwood}
+\author[bristol]{H.~Fl\"acher}
+\author[rochester]{A.~Garcia-Bellido}
+\author[imperial]{C.~Laner}
+\author[rochester]{K.H.~Lo}
+%\author[bristol]{C.~Lucas}
+\author[imperial]{S.A.~Malik}
+\author[imperial]{B.~Penning}
+\author[bristol]{T.~Sakuma}
+\author[vub]{D.~Smith^{1,}}
+\author[imperial]{A.~Tapper}
+
+\address[bristol]{University of Bristol, Bristol, UK}
+\address[imperial]{Imperial College, London, UK}
+\address[vub]{Vrije Universiteit Brussel, Brussel, BE}
+\address[rochester]{University of Rochester, NY, US}
+
+%%____________________________________________________________________________||
+\date{\today}
+
+%%____________________________________________________________________________||
+\abstract{This note summarises an inclusive search for new physics
+processes that produce final states with jets and missing transverse
+energy in pp collisions at a centre-of-mass energy of $\sqrt{s}$ =
+13~TeV. In this search, a dimensionless kinematic variable,
+$\alpha_{\text{T}}$, provides powerful discriminating power between
+events with genuine and misreconstructed missing transverse energy,
+which allows the use of soft final-state objects in the definition of
+the trigger and candidate signal event selections. The search is based
+on the total number of jets per event, the number of jets originating
+from bottom quarks per event and the scalar and vector sum of transverse
+momenta of these jets. We analyse 2.1~$\text{fb}^{-1}$ of data and
+provide interpretations for gluino-mediated simplified models.}
+
+%%____________________________________________________________________________||
+\hypersetup{ 
+  pdfauthor={Robin Aggleton, Mark Baber, Robert Bainbridge, Freya
+Blekman, Oliver Buchmueller, Jim Brooke, Stefano Casasso, Matthew
+Citron, Adam Elwood, Henning Flaecher, Aran Garcia-Bellido, Christian
+Laner, Kin Ho Lo, Chris Lucas, Sarah Alam Malik, Bjoern Penning, Tai
+Sakuma, Dominic Smith, Alex Tapper.},
+  pdftitle={Search for new physics in final states with jets and missing
+  transverse momentum in 13 TeV pp collisions with the AlphaT variable:
+  the Early Analysis exercise},
+  pdfsubject={CMS, jets, missing transverse momentum, supersymmetry,
+  dark matter, AlphaT},
+  pdfkeywords={CMS, jets, missing transverse momentum, supersymmetry,
+  dark matter, AlphaT},
+}
+
+%%____________________________________________________________________________||
+\maketitle
+
+%%____________________________________________________________________________||
+\tableofcontents
+
+%%____________________________________________________________________________||
+\input{mydefs}
+\input{symbols}
+
+%%____________________________________________________________________________||
+\include{intro}
+\include{strategy}
+\include{alphat}
+\include{datasets}
+\include{triggers}
+\include{objects}
+\include{selection}
+% \include{btag_formula}
+\include{sideband_corrections}
+\include{charac}
+\include{background_qcd}
+\include{background_ewk}
+\include{systematics}
+\include{mhtTemplate}
+\include{likelihood}
+\include{results}
+\include{susy}
+% \include{darkmatter}
+\include{summary}
+
+%%____________________________________________________________________________||
+\bibliography{auto_generated}
+
+%%____________________________________________________________________________||
+\appendix
+%\include{secA10_fig_sig}
+%\include{secA20_signalModelTriggerEfficiencies}
+\include{secA23_alphaTTriggerEfficiencies}
+%\include{secA25_lowHTSeeds}
+%\include{secA20_firstlook_13TeV}
+%\include{secA30_sensitivity}
+%\include{secA40_preAndPost_fit}
+\include{secA45_qcdPredictionValidation}
+\include{secA50_zInvPrediction}
+%\include{secA60_templateBinning}
+%\include{secA70_yieldsFor3Fb}
+%\include{secA90_electrons_samples}
+%\include{secA11_signal_asym}
+\include{secA12_bias_injection}
+\include{secA41_t1ttttExcess}
+\include{secA51_jetRanking}
+\include{secA31_sensitivitySUSBenchmarks}
+%\include{secA12_DM_checks}
+%% \include{secA13_postFitMHTShapes}
+

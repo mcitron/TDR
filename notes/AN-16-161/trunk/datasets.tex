@@ -1,0 +1,186 @@
+%%____________________________________________________________________________||
+\section{Data sets}
+\label{sec:datasets}
+
+\subsection{Data}
+
+
+In this note, we use 2.1~\ifb of proton-proton collision data at
+$\sqrt{s} =$ 13~TeV collected in 2015. The JSON file listed in
+Table~\ref{tab:cert_json} specifies the periods of the time in which
+these certified data are collected. Table~\ref{tab:datasets_data} lists
+the names of the data sets relevant for the analysis, along with the
+integrated luminosities for each data set.
+
+We perform a blind analysis. In the previous version of the note, the
+data in the signal region is blinded with the exception of 149.48~\ipb
+of the certified data specified by the JSON file in
+Table~\ref{tab:cert_unblind_json}. Data in the control regions is
+never blinded. These blinding policies are agree in the SUS PAG.
+
+In the review of the previous version of the note and related
+presentations in the SUS PAG, it becomes clear that we understand the
+data in the control regions and a small fraction of the unblinded data
+in the signal region well enough to predict the backgrounds in the
+signal region. As a result, no data in the signal region is blinded in
+this version of the note.
+
+\begin{table}[!h]
+\topcaption{The JSON file that specifies the periods of the time in
+which 2.1~\ifb of the certified data are collected} \footnotesize
+\input{tables/datasets/cert_json.tex} \label{tab:cert_json}
+\end{table}
+
+\begin{table}[!h]
+\topcaption{Data sets}
+\footnotesize \input{tables/datasets/c140607_c151022_l001.tex}
+\label{tab:datasets_data}
+\end{table}
+
+\begin{table}[!h]
+\topcaption{The JSON file specifying the 149.48~\ipb of the certified
+data that we never blind} \footnotesize
+\input{tables/datasets/cert_unblind_json.tex}
+\label{tab:cert_unblind_json}
+\end{table}
+
+\subsection{Simulation}
+
+Table~\ref{tab:datasets_bkg} lists the data sets of simulated events
+of the standard model background processes used in this note. Tables
+from \ref{tab:datasets_SMS_T1qqqq} to \ref{tab:datasets_SMS_T1bbbb}
+lists those of the signal processes. In these data sets, in addition
+to the main interaction, each event contains on average 20 minimum
+bias interactions which simulate multiple interactions per
+bunch-crossing (in-time pileup). The expected detector signal from
+previous or following bunch crossings (out-of-time pileup) with 25ns
+bunch spacing is overlapped.
+
+\begin{table}[!h]
+ \centering
+ \topcaption{Simulated background samples}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
+ \label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+ \topcaption{Simulated signal samples: SMS T1qqqq}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1qqqq.tex}}
+\label{tab:datasets_SMS_T1qqqq}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated signal samples: SMS T1tttt}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1tttt.tex}}
+%\label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[!p]
+ \centering
+\topcaption{Simulated signal samples: SMS T1bbbb}
+ \scriptsize
+ \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1bbbb.tex}}
+\label{tab:datasets_SMS_T1bbbb}
+\end{table}
+
+\clearpage
+
+\subsection{Pileup reweighting}
+\label{sec:pileup-reweighting}
+
+The distribution of the numbers of the pileup interactions in the
+simulated events is different from that in the data; the simulated
+events contain, on average, a larger number of pileup interactions than
+the data. We reweight simulated events to correct for this difference.
+This procedure is called \textit{pileup reweighting}.
+
+In deriving the pileup reweighting factors, we follow the
+recommendation by the physics validation group
+\cite{twiki-PdmVPileUpDescription, twiki-PileupJSONFileforData}. In
+the recommendation, the reweighting factors are a function of the
+variable called \verb!nTrueInt!.
+
+This variable \verb!nTrueInt! is the parameter of the Poisson
+distribution from which the numbers of pileup interactions are drown
+as random numbers. In each simulated event, the number of the in-time
+pileup interactions and the number of the interactions in each
+neighbouring bunch crossing to simulate of the out-of-time pileup are
+random numbers from the Poisson distribution with the same parameter,
+\verb!nTrueInt!. The value of \verb!nTrueInt! is not a constant of the
+data set. It is a random number from the distribution specified in
+Ref. \cite{github-mix_2015_25ns_Startup_PoissonOOTPU_cfi}.
+
+The \verb!nTrueInt! in the data is the average pileup interactions for
+a colliding bunch pair in a lumi section. The distribution of
+\verb!nTrueInt! in the data is derived from the measured instantaneous
+luminosity for each colliding bunch pair in each lumi section and the
+cross section of the total inelastic pp interaction. We use the method
+in Ref. \cite{twiki-PileupJSONFileforData} in deriving the
+distribution with the recommended value of 69~mb as the minimum bias
+cross section.
+
+The pileup reweighting factors are the ratios of the distributions of
+\verb!nTrueInt! in the data and in the simulated events and are
+normalised so as to preserve the number of the simulated events.
+
+Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
+of \verb!nTrueInt! in the data, simulated events and reweighted
+simulated events. The figure demonstrates that the reweighted
+simulated events have the distribution of \verb!nTrueInt! nearly
+identical to that in the data.
+
+\begin{figure}[!b]
+\centering
+\includegraphics[scale=1.00]{figures/pileup_reweighting/f044_corr_nTrueInt_data_mc_norm}
+\caption{The distribution of the average numbers of the inelastic
+interactions per colliding bunch pair per lumi section in the data,
+corresponding distribution in the simulated events, and that of the
+reweighted simulated events.} \label{f044_corr_nTrueInt_data_mc_norm}
+\end{figure}
+
+
+\subsection{Cross sections for SM samples}
+\label{sec:SMxs}
+Several MC samples of individual SM processes are binned according to a generator level quantity, such as the partonic \HT or bosonic \PT.
+This analysis chooses to use samples binned in partonic \HT, for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets) and $\hat{P_{T}}$
+for only the QCD sample.
+These binned samples are provided with LO cross sections. The \kfactors required to go from LO to NNLO cross section are typically determined using corresponding
+inclusive samples applied to each \HT binned sample.
+Further studies can provide additional corrections to the cross sections, which can prove important to the closure test procedures described in
+Section \ref{sec:closure-tests}. As can be seen in Section \ref{sec:sideband_corrections}, residual cross section
+corrections are measured using data in sidebands designed to enriched specific processes.
+
+In the $8\tev$ LHC results the shape of the top quark $p_{T}$ spectrum
+was found to differ between simulation and data. A reweighting is
+therefore applied to MC events that contain a generated top. The value of
+this correction is provided from the $8\tev$ results, as described in
+\cite{twiki-TopPtReweighting}.
+
+Following an inclusive selection, the distribution of the MC samples with respect to the binning variable $H_{T}^{parton}$ are shown in Fig.~\ref{fig:Lhe_Ht}, with
+also the $\hat{P_{T}}$ distribution for QCD.
+
+As stated above, the distributions shown in Fig.~\ref{fig:Lhe_Ht} follow an inclusive selection, whereby there is no requirement on each event. This direct translation
+from MC allows to merge the binned generator level variable, and exhibits a smooth shape with respect to the cross sections in question.
+
+A more in depth, data-driven investigation of the cross sections is shown in Sec.~\ref{sec:sideband_corrections}. Of which, an important point to note is that
+the corrections to the cross sections, derived with the data sidebands are only relevant for data/MC comparison plots and the suite of closure tests defined in Section \ref{sec:closure-tests}.
+
+\begin{figure}[!h]
+  \begin{center}
+    \subfigure[$Z\rightarrow \nu\nu$ +jets] {\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/Zinv.pdf}} ~~
+    \subfigure[$W\rightarrow l \nu$ + jets]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/WJetsToLNu_HT.pdf}} \\
+    \subfigure[$DY\rightarrow ll$ + jets]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/DYJetsToLL_M50_HT.pdf}} ~~
+    \subfigure[QCD]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/QCD_HT.pdf}} \\
+    \subfigure[$\gamma$+jets]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/GJets_HT.pdf}} ~~
+    \subfigure[QCD $\hat{P_{T}}$]{\includegraphics[width=0.45\textwidth]{figures/binnedMCsamples/QCD.pdf}}\\
+    \caption{Generator-level $H_{T}^{parton}$ distributions for SM process, $Z\rightarrow \nu\nu$ + jets, W+jets, DY+jets, QCD, $\gamma$+jets, and $\hat{P_{T}}$ for QCD.}
+    \label{fig:Lhe_Ht}
+  \end{center}
+\end{figure}
+
+%%____________________________________________________________________________||

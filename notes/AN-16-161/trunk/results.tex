@@ -1,0 +1,292 @@
+%%____________________________________________________________________________||
+\section{Results}
+\label{sec:results}
+
+In this section the main results concerning the fit are summarised. 
+
+Tables ~\ref{tab:predallqcd_sig_comb_mono}-~\ref{tab:predallqcd_sig_comb_asym} summarise 
+the predicted and observed yields in the signal region 
+for ``monojet'',``symmetric'' and ``asymmetric'' topologies respectively, 
+corresponding to an integrated luminosity of 2.3 \ifb.
+The predicted yields are based on a fit to multiple data control samples to obtain predictions in (\nj,\nb,\scalht). 
+The observed counts in the signal region are not considered in this fit. 
+The uncertainties reflect all statistical and (pre-fit) systematic sources added in quadrature. 
+The $\ttbar+W$ and \znunu components are also shown (the former of which contains all residual contributions from sub-dominant processes such as e.g. diboson production). 
+This table summarises our best knowledge of the SM background rates in the signal region while not considering counts in the signal region itself. 
+
+In Fig.~\ref{fig:summaryPlot_Monojet}-~\ref{fig:summaryPlot_Symmetric} the pre-fit/post-fit background yield predictions 
+are shown compared to the observations in data, with the breakdown for background processes, for each (\njet,\nb,\scalht) analysis bin. 
+Expected yields for some benchmark signal models are also shown in the histogram. 
+
+Tables ~\ref{tab:predallqcdpost_sig_comb_mono}-~\ref{tab:predallqcdpost_sig_comb_asym} summarises the post-fit (background-only fit) predicted backgrounds and the 
+observed yields in the signal region corresponding to an integrated luminosity of 2.3 \ifb. 
+
+Examples of \mht templates for the background and the some benchmark signals are shown in Fig.~\ref{fig:mht-templates}, 
+for some (\njet,\nb,\scalht) analysis bins. 
+
+In Figures ~\ref{fig:nuisPull_AlphaT}-~\ref{fig:nuisPull_Correlated} the pull 
+of the nuisance parameters with respect to the pre-fit value is shown, 
+grouped into different type of nuisances and, where relevant, 
+split between ``asymmetric'' and ``symmetric'' topologies 
+(``monojet'' topologies are included in the asymmetric). \\
+No significant post-fit pull is observed across all set of parameters. 
+
+Correction are derived per \scalht, \njet, \nb bin from the fit to the control regions (as 
+is used to make the pre-fit predictions). In Figures~\ref{fig:shapesht}-~\ref{fig:shapesbjet} the results of applying 
+these corrections to the signal region predictions of several kinematic variables 
+for symmetric, asymmetric and monojet categories are shown. 
+This is compared to the agreement when the prediction for the signal region
+is taken directly from MC (uncorrected). As can be seen the agreement for a range of key variables,
+including \scalht, \mht, jet \pt, \njet and \nb, is substantially improved after applying 
+the corrections from the control region. This provides additional evidence for the 'scale anchoring'
+approach as measuring the scale in the control regions allows considerable improvement
+in the data/prediction agreement for variables associated with the kinematics of the event.
+In general variables which are inclusively correlated strongly with scale such as \mht are more
+effected than those that are less scale dependant such as \alphat and \bdphi.
+
+\clearpage
+\begin{figure}[tbhp]
+    \caption{ \mht templates for some (\njet,\nb,\scalht) analysis bins. Benchmark models are also shown in the stack. \label{fig:mht-templates} }
+  \begin{center}
+    \subfigure[$\njet \geq 5$, $\nb \geq 3$, $\scalht > 800$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_ge3b_ge5j_800_Inf_prefit_T1bbbb_1400_100} } ~~
+    \subfigure[$\njet \geq 5$, $\nb \geq 3$, $600 < \scalht < 800$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700} } \\
+    \subfigure[$\njet \geq 5$, $\nb = 1$, $\scalht > 800$ GeV]   { \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_eq1b_ge5j_800_Inf_prefit_T1qqqq_1200_100} } ~~
+    \subfigure[$\njet \geq 5$, $\nb = 2$, $\scalht > 800$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_eq2b_ge5j_800_Inf_prefit_T1tttt_800_400} } \\
+  \end{center}
+\end{figure}
+
+
+\clearpage
+\input{tables/dataLumi/predallqcd_sig_comb_mono.tex}
+\clearpage
+\input{tables/dataLumi/predallqcd_sig_comb_sym.tex}
+\clearpage
+\input{tables/dataLumi/predallqcd_sig_comb_asym.tex}
+
+\clearpage
+\input{tables/dataLumi/predallqcdpost_sig_comb_mono.tex}
+\clearpage
+\input{tables/dataLumi/predallqcdpost_sig_comb_sym.tex}
+\clearpage
+\input{tables/dataLumi/predallqcdpost_sig_comb_asym.tex}
+
+
+
+
+%%%% Summary plots
+\clearpage
+\begin{landscape}
+  \begin{center}
+    \begin{figure}[h!]
+      \caption{Background yield predictions and data obervation for the (\njet,\nb,\scalht) analysis bins (integrated over \MHT) in the monojet topologies. \label{fig:summaryPlot_Monojet}}.
+      \includegraphics[width=0.8\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Monojet_prefit_overlay_fit_b}
+    \end{figure}
+  \end{center}
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+  \begin{center}
+    \begin{figure}[h!]
+      \caption{Background yield predictions and data obervation for the (\njet,\nb,\scalht) analysis bins (integrated over \MHT) in the asymmetric topologies. \label{fig:summaryPlot_Asymmetric}}.
+      \includegraphics[width=0.8\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Asymmetric_prefit_overlay_fit_b}
+    \end{figure}
+  \end{center}
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+  \begin{center}
+    \begin{figure}[h!]
+      \caption{Background yield predictions and data obervation for the (\njet,\nb,\scalht) analysis bins (integrated over \MHT) in the symmetric topologies. \label{fig:summaryPlot_Symmetric}}.
+      \includegraphics[width=0.8\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Symmetric_prefit_overlay_fit_b}
+    \end{figure}
+  \end{center}
+\end{landscape}
+
+
+
+
+
+\clearpage
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the \alt-extrapolation systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_AlphaT}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/AlphaT_asym_nuisances} } ~~
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/AlphaT_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $\gamma/Z$ ratio systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_gamma_Z_ratio}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/gamma_Z_ratio_asym_nuisances} } ~~
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/gamma_Z_ratio_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $W/Z$ ratio systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_W_Z_ratio}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/W_Z_ratio_asym_nuisances} } ~~
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/W_Z_ratio_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $\ttbar/W$ admixture systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_tt_W_admixture}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/tt_W_admixture_asym_nuisances} } ~~
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/tt_W_admixture_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the W polarisation systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_WPol}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/WPol_asym_nuisances} } ~~
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/WPol_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $\ttbar+W$ template systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_TemplateTtw}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateTtw_asym_nuisances} } \\
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateTtw_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $\ttbar+W$ template systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_TemplateZinv}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateZinv_asym_nuisances} } \\
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateZinv_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the QCD systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_qcd}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/qcd_asym_nuisances} } ~~
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/nuisancePlots/qcd_sym_nuisances} }
+  \end{center}
+\end{figure}
+
+
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the correlated systematic uncertainties. 
+      \label{fig:nuisPull_Correlated}}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/Correlated_nuisances}
+  \end{center}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric Uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/ht40_sym_all}} ~~
+        \subfigure[Symmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/ht40_sym_all}}\\
+        \subfigure[Asymmetric Uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/ht40_asym_all}} ~~
+        \subfigure[Asymmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/ht40_asym_all}}\\
+        \subfigure[Monojet Unorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/mono/all/ht40_mono_all}} ~~
+        \subfigure[Monojet Corrected]{\includegraphics[width=0.38\textwidth]{figures/correctedShapes/mono/all/ht40_mono_all}}\\
+        \caption{The \scalht distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+        \label{fig:shapesht}
+    \end{center}
+\end{figure}
+
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric Uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/mht40_pt_sym_all}} ~~
+        \subfigure[Symmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/mht40_pt_sym_all}}\\
+        \subfigure[Asymmetric Uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/mht40_pt_asym_all}} ~~
+        \subfigure[Asymmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/mht40_pt_asym_all}}\\
+        \subfigure[Monojet Unorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/mono/all/mht40_pt_mono_all}} ~~
+        \subfigure[Monojet Corrected]{\includegraphics[width=0.38\textwidth]{figures/correctedShapes/mono/all/mht40_pt_mono_all}}\\
+        \caption{The \mht distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+    \end{center}
+\end{figure}
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric Uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/alphaT_sym_all}} ~~
+        \subfigure[Symmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/alphaT_sym_all}}\\
+        \subfigure[Asymmetric Uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/alphaT_asym_all}} ~~
+        \subfigure[Asymmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/alphaT_asym_all}}\\
+        \caption{The \mht distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+    \end{center}
+\end{figure}
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric Uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/biasedDPhi_sym_all}} ~~
+        \subfigure[Symmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/biasedDPhi_sym_all}}\\
+        \subfigure[Asymmetric Uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/biasedDPhi_asym_all}} ~~
+        \subfigure[Asymmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/biasedDPhi_asym_all}}\\
+        \subfigure[Monojet Unorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/mono/all/biasedDPhi20_mono_all}} ~~
+        \subfigure[Monojet Corrected]{\includegraphics[width=0.38\textwidth]{figures/correctedShapes/mono/all/biasedDPhi20_mono_all}}\\
+        \caption{The \bdphi distribution (including jets down to \pt = 20 GeV for monojet) comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+    \end{center}
+\end{figure}
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/jet_pt[0]_sym_all}} ~~
+        \subfigure[Symmetric corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/jet_pt[0]_sym_all}}\\
+        \subfigure[Asymmetric uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/jet_pt[0]_asym_all}} ~~
+        \subfigure[Asymmetric corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/jet_pt[0]_asym_all}}\\
+        \subfigure[Monojet uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/mono/all/jet_pt[0]_mono_all}} ~~
+        \subfigure[Monojet corrected]{\includegraphics[width=0.38\textwidth]{figures/correctedShapes/mono/all/jet_pt[0]_mono_all}}\\
+        \caption{The \bdphi distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+    \end{center}
+\end{figure}
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric Uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/jet_pt[2]_sym_all}} ~~
+        \subfigure[Symmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/jet_pt[2]_sym_all}}\\
+        \subfigure[Asymmetric Uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/jet_pt[2]_asym_all}} ~~
+        \subfigure[Asymmetric Corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/jet_pt[2]_asym_all}}\\
+        \caption{The third jet \pt distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+    \end{center}
+\end{figure}
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/nJet40_sym_all}} ~~
+        \subfigure[Symmetric corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/nJet40_sym_all}}\\
+        \subfigure[Asymmetric uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/nJet40_asym_all}} ~~
+        \subfigure[Asymmetric corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/nJet40_asym_all}}\\
+        \caption{The \njet distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+    \end{center}
+\end{figure}
+\begin{figure}[tbhp]
+    \begin{center}
+        \subfigure[Symmetric uncorrected]{\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/sym/all/nBJet40_sym_all}} ~~
+        \subfigure[Symmetric corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/sym/all/nBJet40_sym_all}}\\
+        \subfigure[Asymmetric uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/asym/all/nBJet40_asym_all}} ~~
+        \subfigure[Asymmetric corrected] {\includegraphics[width=0.38\textwidth]{figures/correctedShapes/asym/all/nBJet40_asym_all}}\\
+        \subfigure[Monojet uncorrected] {\includegraphics[width=0.38\textwidth]{figures/uncorrectedShapes/mono/all/nBJet40_mono_all}} ~~
+        \subfigure[Monojet corrected]{\includegraphics[width=0.38\textwidth]{figures/correctedShapes/mono/all/nBJet40_mono_all}}\\
+        \caption{The \nb distribution comparing data and prediction agreement before and after applying the correction from the control region only fit. Also shown are the results of a linear fit to the data/prediction ratio (p0,p1 parameters) which confirms the agreeement is significantly improved through the correction applied in the control regions}
+        \label{fig:shapesbjet}
+    \end{center}
+\end{figure}
