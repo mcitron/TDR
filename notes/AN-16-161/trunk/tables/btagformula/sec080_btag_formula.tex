@@ -89,19 +89,29 @@ Simulation (raw MC) to preserve the
  data-driven aspect of the background estimation, and any predictions are made
  with the extrapolation to high \nb bins on MC level only.
 
-Figure~\ref{fig:mhtShape_ge5j_ge3b_ht600} and ~\ref{fig:mhtShape_ge5j_ge3b_ht800} 
-compare the \nb~distributions between formula and raw MC. Figure~\ref{fig:pull} shows
+Figure~\ref{fig:mhtShape_ge5j_ge3b_ht800}, ~\ref{fig:mhtShape_ge5j_ge3b_ht600} and ~\ref{fig:mhtShape_ge5j_ge3b_ht800} 
+compare the \nb~distributions between formula and . Figure~\ref{fig:pull} shows
 the pull distribution of predictions from formula to raw MC, defined as the prediction from
- formula method and raw MC yields in each (\njet,~\scalht,~\mht) bin divided by statistical
+ formula method and raw MC yields in each (\njet,\scalht,\mht) bin divided by statistical
  uncertainties. This demonstrates closure between formula and raw MC, as expected because 
- all the quantities in equation~\ref{equ:btag-formula} are computed in MC simulations and 
- no data driven corrections, such as btag scale factors from BTV have been injected on this level.
+ all the quantities in ~\ref{equ:btag-formula} are computed in MC simulations and 
+ no data driven corrections, such as btag scale factors from BTV have been injected. 
 
 Table~\ref{tab:formula-ge5j} compares
 predictions from formula method to raw MC yields for the jet category \njet $\geq 5$. 
 Statistical uncertainties are generally smaller with formula
 method, and in some bins formula method allows extrapolation at high btag bins 
 where raw MC suffers from low or even no statistic.
+
+\input{tables/btagformula/BTagFormulaTable_SingleMu_ge5j.tex}
+
+ \begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/btagformula/ge5j_800_0_Inc_GoodNb.pdf} 
+  \caption{\label{fig:mhtShape_ge5j_ge3b_ht800} \nb~distribution from formula
+   method (Blue) and raw MC (Red) for the bin \scalht~$800-\infty$, \njet $\geq 5$, inclusive
+   in \mht.}
+\end{figure}
 
  \begin{figure}[h!]
   \centering
@@ -113,20 +123,9 @@ where raw MC suffers from low or even no statistic.
 
  \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.7\textwidth]{figures/btagformula/ge5j_800_0_Inc_GoodNb.pdf} 
-  \caption{\label{fig:mhtShape_ge5j_ge3b_ht800} \nb~distribution from formula
-   method (Blue) and raw MC (Red) for the bin \scalht~$800-\infty$, \njet $\geq 5$, inclusive
-   in \mht.}
-\end{figure}
-
-
- \begin{figure}[h!]
-  \centering
   \includegraphics[width=0.8\textwidth]{figures/btagformula/pull.pdf} 
   \caption{\label{fig:pull} Pull Distribution of prediction from formula to raw MC}
 \end{figure}
-
-\input{tables/btagformula/BTagFormulaTable_SingleMu_ge5j.tex}
 
 \subsection{Systematic uncertainties on transfer factors\label{sec:btag-syst}}
 Predictions from formula method are treated in the same way as raw MC yields, 
@@ -235,23 +234,23 @@ same requirement.
 There are two components concerning the MC statistical uncertainties with 
 the formula method, the MC statistical uncertainty from $N(n_{\textrm{b}}^{\textrm{gen}},
 n_{\textrm{c}}^{\textrm{gen}}, n_{\textrm{l}}^{\textrm{gen}})$ in equation~\ref{equ:btag-formula}, and the 
-MC statistical uncertainties from $\epsilon$, $f_{\rm c}$, and $f_{\rm light}$.
-The former uncertainty is the same across the \nb~dimension, for each (\njet,
-~\scalht,~\mht) bin. The later uncertainty is determined for each $n_{\rm b}$, by 
+MC statistical uncertainty from $\epsilon$, $f_{\rm c}$, and $f_{\rm light}$.
+The former uncertainty is the same across the \nb dimension, for each (\njet,
+\scalht,\mht) bin. The later uncertainty is determined for each $n_{\rm b}$, by 
 varying $\epsilon$, $f_{\rm c}$, and $f_{\rm light}$ up and down within their 
 statistical error. The two statistical uncertainties are then added in quadrature for each 
-(\njet,~\nb,~\scalht,~\mht) bin. The last \mht bin is required to have such
+(\njet,\nb,\scalht,\mht) bin. The last \mht bin is required to have such
  statistical uncertainty $< 50\%$ for the EWK component.
 
-The statistical uncertainty mentioned above are used to 
-build alternative templates in \mht dimension, correlated across the \nb~dimension, 
+The latter statistical uncertainty mentioned above are used to 
+build alternative templates in \mht dimension, correlated across the \nb dimension, 
 as an extra source of systematics in Section~\ref{sec:mcSystStudiesShape}.
 
-Figure~\ref{fig:mhtShape_Ewk_ge5j_ge3b_ht800} compares the \mht distribution from
+Figure~\ref{fig:mhtShape_ge5j_ge3b_ht800} compares the \mht distribution from
 the formula method and raw MC, in one of the most sensitive bins in the analysis.
- and figure~\ref{fig:mhtShapeErr_Ewk_ge5j_ge3b_ht800} compares the associated 
+ and figure~\ref{fig:mhtShapeErr_ge5j_ge3b_ht800} compares the associated 
  statistical uncertainties. Reduced uncertainties show better control 
-  of extreme \mht tail in high \nb~bins.
+  of extreme \mht tail in high \nb bins.
 
 Figure~\ref{fig:lastMhtBin} shows thresholds on last \mht bins for each (\njet,
 ~\nb,~\scalht) category, with the criterion defined above.
@@ -260,14 +259,14 @@ Figure~\ref{fig:lastMhtBin} shows thresholds on last \mht bins for each (\njet,
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/btagformula/GoodMHTShape_ge5j_ge3b.pdf} 
-  \caption{\label{fig:mhtShape_Ewk_ge5j_ge3b_ht800} \mht distribution from formula
+  \caption{\label{fig:mhtShape_ge5j_ge3b_ht800} \mht distribution from formula
    method (Blue) and raw MC (Red) for the bin \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 3$.}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/btagformula/GoodMHTShapeErr_ge5j_ge3b.pdf} 
-  \caption{\label{fig:mhtShapeErr_Ewk_ge5j_ge3b_ht800} Statistical uncertainty on \mht 
+  \caption{\label{fig:mhtShapeErr_ge5j_ge3b_ht800} Statistical uncertainty on \mht 
   distribution from formula method (Blue) and raw MC (Red) for the bin
   \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 3$.}
 \end{figure}
