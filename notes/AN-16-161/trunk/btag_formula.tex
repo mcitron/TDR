@@ -2,7 +2,7 @@
 
 In order to maximise sensitivity to potential new physics signatures
 in final states with multiple b-quark jets, a method that improves the
-statistical power of the simulation, particularly for $\nb \geq 2$, is
+statistical power of the simulation, particularly for high btag bins, is
 employed. This method is known as the ``formula'' method. The
 resulting improvement in the statistical precision of the simulation
 propagates through to the transfer factors used in the analysis.
@@ -16,20 +16,20 @@ matched to underlying bottom quarks ($\nb^{\rm gen}$), charm quarks
   light}^{\rm gen}$) per event, $N(\nb^{\rm gen},n_{\rm c}^{\rm
   gen},n_{\rm light}^{\rm gen})$, is recorded in bins of (\njet
    , \scalht, \mht). 
- The matching between between truth-level partons
+ The matching between truth-level partons
 and reconstruction-level jets is achieved with a matching algorithm
 recommended by the BTV POG~\cite{btagMCTools}.
  The b-tagging efficiency, $\epsilon$, and mistag probabilities,
 $f_{\rm c}$ and $f_{\rm light}$, are also determined from simulation
-in bins of (\njet,\scalht,\mht), with each quantity averaged
+in bins of (\njet,~\scalht,~\mht), with each quantity averaged
 over jet $p_{\rm T}$ and $\eta$. Corrections are applied on a
 jet-by-jet basis to both $\epsilon$, $f_{\rm c}$, and $f_{\rm light}$
 in order to match the corresponding measurements from
-data.%~\cite{Chatrchyan:2012jua}. %FIXME
+data.
 
 The above information is sufficient to predict $\nb$ and thus also
 determine the event yield $N(n_{\rm b})$ from simulation for a given
-bin in (\njet,\scalht,\mht) with the expression:
+bin in (\njet,~\scalht,~\mht) with the expression:
 
 \begin{equation}
   \label{equ:btag-formula}
@@ -40,25 +40,25 @@ bin in (\njet,\scalht,\mht) with the expression:
 \end{equation}
 
 with $n_{\textrm{b}}^{\textrm{tag}}$,
-$n_{\textrm{c}}^{\textrm{tag}}$, and $n_{\textrm{q}}^{\textrm{tag}}$
+$n_{\textrm{c}}^{\textrm{tag}}$, and $n_{\textrm{l}}^{\textrm{tag}}$
 defined the number of times that a reconstructed b-quark jet is identified
 as originating from an underlying bottom quark, charm quark, or
 light-flavoured parton, respectively, and $P_{\rm b} \equiv
 P(n_{\textrm{b}}^{\textrm{tag}} ; n_{\textrm{b}}^{\textrm{gen}},
 \epsilon)$, $P_{\rm c} \equiv P(n_{\textrm{c}}^{\textrm{tag}} ;
 n_{\textrm{c}}^{\textrm{gen}}, f_{\rm c})$, and $P_{\rm light} \equiv
-P(n_{\textrm{q}}^{\textrm{tag}} ; n_{\textrm{q}}^{\textrm{gen}},
+P(n_{\textrm{l}}^{\textrm{tag}} ; n_{\textrm{l}}^{\textrm{gen}},
 f_{\rm light})$ as the binomial probabilities for this to happen.
 The outer summation considers all possible combinations of
 $n_{\textrm{b}}^{\textrm{gen}}$, $n_{\textrm{c}}^{\textrm{gen}}$, and
-$n_{\textrm{q}}^{\textrm{gen}}$ that satisfy $n_{\textrm{jet}} =
+$n_{\textrm{l}}^{\textrm{gen}}$ that satisfy $n_{\textrm{jet}} =
 n_{\textrm{b}}^{\textrm{gen}} + n_{\textrm{c}}^{\textrm{gen}} +
-n_{\textrm{q}}^{\textrm{gen}}$ with $n_{\textrm{jet}}$ defined as the number 
+n_{\textrm{l}}^{\textrm{gen}}$ with $n_{\textrm{jet}}$ defined as the number 
 of jets in the event, while the inner summation considers
 all possible combinations of $n_{\textrm{b}}^{\textrm{tag}}$,
-$n_{\textrm{c}}^{\textrm{tag}}$, and $n_{\textrm{q}}^{\textrm{tag}}$
+$n_{\textrm{c}}^{\textrm{tag}}$, and $n_{\textrm{l}}^{\textrm{tag}}$
 that satisfy $n_{\textrm{b}} = n_{\textrm{b}}^{\textrm{tag}} +
-n_{\textrm{c}}^{\textrm{tag}} + n_{\textrm{q}}^{\textrm{tag}}$.
+n_{\textrm{c}}^{\textrm{tag}} + n_{\textrm{l}}^{\textrm{tag}}$.
   
 The method exploits the ability to make precise measurements of
 $N(n_{\rm b}^{\rm gen},n_{\rm c}^{\rm gen},n_{\rm light}^{\rm gen})$,
@@ -73,29 +73,21 @@ mistagged jets in the event. In this case, the largest background is
 mistagged jet originating from a charm quark or light-flavoured
 parton.
 
-An alternative approach is simply to use simulation samples that
-correspond to much larger integrated luminosities than the recorded
-dataset, but this is unfeasible for most of the dominant background
-processes, which have cross sections of tens of pb or significantly
-higher.
-
 \subsection{Validation}
 
 Predictions from the formula method are used to construct transfer 
 factors as described in Section~\ref{sec:backgroundmet} and \mht shape distribution
- as described in Section~\ref{sec:syst-on-shape}. In this sense, predictions from
- the formula method are treated in the same way as yields taken directly from MC
-Simulation (raw MC) to preserve the 
- data-driven aspect of the background estimation, and any predictions are made
+ as described in Section~\ref{sec:syst-on-shape}. Predictions are made
  with the extrapolation to high \nb bins on MC level only.
 
 Figure~\ref{fig:mhtShape_ge5j_ge3b_ht600} and ~\ref{fig:mhtShape_ge5j_ge3b_ht800} 
-compare the \nb~distributions between formula and raw MC. Figure~\ref{fig:pull} shows
-the pull distribution of predictions from formula to raw MC, defined as the prediction from
+compare the \nb~distributions between predictions from formula method and raw MC. Figure~\ref{fig:pull} shows
+the pull distribution, where the pull is defined as the prediction from
  formula method and raw MC yields in each (\njet,~\scalht,~\mht) bin divided by statistical
- uncertainties. This demonstrates closure between formula and raw MC, as expected because 
+ uncertainties, of predictions from formula method to raw MC. 
+This demonstrates closure between formula and raw MC, as expected because 
  all the quantities in equation~\ref{equ:btag-formula} are computed in MC simulations and 
- no data driven corrections, such as btag scale factors from BTV have been injected on this level.
+ no data driven corrections, such as btag scale factors from BTV, have been injected at this level.
 
 Table~\ref{tab:formula-ge5j} compares
 predictions from formula method to raw MC yields for the jet category \njet $\geq 5$. 
@@ -126,15 +118,17 @@ where raw MC suffers from low or even no statistic.
   \caption{\label{fig:pull} Pull Distribution of prediction from formula to raw MC}
 \end{figure}
 
+\begin{figure}
 \input{tables/btagformula/BTagFormulaTable_SingleMu_ge5j.tex}
+\end{figure}
 
 \subsection{Systematic uncertainties on transfer factors\label{sec:btag-syst}}
 Predictions from formula method are treated in the same way as raw MC yields, 
 and hence subject to all systematic sources in the analysis. For the data driven normalisation 
 uncertainties which affect the total number of events in each (\njet,~\nb,~\scalht) bin, 
-most of the systematics are derived inclusive in \nb. Formula method only changes
+most of the systematics are derived inclusively in \nb. Formula method only changes
 the W/\ttbar admixture closure test in Section~\ref{sec:tfSyst_WttAd}. 
-The corresponding result is shown in Figure~\ref{fig:closureBTag-formula}.
+The corresponding result is shown in Figure~\ref{fig:closureBTag-formula}. No significant changes are expected from the same test with raw MC.
 
 The systematic on transfer factors from btag scale factors is tested by varying 
 the btag scale factors up and down. The results are shown in
@@ -233,7 +227,7 @@ uncertainty on this last bin to be less than 50\%. In bins with $n_{\rm b} \geq
 same requirement.
 
 There are two components concerning the MC statistical uncertainties with 
-the formula method, the MC statistical uncertainty from $N(n_{\textrm{b}}^{\textrm{gen}},
+the formula method: the MC statistical uncertainty from $N(n_{\textrm{b}}^{\textrm{gen}},
 n_{\textrm{c}}^{\textrm{gen}}, n_{\textrm{l}}^{\textrm{gen}})$ in equation~\ref{equ:btag-formula}, and the 
 MC statistical uncertainties from $\epsilon$, $f_{\rm c}$, and $f_{\rm light}$.
 The former uncertainty is the same across the \nb~dimension, for each (\njet,
@@ -244,12 +238,11 @@ statistical error. The two statistical uncertainties are then added in quadratur
  statistical uncertainty $< 50\%$ for the EWK component.
 
 The statistical uncertainty mentioned above are used to 
-build alternative templates in \mht dimension, correlated across the \nb~dimension, 
-as an extra source of systematics in Section~\ref{sec:mcSystStudiesShape}.
+build alternative \mht templates, correlated across the \nb~dimension, 
+and it is taken as an extra source of systematics in Section~\ref{sec:mcSystStudiesShape}.
 
 Figure~\ref{fig:mhtShape_Ewk_ge5j_ge3b_ht800} compares the \mht distribution from
-the formula method and raw MC, in one of the most sensitive bins in the analysis.
- and figure~\ref{fig:mhtShapeErr_Ewk_ge5j_ge3b_ht800} compares the associated 
+the formula method and raw MC, in one of the most sensitive bins in the analysis and Figure~\ref{fig:mhtShapeErr_Ewk_ge5j_ge3b_ht800} compares the associated 
  statistical uncertainties. Reduced uncertainties show better control 
   of extreme \mht tail in high \nb~bins.
 
@@ -298,12 +291,13 @@ T1tttt, T1ttbb, T2tt and T5ttcc. General improvements, in range of 10\% to 30\%
  degradation due to shifted background central values.
 
 %\input{tables/btagformula/compare_2p2fb_T1bbbb.tex}
+\begin{figure}
 \input{tables/btagformula/compare_8fb_T1bbbb.tex}
-\input{tables/btagformula/compare_8fb_T1tttt.tex}
+%\input{tables/btagformula/compare_8fb_T1tttt.tex}
 \input{tables/btagformula/compare_8fb_T1ttbb.tex}
 \input{tables/btagformula/compare_8fb_T2tt.tex}
 \input{tables/btagformula/compare_8fb_T5ttcc.tex}
-
+\end{figure}
 
 
 
