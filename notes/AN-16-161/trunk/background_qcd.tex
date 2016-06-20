@@ -1,10 +1,10 @@
-%%____________________________________________________________________________||
-
 % Overrides original definition
 \def\rmhtmet{\mbox{$\mathcal{R}$}\xspace}
 
-\section{Estimation for QCD multijet events \label{sec:qcd}}
+%%____________________________________________________________________________||
+\section{Background estimation for QCD multijet events \label{sec:qcd}}
 
+\subsection{The method and results}
 One of the major challenges for searches of new physics in the jets +
 \met final state is the control of background events from QCD multijet
 production. The difficulties in the determination of precise estimates
@@ -266,7 +266,7 @@ Fig.~\ref{fig:qcd_ewk_ratio} shows the ratios of predicted multijet
 counts with respect to the expected EWK counts, in order to quantify
 the (predicted) relative contamination from multijet events in the
 signal region bins. \mht and \nb shapes derived from simulation are used to predict the distribution 
-of QCD events, which are validated by data-driven methods as shown in App.~\ref{app:qcdPredictionValidation}. 
+of QCD events, which are validated by data-driven methods. 
 No significant difference in shape is observed between Monte Carlo and data predictions, 
 with QCD and EWK are compatible within the quoted statistical and systematic uncertainties.
 
@@ -290,3 +290,47 @@ and the requirement of $\bdphi > 0.5$ suppress the multijet
 contamination in all bins of the signal region to percent-level or smaller with
 respect to the total non-multijet background. These predicted multijet events are 
 included as a background contribution to the likelihood model.
+
+
+\subsection{Validation of the QCD prediction}
+
+Fig.~\ref{fig:RR_qcd} illustrates the Validation of the QCD prediction method with data-driven measurements. Figs.~\ref{fig:asym_qcd_validation}-\ref{fig:asym_qcd_validation} illustrate the agreement between QCD and electroweak shapes in $\nb$ and \mht.
+
+\begin{figure}[h!]
+  \begin{center}        
+    \includegraphics[width=\textwidth]{figures/qcd/validation/RRPlot}
+    \caption{ Ratio of the measurement of \rmhtmet, the pass/fail ratio for the \mhtmet selection, from data and Monte Carlo in the $\bdphi < 0.5$ sideband in (\scalht, \njet) bins.  
+    }
+
+    \label{fig:RR_qcd}
+  \end{center} 
+\end{figure}
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[{ Asymmetric, $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Asym_HTlt400_mht}} ~~
+    \subfigure[{ Asymmetric, $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Asym_HTlt400_nB}} \\
+    \subfigure[{ Asymmetric, $\scalht>400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Asym_HTgt400_mht}} ~~
+    \subfigure[{ Asymmetric, $\scalht>400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Asym_HTgt400_nB}} \\
+    \caption{ Ratio of QCD to electroweak Monte Carlo prediction in the signal region for different \scalht selections as a function of \mht (Left) and $\nb$ (Right) for the asymmetric jet category. A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
+    }
+    \label{fig:asym_qcd_validation}
+  \end{center} 
+\end{figure}
+
+
+\clearpage
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[{ Symmetric, $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Sym_HTlt400_mht}} ~~
+    \subfigure[{ Symmetric, $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Sym_HTlt400_nB}} \\
+    \subfigure[{ Symmetric, $\scalht>400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Sym_HTgt400_mht}} ~~
+    \subfigure[{ Symmetric, $\scalht>400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Sym_HTgt400_nB}} \\
+    \subfigure[{ Symmetric, $\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Sym_HTgt800_mht}} ~~
+    \subfigure[{ Symmetric, $\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/validation/Ratio_Sym_HTgt800_nB}} \\
+      \caption{ Ratio of QCD to electroweak Monte Carlo prediction in the signal region for different \scalht selections as a function of \mht (Left) and $\nb$ (Right) for the asymmetric jet category. A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
+    }
+    \label{fig:sym_qcd_validation}
+  \end{center} 
+\end{figure}
