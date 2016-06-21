@@ -28,11 +28,12 @@ in the following, is used in this analysis. The distribution in \mht
 is measured in data using the control regions and compared to MC
 to determine the validity of the zero bias hypothesis after scale anchoring.
 
-In Sec.~\ref{sec:valid13} the 13 \TeV data is used used 
+In Sec.~\ref{sec:valid8} the 8 \TeV data is used used 
 to validate the scale anchoring approach. 
 In Sec.~\ref{sec:systMhtDimension} 
 the procedure used to extract the systematic uncertainties in the 
-\mht dimension is described and results shown with 13 \TeV data. 
+\mht dimension is described and results shown with 8 \TeV data. 
+In Sec.~\ref{sec:dataValid13TeV} the validation is repeated with 13\TeV data.
 In Appendix~\ref{sec:bias_injection} the results of a bias injection test described. 
 This shows that the fit is sensitive to a bias affecting only the last \mht bin.
 %% Finally, in Sec.~\ref{app:closureTests3fb} the expected systematics for 3\ifb in Run 2 are be shown. 
@@ -42,8 +43,8 @@ This shows that the fit is sensitive to a bias affecting only the last \mht bin.
 % to the flat hypothesis
 %Motivated by the inclusive distribution, a linear bias is assumed.
 
-\subsection{Validation with 13 TeV Data}
-\label{sec:valid13}
+\subsection{Validation with 8 TeV Data}
+\label{sec:valid8}
 In previous versions of this analysis three control regions
 were used: \mj, \mmj and \gj. To parameterise the data/MC agreement
 orthogonal polynomials are used such that odd and even powers 
@@ -62,7 +63,7 @@ In Fig.~\ref{fig:linearMotiv} the data/MC
 distribution against \mht for the control region selection 
 (detailed in \cite{CMS_AN_2013-366}) is shown inclusive 
 in \scalht and categories. By fitting a first order
-orthogonal polynomial it can be seen that there is a large bias. 
+orthogonal polynomial it can be seen that there is a large linear bias. 
 This bias in the data/MC agreement is expected as events 
 at different scales are mixed.
 The first order orthogonal polynomial
@@ -75,23 +76,24 @@ The normalisation in each \scalht bin and its systematics
 is then defined following the data-driven method used in Run 1, see Sec,~\ref{sec:systMhtDimension} for details.
 \begin{figure}[h!]
   \centering
-  \subfigure[\mj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPUInc/scale_ht_variable_mht/SingleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_SingleMu_Graph.pdf}
-  }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPUInc/scale_ht_variable_mht/SinglePhoton/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_SinglePhoton_Graph.pdf}
-  }\\
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_Inc_Inc_ht_Inc_SinglePhoton_Graph.pdf}
+  }~~
   \subfigure[\mmj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPUInc/scale_ht_variable_mht/DoubleMu/Inc_Inc/finalFits/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
   }\\
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_Inc_Inc_ht_Inc_SingleMu_Graph.pdf}
+  }~~
+  \\
   \caption{\label{fig:linearMotiv} 
   The data/MC distribution against \mht for an inclusive selection on category and \scalht
-  showing the results of a linear fit. A large bias is observed as well as a low pValue for the constant fits. 
+  showing the results of a linear fit. A large bias is observed. 
  }
 \end{figure}
 
 By anchoring the scale using binning in the \scalht dimension the remaining
-bias should be negligible. In Fig.~\ref{fig:linearFitExamples} 
+bias should be negligible. In Figs.~\ref{fig:linearFits0bLe3} and \ref{fig:linearFits0bGe4} 
 example fits of an orthogonal linear function to the data/MC ratio 
 are shown for the three control regions. Comparing to the inclusive distribution 
 the linear component can be seen to be compatible with the null hypothesis, 
@@ -117,39 +119,48 @@ a uniform distribution between 0 and 1 as shown in Fig.~\ref{fig:pValues}.
 
 \begin{figure}[h!]
   \centering
-  \subfigure[\gj, $\eq0$b, $\eq2$j category and \scalht 800-$\inf$\GeV bin]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/representativeFits/mht_eq0b_eq2j_ht_800_Inf_SinglePhoton_Graph.pdf}
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_le3j_ht_475_575_SinglePhoton.pdf}
   }~~
-  \subfigure[\mj, $\eq1$b, $\eq4$a category and \scalht 350-400\GeV bin]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/representativeFits/mht_eq1b_eq4a_ht_350_400_SingleMu_Graph.pdf}
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_le3j_ht_475_575_DoubleMu.pdf}
   }\\
-  \subfigure[\mmj, $\eq0$b, $\eq4$j category and \scalht 400-500\GeV bin]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/representativeFits/mht_eq0b_eq4j_ht_400_500_DoubleMu_Graph.pdf}
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_le3j_ht_475_575_SingleMu.pdf}
   }~~
-  \subfigure[\gj, $\eq1$b, $\eq3$j category and \scalht 600-800\GeV bin]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SinglePhoton/eq1b_eq3j/finalFits/mht_eq1b_eq3j_ht_600_800_SinglePhoton_Graph.pdf}
-  }\\
-  \subfigure[\mj, $\eq2$b, $\eq4$j category and \scalht 600-800\GeV bin]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SingleMu/eq2b_eq4j/finalFits/mht_eq2b_eq4j_ht_600_800_SingleMu_Graph.pdf}
-  }~~
-  \subfigure[\mmj, $\eq0$b, $\eq3$a category and \scalht 300-350\GeV bin]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/DoubleMu/eq0b_eq3a/finalFits/mht_eq0b_eq3a_ht_300_350_DoubleMu_Graph.pdf}
-  }\\
-  \caption{\label{fig:linearFitExamples} 
-  The data/MC distribution against \mht for example categories and control regions.
+  \\
+  \caption{\label{fig:linearFits0bLe3} 
+  The data/MC distribution against \mht for the 0b, $\le3$j category and \scalht 475-575\GeV bin.
   The large bias in the linear component seen in Fig.~\ref{fig:linearMotiv} is mitigated.}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \subfigure[\mj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_SingleMu.pdf}
-  }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_SinglePhoton.pdf}
-  }\\
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_ge4j_ht_475_575_SinglePhoton.pdf}
+  }~~
   \subfigure[\mmj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pull_Linear2DShiftMean_p1_DoubleMu.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_ge4j_ht_475_575_DoubleMu.pdf}
+  }\\
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_ge4j_ht_475_575_SingleMu.pdf}
+  }~~
+  \\
+  \caption{\label{fig:linearFits0bGe4} 
+  The data/MC distribution against \mht for the 0b, $\ge4$j category and \scalht 475-575\GeV bin.
+  The large bias in the linear component seen in Fig.~\ref{fig:linearMotiv} is mitigated.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/pull_Linear2D_p1_SinglePhoton.pdf}
+  }~~
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/pull_Linear2D_p1_DoubleMu.pdf}
+  }\\
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/pull_Linear2D_p1_SingleMu.pdf}
   }~~
   \\
   \caption{\label{fig:pulls} 
@@ -157,14 +168,14 @@ a uniform distribution between 0 and 1 as shown in Fig.~\ref{fig:pValues}.
 \end{figure}
 \begin{figure}[h!]
   \centering
-  \subfigure[\mj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_SingleMu.pdf}
-  }~~
   \subfigure[\gj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_SinglePhoton.pdf}
-  }\\
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagPull_Linear2D_p1_SinglePhoton.pdf}
+  }~~
   \subfigure[\mmj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/frenchFlagPull_Linear2DShiftMean_p1_DoubleMu.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagPull_Linear2D_p1_DoubleMu.pdf}
+  }\\
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagPull_Linear2D_p1_SingleMu.pdf}
   }~~
   \\
   \caption{\label{fig:frenchFlagPulls} The pull distribution of the linear parameter from the flat hypothesis across all
@@ -174,15 +185,7 @@ a uniform distribution between 0 and 1 as shown in Fig.~\ref{fig:pValues}.
 
 \begin{figure}[h!]
   \centering
-  \subfigure[\mj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SingleMu.pdf}
-  }~~
-  \subfigure[\gj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SinglePhoton.pdf}
-  }\\
-  \subfigure[\mmj]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_DoubleMu.pdf}
-  }~~
+    \includegraphics[width=0.8\textwidth]{figures/template/linear/pValueAll.pdf}
   \\
   \caption{\label{fig:pValues} The distributions of the p-value for the linear fit.} 
 \end{figure}
@@ -207,66 +210,171 @@ used to define the up and down one sigma variations of the nominal template.
 As a conservative estimate, the best fit value of the parameter is 
 added in quadrature to its uncertainty in order to derive the overall variation.
 
-Example templates with this uncertainty are shown in Fig.~\ref{fig:mht-templates}
-in Sec.~\ref{sec:results}. Here the template variations for both relevant 
-backgrounds are combined to show the overall uncertainty on the \mht dimension. 
-The scatter of the points around one is compatible with statistical fluctuations.
+The result of this procedure is shown in Fig.~\ref{fig:signalOverlay} for different 
+\scalht bins and categories, using the data from the 8 \TeV signal region. 
+Here the template variations for both relevant backgrounds are combined to show 
+the overall uncertainty on the \mht dimension. The scatter of the points around 
+one is compatible with statistical fluctuations
+as no signal has been observed in this data sample.
 
 An additional validation is carried out by comparing expected and observed uncertainties
 on the linear parameter defining the template variations.
 The expected uncertainties are derived by using a linear fit to the MC/MC ratio where the numerator
 have uncertainties given by the Poisson uncertainty on the number of predicted counts while
 the uncertainty on the denominator comes from the statistical uncertainty on the
-MC prediction. The relative uncertainties per 100 \GeV from the weighted mean of \mht
+MC prediction. The relative uncertainties per \GeV from the weighted mean of \mht
 for \ttbar/W and \zInv~ are shown in Fig.~\ref{fig:expectedObservedTtw} 
 and Fig.~\ref{fig:expectedObservedZinv} and compared to those observed.
 These show good agreement which provides additional motivation for the 
 zero bias hypothesis as well as validating the method for deriving expected uncertainties.
-%%%ADD WHEN UNLIND!!
-% As an additional gauge of the effect of the template variations the uncertainty parameter 
-% can be translate to an uncertainty on the last bin. This is typically
-% of the order of 10-100\% depending on the category and is shown
-% in Fig.~\ref{fig:frenchFlagLastBin}.
+
+An \mht cut of 130 \GeV is sufficient to ensure the 
+signal and control regions share a similar phase space, however,
+it is instructive to repeat the validation using identical \alt 
+requirements in the control regions (\gj always has these requirements).
+This will largely reduce the statistics of the control 
+region due to the aggressive nature of the \alt variable which is designed to remove QCD. 
+In Figure~\ref{fig:pullAt}, the pull of the linear parameter for the \mj control region
+with an \alt cut is shown. This is compatible with the no bias hypothesis as
+observed with the \mht cut.
 
 
 \begin{figure}[h!]
   \centering
+  \subfigure[Category 0b, $\le3$j and $\scalht$ $375-475$ \GeV]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_ge4j_ht_375_475_signalOverlay.pdf}
+  }~~
+  \subfigure[Category 1b, $\le3$j and $\scalht$ $375-475$ \GeV]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq1b_le3j_ht_375_475_signalOverlay.pdf}
+  }\\
+  \subfigure[Category 0b, $\ge4$j and $\scalht$ $375-475$ \GeV]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_le3j_ht_375_475_signalOverlay.pdf}
+  }~~
+  \subfigure[Category 0b, $\le3$j and $\scalht$ $475-575$ \GeV]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/mht_eq0b_le3j_ht_475_575_signalOverlay.pdf}
+  }~~
+  \\
+  \caption{\label{fig:signalOverlay} Signal data/MC shown with template variations predicted from 
+  the control regions.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
   \subfigure[\label{fig:expectedTtw} Expected uncertainties]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPUMC/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrCompleteExpected_Linear2D_p1_Ttw.pdf}
   }~~
   \subfigure[\label{fig:observedTtw} Observed uncertainties]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/Ttw/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrComplete_Linear2D_p1_Ttw.pdf}
   }\\
-  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties per 100 \GeV shown for \ttbar/W in Fig.~\ref{fig:expectedTtw} are consistent
+  \caption{\label{fig:expectedObservedTtw} Expected relative uncertainties per \GeV shown for \ttbar/W in Fig.~\ref{fig:expectedTtw} are consistent
   with observed uncertainties shown in Fig.~\ref{fig:observedTtw}.}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \subfigure[\label{fig:expectedTtw} Expected uncertainties]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPUMC/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
+  \subfigure[\label{fig:expectedZinv} Expected uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrCompleteExpected_Linear2D_p1_Zinv.pdf}
   }~~
   \subfigure[\label{fig:observedZinv} Observed uncertainties]{
-    \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutputNewPU/scale_ht_variable_mht/Zinv/fitOut/Linear2DShiftMean/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/template/linear/frenchFlagErrComplete_Linear2D_p1_Zinv.pdf}
   }\\
-  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties per 100 \GeV shown for \zInv~ in Fig.~\ref{fig:expectedZinv} are consistent
+  \caption{\label{fig:expectedObservedZinv}Expected relative uncertainties per \GeV shown for \zInv~ in Fig.~\ref{fig:expectedZinv} are consistent
   with observed uncertainties shown in Fig.~\ref{fig:observedZinv}.}
 \end{figure}
 
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/template/pullAtMu.pdf}
+  \caption{\label{fig:pullAt} Pull distribution for
+  the \mj control region with signal region \alt requirements showing no overall bias}
+\end{figure}
+\clearpage
+\subsection{Validation with 13\texorpdfstring{\TeV}~data}
+\label{sec:dataValid13TeV}
+The scale anchoring approach has been validated with 2.2\ifb 
+of data collected at 13\TeV. In Fig.~\ref{fig:pulls13} the 
+pulls of the linear parameter for the combined fit over
+the control regions used for the \ttbar/W prediction (\mj)
+and for \zInv~ (\mj, \mmj, \gj) are shown to be consistent with no bias.
+In Fig.~\ref{fig:frenchFlagPulls13} the french flag plot of the pulls
+also shows no regions with consistent bias for either background.
 
-% \begin{figure}[h!]
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{figures/template13TeV/2p2fb/frenchFlagLastBin.pdf}
-%   \caption{\label{fig:frenchFlagLastBin} Observed uncertainties in the 
-%   last bin of \mht over all categories and \scalht bins for 2.2\ifb.}
-% \end{figure}
+Figures ~\ref{fig:expectedObservedTtw13} and \ref{fig:expectedObservedZinv13}
+show the expected and observed uncertainties per 100\GeV extrapolation in \mht. 
+These show that the observed uncertainties agree well with expectation as
+was observed in the full 8\TeV dataset. 
+As an additional gauge of the effect of the template variations the uncertainty parameter 
+can be translate to an uncertainty on the last bin. This is typically
+of the order of 10-100\% depending on the category and is shown
+in Fig.~\ref{fig:frenchFlagLastBin}.
 
+\begin{figure}[h!]
+  \centering
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/pull_Linear2DShiftMean_p1_SinglePhoton.pdf}
+  }~~
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/pull_Linear2DShiftMean_p1_DoubleMu.pdf}
+  }\\
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/pull_Linear2DShiftMean_p1_SingleMu.pdf}
+  }~~
+  \\
+  \caption{\label{fig:pulls13} 
+  The pull distribution of the linear parameter from the flat hypothesis showing no significant bias for any control region.}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/frenchFlagPull_Linear2DShiftMean_p1_SinglePhoton.pdf}
+  }~~
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/frenchFlagPull_Linear2DShiftMean_p1_DoubleMu.pdf}
+  }\\
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/frenchFlagPull_Linear2DShiftMean_p1_SingleMu.pdf}
+  }~~
+  \\
+  \caption{\label{fig:frenchFlagPulls13} The pull distribution of the linear parameter from the flat hypothesis across all
+  \scalht bins and categories. There are no significant pulls for the \scalht binned
+  fits while the \scalht inclusive case shows very large pulls as expected. 
+  }
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \subfigure[\label{fig:expectedTtw13} Expected uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/MCfrenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
+  }~~
+  \subfigure[\label{fig:observedTtw13} Observed uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/frenchFlagErrComplete_Linear2DShiftMean_p1_Ttw.pdf}
+  }\\
+  \caption{\label{fig:expectedObservedTtw13} Expected uncertainties per \GeV (\%) shown for \ttbar/W in Fig.~\ref{fig:expectedTtw13} are consistent
+  with observed uncertainties shown in Fig.~\ref{fig:observedTtw13}.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\label{fig:expectedZinv13} Expected uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/MCfrenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
+  }~~
+  \subfigure[\label{fig:observedZinv13} Observed uncertainties]{
+    \includegraphics[width=0.5\textwidth]{figures/template13TeV/2p2fb/frenchFlagErrComplete_Linear2DShiftMean_p1_Zinv.pdf}
+  }\\
+  \caption{\label{fig:expectedObservedZinv13} Expected uncertainties per 100 \GeV (\%) shown for \zInv~ in Fig.~\ref{fig:expectedZinv13} are consistent
+  with observed uncertainties shown in Fig.~\ref{fig:observedZinv13}.}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/template13TeV/2p2fb/frenchFlagLastBin.pdf}
+  \caption{\label{fig:frenchFlagLastBin} Observed uncertainties in the 
+  last bin of \mht over all categories and \scalht bins for 2.2\ifb.}
+\end{figure}
 \newpage
 \subsection{Comparison to known systematic sources}
 \label{sec:mcSystStudiesShape}
 To further validate the data driven procedure a range of known systematic sources are studied.
 The size of the variation of the \mht distribution under $\pm1\sigma$ shifts of these sources is compared 
-to that of the orthogonal polynomial systematic described in \ref{sec:valid13} to ensure they are
+to that of the orthogonal polynomial systematic described in \ref{sec:valid8} to ensure they are
 covered. The sources considered are the b-tag scale factor uncertainty, jet energy correction uncertainty, 
 pile-up reweighting uncertainty, and top \Pt rewieghting uncertainty. For each source of systematic the prediction
 is varied by $\pm1\sigma$. To study the effect of this systematic variation on the \mht dimension, and not normalisation, 
