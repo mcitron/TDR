@@ -167,15 +167,17 @@ category.\footnote{For events in the monojet bin, an implicit
   \scalht$ for monojet events. No \alphat calculation can be made
   given the absence of a second jet.} The requirements on \alphat,
 \mht, and \bdphi as a function of \scalht are summarised in
-Sec.~\ref{sec:selection}. Each ratio \rmhtmet is then used as a
+Sec.~\ref{sec:selection}. 
+
+Each ratio, \rmhtmet, is used as a
 multiplier on the predicted QCD counts per (\njet,\scalht) bin in a
 \mhtmet data sideband. 
-These data counts in the \mhtmet sideband are collected with the
+These data counts are collected with the
 \verb!HLT_HTxxx_AlphaT0pyy!  and \verb!HLT_HT800! signal triggers
 described in Sec.~\ref{sec:triggers}. 
 
 In order to obtain an estimate of the number
-of QCD multijet events, $\mathcal{Q}$, a maximum likelihood fit analagous to that
+of QCD multijet events in the sideband, $\mathcal{Q}$, a maximum likelihood fit analagous to that
 described in Sec.~\ref{sec:likelihood} is performed. In this
 fit, the
 electroweak backgrounds are determined with the method described in
@@ -187,7 +189,7 @@ subtracted, the
 remaining data counts are attributed to QCD. In this prediction, all
 counts and predictions are inclusive in \nb. The
 product of these predicted QCD counts and the ratio, $\mathcal{Q} \times
-r\mhtmet$, provides an estimate of the level of QCD multijet events in
+\rmhtmet$, provides an estimate of the level of QCD multijet events in
 each (\njet,\scalht) bin of the signal region. The estimate is
 currently made inclusively with respect to the \nb\ and \mht for each
 (\njet,\scalht) bin. 
@@ -195,16 +197,16 @@ currently made inclusively with respect to the \nb\ and \mht for each
 %TODO replace these plots (compile and rename them with a script)
 \begin{figure}[!h]
   \centering
-  \subfigure[QCD events in signal region.\label{fig:qcd_pass}]{
+  \subfigure[Simulated QCD events in signal region.\label{fig:qcd_pass}]{
     \includegraphics[width=0.5\textwidth]{figures/qcd/plots/signalQCD_MC}
   } 
-  \subfigure[QCD events in \mhtmet sideband.\label{fig:qcd_fail}]{
+  \subfigure[Simulated QCD events in \mhtmet sideband.\label{fig:qcd_fail}]{
     \includegraphics[width=0.5\textwidth]{figures/qcd/plots/qcdSbQCD_MC}
   } \\
-  \subfigure[Ratio \rmhtmet for QCD events.\label{fig:qcd_ratio}]{
+  \subfigure[Ratio \rmhtmet for simulated QCD events.\label{fig:qcd_ratio}]{
     \includegraphics[width=0.5\textwidth]{figures/qcd/plots/signalQcdDivSbQcd_MC}
   } 
-  \subfigure[EWK events in \mhtmet sideband.\label{fig:ewk_fail}]{
+  \subfigure[Simulated EWK events in \mhtmet sideband.\label{fig:ewk_fail}]{
     \includegraphics[width=0.5\textwidth]{figures/qcd/plots/qcdSbEwk_MC}
    %    \includegraphics[width=0.5\textwidth]{figures/qcd/v6/Ewk/SigTrig_FailMoM_NJet_vs_HT_bDPhigt0p5_Log}
   } \\
@@ -220,9 +222,7 @@ currently made inclusively with respect to the \nb\ and \mht for each
 \end{figure}
 
 The number of counts from multijet events satisfying and failing the
-requirement $\mhtmet < 1.25$, \ie the pass/fail ratio \rmhtmet, is
-determined from simulation per (\njet,\scalht) bin. The pass and fail
-counts and the ratios are summarised in Fig.~\ref{fig:qcd_pass},
+requirement $\mhtmet < 1.25$, \ie the pass/fail ratio \rmhtmet, are summarised in Fig.~\ref{fig:qcd_pass},
 \ref{fig:qcd_fail}, and \ref{fig:qcd_ratio}. Figure~\ref{fig:ewk_fail}
 shows the expected counts from non-multijet backgrounds in the \mhtmet
 sideband, as determined from simulation.
@@ -273,18 +273,20 @@ sideband, as determined from simulation.
 % subtracted from the data counts. Any remaining counts, $\mathcal{Q}$,
 % are assumed to arise from multijet production.
 Figure~\ref{fig:data_fail} shows the observed counts in the \mhtmet
-sideband, and Fig.~\ref{fig:data_corr} shows the counts after
-subtracting the expected contributions from non-multijet processes.
+sideband, and Fig.~\ref{fig:data_corr} shows the QCD counts 
+in the sideband predicted by the maximum likelihood fit.
 Figure~\ref{fig:qcd_pred} shows the predicted counts for the multijet
 contribution in the signal region bins, which are obtained from the
 products of \rmhtmet and $\mathcal{Q}$, summarised in
 Figs.~\ref{fig:qcd_ratio} and \ref{fig:data_corr}. Finally,
 Fig.~\ref{fig:qcd_ewk_ratio} shows the ratios of predicted multijet
-counts with respect to the expected EWK counts, in order to quantify
+counts with respect to the expected EWK counts in the signal region.
+This allows the quantification of
 the (predicted) relative contamination from multijet events in the
 signal region bins. The EWK \mht and \nb shapes derived from
 simulation are used to predict the distribution 
-of QCD events, this approach is then validated by data-driven methods. 
+of QCD events, this approach is validated in
+Sec.~\ref{sec:qcdValidation}. 
 
 %% The predictions summarised in Fig.~\ref{fig:qcd_ewk_ratio} support the
 %% expectation based on experience with 8~TeV data that the \HT-dependent
@@ -308,9 +310,11 @@ described in Sec~\ref{sec:likelihood}.
 
 
 \subsection{Validation of the QCD prediction}
+\label{sec:qcdValidation}
 
 %TODO replace plots and describe the validation method (including the
 %fit)
+ADD TEXT
 
 %TODO fix this sentence and expand on it
 No significant difference in shape is observed between Monte Carlo and data predictions, 
