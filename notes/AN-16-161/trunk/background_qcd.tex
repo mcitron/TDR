@@ -3,8 +3,8 @@
 
 %%____________________________________________________________________________||
 \section{Background estimation for QCD multijet events \label{sec:qcd}}
+\subsection{QCD control with the \bdphi variable}
 
-\subsection{The method and results}
 One of the major challenges for searches of new physics in the jets +
 \met final state is the control of background events from QCD multijet
 production. The difficulties in the determination of precise estimates
@@ -138,6 +138,8 @@ increased leakage Fig.~\ref{fig:shifted_DPhiMht_dist}.
  \label{fig:bDPhi_mismeasured}
 \end{figure}
 
+\subsection{The method and results}
+
 %FIXME Could reword this to remove the references to Run 1?
 In Run~1, the \alphat and \bdphi thresholds that reduced
 multijet contamination to the required level were determined by a
@@ -184,8 +186,12 @@ electroweak backgrounds are determined with the method described in
 Sec.~\ref{sec:ewk-method} with single muon, double muon
 and single photon control regions that have the same selection as the control regions
 described in Sec.~\ref{sec:selection}, apart from an inverted \mhtmet
-cut. After the contribution of the electroweak backgrounds is
-subtracted, the
+cut. All relevant systematic uncertainties are taken into account,
+including the shape uncertainties described in
+Sec.~\ref{sec:mc-variations} and the data driven uncertainties
+uncertainties described in Sec.~\ref{sec:closure-tests}. 
+After the contribution of the electroweak backgrounds is
+estimated, the
 remaining data counts are attributed to QCD. In this prediction, all
 counts and predictions are inclusive in \nb. The
 product of these predicted QCD counts and the ratio, $\mathcal{Q} \times
@@ -194,7 +200,6 @@ each (\njet,\scalht) bin of the signal region. The estimate is
 currently made inclusively with respect to the \nb\ and \mht for each
 (\njet,\scalht) bin. 
 
-%TODO replace these plots (compile and rename them with a script)
 \begin{figure}[!h]
   \centering
   \subfigure[Simulated QCD events in signal region.\label{fig:qcd_pass}]{
@@ -227,7 +232,6 @@ requirement $\mhtmet < 1.25$, \ie the pass/fail ratio \rmhtmet, are summarised i
 shows the expected counts from non-multijet backgrounds in the \mhtmet
 sideband, as determined from simulation.
 
-%TODO replace these plots
 \begin{figure}[!h]
   \centering
   \subfigure[Binned data counts in \mhtmet sideband.\label{fig:data_fail}]{
@@ -312,9 +316,11 @@ described in Sec~\ref{sec:likelihood}.
 \subsection{Validation of the QCD prediction}
 \label{sec:qcdValidation}
 
-%TODO replace plots and describe the validation method (including the
+%TODO  describe the validation method (including the
 %fit)
 ADD TEXT
+mention about how it's all covered and the conservative nature of the
+shapes
 
 %TODO fix this sentence and expand on it
 No significant difference in shape is observed between Monte Carlo and data predictions, 
