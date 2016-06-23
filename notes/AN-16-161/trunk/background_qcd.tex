@@ -320,29 +320,32 @@ described in Sec~\ref{sec:likelihood}.
 Despite being as data driven as possible, the method for predicting the QCD contamination in the signal region
 described in Sec.~\ref{sec:qcdMethod} relies on the ratio, \rmhtmet,
 of QCD counts
-that is derived in simulation. This ratio is validated with data in a
-QCD enriched sideband, where full signal region selection is used apart from
+that is derived with simulation. This ratio is validated with data in a
+QCD enriched sideband, where full signal region selection is used
+other than
 an inversion of the \bdphi cut to $\bdphi<0.5$. In this sideband a
 data driven estimation of the QCD counts is carried out in two regions, those with \mhtmet values less than
 1.25 and those with values greater than 1.25. These predictions are
 made with a maximum likelihood
 fit, analagous to that described in Sec.~\ref{sec:qcdMethod}. This fit
-estimates the EWK components with single muon, double muon and single
+estimates the EWK counts with single muon, double muon and single
 photon control regions and all relevant systematic errors. The
 remaining data counts are then attributed to QCD. With this estimation 
-of QCD it is possible to derive a data driven ratio of QCD counts with
-$\mhtmet<1.25$ and $\mhtmet>1.25$, $\rmhtmet_{\bdphi<0.5}^{data}$. By
+of QCD it is possible to derive a data driven ratio of QCD counts with 
+$\mhtmet<1.25$ and those with $\mhtmet>1.25$, $\rmhtmet_{\bdphi<0.5}^{data}$. By
 taking MC counts in the \bdphi sideband it is also possible to
-calculate the \mhtmet simulation ratio, $\rmhtmet_{\bdphi<0.5}$. To
+calculate the \mhtmet simulation ratio, $\rmhtmet_{\bdphi<0.5}$. 
+
+To
 validate the ratio \rmhtmet it is assumed that if the simulation of
-the ratio from simulation in the \bdphi sideband agrees with that
-derived from data, the ratio calculated with simulated events with
-$\bdphi>0.5$ is valid. Any disagreement that is seen can then be taken
-as a systematic error on the QCD prediction. The double ratio of
+the ratio in the \bdphi sideband agrees with that
+derived from data, the simulated ratio that is not in the sideband
+is valid. Any disagreement is covered by 
+a systematic error on the signal region QCD prediction. The double ratio of
 $\rmhtmet_{\bdphi<0.5}$ and $\rmhtmet_{\bdphi<0.5}^{data}$ in \scalht
 and \njet bins is shown in Fig.~\ref{fig:RR_qcd}. Bins in which there
-were insufficient statistics to make the calculation are left out.
-A perfect agreement would result in double ratio values of 1. This
+are insufficient statistics in data or simulation to make the calculation are left out.
+This
 plot illustrates that a fully correlated systematic of 100\% taken on the
 predicted QCD contamination in the signal region should cover any
 disagreement between simulation and data.
@@ -360,12 +363,12 @@ disagreement between simulation and data.
 As the prediction of QCD in the signal region is carried out
 inclusively over \nb and \mht, the QCD shapes for these variables are
 taken from the EWK simulation and normalised to the QCD counts. 
-This approach is taken due to a lack of statistics in
-the QCD MC. To validate this, the simulated \mht distributions
-for the QCD and EWK processes in the signal region are divided by one
-another. This is shown in
+A lack of statistics in
+the QCD MC led to the adoption of this approach. To validate it, the simulated \mht distributions
+for the QCD and EWK processes in the signal region are divided. This is shown in
 Figs.~\ref{fig:asym_qcd_validation}-\ref{fig:asym_qcd_validation}.
-Within uncertainties, the level of agreement is acceptable given the
+As the normalisation is carried out independently, a flat distribution
+of the ratio is enough for validation. Within uncertainties, the level of agreement is acceptable given the
 small total QCD contribution to the signal region and its large
 systematic uncertainty. 
 
