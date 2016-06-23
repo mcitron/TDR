@@ -248,11 +248,14 @@ requirement in the event selection and instead employ only a
 requirement on the variable \bdphi to control any potential multijet
 contamination, in conjunction with a loose baseline requirement of
 $\mht > 130\gev$ (which corresponds to an \alphat threshold of
-$\sim0.507$). While the use of \alphat is necessary to push to low
+$\sim0.507$). 
+While the use of \alphat is necessary to push to low
 values of \scalht and \mht, we opt for only the \bdphi and \mht
-requirements at high \scalht, as this approach improves the signal
-efficiency in the high jet multiplicity environment while still
-controlling multijet contamination.
+requirements at high \scalht, as this can improve the signal
+efficiency for some models while still
+controlling multijet contamination. 
+More studies will be carried on in the future to optimise the cuts in 
+this region of the phase space.
 
 {\bf Adding the \mht dimension:}
 
@@ -323,28 +326,36 @@ exactly one jet above the $100\gev$ is required. In this case, a requirement on
 $\bdphi$ alone, and not \alphat, is sufficient to suppress the multijet
 background to a negligible level.
 
-%% {\bf Additional electron data control samples:}
-
-%% Preliminary studies have been performed to
-%% add the \ej and \eej data control samples. These two
-%% samples closely mirror their \mj and \mmj counterparts. Further, we
-%% mirrored the \scalht-dependent \alphat thresholds of the signal
-%% region in the \gj sample. The overall aim is to maximise the data
-%% counts in multiple control samples to allow better control of the
-%% predictions made in the analysis. Primarily, the additional samples
-%% provide additional redundancy and potential cross checks via the
-%% ``RA1-style'' closure tests. Further, the additional control samples
-%% will help to reduce the statistical uncertainties associated with the
-%% predictions in the signal region. While the electron selections are fully
-%% implemented they are not yet considered in the final analysis to further validate
-%% multijet background predictions in these final states.
 
 {\bf Developments concerning closure tests:}
 
-As in Run~1, closure tests are performed in bins of \njet and
-\scalht. These tests allow to identify any biases or dependencies
-in the predictions. 
 Two new closure test have been developed to test the estimations of the $Z \to \nu \nu$
-background and the $W$ charge asymmetry. 
+background (single-muon predicting double-muon) and the $W$ charge asymmetry (positive muon predicting negative muon). 
+
+Moreover, the procedure to derive uncertainties on the transfer factor has been slightly revised, 
+with each test being considered separately and addressing one source of uncertainty. 
+The tests are still performed in bins of \nj and \scalht, 
+in order to spot trends and biases as a function of this variables. 
+To derive the systematics uncertainty that is propagated to the analysis, however, 
+tests are collapsed into ``asymmetric'' and ``symmetric'' topologies. 
+More details are given in Sec.~\ref{sec:systematics}
+
+
+\subsection{Developments for the 2016 run \label{sec:devs_2016}}
+During the preparation for the restart of the data taking in spring 2016 
+several developments to the 2015 analysis have been considered and studied in some detail. 
+However, as the aim of the early analysis described in this document is to deliver 
+robust results in a short timescale, it has been decided to postpone most of these key enhancements 
+for the analysis of the full dataset, foreseen for the end of 2016. 
+Moreover, the beneficial effects of new features in the analysis will be further enhanced 
+with the larger dataset that will be available by then. 
+
+Therefore, only few changes are made with respect to the analysis carried on during 2015, namely:
+\begin{itemize}
+\item a more inclusive strategy for the signal triggers has been employed, allowing to recover most of the inefficiency 
+of the pure \scalht trigger path used in the region $\scalht > 800 \,\mathrm{GeV}$. More details are given in Sec.~\ref{sec:hadronic_signal_region};
+\item while the method remains unchanged, the yields of the QCD multi-jet background are now extracted from a maximum-likelihood fit, as documented in Sec.~\ref{sec:qcd}. 
+This allows to correctly propagate the uncertainties in the non-multijet component in the multi-jet sideband with its correlations. 
+\end{itemize}
 
 %%____________________________________________________________________________||
