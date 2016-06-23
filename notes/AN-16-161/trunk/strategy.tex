@@ -358,4 +358,33 @@ of the pure \scalht trigger path used in the region $\scalht > 800 \,\mathrm{GeV
 This allows to correctly propagate the uncertainties in the non-multijet component in the multi-jet sideband with its correlations. 
 \end{itemize}
 
+
+\subsection{Current issues and missing inputs}
+It's not uncommon to face issues in the early analysis of the new data. 
+During the preparation of the analysis, the understanding of the detector response and 
+the systematic sources associated to that improves on a daily basis. 
+The re-start of the LHC in 2016 is no exception. 
+As a consequence, while writing this document some key ingredients are still missing in the analysis, 
+which are summarised below.
+\begin{itemize}
+\item \textbf{Missing Monte Carlo (MC) samples}. Most of the simulated samples are already available and are used in the results summarise in this document. 
+The exception is the $Z\rightarrow\nu\nu$ \scalht-binned datasets, which are facing issue in the central production. They will be added as soon as possible. 
+For the moment, the corresponding old samples are used, which are reconstructed with the 74X version of CMSSW (80X is the version used for the other Monte Carlo datasets). 
+\item \textbf{Missing Data/MC scale factors} The data-to-MC scale factors accounting for b-tag efficiency and lepton trigger/ID/isolation efficiency are 
+still missing, as they are being computed by the corresponding POGs. 
+\item \textbf{Issues with muon trigger} Some issues were spotted during the early data-taking regarding the efficiency of muon trigger paths. 
+They have been partially mitigated in later runs. This adds up to the known feature of the trigger bits in the MC, which still uses the L1 trigger emulation from the past year, resulting 
+in a larger discrepancy between data and simulation. This effects is temporarly covered assigning a 5\% systematic unceratainty in the background predictions 
+using muon control regions
+\item \textbf{Issues with the photon trigger} A feature in the software used for the single-photon trigger paths lead to an inefficiency at 
+high photon energy. The effect has been measured to be as large as 10\% at very high photon \pt, but it's smaller for lower photon momenta. 
+This inefficiency is temporarly covered assigning a 5\% systematic in the background predictions utilising the single-photon control region.
+\item \textbf{Issues with the QCD simulated sample} In the new QCD \scalht-binned MC sample some spurious events with 
+badly reconstructed high-\pt muons have been identified, which lead to large \MET and large \scalht. 
+The effect becomes pronounced when these events carry large weights, as it happens in particular for the samples generated at low parton \scalht. 
+A dedicated filter to discard these kind of events is being developed and will be adopted soon in the analysis. 
+For the moment, we decided to stick to the corresponding old (CMSSW 74X version) simualted samples for QCD background studies. 
+\end{itemize}
+
+
 %%____________________________________________________________________________||
