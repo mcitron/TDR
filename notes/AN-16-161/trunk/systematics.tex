@@ -211,7 +211,7 @@ They are typically in the range of $1-5\%$.
 
 
 
-\subsubsection*{Lepton trigger/identification/isolation efficiency}
+\subsubsection*{Lepton and photon trigger/identification/isolation efficiency}
 \label{sec:tfSyst_lepton}
 
 Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
@@ -226,7 +226,11 @@ factors for trigger, lepton identification and isolation~\cite{twiki-leptonSF}.
 The uncertainties on the transfer factors associated 
 with these scale factors are determined as described in the following.
 These studies were caried out with data and MC from 2015 and will be updated 
-for the final result. 
+for the final result. To cover issues in the efficiency of the
+muon trigger a $5\%$ systematic is assigned for both the \mj and \mmj 
+control regions as described in \ref{sec:disclaimers}. To cover 
+issues in the photon trigger (as described in \ref{sec:disclaimers}) a $5\%$ is applied in the
+\gj control region.
 
 The effect of lepton reconstruction in the $\mj \rightarrow \mathrm{tt+W}$ 
 transfer factors is factorised in the following expression: 
@@ -686,20 +690,22 @@ in the range $10-100\%$.
     Systematic & Method & \multicolumn{4}{c}{Relative uncertainty on transfer factor} & Correlation model \\    
      & & $\mj \rightarrow \znunu$  & $\mmj \rightarrow \znunu$ & $\gj \rightarrow \znunu$ & $\mj \rightarrow \ttbar+W$ & \\
     \hline
-    \alphat/\bdphi extrapolation & data-driven tests & $5-80\%$ &
-    $50-80\%$ & - & $5-80\%$ & un-correlated across \scalht/jet top. \\
+    \alphat/\bdphi extrapolation & data-driven tests & $5-40\%$ &
+    $5-40\%$ & - & $5-40\%$ & un-correlated across \scalht/jet top. \\
     W/Z ratio & data-driven tests & $10-30\%$ & - & - & - & un-correlated across \scalht/jet top. \\
-    Z/$\gamma$ ratio & data-driven tests & - & - & $10-30\%$ & - & un-correlated across \scalht/jet top. \\
-    W/\ttbar admixture & data-driven tests & - & - & - & $10-100\%$ & un-correlated across \scalht/jet top. \\
+    Z/$\gamma$ ratio & data-driven tests & - & - & $10-40\%$ & - & un-correlated across \scalht/jet top. \\
+    W/\ttbar admixture & data-driven tests & - & - & - & $5-60\%$ & un-correlated across \scalht/jet top. \\
     W polarisation & data-driven tests & $5-50\%$ & - & - & $5-50\%$ & un-correlated across \scalht/jet top. \\
     Jet energy scale & MC variations & $<15\%$ & $<10\%$ & $<15\%$ &
     $<15\%$ & fully correlated \\
     B-tagging efficiency & MC variations & $<5\%$ & $<2\%$ & $<2\%$
     & $<5\%$ & fully correlated \\
-    Pileup weights & MC variations & $<6\%$ & $<4\%$ & $<3\%$ & $<10\%$ & fully correlated \\
+    Pileup weights & MC variations & $<5\%$ & $<6\%$ & $<4\%$ & $<9\%$ & fully correlated \\
     Top $p_{T}$ weights & MC variations & $<20\%$  & $<4\%$ & - &
     $<5\%$ & fully correlated \\
     Lepton selection & MC variations & - & - & - & $2-5\%$ & fully correlated \\
+    Lepton trigger efficiency & MC variations & $5\%$ & $5\%$ & - & $5\%$ & fully correlated \\
+    Photon trigger efficiency & MC variations & - & - & $5\%$ & - & fully correlated \\
     \hline
     \hline
   \end{tabular}
