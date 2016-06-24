@@ -1,4 +1,3 @@
-\clearpage
 %%__________________________________________________________________||
 \section{Results}
 \label{sec:interpretation}
@@ -26,21 +25,77 @@ The expected number of events from SM processes is determined from a
 simultaneous fit to the signal region and up to three control
 samples. The likelihood function is maximised over all fit parameters
 under the SM-only hypothesis.
-Tables~\ref{tab:predewkdata_sig_comb_mono}--\ref{tab:predewkdata_sig_comb_sym}
+Figures~\ref{fig:mono}--\ref{fig:sym}
 summarise the observed yields and ``pre-fit'' and ``post-fit'' SM
 expectations for signal candidate events in the monojet, asymmetric,
 and symmetric categories, respectively. No significant tension is
 observed between the predictions and data in the signal region, which
 is well described by the SM-only hypothesis.
 
-\input{predewkdata_sig_comb_mono_twiki}
-\clearpage
-\input{predewkdata_sig_comb_asym_twiki}
-\clearpage
-\input{predewkdata_sig_comb_sym_twiki}
-\clearpage
+Figure~\ref{fig:mht-templates} shows distributions of observed counts
+in data and also expected counts from SM background processes, as a
+function of the \mht variable for two \nb categories at high \njet and
+\scalht, which are expected to provide sensitivity to models with
+TeV-scale gluinos. 
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{summaryPlot_Monojet_prefit_overlay_fit_b_CRFit}
+    \caption{(Top panel) Event yields observed in data (solid circles)
+      and SM expectations with their associated uncertainties (black
+      histogram with shaded band) from a CR-only fit, integrated over
+      \HTmiss, as a function of \nb, and \scalht for the monojet
+      category ($\njet = 1$) in the signal region. (Bottom panel). The
+      significance of deviations observed in data with respect to the
+      SM expectations from the CR-only (red circles) and full fit
+      (blue circles).  }
+    \label{fig:mono}
+  \end{center}
+\end{figure}
+
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[angle=90,width=0.7\textwidth]{summaryPlot_Asymmetric_prefit_overlay_fit_b_CRFit}
+    \caption{(Top panel) Event yields observed in data (solid circles)
+      and SM expectations with their associated uncertainties (black
+      histogram with shaded band) from a CR-only fit, integrated
+      over \HTmiss, as a function of \njet, \nb, and \scalht for the
+      ``asymmetric'' \njet categories in the signal region. (Bottom
+      panel). The significance of deviations observed in data with
+      respect to the SM expectations from the CR-only (red circles)
+      and full fit (blue circles).  }
+    \label{fig:asym}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[angle=90,width=0.7\textwidth]{summaryPlot_Symmetric_prefit_overlay_fit_b_CRFit}
+    \caption{(Top panel) Event yields observed in data (solid circles)
+      and SM expectations with their associated uncertainties (black
+      histogram with shaded band) from a CR-only fit, integrated over
+      \HTmiss, as a function of \njet, \nb, and \scalht for the
+      ``symmetric'' \njet categories in the signal region. (Bottom
+      panel). The significance of deviations observed in data with
+      respect to the SM expectations from the CR-only (red circles)
+      and full fit (blue circles).  }
+    \label{fig:sym}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[tbhp]
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{mhtShape_eq0b_ge5j_800_Inf_prefit.pdf} 
+    \includegraphics[width=0.6\textwidth]{mhtShape_eq2b_ge5j_800_Inf_prefit.pdf} \\
+  \end{center}
+  \caption{ The \mht distribution observed in data and the expected
+    distribution for the sum of all SM background processes in two
+    representative event categories at high \njet and \scalht. 
+    \label{fig:mht-templates} }
+\end{figure*}
 
 %%__________________________________________________________________||
+\clearpage
 \section{Interpretation}
 
 The results of this search are interpreted in terms of upper limits in
@@ -58,56 +113,37 @@ are obtained with the program \PROSPINO~\cite{Beenakker:1996ch,
 CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The distribution of the number of
 pp interactions per bunch crossing for the simulated samples matches
 that observed in data. Various uncertainties in the experimental
-acceptance are considered, for which typical magnitudes are summarised
-in Table~\ref{tab:signal_systs}.
+acceptance are considered, for which typical magnitudes \fixme{\it
+  will be summarised}. 
+%are summarised in Table~\ref{tab:signal_systs}.
 
-\begin{table}[h!]
-  \caption{%CMS {\it Simulation}. 
-    Typical magnitudes of systematic uncertainties in the experimental
-    acceptance for the signal models considered.
-  }
-  \label{tab:signal_systs}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lccc }
-    \hline
-    \hline
-    Systematic source              & Type          & Correlated & Typical magnitude (\%) \\
-    \hline
-    Luminosity                     & Normalisation & Yes        & 4.6                    \\
-    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
-    Initial state radiation        & Norm. + shape & Yes        & 0--30                  \\
-    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
-    Pile-up                        & Norm. + shape & Yes        & 0-5                    \\
-    Trigger                        & Norm. + shape & Yes        & 0--10                  \\
-    Parton density functions       & Normalisation & No         & 10                     \\
-%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
-    b-tag scale factors            & Norm. + shape & Yes        & 5--30                  \\
-    Lepton scale factors           & Normalisation & Yes        & $<$5                   \\
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
-
-Figure~\ref{fig:mht-templates} shows for two categories in \njet and
-\nb at high \scalht that are expected to provide good sensitivity to
-gluino models the distribution of the data observations as a function
-of the \mht variable, the expected distribution for the sum of all SM
-background processes, and the expected distribution for an example
-benchmark signal model.
-
-\begin{figure*}[tbhp]
-  \begin{center}
-    \includegraphics[width=0.49\textwidth]{postFitShape_ge3b_ge5j_800_Inf_prefit} \,
-    \includegraphics[width=0.49\textwidth]{postFitShape_eq2b_ge5j_600_800_prefit} \\
-  \end{center}
-  \caption{ The \mht distribution observed in data and the expected
-    distribution for the sum of all SM background processes in two
-    representative event categories at high \scalht. The expected
-    distribution for an example benchmark model with a large (small)
-    mass splitting between the gluino and LSP is also shown in the
-    left (right) figure. \label{fig:mht-templates} }
-\end{figure*}
+%\begin{table}[h!]
+%  \caption{%CMS {\it Simulation}. 
+%    Typical magnitudes of systematic uncertainties in the experimental
+%    acceptance for the signal models considered.
+%  }
+%  \label{tab:signal_systs}
+%  \centering
+%  \footnotesize
+%  \begin{tabular}{ lccc }
+%    \hline
+%    \hline
+%    Systematic source              & Type          & Correlated & Typical magnitude (\%) \\
+%    \hline
+%    Luminosity                     & Normalisation & Yes        & 4.6                    \\
+%    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
+%    Initial state radiation        & Norm. + shape & Yes        & 0--30                  \\
+%    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
+%    Pile-up                        & Norm. + shape & Yes        & 0-5                    \\
+%    Trigger                        & Norm. + shape & Yes        & 0--10                  \\
+%    Parton density functions       & Normalisation & No         & 10                     \\
+%%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
+%    b-tag scale factors            & Norm. + shape & Yes        & 5--30                  \\
+%    Lepton scale factors           & Normalisation & Yes        & $<$5                   \\
+%    \hline
+%    \hline
+%  \end{tabular}
+%\end{table}
   
 %\begin{figure*}[thp!]
 %  \begin{center}
