@@ -41,7 +41,8 @@ events are assigned to a ``symmetric'' \njet category. If the second
 jet satisfies $40 < \PT < 100\gev$ events are assigned to an
 ``asymmetric'' \njet category. Finally, if there is no second leading
 jet with $\PT>40\gev$, events are assigned to the ``mono-jet''
-category. The asymmetric and mono-jet categories have been added to
+category. This categorisation is heavily utilised throughout all the document. \\
+The asymmetric and mono-jet categories have been added to
 the analysis to help improve acceptance to a range of DM models and compressed
 SUSY.
 
@@ -60,43 +61,11 @@ second leading jet \Pt, as defined above.
 Events are also categorised according to the the number of b-tagged
 jets (``b-jets''). As a baseline, the sub-samples are defined by
 requiring exactly zero, one, two, or at least three b-tagged jets. By
-construction, $\nb \leq \njet$. Events containing three or more b-tags
-typically implies either an additional source of b-jets beyond those
-from the \ttbar process (\eg via gluon splitting) or at least one
-mistag of a jet from a light-flavoured parton. The number of b-tagged
-jets is currently taken directly from simulation.
+construction, $\nb \leq \njet$. Standard Model background events containing three or more b-tags
+typically arise from an additional source of b-jets like 
+``gluon splitting'' or from 
+mistag of a jet from a light-flavoured parton. 
 
-%In the near future, the ``b-tag formula method'' (described below and
-%detailed in Ref.~\cite{Chatrchyan:2013lya}) will again be employed to
-%improve the statistical precision of predictions involving events
-%containing high multiplicities of b-tagged jets, which will allow for
-%the addition of further categories that contain at least four b-tagged
-%jets. 
-
-%In order to maximise sensitivity to potential new physics
-%signatures in final states with a high b-quark content, a method that
-%improves the statistical power of the predictions from simulation,
-%particularly for $n_\cPqb \ge 2$, is employed~\cite{Chatrchyan:2013lya}. The
-%distribution of $n_\cPqb$ is estimated from generator-level
-%information contained in the simulation, namely the number of
-%reconstruction-level jets matched to underlying bottom quarks
-%($n_\cPqb^\text{gen}$), charm quarks ($n_\cPqc^\text{gen}$), and
-%light-flavoured partons ($n_\cPq^\text{gen}$) per event. All relevant
-%combinations of $n_\cPqb^{\rm gen}$, $n_\cPqc^{\rm gen}$, and
-%$n_{\cPq}^{\rm gen}$ are considered, and event counts are recorded
-%according to the categorisation of events in terms of \njet and
-%\scalht. The efficiency $\epsilon$ with which b-quark jets are
-%identified and the mistag probabilities $f_\cPqc$ and $f_\cPq$ are
-%also determined from simulation per event category, with each quantity
-%averaged over jet \pt and $\eta$. Corrections are applied on a
-%jet-by-jet basis to $\epsilon$, $f_\cPqc$, and $f_\cPq$ in order to
-%match the corresponding measurements from
-%data~\cite{Chatrchyan:2012jua}. This information is sufficient to
-%predict $n_\cPqb$ and thus also determine the event yield from
-%simulation for a given event category. The event yields for a given
-%b-quark jet multiplicity can be predicted with a higher statistical
-%precision than obtained directly from simulation, particularly for
-%events with high counts of b-quark jets.
 
 {\bf \HT,\mht requirements and binning.} 
 
@@ -197,18 +166,6 @@ of 2.1\ifb.
   \end{tabular}
 \end{table}
 
-%{\bf Evolution of event categorisation and \HT binning versus integrated luminosity.} 
-
-%The choice of how events are categorised according to the number of
-%\njet and \nb and binned in \HT will evolve as a function of
-%integrated luminosity. Additional categories with higher jet
-%multiplicities maybe added for data samples corresponding to higher
-%integrated luminosities (\eg $\sim$10\fbinv). Additional categories
-%with higher b-tag multiplicities will also be considered once the
-%b-tag ``formula method''~Ref.~\cite{Chatrchyan:2013lya} has been commissioned with data. This
-%will allow for categories defined by the requirement of at least four
-%b-tagged jets. Additional bins at high \HT will also be considered for
-%higher integrated luminosity scenarios. 
 
 \subsection{Lepton and photon vetoes \label{sec:vetoes}}
 
@@ -241,23 +198,10 @@ of magnitude larger than the typical signal expected from SUSY.
 
 Background events from multijet production populate the region
 $\alphat \lesssim 0.5$ and therefore can be rejected with very high
-efficiency by requiring an appropriate cut on \alphat. In the Run~1
-analyses, a minimum requirement of $\alphat > 0.55$ was imposed, with
-a raised threshold (as high as 0.65) used at low \HT to control
-against a potential increase in contamination from multijet production
-due to worsening resolution and jet \PT threshold effects.  (The
-latter effect refers to ``fake'' \mht arising from the rare occurrence
-of multiple soft jets below threshold that are relatively collinear.)
-The minimum threshold of 0.55 was motivated primarily by the control
-of the multijet background and considered conservative for mid to high
-regions in \HT, while maintaining good signal acceptance. However,
-improving jet resolutions and a reduced jet threshold effect relative
-to an increasing \HT scale means that looser \alphat thresholds can be
-used at higher values of \HT.
-
+efficiency by requiring an appropriate cut on \alphat. \\
 A useful approximate conversion between \alphat and \mht can be
 obtained by calculating \alphat, as described by Eq.~\ref{eq:alphat3}, 
-while forcing $\dht = 0\gev$,. Hence, using this metric, the
+while forcing $\dht = 0\gev$. Hence, using this metric, the
 dependence of the \alphat requirement as a function of the \HT bin can
 be determined such that the effective requirement on \mht is
 comparable, \ie roughly constant, across all \HT bins. The values
@@ -265,7 +209,7 @@ typically fall in the range $\sim110 < \mht < \sim160\gev$. This
 approximate levelling of the ``effective'' \mht threshold implies
 increasingly tighter requirements against instrumental effects versus
 \HT, while maximising signal
-acceptance. Table~\ref{tab:alphat-thresholds} summarises the expected
+acceptance. Table~\ref{tab:alphat-thresholds} summarises the 
 \alphat thresholds and corresponding ``effective'' \mht thresholds for
 each \HT bin. The \alphat threshold is dependent only on \HT and not
 on \njet nor \nb that are used to define the event categories.
@@ -291,9 +235,7 @@ on \njet nor \nb that are used to define the event categories.
   \end{tabular}
 \end{table}
 
-For Run~2, all signal region bins satisfying $\HT > 800\gev$ are
-seeded by the single-object \texttt{HLT\_HT800} trigger, which is
-expected to be unprescaled. For these high \HT bins, no \alphat
+For all signal region bins satisfying $\HT > 800\gev$  no \alphat
 threshold is required, which removes the inefficiencies of this
 variable for high jet multiplicity events. Instead, the following
 $\mht >130\gev$ requirement helps to control the multijet background
@@ -316,7 +258,7 @@ from the calculation $\mhtvec$ yields this minimum value, is
 identified as the jet that is most likely to have given rise to the
 missing transverse energy in the event. Events with significant \mht
 due to instrumental effects or heavy flavour decays populate the
-region $\bdphi \approx 0$ and so candidate signal event are accepted
+region at $\bdphi$ and so candidate signal event are accepted
 only if they satisfy $\bdphi > 0.5$. The use of the \bdphi and \alphat
 variables provide an extremely powerful rejection factor against
 contamination from multijet events and allow to maintain low jet \PT,
@@ -332,66 +274,58 @@ estimate of the missing transverse energy, \mht, is compared to the
 missing transverse energy variable, $\met$, and events with $R_{\rm
   miss}=\mht/\met > 1.25$ are rejected.
   
-{\bf Detector dead cell control.}
+%% {\bf Detector dead cell control.}
 
-Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count)
-or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause 
-severe energy losses. A data-driven method is developed to identify dead cells. The 
-procedure is carried out on events that pass a loose selection of one good primary vertex,
-$\njet>1$ and $\scalht>150\gev$. For each identified jet with
-$\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
-recomputed ${\mhtvec}$ is determined, in the same way as in the procedure to compute the \bdphi 
-variable. The positions of all jets which give $\bdphi < 0.3$ are plotted in
-an $\eta-\phi$ map. Subsequently, the positions of all jets with
-$\pt>20\gev$ are plotted in a second $\eta-\phi$ map.
-These two maps are then divided to form a 2D ratio map, taking the
-first map as the numerator and second as the denominator.
-Jets pointing to dead cells are likely to give $\bdphi < 0.3$, so the
-location of dead cells in $\eta$ and $\phi$ have higher values in this 2D ratio map. 
+%% Masked regions in the ECAL (which amount to about 1\% of the ECAL channel count)
+%% or HCAL, or by missing instrumentation in the barrel-endcap gap, could cause 
+%% severe energy losses. A data-driven method is developed to identify dead cells. The 
+%% procedure is carried out on events that pass a loose selection of one good primary vertex,
+%% $\njet>1$ and $\scalht>150\gev$. For each identified jet with
+%% $\PT > 20 \gev$ in data, the azimuthal angle ($\Delta\phi_{jet}$) between the jet and the 
+%% recomputed ${\mhtvec}$ is determined, in the same way as in the procedure to compute the \bdphi 
+%% variable. The positions of all jets which give $\bdphi < 0.3$ are plotted in
+%% an $\eta-\phi$ map. Subsequently, the positions of all jets with
+%% $\pt>20\gev$ (woth no \bdphi requirement) are plotted in a second $\eta-\phi$ map.
+%% These two maps are then divided to form a 2D ratio map, taking the
+%% first map as the numerator and second as the denominator.
+%% Jets pointing to dead cells are likely to give $\bdphi < 0.3$, so the
+%% location of dead cells in $\eta$ and $\phi$ have higher values in this 2D ratio map. 
 
-Figure~\ref{fig:2dRatioMap} is the 2D ratio map made with unblinded signal region with luminosity of 
-149.49~$\text{pb}^{-1}$. In the lower left region of the plot, two
-areas with significant instrumental effects are clear. To ensure these
-effects are filtered out by all cleaning cuts within the analysis, an
-$\eta-\phi$ map of all jets with $\pt>20\gev$ and $\bdphi<0.3$ are
-plotted after the signal region selection (as described in
-Sec.~\ref{sec:had-signal}), shown in
-Fig.~\ref{fig:jetMapPostSignalSelection}. The areas with significant
-instrumental effects visible in Fig.~\ref{fig:2dRatioMap} do not appear
-to remain in Fig.~\ref{fig:jetMapPostSignalSelection}. This implies the current suite of cleaning cuts
-is enough to remove any localised detector effects.
+%% Figure~\ref{fig:2dRatioMap} is the 2D ratio map made with unblinded signal region with luminosity of 
+%% 149.49~$\text{pb}^{-1}$. In the lower left region of the plot, two
+%% areas with significant instrumental effects are clear. To ensure these
+%% effects are filtered out by all cleaning cuts within the analysis, an
+%% $\eta-\phi$ map of all jets with $\pt>20\gev$ and $\bdphi<0.3$ are
+%% plotted after the signal region selection (as described in
+%% Sec.~\ref{sec:had-signal}), shown in
+%% Fig.~\ref{fig:jetMapPostSignalSelection}. The areas with significant
+%% instrumental effects visible in Fig.~\ref{fig:2dRatioMap} do not appear
+%% to remain in Fig.~\ref{fig:jetMapPostSignalSelection}. This implies the current suite of cleaning cuts
+%% is enough to remove any localised detector effects.
 
-\begin{figure}[h!]
-    \begin{center}
-        {\includegraphics[width=0.7\textwidth]{figures/selection/EtaPhiMap.pdf}}
-        \caption{The 2D ratio of jets ($\pt>20\gev$) with $\bdphi<0.3$ plotted in the
-        $\eta-\phi$ plane, divided by all jets that satisfy $\pt>20\gev$. 
-        Made with 149.49~$\text{pb}^{-1}$ of
-        events that pass a loose selection of one good primary vertex,
-        $\njet>1$ and $\scalht>150\gev$.}
-        \label{fig:2dRatioMap}
-    \end{center}
-\end{figure}
+%% \begin{figure}[h!]
+%%     \begin{center}
+%%         {\includegraphics[width=0.7\textwidth]{figures/selection/EtaPhiMap.pdf}}
+%%         \caption{The 2D ratio of jets ($\pt>20\gev$) with $\bdphi<0.3$ plotted in the
+%%         $\eta-\phi$ plane, divided by all jets that satisfy $\pt>20\gev$. 
+%%         Made with 149.49~$\text{pb}^{-1}$ of
+%%         events that pass a loose selection of one good primary vertex,
+%%         $\njet>1$ and $\scalht>150\gev$.}
+%%         \label{fig:2dRatioMap}
+%%     \end{center}
+%% \end{figure}
 
-\begin{figure}[h!]
-    \begin{center}
-        {\includegraphics[width=0.7\textwidth]{figures/selection/bDPhilt0p3AfterSelection.pdf}}
-        \caption{Jets ($\pt>20\gev$) with $\bdphi<0.3$ plotted in the
-        $\eta-\phi$ plane. 
-        Made with $1.26\ifb$ of
-        events that pass the full signal region selection.}
-        \label{fig:jetMapPostSignalSelection}
-    \end{center}
-\end{figure}
+%% \begin{figure}[h!]
+%%     \begin{center}
+%%         {\includegraphics[width=0.7\textwidth]{figures/selection/bDPhilt0p3AfterSelection.pdf}}
+%%         \caption{Jets ($\pt>20\gev$) with $\bdphi<0.3$ plotted in the
+%%         $\eta-\phi$ plane. 
+%%         Made with $1.26\ifb$ of
+%%         events that pass the full signal region selection.}
+%%         \label{fig:jetMapPostSignalSelection}
+%%     \end{center}
+%% \end{figure}
 
-%To protect against severe energy losses caused by masked regions in the ECAL (which
-%amount to about 1\% of the ECAL channel count) or HCAL, or by missing
-%instrumentation in the barrel-endcap gap, events with $\bdphi < 0.5$
-%are rejected if the distance in the ($\eta,\phi$) plane between the
-%selected jet and the closest masked ECAL region, $\Delta R_{\rm
-%  ECAL}$, is smaller than 0.3. Similarly, events are rejected if the
-%jet points within 0.3 in $\eta$ of the ECAL barrel-endcap gap at
-%$|\eta| = 1.5$.
 
 {\bf Beam halo.}
 
@@ -407,19 +341,29 @@ Fig.~\ref{fig:leadJetCleaning}.
 
 Such spurious events are suppressed by requiring at least 10\% of the leading
 jet's energy to originate from charged hadrons, $CHF>0.1$. The effectiveness of this selection
-is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
+is demonstrated in Fig.~\ref{fig:leadJetCleaning}, with the 2015 data. 
 
-Beyond the filter available in the data ntuples, the JetMET POG have
-provided lists of events that should fail the CSC beam halo and bad
-ECAL super cluster filters. These extra events are vetoed and the
-efficiency of events in the signal region (Sec.~\ref{sec:had-signal})
-and single muon control region (Sec.~\ref{subsec:mucontrolSelection})
-that pass this veto for each analysis bin are plotted in
-Fig.~\ref{fig:cscFilterEfficiencies}. In the vast majority of bins the
-extra filters are $100\%$ efficient, with a few bins with an
-inefficiency at the $2-3\%$ level. This confirms that the $CHF$ cut is
-already effectively removing spurious events that are present due to
-beam halo effects. 
+There is no need for this selection in the control regions, 
+as the requirement of well identified physics objects, like muons 
+and photons naturally removes spurious events of this kind. 
+
+This study has not been updated yet with the 2016 data. 
+However, this requirement is still in place, and has to be regarded as 
+an additional tight ID requirement employed in the analysis, 
+with efficiency close to one for real jets and thus not affecting the 
+signal efficiency significantly. 
+
+%% Beyond the filter available in the data ntuples, the JetMET POG have
+%% provided lists of events that should fail the CSC beam halo and bad
+%% ECAL super cluster filters. These extra events are vetoed and the
+%% efficiency of events in the signal region (Sec.~\ref{sec:had-signal})
+%% and single muon control region (Sec.~\ref{subsec:mucontrolSelection})
+%% that pass this veto for each analysis bin are plotted in
+%% Fig.~\ref{fig:cscFilterEfficiencies}. In the vast majority of bins the
+%% extra filters are $100\%$ efficient, with a few bins with an
+%% inefficiency at the $2-3\%$ level. This confirms that the $CHF$ cut is
+%% already effectively removing spurious events that are present due to
+%% beam halo effects. 
 
 \begin{figure}[h!]
     \begin{center}
@@ -435,18 +379,18 @@ beam halo effects.
     \end{center}
 \end{figure}
 
-\begin{figure}[h!]
-  \begin{center}
-    \subfigure[Signal region
-    selection]{\includegraphics[width=0.5\textwidth]{figures/selection/Signal_Data_CSCEfficiency.pdf}} ~~
-    \subfigure[Single muon control region
-    selection]{\includegraphics[width=0.5\textwidth]{figures/selection/SingleMu_Data_CSCEfficiency.pdf}} \\
-    \caption{Efficiencies of the CSC beam halo and bad ECAL super
-    cluster filters applied on $1.26\ifb$ of data passing the single
-    muon and signal region selections.}
-    \label{fig:cscFilterEfficiencies}
-  \end{center} 
-\end{figure}
+%% \begin{figure}[h!]
+%%   \begin{center}
+%%     \subfigure[Signal region
+%%     selection]{\includegraphics[width=0.5\textwidth]{figures/selection/Signal_Data_CSCEfficiency.pdf}} ~~
+%%     \subfigure[Single muon control region
+%%     selection]{\includegraphics[width=0.5\textwidth]{figures/selection/SingleMu_Data_CSCEfficiency.pdf}} \\
+%%     \caption{Efficiencies of the CSC beam halo and bad ECAL super
+%%     cluster filters applied on $1.26\ifb$ of data passing the single
+%%     muon and signal region selections.}
+%%     \label{fig:cscFilterEfficiencies}
+%%   \end{center} 
+%% \end{figure}
 
 {\bf Summary of signal region selection.} 
 
@@ -488,17 +432,17 @@ observed counts and transfer factors derived from simulated yields in
 the corresponding (\njet,\nb,\HT) bins of the control samples. Each
 prediction is statistically and systematically independent.
 
-In Run~1, for each (\njet,\nb,\HT) bin in the signal region, an
-extrapolation in the variable \alphat was necessary to obtain
-background predictions based on the muon control samples, which did
-not impose any \alphat requirement. No extrapolation in \alphat was
-performed for the photon control sample, which used the same \alphat
-requirements as the signal region. The \alphat requirements used in
-Run~1 for the signal region correspond loosely to \mht thresholds in
-the range $\sim$130 to $\sim$500\gev depending on the \HT
-bin. Uncertainties in this extrapolation were determined through
-closure tests with respect to data, including one dedicated to the
-\alphat extrapolation, plus additional cross checks.
+%% In Run~1, for each (\njet,\nb,\HT) bin in the signal region, an
+%% extrapolation in the variable \alphat was necessary to obtain
+%% background predictions based on the muon control samples, which did
+%% not impose any \alphat requirement. No extrapolation in \alphat was
+%% performed for the photon control sample, which used the same \alphat
+%% requirements as the signal region. The \alphat requirements used in
+%% Run~1 for the signal region correspond loosely to \mht thresholds in
+%% the range $\sim$130 to $\sim$500\gev depending on the \HT
+%% bin. Uncertainties in this extrapolation were determined through
+%% closure tests with respect to data, including one dedicated to the
+%% \alphat extrapolation, plus additional cross checks.
 
 In Run~2, we additionally bin event counts in the signal region
 according to the variable \mht in order to provide further
@@ -514,34 +458,29 @@ templates determined per (\njet,\nb,\HT) bin from simulation. The
 templates use an \mht bin width of 50\gev. The threshold of the final
 \mht bin used by the templates is determined based on the size of the
 available simulated samples: a statistical uncertainty of not more
-than 50\% for the sum of all SM background processes is required. An
-associated normalisation nuisance is determined from closure tests
-between simulation and data, as described in
-Sec.~\ref{sec:syst-on-shape}. Alternative templates are used to encode
+than 50\% for the sum of all SM background processes is required. 
+Alternative templates are used to encode
 the systematic uncertainty in the \mht distribution obtained from
-simulation.
+simulation, as described in Sec.~\ref{sec:syst-on-shape}. 
 
-\subsection{The hadronic control region}
+%% \subsection{The hadronic control region}
 
-A hadronic control region that is enriched in multijet events and
-disjoint with respect to the signal region is obtained by applying
-both the pre-selection criteria and lepton/photon vetoes, as defined
-above, and inverting the (\HT-dependent) \alphat and/or \mhtmet
-requirements. 
-%None of the cleaning filters are not applied to allow the study of
-%instrumental effects. 
-The sample of events populating this control region are used primarily
-to estimate any residual background contamination from QCD multijet
-events, described in Sec.~\ref{sec:qcd}.
+%% A hadronic control region that is enriched in multijet events and
+%% disjoint with respect to the signal region is obtained by applying
+%% both the pre-selection criteria and lepton/photon vetoes, as defined
+%% above, and inverting the (\HT-dependent) \alphat and/or \mhtmet
+%% requirements. 
+%% The sample of events populating this control region are used primarily
+%% to estimate any residual background contamination from QCD multijet
+%% events, described in Sec.~\ref{sec:qcd}.
 
 \subsection{Commonalities between the data control regions}
 
-There are five control regions with leptons or photons in the final
+There are three control regions with leptons or photons in the final
 state: \mj, \mmj, and \gj. 
-%\ej, \eej, and \gj. 
 The full pre-selection is applied as part of the definition of each of these control
-regions. The cuts on event-level jet-based quantities are identical to
-those applied in the hadronic search region and the same \njet, \nb,
+regions. The cuts on event-level jet-based quantities, with the exceptions of the jet CHF cut, 
+are identical to those applied in the hadronic search region and the same \njet, \nb,
 and \scalht binning is used. The lepton(s) or photon is not considered
 in the calculation of the event-level variables.
 
@@ -565,18 +504,14 @@ predictive power and further reduces the effect of any potential
 signal contamination.
 
 The lepton event samples can be used to predict components of the SM
-background across all \scalht bins, while the \gj sample can only be
-used for the region $\HT > 400\gev$ due to the photon trigger
-requirements.
+background across all \scalht bins, while the \gj sample is only 
+used for the region $\HT > 400\gev$. 
+This choice has been made to ensure that the photon control sample 
+is used to predict the $Z\rightarrow\nu\nu$ only in that 
+kinematic regime where the $\gamma/Z$ ratio is better under control in the simulation. 
 
 \subsection{The \texorpdfstring{\mj}{muon plus jets} control sample}
 \label{subsec:mucontrolSelection}
-
-%Events from the \wj and \ttbar processes are found in the hadronic
-%signal sample due to unidentified leptons (either out of acceptance or
-%not reconstructed) and hadronic tau decays originating from
-%high-p$_{T}$ W bosons. An estimate of these background processes is
-%obtained through the use of a \mj sample. 
 
 The selection criteria for the \mj sample are chosen to identify W
 bosons decaying to a muon and a neutrino in the phase-space of the
@@ -596,11 +531,6 @@ identified, isolated muon.
 
 \subsection{The \texorpdfstring{\mmj}{di-muon plus jets} control sample}
 \label{subsec:mumucontrolSelection}
-
-%The \znunu\ + jets process forms an irreducible background and can be
-%estimated using the \zmumu + jets process, which has similar kinematic
-%properties but a different acceptance and a smaller branching ratio. A
-%background estimate is obtained through the use of a \mmj sample. 
 
 The selection criteria are identical to those for the \mj sample, with
 the following exceptions that are tuned to identify Z bosons decaying
@@ -650,11 +580,6 @@ momenta of the two identified, isolated muons.
 \subsection{The \texorpdfstring{\gj}{photon plus jets} control sample}
 \label{subsec:photoncontrolSelection}
 
-%The \znunu\ + jets process can also be estimated using the \gj
-%process, which has a larger cross section and kinematic properties
-%similar to those of \znunu\ events when the photon is
-%ignored~\cite{PAS-SUS-08-002,Bern:2011pa}. 
-
 The \gj sample is defined by requiring exactly one photon satisfying
 tight isolation criteria and within an acceptance of $\pt > 200\gev$
 (limited by trigger requirements) and $|\eta| < 1.45$. Furthermore,
@@ -669,6 +594,4 @@ that the mass of the Z boson becomes a negligible effect when using
 the \gj sample to predict the kinematic distributions of the \znunu
 background. The cleaning cut $\mht/\met$ is also applied, as done in
 the signal region, where the \met is adjusted to account for the
-transverse energy of the identified, isolated photon. As stated above,
-the \gj sample can only be used to predict background components in
-the region $\HT > 400\gev$ due to trigger requirements.
+transverse energy of the identified, isolated photon. 
