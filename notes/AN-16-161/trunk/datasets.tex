@@ -5,29 +5,27 @@
 \subsection{Data}
 
 
-In this note, we use 2.1~\ifb of proton-proton collision data at
-$\sqrt{s} =$ 13~TeV collected in 2015. The JSON file listed in
+In this note, we use 2.6~\ifb of proton-proton collision data at
+$\sqrt{s} =$ 13~TeV collected in 2016. The JSON file listed in
 Table~\ref{tab:cert_json} specifies the periods of the time in which
 these certified data are collected. Table~\ref{tab:datasets_data} lists
-the names of the data sets relevant for the analysis, along with the
-integrated luminosities for each data set.
+the names of the data sets.
 
-We perform a blind analysis. In the previous version of the note, the
-data in the signal region is blinded with the exception of 149.48~\ipb
-of the certified data specified by the JSON file in
-Table~\ref{tab:cert_unblind_json}. Data in the control regions is
-never blinded. These blinding policies are agree in the SUS PAG.
+We perform a blind analysis; the data in the signal region was blinded
+with the exception of 0.8~\ifb of the certified data specified by the
+JSON file in Table~\ref{tab:cert_unblind_json}. Data in the control
+regions is never blinded. These blinding policies are agree in the SUS
+PAG.
 
-In the review of the previous version of the note and related
-presentations in the SUS PAG, it becomes clear that we understand the
-data in the control regions and a small fraction of the unblinded data
-in the signal region well enough to predict the backgrounds in the
-signal region. As a result, no data in the signal region is blinded in
-this version of the note.
+During the review in the SUS PAG, it becomes clear that we understand
+the data in the control regions and a small fraction of the unblinded
+data in the signal region well enough to predict the backgrounds in
+the signal region. As a result, no data in the signal region is
+blinded in this version of the note.
 
 \begin{table}[!h]
 \topcaption{The JSON file that specifies the periods of the time in
-which 2.1~\ifb of the certified data are collected} \footnotesize
+which 2.6~\ifb of the certified data are collected} \footnotesize
 \input{tables/datasets/cert_json.tex} \label{tab:cert_json}
 \end{table}
 
@@ -38,7 +36,7 @@ which 2.1~\ifb of the certified data are collected} \footnotesize
 \end{table}
 
 \begin{table}[!h]
-\topcaption{The JSON file specifying the 149.48~\ipb of the certified
+\topcaption{The JSON file specifying the 0.8~\ifb of the certified
 data that we never blind} \footnotesize
 \input{tables/datasets/cert_unblind_json.tex}
 \label{tab:cert_unblind_json}
@@ -47,46 +45,21 @@ data that we never blind} \footnotesize
 \subsection{Simulation}
 
 Table~\ref{tab:datasets_bkg} lists the data sets of simulated events
-of the standard model background processes used in this note. Tables
-from \ref{tab:datasets_SMS_T1qqqq} to \ref{tab:datasets_SMS_T1bbbb}
-lists those of the signal processes. In these data sets, in addition
-to the main interaction, each event contains on average 20 minimum
-bias interactions which simulate multiple interactions per
-bunch-crossing (in-time pileup). The expected detector signal from
-previous or following bunch crossings (out-of-time pileup) with 25ns
-bunch spacing is overlapped.
+of the standard model background processes used in this note. In these
+data sets, in addition to the main interaction, each event contains on
+average 20 minimum bias interactions which simulate multiple
+interactions per bunch-crossing (in-time pileup). The expected
+detector signal from previous or following bunch crossings
+(out-of-time pileup) with 25ns bunch spacing is overlapped.
 
 \begin{table}[!h]
  \centering
  \topcaption{Simulated background samples}
- \scriptsize
+ \tiny
  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
  \label{tab:datasets_bkg}
 \end{table}
 
-\begin{table}[!p]
- \centering
- \topcaption{Simulated signal samples: SMS T1qqqq}
- \scriptsize
- \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1qqqq.tex}}
-\label{tab:datasets_SMS_T1qqqq}
-\end{table}
-
-\begin{table}[!p]
- \centering
-\topcaption{Simulated signal samples: SMS T1tttt}
- \scriptsize
- \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1tttt.tex}}
-%\label{tab:datasets_bkg}
-\end{table}
-
-\begin{table}[!p]
- \centering
-\topcaption{Simulated signal samples: SMS T1bbbb}
- \scriptsize
- \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l003_SMS-T1bbbb.tex}}
-\label{tab:datasets_SMS_T1bbbb}
-\end{table}
 
 \clearpage
 
