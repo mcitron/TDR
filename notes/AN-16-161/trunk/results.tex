@@ -25,8 +25,9 @@ Few large pulls (around $~3\sigma$) are observed for the predictions coming from
 However, after the full fit, no such large pull is observed anymore, suggesting that 
 they appear due to systematic effects which are covered by the current uncertainties and measured in the fit. 
 
-Examples of \mht templates for the background and the some benchmark signals are shown in Fig.~\ref{fig:mht-templates}, 
-for some (\njet,\nb,\scalht) analysis bins. 
+Examples of \mht templates for the background and the some benchmark signals are shown in Fig.~\ref{fig:mht-templates-asym},\ref{fig:mht-templates-asym}  
+for some (\njet,\nb,\scalht) analysis bins, for asymmetric and symmetric topologies. \\
+As no \MHT shape information is used in the Monojet topologies, the full set of bins is already shown in Fig.~\ref{fig:summaryPlot_Monojet}. 
 
 In Figures ~\ref{fig:nuisPull_AlphaT}-~\ref{fig:nuisPull_Correlated} the pull 
 of the nuisance parameters with respect to the pre-fit value is shown, 
@@ -35,17 +36,6 @@ split between ``asymmetric'' and ``symmetric'' topologies
 (``monojet'' topologies are included in the asymmetric). \\
 No significant post-fit pull is observed across all set of parameters. 
 
-% FIXME: need updating
-\clearpage
-\begin{figure}[tbhp]
-    \caption{ \mht templates for some (\njet,\nb,\scalht) analysis bins. Benchmark models are also shown in the stack. \label{fig:mht-templates} }
-  \begin{center}
-    \subfigure[$\njet \geq 5$, $\nb \geq 3$, $\scalht > 800$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_ge3b_ge5j_800_Inf_prefit_T1bbbb_1400_100} } ~~
-    \subfigure[$\njet \geq 5$, $\nb \geq 3$, $600 < \scalht < 800$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700} } \\
-    \subfigure[$\njet \geq 5$, $\nb = 1$, $\scalht > 800$ GeV]   { \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_eq1b_ge5j_800_Inf_prefit_T1qqqq_1200_100} } ~~
-    \subfigure[$\njet \geq 5$, $\nb = 2$, $\scalht > 800$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/postFitShape_eq2b_ge5j_800_Inf_prefit_T1tttt_800_400} } \\
-  \end{center}
-\end{figure}
 
 
 % FIXME: need update!
@@ -82,7 +72,7 @@ No significant post-fit pull is observed across all set of parameters.
   \begin{center}
     \begin{figure}[h!]
       \caption{Background yield predictions and data observation for the (\njet,\nb,\scalht) analysis bins (integrated over \MHT) in the asymmetric topologies. \label{fig:summaryPlot_Asymmetric}}.
-      \includegraphics[width=0.8\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Asymmetric_prefit_overlay_fit_b_CRFit}
+      \includegraphics[width=0.9\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Asymmetric_prefit_overlay_fit_b_CRFit}
     \end{figure}
   \end{center}
 \end{landscape}
@@ -92,10 +82,35 @@ No significant post-fit pull is observed across all set of parameters.
   \begin{center}
     \begin{figure}[h!]
       \caption{Background yield predictions and data observation for the (\njet,\nb,\scalht) analysis bins (integrated over \MHT) in the symmetric topologies. \label{fig:summaryPlot_Symmetric}}.
-      \includegraphics[width=0.8\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Symmetric_prefit_overlay_fit_b_CRFit}
+      \includegraphics[width=0.9\linewidth]{figures/postFitResults/summaryPlots/summaryPlot_Symmetric_prefit_overlay_fit_b_CRFit}
     \end{figure}
   \end{center}
 \end{landscape}
+
+
+
+\clearpage
+\begin{figure}[tbhp]
+    \caption{ \mht templates for some (\njet,\nb,\scalht) analysis bins, for the asymmetric topologies. \label{fig:mht-templates-asym} }
+  \begin{center}
+    \subfigure[$\njet = 4a$, $\nb = 0$, $350 < \scalht < 400$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq0b_eq4a_350_400_prefit} } ~~
+    \subfigure[$\njet = 3a$, $\nb = 0$, $400 < \scalht < 500$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq0b_eq3a_400_500_prefit} } \\
+    \subfigure[$\njet = 3a$, $\nb = 1$, $300 < \scalht < 350$ GeV]   { \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq1b_eq3a_300_350_prefit} } ~~
+    \subfigure[$\njet \geq 5a$, $\nb = 2$, $400 < \scalht < 500$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq2b_ge5a_400_500_prefit} } \\
+  \end{center}
+\end{figure}
+
+\clearpage
+\begin{figure}[tbhp]
+    \caption{ \mht templates for some (\njet,\nb,\scalht) analysis bins, for the symmetric topologies. \label{fig:mht-templates-sym} }
+  \begin{center}
+    \subfigure[$\njet = \geq 5$, $\nb = 0$, $500 < \scalht < 600$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq0b_ge5j_500_600_prefit} } ~~
+    \subfigure[$\njet = \geq 5$, $\nb = 2$, $500 < \scalht < 600$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq2b_ge5j_500_600_prefit} } \\
+    \subfigure[$\njet = \geq 5$, $\nb = 0$, $\scalht > 800$ GeV]   { \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq0b_ge5j_800_Inf_prefit} } ~~
+    \subfigure[$\njet = 2$, $\nb = 0$, $300 < \scalht < 350$ GeV]{ \includegraphics[width=0.45\textwidth]{figures/postFitResults/shapePlots/mhtShape_eq0b_eq2j_300_350_prefit} } \\
+  \end{center}
+\end{figure}
+
 
 
 
@@ -155,26 +170,26 @@ No significant post-fit pull is observed across all set of parameters.
 \end{figure}
 
 
-%% \begin{figure}[tbhp]
-%%     \caption{ Pull of the nuisances parameters associated to the $\ttbar+W$ template systematic uncertainty, 
-%%       for the asymmetric (symmetric) categories on the left (right).
-%%       \label{fig:nuisPull_TemplateTtw}}
-%%   \begin{center}
-%%     \subfigure[Asymmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateTtw_asym_nuisances} } \\
-%%     \subfigure[Symmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateTtw_sym_nuisances} }
-%%   \end{center}
-%% \end{figure}
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $\ttbar+W$ template systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_TemplateTtw}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateTtw_asym_nuisances} } \\
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateTtw_sym_nuisances} }
+  \end{center}
+\end{figure}
 
 
-%% \begin{figure}[tbhp]
-%%     \caption{ Pull of the nuisances parameters associated to the $\ttbar+W$ template systematic uncertainty, 
-%%       for the asymmetric (symmetric) categories on the left (right).
-%%       \label{fig:nuisPull_TemplateZinv}}
-%%   \begin{center}
-%%     \subfigure[Asymmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateZinv_asym_nuisances} } \\
-%%     \subfigure[Symmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateZinv_sym_nuisances} }
-%%   \end{center}
-%% \end{figure}
+\begin{figure}[tbhp]
+    \caption{ Pull of the nuisances parameters associated to the $\ttbar+W$ template systematic uncertainty, 
+      for the asymmetric (symmetric) categories on the left (right).
+      \label{fig:nuisPull_TemplateZinv}}
+  \begin{center}
+    \subfigure[Asymmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateZinv_asym_nuisances} } \\
+    \subfigure[Symmetric categories]{ \includegraphics[width=0.8\textwidth]{figures/postFitResults/nuisancePlots/TemplateZinv_sym_nuisances} }
+  \end{center}
+\end{figure}
 
 
 \begin{figure}[tbhp]
