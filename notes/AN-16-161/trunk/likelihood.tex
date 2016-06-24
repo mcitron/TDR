@@ -9,9 +9,9 @@ using the MC samples described in Sec.~\ref{sec:datasets}. \\
 The binning of the templates is chosen taking into account both the limited statistics in the simulation and 
 the control of the background in data. 
 A maximum MC statistical uncertainty of 50\% (corresponding to 4 unweighted events) is required in each bin of the MC histogram template, 
-in order to ensure a statistically meaningful prediction. The uncertainty on the MC statistics in each bin is anyway 
+in order to ensure a statistically meaningful prediction. The uncertainty on the MC statistics in each bin is then 
 taken into account with a dedicated nuisance parameter, one per template bin, as explained below. 
-A minimum bin width constraint of 50 GeV is applied, 
+A minimum bin width constraint of 50 GeV is applied
 in order to reduce the bin-by-bin migration due to the finite \mht resolution.\\
 
 For each category \htcat and \mht bin, $i$, in the signal region, let $n^{\htcat}_{\mathrm{had},i}$ be the number of observed events, 
@@ -23,7 +23,7 @@ The likelihood function for the hadronic signal region is, in each \htcat:
 \label{eq:hadronicLikelihood}
 \end{equation}
 
-The \mht dimension is not used for the control region, and their information is only used to constrain the normalisation of the background processes 
+The \mht dimension is not used for the control region, and they are used to constrain only the normalisation of the background processes 
 in the signal region, as described in Sec.~\ref{sec:backgroundmet}. 
 Their likelihood is therefore written as:
 
@@ -46,12 +46,12 @@ between the signal region and the control regions.
 One floating parameter is used for both background 
 processes ($Z_{\mathrm{inv.}}$ and \ttbar/W) \footnote{In the following we use $Z_{\mathrm{inv}}$ to indicate 
 the $Z\to \mathrm{inv}$ process and \ttbar/W to indicate the sum of the yields of the $t\bar{t}$ and $W+\mathrm{jets}$ processes.}
-giving a prediction for each background sources depending on the relevant nuisances described below. \\
+giving a prediction for each background source depending on the relevant nuisances described below. \\
 This binds the background yields in the signal and control regions to float together, 
 taking into account the statistical uncertainty associated with the counts in the control samples. 
 
 The systematic uncertainties affecting the transfer factors, described in Sec.~\ref{sec:systematics}, 
-are incorporated in the likelihood by means of guassian nuisance parameters, which act on the floating
+are incorporated in the likelihood by means of nuisance parameters with gaussian constraints which act on the floating
 parameter. These depend on the background process and the control region used for the prediction and
 are taken as uncorrelated between each of the \htcat bins. Additionally, systematic effects studied 
 through variations in simulation, like b-tag SF and jet energy corrections, are included as shape uncertainties on the transfer factors. 
@@ -72,11 +72,11 @@ The total likelihood is the product over all the \htcat bins and all the control
 \mathcal{L} = \prod_{\htcat} \mathcal{L}_{\text{had}}^{\htcat} \times \prod_{\text{j}} \mathcal{L}_{\text{CR,j}}^{\htcat}
 \end{equation}
 
-The fit is carried on in two steps. 
-In the first, the background prediction for the signal region $b^{\htcat}_{\mathrm{had},i}$ are extracted from a likelihood fit 
-using the control regions only in Eq.~\ref{eq:controlLikelihood}. 
+The fit is carried out in two steps. 
+In the first, the background predictions for the signal region $b^{\htcat}_{\mathrm{had},i}$ are extracted from a likelihood fit 
+using the control regions in Eq.~\ref{eq:controlLikelihood} without the signal region. 
 This fit provides the best knowledge of the background yields in the signal region, 
-and they can therefore be used to re-interpret the analysis. 
+and the predictions can therefore be used to re-interpret the analysis. 
 In the second step, the fit is done using the full likelihood (Eq.~\ref{eq:total_likelihood}) and all 
 the correlations between the backgrounds in control regions and signal region are taken into account, 
 together with the statistical uncertainty associated to the finite number of events in the control region. \\
