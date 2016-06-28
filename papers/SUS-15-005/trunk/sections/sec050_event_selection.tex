@@ -24,7 +24,7 @@ events containing an isolated electron or muon that satisfy $\Pt >
 isolated photon with $\Pt > 25\GeV$ and $\abs{\eta} < 2.5$ are also
 vetoed, in order to select only multijet final states. Furthermore,
 events containing a single isolated track satisfying $\Pt > 10\GeV$
-and $\abs{\eta} < 2.5$ and vetoed in order to reduce the background
+and $\abs{\eta} < 2.5$ are vetoed in order to reduce the background
 contribution from final states containing hadronically-decaying tau
 leptons.
 
@@ -39,8 +39,8 @@ $\Pt^{j_\text{2}} > 100\GeV$, then this category of events is labelled
 pair-produced sparticles. If the jet satisfies $40 < \Pt^{j_\text{2}}
 < 100\GeV$ or $\Pt^{j_\text{2}} < 40\GeV$, then these categories are
 labelled as, respectively, ``asymmetric'' or ``monojet'' topologies,
-which target primarily nearly mass-degenerate strongly produced models
-and weakly produced models.
+which target models involving the direct production of stable, weakly
+interacting, massive particles.
 
 The mass scale of the physics processes being probed is characterised
 by the scalar \Pt sum of the jets, defined as $\scalht =
@@ -228,20 +228,36 @@ the two jets are not back-to-back and recoil against significant,
 genuine $\ptvecmiss$ from weakly interacting particles that escape the
 detector, such as neutrinos.
 
+%The definition of the \alphat variable can be generalised for events
+%with more than two jets~\cite{RA1Paper}. The mass scale for any
+%process is characterised through the scalar \Et sum of jets, defined
+%as $\scalst = \sum_{i=1}^{N_\text{jet}} |\vec{\Et}^{\mathrm{j}_i}|$,
+%where $N_\text{jet}$ is the number of jets with \Et above a predefined
+%threshold. The estimator for \ptvecmiss is \HTmiss. For events with
+%three or more jets, a pseudo-dijet system is formed by combining the
+%jets in the event into two pseudo-jets. The total \scalst for each of
+%the two pseudo-jets is given by the scalar \Et sum of its contributing
+%jets. The combination chosen is the one that minimises \dst, defined
+%as the difference between the two pseudo-jets. This clustering
+%criterion assumes a balanced-event hypothesis, which provides the best
+%separation between SM multijet events and events with genuine
+%\ptvecmiss. The \alphat definition can be generalised to:
+
 The definition of the \alphat variable can be generalised for events
 with more than two jets~\cite{RA1Paper}. The mass scale for any
-process is characterised through the scalar \Et sum of jets, defined
-as $\scalst = \sum_{i=1}^{N_\text{jet}} |\vec{\Et}^{\mathrm{j}_i}|$,
-where $N_\text{jet}$ is the number of jets with \Et above a predefined
-threshold. The estimator for \ptvecmiss is \HTmiss. For events with
-three or more jets, a pseudo-dijet system is formed by combining the
-jets in the event into two pseudo-jets. The total \scalst for each of
-the two pseudo-jets is given by the scalar \Et sum of its contributing
-jets. The combination chosen is the one that minimises \dst, defined
-as the difference between the two pseudo-jets. This clustering
-criterion assumes a balanced-event hypothesis, which provides the best
-separation between SM multijet events and events with genuine
-\ptvecmiss. The \alphat definition can be generalised to:
+process is characterised through the scalar sum of the jet transverse
+energies, defined as $\scalst = \sum_{i=1}^{N_\text{jet}}
+|\vec{\Et}^{\mathrm{j}_i}|$, where $N_\text{jet}$ is the number of
+jets with \Et above a predefined threshold. The estimator for
+\ptvecmiss is \HTmiss. For events with three or more jets, a
+pseudo-dijet system is formed by combining the jets in the event into
+two pseudo-jets. The \scalst for each of the two pseudo-jets is given
+by the scalar \Et sum of its contributing jets. The combination chosen
+is the one that minimises \dst, defined as the difference between
+these sums for the two pseudo-jets.  This clustering criterion assumes
+a balanced-event hypothesis, which provides strong separation between
+SM multijet events and events with genuine \ptvecmiss. The \alphat
+definition can be generalised to:
 
 \begin{equation}
   \label{eq:alphat}
@@ -286,10 +302,18 @@ A further variable considers the minimum azimuthal separation between
 a jet and the negative vector \ptvec sum derived from all other jets
 in the event~\cite{RA1Paper}, 
 
+%\begin{equation}
+%  \bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
+%  \Delta\phi(\ptvec^{\,j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
+%  \ptvec^{\,j_\text{i}} + \ptvec^{\,j_\text{k}}).   
+%  \label{eq:bdphi}
+%\end{equation}
+
 \begin{equation}
   \bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
-  \Delta\phi(\ptvec^{\,j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
-  \ptvec^{\,j_\text{i}} + \ptvec^{\,j_\text{k}}).   
+  \Delta\phi( -\ptvec^{\,j_\text{k}}, 
+  \sum_{\substack{j_\text{i}\, =\, 1 \\ j_\text{i} \ne j_\text{k}}}^{\njet}
+  \ptvec^{\,j_\text{i}}).   
   \label{eq:bdphi}
 \end{equation}
 
@@ -335,29 +359,26 @@ requirement.
     \includegraphics[width=0.49\textwidth]{figures/kine/v1/AlphaT_Paper} \,
     \includegraphics[width=0.49\textwidth]{figures/kine/v1/BDPhi_paper} \\
   \end{center}
-  \caption{
-%    (Left) The \alphat distribution observed in data for events
-%    that are recorded with unbiased trigger conditions and satisfy the
-%    common preselection and full signal region selection criteria, the
-%    additional requirement $\scalht > 300\GeV$, and, respectively,
-%    $\alphat < 0.55$ and $\alphat > 0.55$.  
-    (Left) The \alphat distribution observed in data for events
-    that are recorded with unbiased trigger conditions and satisfy
-    either the common preselection criteria and $\alphat < 0.55$,
-    or the full signal region selection criteria and $\alphat > 0.55$,
-    as well as the additional requirement $\scalht > 300\GeV$. 
-    (Right) The \bdphi distribution observed in data for events
-    that are recorded with unbiased trigger conditions and satisfy the
-    full signal region selection criteria for the region $\scalht >
-    800\GeV$. 
-    The distributions for the QCD multijet backgrounds are determined
-    from simulation while all other SM backgrounds are estimated using
-    a $\mu$ + jets data control sample.
-    % The uncertainties in the SM expectation are dominated by the
-    % statistical uncertainties associated with the limited sample of
-    % simulated multijet events. 
-    \label{fig:alphat-bdphi} 
-  }
+  \caption{ (Left) The \alphat distribution observed in data for
+    events that are recorded with an inclusive set of trigger
+    conditions and satisfy either the common preselection criteria and
+    $\alphat < 0.55$, or the full signal region selection criteria and
+    $\alphat > 0.55$, as well as the additional requirement $\scalht >
+    300\GeV$.  (Right) The \bdphi distribution observed in data for
+    events that are recorded with an inclusive set of trigger
+    conditions and satisfy the full signal region selection criteria
+    for the region $\scalht > 800\GeV$.  The distributions for the QCD
+    multijet backgrounds are determined from simulation while all
+    other SM backgrounds (vector boson production in association with
+    jets, \ttbar, and other residual contributions from rare SM
+    processes) are estimated using a \mj data control sample.  These
+    distributions illustrate the performance of these two variables in
+    a kinematical phase space that is representative of the signal
+    region. The statistical uncertainties for the multijet and SM
+    expectations are represented by the hatched areas (visible only
+    for statistically limited bins). The final bin of each
+    distribution contains the overflow events.  }
+  \label{fig:alphat-bdphi} 
 \end{figure*}
 
 Figure~\ref{fig:alphat-bdphi} illustrates the performance of the
@@ -365,12 +386,15 @@ Figure~\ref{fig:alphat-bdphi} illustrates the performance of the
 in data for events that satisfy all other signal region selection
 criteria, as defined in Table~\ref{tab:selections}, and additional
 requirements on \scalht. In the case of the \alphat distribution, the
-events that satisfy $\alphat < 0.55$ must only fulfill the common
+events that satisfy $\alphat < 0.55$ must only fulfil the common
 preselection criteria defined in Table~\ref{tab:selections}, no
 \HTmiss requirement is made, and the events are recorded with an
-unbiased set of trigger \scalht conditions. The contribution from
-multijet events is observed to fall by five orders of magnitude for
-both variables.
+inclusive set of trigger \scalht conditions that are independent of
+the \alphat variable. In the case of the \bdphi distribution, events
+are also recorded with an inclusive set of trigger conditions, and
+must satisfy the full signal region selection criteria for the region
+$\scalht > 800\GeV$. The contribution from multijet events is observed
+to fall by five orders of magnitude for both variables.
 
 The aforementioned requirements complete the event selection criteria
 for the signal region. The \alphat and \bdphi requirements, in
@@ -388,17 +412,31 @@ anomolies are observed in the sample of candidate signal events
 following the application of the dedicated vetoes mentioned in
 Section~\ref{sec:preselection}.
 
-Signal candidate events are recorded with multiple jet-based trigger
-conditions that utilise calculations of \scalht and \alphat, and
-events are required to satisfy predetermined thresholds for both
-variables, as well as a threshold on the mean \Pt of the two highest
-\Pt jets. In addition, a trigger condition based solely on \scalht is
-used to record candidate events for the region $\scalht > 800\GeV$. A
-further trigger condition comprising the presence of significant
-\HTmiss and \ETmiss is used to record monojet events. The
-trigger-level jet energies are corrected to account for energy scale
-and pileup effects. The trigger strategy provides efficiencies at or
-near 100\% for all bins in the signal region. 
+%Signal candidate events are recorded with multiple jet-based trigger
+%conditions that utilise calculations of \scalht and \alphat, and
+%events are required to satisfy predetermined thresholds for both
+%variables, as well as a threshold on the mean \Pt of the two highest
+%\Pt jets.
+
+Multiple trigger conditions are employed in combination to record
+signal candidate events. A set of trigger conditions utilise
+calculations of both \scalht and \alphat to record events with two or
+more jets. An event is recorded if it satisfies any of the following
+pairs of (\scalht,\alphat) thresholds, (200,0.57), (250,0.55),
+(300,0.53), (350,0.52), or (400,0.51), as well as a requirement on the
+mean value of the two highest \Pt jets, $\langle\Pt^{j_\text{1}} +
+\Pt^{j_\text{2}}\rangle > 90\GeV$. These requirements are collectively
+labelled as the ``\scalht--\alphat'' triggers. In addition, candidate
+signal events with one or more jets are also recorded if they satisfy
+the requirements $\HTmiss > 90\GeV$ and $\ETmiss > 90\GeV$. Finally,
+for events that satisfy $\scalht > 800\GeV$, a further trigger
+requirement, defined by $\scalht > 800\GeV$, is employed in addition
+to the \scalht--\alphat trigger requirements, to record events
+characterised by high activity in the calorimeters with high
+efficiency. The trigger-level jet energies are corrected to account
+for energy scale and pileup effects. The aforementioned triggers are
+employed in combination to provide efficiencies at or near 100\% for
+all bins in the signal region.
 %The trigger conditions used for different event categories and \scalht
 %bins in the signal region are summarised in Table~\ref{tab:trigger}.
 
@@ -412,24 +450,24 @@ near 100\% for all bins in the signal region.
 %  \label{tab:trigger}
 %  \centering
 %  \footnotesize
-%  \begin{tabular}{ ccccccccc }
+%  \begin{tabular}{ cccccccc }
 %    \hline
-%    \multicolumn{3}{c}{Categories and bins} & &
-%    \multicolumn{5}{c}{Thresholds for trigger quantities} \\
-%    \cline{1-3} \cline{5-9} 
+%    \multicolumn{2}{c}{Categories and bins} & &
+%    \multicolumn{5}{c}{Efficiencies Thresholds for trigger quantities} \\
+%    \cline{1-2} \cline{4-8} 
 %
-%    \njet   & \nb     & \scalht region &  & \HTmiss & \ETmiss & \scalht & $\langle\Pt^{j_\text{1}} + \Pt^{j_\text{2}}\rangle$ & \alphat \\
-%            &         & (GeV)          &  & (GeV)   & (GeV)   & (GeV)   & (GeV)                                               &         \\
-%    \hline                                                   
-%    1       & $\geq$0 & $>$200         &  & 90      & 90      & -       & -                                                   & -       \\
-%    $\geq$2 & $\geq$0 & 200--800       &  & 90      & 90      & -       & -                                                   & -       \\
-%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 200     & 90                                                  & 0.57    \\
-%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 250     & 90                                                  & 0.55    \\
-%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 300     & 90                                                  & 0.53    \\
-%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 350     & 90                                                  & 0.52    \\
-%    $\geq$2 & $\geq$0 & 200--800       &  & -       & -       & 400     & 90                                                  & 0.51    \\
-%    $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 400     & 90                                                  & 0.51    \\
-%    $\geq$2 & $\geq$0 & $>$800         &  & -       & -       & 800     & -                                                   & -       \\
+%    \njet                  & \scalht region & Trigger logic & \HTmiss & \ETmiss & \scalht & $\langle\Pt^{j_\text{1}} + \Pt^{j_\text{2}}\rangle$ & \alphat \\
+%                           & (GeV)          &   & (GeV)   & (GeV)   & (GeV)   & (GeV)                                               &         \\
+%    \hline                                         
+%    1\B                    & $>$200         &   & 90      & 90      & -       & -                                                   & -       \\
+%    $\geq$2                & 200--800       &   & 90      & 90      & -       & -                                                   & -       \\
+%    \multicolumn{2}{c}{}   & -              & - & 200     & 90      & 0.57                                                                    \\
+%    \multicolumn{2}{c}{}   & -              & - & 250     & 90      & 0.55                                                                    \\
+%    \multicolumn{2}{c}{}   & -              & - & 300     & 90      & 0.53                                                                    \\
+%    \multicolumn{2}{c}{}   & -              & - & 350     & 90      & 0.52                                                                    \\
+%    \multicolumn{2}{c}{\B} & -              & - & 400     & 90      & 0.51                                                                    \\
+%    $\geq$2                & $>$800         &   & -       & -       & 400     & 90                                                  & 0.51    \\
+%    \multicolumn{2}{c}{}   & -              & - & 800     & -       & -                                                                       \\
 %    \hline
 %  \end{tabular}
 %\end{table}
