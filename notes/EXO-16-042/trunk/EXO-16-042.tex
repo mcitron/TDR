@@ -1,0 +1,130 @@
+%%__________________________________________________________________||
+
+%%__________________________________________________________________||
+\RCS$Revision: 315308 $
+\RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/SUS-15-005/trunk/SUS-15-005.tex $
+\RCS$Id: SUS-15-005.tex 315308 2015-12-16 00:05:01Z alcaraz $
+
+%%__________________________________________________________________||
+\cmsNoteHeader{EXO-16-042}
+
+%%__________________________________________________________________||
+\title{An inclusive search for new phenomena in final states with one
+  or more jets and missing transverse momentum at $\sqrt{s} = 13\TeV$
+  with the \alphat variable}
+
+%%__________________________________________________________________||
+\address[cern]{CERN}
+\author[cern]{The CMS Collaboration}
+
+%%__________________________________________________________________||
+\date{\today}
+
+%%__________________________________________________________________||
+\abstract{An inclusive search for new-physics processes that produce
+final states with jets and missing transverse momentum is performed in
+pp collisions at a centre-of-mass energy of 13 TeV. A dimensionless
+kinematic variable, $\alpha_{\text{T}}$, is used to discriminate
+between events with genuine and misreconstructed missing transverse
+momentum. A data sample corresponding to an integrated luminosity of
+$2.6~\text{fb}^{-1}$, recorded by the CMS experiment at the LHC, is
+analysed. The observed signal candidate event counts are found to be
+in agreement with the expected contributions from standard model
+processes and the result is interpreted in the mass parameter space of
+supersymmetric simplified models.}
+
+% 1. **DO NOT use \include or \input** to include the abstract: our
+%    abstract extractor will not search through other files than this
+%    one.
+% 2. **DO NOT use %** to comment out sections of the abstract: the
+%    extractor will still grab those lines (and they won't be
+%    comments any longer!).
+% 3. For PASs: **DO NOT use tex macros** in the abstract: CDS MathJax
+%    processor used on the abstract doesn't understand them _and_ will
+%    only look within $$. The abstracts for papers are hand formatted
+%    so macros are okay.
+
+
+%%__________________________________________________________________||
+\input{mydefs}
+%\input{symbols}
+
+%%__________________________________________________________________||
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+
+\newcommand{\eslash}{{\hbox{$E$\kern-0.6em\lower-.05ex\hbox{/}\kern0.10em}}}
+\newcommand{\met}{\mbox{$\eslash_\text{T}$}\xspace}
+\newcommand{\cls}{\mbox{CL$_s$}\xspace}
+\newcommand{\wtaunu}{\ensuremath{\PW \rightarrow \Pgt\cPgn}}
+\newcommand{\Et}{\ensuremath{{E_{\text T}}}\xspace}
+\newcommand{\Hslash}{{\hbox{$H$\kern-0.8em\lower-.05ex\hbox{/}\kern0.10em}}}
+\newcommand{\scalht}{\ensuremath{H_{\mathrm{T}}}\xspace}
+%\newcommand{\mht}{\mbox{$\Hslash_\text{T}$}\xspace}
+\newcommand{\mht}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
+%\def\mhtmet{\mbox{$\Hslash_\text{T} / \eslash_\text{T}$}\xspace}
+\newcommand{\mhtmet}{\ensuremath{H_{\mathrm{T}}^{\text{miss}} / E_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\znunu}{\ensuremath{\cPZ \rightarrow \cPgn\cPagn}\xspace}
+\newcommand{\zmumu}{\ensuremath{\cPZ \rightarrow \mu\mu}\xspace}
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+\newcommand{\Pt}{\ensuremath{{p_{\text T}}}\xspace}
+\newcommand{\dphi}{\ensuremath{\Delta\phi^{*}_{\rm min}}\xspace}
+\newcommand{\dm}{\ensuremath{\Delta m}\xspace}
+\newcommand{\HTmiss}{\mht}
+\newcommand{\bdphi}{\dphi}
+
+\newcommand{\ra}{\ensuremath{\rightarrow}}
+\newcommand{\zmumuj}{\ensuremath{\rm{Z}\! (\ra\! \mu\mu)\! +\! \text{jets}}\xspace}
+\newcommand{\wlj}{\ensuremath{\rm{W}\! (\ra\! \ell\nu)\! +\! \text{jets}}\xspace}
+
+
+%%__________________________________________________________________||
+\hypersetup{
+pdfauthor={Mark Baber, Robert Bainbridge, Freya Blekman, Oliver
+Buchmueller, Jim Brooke, Stefano Casasso, Matthew Citron, Adam Elwood,
+Henning Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo,
+Sarah Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
+Tapper},
+pdftitle={Search for new physics in final states with jets and missing transverse momentum in $\sqrt{s}$ = 13 TeV pp collisions with the $\alpha_{\text{T}}$ variable},
+pdfsubject={CMS},
+pdfkeywords={CMS, jets, missing transverse momentum, dark matter, AlphaT}
+}
+
+
+%%__________________________________________________________________||
+\maketitle
+
+%%__________________________________________________________________||
+% \tableofcontents
+
+%\clearpage
+%\input{signal_systs_table}
+%\clearpage
+%\input{bkgd_systs_table}
+%\clearpage
+%\input{event_selection_table}
+%\clearpage
+%\input{predewkdata_sig_comb_sym_twiki}
+%\clearpage
+%\input{predewkdata_sig_comb_asym_twiki}
+%\clearpage
+%\input{predewkdata_sig_comb_mono_twiki}
+%\clearpage
+
+\input{sec010_introduction}
+\input{sec020_detector}
+\input{sec050_event_selection}
+\input{sec080_qcd_background}
+\input{sec110_ewk_background}
+\input{sec140_interpretation}
+\input{sec200_summary}
+\clearpage
+
+%%__________________________________________________________________||
+% \nocite{*}
+\bibliography{auto_generated}
+
+%%__________________________________________________________________||
