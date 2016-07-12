@@ -37,10 +37,11 @@ is also utilised which has no explicit dependence on $\alphat$ or dijet average 
 
 These triggers form the primary signal selection menu for the analysis. In
 addition, a set of secondary triggers with higher thresholds are in operation 
-to provide redundancy for higher luminosity scenarios. In the highest luminosity
-scenario of $1\times10^{34}\cm^{-2}{\rm s}^{-1}$, the \\
-\verb!HLT_PFHT200_PFDijet90_AlphaT0p57! seed path is prescaled and is replaced
-by the \\ \verb!HLT_PFHT200_PFDijet90_AlphaT0p63! backup path. All other \alphat
+to provide redundancy for higher luminosity scenarios. In the $1\times10^{34}\cm^{-2}{\rm s}^{-1}$
+luminosity scenario, the \verb!HT200! \alphat seed path is prescaled and is replaced by
+its backup path. Similarly, the backup paths of the \verb!HT250! and \verb!HT300!
+triggers are utilised at $1.2\times10^{34}\cm^{-2}{\rm s}^{-1}$ and
+$1.4\times10^{34}\cm^{-2}{\rm s}^{-1}$, respectively. All other \alphat
 paths sufficiently suppress trigger rates such that the use of secondary triggers 
 are not required in these cases.
 
@@ -61,7 +62,8 @@ multijet events to maintain acceptable trigger rates.
 
 \begin{table}[h!]
 \topcaption{Trigger thresholds of the Level-1, calorimeter prefilter and final PF-trigger decision for
- the primary HLT paths for the hadronic signal region in the  $\lumi=7\times10^{33}\cm^{-2}{\rm s}^{-1}$ scenario. }
+ the primary HLT paths for the hadronic signal region in the  $\lumi=7\times10^{33}\cm^{-2}{\rm s}^{-1}$ scenario.
+ The L1 seeds correspond to the lowest threshold unprescaled ones available, which vary as a function of instantaneous luminosity. }
 \footnotesize
 \centering
 \begin{tabular}{c|cccc} 
@@ -70,13 +72,13 @@ multijet events to maintain acceptable trigger rates.
 HLT path     & L1 seed & HLT calo-prefilter & HLT PF-filter                                                \\
     &        & ($\scalht$, $\alphat$', $\pt^{\rm \left<j1,j2\right>}$, \met) & ($\scalht$, $\alphat$, $\pt^{\rm \left<j1,j2\right>}$, \met) \\ %& (Hz) \\[0.7 ex] 
 \hline
-{\scriptsize \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57!} & {\scriptsize\verb!HTTXXX OR ETMYY!} & 150, 0.540, 70, - & 200, 0.570, 90, - \\ %& \\ % 11.0 $\pm$ 3.0 \\
-{\scriptsize \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55!} & {\scriptsize\verb!HTTXXX OR ETMYY!} & 200, 0.535, 70, - & 250, 0.550, 90, - \\ %& \\ % 8.5  $\pm$ 3.0 \\
-{\scriptsize \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53!} & {\scriptsize\verb!HTTXXX OR ETMYY!} & 250, 0.525, 70, - & 300, 0.530, 90, - \\ %& \\ % 9.5  $\pm$ 3.0 \\
-{\scriptsize \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52!} & {\scriptsize\verb!HTTXXX OR ETMYY!} & 300, 0.520, 70, - & 350, 0.520, 90, - \\ %& \\ % 10.0 $\pm$ 3.0 \\
-{\scriptsize \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51!} & {\scriptsize\verb!HTTXXX OR ETMYY!} & 370, 0.510, 70, - & 400, 0.510, 90, - \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
-{\scriptsize \verb!HLT_PFHT800!}                         & {\scriptsize\verb!HTTXXX!}          & 650, -, -, -      & 800, -, -, -, -   \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
-{\scriptsize \verb!HLT_PFMETNoMu90_PFMHTNoMu90_IDTight!} & {\scriptsize\verb!ETMXX!}           &  -, -, -, -, 65   & -, -, -, -, 90    \\
+{\scriptsize \verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57!} & {\scriptsize\verb!HTT240 OR ETM70!} & 150, 0.540, 70, - & 200, 0.570, 90, - \\ %& \\ % 11.0 $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55!} & {\scriptsize\verb!HTT240 OR ETM70!} & 200, 0.535, 70, - & 250, 0.550, 90, - \\ %& \\ % 8.5  $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53!} & {\scriptsize\verb!HTT240 OR ETM70!} & 250, 0.525, 70, - & 300, 0.530, 90, - \\ %& \\ % 9.5  $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52!} & {\scriptsize\verb!HTT240 OR ETM70!} & 300, 0.520, 70, - & 350, 0.520, 90, - \\ %& \\ % 10.0 $\pm$ 3.0 \\
+{\scriptsize \verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51!} & {\scriptsize\verb!HTT240 OR ETM70!} & 370, 0.510, 70, - & 400, 0.510, 90, - \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+{\scriptsize \verb!HLT_PFHT800!}                         & {\scriptsize\verb!HTT240!}          & 650, -, -, -      & 800, -, -, -, -   \\ %& \\ % 13.5 $\pm$ 3.5 \\ \\ %\hline \\ %
+{\scriptsize \verb!HLT_PFMETNoMu90_PFMHTNoMu90_IDTight!} & {\scriptsize\verb!ETM70!}           &  -, -, -, -, 65   & -, -, -, -, 90    \\
 %% L1sL1ETM70ORETM60ORETM50
 %% hltMET, MHT 65
 \hline
