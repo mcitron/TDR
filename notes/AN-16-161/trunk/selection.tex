@@ -202,7 +202,7 @@ efficiency by requiring an appropriate cut on \alphat. \\
 A useful approximate conversion between \alphat and \mht can be
 obtained by calculating \alphat, as described by Eq.~\ref{eq:alphat3}, 
 while forcing $\dht = 0\gev$. Hence, using this metric, the
-dependence of the \alphat requirement as a function of the \HT bin can
+dependence of the \alphat cut as a function of the \HT bin can
 be determined such that the effective requirement on \mht is
 comparable, \ie roughly constant, across all \HT bins. The values
 typically fall in the range $\sim110 < \mht < \sim160\gev$. This
@@ -340,15 +340,14 @@ lie within the plane of the LHC ring.
 
 Such spurious events are suppressed by requiring at least 10\% of the leading
 jet's energy to originate from charged hadrons, $CHF>0.1$. The effectiveness of this selection
-is demonstrated in Fig.~\ref{fig:leadJetCleaning}, with the 2015 data. 
+is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
 
 There is no need for this selection in the control regions, 
 as the requirement of well identified physics objects, like muons 
 and photons naturally removes spurious events of this kind. 
 
-This study has not been updated yet with the 2016 data. 
-However, this requirement is still in place, and has to be regarded as 
-an additional tight ID requirement employed in the analysis, 
+This cut can be regarded as 
+an additional tight jet ID requirement employed in the analysis, 
 with efficiency close to one for real jets and thus not affecting the 
 signal efficiency significantly. 
 
@@ -366,11 +365,11 @@ signal efficiency significantly.
 
 \begin{figure}[h!]
     \begin{center}
-        {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetChf_all_before.pdf}}
-        {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetPhi_all_before.pdf}}
-        {\includegraphics[width=0.32\textwidth]{figures/selection/leadJetPhi_all_after.pdf}}
-        \caption{Distributions in the signal region of the lead jet charged hadron
-        energy fraction (CHF) (Left), lead jet $\phi$ direction (Centre), and lead jet $\phi$
+        {\includegraphics[width=0.32\textwidth]{figures/selection/jet_chHEF_mono_all_before.pdf}}
+        {\includegraphics[width=0.32\textwidth]{figures/selection/jet_phi[0]_mono_all_before.pdf}}
+        {\includegraphics[width=0.32\textwidth]{figures/selection/jet_phi[0]_mono_all_after.pdf}}
+        \caption{Distributions in the signal region of the jet charged hadron
+        energy fraction (CHF) (Left), jet $\phi$ direction (Centre), and jet $\phi$
         direction after applying a requirement of {CHF~$>0.1$}. The large excess in data
         at charged hadron fractions close to zero and ${\phi = 0, \pi}$ is consistent with beam
         halo effects, and is effectively suppressed by the aforementioned selection.}
@@ -453,8 +452,9 @@ the control samples to a predicted distribution in \mht for each
 corresponding (\njet,\nb,\HT) bin in the signal region.
 
 The \mht dimension is included in the likelihood model by using
-templates determined per (\njet,\nb,\HT) bin from simulation. The
-templates use an \mht bin width of 50\gev. The threshold of the final
+templates determined per (\njet,\nb,\HT) bin from simulation. 
+The binning of the templates is shown in Sec.~\ref{sec:mhtBinning}. 
+The templates use an \mht bin width of 50\gev. The threshold of the final
 \mht bin used by the templates is determined based on the size of the
 available simulated samples: a statistical uncertainty of not more
 than 50\% for the sum of all SM background processes is required. 
