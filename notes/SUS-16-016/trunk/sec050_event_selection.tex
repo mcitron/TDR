@@ -1,52 +1,73 @@
 %%__________________________________________________________________||
-\section{Signal region definition}
+\section{Event reconstruction and selection} %Signal region definition
 \label{sec:event_selection}
 
-The event reconstruction and selection criteria described below are
-explained in more detail in Ref.~\cite{RA1Paper2012}. In order to
-suppress SM processes with genuine \ptvecmiss from neutrinos and select
-only multijet final states, events containing an isolated
-electron~\cite{PAS-EGM-10-004} or muon~\cite{PAS-MUO-10-004} with $\Pt
-> 10\GeV$ or isolated photon~\cite{PAS-EGM-10-006} with $\pt > 25\GeV$
-are vetoed. Furthermore, events containing an isolated track with $\Pt
-> 10\gev$ are also vetoed in order to reduce the background
-contribution from final states containing hadronically-decaying tau
-leptons.
+Global event reconstruction is provided by the particle-flow (PF)
+algorithm~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-001}, which aims to
+identify each single candidate particle using an optimized combination
+of information from all detector systems. In this process, the
+identification of the particle type (photon, electron, muon, charged
+hadron, neutral hadron) plays an important role in the determination
+of the particle direction and energy. 
+%The event reconstruction and selection criteria described below are
+%explained in more detail in Ref.~\cite{RA1Paper2012}.
 
-Jets are reconstructed using the particle-flow (PF) reconstruction
-algorithm~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-001} and clustered
-by the anti-$k_{\rm T}$ algorithm~\cite{antikt} with a size parameter
-of $0.4$. The jet energies are corrected to account for the effects of
+In order to suppress SM processes with genuine \ptvecmiss from
+neutrinos and select only multijet final states, events containing an
+isolated electron~\cite{PAS-EGM-10-004} or muon~\cite{PAS-MUO-10-004}
+with $\Pt > 10\GeV$ or isolated photon~\cite{PAS-EGM-10-006} with $\pt
+> 25\GeV$ are vetoed. Furthermore, events containing an isolated track
+with $\Pt > 10\gev$ are also vetoed in order to reduce the background
+contribution from final states containing hadronically-decaying tau
+leptons. Jets are reconstructed from candidate particles clustered by
+the anti-$k_{\rm T}$ algorithm~\cite{antikt} with a size parameter of
+$0.4$. The jet energies are corrected to account for the effects of
 pileup and to establish a uniform relative response in $\eta$ and a
 calibrated absolute response in transverse momentum
 \pt~\cite{2011arXiv1107.4277C}. Jets considered in the analysis are
 required to have a transverse momentum above $40\gev$ and $|\eta| <
-3$. The mass scale of the physics processes being probed is
-characterised by the scalar sum of the transverse momenta $\Pt$ of
-these jets, defined as $\scalht = \sum_{i=1}^{N_{\rm jet}}
-\Pt^{\,\mathrm{j}_i}$, where $N_{\rm jet}$ is the number of jets
-within the experimental acceptance. The estimator for \ETmiss is given
-by the magnitude of the vector sum of the transverse momenta of these
-jets, defined by $\mht = |\sum_{i=1}^{N_\text{jet}}
-\ptvec^{\,\mathrm{j}_i}|$. Events are vetoed if rare, spurious signals
-are identified in the calorimeters~\cite{1748-0221-5-03-T03014,
-  CMS-NOTE-2010-012} or if any additional jet satisfies $\Pt > 40\GeV$
-and $|\eta| > 3$, in order to maintain the performance of the variable
-\mht as an estimator of \ETmiss.
+3$.
 
-Significant hadronic activity and \ETmiss in the event is ensured by
-requiring $\scalht > 200\GeV$ and $\mht > 130\gev$, respectively. The
-most energetic jet in the event is required to satisfy $\Pt >
-100\gev$. A requirement on the second most energetic jet is used to
-categorise the events. If the jet satisfies $\Pt > 100\gev$, then this
-category of events is labelled ``symmetric'' and targets primarily the
-topology of pair-produced sparticles. If the second most energetic jet
-satisfies $40 < \Pt < 100\gev$ or $\Pt < 40\gev$, then these
-categories are labelled as an ``asymmetric'' or ``monojet'' topology,
-respectively. The final two topologies target primarily dark matter
-and nearly mass-degenerate SUSY models. Events are further categorised
-according to the number of jets per event (\njet) and the number of
-reconstructed jets identified as originating from a b-quark (\nb).
+The mass scale of the physics processes being probed is characterised
+by the scalar sum of the transverse momenta $\Pt$ of these jets,
+defined as $\scalht = \sum_{i=1}^{N_{\rm jet}} \Pt^{\,\mathrm{j}_i}$,
+where $N_{\rm jet}$ is the number of jets within the experimental
+acceptance. The missing transverse momentum vector \ptvecmiss is
+defined as the projection on the plane perpendicular to the beams of
+the negative vector sum of the momenta of all candidate particles in
+an event. Its magnitude is referred to as \ETmiss. The estimator for
+\ETmiss used by this search is given by the magnitude of the vector
+sum of the transverse momenta of these jets, $\mht =
+|\sum_{i=1}^{N_\text{jet}} \ptvec^{\,\mathrm{j}_i}|$. Events are
+vetoed if rare, spurious signals are identified in the
+calorimeters~\cite{1748-0221-5-03-T03014, CMS-NOTE-2010-012} or if any
+additional jet satisfies $\Pt > 40\GeV$ and $|\eta| > 3$, in order to
+maintain the performance of the variable \mht as an estimator of
+\ETmiss.
+
+Significant hadronic activity and \ptvecmiss in the event is ensured
+by requiring $\scalht > 200\GeV$ and $\mht > 130\gev$, respectively.
+%The most energetic jet in the event is required to satisfy $\Pt >
+%100\gev$. A requirement on the second most energetic jet is used to
+%categorise the events. If the jet satisfies $\Pt > 100\gev$, then this
+%category of events is labelled ``symmetric'' and targets primarily the
+%topology of pair-produced sparticles. If the second most energetic jet
+%satisfies $40 < \Pt < 100\gev$ or $\Pt < 40\gev$, then these
+%categories are labelled as an ``asymmetric'' or ``monojet'' topology,
+%respectively. 
+The most energetic jet in the event is required to satisfy $\Pt >
+100\gev$. The events containing at least two jets are further
+categorised according to {\it symmetric} or {\it asymmetric}
+topologies if the second-most energetic jet satisfies, respectively,
+$\Pt > 100\gev$ or $40 < \Pt < 100\gev$. Events that contain only one
+jet satisfying the requirement $\Pt > 40\gev$ are categorised as a
+{\ir monojet} topology. The symmetric topology targets the pair
+production of sparticles and their cascade decays, while the monojet
+and asymmetric topologies target primarily nearly mass-degenerate SUSY
+models, as well as the direct production of weakly interacting massive
+candidates. Events are further categorised according to the number of
+jets per event (\njet) and the number of reconstructed jets identified
+as originating from a b-quark (\nb).
 
 A number of beam- and detector-related effects can lead to events with
 large values of \ETmiss, such as beam halo, reconstruction failures,
@@ -77,7 +98,7 @@ dedicated vetoes~\cite{RA1Paper2012, cms-met}.
     Energy sums                  & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                       \\
     \hline
     \multicolumn{2}{l}{\bf Event categorisation}                                                                                                     \\
-    \njet                        & 1 (monojet), 2, 3, 4, $\geq$5 (asymmetric), 2, 3, 4, $\geq$5 (symmetric)                                          \\
+    \njet                        & 1 (monojet); 2, 3, 4, $\geq$5 (asymmetric); 2, 3, 4, $\geq$5 (symmetric)                                          \\
     \nb                          & 0, 1, 2, $\geq$3 ($\nb \leq \njet$)                                                                               \\
     \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>$800\GeV (bins can be dropped/merged \vs \njet) \\
     \hline
