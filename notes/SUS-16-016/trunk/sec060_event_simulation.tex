@@ -1,0 +1,155 @@
+%%__________________________________________________________________||
+\section{Event simulation}
+\label{sec:event_simulation}
+
+The search relies on several event samples, recorded by the CMS
+experiment or generated from Monte Carlo (MC) simulations, to estimate
+the contributions from SM backgrounds, as described in
+Section~\ref{sec:event_selection}. 
+%The search relies on multiple control regions in data and simulated
+%event samples to estimate contributions from SM backgrounds. 
+%The definitions of the control regions in data and the background
+%estimation procedures are described in
+%Section~\ref{needtoaddthisref}. 
+The dominant SM backgrounds for the search are QCD multijet
+production, and the associated production of jets and top-antitop
+(\ttbar), single top, and vector boson (\wlnu, \znunu). Residual
+contributions from other processes, such as WW, WZ, ZZ (diboson)
+production and the associated production of \ttbar and a vector boson
+(W and Z), are also considered. Other processes, such as Drell-Yan
+($\cPq\bar{\cPq}\!  \rightarrow\! \PZ/\gamma^*\! \rightarrow\!
+\ell^+\ell^-$) and \gj production, are also relevant for some control
+regions, defined below.
+
+The \MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall2014} event generator code is
+used at leading order (LO) accuracy to produce samples of \wj, \zj,
+\gj, \ttbar, and multijet events. The same code is used at
+next-to-leading order (NLO) accuracy to generate samples of s-channel
+production of single top, as well as {\ttbar}W and {\ttbar}Z
+events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is
+used to describe the t- and tW-channel production of single top
+events. The LO \PYTHIA 8.2~\cite{pythia} program is used to generate
+diboson (WW, WZ, ZZ) production. The simulated samples are normalised
+according to production cross sections that are calculated with NLO
+and next-to-NLO precision~\cite{Alwall2014, wphys, fewz, wwxs, top++,
+  nlotop, powheg_top_Wt}. The description of the detector response,
+for these SM processes, is implemented using the
+\GEANTfour~\cite{geant} package.
+
+Event samples for signal models involving gluino or squark pair
+production, in association with up to two additional partons, are
+generated at leading order with \MADGRAPH5 aMC@NLO, and the decay of
+the sparticles is performed with \PYTHIA 8.2~\cite{pythia}. Inclusive,
+process-dependent, signal production cross sections are calculated
+with NLO plus next-to-leading-logarithm (NLL)
+accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
+  PhysRevD.80.095004, 1126-6708-2009-12-041,
+  doi:10.1142/S0217751X11053560, susynlo}. The detector response is
+provided by the CMS fast simulation package~\cite{fastsim}.
+
+%which yields consistent results compared with the GEANT4-based
+%simulation, except that we apply a correction of 1\% to account for
+%differences in the efficiency of the jet quality requirements [32],
+%and corrections of 3-10\% to account for differences in the b jet
+%tagging efficiency. 
+
+The \textsc{NNPDF}3.0 LO and \textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton
+distribution functions (PDF) are used, respectively, with the LO and
+NLO generators described above. The LO \PYTHIA 8.2~\cite{pythia}
+program is used to describe parton showering and hadronisation for all
+simulated samples. To model the effects of multiple pp collisions
+within the same or neighboring bunch crossings (pileup), all simulated
+events are generated with a nominal distribution of pp interactions
+per bunch crossing and then reweighted to match the pileup
+distribution as measured in data. 
+
+%Finally, (near-unity) corrections to the normalisation of the
+%simulated samples for the \gj, \wlj, \ttbar, and \zllj, and,
+%equivalently, \znunuj processes are derived using a data sideband to
+%the control regions.  
+
+%To model the effects of pileup, the simulated events are generated
+%with a nominal distribution of pp interactions per bunch crossing and
+%then reweighted to match the pileup distribution as measured in data.
+
+%Simulated samples of SM events are used to construct and validate the
+%procedures and to estimate a few of the smaller background
+%components. The MADGRAPH5 aMC@NLO 2.2.2 [35] event generator at
+%leading order is used to simulate tt, W+jets, Z+jets, gamma+jets, and
+%QCD multijet events. This same generator at next-to-leading (NLO)
+%order is used to describe single top events in the s channel, events
+%with dibosons (WW, ZZ, and WH production, etc., with H a Higgs boson),
+%and rare processes (ttW, ttZ, and WWZ production, etc.), except WW
+%events in which both W bosons decay leptonically are described with
+%the POWHEG v1.0 [36-40] program at NLO. Single top events in the t and
+%tW channels are also described with POWHEG at NLO. Simulation of the
+%detector response is based on the GEANT4 [41] package. The simulated
+%samples are normalized using the most accurate cross section
+%calculations currently available [35, 39, 40, 42-50], generally with
+%NLO or next-to-NLO accuracy.
+%
+%Signal T1bbbb, T1tttt, T1qqqq, and T5qqqqVV events are generated for a
+%range of gluino mg and LSP m 0 mass values, with m 0 < m . Similarly,
+%T2tt and T2qq events are generated for a range of squark m and m 0
+%mass values, with m 0 < m . For the T5qqqqVV model, the masses of the
+%intermediate chi and chi states are taken to be the mean of m 0 and m
+%. The signal samples are generated with the MADGRAPH5 aMC@NLO program
+%at leading order, with up to two partons present in addition to the
+%gluino pair. The decays of the gluino are described with a pure phase-
+%space matrix element [51]. The signal production cross sections are
+%computed [52-56] with NLO plus next-to-leading-logarithm (NLL)
+%accuracy. To reduce computational requirements, the detector is
+%modeled with the CMS fast simulation program [57, 58], which yields
+%consistent results compared with the GEANT4-based simulation, except
+%that we apply a correction of 1\% to account for differences in the
+%efficiency of the jet quality requirements [30], and corrections of
+%3-10\% to account for differences in the b jet tagging efficiency.
+%
+%The NNPDF3.0LO [59] parton distribution functions (PDF) are used for
+%the simulated samples generated at leading order, and the NNPDF3.0NLO
+%[59] PDFs for the samples generated at NLO. All simulated samples use
+%the PYTHIA 8.2 [51] program to describe parton showering and
+%hadronization. To model the effects of pileup, the simulated events
+%are generated with a nominal distribution of pp interactions per bunch
+%crossing and then reweighted to match the corresponding distribution
+%in data.
+%
+%We evaluate systematic uncertainties in the signal model
+%predictions. Those that are relevant for the selection efficiency are
+%listed in Table 1. The uncertainty associated with the renormal-
+%ization and factorization scales is determined by varying each scale
+%independently by factors of 2.0 and 0.5 [60, 61]. An uncertainty
+%related to the modeling of initial-state radiation (ISR) is determined
+%by comparing the simulated and measured pT spectra of the system
+%recoiling against the ISR jets in tt events, using the technique
+%described in Ref. [62]. The two spectra are observed to agree. The
+%statistical precision of the comparison is used to define an
+%uncertainty of 15\% (30\%) for 400 < pT < 600 GeV (pT > 600 GeV),
+%while no uncertainty is deemed neces- sary for pT < 400 GeV. The
+%uncertainties associated with the renormalization and factorization
+%scales, integrated over all search regions, typically lie below 0.1\%
+%but can be as large as 1-3\% for m 0 ~m (we use the notation m0 ~ m to
+%mean 0 +2m ~m, with the bottom quark mass, the top quark mass, or the
+%mass of the ``V'' boson, respectively, for the T1bbbb, T1tttt, and
+%T5qqqqVV models; for the T1qqqq model, m 0 ~ m means m 0 ~ m ). The
+%uncertainties associated with the jet energy scale and jet energy
+%resolution are evaluated as a function of jet pT and eta. Note that
+%the isolated lepton and isolated track vetoes have a minimal impact on
+%the T1bbbb and T1qqqq models because events in these models rarely
+%contain an isolated lepton, and that the associated uncertainty is
+%negligible (0.1\%).
+%
+%We also evaluate systematic uncertainties in the signal predictions
+%related to the b jet tagging and misidentification efficiencies and to
+%the statistical uncertainties in the signal event samples.  These
+%sources of uncertainty do not affect the signal efficiency but can
+%potentially alter the signal distribution shapes. Similarly, the
+%sources of systematic uncertainty associated with the trigger
+%efficiency, pileup reweighting, renormalization and factorization
+%scales, ISR, jet energy scale, and jet energy resolution can affect
+%the shapes of the signal distributions. These potential changes in
+%shape, i.e., migration of events between search regions, are accounted
+%for in the limit-setting procedure described in Section 6.
+%
+%The systematic uncertainty in the determination of the integrated
+%luminosity is 4.6\%. 
