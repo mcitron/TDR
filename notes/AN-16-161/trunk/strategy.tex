@@ -359,29 +359,57 @@ This allows to correctly propagate the uncertainties in the non-multijet compone
 \end{itemize}
 
 
-\subsection{Current issues and missing inputs\label{sec:disclaimers}}
-Some key ingredients are still missing in the analysis, which are summarised below.
+\subsection{Updates with respect to AN-16-161\_v3 and outstanding issues with inputs\label{sec:disclaimers}}
+Several updates in terms of datasets and MC corrections have been implemented with respect to the previous iteration (AN-16-161\_v3). 
+They are summarised in the following.\\
 \begin{itemize}
-\item \textbf{Missing Monte Carlo (MC) samples}. Most of the simulated samples are already available and are used in the results summarise in this document. 
-The exception is the $Z\rightarrow\nu\nu$ \scalht-binned datasets, which are facing issue in the central production. They will be added as soon as possible. 
-For the moment, the corresponding old samples are used, which are reconstructed with the 74X version of CMSSW (80X is the version used for the other Monte Carlo datasets). 
-\item \textbf{Missing Data/MC scale factors} The data-to-MC scale factors accounting for b-tag efficiency and lepton trigger/ID/isolation efficiency are 
-still missing, as they are being computed by the corresponding POGs. 
-\item \textbf{Issues with muon trigger} Some issues were spotted during the early data-taking regarding the efficiency of muon trigger paths. 
-They have been partially mitigated in later runs. This adds up to the known feature of the trigger bits in the MC, which still uses the L1 trigger emulation from the past year, resulting 
-in a larger discrepancy between data and simulation. This effects is temporarly covered by assigning a 5\% systematic unceratainty in the background predictions 
-using muon control regions
-\item \textbf{Issues with the photon trigger} A feature in the software used for the single-photon trigger paths lead to an inefficiency at 
-high photon energy. The effect has been measured to be as large as 10\% at very high photon \pt, but is smaller for lower photon momenta. 
-This inefficiency is temporarly covered by assigning a 5\% systematic in the background predictions utilising the single-photon control region.
-\item \textbf{Issues with the QCD simulated sample} In the new QCD \scalht-binned MC sample some spurious events with 
-badly reconstructed high-\pt muons have been identified, which lead to large \MET and large \scalht. 
-The effect becomes pronounced when these events carry large weights, as it happens in particular for the samples generated at low parton \scalht. 
-A dedicated filter to discard these kind of events is being developed and will be adopted soon in the analysis. 
-For the moment, we decided to stick to the corresponding old (CMSSW 74X version) simualted samples for QCD background studies. 
-\item \textbf{Working points of the b-tag discriminator} In the current results, the old working point of the b-tag discriminator is still used, consistently in data and MC. This has been recently optimized and we plan to switch to the new recommendation for the next iteration of the analysis.
-\item \textbf{Jet enery corrections} The jet energy corrections (JEC) used for the data are the old ones, recommended with samples reconstructed with the CMSSW 76X release. New JEC have been recently released and will be used for the next iteration of the analysis. 
+\item \textbf{MC samples}. In this version of the analysis all the MC samples are reconstructed with the 80X 
+  release of CMSSW. The latest recommendations for the cross sections are also implemented. 
+  More details about the samples used in the analysis can be found in Sec.~\ref{sec:datasets}.
+\item \textbf{Data collision sample}. The data sample used in this iteration corresponds to an integrated luminosity of around 6.3 \ifb. 
+  Only the runs with all the subdetectors working properly are used (``golden'' runs).
+  More details about the samples used in the analysis can be found in Sec.~\ref{sec:datasets}. 
+\item \textbf{Muon trigger}. The lowest HLT paths for the single-muon triggers now have a 22 GeV threshold on the muon \Pt. 
+  The trigger strategy to select events in the single/double muon control regions has been changed accordingly and now the OR of the IsoMu22, IsoTkMu22 paths is used. 
+  More details can be found in Sec~\ref{sec:triggers}.
+\item \textbf{Photon trigger}. In order to recover the inefficiency of the single-photon trigger at high photon \Pt, 
+  the DoubleEG primary dataset is used in conjuction with the SinglePhoton dataset. The HLT\_ECALHT800 trigger path is used for the DoubleEG sample, 
+  and the overalp between the two datasets is removed. More details can be found in Sec~\ref{sec:triggers}. 
+\item \textbf{Data/MC correction factors}. The following data/MC scale factors (SF) have been used in this iteration of the analysis. 
+  \begin{itemize}
+  \item Jet energy corrections: the Spring16\_25nsV6\_DATA (Spring16\_25nsV6\_MC) JEC for data (MC) samples are applied to the FullSim samples, 
+    including L2L3 residual corrections and updated JEC uncertainties. 
+    They correspond to the latest recommendations from the JEC group twiki \cite{twiki-JEC}.
+    JEC are derived separately for the FastSim MC samples and applied to the simulation of the signal in the analysis, 
+    following the latest recommendations from the Jet-MET working group. 
+  \item B-tag SFs: the latest recommendations from the b-tagging group twiki \cite{btagSFMethods2016} are used to re-weight the FullSim MC samples. 
+    FastSim-to-FullSim scale factors are applied to the FastSim MC signal samples, following the latest recommendations. 
+  \item Muon identification/isolation corrections: preliminary corrections using around 2.6 \ifb of integrated luminosity are used, taken from the Muon working group twiki \cite{twiki-leptonSFMuonPOG2016}.
+  \item Single-muon trigger efficiency correction factors: efficiencies measured in data with a sample corresponding to around 7.6 \ifb 
+    are used to re-weight the MC samples. They are taken from the Muon working group twiki \cite{twiki-leptonSFMuonPOG2016}.
+    No recommendation has been yet provided for the systematics in the measurement, so for the moment the values from 2015 are used. 
+  \item Photon trigger efficiency correction factors: the photon trigger efficiencies have been measured in data in the phase-space 
+    of the analysis and used to re-weight the \gj 
+    MC sample. More details can be found in Sec.~\ref{sec:triggers}. 
+  \item Pile-up corrections: pile-up weights have been re-derived using all the available data. 
+    More details can be found in Sec.~\ref{sec:pileup-reweighting}. 
+  \item Sideband corrections: the corrections have been derived using 2016 data and MC, with the method described 
+    in Sec.~\ref{sec:sideband_corrections}. 
+  \item Top \Pt re-weighting: in this iteration of the analysis these weights are not applied anymore. 
+    This has been decided after inspecting the data-driven tests in Sec.~\ref{sec:closure-tests}, 
+    which exhibit a better level of closure without the re-weighting (more details are given in the section). 
+    This behaviour is tracked down to the inconsistency in the treatment of the (corrected) \ttj sample with respect to 
+    the other (un-corrected) background samples, like \wj or \zj, when the top-pt rewighting is included. 
+  \end{itemize}
 \end{itemize}
+
+We are in the process of implementing the latest recommendations for the treatment of signal systematics 
+and for the limit setting which have been recently released \cite{twiki-SUSYICHEP16}. 
+These will be included in the next version of the AN, together with an exhaustive description 
+of the signal models used for the interpretation. 
+The plan is to provide intepretations for gluino pair production models with decay to 
+b-quarks (T1bbbb) and sbottom pair production with decay to b-quarks (T2bb).
+
 
 
 %%____________________________________________________________________________||
