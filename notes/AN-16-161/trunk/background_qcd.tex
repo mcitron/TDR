@@ -313,6 +313,57 @@ respect to the total non-multijet background. These predicted multijet events ar
 included as a background contribution to the likelihood model
 described in Sec~\ref{sec:likelihood}.
 
+\subsubsection{Reduction in QCD prediction from the 2015 analysis}
+
+Since the QCD prediction was carried out for the 2015 analysis, the
+total number of events predicted in the signal region has consistently
+reduced across all analysis bins. The major difference that has led to
+this change is an update in the QCD MC.
+In the 2015 analysis, and early iterations of the 2016 analysis,
+QCD MC reconstructed with version 74X of CMSSW was used. The update to
+analysis uses QCD MC that is reconstructed with the updated 80X
+version of CMSSW. With this update there was a significant
+change in the modelling of the \mhtmet distribution. This is
+demonstrated in Fig.~\ref{fig:mhtDivMetChange}. In the 80X QCD MC
+significantly fewer events pass the \mhtmet cut than in the 74X MC. 
+
+As a large proportion of the QCD MC prediction is made from a few events
+with very high weights, there is always a large statistical
+uncertainty. This leads to a large uncertainty on the total QCD
+prediction with the method described in this section. Therefore,
+despite the 2016 application of the method resulting in lower values,
+the prediction in each bin is still statistically compatible with the
+2015 prediction. 
+
+In the parked data analysis of 8\tev data, the level of QCD
+contamination was much lower than that seen
+in 2015. With the change in the QCD simulation, predictions
+more compatible with those seen in Run~1 are observed.
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[\mhtmet distributions in the signal region with 74X QCD
+  MC.]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/sr74X}
+  }~~ 
+  \subfigure[\mhtmet distributions in the control region with 74X QCD
+  MC.]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/cr74X}
+  } \\
+  \subfigure[\mhtmet distributions in the signal region with 80X QCD
+  MC.]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/sr80X}
+  }~~
+  \subfigure[\mhtmet distributions in the control region with 80X QCD
+  MC.]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/cr80X}
+  } \\
+  \caption{The \mhtmet distributions for different versions of the QCD
+  simulation. There is a significant change in the distribution
+  between the MC reconstructed with CMSSW 74X and 80X.}
+  \label{fig:mhtDivMetChange}
+\end{figure}
+
 
 \subsection{Validation of the QCD prediction}
 \label{sec:qcdValidation}
@@ -382,7 +433,10 @@ systematic uncertainty.
     $400<\scalht<800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_lt800asym}} ~~
     \subfigure[{ Asymmetric,
     $400<\scalht<800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_lt800asym}} \\
-    \caption{ Ratio of QCD to electroweak Monte Carlo prediction in the signal region for different \scalht selections as a function of \mht (Left) and $\nb$ (Right) for the asymmetric jet category. A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
+    \caption{ Ratio of QCD to electroweak Monte Carlo prediction in
+    the signal region for different \scalht selections as a function
+    of \mht (Left) and $\nb$ (Right) for the asymmetric jet category.
+    %A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
     }
     \label{fig:asym_qcd_validation}
   \end{center} 
@@ -404,7 +458,10 @@ systematic uncertainty.
     $\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_ltInfsym}} ~~
     \subfigure[{ Symmetric,
     $\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_ltInfsym}} \\
-      \caption{ Ratio of QCD to electroweak Monte Carlo prediction in the signal region for different \scalht selections as a function of \mht (Left) and $\nb$ (Right) for the asymmetric jet category. A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
+      \caption{ Ratio of QCD to electroweak Monte Carlo prediction in
+      the signal region for different \scalht selections as a function
+      of \mht (Left) and $\nb$ (Right) for the asymmetric jet
+      category. %A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
     }
     \label{fig:sym_qcd_validation}
   \end{center} 

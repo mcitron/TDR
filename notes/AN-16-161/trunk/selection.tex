@@ -97,8 +97,8 @@ events in the corresponding event category and \HT bin of the data
 control samples. This ensures that all bins in the data control
 samples are sufficiently populated to ensure a statistically
 significant prediction in each of the corresponding signal region
-bins. Currently, this is achieved by requiring at least $10$ predicted
-events in each \HT and \njet category of the control regions
+bins. Currently, this is achieved by requiring at least $10$
+events observed in each \HT and \njet category of the control regions
 along with the requirement that there is at least one observed
 event per \nb category. If this is not the case, events from high \HT bins are combined
 into a single inclusive bin that satisfies this metric. This metric
@@ -452,8 +452,9 @@ the control samples to a predicted distribution in \mht for each
 corresponding (\njet,\nb,\HT) bin in the signal region.
 
 The \mht dimension is included in the likelihood model by using
-templates determined per (\njet,\nb,\HT) bin from simulation. The
-templates use an \mht bin width of 50\gev. The threshold of the final
+templates determined per (\njet,\nb,\HT) bin from simulation. 
+The binning of the templates is shown in Sec.~\ref{sec:mhtBinning}. 
+The templates use an \mht bin width of 50\gev. The threshold of the final
 \mht bin used by the templates is determined based on the size of the
 available simulated samples: a statistical uncertainty of not more
 than 50\% for the sum of all SM background processes is required. 
@@ -491,7 +492,7 @@ the control and signal samples.
 
 Two exceptions are made. First, no \bdphi requirement is imposed as
 part of the selection criteria defining the control regions. Second,
-in the case of the four leptonic control regions, no requirement is
+in the case of the two leptonic control regions, no requirement is
 made on \alphat. This is made possible by the remaining kinematic
 selection criteria, which are sufficiently selective to ensure that
 the leptonic event samples remain rich in events from the \wj, \ttbar

@@ -46,40 +46,49 @@ The cross sections for the most relevant SM background are summarised in Table~\
 
 In the high-\scalht, high-\etmiss corner of the phase space used in this search, the normalisations of the MC samples do not necessarily agree with the observation. 
 Moreover, the cross section is known only to a limited number of perturbative orders and additional corrections could be in principle sizeable. \\
-Nonetheless, the analysis strategy for the background predictions is built in such a way to be mildly, if not negligibly, dependent on these corrections. 
+The analysis strategy for the background predictions is built in such a way to be mildly, if not negligibly, dependent on these corrections. 
 The backgrounds are estimated from control regions in data, and the effect of cross section corrections on the transfer factors is expected to largely cancel out, 
 because the background composition is very similar between the signal region and the control regions used to estimate each background. \\
 However, the ``data-driven'' tests described in Sec.~\ref{sec:closure-tests} would benefit from a better control of the normalisation of MC samples, 
 since more aggressive extrapolations are carried on there with respect to the background predictions in the analysis. 
 As an example, the $0 \rightarrow 1$ b-tag test carried on in the single muon control sample, utilises 
 a $W$-enriched sample to predict a $t\bar{t}$-enriched one and is thus sensitive to the relative corrections of $W$ with respect to $t\bar{t}$. 
-For this reason it's important to measure residual cross section corrections to the background processes in data. 
-This is done using sidebands in data enriched in a specific process, as described in the following. These sideband corrections
-are propagated to all steps of the analysis.
+In this perspective, the systematics derived with the data-driven tests can improve 
+by measuring residual cross section corrections to the main background processes using the data. \\
+In the previous iteration of the analysis, this was done using sidebands 
+in the control regions enriched in a specific process (see Sec.~\ref{app:sideband-corrections-old} for more details). 
+For this analysis, the full phase-space of the sideband is considered, 
+and corrections are extracted from a maximum likelihood fit, as described in Sec.~\ref{sec:fit-sideband}. \\
+The sideband corrections are derived after all the other corrections to the MC and data are applied, 
+such as trigger efficiency, data/MC scale factors (b-tag, lepton ID/isolation, etc.) and jet energy scale. 
+The sideband corrections are applied and propagated to all the steps of the analysis.\\
+No uncertainty is considered for these corrections as any inaccuracy is already accounted 
+for in the data-driven tests described in Sec.~\ref{sec:closure-tests} and would result in inflated systematics. 
 
+\textbf{As the understanding of the new data is still in a preliminary stage and some crucial corrections to the MC 
+are not yet in place, for the moment the corrections derived in 2015, described in Sec.~\ref{app:sideband-corrections-old} and listed in Tab.~\ref{tab:sbCorrs}, are used in the analysis. }
+
+The section is organised as follow. 
 In Sec.~\ref{sec:bias-study-sideband} the sidebands taken for each process are described and variations of known sources of 
 systematic uncertainty are used to study potential bias. In Sec.~\ref{sec:fit-sideband} the procedure used for deriving
 the corrections is described and the corrections derived with this study are summarised in Table~\ref{tab:sbCorrsFromFit}.\\
-No uncertainty is propagated on these corrections, since any systematic effect is expected to be accounted for by 
-dedicated systematic studies in data, which are described in Sec.~\ref{sec:closure-tests}.
-
-As the data collected in 2016 is still in an early stage of study the sideband corrections 
-derived in 2015, as described in Sec.~\ref{app:sideband-corrections-old}, are used for results in this analysis. This will
-be updated for the final result.
+In Sec.~\ref{app:sideband-corrections-old} is a comparison 
+between the corrections derived for the old and new methods using the 2015 data.
 
 \subsection{Definition of sidebands and study of bias}
 \label{sec:bias-study-sideband}
 \subsubsection{\gj sideband}
-The situation is somehow different for \gj with respect to the other processes. 
 The cross section used for this process is at LO accuracy and no $k$-factor is applied. 
 As a result, some disagreement between data and MC is expected in the single photon control region.
 The observation confirms indeed this hypothesis, with the simulation underestimating the yields by $\sim 20\%$. \\
 A correction is derived using a sideband in data by inverting the \alphat cut. 
-For $400 \scalht < 600$ GeV, events are selected in the interval $0.50 < \alphat < 0.52$, 
-while for $600 \leq \scalht 800$ GeV the sideband is defined by the cut $0.50 < \alphat < 0.53$.
-To understand the effect of known systematic sources the change in the ratio of MC yields in the sideband
-to the yields in the control region for several sources of systematic uncertainty is shown in 
-Fig.~\ref{fig:pho-bias-sideband}. The bias in the sideband under these variations is seen to be
+For $400 < \scalht < 600$ GeV, events are selected in the interval $0.50 < \alphat < 0.52$, 
+while for $600 \leq \scalht < 800$ GeV the sideband is defined by the cut $0.50 < \alphat < 0.53$. \\
+To understand the effect of known systematic sources the ratio of the proportional change in the
+predicted sideband yield after the systematic variation over the change in the control region yield is shown in 
+Fig.~\ref{fig:pho-bias-sideband} (the separate shifts for control and sideband regions are shown in
+App.~\ref{app:prop-shift-syst} )
+The bias in the sideband under these variations is seen to be
 subdominant compared to the statistical uncertainty of the sample.
 Any residual bias is accounted for by including these systematics 
 in the fit when when deriving the sideband corrections.
@@ -99,10 +108,11 @@ with NLO QCD or better precision.
 However, some inconsinstency could arise from the different cross section calculations, since for \wj and \zj the LO cross sections 
 are corrected with NLO k-factor (1.21 and 1.23 respectively) while for \ttbar the full NNLO calculation is used. \\
 The corrections for these processes are derived using a sideband defined by inverting the \mht cut, namely 
-applying the selection $100 < \mht < 130$ GeV. 
+applying the selection $100 < \mht < 130$ GeV. \\
 As for the \gj sidebands, the change in the ratio of MC yields in the sideband
-to the yields in the control region for several sources of systematic uncertainty is shown in 
-Fig.~\ref{fig:mu-bias-sideband} and Fig.~\ref{fig:mumu-bias-sideband}. This again shows that any
+to the yields in the control region after the variation of several sources of systematic uncertainty is shown in 
+Fig.~\ref{fig:mu-bias-sideband} and Fig.~\ref{fig:mumu-bias-sideband} (the separate shifts for control and sideband regions are shown in 
+App.~\ref{app:prop-shift-syst}. This again shows that any
 bias in the sideband with respect to the control regions for these systematic sources is 
 subdominant compared to the statistical uncertainty of the sample (shown in the error bars).
 Any residual bias is accounted for by including these systematics 
