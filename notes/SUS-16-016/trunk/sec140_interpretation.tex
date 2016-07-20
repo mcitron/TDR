@@ -15,7 +15,7 @@ yields in the \scalht bins of the \mj, \mmj, and \gj control samples
 in the same category of \njet and \nb as the signal region. The
 systematic uncertainties summarised in Table~\ref{tab:bkgd_systs} are
 accommodated in the likelihood function by nuisance parameters, the
-measurements of which are assumed to follow a log-normal
+measurements of which are assumed to follow a gaussian 
 distribution. In the presence of a non-zero signal contribution, the
 CL$_{\mathrm{s}}$ technique~\cite{read, Cowan:2010js} is used to
 determine upper limits on production cross section using asymptotic
@@ -102,19 +102,22 @@ The results of this search are interpreted in terms of upper limits in
 the production cross section as a function of the parent sparticle and
 LSP mass for simplified models~\cite{Alwall:2008ag, Alwall:2008va,
   sms} that represent the pair production of gluinos and their
-subsequent decays to four quarks and two LSPs. The event samples for
-the simplified models are generated with \MADGRAPH V5~\cite{madgraph}.
-Inclusive, process-dependent, NLO calculations of SUSY production
-cross sections, with next-to-leading-logarithmic (NLL) corrections,
-are obtained with the program \PROSPINO~\cite{Beenakker:1996ch,
+subsequent decays to four quarks and two LSPs.  The event samples for
+the simplified models are generated with \MADGRAPH V5~\cite{madgraph},
+with up to two additional partons in the final state.  The
+\textsc{FastSim} package~\cite{1742-6596-513-2-022012} is used to
+simulate the response of the CMS detector.  Inclusive,
+process-dependent, NLO calculations of SUSY production cross sections,
+with next-to-leading-logarithmic (NLL) corrections, are obtained with
+the program \PROSPINO~\cite{Beenakker:1996ch,
   PhysRevD.80.095004,PhysRevLett.102.111802, PhysRevD.80.095004,
   1126-6708-2009-12-041, doi:10.1142/S0217751X11053560,
   susy-nlo-nll}. The samples are generated using the
 CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The distribution of the number of
 pp interactions per bunch crossing for the simulated samples matches
-that observed in data. Various uncertainties in the experimental
+that observed in data.  Various uncertainties in the experimental
 acceptance are considered, for which typical magnitudes \fixme{\it
-  will be summarised}. 
+  will be summarised}.
 %are summarised in Table~\ref{tab:signal_systs}.
 
 %\begin{table}[h!]
