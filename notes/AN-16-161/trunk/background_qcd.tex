@@ -313,27 +313,38 @@ respect to the total non-multijet background. These predicted multijet events ar
 included as a background contribution to the likelihood model
 described in Sec~\ref{sec:likelihood}.
 
-\subsubsection{Reduction in QCD prediction from the 2015 analysis}
+\subsubsection{Reduction in predicted QCD yields}
 
-Since the QCD prediction was carried out for the 2015 analysis, the
-total number of events predicted in the signal region has consistently
-reduced across all analysis bins. The major difference that has led to
+The
+total number of QCD events predicted in the signal region has consistently
+reduced across all analysis bins with respect to the 2015 analysis. The major difference that has led to
 this change is an update in the QCD MC.
 In the 2015 analysis, and early iterations of the 2016 analysis,
 QCD MC reconstructed with version 74X of CMSSW was used. The update to
-analysis uses QCD MC that is reconstructed with the updated 80X
+the
+analysis, detailed in this note, uses QCD MC that is reconstructed with the 80X
 version of CMSSW. With this update there was a significant
-change in the modelling of the \mhtmet distribution. This is
+change in the modelling of the \mhtmet distribution,
 demonstrated in Fig.~\ref{fig:mhtDivMetChange}. In the 80X QCD MC
-significantly fewer events pass the \mhtmet cut than in the 74X MC. 
+only 0.4\% of the QCD events pass the 1.25 \mhtmet cut made on the
+signal region. In the 74X MC, however, 1.6\% of the QCD events pass.
+Unlike for the QCD multijet background, the cut efficiency for the 
+non-multijet Standard Model backgrounds is
+consistently $\sim 90\%$. As the non-multijet backgrounds are dominant
+in the signal region, this results in a small change to the total
+prediction in the signal region, despite there being a factor $\sim 4$
+change to the predicted QCD. The effects of the \mhtmet mismodelling
+on the non-multijet background prediction (described in Sec.~\ref{sec:backgroundmet})
+is mitigated by the application of the cut across all control regions.
 
-As a large proportion of the QCD MC prediction is made from a few events
-with very high weights, there is always a large statistical
+The QCD MC that passes selection typically consists of a few events
+with very high weights, resulting in a large statistical
 uncertainty. This leads to a large uncertainty on the total QCD
 prediction with the method described in this section. Therefore,
-despite the 2016 application of the method resulting in lower values,
-the prediction in each bin is still statistically compatible with the
-2015 prediction. 
+despite the 2016 application of the method predicting less QCD in the
+signal region,
+the prediction in each bin is still statistically compatible with that  
+made in 2015. 
 
 In the parked data analysis of 8\tev data, the level of QCD
 contamination was much lower than that seen
@@ -342,25 +353,26 @@ more compatible with those seen in Run~1 are observed.
 
 \begin{figure}[!h]
   \centering
-  \subfigure[\mhtmet distributions in the signal region with 74X QCD
-  MC.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/sr74X}
-  }~~ 
-  \subfigure[\mhtmet distributions in the control region with 74X QCD
-  MC.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/cr74X}
-  } \\
-  \subfigure[\mhtmet distributions in the signal region with 80X QCD
-  MC.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/sr80X}
-  }~~
-  \subfigure[\mhtmet distributions in the control region with 80X QCD
-  MC.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/cr80X}
+  % \subfigure[\mhtmet distributions in the signal region with 74X QCD
+  % MC.]{
+  %   \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/sr74X}
+  % }~~ 
+  \subfigure[\mhtmet distributions with 74X QCD
+  MC that is scaled by 0.5]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/mht40_pt_Div_metNoX_pt_all_all_74X_noOverflow_scaled0p5}
+  } ~~ 
+  % \subfigure[\mhtmet distributions in the signal region with 80X QCD
+  % MC.]{
+  %   \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/sr80X}
+  % }~~
+  \subfigure[\mhtmet distributions with 80X QCD
+  MC that is scaled by 0.6]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/mhtDivMet/mht40_pt_Div_metNoX_pt_all_all_80X_noOverflow_scaled0p6}
   } \\
   \caption{The \mhtmet distributions for different versions of the QCD
   simulation. There is a significant change in the distribution
-  between the MC reconstructed with CMSSW 74X and 80X.}
+  between the MC reconstructed with CMSSW 74X and 80X. The QCD MC in
+  each plot is rescaled to take account of normalisation mismodelling.}
   \label{fig:mhtDivMetChange}
 \end{figure}
 
