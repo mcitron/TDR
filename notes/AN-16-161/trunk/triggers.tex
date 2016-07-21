@@ -248,16 +248,18 @@ The \gj control sample is selected by the OR of the \verb!HLT_Photon175! and
 \Pt for events in the JetHT data set satisfying the \gj control region selection,
 and is show in Fig.~\ref{fig:photon_turnons}. The single photon trigger exhibits a decreasing efficiency
 with increasing photon \Pt, which is attributed to an H/E cut at Level 1. The inefficiency
-can be partly recovered by employing the ECALHT800 trigger. In this way, the 
-efficiency above a photon \Pt of 500 GeV is almost 100\%. These efficiencies are used
+can be partly recovered by employing the ECALHT800 trigger. In this way, a full efficiency
+is recovered by a photon \Pt of 400 GeV in the $\scalht > 800$ GeV bin. These efficiencies are used
 to correct the MC samples, and a systematic uncertainty with a size of the 
 inefficiency is assigned.
 
 \begin{figure}[h!]
   \begin{center}
-    \subfigure[$200 < \scalht < 250$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/Photon/HLT_Photon175_MoM_all_all_gammapt}} ~~\
-    \subfigure[$300 < \scalht < 350$]{\includegraphics[width=0.5\textwidth]{figures/Trigger/Photon/HLT_PhotonECALHT800_MoM_all_all_gammapt}} \\
-    \caption{Trigger efficiency as a function of photon \Pt for Photon175 (left) and Photon175 OR ECALHT800 (right), measured with events in the JetHT data set passing the \gj control region selection.}
+    \subfigure{\includegraphics[width=0.4\textwidth]{figures/Trigger/Photon/HLT_Photon175_MoM_all_all_gammapt}} ~~\
+    \subfigure{\includegraphics[width=0.4\textwidth]{figures/Trigger/Photon/HLT_PhotonECALHT800_MoM_all_all_gammapt}} \\
+    \subfigure{\includegraphics[width=0.4\textwidth]{figures/Trigger/Photon/HLT_Photon175_MoM_all_800to999999_gammapt}} ~~\
+    \subfigure{\includegraphics[width=0.4\textwidth]{figures/Trigger/Photon/HLT_PhotonECALHT800_MoM_all_800to999999_gammapt}} \\
+    \caption{Trigger efficiency as a function of photon \Pt for Photon175 (left) and Photon175 OR ECALHT800 (right), measured with events in the JetHT data set passing the \gj control region selection. These are shown inclusive over \scalht (top) and for $\scalht > 800$~GeV (bottom).}
     \label{fig:photon_turnons}
   \end{center}
 \end{figure}
