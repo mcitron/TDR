@@ -1,183 +1,119 @@
 %%__________________________________________________________________||
-\section{Results}
-\label{sec:interpretation}
-
-A likelihood model of the observations in all data samples is used to
-obtain a consistent prediction of the SM backgrounds and to test for
-the presence of a variety of signal models.  In each bin of \scalht
-for events in the same category of \njet and \nb, the observation is
-modelled as a Poisson-distributed variable around the sum of the SM
-expectation and a potential signal contribution (assumed to be zero in
-the following discussion). The SM expectation is related to the
-expected yields in the \mj, \mmj, and \gj control samples via transfer
-factors derived from simulation. Likelihood functions describe the
-yields in the \scalht bins of the \mj, \mmj, and \gj control samples
-in the same category of \njet and \nb as the signal region. The
-systematic uncertainties summarised in Table~\ref{tab:bkgd_systs} are
-accommodated in the likelihood function by nuisance parameters, the
-measurements of which are assumed to follow a gaussian 
-distribution. In the presence of a non-zero signal contribution, the
-CL$_{\mathrm{s}}$ technique~\cite{read, Cowan:2010js} is used to
-determine upper limits on production cross section using asymptotic
-formulae.
-
-The expected number of events from SM processes is determined from a
-simultaneous fit to the signal region and up to three control
-samples. The likelihood function is maximised over all fit parameters
-under the SM-only hypothesis.
-Figures~\ref{fig:mono}--\ref{fig:sym}
-summarise the observed yields and ``pre-fit'' and ``post-fit'' SM
-expectations for signal candidate events in the monojet, asymmetric,
-and symmetric categories, respectively. No significant tension is
-observed between the predictions and data in the signal region, which
-is well described by the SM-only hypothesis.
-
-Figure~\ref{fig:mht-templates} shows distributions of observed counts
-in data and also expected counts from SM background processes, as a
-function of the \mht variable for two \nb categories at high \njet and
-\scalht, which are expected to provide sensitivity to models with
-TeV-scale gluinos. 
-
-\begin{figure}[!h]
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{summaryPlot_Monojet_prefit_overlay_fit_b_CRFit}
-    \caption{(Top panel) Event yields observed in data (solid circles)
-      and SM expectations with their associated uncertainties (black
-      histogram with shaded band) from a CR-only fit, integrated over
-      \HTmiss, as a function of \nb, and \scalht for the monojet
-      category ($\njet = 1$) in the signal region. (Bottom panel). The
-      significance of deviations observed in data with respect to the
-      SM expectations from the CR-only (red circles) and full fit
-      (blue circles).  }
-    \label{fig:mono}
-  \end{center}
-\end{figure}
-
-\begin{figure*}[!h]
-  \begin{center}
-    \includegraphics[angle=90,width=0.7\textwidth]{summaryPlot_Asymmetric_prefit_overlay_fit_b_CRFit}
-    \caption{(Top panel) Event yields observed in data (solid circles)
-      and SM expectations with their associated uncertainties (black
-      histogram with shaded band) from a CR-only fit, integrated
-      over \HTmiss, as a function of \njet, \nb, and \scalht for the
-      ``asymmetric'' \njet categories in the signal region. (Bottom
-      panel). The significance of deviations observed in data with
-      respect to the SM expectations from the CR-only (red circles)
-      and full fit (blue circles).  }
-    \label{fig:asym}
-  \end{center}
-\end{figure*}
-
-\begin{figure*}[!h]
-  \begin{center}
-    \includegraphics[angle=90,width=0.7\textwidth]{summaryPlot_Symmetric_prefit_overlay_fit_b_CRFit}
-    \caption{(Top panel) Event yields observed in data (solid circles)
-      and SM expectations with their associated uncertainties (black
-      histogram with shaded band) from a CR-only fit, integrated over
-      \HTmiss, as a function of \njet, \nb, and \scalht for the
-      ``symmetric'' \njet categories in the signal region. (Bottom
-      panel). The significance of deviations observed in data with
-      respect to the SM expectations from the CR-only (red circles)
-      and full fit (blue circles).  }
-    \label{fig:sym}
-  \end{center}
-\end{figure*}
-
-\begin{figure*}[tbhp]
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{mhtShape_eq0b_ge5j_800_Inf_prefit.pdf} 
-    \includegraphics[width=0.6\textwidth]{mhtShape_eq2b_ge5j_800_Inf_prefit.pdf} \\
-  \end{center}
-  \caption{ The \mht distribution observed in data and the expected
-    distribution for the sum of all SM background processes in two
-    representative event categories at high \njet and \scalht. 
-    \label{fig:mht-templates} }
-\end{figure*}
-
-%%__________________________________________________________________||
 \clearpage
 \section{Interpretation}
+\label{sec:interpretation}
 
-The results of this search are interpreted in terms of upper limits in
-the production cross section as a function of the parent sparticle and
-LSP mass for simplified models~\cite{Alwall:2008ag, Alwall:2008va,
-  sms} that represent the pair production of gluinos and their
-subsequent decays to four quarks and two LSPs.  The event samples for
-the simplified models are generated with \MADGRAPH V5~\cite{madgraph},
-with up to two additional partons in the final state.  The
-\textsc{FastSim} package~\cite{1742-6596-513-2-022012} is used to
-simulate the response of the CMS detector.  Inclusive,
-process-dependent, NLO calculations of SUSY production cross sections,
-with next-to-leading-logarithmic (NLL) corrections, are obtained with
-the program \PROSPINO~\cite{Beenakker:1996ch,
-  PhysRevD.80.095004,PhysRevLett.102.111802, PhysRevD.80.095004,
-  1126-6708-2009-12-041, doi:10.1142/S0217751X11053560,
-  susy-nlo-nll}. The samples are generated using the
-CTEQ6L1~\cite{Pumplin:2002vw} PDFs. The distribution of the number of
-pp interactions per bunch crossing for the simulated samples matches
-that observed in data.  Various uncertainties in the experimental
-acceptance are considered, for which typical magnitudes \fixme{\it
-  will be summarised}.
-%are summarised in Table~\ref{tab:signal_systs}.
+The results of the search are used to constrain the parameter space of
+simplified supersymmetric models~\cite{Alwall:2008ag, Alwall:2008va,
+  sms}. Each model represents a unique production and decay mode (\ie
+100\% branching ratio). The gluino-mediated or direct production of
+squark pairs, and the decay of of each squark to SM particles and the
+\chiz, are considered. All other sparticles are assumed to be too
+heavy to be produced directly. In the case of gluino pair production,
+three-body decays of the gluinos are assumed via off-shell squarks.
 
-%\begin{table}[h!]
-%  \caption{%CMS {\it Simulation}. 
-%    Typical magnitudes of systematic uncertainties in the experimental
-%    acceptance for the signal models considered.
-%  }
-%  \label{tab:signal_systs}
-%  \centering
-%  \footnotesize
-%  \begin{tabular}{ lccc }
-%    \hline
-%    \hline
-%    Systematic source              & Type          & Correlated & Typical magnitude (\%) \\
-%    \hline
-%    Luminosity                     & Normalisation & Yes        & 4.6                    \\
-%    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
-%    Initial state radiation        & Norm. + shape & Yes        & 0--30                  \\
-%    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
-%    Pile-up                        & Norm. + shape & Yes        & 0-5                    \\
-%    Trigger                        & Norm. + shape & Yes        & 0--10                  \\
-%    Parton density functions       & Normalisation & No         & 10                     \\
-%%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
-%    b-tag scale factors            & Norm. + shape & Yes        & 5--30                  \\
-%    Lepton scale factors           & Normalisation & Yes        & $<$5                   \\
-%    \hline
-%    \hline
-%  \end{tabular}
-%\end{table}
+Under the background + signal hypothesis, and in the presence of a
+non-zero signal contribution, a modified frequentist approach is used
+to determine upper limits at 95\% confidence level (CL) on the cross
+section, $\sigma_\text{UL}$ (pb), to produce pairs of supersymmetric
+particles as a function of the parent sparticle and the LSP
+masses. The potential contributions from a new-physics signal to each
+of the signal and control regions are considered, even though the only
+significant contribution occurs in the signal region and not the
+control region (\ie signal contamination). The approach is based on
+the one-sided (LHC-style) profile likelihood ratio as the test
+statistic, the \cls criterion~\cite{junk, read}, and asymptotic
+formulae~\cite{Cowan:2010js} are utilised to approximate the
+distributions of the test statistics under the SM background-only and
+signal + background hypotheses. 
+
+The experimental acceptance times efficiency
+($\mathcal{A}\times\varepsilon$) and its uncertainty are evaluated
+independently for each model as a function of the gluino or squark
+mass and the \chiz mass. Several sources to the uncertainty in
+$\mathcal{A}\times\varepsilon$ are considered. The effect of each
+source of uncertainty on the \HTmiss templates is evaluated from
+simulated signal events, categorised according to \njet, \nb, and
+\scalht. Correlations are taken into account where appropriate,
+including those relevant to signal contamination that may contribute
+to counts in the control samples. 
+
+The magnitude of each contribution depends on the model and the masses
+of the parent sparticle and LSP. The following sources of uncertainty
+are dominant: the statistical uncertainty arising from the finite size
+of simulated signal samples, the modelling of initial-state radiation
+(ISR), the corrections to jet energies (JEC) evaluated in simulation,
+and the modelling of scale factors applied to simulated event samples
+that correct for differences in the efficiency and misidentification
+probability of b quark jets. The choice of PDF set, or variations
+therein, predominantly affects $\mathcal{A}\times\varepsilon$ through
+changes in the \Pt spectrum of the system recoil, which is covered by
+the ISR uncertainty, hence no additional uncertainty is
+adopted. Uncertainties in $\mathcal{A}\times\varepsilon$ due to
+variations in the renormalisation and factorisation scales are
+determined to be relatively small. In both cases, contributions to the
+uncertainty in the theory production cross section are considered. The
+uncertainty in the integrated luminosity is assumed to be
+4.6\%. Representative values of the dominant systematic uncertainties
+are summarised in Table~\ref{tab:signal_systs}.
+
+\begin{table}[h!]
+  \caption{
+    Representative magnitudes of systematic uncertainties in the
+    experimental acceptance for the signal models considered. 
+  }
+  \label{tab:signal_systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lccc }
+    \hline
+    \hline
+    Systematic source              & Type          & Correlated & Typical magnitude (\%) \\
+    \hline
+    Luminosity                     & Normalisation & Yes        & 4.6                    \\
+    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
+    Initial state radiation        & Norm. + shape & Yes        & 0--30                  \\
+    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
+    Pile-up                        & Norm. + shape & Yes        & 0-5                    \\
+    Trigger                        & Norm. + shape & Yes        & 0--10                  \\
+    Parton density functions       & Normalisation & No         & 10                     \\
+%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
+    b-tag scale factors            & Norm. + shape & Yes        & 5--30                  \\
+    Lepton scale factors           & Normalisation & Yes        & $<$5                   \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
   
-%\begin{figure*}[thp!]
-%  \begin{center}
-%    \includegraphics[width=0.49\textwidth]{t1bbbbRA1XSEC.pdf} \,
-%    \includegraphics[width=0.49\textwidth]{t1qqqqRA1XSEC.pdf} \\
-%    \caption{Observed upper limit in cross section at 95\% CL
-%      (indicated by the colour scale) for simplified models that
-%      assume the pair production of gluinos, as a function of the
-%      gluino and $\chiz_{1}$ masses for gluino three-body decays to
-%      $b\bar{b}\chiz_{1}$ (left) and $q\bar{q}\chiz_{1}$ (right). The
-%      black solid thick (thin) line indicates the observed mass
-%      exclusion region assuming the nominal (${\pm}1 \sigma$ theory
-%      uncertainty) production cross section. The red dashed thick
-%      (thin) line indicates the median (${\pm}1 \sigma$ experimental
-%      uncertainty) expected exclusion.
-%      \label{fig:limits-sms} }
-%  \end{center}
-%\end{figure*}
+\begin{figure*}[thp!]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{T2bb.pdf} ~
+    \includegraphics[width=0.49\textwidth]{T2bb.pdf} \\
+    \caption{Observed upper limit in cross section at 95\% confidence
+      level (indicated by the colour scale) for simplified models that
+      assume the gluino-mediated (Left) and direct (Right) production
+      of bottom-squark pairs, as a function of, respectively, the
+      gluino or bottom squark mass, and the $\chiz_{1}$ mass. The
+      black solid thick (thin) line indicates the observed mass
+      exclusion regions assuming the nominal (${\pm}1 \sigma$ theory
+      uncertainty) production cross section. The red dashed thick
+      (thin) line indicates the median (${\pm}1 \sigma$ experimental
+      uncertainty) expected mass exclusion regions. {\color{red} To be
+        updated. } }
+      \label{fig:limits-sms} 
+  \end{center}
+\end{figure*}
 
-Figure~X \fixme{\it will show} 
-%\ref{fig:limits-sms} shows 
-the observed upper limit on the
-production cross section at 95\% confidence level (CL) as a function
-of the gluino and LSP masses for a range of simplified models assuming
-pair production of gluinos. The observed excluded regions are
-determined for gluino pair production assuming decoupled squarks. Also
-shown are the observed excluded regions when varying the production
-cross section by its theoretical uncertainty, and the expected
-excluded region with the ${\pm}1$ standard-deviation ($\sigma$)
-variations. The search places stringent limits in the mass parameter
-space, with observed exclusions in gluino and LSP masses as high as
-$\sim$X\gev and $\sim$Y\gev, respectively.
+Figure\ref{fig:limits-sms} shows the observed upper limit on the
+production cross section at 95\% confidence level as a function of the
+gluino and LSP masses for models that assume the gluino-mediated and
+direct production of bottom squark pairs. Also shown are the observed
+mass exclusion regions when varying the production cross section by
+its theoretical uncertainty, and the expected mass exclusion regions
+with the ${\pm}1$ standard-deviation variations. The search places
+stringent limits in the mass parameter space, with observed exclusions
+in gluino and \chiz masses as high as, respectively, X\gev and
+Y\gev. Similarly, in the case of direct squark production, bottom
+squark and \chiz masses as high as X\gev and Y\gev are excluded.
 
 %%__________________________________________________________________||
