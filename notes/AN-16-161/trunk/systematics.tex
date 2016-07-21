@@ -122,7 +122,6 @@ The changes are typically in the range of $1-15\%$.
 
 \subsubsection*{B-tagging efficiency}
 \label{sec:tfSyst_btag}
-\textbf{This section include results from 2015 data, as the scale factors for 2016 have not yet been provided.}\\
 Scale factors provided by the BTV POG are applied to the MC samples
 to correct for differences in the b-tagging efficiencies and 
 misidentifications between simulation and data. 
@@ -214,7 +213,8 @@ They are typically in the range of $1-5\%$.
 
 \subsubsection*{Lepton and photon trigger/identification/isolation efficiency}
 \label{sec:tfSyst_lepton}
-\textbf{This section include results from 2015 data, as the scale factors for 2016 have not yet been provided.}\\
+\textbf{For the muons, preliminary identification/isolation SFs from the Muon POG are used. 
+No recommendation is yet given for the treatment of systematics and the numbers from 2015 are used. }\\
 Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
 acceptance but not identified properly by lepton identification or isolation
 requirements contribute to the so-called ``lost-lepton background'', 
@@ -249,9 +249,7 @@ control sample is applied.
 
 The variation on the variable $y$ is computed by varying the lepton scale factor
 up and down according to each source of uncertainty. 
-A systematic uncertainty of 2\% on the muon trigger efficiency is taken. 
-It is doubled with respect to the recommendations from the Muon POG, because the latter is derived using the 
-``OR'' of the \verb!HLT_IsoMu20! and \verb!HLT_IsoTkMu20!, while the analysis makes use of the \verb!HLT_IsoMu20! path only. 
+A systematic uncertainty of 1\% on the muon trigger efficiency is taken. 
 A ~1\% systematic is propagated for the ``tight'' muon selection. 
 This uncertainty are taken as correlated between signal and control regions. 
 
@@ -288,78 +286,78 @@ total change is typically in the range $2-5\%$
 
 
 
-\subsubsection*{Top $p_T$ reweighting}
-\label{sec:tfSyst_topPt}
+%% \subsubsection*{Top $p_T$ reweighting}
+%% \label{sec:tfSyst_topPt}
 
-Variations in the reweighting of top $p_{T}$ distribution, as first outlined in 
-Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
-uncertainty on this correction is taken as the size of the correction itself. 
-The relative change in transfer factors is presented in Fig.
-~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
-variation is typically in the range $0-15\%$.
+%% Variations in the reweighting of top $p_{T}$ distribution, as first outlined in 
+%% Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
+%% uncertainty on this correction is taken as the size of the correction itself. 
+%% The relative change in transfer factors is presented in Fig.
+%% ~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
+%% variation is typically in the range $0-15\%$.
 
-\begin{figure}[!h]
-  \centering
-  \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-  } ~~
-  \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-  }\\
+%% \begin{figure}[!h]
+%%   \centering
+%%   \subfigure[top $p_{T}$ weight up variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%%   } ~~
+%%   \subfigure[top $p_{T}$ weight down variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%%   }\\
 
-  \caption{\label{fig:tfSyst_topPt_muToZinv} The relative change in
-  the $\mj \rightarrow (\znunu)$ transfer
-  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
-\end{figure}
+%%   \caption{\label{fig:tfSyst_topPt_muToZinv} The relative change in
+%%   the $\mj \rightarrow (\znunu)$ transfer
+%%   factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%%   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%%   }
+%% \end{figure}
 
-\begin{figure}[!h]
-  \centering
-  \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-  } ~~
-  \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-  }\\
+%% \begin{figure}[!h]
+%%   \centering
+%%   \subfigure[top $p_{T}$ weight up variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%%   } ~~
+%%   \subfigure[top $p_{T}$ weight down variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%%   }\\
 
-  \caption{\label{fig:tfSyst_topPt_mumuToZinv} The relative change in
-  the $\mmj \rightarrow (\znunu)$ transfer
-  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
-\end{figure}
+%%   \caption{\label{fig:tfSyst_topPt_mumuToZinv} The relative change in
+%%   the $\mmj \rightarrow (\znunu)$ transfer
+%%   factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%%   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%%   }
+%% \end{figure}
 
-\begin{figure}[!h]
-  \centering
-  \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/gj/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-  } ~~
-  \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/gj/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-  }\\
+%% \begin{figure}[!h]
+%%   \centering
+%%   \subfigure[top $p_{T}$ weight up variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/gj/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%%   } ~~
+%%   \subfigure[top $p_{T}$ weight down variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Zinv/gj/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%%   }\\
 
-  \caption{\label{fig:tfSyst_topPt_gjToZinv} The relative change in
-  the $\gj \rightarrow (\znunu)$ transfer
-  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
-\end{figure}
+%%   \caption{\label{fig:tfSyst_topPt_gjToZinv} The relative change in
+%%   the $\gj \rightarrow (\znunu)$ transfer
+%%   factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%%   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%%   }
+%% \end{figure}
 
-\begin{figure}[!h]
-  \centering
-  \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-  } ~~
-  \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-  }\\
+%% \begin{figure}[!h]
+%%   \centering
+%%   \subfigure[top $p_{T}$ weight up variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%%   } ~~
+%%   \subfigure[top $p_{T}$ weight down variation]{
+%%     \includegraphics[width=0.5\textwidth]{figures/mcSystematics2p6Fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%%   }\\
 
-  \caption{\label{fig:tfSyst_topPt_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
-\end{figure}
+%%   \caption{\label{fig:tfSyst_topPt_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+%%   factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%%   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%%   }
+%% \end{figure}
 
 
 \subsubsection*{QCD contamination}
