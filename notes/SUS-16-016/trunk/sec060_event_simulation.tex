@@ -3,23 +3,23 @@
 \label{sec:event_simulation}
 
 The search relies on several event samples, recorded by the CMS
-experiment or generated from Monte Carlo (MC) simulations, to estimate
-the contributions from SM backgrounds, as described in
-Section~\ref{sec:event_selection}. 
+experiment or simulated with Monte Carlo (MC) generator programs, to
+estimate the contributions from SM backgrounds, as described in
+Section~\ref{sec:event_selection}.
 %The search relies on multiple control regions in data and simulated
 %event samples to estimate contributions from SM backgrounds. 
 %The definitions of the control regions in data and the background
 %estimation procedures are described in
 %Section~\ref{needtoaddthisref}. 
-The dominant SM backgrounds for the search are QCD multijet
-production, and the associated production of jets and top-antitop
-(\ttbar), single top, and vector boson (\wlnu, \znunu). Residual
-contributions from other processes, such as WW, WZ, ZZ (diboson)
-production and the associated production of \ttbar and a vector boson
-(W and Z), are also considered. Other processes, such as Drell-Yan
-($\cPq\bar{\cPq}\!  \rightarrow\! \PZ/\gamma^*\! \rightarrow\!
-\ell^+\ell^-$) and \gj production, are also relevant for some control
-regions, defined below.
+The dominant SM backgrounds for the search are QCD multijet production
+and the associated production of jets and an top-antitop pair
+(\ttbar), a single top quark, or a vector boson (\wlnu,
+\znunu). Residual contributions from other processes, such as WW, WZ,
+ZZ (diboson) production and the associated production of \ttbar and a
+vector boson ({\ttbar}W and {\ttbar}Z), are also considered. Other
+processes, such as Drell-Yan ($\cPq\bar{\cPq}\!  \rightarrow\!
+\PZ/\gamma^*\!  \rightarrow\!  \ell^+\ell^-$) and \gj production, are
+also relevant for some control regions, defined below.
 
 The \MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall2014} event generator code is
 used at leading order (LO) accuracy to produce samples of \wj, \zj,
@@ -27,22 +27,22 @@ used at leading order (LO) accuracy to produce samples of \wj, \zj,
 next-to-leading order (NLO) accuracy to generate samples of s-channel
 production of single top, as well as {\ttbar}W and {\ttbar}Z
 events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is
-used to describe the t- and tW-channel production of single top
-events. The LO \PYTHIA 8.2~\cite{pythia} program is used to generate
-diboson (WW, WZ, ZZ) production. The simulated samples are normalised
-according to production cross sections that are calculated with NLO
-and next-to-NLO precision~\cite{Alwall2014, wphys, fewz, wwxs, top++,
-  nlotop, powheg_top_Wt}. The description of the detector response,
-for these SM processes, is implemented using the
+used to describe the t- and tW-channel production of events containing
+single top quarks. The LO \PYTHIA 8.2~\cite{pythia} program is used to
+generate diboson (WW, WZ, ZZ) production. The simulated samples are
+normalised according to production cross sections that are calculated
+with NLO and next-to-NLO precision~\cite{Alwall2014, wphys, fewz,
+  wwxs, top++, nlotop, powheg_top_Wt}. The description of the detector
+response, for these SM processes, is implemented using the
 \GEANTfour~\cite{geant} package.
 
-Event samples for signal models involving gluino or squark pair
-production, in association with up to two additional partons, are
-generated at leading order with \MADGRAPH5 aMC@NLO, and the decay of
-the sparticles is performed with \PYTHIA 8.2~\cite{pythia}. Inclusive,
-process-dependent, signal production cross sections are calculated
-with NLO plus next-to-leading-logarithm (NLL)
-accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
+Event samples for signal models involving the gluino-mediated or
+direct pair production or squarks, in association with up to two
+additional partons, are generated at leading order with \MADGRAPH5
+aMC@NLO, and the decay of the sparticles is performed with \PYTHIA
+8.2~\cite{pythia}. Inclusive, process-dependent, signal production
+cross sections are calculated with NLO plus next-to-leading-logarithm
+(NLL) accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
   PhysRevD.80.095004, 1126-6708-2009-12-041,
   doi:10.1142/S0217751X11053560, susynlo}. The detector response is
 provided by the CMS fast simulation package~\cite{fastsim}.
