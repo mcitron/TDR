@@ -1,112 +1,88 @@
 %%____________________________________________________________________________||
 \section{Interpretation in Simplified SUSY models}
 \label{sec:susy}
-The analysis has been focused so far on the background studies, 
-in order to achieve a good understanding of the new data and MC samples. 
-This has been achieved only recently, after most of the relevant inputs (JEC, b-tag SFs and others) have arrived.
-Moreover, we are in the process of updating the signal systematics to the latest recommendations 
-provided by the SUSY group. \\
-For this reasons, we do not include yet in this version of the AN a comprehensive study for the interpretation of the results shown in Sec.~\ref{sec:results}. 
-We plan to provide interpretations in the context of simplified supersymmetric models of gluino/sbottom pair producion. 
-This will be documented in the next version of the AN, which will be released before the approval of the analysis, in agreement with the ARC members. 
 
-In Fig.~\ref{fig:limits_T2bb_rubbish} we show an example preliminary expected limit contour in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ 
-for the pair production of sbottom quarks decaying to bottom quarks (also refereed to as T2bb), using 2.6 \ifb of integrated luminosity. 
-\textbf{This result doesn't reflect the latest inputs documented in this version of the AN, 
-but rather refers to the inputs documented in the previous iteration (AN-16-161\_v3). }
-Therefore it has to be considered preliminary and meant to be a qualitative example of the reach of this analysis. 
-For the same reason the observed limit is not shown. 
+
+To interpret the results of this search, simplified
+models~\cite{Alwall:2008ag,Alwall:2008va,Alves:2011wf} for the production of supersymmetric particles are considered. 
+They use only a limited set of sparticles in the production and
+decay and enable comprehensive studies of individual SUSY event
+topologies. These studies can be performed in terms of
+fundamental properties such as decay modes, production cross sections and sparticle masses. 
+
+\subsection{Signal models}
+\label{sec:susy_models}
+Interpretations are presented for pair production of gluino, stop, sbottom and light squarks, 
+with several different possibility for the decay chain. 
+The simplified models used in the analysis are summarised in Tab.~\ref{tab:simplified-models}. 
+Benchmark points are also listed, which will be used throughout the section. 
+Two benchmarks are provided, where relevant, to cover the phenomenology of compressed and uncompressed spectra. 
+All the benchmarks are chosen to be right within the expected exclusion. \\
+A sensitivity study has been performed on these benchmark models, which is described in App.~\ref{app:sensitivity-benchmarks}. \\
+Sketches of the production and decay in some of these models are shown in Fig.~\ref{fig:simplified-models-feyn-gluino}-\ref{fig:simplified-models-feyn-3rdGen}.
+Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:sig-syst}. 
+
+All the models are generated using the FastSim package \cite{Abdullin:2011zz}. 
+FastSim Monte Carlo samples are corrected using FastSim-to-FullSim scale factor, 
+accounting for difference in b-tag efficiency. 
+These scale factors are applied on top of the FullSim scale factors applied for the 
+other Monte Carlo samples.
+
+
+\begin{landscape}
+\begin{table}[h!]
+  \scriptsize
+  \caption{A summary of the simplified models used in this analysis.
+  \label{tab:simplified-models}}
+  \centering
+  \begin{tabular}{ lllllll }
+    \hline
+    \hline
+    Model & Production & Decay & Notes & Run 1 (CMS) & Figure & Benchmarks $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ \\ 
+    \hline    
+    \hline    
+    T1bbbb & \ppToGluGlu    & \gluToBBNo & -- & $m_{\mathrm{Gluino}}>\sim 1350 \,\mathrm{GeV}$ & \ref{fig:T1bbbb_feyn} & \parbox[t]{5cm}{Compressed: (100,800)\\Uncompressed: (1500,100)} \\ \hline
+    % T1tttt & \ppToGluGlu    & \gluToTTNo & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ & \ref{fig:T1tttt_feyn} & \parbox[t]{5cm}{Compressed: (800,400)\\Uncompressed: (1300,100)} \\ \hline
+    % T1ttbb & \ppToGluGlu    & \gluToTBWNo & $\Delta M(\chipm,\chiz)=5\,\mathrm{GeV}$ & -- & \ref{fig:T1ttbb_feyn} & \parbox[t]{5cm}{Compressed: (1000,700)\\Uncompressed: (1300,100)} \\ \hline
+    % T5ttcc & \ppToGluGlu    & \gluToTStop,\stopToCNo & $\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$ & -- & \ref{fig:T5ttcc_feyn} & \parbox[t]{5cm}{Compressed: (750,600)\\Uncompressed: (1200,200)} \\ \hline   
+    % T5ttttDM175 & \ppToGluGlu  & \gluToTStop,\stopToTNo & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$\\$\Delta M(\mathrm{Stop},LSP)=175\,\mathrm{GeV}$}  & $m_{\mathrm{Gluino}}>\sim 1050 \,\mathrm{GeV}$ & \ref{fig:T5ttttDM175_feyn} & \parbox[t]{5cm}{Compressed: (700,400)\\Uncompressed: (800,100)} \\ \hline   
+    % T5tttt\_degen & \ppToGluGlu  & \gluToTStop,\stopToBFFNo & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$\\$\Delta M(\mathrm{Stop},LSP)=20\,\mathrm{GeV}$} & -- & \ref{fig:T5tttt_degen_feyn} & \parbox[t]{5cm}{Compressed: (800,600)\\Uncompressed: (1100,100)} \\ \hline   
+    T2tt   & \ppToStopStop      & \stopToTNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 760 \,\mathrm{GeV}$ & \ref{fig:T2tt_feyn} & \parbox[t]{5cm}{Compressed: (350,100)\\Uncompressed: (700,50)} \\ \hline
+    % T2cc   & \ppToStopStop      & \stopToCNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 250 \,\mathrm{GeV}$ & \ref{fig:T2cc_feyn} & Compressed: (325,305) \\ \hline
+    % T2-4bd & \ppToStopStop      & \stopToBFFNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 300 \,\mathrm{GeV}$  & -- & Compressed: (300,290) \\ \hline
+    % T2mixed & \ppToStopStop      & \stopToMixed & -- & -- & -- & Compressed: (300,250)  \\ \hline
+    % T2tb & \ppToStopStop      & \stopToTB & -- & -- & \ref{fig:T2tb_feyn} & \parbox[t]{5cm}{Compressed: (350,225)\\Uncompressed: (600,50)} \\ \hline
+    % T2bW\_X05 & \ppToStopStop      & \stopToBW & $m_{\chipm}=0.5(m_{\mathrm{Gluino}}+m_{\chiz})$ & $m_{\mathrm{\mathrm{Stop}}}>\sim 640 \,\mathrm{GeV}$ & \ref{fig:T2bW_X05_feyn} & \parbox[t]{5cm}{Compressed: (300,175)\\Uncompressed: (400,100)} \\ \hline
+    T2bb   & \ppToSbotSbot   & \sbottomToB & -- & $m_{\mathrm{\mathrm{Sbottom}}}>\sim 750 \,\mathrm{GeV}$ & \ref{fig:T2bb_feyn} & \parbox[t]{5cm}{Compressed: (375,300)\\Uncompressed: (800,50)} \\ \hline
+    % T1qqqq & \ppToGluGlu    & \gluToQQNo & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ & \ref{fig:T1qqqq_feyn} & \parbox[t]{5cm}{Compressed: (900,700)\\Uncompressed: (1300,100)} \\ \hline
+    % T2qq   & \ppToSquaSqua    & \squarkToQ &  considered both 1-fold/8-fold squark degeneracy & $m_{\mathrm{\mathrm{Stop}}}>\sim 975 \,\mathrm{GeV}$ & \ref{fig:T2qq_feyn} & \parbox[t]{5cm}{Compressed: (500,400)\\Uncompressed: (800,50)} \\ \hline
+    \hline
+  \end{tabular}
+\end{table}
+\end{landscape}
 
 
 \begin{figure}[h!]
-  \caption{\textbf{Preliminary} expected limit for the T2bb simplified SUSY model with 2.6 \ifb. \label{fig:limits_T2bb_rubbish}}
   \begin{center}
-    \includegraphics[width=0.6\textwidth]{figures/susyResults/T2bb_rubbish}    
+    \subfigure[T1bbbb]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T1bbbb_feyn}
+      \label{fig:T1bbbb_feyn}
+    } ~~
+    % \subfigure[T1tttt]{
+    %   \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
+    %   \label{fig:T1tttt_feyn}
+    % } ~~
+    % \subfigure[T1ttbb]{
+    %   \includegraphics[width=0.3\textwidth]{figures/susyResults/T1ttbb_feyn.png}
+    %   \label{fig:T1ttbb_feyn}
+    % }
+    \caption{
+      Graphical representation of the production and decay of supersymmetric particles 
+      in gluino models with decoupled third generation squarks. 
+    }
+    \label{fig:simplified-models-feyn-gluino}
   \end{center}
 \end{figure}
-
-
-
-%% To interpret the results of this search, simplified
-%% models~\cite{Alwall:2008ag,Alwall:2008va,Alves:2011wf} for the production of supersymmetric particles are considered. 
-%% They use only a limited set of sparticles in the production and
-%% decay and enable comprehensive studies of individual SUSY event
-%% topologies. These studies can be performed in terms of
-%% fundamental properties such as decay modes, production cross sections and sparticle masses. 
-
-%% \subsection{Signal models}
-%% \label{sec:susy_models}
-%% Interpretations are presented for pair production of gluino, stop, sbottom and light squarks, 
-%% with several different possibility for the decay chain. 
-%% The simplified models used in the analysis are summarised in Tab.~\ref{tab:simplified-models}. 
-%% Benchmark points are also listed, which will be used throughout the section. 
-%% Two benchmarks are provided, where relevant, to cover the phenomenology of compressed and uncompressed spectra. 
-%% All the benchmarks are chosen to be right within the expected exclusion. \\
-%% A sensitivity study has been performed on these benchmark models, which is described in App.~\ref{app:sensitivity-benchmarks}. \\
-%% Sketches of the production and decay in some of these models are shown in Fig.~\ref{fig:simplified-models-feyn-gluino}-\ref{fig:simplified-models-feyn-3rdGen}.
-%% Systematic uncertainties on the signal acceptance are detailed in Sec.~\ref{sec:sig-syst}. 
-
-%% All the models are generated using the FastSim package \cite{Abdullin:2011zz}. 
-%% FastSim Monte Carlo samples are corrected using FastSim-to-FullSim scale factor, 
-%% accounting for difference in b-tag efficiency. 
-%% These scale factors are applied on top of the FullSim scale factors applied for the 
-%% other Monte Carlo samples.
-
-
-%% \begin{landscape}
-%% \begin{table}[h!]
-%%   \scriptsize
-%%   \caption{A summary of the simplified models used in this analysis.
-%%   \label{tab:simplified-models}}
-%%   \centering
-%%   \begin{tabular}{ lllllll }
-%%     \hline
-%%     \hline
-%%     Model & Production & Decay & Notes & Run 1 (CMS) & Figure & Benchmarks $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ \\ 
-%%     \hline    
-%%     \hline    
-%%     T1bbbb & \ppToGluGlu    & \gluToBBNo & -- & $m_{\mathrm{Gluino}}>\sim 1350 \,\mathrm{GeV}$ & \ref{fig:T1bbbb_feyn} & \parbox[t]{5cm}{Compressed: (100,800)\\Uncompressed: (1500,100)} \\ \hline
-%%     T1tttt & \ppToGluGlu    & \gluToTTNo & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ & \ref{fig:T1tttt_feyn} & \parbox[t]{5cm}{Compressed: (800,400)\\Uncompressed: (1300,100)} \\ \hline
-%%     T1ttbb & \ppToGluGlu    & \gluToTBWNo & $\Delta M(\chipm,\chiz)=5\,\mathrm{GeV}$ & -- & \ref{fig:T1ttbb_feyn} & \parbox[t]{5cm}{Compressed: (1000,700)\\Uncompressed: (1300,100)} \\ \hline
-%%     T5ttcc & \ppToGluGlu    & \gluToTStop,\stopToCNo & $\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$ & -- & \ref{fig:T5ttcc_feyn} & \parbox[t]{5cm}{Compressed: (750,600)\\Uncompressed: (1200,200)} \\ \hline   
-%%     T5ttttDM175 & \ppToGluGlu  & \gluToTStop,\stopToTNo & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$\\$\Delta M(\mathrm{Stop},LSP)=175\,\mathrm{GeV}$}  & $m_{\mathrm{Gluino}}>\sim 1050 \,\mathrm{GeV}$ & \ref{fig:T5ttttDM175_feyn} & \parbox[t]{5cm}{Compressed: (700,400)\\Uncompressed: (800,100)} \\ \hline   
-%%     T5tttt\_degen & \ppToGluGlu  & \gluToTStop,\stopToBFFNo & \parbox[t]{5cm}{$\Delta M(\mathrm{Gluino},\mathrm{Stop})>m_{\mathrm{b}}+m_{\mathrm{W}}$\\$\Delta M(\mathrm{Stop},LSP)=20\,\mathrm{GeV}$} & -- & \ref{fig:T5tttt_degen_feyn} & \parbox[t]{5cm}{Compressed: (800,600)\\Uncompressed: (1100,100)} \\ \hline   
-%%     T2tt   & \ppToStopStop      & \stopToTNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 760 \,\mathrm{GeV}$ & \ref{fig:T2tt_feyn} & \parbox[t]{5cm}{Compressed: (350,100)\\Uncompressed: (700,50)} \\ \hline
-%%     T2cc   & \ppToStopStop      & \stopToCNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 250 \,\mathrm{GeV}$ & \ref{fig:T2cc_feyn} & Compressed: (325,305) \\ \hline
-%%     T2-4bd & \ppToStopStop      & \stopToBFFNo & -- & $m_{\mathrm{\mathrm{Stop}}}>\sim 300 \,\mathrm{GeV}$  & -- & Compressed: (300,290) \\ \hline
-%%     T2mixed & \ppToStopStop      & \stopToMixed & -- & -- & -- & Compressed: (300,250)  \\ \hline
-%%     T2tb & \ppToStopStop      & \stopToTB & -- & -- & \ref{fig:T2tb_feyn} & \parbox[t]{5cm}{Compressed: (350,225)\\Uncompressed: (600,50)} \\ \hline
-%%     T2bW\_X05 & \ppToStopStop      & \stopToBW & $m_{\chipm}=0.5(m_{\mathrm{Gluino}}+m_{\chiz})$ & $m_{\mathrm{\mathrm{Stop}}}>\sim 640 \,\mathrm{GeV}$ & \ref{fig:T2bW_X05_feyn} & \parbox[t]{5cm}{Compressed: (300,175)\\Uncompressed: (400,100)} \\ \hline
-%%     T2bb   & \ppToSbotSbot   & \sbottomToB & -- & $m_{\mathrm{\mathrm{Sbottom}}}>\sim 750 \,\mathrm{GeV}$ & \ref{fig:T2bb_feyn} & \parbox[t]{5cm}{Compressed: (375,300)\\Uncompressed: (800,50)} \\ \hline
-%%     T1qqqq & \ppToGluGlu    & \gluToQQNo & -- & $m_{\mathrm{Gluino}}>\sim 1320 \,\mathrm{GeV}$ & \ref{fig:T1qqqq_feyn} & \parbox[t]{5cm}{Compressed: (900,700)\\Uncompressed: (1300,100)} \\ \hline
-%%     T2qq   & \ppToSquaSqua    & \squarkToQ &  considered both 1-fold/8-fold squark degeneracy & $m_{\mathrm{\mathrm{Stop}}}>\sim 975 \,\mathrm{GeV}$ & \ref{fig:T2qq_feyn} & \parbox[t]{5cm}{Compressed: (500,400)\\Uncompressed: (800,50)} \\ \hline
-%%     \hline
-%%   \end{tabular}
-%% \end{table}
-%% \end{landscape}
-
-
-%% \begin{figure}[h!]
-%%   \begin{center}
-%%     \subfigure[T1bbbb]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1bbbb_feyn}
-%%       \label{fig:T1bbbb_feyn}
-%%     } ~~
-%%     \subfigure[T1tttt]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1tttt_feyn}
-%%       \label{fig:T1tttt_feyn}
-%%     } ~~
-%%     \subfigure[T1ttbb]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T1ttbb_feyn.png}
-%%       \label{fig:T1ttbb_feyn}
-%%     }
-%%     \caption{
-%%       Graphical representation of the production and decay of supersymmetric particles 
-%%       in gluino models with decoupled third generation squarks. 
-%%     }
-%%     \label{fig:simplified-models-feyn-gluino}
-%%   \end{center}
-%% \end{figure}
 
 
 %% \begin{figure}[h!]
@@ -151,35 +127,35 @@ For the same reason the observed limit is not shown.
 %% \end{figure}
 
 
-%% \begin{figure}[h!]
-%%   \begin{center}
-%%     \subfigure[T2tt]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
-%%       \label{fig:T2tt_feyn}
-%%     } ~~
-%%     \subfigure[T2cc]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn}
-%%       \label{fig:T2cc_feyn}
-%%     } \\
-%%     \subfigure[T2tb]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tb_feyn}
-%%       \label{fig:T2tb_feyn}
-%%     }~~
-%%     \subfigure[TbW\_X05]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T2bW_X05_feyn}
-%%       \label{fig:T2bW_X05_feyn}
-%%     } \\
-%%     \subfigure[T2bb]{
-%%       \includegraphics[width=0.3\textwidth]{figures/susyResults/T2bb_feyn}
-%%       \label{fig:T2bb_feyn}
-%%     }
-%%     \caption{
-%%       Graphical representation of the production and decay of supersymmetric particles 
-%%       in models with the production of third generation squarks (stops and sbottoms). 
-%%     }
-%%     \label{fig:simplified-models-feyn-3rdGen}
-%%   \end{center}
-%% \end{figure}
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[T2tt]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tt_feyn}
+      \label{fig:T2tt_feyn}
+    } ~~
+    % \subfigure[T2cc]{
+    %   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2cc_feyn}
+    %   \label{fig:T2cc_feyn}
+    % } \\
+    % \subfigure[T2tb]{
+    %   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2tb_feyn}
+    %   \label{fig:T2tb_feyn}
+    % }~~
+    % \subfigure[TbW\_X05]{
+    %   \includegraphics[width=0.3\textwidth]{figures/susyResults/T2bW_X05_feyn}
+    %   \label{fig:T2bW_X05_feyn}
+    % } \\
+    \subfigure[T2bb]{
+      \includegraphics[width=0.3\textwidth]{figures/susyResults/T2bb_feyn}
+      \label{fig:T2bb_feyn}
+    }
+    \caption{
+      Graphical representation of the production and decay of supersymmetric particles 
+      in models with the production of third generation squarks (stops and sbottoms). 
+    }
+    \label{fig:simplified-models-feyn-3rdGen}
+  \end{center}
+\end{figure}
 
 
 
@@ -448,32 +424,32 @@ For the same reason the observed limit is not shown.
 
 
 
-%% \subsection{Exclusion limits}
-%% \label{sec:susy_results}
+\subsection{Exclusion limits}
+\label{sec:susy_results}
 
-%% In order to extract the signal contribution in the fit, the distribution of events according to the \mht variable, 
-%% encoded as template histograms, is used as described in Sec.~\ref{sec:had-shape} and \ref{sec:likelihood}. \\
-%% Upper limits on the cross section are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. 
-%% Asymptotic formulae \cite{AsymptoticFormulae} are utilised to approximate the distribution of the test statistics. \\
-%% All the statistical results are produced using the \textit{combine} tool, 
-%% provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. 
+In order to extract the signal contribution in the fit, the distribution of events according to the \mht variable, 
+encoded as template histograms, is used as described in Sec.~\ref{sec:had-shape} and \ref{sec:likelihood}. \\
+Upper limits on the cross section are computed using the $\text{CL}_{s}$ criterion \cite{CLsTechnique}. 
+Asymptotic formulae \cite{AsymptoticFormulae} are utilised to approximate the distribution of the test statistics. \\
+All the statistical results are produced using the \textit{combine} tool, 
+provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}. 
 
-%% Due to CPU constraints, only 4 out of 9 jet categories (but all \nb/\scalht bins
-%% within each category) are considered to extract the final result, as explained in Sec.~\ref{sec:likelihood}. 
-%% In Tab.~\ref{tab:sig-eff-bestCat} the 4 jet categories used for the limits are shown for some benchmark models. 
-%% Full results for the ranking procedure are included in Appendix~\ref{app:jetRanking}. 
+% Due to CPU constraints, only 4 out of 9 jet categories (but all \nb/\scalht bins
+% within each category) are considered to extract the final result, as explained in Sec.~\ref{sec:likelihood}. 
+% In Tab.~\ref{tab:sig-eff-bestCat} the 4 jet categories used for the limits are shown for some benchmark models. 
+% Full results for the ranking procedure are included in Appendix~\ref{app:jetRanking}. 
 
-%% In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (top) the 95\% C.L. upper limits on the cross section are shown 
-%% in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered in this interpretation. 
-%% These results correspond to 2.2 \ifb of integrated luminosity. 
-%% The exclusion contour is also shown together with $\pm1\sigma$ uncertainty. 
-%% The band around the expected exclusion reflects the experimental uncertainty, 
-%% while the band around the observed exclusion correspond to the theoretical 
-%% uncertainty on the signal cross section.\\
-%% In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (bottom left) the signal acceptance 
-%% including the 4 most excluding jet categories is shown. \\
-%% In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (bottom right) the signal acceptance 
-%% including the whole signal region is shown.
+In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2bb} (top) the 95\% C.L. upper limits on the cross section are shown 
+in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered in this interpretation. 
+These results correspond to 2.2 \ifb of integrated luminosity. 
+The exclusion contour is also shown together with $\pm1\sigma$ uncertainty. 
+The band around the expected exclusion reflects the experimental uncertainty, 
+while the band around the observed exclusion correspond to the theoretical 
+uncertainty on the signal cross section.\\
+% In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2bb} (bottom left) the signal acceptance 
+% including the 4 most excluding jet categories is shown. \\
+% In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2qq} (bottom right) the signal acceptance 
+% including the whole signal region is shown.
 
 %% The models are grouped according to the following categorisation:
 %% \begin{itemize}
@@ -491,29 +467,75 @@ For the same reason the observed limit is not shown.
 
 
 
-%% \newpage
-%% \begin{figure}[h!]
-%%   \begin{center}
-%%     \subfigure[T1bbbb: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
-%%       \includegraphics[width=0.6\textwidth]{figures/susyResults/T1bbbbXSEC}
-%%       \label{fig:T1bbbb_excl}
-%%     } \\
-%%     \subfigure[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
-%%       \includegraphics[width=0.45\textwidth]{figures/jetRanking/T1bbbb/eff/T1bbbb_merging_4_cats}
-%%       \label{fig:T1bbbb_eff}
-%%     } ~~
-%%     \subfigure[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
-%%       \includegraphics[width=0.45\textwidth]{figures/susyResults/T1bbbb_doubleRatioAcceptance}
-%%       \label{fig:T1bbbb_eff_doubleRatio}
-%%     }
-%%     \caption{
-%%       Top: the 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
-%%       Bottom left: signal acceptance including the 4 most excluding jet categories. 
-%%       Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
-%%     }
-%%     \label{fig:T1bbbb}
-%%   \end{center}
-%% \end{figure}
+\newpage
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[T1bbbb: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
+      \includegraphics[width=0.6\textwidth]{figures/susyResults13/T1bbbbXSEC}
+      \label{fig:T1bbbb_excl}
+    } \\
+    % \subfigure[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T1bbbb/eff/T1bbbb_merging_4_cats}
+    %   \label{fig:T1bbbb_eff}
+    % } ~~
+    % \subfigure[T1bbbb: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T1bbbb_doubleRatioAcceptance}
+    %   \label{fig:T1bbbb_eff_doubleRatio}
+    % }
+    \caption{
+      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
+      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
+      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
+    }
+    \label{fig:T1bbbb}
+  \end{center}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[T2tt: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
+      \includegraphics[width=0.6\textwidth]{figures/susyResults13/T2ttXSEC}
+      \label{fig:T2tt_excl}
+    } \\
+    % \subfigure[T2tt: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T2tt/eff/T2tt_merging_4_cats}
+    %   \label{fig:T2tt_eff}
+    % } ~~
+    % \subfigure[T2tt: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T2tt_doubleRatioAcceptance}
+    %   \label{fig:T2tt_eff_doubleRatio}
+    % }
+    \caption{
+      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
+      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
+      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
+    }
+    \label{fig:T2tt}
+  \end{center}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+  \begin{center}
+    \subfigure[T2bb: Upper limit on the cross section in the $(m_{\mathrm{Gluino}},m_{\mathrm{Susy}})$ plane]{
+      \includegraphics[width=0.6\textwidth]{figures/susyResults13/T2bbXSEC}
+      \label{fig:T2bb_excl}
+    } \\
+    % \subfigure[T2bb: $\epsilon_{sig}^{\mathrm{4\,cat}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/jetRanking/T2bb/eff/T2bb_merging_4_cats}
+    %   \label{fig:T2bb_eff}
+    % } ~~
+    % \subfigure[T2bb: $\epsilon_{sig}^{\mathrm{4\,cat}}/\epsilon_{sig}^{\mathrm{tot}}$]{
+    %   \includegraphics[width=0.45\textwidth]{figures/susyResults/T2bb_doubleRatioAcceptance}
+    %   \label{fig:T2bb_eff_doubleRatio}
+    % }
+    \caption{
+      The 95\% C.L. observed upper limit on the cross section (histogram), with the expected (solid black line) observed (solid red line) exclusion contours. 
+      % Bottom left: signal acceptance including the 4 most excluding jet categories. 
+      % Bottom right: ratio of the signal acceptance including 4 categories to the acceptance including the whole signal region. 
+    }
+    \label{fig:T2bb}
+  \end{center}
+\end{figure}
 
 
 %% \newpage
