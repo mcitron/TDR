@@ -5,7 +5,7 @@
 \subsection{Data}
 
 
-In this note, we use 6.3~\ifb of proton-proton collision data at
+In this note, we use 12.9~\ifb of proton-proton collision data at
 $\sqrt{s} =$ 13~TeV collected in 2016. The JSON file listed in
 Table~\ref{tab:cert_json} specifies the periods of the time in which
 these certified data are collected. Table~\ref{tab:datasets_data} lists
@@ -25,7 +25,7 @@ blinded in this version of the note.
 
 \begin{table}[!h]
 \topcaption{The JSON file that specifies the periods of the time in
-which 6.3~\ifb of the certified data are collected} \footnotesize
+which 12.9~\ifb of the certified data are collected} \footnotesize
 \input{tables/datasets/cert_json.tex} \label{tab:cert_json}
 \end{table}
 
@@ -94,18 +94,18 @@ a colliding bunch pair in a lumi section. The distribution of
 luminosity for each colliding bunch pair in each lumi section and the
 cross section of the total inelastic pp interaction. We use the method
 in Ref. \cite{twiki-PileupJSONFileforData} in deriving the
-distribution with the recommended value of 71.3~mb as the minimum bias
-cross section \cite{CMS-FSQ-15-005}.
+distribution with the recommended value of 63.00~mb as the minimum
+bias cross section. In addition, we derive distributions with $\pm
+5\%$ of the variations of the minimum bias cross section, i.e,
+66.15~mb and 59.850~mb.
+% the recommended value:
+% https://hypernews.cern.ch/HyperNews/CMS/get/luminosity/611/2.html
+% the measured value (71.3~mb) \cite{CMS-FSQ-15-005} was not
+% recommended at the time of writing
 
 The pileup reweighting factors are the ratios of the distributions of
 \verb!nTrueInt! in the data and in the simulated events and are
 normalised so as to preserve the number of the simulated events.
-
-Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
-of \verb!nTrueInt! in the data, simulated events and reweighted
-simulated events. The figure demonstrates that the reweighted
-simulated events have the distribution of \verb!nTrueInt! nearly
-identical to that in the data.
 
 \begin{figure}[!b]
 \centering
@@ -115,6 +115,14 @@ interactions per colliding bunch pair per lumi section in the data,
 corresponding distribution in the simulated events, and that of the
 reweighted simulated events.} \label{f044_corr_nTrueInt_data_mc_norm}
 \end{figure}
+
+
+Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
+of \verb!nTrueInt! in the data, simulated events and reweighted
+simulated events. The figure demonstrates that the reweighted
+simulated events have the distribution of \verb!nTrueInt! nearly
+identical to that in the data.
+
 
 
 \subsection{Cross sections for SM samples}
