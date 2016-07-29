@@ -12,20 +12,20 @@ of the particle direction and energy.
 The primary vertex (PV) for each recorded event is assumed to be the
 reconstructed vertex with the largest sum of charged-track $\pt^2$
 values that is found within 24\unit{cm} and 2\unit{cm} of the center
-of the detector in the directions, respectively, along and
-perpendicular to the beam axis. Charged tracks associated to
-reconstructed vertices coincident with the beam axis from other pp
-interactions within the same or neighbouring bunch crossings
-(``pileup'') are not considered by the PF algorithm as part of the
-global event reconstruction.
+of the detector in the directions along and perpendicular to the beam
+axis, respectively. Charged tracks associated to reconstructed
+vertices coincident with the beam axis from other pp interactions
+within the same or neighbouring bunch crossings (``pileup'') are not
+considered by the PF algorithm as part of the global event
+reconstruction.
 
 Photons~\cite{CMS:EGM-14-001} are identified as ECAL energy clusters
-not linked to the extrapolation of any charged particle trajectory to
-the ECAL. The energy of photons is directly obtained from the ECAL
+not linked to the extrapolation of any charged particle track to the
+ECAL. The energy of photons is directly obtained from the ECAL
 measurement, corrected for the effects of pileup.
 Electrons~\cite{Khachatryan:2015hwa} are identified as a charged
 particle track associated with an ECAL cluster compatible with the
-track trajectory, as well as many additional ECAL energy clusters from
+track trajectory, as well as additional ECAL energy clusters from
 potential bremsstrahlung photons emitted as the electron traverses
 material of the silicon tracker. The energy of electrons is determined
 from a combination of the track momentum at the main interaction
@@ -33,7 +33,8 @@ vertex, the corresponding ECAL cluster energy, and the energy sum of
 all bremsstrahlung photons attached to the track.
 Muons~\cite{Chatrchyan:2012xi} are identified as a track in the
 silicon tracker consistent with either a track or several hits in the
-muon system and associated with an energy deficit in the calorimeters.
+muon system. 
+% and associated with an energy deficit in the calorimeters.
 The energy of muons is obtained from the corresponding track momentum.
 Charged hadrons are identified as charged particle tracks neither
 identified as electrons, nor as muons. The energy of charged hadrons
@@ -101,7 +102,7 @@ Jets are clustered from the PF candidate particles with the infrared
 and collinear safe anti-$k_t$ algorithm~\cite{antikt}, operated with a
 radius parameter $R$ of 0.4. The jet momentum is determined as the
 vectorial sum of all particle momenta in this jet, and is found in the
-simulation to be within 5 to 10\% of the true momentum over the whole
+simulation to be within 5 to 10\% of its true momentum over the whole
 \pt spectrum and detector acceptance. Jet energy corrections, to
 account for pileup~\cite{pileup} and to establish a uniform relative
 response in $\eta$ and a calibrated absolute response in \Pt, are
@@ -129,7 +130,7 @@ light-flavour mistag probabilities of, respectively, approximately
 12\% and 1\%, for jets with transverse momenta typical of \ttbar
 events.
 
-The missing transverse momentum vector \ptvecmiss is defined as the
-projection on the plane perpendicular to the beams of the negative
-vector sum of the momenta of all PF candidate particles in an
-event~\cite{cms-met}. Its magnitude is referred to as \ETmiss.
+%The missing transverse momentum vector \ptvecmiss is defined as the
+%projection on the plane perpendicular to the beams of the negative
+%vector sum of the momenta of all PF candidate particles in an
+%event~\cite{cms-met}. Its magnitude is referred to as \ETmiss.
