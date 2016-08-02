@@ -1,7 +1,7 @@
 \section{Event selections}
 \label{sec:event_selection}
 
-The kinematical selection criteria used to define the signal region,
+The kinematic selection criteria used to define the signal region,
 containing a sample of candidate signal events, as well as a number of
 control regions in data, are described below. The criteria are based
 on the physics objects defined by the event reconstruction algorithms
@@ -10,7 +10,7 @@ described in Section~\ref{sec:event_reconstruction}.
 \subsection{Common preselection criteria}
 \label{sec:preselection}
 
-A number of beam- and detector-related effects, such as beam halo,
+A number of beam and detector related effects, such as beam halo,
 reconstruction failures, spurious detector noise, or event
 misreconstruction due to detector inefficiencies, can lead to events
 with anomolous levels of activity. These events, which can exhibit
@@ -30,10 +30,10 @@ leptons.
 
 Each jet $j_\text{i}$ is required to satisfy $\Pt^{j_\text{i}} >
 40\GeV$ and $|\eta^{j_\text{i}}| < 3$. The highest \Pt jet in the
-event is required to satisfy the tighter requirements
-$\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$. The
-second highest \Pt jet in the event is used to categorise events, as
-described in Section~\ref{sec:categorisation}. If the jet satisfies
+event is required to have $\Pt^{j_\text{1}} > 100\GeV$ and
+$\abs{\eta^{j_\text{1}}} < 2.5$. The second highest \Pt jet in the
+event is used to categorise events, as described in
+Section~\ref{sec:categorisation}. If the jet satisfies
 $\Pt^{j_\text{2}} > 100\GeV$, then this category of events is labelled
 ``symmetric'' and targets primarily topologies resulting from
 pair-produced sparticles. If the jet satisfies $40 < \Pt^{j_\text{2}}
@@ -45,27 +45,30 @@ interacting, massive particles.
 The mass scale of the physics processes being probed is characterised
 by the scalar \Pt sum of the jets, defined as $\scalht =
 \sum_{i=1}^{\njet} \Pt^{\,j_\text{i}}$, where \njet is the number of
-jets within the experimental acceptance. An estimator for \ETmiss is
-given by the magnitude of the negative vector \ptvec sum of these
-jets, defined by $\HTmiss = |-\sum_{i=1}^{\njet}
-\ptvec^{\,j_\text{i}}|$. Events are vetoed if any jet satisfies $\Pt >
-40\GeV$ and $|\eta| > 3$ in order to maintain the performance of the
-variable \HTmiss as an estimator of \ETmiss.
+jets within the experimental acceptance.  The magnitude of the
+negative vector \ptvec sum of these jets, defined by $\HTmiss =
+|-\sum_{i=1}^{\njet} \ptvec^{\,j_\text{i}}|$, is used to identify
+events with a significant imbalance in transverse momentum. Events are
+vetoed if any jet satisfies $\Pt > 40\GeV$ and $|\eta| > 3$ to ensure
+that jets reconstructed in the forward regions of the detector do not
+contribute significantly to \HTmiss.
 
-The dimensionless variable $\HTmiss / \ETmiss$ is employed to deal
-with the rare circumstance in which events contain several jets with
-transverse momenta below the jet \Pt thresholds but an appreciable \Pt
-vector sum so as to contribute significantly to \HTmiss relative to
-\ETmiss, the latter of which is insensitive to jet \Pt
-thresholds. This type of event topology can lead to a significant
-background contribution from multijet events. The requirement $\HTmiss
-/ \ETmiss < 1.25$ suppresses contributions from multijet events in the
-signal region, defined below, while maintaining high efficiency for
-new-physics processes with genuine \ptvecmiss. The requirement is
-imposed as part of the common preselection criteria in order to
-minimise systematic uncertainties associated with simulation
-mismodelling for this variable when estimating SM backgrounds using
-the control regions in data.
+An estimator of \ptvecmiss is given by the projection on the plane
+perpendicular to the beams of the negative vector sum of the momenta
+of all candidate particles in an event~\cite{cms-met}, as determined
+by the PF algorithm. Its magnitude is referred to as \ETmiss. The
+dimensionless variable $\HTmiss / \ETmiss$ is used to remove events
+that contain several jets with transverse momenta below the jet \Pt
+thresholds but an appreciable \Pt vector sum so as to contribute
+significantly to \HTmiss relative to \ETmiss. This background is
+typical of multijet events, which is suppressed by requiring $\HTmiss
+/ \ETmiss < 1.25$. The requirement is imposed as part of the common
+preselection criteria used to define all control samples, to minimise
+potential systematic biases associated with the simulation modelling
+for this variable. A high efficiency is maintained for SM or
+new-physics processes that produce unobserved particles, which are
+characterised by large values of \ptvecmiss and values of $\HTmiss /
+\ETmiss$ close to unity.
 
 Significant jet activity and missing transverse momentum in the event
 is ensured by requiring $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$,
@@ -191,12 +194,12 @@ contribution to a negligible level with respect to other SM
 backgrounds.
 
 The dimensionless kinematic variable \alphat~\cite{Randall:2008rw,
-  RA1Paper} is used to provide discrimination against multijet events
-that do not contain significant \ptvecmiss or that contain large
-\ptvecmiss only because of transverse momentum mismeasurements, while
-retaining sensitivity to new-physics events with significant
-\ptvecmiss. The \alphat variable depends solely on the transverse
-component of jet four-momenta
+  RA1Paper}, defined in Equ.~\ref{eq:alphat}, is used to provide
+discrimination against multijet events that do not contain significant
+\ptvecmiss or that contain large \ptvecmiss only because of transverse
+momentum mismeasurements, while retaining sensitivity to new-physics
+events with significant \ptvecmiss. The \alphat variable depends
+solely on the transverse component of jet four-momenta
 %the transverse energies and azimuthal angles of jets, 
 and is intrinsically robust against the presence of jet energy
 mismeasurements in multijet systems. For events containing only two
@@ -224,40 +227,27 @@ jet is large compared with its mass, the value of \alphat is 0.5. For
 an imbalance in the \Et of back-to-back jets, \alphat is reduced to a
 value $<0.5$, which gives the variable its intrinsic
 robustness. Values significantly greater than 0.5 are observed when
-the two jets are not back-to-back and recoil against significant,
-genuine $\ptvecmiss$ from weakly interacting particles that escape the
-detector, such as neutrinos.
-
-%The definition of the \alphat variable can be generalised for events
-%with more than two jets~\cite{RA1Paper}. The mass scale for any
-%process is characterised through the scalar \Et sum of jets, defined
-%as $\scalst = \sum_{i=1}^{N_\text{jet}} |\vec{\Et}^{\mathrm{j}_i}|$,
-%where $N_\text{jet}$ is the number of jets with \Et above a predefined
-%threshold. The estimator for \ptvecmiss is \HTmiss. For events with
-%three or more jets, a pseudo-dijet system is formed by combining the
-%jets in the event into two pseudo-jets. The total \scalst for each of
-%the two pseudo-jets is given by the scalar \Et sum of its contributing
-%jets. The combination chosen is the one that minimises \dst, defined
-%as the difference between the two pseudo-jets. This clustering
-%criterion assumes a balanced-event hypothesis, which provides the best
-%separation between SM multijet events and events with genuine
-%\ptvecmiss. The \alphat definition can be generalised to:
+the two jets are not back-to-back and recoil against \ptvecmiss from
+weakly interacting particles that escape the detector.
 
 The definition of the \alphat variable can be generalised for events
 with more than two jets~\cite{RA1Paper}. The mass scale for any
 process is characterised through the scalar sum of the jet transverse
 energies, defined as $\scalst = \sum_{i=1}^{N_\text{jet}}
 |\vec{\Et}^{\mathrm{j}_i}|$, where $N_\text{jet}$ is the number of
-jets with \Et above a predefined threshold. The estimator for
-\ptvecmiss is \HTmiss. For events with three or more jets, a
-pseudo-dijet system is formed by combining the jets in the event into
-two pseudo-jets. The \scalst for each of the two pseudo-jets is given
-by the scalar \Et sum of its contributing jets. The combination chosen
-is the one that minimises \dst, defined as the difference between
-these sums for the two pseudo-jets.  This clustering criterion assumes
-a balanced-event hypothesis, which provides strong separation between
-SM multijet events and events with genuine \ptvecmiss. The \alphat
-definition can be generalised to:
+jets with \Et above a predefined threshold.\footnote{The definition of
+  \scalst should be contrasted with that of \scalht, the scalar sum of
+  the jet tranverse {\it momenta}. }
+% The estimator for \ptvecmiss is \HTmiss. 
+For events with three or more jets, a pseudo-dijet system is formed by
+combining the jets in the event into two pseudo-jets. The \scalst for
+each of the two pseudo-jets is given by the scalar \Et sum of its
+contributing jets. The combination chosen is the one that minimises
+\dst, defined as the difference between these sums for the two
+pseudo-jets.  This clustering criterion assumes a balanced-event
+hypothesis, which provides strong separation between SM multijet
+events and events with genuine \ptvecmiss. The \alphat definition can
+be generalised to:
 
 \begin{equation}
   \label{eq:alphat}
@@ -298,9 +288,9 @@ estimates of the multijet background.
 %values of $110 < \HTmiss < 160\GeV$ for the range $200 < \scalht <
 %800\GeV$.
 
-A further variable considers the minimum azimuthal separation between
-a jet and the negative vector \ptvec sum derived from all other jets
-in the event~\cite{RA1Paper}, 
+An additional variable is based on the minimum azimuthal separation
+between a jet and the negative vector \ptvec sum derived from all
+other jets in the event~\cite{RA1Paper},
 
 %\begin{equation}
 %  \bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
@@ -343,7 +333,7 @@ signal models with respect to more widely used variables such as:
 %and $\min_{\,\forall\, j_\text{k} \,\in\, \njet}
 %\Delta\phi(\ptvec^{j_\text{k}}, \ptvecmiss)$.
 
-The requirement $\bdphi > 0.5$ is sufficient to effectively suppress
+A requirement of $\bdphi > 0.5$ is sufficient to effectively suppress
 the multijet background to a negligible level while maintaining high
 efficency to new-physics signatures. The combined rejection power of
 the \alphat and \bdphi requirements for the region $200 < \scalht <
@@ -351,8 +341,7 @@ the \alphat and \bdphi requirements for the region $200 < \scalht <
 level with respect to all other SM backgrounds in all \scalht bins for
 all event categories of the signal region. For the region $\scalht >
 800\GeV$, a similar control of the multijet background is achieved
-solely with the $\bdphi > 0.5$
-requirement. 
+solely with the $\bdphi > 0.5$ requirement.
 
 \begin{figure*}[!h]
   \begin{center}
@@ -373,7 +362,7 @@ requirement.
     jets, \ttbar, and other residual contributions from rare SM
     processes) are estimated using a \mj data control sample.  These
     distributions illustrate the performance of these two variables in
-    a kinematical phase space that is representative of the signal
+    a kinematic phase space that is representative of the signal
     region. The statistical uncertainties for the multijet and SM
     expectations are represented by the hatched areas (visible only
     for statistically limited bins). The final bin of each

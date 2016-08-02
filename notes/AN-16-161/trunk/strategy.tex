@@ -359,16 +359,16 @@ This allows to correctly propagate the uncertainties in the non-multijet compone
 \end{itemize}
 
 
-\subsection{Updates with respect to AN-16-161\_v3 and outstanding issues with inputs\label{sec:disclaimers}}
-Several updates in terms of datasets and MC corrections have been implemented with respect to the previous iteration (AN-16-161\_v3). 
-Few of them are still missing, but they are expected to come in the next days, in time for the release of the 
-new version of the documentation before the approval of the analysis. 
+\subsection{Recent updates and outstanding issues with inputs\label{sec:disclaimers}}
+%Several updates in terms of datasets and MC corrections have recently been implemented. 
+%Few of them are still missing, but they are expected to come in the next days, in time for the release of the 
+%new version of the documentation before the approval of the analysis. 
 The status of the inputs is summarised in the following.\\
 \begin{itemize}
 \item \textbf{MC samples}. In this version of the analysis all the MC samples are reconstructed with the 80X 
   release of CMSSW. The latest recommendations for the cross sections are also implemented. 
   More details about the samples used in the analysis can be found in Sec.~\ref{sec:datasets}.
-\item \textbf{Data collision sample}. The data sample used in this iteration corresponds to an integrated luminosity of around 6.3 \ifb. 
+\item \textbf{Data collision sample}. The data sample used in this iteration corresponds to an integrated luminosity of 12.9 \ifb. 
   Only the runs with all the subdetectors working properly are used (``golden'' runs).
   More details about the samples used in the analysis can be found in Sec.~\ref{sec:datasets}. 
 \item \textbf{Muon trigger}. The lowest HLT paths for the single-muon triggers now have a 22 GeV threshold on the muon \Pt. 
@@ -384,12 +384,15 @@ The status of the inputs is summarised in the following.\\
     They correspond to the latest recommendations from the JEC group twiki \cite{twiki-JEC}.
     JEC are derived separately for the FastSim MC samples and applied to the simulation of the signal in the analysis, 
     following the latest recommendations from the Jet-MET working group. 
-  \item B-tag SFs: the preliminary SF recommendations from the b-tagging group twiki \cite{btagSFMethods2016} are used to re-weight the FullSim MC samples. 
-    FastSim-to-FullSim scale factors are applied to the FastSim MC signal samples. We plan to update to use the newly released SF in the next iteration of the analysis. 
-  \item Muon identification/isolation corrections: preliminary corrections using around 2.6 \ifb of integrated luminosity are used, taken from the Muon working group twiki \cite{twiki-leptonSFMuonPOG2016}.
+  \item B-tag SFs: the latest preliminary SF recommendations from the b-tagging group twiki \cite{btagSFMethods2016} are used to re-weight the FullSim MC samples. 
+    FastSim-to-FullSim scale factors are applied to the FastSim MC signal samples. %We plan to update to use the newly released SF in the next iteration of the analysis. 
+  \item Muon identification/isolation corrections: the latest
+    corrections are used, taken from the Muon working group twiki
+    \cite{twiki-leptonSFMuonPOG2016} and the SUSY lepton scale factors
+    working group.
   \item Single-muon trigger efficiency correction factors: efficiencies measured in data with a sample corresponding to around 7.6 \ifb 
     are used to re-weight the MC samples. They are taken from the Muon working group twiki \cite{twiki-leptonSFMuonPOG2016}.
-    No recommendation has been yet provided for the systematics in the measurement, so for the moment the values from 2015 are used. 
+    %No recommendation has been yet provided for the systematics in the measurement, so for the moment the values from 2015 are used. 
   \item Photon trigger efficiency correction factors: the photon trigger efficiencies have been measured in data in the phase-space 
     of the analysis and used to re-weight the \gj 
     MC sample. More details can be found in Sec.~\ref{sec:triggers}. 
@@ -397,21 +400,19 @@ The status of the inputs is summarised in the following.\\
     More details can be found in Sec.~\ref{sec:pileup-reweighting}. 
   \item Sideband corrections: the corrections have been derived using 2016 data and MC, with the method described 
     in Sec.~\ref{sec:sideband_corrections}. 
-  \item Top \Pt re-weighting: in this iteration of the analysis these weights are not applied anymore. 
-    This has been decided after inspecting the data-driven tests in Sec.~\ref{sec:closure-tests}, 
-    which exhibit a better level of closure without the re-weighting (more details are given in the section). 
-    This behaviour is tracked down to the inconsistency in the treatment of the (corrected) \ttj sample with respect to 
-    the other (un-corrected) background samples, like \wj or \zj, when the top-pt rewighting is included. 
+  \item Weighting of simulated events according the generator-level top \Pt is performed.
+%    This has been decided after inspecting the data-driven tests in Sec.~\ref{sec:closure-tests}, 
+%    which exhibit a better level of closure without the re-weighting (more details are given in the section). 
+%    This behaviour is tracked down to the inconsistency in the treatment of the (corrected) \ttj sample with respect to 
+%    the other (un-corrected) background samples, like \wj or \zj, when the top-pt rewighting is included. 
   \end{itemize}
 \end{itemize}
 
-We are in the process of implementing the latest recommendations for the treatment of signal systematics 
-and for the limit setting which have been recently released \cite{twiki-SUSYICHEP16}. 
-These will be included in the next version of the AN, together with an exhaustive description 
-of the signal models used for the interpretation. 
-The plan is to provide intepretations for gluino pair production models with decay to 
-b-quarks (T1bbbb) and sbottom pair production with decay to b-quarks (T2bb).
-
+The latest recommendations for the treatment of signal systematics and
+for the limit setting, as recently released
+\cite{twiki-SUSYICHEP16}, have been adopted, except for the treatment
+of ISR, for which we still use the same procedure used in 2015. We
+will switch to the new procedure ASAP. 
 
 
 %%____________________________________________________________________________||
