@@ -56,10 +56,10 @@ The changes are typically in the range of $1-15\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[JEC up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
   } ~~
   \subfigure[JEC down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_jec_muToZinv} The relative change in the
@@ -72,10 +72,10 @@ The changes are typically in the range of $1-15\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[JEC up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
   } ~~
   \subfigure[JEC down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_jec_mumuToZinv} The relative change in
@@ -88,10 +88,10 @@ The changes are typically in the range of $1-15\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[JEC up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Up.pdf}
   } ~~
   \subfigure[JEC down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_jec_gjToZinv} The relative change in the
@@ -104,10 +104,10 @@ The changes are typically in the range of $1-15\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[JEC up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
   } ~~
   \subfigure[JEC down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
@@ -125,89 +125,150 @@ The changes are typically in the range of $1-15\%$.
 Scale factors provided by the BTV POG are applied to the MC samples
 to correct for differences in the b-tagging efficiencies and 
 misidentifications between simulation and data. 
-The method employed is
-based on simple event reweighting as described in
-Ref.~\cite{btagSFMethods}. As the scale factors for the data collected in
-2016 are not yet available the systematics shown below are based 
-on those from 2015. These uncertainties are not applied for the results in \ref{sec:results},
-but will be rederived and included when the necessary scale factors are available.
+The method employed is based on simple event reweighting as described in
+Ref.~\cite{btagSFMethods}. 
 Events are reweighted according to the probability of obtaining a particular jet configuration in data
 and simulation, as determined by the b-tagging efficiencies computed
 in the MC samples and the scale factors measured in data.
 Since no extrapolation is performed in the background prediction across different 
-\nb  multiplicities, the analysis is expected to be robust against variation in the 
-b-tag efficiency. 
+\nb multiplicities, the analysis is expected to be robust against variations in the 
+b-tagging efficiency. 
 To test this effect the change in the transfer factors is measured
-by varying the scale factors within their uncertainties. 
+by varying the scale factors within their uncertainties. The scale factors
+associated with b and c jets are varied together (since their measurements are
+correlated), while those associated with light jets are varied separately.
 The relative change in the transfer factors is presented as a function of \scalht and jet category 
-in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsf_muToTtw}.
+in Fig. ~\ref{fig:tfSyst_bsf_muToZinv}-\ref{fig:tfSyst_bsfl_muToTtw}.
 They are typically in the range of $1-5\%$.
 
 
 \begin{figure}[!h]
   \centering
-  \subfigure[b-tag SF up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
+  \subfigure[b-tag SF (heavy) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
   } ~~
-  \subfigure[b-tag SF down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  \subfigure[b-tag SF (heavy) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_bsf_muToZinv} The relative change in the
   $\mj \rightarrow (\znunu)$ transfer
-  factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
+  factors when varying b-tag SF for heavy jets in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[b-tag SF up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
+  \subfigure[b-tag SF (heavy) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
   } ~~
-  \subfigure[b-tag SF down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  \subfigure[b-tag SF (heavy) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_bsf_mumuToZinv} The relative change in
   the $\mmj \rightarrow (\znunu)$ transfer
-  factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
+  factors when varying b-tag SF for heavy jets in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[b-tag SF up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
+  \subfigure[b-tag SF (heavy) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
   } ~~
-  \subfigure[b-tag SF down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  \subfigure[b-tag SF (heavy) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_bsf_gjToZinv} The relative change in the
   $\gj \rightarrow (\znunu)$ transfer
-  factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
+  factors when varying b-tag SF for heavy jets in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[b-tag SF up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
+  \subfigure[b-tag SF (heavy) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
   } ~~
-  \subfigure[b-tag SF down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  \subfigure[b-tag SF (heavy) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_bsf_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying b-tag SF in MC within its uncertainties, as a function of \scalht and jet category. 
+  factors when varying b-tag SF for heavy jets in MC within its uncertainties, as a function of \scalht and jet category. 
   Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
   }
 \end{figure}
 
+\clearpage % too many figures, latex doesn't like it
 
+\begin{figure}[!h]
+  \centering
+  \subfigure[b-tag SF (light) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allbsfLightWeight_Up.pdf}
+  } ~~
+  \subfigure[b-tag SF (light) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allbsfLightWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_bsfl_muToZinv} The relative change in the
+  $\mj \rightarrow (\znunu)$ transfer
+  factors when varying b-tag SF for light jets in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[b-tag SF (light) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allbsfLightWeight_Up.pdf}
+  } ~~
+  \subfigure[b-tag SF (light) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allbsfLightWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_bsfl_mumuToZinv} The relative change in
+  the $\mmj \rightarrow (\znunu)$ transfer
+  factors when varying b-tag SF for light jets in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[b-tag SF (light) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allbsfLightWeight_Up.pdf}
+  } ~~
+  \subfigure[b-tag SF (light) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allbsfLightWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_bsfl_gjToZinv} The relative change in the
+  $\gj \rightarrow (\znunu)$ transfer
+  factors when varying b-tag SF for light jets in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[b-tag SF (light) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allbsfLightWeight_Up.pdf}
+  } ~~
+  \subfigure[b-tag SF (light) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allbsfLightWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_bsfl_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  factors when varying b-tag SF for light jets in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
 
 
 
@@ -224,11 +285,6 @@ accounted for with data/MC scale
 factors for trigger, lepton identification and isolation~\cite{twiki-leptonSF}. 
 The uncertainties on the transfer factors associated 
 with these scale factors are determined as described in the following.
-To cover issues in the efficiency of the
-muon trigger a $5\%$ systematic is assigned for both the \mj and \mmj 
-control regions as described in \ref{sec:disclaimers}. To cover 
-issues in the photon trigger (as described in \ref{sec:disclaimers}) a $5\%$ is applied in the
-\gj control region.
 
 The effect of lepton reconstruction in the $\mj \rightarrow \mathrm{tt+W}$ 
 transfer factors is factorised in the following expression: 
@@ -259,6 +315,11 @@ define the single and double muon control regions can be seen in
 Figs.~\ref{fig:tfSyst_muon scale
 factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 
+Finally, the $\eta$-dependent muon tracking scale factors provided by the muon 
+POG to cover the effect of HIP inefficiencies have been applied and their 
+uncertainties taken into consideration. Their effect on the transfer factors
+is found to be less than 1\%.
+
 %The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer factors 
 %is presented in Fig.~\ref{fig:lostLepton}. The
 %total change is typically in the range $2-5\%$
@@ -288,10 +349,10 @@ factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 \begin{figure}[!h]
   \centering
   \subfigure[muon scale factor up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p6fbMuonSF/Zinv/mu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
   } ~~
   \subfigure[muon scale factor down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p6fbMuonSF/Zinv/mu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_muon scale factor_muToZinv} The relative change in
@@ -303,10 +364,10 @@ factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 \begin{figure}[!h]
   \centering
   \subfigure[muon scale factor up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p6fbMuonSF/Zinv/mumu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
   } ~~
   \subfigure[muon scale factor down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p6fbMuonSF/Zinv/mumu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_muon scale factor_mumuToZinv} The relative change in
@@ -320,10 +381,10 @@ factor_muToZinv}~to~\ref{fig:tfSyst_muon scale factor_muToTtw}.
 \begin{figure}[!h]
   \centering
   \subfigure[muon scale factor up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p6fbMuonSF/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
   } ~~
   \subfigure[muon scale factor down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p6fbMuonSF/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_muon scale factor_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
@@ -346,10 +407,10 @@ variation is typically in the range $0-3\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[Photon trigger weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_allphotonTriggerWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allphotonTriggerWeight_Up.pdf}
   } ~~
   \subfigure[Photon trigger weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_allphotonTriggerWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allphotonTriggerWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_photonTrigger_gjToZinv} The relative change in
@@ -371,10 +432,10 @@ variation is typically in the range $0-5\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[trigger weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
   } ~~
   \subfigure[trigger weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_trigger_muToZinv} The relative change in
@@ -386,10 +447,10 @@ variation is typically in the range $0-5\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[trigger weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
   } ~~
   \subfigure[trigger weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_trigger_mumuToZinv} The relative change in
@@ -402,10 +463,10 @@ variation is typically in the range $0-5\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[trigger weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
   } ~~
   \subfigure[trigger weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_trigger_gjToZinv} The relative change in
@@ -418,10 +479,10 @@ variation is typically in the range $0-5\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[trigger weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
   } ~~
   \subfigure[trigger weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_trigger_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
@@ -442,10 +503,10 @@ variation is typically in the range $0-15\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
   } ~~
   \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_topPt_muToZinv} The relative change in
@@ -457,10 +518,10 @@ variation is typically in the range $0-15\%$.
 \begin{figure}[!h]
   \centering
   \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
   } ~~
   \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_topPt_mumuToZinv} The relative change in
@@ -470,29 +531,13 @@ variation is typically in the range $0-15\%$.
   }
 \end{figure}
 
-%\begin{figure}[!h]
-%  \centering
-%  \subfigure[top $p_{T}$ weight up variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-%  } ~~
-%  \subfigure[top $p_{T}$ weight down variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-%  }\\
-%
-%  \caption{\label{fig:tfSyst_topPt_gjToZinv} The relative change in
-%  the $\gj \rightarrow (\znunu)$ transfer
-%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-%  }
-%\end{figure}
-
 \begin{figure}[!h]
   \centering
   \subfigure[top $p_{T}$ weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
   } ~~
   \subfigure[top $p_{T}$ weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_topPt_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
@@ -533,10 +578,10 @@ and shown in each analysis bin in Fig. ~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tf
 \begin{figure}[!h]
   \centering
   \subfigure[PU weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
   } ~~
   \subfigure[PU weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_pu_muToZinv} The relative change in the
@@ -549,10 +594,10 @@ and shown in each analysis bin in Fig. ~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tf
 \begin{figure}[!h]
   \centering
   \subfigure[PU weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
   } ~~
   \subfigure[PU weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/mumu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/mumu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_pu_mumuToZinv} The relative change in the
@@ -565,10 +610,10 @@ and shown in each analysis bin in Fig. ~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tf
 \begin{figure}[!h]
   \centering
   \subfigure[PU weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_allpuWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allpuWeight_Up.pdf}
   } ~~
   \subfigure[PU weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Zinv/gj/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Zinv/gj/ratiotfh_ht_mht_allpuWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_pu_gjToZinv} The relative change in the
@@ -581,10 +626,10 @@ and shown in each analysis bin in Fig. ~\ref{fig:tfSyst_pu_muToZinv}-\ref{fig:tf
 \begin{figure}[!h]
   \centering
   \subfigure[PU weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
   } ~~
   \subfigure[PU weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics6p26Fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics12p9fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
   }\\
 
   \caption{\label{fig:tfSyst_pu_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
@@ -830,22 +875,18 @@ in the range $4-25\%$.
     Systematic & Method & \multicolumn{4}{c}{Relative uncertainty on transfer factor} & Correlation model \\    
      & & $\mj \rightarrow \znunu$  & $\mmj \rightarrow \znunu$ & $\gj \rightarrow \znunu$ & $\mj \rightarrow \ttbar+W$ & \\
     \hline
-    \alphat/\bdphi extrapolation & data-driven tests & $3-30\%$ &
-    $3-30\%$ & - & $3-30\%$ & un-correlated across \scalht/jet top. \\
+    \alphat/\bdphi extrapolation & data-driven tests & $3-30\%$ & $3-30\%$ & - & $3-30\%$ & un-correlated across \scalht/jet top. \\
     W/Z ratio & data-driven tests & $4-15\%$ & - & - & - & un-correlated across \scalht/jet top. \\
     Z/$\gamma$ ratio & data-driven tests & - & - & $6-11\%$ & - & un-correlated across \scalht/jet top. \\
     W/\ttbar admixture & data-driven tests & - & - & - & $4-30\%$ & un-correlated across \scalht/jet top. \\
     W polarisation & data-driven tests & $2-10\%$ & - & - & $2-10\%$ & un-correlated across \scalht/jet top. \\
-    Jet energy scale & MC variations & $1-5\%$ & $1-5\%$ & $1-5\%$ &
-    $1-5\%$ & fully correlated \\
-    B-tagging efficiency & MC variations & $1-5\%$ & $1-5\%$ & $1-5\%$
-    & $1-5\%$ & fully correlated \\
+    Jet energy scale & MC variations & $1-5\%$ & $1-5\%$ & $1-5\%$ & $1-5\%$ & fully correlated \\
+    B-tagging efficiency b and c jets & MC variations & $1-3\%$ & $1-3\%$ & $1-3\%$ & $1-3\%$ & fully correlated \\
+    B-tagging efficiency light jets & MC variations & $1-3\%$ & $1-3\%$ & $1-3\%$ & $1-3\%$ & fully correlated \\
     Pileup weights & MC variations & $0-2\%$ & $0-2\%$ & $0-2\%$ & $0-2\%$ & fully correlated \\
-    Top $p_{T}$ weights & MC variations & $1-30\%$  & $1-10\%$ & - &
-    $1-10\%$ & fully correlated \\
+    Top $p_{T}$ weights & MC variations & $1-30\%$  & $1-10\%$ & - & $1-10\%$ & fully correlated \\
     Lepton scale factor & MC variations & $1-3\%$ & $1-3\%$ & - & $1-3\%$ & fully correlated \\
     Signal trigger efficiency & MC variations & $1-2\%$ & $1-2\%$ & $1-2\%$ & $1-2\%$ & fully correlated \\
-    Lepton trigger efficiency & MC variations & $2\%$ & $2\%$ & - & $2\%$ & fully correlated \\
     Photon trigger efficiency & MC variations & - & - & $1-2\%$ & - & fully correlated \\
     \hline
     \hline

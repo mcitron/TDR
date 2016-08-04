@@ -356,6 +356,7 @@ Therefore, only few changes are made with respect to the analysis carried on dur
 of the pure \scalht trigger path used in the region $\scalht > 800 \,\mathrm{GeV}$. More details are given in Sec.~\ref{sec:hadronic_signal_region};
 \item while the method remains unchanged, the yields of the QCD multi-jet background are now extracted from a maximum-likelihood fit, as documented in Sec.~\ref{sec:qcd}. 
 This allows to correctly propagate the uncertainties in the non-multijet component in the multi-jet sideband with its correlations. 
+\item the ``sideband corrections'' used to correct the normalisation of the main background processes are now derived from a simultaneous likelihood fit rather than from data/MC agreement. The method is described in Sec.~\ref{sec:sideband_corrections}.
 \end{itemize}
 
 
@@ -384,15 +385,20 @@ The status of the inputs is summarised in the following.\\
     They correspond to the latest recommendations from the JEC group twiki \cite{twiki-JEC}.
     JEC are derived separately for the FastSim MC samples and applied to the simulation of the signal in the analysis, 
     following the latest recommendations from the Jet-MET working group. 
-  \item B-tag SFs: the latest preliminary SF recommendations from the b-tagging group twiki \cite{btagSFMethods2016} are used to re-weight the FullSim MC samples. 
-    FastSim-to-FullSim scale factors are applied to the FastSim MC signal samples. %We plan to update to use the newly released SF in the next iteration of the analysis. 
+  \item b-tagging scale factors: the official set of scale factors corresponding
+    to the ICHEP dataset have been applied according to the recommendations from
+    the BTV POG \cite{btagSFMethods2016}. Both FullSim and FastSim MC samples are
+    reweighted with their corresponding scale factors and correction factors. We 
+    have now also separated the effects of tagging efficiencies and mis-tagging
+    rates into separate nuisances.
   \item Muon identification/isolation corrections: the latest
     corrections are used, taken from the Muon working group twiki
     \cite{twiki-leptonSFMuonPOG2016} and the SUSY lepton scale factors
-    working group.
+    working group \cite{twiki-leptonSFSUSY2016}.
   \item Single-muon trigger efficiency correction factors: efficiencies measured in data with a sample corresponding to around 7.6 \ifb 
     are used to re-weight the MC samples. They are taken from the Muon working group twiki \cite{twiki-leptonSFMuonPOG2016}.
-    %No recommendation has been yet provided for the systematics in the measurement, so for the moment the values from 2015 are used. 
+  \item Photon identification: the photon ID scale factors derived by the
+    e-gamma POG using the full ICHEP dataset have been applied.
   \item Photon trigger efficiency correction factors: the photon trigger efficiencies have been measured in data in the phase-space 
     of the analysis and used to re-weight the \gj 
     MC sample. More details can be found in Sec.~\ref{sec:triggers}. 
@@ -406,13 +412,9 @@ The status of the inputs is summarised in the following.\\
 %    This behaviour is tracked down to the inconsistency in the treatment of the (corrected) \ttj sample with respect to 
 %    the other (un-corrected) background samples, like \wj or \zj, when the top-pt rewighting is included. 
   \end{itemize}
+\item Signal models: the latest recommendations from the SUSY PAG for the
+  treatment of signal systematics (including those related to ISR) and for
+  the limit setting, have been adopted \cite{twiki-SUSYICHEP16}.
 \end{itemize}
-
-The latest recommendations for the treatment of signal systematics and
-for the limit setting, as recently released
-\cite{twiki-SUSYICHEP16}, have been adopted, except for the treatment
-of ISR, for which we still use the same procedure used in 2015. We
-will switch to the new procedure ASAP. 
-
 
 %%____________________________________________________________________________||
