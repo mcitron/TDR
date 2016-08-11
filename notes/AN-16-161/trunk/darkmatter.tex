@@ -16,14 +16,14 @@ data~\cite{Chatrchyan:2012me,ATLAS:2012ky} for a variety of operators.
 
 
 The lack of predictive information and severe validity constraints of EFTs have
-lead to the development of improved minimal simplified dark matter (MSDM) models.
+led to the development of minimal simplified dark matter (MSDM) models.
 These models enable the comparison between different experimental
 searches in a relatively model-independent way~\cite{Buchmueller:2014yoa}.
 
 
 The \alphat analysis is sensitive to DM production in association with both
 light ($g,~u,~d,~c,~s$) and heavy flavoured ($b,~t$) jets. In this section we
-present the expected sensitivity of the analysis to these topologies with 2~\ifb
+present the expected sensitivity of the analysis to these topologies with 12.9~\ifb
 of 13 TeV data. The simplified models considered in the interpretations are those
 recommended by the ATLAS-CMS DM Forum for early LHC Run~2 searches. We have
 utilised all available Spring15 samples of the corresponding models that were
@@ -330,7 +330,40 @@ DM+ttbar  S  & 1000 & 10000 & 317556 \\
 \end{table}
 
 \clearpage
+\subsection{Sensitivity study}
+The sensitivity of each (\nj,\nb,\scalht) category in the analysis for some representative signal points that are close to the current expected exclusion are shown in Figure~\ref{fig:DMA-sensitivity} for the axial vector model. The \scalht bins are shown on the x-axis, the \nj and \nb on the y-axis and the sensitivity as given by the r-value that each bin contributes is plotted on the z-axis. 
+It shows that for the axial vector model, the most sensitive bins contributing to the expected limit are the low jet multiplicities (1j,2j) and the high \scalht, above approx. 600 GeV. Similar features are seen for the vector model in Figure~\ref{fig:DMV-sensitivity}.
 
+Similar sensitivity study is shown for the heavy flavour models producing dark matter in association with top pairs in Figures~\ref{fig:DMttS-sensitivity} and~\ref{fig:DMttP-sensitivity} for the scalar and pseudoscalar mediated cases respectively. These models result in signatures with many jets, hence the high jet and high b-jet multiplicity categories play a dominant role in driving the sensitivity, together with the mid-high \scalht region. 
+
+\begin{figure}[h!] \centering
+\subfigure[Axial vector Mmed=1500 GeV, mDM=50 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMA-1500-50_limitPerBin_exp_log}}
+\subfigure[Axial vector Mmed=1250 GeV, mDM=350 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMA-1250-350_limitPerBin_exp_log}}
+\caption{Expected sensitivity from each (\nj,\nb,\scalht) category for the axial vector model.}
+\label{fig:DMA-sensitivity} 
+\end{figure}
+
+\begin{figure}[h!] \centering
+\subfigure[Vector Mmed=1500 GeV, mDM=200 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMV-1500-200_limitPerBin_exp_log}}
+\subfigure[Vector Mmed=1250 GeV, mDM=400 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMV-1250-400_limitPerBin_exp_log}}
+\caption{Expected sensitivity from each (\nj,\nb,\scalht) category for the vector model.}
+\label{fig:DMV-sensitivity} 
+\end{figure}
+
+
+\begin{figure}[h!] \centering
+\subfigure[Pseudoscalar - DMtt Mmed=20 GeV, mDM=1 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMttP-20-1_limitPerBin_exp_log}}
+\subfigure[Pseudoscalar - DMtt Mmed=100 GeV, mDM=10 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMttP-100-10_limitPerBin_exp_log}}
+\caption{Expected sensitivity from each (\nj,\nb,\scalht) category for the pseudoscalar DMtt model.}
+\label{fig:DMttP-sensitivity} 
+\end{figure}
+
+\begin{figure}[h!] \centering
+\subfigure[Scalar - DMtt Mmed=20 GeV, mDM=1 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMttS-20-1_limitPerBin_exp_log}}
+\subfigure[Scalar - DMtt Mmed=50 GeV, mDM=10 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMttS-50-10_limitPerBin_exp_log}}
+\caption{Expected sensitivity from each (\nj,\nb,\scalht) category for the scalar DMtt model.}
+\label{fig:DMttS-sensitivity} 
+\end{figure}
 
 Expected sensitivities vector, axial-vector, scalar and pseudo-scalar mediated DM plus light jet samples are listed in Tables~\ref{tab:DMV_exp}-\ref{tab:DMPS_exp}. For each mass points as well the five 'most sensitive bin' (MSB) in terms of jet multiplicity are given. Currently a flat systematic uncertainty of 20\% is assume for the sensitivity calculation.
 
@@ -397,49 +430,49 @@ These result are preliminary and are subject to change with more precise determi
 \end{table}
 
 
-\begin{table}
-  \centering
-  \begin{tabular}{cccccc}
-    \hline\hline
-    $M_{\text{Med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value\\
-    \hline
-    2000 & 1 & ge5j, eq4j, ge5a, eq1j & - \\
-    50 & 1 & ge5j, ge5a, eq2j, eq1j & $0.965_{-0.329}^{+0.592}$ \\
-    100 & 1 & eq3j, eq3a, eq2a, eq2j & $2.055_{-0.657}^{+1.106}$ \\
-    300 & 1 & eq4a, eq3a, eq1j, eq4j & $3.64_{-1.24}^{+2.18}$ \\
-    1000 & 1 & ge5a, eq4a, eq2j, eq4j & $141.2_{-45.5}^{+76.0}$ \\
-    \hline\hline
-  \end{tabular}
-  \caption{Expected limits for scalar mediated DM+jets models}
-  \label{tab:DMS_exp}
-\end{table}
+%\begin{table}
+%  \centering
+%  \begin{tabular}{cccccc}
+%    \hline\hline
+%    $M_{\text{Med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value\\
+%    \hline
+%    2000 & 1 & ge5j, eq4j, ge5a, eq1j & - \\
+%    50 & 1 & ge5j, ge5a, eq2j, eq1j & $0.965_{-0.329}^{+0.592}$ \\
+%    100 & 1 & eq3j, eq3a, eq2a, eq2j & $2.055_{-0.657}^{+1.106}$ \\
+%    300 & 1 & eq4a, eq3a, eq1j, eq4j & $3.64_{-1.24}^{+2.18}$ \\
+%    1000 & 1 & ge5a, eq4a, eq2j, eq4j & $141.2_{-45.5}^{+76.0}$ \\
+%    \hline\hline
+%  \end{tabular}
+%  \caption{Expected limits for scalar mediated DM+jets models}
+%  \label{tab:DMS_exp}
+%\end{table}
 
 
-\begin{table}
-  \centering
-  \begin{tabular}{cccccc}
-    \hline\hline
-    $M_{\text{Med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value\\
-    \hline
-    1500 & 350 & ge5j, eq4j, ge5a, eq1j & - \\
-    10 & 1 & eq2j, eq3a, eq3j, eq2a & $2.383_{-0.749}^{+1.263}$ \\
-    300 & 100 & eq3j, eq2j, eq4j, eq3a & $2.539_{-0.811}^{+1.346}$ \\
-    100 & 1 & eq2j, eq3j, eq4j, eq2a & $2.758_{-0.869}^{+1.462}$ \\
-    500 & 1 & eq3j, eq2j, eq4j, eq3a & $7.84_{-2.48}^{+4.22}$ \\
-    500 & 200 & eq3j, eq2j, eq4j, eq3a & $10.91_{-3.43}^{+5.87}$ \\
-    100 & 50 & eq3j, eq2j, eq4j, eq3a & $27.62_{-8.72}^{+14.65}$ \\
-    1000 & 350 & ge5a, eq4a, eq3j, eq4j & $133.6_{-42.9}^{+71.9}$ \\
-    1250 & 1 & ge5j, eq4j, ge5a, eq1j & $269.9_{-86.9}^{+145.3}$ \\
-    1250 & 100 & ge5j, eq4j, ge5a, eq1j & $274.8_{-88.5}^{+147.9}$ \\
-    1250 & 150 & ge5j, eq4j, ge5a, eq1j & $277.2_{-88.8}^{+150.3}$ \\
-    1250 & 250 & ge5j, eq4j, ge5a, eq1j & $298.9_{-96.3}^{+160.9}$ \\
-    1250 & 300 & ge5j, eq4j, ge5a, eq1j & $311_{-100}^{+167}$ \\
-    1250 & 350 & ge5j, eq4j, ge5a, eq1j & $328_{-106}^{+177}$ \\
-\hline\hline
-  \end{tabular}
-  \caption{Expected limits for pseudo-scalar mediated DM+jets models}
-  \label{tab:DMPS_exp}
-\end{table}
+%\begin{table}
+%  \centering
+%  \begin{tabular}{cccccc}
+%    \hline\hline
+%    $M_{\text{Med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value\\
+%    \hline
+%    1500 & 350 & ge5j, eq4j, ge5a, eq1j & - \\
+%    10 & 1 & eq2j, eq3a, eq3j, eq2a & $2.383_{-0.749}^{+1.263}$ \\
+%    300 & 100 & eq3j, eq2j, eq4j, eq3a & $2.539_{-0.811}^{+1.346}$ \\
+%    100 & 1 & eq2j, eq3j, eq4j, eq2a & $2.758_{-0.869}^{+1.462}$ \\
+%    500 & 1 & eq3j, eq2j, eq4j, eq3a & $7.84_{-2.48}^{+4.22}$ \\
+%    500 & 200 & eq3j, eq2j, eq4j, eq3a & $10.91_{-3.43}^{+5.87}$ \\
+%    100 & 50 & eq3j, eq2j, eq4j, eq3a & $27.62_{-8.72}^{+14.65}$ \\
+%    1000 & 350 & ge5a, eq4a, eq3j, eq4j & $133.6_{-42.9}^{+71.9}$ \\
+%    1250 & 1 & ge5j, eq4j, ge5a, eq1j & $269.9_{-86.9}^{+145.3}$ \\
+%    1250 & 100 & ge5j, eq4j, ge5a, eq1j & $274.8_{-88.5}^{+147.9}$ \\
+%    1250 & 150 & ge5j, eq4j, ge5a, eq1j & $277.2_{-88.8}^{+150.3}$ \\
+%    1250 & 250 & ge5j, eq4j, ge5a, eq1j & $298.9_{-96.3}^{+160.9}$ \\
+%    1250 & 300 & ge5j, eq4j, ge5a, eq1j & $311_{-100}^{+167}$ \\
+%    1250 & 350 & ge5j, eq4j, ge5a, eq1j & $328_{-106}^{+177}$ \\
+%\hline\hline
+%  \end{tabular}
+%  \caption{Expected limits for pseudo-scalar mediated DM+jets models}
+%  \label{tab:DMPS_exp}
+%\end{table}
 
 
 %Currently we are scaling the expected sensitivities to 2.2~\ifb of data corresponding to last years dataset to be able to compare.
