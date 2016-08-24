@@ -22,7 +22,16 @@ reconstruction.
 Photons~\cite{CMS:EGM-14-001} are identified as ECAL energy clusters
 not linked to the extrapolation of any charged particle track to the
 ECAL. The energy of photons is directly obtained from the ECAL
-measurement, corrected for the effects of pileup.
+measurement, corrected for the effects of pileup. 
+Various quality-related criteria must be satisfied in order to
+identify photons with high efficiency while minimising the
+misidentification of electrons and associated bremstrahlung, jets, 
+or ECAL noise as photons. The criteria include the following: the
+shower shape of the energy deposition in the ECAL must be consistent
+with that expected from a photon, the energy detected in the HCAL
+behind the photon shower must not exceed 5\% of the photon energy, and
+no matched hits in the pixel tracker must be found. 
+
 Electrons~\cite{Khachatryan:2015hwa} are identified as a charged
 particle track associated with an ECAL cluster compatible with the
 track trajectory, as well as additional ECAL energy clusters from
@@ -30,37 +39,32 @@ potential bremsstrahlung photons emitted as the electron traverses
 material of the silicon tracker. The energy of electrons is determined
 from a combination of the track momentum at the main interaction
 vertex, the corresponding ECAL cluster energy, and the energy sum of
-all bremsstrahlung photons attached to the track.
+all bremsstrahlung photons attached to the track. The quality criteria
+required for electrons are similar to those for photons, with regards
+to the ECAL shower shape and the relative contributions to the total
+energy deposited in the ECAL and HCAL. Additional requirements are
+also made on the associated track that consider the track quality,
+energy-momentum matching, and compatibility with the PV in terms of
+the transverse and longitudinal impact parameters.
+
 Muons~\cite{Chatrchyan:2012xi} are identified as a track in the
 silicon tracker consistent with either a track or several hits in the
-muon system. 
+muon system. The track and hit parameters must satisfy various
+quality-related criteria, described in Ref.~\cite{Chatrchyan:2012xi}. 
 % and associated with an energy deficit in the calorimeters.
 The energy of muons is obtained from the corresponding track momentum.
+
 Charged hadrons are identified as charged particle tracks neither
 identified as electrons, nor as muons. The energy of charged hadrons
 is determined from a combination of the track momentum and the
-corresponding ECAL and HCAL energy, corrected for the response
-function of the calorimeters to hadronic showers. Neutral hadrons are
-identified as HCAL energy clusters not linked to any charged hadron
-trajectory, or as ECAL and HCAL energy excesses with respect to the
-expected charged hadron energy deposit.  The energy of neutral hadrons
-is obtained from the corresponding corrected ECAL and HCAL energy.
+corresponding ECAL and HCAL energy, corrected for the effects of
+pileup and the response function of the calorimeters to hadronic
+showers. Neutral hadrons are identified as HCAL energy clusters not
+linked to any charged hadron trajectory, or as ECAL and HCAL energy
+excesses with respect to the expected charged hadron energy deposit.
+The energy of neutral hadrons is obtained from the corresponding
+corrected ECAL and HCAL energy.
 
-Various quality-related criteria must be satisfied in order to
-identify photons with high efficiency while minimising the
-misidentification of electrons and associated bremstrahlung, jets,
-% (\eg $\pi^0$ decay), 
-or ECAL noise as photons. The criteria include the following: the
-shower shape of the energy deposition in the ECAL must be consistent
-with that expected from a photon, the energy detected in the HCAL
-behind the photon shower must not exceed 5\% of the photon energy, and
-no matched hits in the pixel tracker must be found. Similar criteria
-related to the ECAL shower shape and the relative contributions to the
-total energy deposited in the ECAL and HCAL must be satisfied to
-identify electrons, with additional requirements on the associated
-track that consider the track quality, energy-momentum matching, and
-compatibility with the PV in terms of the transverse and longitudinal
-impact parameters.
 
 Photons are required to be isolated from other activity in the event,
 such as charged and neutral hadrons, within a cone $\Delta R =
@@ -129,6 +133,11 @@ employed that yields a b-tagging efficiency of 65\%, and charm and
 light-flavour mistag probabilities of, respectively, approximately
 12\% and 1\%, for jets with transverse momenta typical of \ttbar
 events.
+
+An estimator of \ptvecmiss is given by the projection on the plane
+perpendicular to the beams of the negative vector sum of the momenta
+of all candidate particles in an event~\cite{cms-met}, as determined
+by the PF algorithm. Its magnitude is referred to as \ETmiss.
 
 %The missing transverse momentum vector \ptvecmiss is defined as the
 %projection on the plane perpendicular to the beams of the negative

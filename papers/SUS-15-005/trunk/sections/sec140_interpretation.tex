@@ -137,15 +137,21 @@ non-zero signal contribution, a modified frequentist approach is used
 to determine upper limits at 95\% confidence level (CL) on the cross
 section, $\sigma_\text{UL}$ (pb), to produce pairs of supersymmetric
 particles as a function of the parent sparticle and the LSP
-masses. The potential contributions from a new-physics signal to each
-of the signal and control regions are considered, even though the only
-significant contribution occurs in the signal region and not the
-control region (\ie signal contamination). The approach is based on
-the one-sided (LHC-style) profile likelihood ratio as the test
-statistic, the \cls criterion~\cite{junk, read}, and asymptotic
-formulae~\cite{Cowan:2010js} are utilised to approximate the
-distributions of the test statistics under the SM background-only and
-signal + background hypotheses.
+masses. The limits can be expressed in terms of the signal strength
+parameter, $\mu$, which is determined relative to the theory cross
+section that is calculated at NLO+NLL accuracy. An Asimov data
+set~\cite{Cowan:2010js} is used to determined the expected upper limit
+on the allowed cross section for a given model.  The potential
+contributions from a new-physics signal to each of the signal and
+control regions are considered, even though the only significant
+contribution occurs in the signal region and not in the control
+regions (\ie signal contamination). The approach is based on the
+one-sided (so called LHC-style) profile likelihood ratio as the test
+statistic~\cite{CMS-NOTE-2011-005} and the \cls criterion~\cite{junk,
+  read}. Asymptotic formulae~\cite{Cowan:2010js} are utilised to
+approximate the distributions of the test statistics under the SM
+background-only and signal + background hypotheses.
+
 %The test statistic is $q_\mu = -2 \ln (\mathcal{L}_\mu /
 %\mathcal{L}_\text{max})$, where $\mathcal{L}_\text{max}$ is the
 %maximum likelihood determined by allowing all parameters including a
@@ -159,7 +165,7 @@ signal + background hypotheses.
   \topcaption{A summary of benchmark simplified models, the most sensitive
     \njet categories, and representative values for the corresponding
     experimental acceptance times efficiency
-    ($\mathcal{A}\times\varepsilon$), the dominant sysmtematic
+    ($\mathcal{A}\times\varepsilon$), the dominant systematic
     uncertainties, the theory production cross section
     ($\sigma_\text{theory}$), and the expected and observed upper limits
     on the production cross section, expressed in terms of the signal
@@ -255,13 +261,13 @@ The experimental acceptance times efficiency
 ($\mathcal{A}\times\varepsilon$) and its uncertainty are evaluated
 independently for each model class as a function of ($m_\text{SUSY},
 m_\text{LSP}$). Table~\ref{tab:signal-eff} summarises
-$\mathcal{A}\times\varepsilon$ for a number of benchmark models, each
-chosen to be near the limit of search sensitivity. For each topology,
-typically two different pairs of parent sparticle and LSP masses
-($m_\text{SUSY}, m_\text{LSP}$) are chosen that are characterised by a
-large and a smaller (\ie ``compressed'') difference in parent
-sparticle and LSP masses. The four most sensitive event categories,
-defined in terms of \njet, are used to determine
+$\mathcal{A}\times\varepsilon$ for a number of benchmark models for
+which the search yields an expected exclusion ($\mu \lesssim 1$). For
+each topology, typically two different pairs of parent sparticle and
+LSP masses ($m_\text{SUSY}, m_\text{LSP}$) are chosen that are
+characterised by a large and a smaller (\ie ``compressed'') difference
+in parent sparticle and LSP masses. The four most sensitive event
+categories, defined in terms of \njet, are used to determine
 $\sigma_\text{UL}$. The categories used per benchmark model are listed
 in Table~\ref{tab:signal-eff}, along with
 $\mathcal{A}\times\varepsilon$ determined for these four categories.
@@ -278,15 +284,15 @@ alternative \HTmiss templates, described in Section~\ref{sec:result},
 is also used for the simulated signal samples.
 
 In addition to the uncertainty in the integrated luminosity of
-2.7\%, %~\cite{lumi}, 
-the following sources of uncertainty are dominant: the statistical
-uncertainty arising from the finite size of simulated signal samples,
-the modelling of initial-state radiation (ISR), the corrections to jet
-energies (JEC) evaluated in simulation, and the modelling of scale
-factors ($\text{SF}_\text{b-tag}$) applied to simulated event samples
-that correct for differences in the efficiency and misidentification
-probability of b quark jets. The magnitude of each contribution
-depends on the model and the masses of the parent sparticle and LSP.
+2.7\%~\cite{CMS:2016eto}, the following sources of uncertainty are
+dominant: the statistical uncertainty arising from the finite size of
+simulated signal samples, the modelling of initial-state radiation
+(ISR), the corrections to jet energies (JEC) evaluated in simulation,
+and the modelling of scale factors ($\text{SF}_\text{b-tag}$) applied
+to simulated event samples that correct for differences in the
+efficiency and misidentification probability of b quark jets. The
+magnitude of each contribution depends on the model and the masses of
+the parent sparticle and LSP.
 
 The $\mathcal{A}\times\varepsilon$ for models with small mass
 splittings (\eg $m_{\PSQ} - m_{\chiz_1} \lesssim m_{\text t}$) is due
@@ -328,16 +334,17 @@ the theory production cross section are considered.
 
 \subsection{Cross section and mass exclusions}
 
-The upper limits on the signal production cross section are evaluated
-at a 95\% CL for each of the aforementioned benchmark models. The
-limits are expressed in terms of the signal strength parameter, $\mu$,
-which is determined relative to the theory cross section that is
-calculated at NLO+NLL accuracy. The limits are summarised in
-Table~\ref{tab:signal-eff}. Expected limits on $\mu$ are also listed,
-which are determined using an asimov data set. All benchmark models
-are disfavoured based on expectations. The observed limits fluctuate
-around the expected $\mu$ values, with some models exhibiting a
-moderately weaker-than-expected limit.
+%The upper limits on the signal production cross section are evaluated
+%at a 95\% CL for each of the aforementioned benchmark models. The
+%limits are expressed in terms of the signal strength parameter, $\mu$,
+%which is determined relative to the theory cross section that is
+%calculated at NLO+NLL accuracy. 
+
+Limits for each of the aforementioned benchmark models are summarised
+in Table~\ref{tab:signal-eff}, expressed in terms of $\mu$. All
+benchmark models are expected to be excluded. The observed limits
+fluctuate around the expected $\mu$ values, with some models
+exhibiting a moderately weaker-than-expected limit.
 
 \begin{figure*}[h!]
   \begin{center}
@@ -410,7 +417,7 @@ solely on $m_{\sGlu}$ or $m_{\PSQ}$.
 %data set (dashed contours).
 The exclusion of models is evaluated using observed data counts in the
 signal region (solid contours) and also expected counts based on an
-asimov data set (dashed contours).
+Asimov data set (dashed contours).
 
 Figure~\ref{fig:limits-sms-1} (top) shows the excluded mass parameter
 space for models that assume the gluino-mediated or direct production
@@ -435,7 +442,7 @@ decay via, respectively, an off-shell top or bottom squark to a
 quark-antiquark pair of the same flavour and the $\chiz_1$. In the
 case of \texttt{T1ttbb}, each gluino is assumed to undergo a
 three-body decay to an on-shell chargino, $\chipm_1$, a bottom quark,
-and an antitop quark. The chargino mass is defined relative to the
+and a top antiquark. The chargino mass is defined relative to the
 neutralino mass via the expression $m_{\chipm_1} - m_{\chiz_1} =
 5\GeV$. The chargino decays promptly to the $\chiz_1$ and an off-shell
 W boson. The excluded mass regions differ significantly for these
