@@ -41,9 +41,12 @@ process-dependent, signal production cross sections are calculated
 with NLO plus next-to-leading-logarithm (NLL)
 accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
   PhysRevD.80.095004, 1126-6708-2009-12-041,
-  doi:10.1142/S0217751X11053560, susynlo}. The detector response for
-signal models is provided by the CMS fast simulation
-package~\cite{fastsim}.
+  doi:10.1142/S0217751X11053560, susynlo}. The theoretical systematic
+uncertainties are typically dominated by the parton density function
+(PDF) uncertainties, evaluated using the
+CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} PDFs.
+The detector response for signal models is provided by the CMS fast
+simulation package~\cite{fastsim}.
 
 %which yields consistent results compared with the GEANT4-based
 %simulation, except that we apply a correction of 1\% to account for
@@ -60,7 +63,9 @@ samples. To model the effects of multiple pp collisions within the
 same or neighboring bunch crossings (pileup), all simulated events are
 generated with a nominal distribution of pp interactions per bunch
 crossing and then reweighted to match the pileup distribution as
-measured in data. Finally, (near-unity) corrections to the
+measured in data. On average, approximately fifteen different
+collisions, identifiable via their primary interaction vertex, are
+reconstructed per event. Finally, (near-unity) corrections to the
 normalisation of the simulated samples for the \gj, \wmj, \ttbar, and
 \zmumuj, and, equivalently, \znunuj processes are derived using a data
 sideband to the control regions.
