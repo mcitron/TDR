@@ -9,38 +9,38 @@ backgrounds, as described in Section~\ref{sec:event_selection}.
 %The definitions of the control regions in data and the background
 %estimation procedures are described in
 %Section~\ref{needtoaddthisref}. 
-The dominant SM backgrounds for the search are QCD multijet
-production, and the associated production of jets and top
-quark-antiquark (\ttbar), single top, and vector boson (W,
-\znunu). Residual contributions from other processes, such as WW, WZ,
-ZZ (diboson) production and the associated production of \ttbar and a
-vector boson (W and Z), are also considered. Other processes, such as
-Drell-Yan ($\cPq\bar{\cPq}\!  \rightarrow\! \PZ/\gamma^*\!
-\rightarrow\!  \ell^+\ell^-$) and \gj production, are also relevant
-for some control regions, defined in
+The SM backgrounds for the search are QCD multijet production and the
+associated production of jets and top quark-antiquark (\ttbar), single
+top, and vector boson (W, \znunu). Residual contributions from other
+processes, such as WW, WZ, ZZ (diboson) production and the associated
+production of \ttbar and a W or Z boson, are also considered. Other
+processes, such as Drell--Yan ($\cPq\bar{\cPq}\!  \rightarrow\!
+\PZ/\gamma^*\!  \rightarrow\!  \ell^+\ell^-$) and \gj production, are
+also relevant for some control regions, defined in
 Section~\ref{sec:control_regions}.
 
-The \MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall2014} event generator code is
-used at leading order (LO) accuracy to produce samples of \wj, \zj,
-\gj, \ttbar, and multijet events. The same code is used at
-next-to-leading order (NLO) accuracy to generate samples of single top
-(both s- and t-channel production), WZ, ZZ, \ttw, and \ttz events. The
-NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is used to
-describe WW events and the Wt-channel production of single top
-events. The simulated samples are normalised according to production
-cross sections that are calculated with NLO and next-to-NLO
+The {\sc MadGraph5\_aMC@NLO} 2.2.2~\cite{Alwall2014} event generator
+code is used at leading-order (LO) accuracy to produce samples of \wj,
+\zj, \gj, \ttbar, and multijet events. The same code is used at
+next-to-leading-order (NLO) accuracy to generate samples of single top
+quarks (both $s$- and $t$-channel production), WZ, ZZ, \ttw, and \ttz
+events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is
+used to describe WW events and the $Wt$-channel production of single top
+quark events. The simulated samples are normalised according to
+production cross sections that are calculated with NLO and next-to-NLO
 precision~\cite{Alwall2014, wphys, fewz, wwxs, top++, nlotop,
-  powheg_top_Wt}. The \GEANTfour~\cite{geant} package is used to
-simulate the detector response. 
+  powheg_top_Wt}, or with LO precision in the case of multijet and \gj
+production.  The \GEANTfour~\cite{geant} package is used to simulate
+the detector response.
 
 Event samples for signal models involving gluino or squark pair
 production, in association with up to two additional partons, are
-generated at leading order with \MADGRAPH5 aMC@NLO, and the decay of
-the sparticles is performed with \PYTHIA
+generated at LO with {\sc MadGraph5\_aMC@NLO}, and the
+decay of the SUSY particles is performed with \PYTHIA
 8.205~\cite{pythia}. Inclusive, process-dependent, signal production
-cross sections are calculated with NLO plus next-to-leading-logarithm
-(NLL) accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
-  PhysRevD.80.095004, 1126-6708-2009-12-041,
+cross sections are calculated with NLO plus
+next-to-leading-logarithmic (NLL) accuracy~\cite{Beenakker:1996ch,
+  PhysRevLett.102.111802, PhysRevD.80.095004, 1126-6708-2009-12-041,
   doi:10.1142/S0217751X11053560, susynlo}. The theoretical systematic
 uncertainties are typically dominated by the parton density function
 (PDF) uncertainties, evaluated using the
@@ -54,18 +54,18 @@ simulation package~\cite{fastsim}.
 %and corrections of 3-10\% to account for differences in the b jet
 %tagging efficiency. 
 
-The \textsc{NNPDF}3.0 LO and \textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton
-distribution functions (PDF) are used, respectively, with the LO and
-NLO generators described above. The LO \PYTHIA program with the {\sc
+The \textsc{NNPDF}3.0 LO and NLO~\cite{nnpdf} parton distribution
+functions (PDFs) are used, respectively, with the LO and NLO
+generators described above. The LO \PYTHIA program with the {\sc
   CUETP8M1} underlying event tune~\cite{Khachatryan:2015pea} is used
 to describe parton showering and hadronisation for all simulated
 samples. To model the effects of multiple pp collisions within the
-same or neighboring bunch crossings (pileup), all simulated events are
-generated with a nominal distribution of pp interactions per bunch
+same or neighbouring bunch crossings (pileup), all simulated events
+are generated with a nominal distribution of pp interactions per bunch
 crossing and then reweighted to match the pileup distribution as
 measured in data. On average, approximately fifteen different
 collisions, identifiable via their primary interaction vertex, are
 reconstructed per event. Finally, (near-unity) corrections to the
 normalisation of the simulated samples for the \gj, \wmj, \ttbar, and
-\zmumuj, and, equivalently, \znunuj processes are derived using a data
-sideband to the control regions.
+\zmumuj, and, equivalently, \znunuj processes are derived using data
+sidebands to the control regions.

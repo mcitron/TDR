@@ -1,4 +1,4 @@
-\section{Event selections}
+\section{Event selection}
 \label{sec:event_selection}
 
 The kinematic selection criteria used to define the signal region,
@@ -10,11 +10,11 @@ described in Section~\ref{sec:event_reconstruction}.
 \subsection{Common preselection criteria}
 \label{sec:preselection}
 
-A number of beam and detector related effects, such as beam halo,
+A number of beam- and detector-related effects, such as beam halo,
 reconstruction failures, spurious detector noise, or event
 misreconstruction due to detector inefficiencies, can lead to events
-with anomolous levels of activity. These events, which can exhibit
-large, non-physical values of \ETmiss, are rejected with high
+with anomalous levels of activity. These events, which can exhibit
+large, nonphysical values of \ETmiss, are rejected with high
 efficiency by applying a range of dedicated
 vetoes~\cite{1748-0221-5-03-T03014, CMS-NOTE-2010-012, cms-met}.
 
@@ -25,45 +25,50 @@ isolated photon with $\Pt > 25\GeV$ and $\abs{\eta} < 2.5$ are also
 vetoed, in order to select only multijet final states. Furthermore,
 events containing a single isolated track satisfying $\Pt > 10\GeV$
 and $\abs{\eta} < 2.5$ are vetoed in order to reduce the background
-contribution from final states containing hadronically-decaying tau
+contribution from final states containing hadronically decaying tau
 leptons.
 
-Each jet $j_\text{i}$ considered by this search is required to satisfy
-$\Pt^{j_\text{i}} > 40\GeV$ and $|\eta^{j_\text{i}}| < 3$. The number
+Each jet $\mathrm{j_i}$ considered by this search is required to satisfy
+$\Pt^{\mathrm{j_i}} > 40\GeV$ and $|\eta^{\mathrm{j_i}}| < 3$. The number
 of jets within this experimental acceptance is labelled henceforth as
 \njet. The highest \Pt jet in the event is required to have
-$\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$. The
-second highest \Pt jet in the event is used to categorise events, as
+$\Pt^{\mathrm{j_1}} > 100\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 2.5$. The
+second-highest \Pt jet in the event is used to categorise events, as
 described in Section~\ref{sec:categorisation}. If the jet satisfies
-$\Pt^{j_\text{2}} > 100\GeV$, then this category of events is labelled
+$\Pt^{\mathrm{j_2}} > 100\GeV$, then this category of events is labelled
 ``symmetric'' and targets primarily topologies resulting from
-pair-produced sparticles. If the jet satisfies $40 < \Pt^{j_\text{2}}
-< 100\GeV$ or $\Pt^{j_\text{2}} < 40\GeV$, then these categories are
-labelled as, respectively, ``asymmetric'' or ``monojet'' topologies,
-which target models involving the direct production of stable, weakly
-interacting, massive particles.
-
+pair-produced SUSY particles. 
+%If the jet satisfies $40 < \Pt^{\mathrm{j_2}} < 100\GeV$ or
+%$\Pt^{\mathrm{j_2}} < 40\GeV$, then these categories are labelled as,
+%respectively, ``asymmetric'' or ``monojet'' topologies, which target
+%models involving the direct production of stable, weakly interacting,
+%massive particles.
+If the jet satisfies $40 < \Pt^{\mathrm{j_2}} < 100\GeV$ then the event
+is labelled as ``asymmetric'', and if there exists no second jet with
+$\Pt^{\mathrm{j_2}} > 40\GeV$, the event is labelled ``monojet''. The
+asymmetric and monojet topologies target models involving the direct
+production of stable, weakly interacting, massive particles. 
 The mass scale of the physics processes being probed is characterised
 by the scalar \Pt sum of the jets, defined as $\scalht =
-\sum_{i=1}^{\njet} \Pt^{\,j_\text{i}}$. 
+\sum_{\textrm{i}=1}^{\njet} \Pt^{\,\mathrm{j_i}}$. 
 %, where \njet is the number of jets within the experimental
 %acceptance.  
 %The magnitude of the negative vector \ptvec sum of these jets, defined
-%by $\HTmiss = |-\sum_{i=1}^{\njet} \ptvec^{\,j_\text{i}}|$, 
+%by $\HTmiss = |-\sum_{\textrm{i}=1}^{\njet} \ptvec^{\,\mathrm{j_i}}|$, 
 The magnitude of the vector \ptvec sum of these jets, defined by
-$\HTmiss = |\sum_{i=1}^{\njet} \ptvec^{\,j_\text{i}}|$, is used to
-identify events with a significant imbalance in transverse
+$\HTmiss = |\sum_{\textrm{i}=1}^{\njet} \ptvec^{\,\mathrm{j_i}}|$, is
+used to identify events with significant imbalance in transverse
 momentum. Events are vetoed if any jet satisfies $\Pt > 40\GeV$ and
 $|\eta| > 3$ to ensure that jets reconstructed in the forward regions
 of the detector do not contribute significantly to \HTmiss.
 
 The dimensionless variable $\HTmiss / \ETmiss$ is used to remove
 events that contain several jets with transverse momenta below the jet
-\Pt thresholds but an appreciable \Pt vector sum so as to contribute
+\Pt thresholds but an appreciable vector \Pt sum so as to contribute
 significantly to \HTmiss relative to \ETmiss. This background is
 typical of multijet events, which is suppressed by requiring $\HTmiss
 / \ETmiss < 1.25$. The requirement is imposed as part of the common
-preselection criteria used to define all control samples, to minimise
+preselection criteria used to define all control samples to minimise
 potential systematic biases associated with the simulation modelling
 for this variable. A high efficiency is maintained for SM or
 new-physics processes that produce unobserved particles, which are
@@ -74,8 +79,8 @@ Significant jet activity and missing transverse momentum in the event
 is ensured by requiring $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$,
 respectively. These requirements complete the common preselection
 criteria, summarised in Table~\ref{tab:selections}, used to define a
-sample of all-jet events characterised by high activity and
-appreciable missing transverse momentum.
+sample of all-jet events characterised by high jet activity and
+appreciable \ptvecmiss.
 
 \begin{table*}[tb]
   \topcaption{Summary of the event selection criteria and
@@ -87,14 +92,14 @@ appreciable missing transverse momentum.
   \begin{tabular}{ ll }
     \hline
     \multicolumn{2}{l}{\bf Common preselection}                                                                                                     \\
-    \ETmiss cleaning             & Filters related to beam and instrumental effects, and reconstruction failures                                    \\ 
+    \ETmiss quality              & Filters related to beam and instrumental effects, and reconstruction failures                                    \\ 
     Lepton/photon vetoes         & $\Pt > 10,\, 10,\, 25\GeV$ for isolated tracks, leptons, photons (respectively) and $\abs{\eta} < 2.5$           \\ 
-    Jet $j_\text{i}$ acceptance  & Consider each jet $j_\text{i}$ that satisfies $\Pt^{j_\text{i}} > 40\GeV$ and $\abs{\eta^{j_\text{1}}} < 3$      \\
-    Jet $j_\text{1}$ acceptance  & $\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$                                                 \\
-    Jet $j_\text{2}$ acceptance  & 
-    $\Pt^{j_\text{2}} < 40\GeV$ (monojet), 
-    $40 < \Pt^{j_\text{2}} < 100\GeV$ (asymmetric), 
-    $\Pt^{j_\text{2}} > 100\GeV$ (symmetric)                                                                                                        \\
+    Jet $\mathrm{j_i}$ acceptance  & Consider each jet $\mathrm{j_i}$ that satisfies $\Pt^{\mathrm{j_i}} > 40\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 3$      \\
+    Jet $\mathrm{j_1}$ acceptance  & $\Pt^{\mathrm{j_1}} > 100\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 2.5$                                                 \\
+    Jet $\mathrm{j_2}$ acceptance  & 
+    $\Pt^{\mathrm{j_2}} < 40\GeV$ (monojet), 
+    $40 < \Pt^{\mathrm{j_2}} < 100\GeV$ (asymmetric), 
+    $\Pt^{\mathrm{j_2}} > 100\GeV$ (symmetric)                                                                                                        \\
     Forward jet veto             & Veto events containing jet satisfying $\Pt > 40\GeV$ and $\abs{\eta} > 3$                                        \\
     Jets below threshold         & $\HTmiss / \ETmiss < 1.25$                                                                                       \\
     Energy sums                  & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                      \\
@@ -102,7 +107,7 @@ appreciable missing transverse momentum.
     \multicolumn{2}{l}{\bf Event categorisation}                                                                                                    \\
     \njet                        & 1 (monojet), 2, 3, 4, $\geq$5 (asymmetric), 2, 3, 4, $\geq$5 (symmetric)                                         \\
     \nb                          & 0, 1, 2, $\geq$3 ($\nb \leq \njet$)                                                                              \\
-    \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>$800\GeV (bins can be dropped/merged \vs \njet, Table~\ref{tab:binning})    \\
+    \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>800\GeV$ (bins can be dropped/merged \vs \njet, Table~\ref{tab:binning})    \\
     \hline
     {\bf Signal region (SR)}     & Preselection +                                                                                                   \\
     QCD multijet rejection \quad & $\alphat > 0.65$, 0.60, 0.55, 0.53, 0.52, 0.52, 0.52 (mapped to \scalht bins in range $200 < \scalht < 800\GeV$) \\
@@ -137,14 +142,14 @@ categories in \njet are employed: the monojet topology ($\njet = 1$)
 and four \njet bins (2, 3, 4, $\geq$5) for each of the asymmetric and
 symmetric topologies. Events are also categorised by \nb (0, 1, 2,
 $\geq$3), where \nb is bounded from above by \njet, resulting in 32
-categories in terms of both \njet and \nb. For each (\njet,\nb)
+categories in terms of both \njet and \nb. For each (\njet, \nb)
 category, events are binned according to \scalht: four 50\GeV bins at
 low jet activity in the range $200 < \scalht < 400\GeV$, two 100\GeV
 bins in the range $400 < \scalht < 600\GeV$, one bin covering the
 region $600 < \scalht < 800\GeV$, and a final open bin for $\scalht >
 800\GeV$. These categorisations are summarised in
 Table~\ref{tab:selections}. The \scalht binning scheme is adapted
-independently per (\njet,\nb) category by removing or merging bins to
+independently per (\njet, \nb) category by removing or merging bins to
 satisfy a threshold on the minimum number of data events in the
 control regions, which are used to estimate SM backgrounds, provide
 checks, and validate assumptions within the methods. The lower bounds
@@ -194,50 +199,55 @@ contribution to a negligible level with respect to other SM
 backgrounds.
 
 The dimensionless kinematic variable \alphat~\cite{Randall:2008rw,
-  RA1Paper}, defined in Equ.~\ref{eq:alphat}, is used to provide
+  RA1Paper}, defined in Eq.~\ref{eq:alphat} below, is used to provide
 discrimination against multijet events that do not contain significant
-\ptvecmiss or that contain large \ptvecmiss only because of transverse
-momentum mismeasurements, while retaining sensitivity to new-physics
-events with significant \ptvecmiss. The \alphat variable depends
-solely on the transverse component of jet four-momenta
+\ptvecmiss or that contain large \ptvecmiss only because of \Pt
+mismeasurements, while retaining sensitivity to new-physics events
+with significant \ptvecmiss. The \alphat variable depends solely on
+the transverse component of jet four-momenta
 %the transverse energies and azimuthal angles of jets, 
 and is intrinsically robust against the presence of jet energy
 mismeasurements in multijet systems. For events containing only two
 jets, \alphat is defined as $\alphat = \Et^{\text j_2}/M_\text{T}$,
-where $\Et = E\sin\theta$, with $E$ the energy of the jet and $\theta$
-its polar angle with respect to the beam axis, $\Et^{\text j_2}$ is
-the transverse energy of the jet with smaller \Et, and $M_\text{T}$ is
-the transverse mass of the dijet system, defined as:
+where $\Et = E\sin\theta$, 
+%with $E$ the energy of the jet and $\theta$ its polar angle with
+%respect to the beam axis,
+where $E$ is the energy of the jet and $\theta$ is its polar angle
+with respect to the beam axis, $\Et^{\text j_2}$ is the transverse
+energy of the jet with smaller \Et, and $M_\text{T}$ is the transverse
+mass of the dijet system, defined as:
 
 \begin{equation}
   \label{eq:mt}
-  M_\text{T} = \sqrt{ \left( \sum_{i=1}^2 \Et^{\mathrm{j}_i}
-    \right)^2 - \left( \sum_{i=1}^2 p_x^{\mathrm{j}_i} \right)^2 - \left(
-      \sum_{i=1}^2 p_y^{\mathrm{j}_i} \right)^2}\, ,
+  M_\text{T} = \sqrt{ \left( \sum_{\textrm{i}=1}^2 \Et^{\mathrm{j_i}}
+    \right)^2 - \left( \sum_{\textrm{i}=1}^2 p_x^{\mathrm{j_i}} \right)^2 - \left(
+      \sum_{\textrm{i}=1}^2 p_y^{\mathrm{j_i}} \right)^2}\, ,
 \end{equation}
 
-where $\Et^{\mathrm{j}_i}$, $p_x^{\mathrm{j}_i}$, and
-$p_y^{\mathrm{j}_i}$ are, respectively, the transverse energy and $x$
-or $y$ components of the transverse momentum of jet $\mathrm{j}_i$.
-
-For a perfectly measured dijet event with $\Et^{\mathrm{j}_1} =
-\Et^{\mathrm{j}_2}$ and the jets in the back-to-back configuration
-($\Delta\phi = \pi$), and in the limit in which the momentum of each
-jet is large compared with its mass, the value of \alphat is 0.5. For
-an imbalance in the \Et of back-to-back jets, \alphat is reduced to a
-value $<0.5$, which gives the variable its intrinsic
-robustness. Values significantly greater than 0.5 are observed when
-the two jets are not back-to-back and recoil against \ptvecmiss from
-weakly interacting particles that escape the detector.
+where $\Et^{\mathrm{j_i}}$, $p_x^{\mathrm{j_i}}$, and
+$p_y^{\mathrm{j_i}}$ 
+%are, respectively, the transverse energy and $x$ or $y$ components of
+%the transverse momentum of jet $\mathrm{j}_i$.
+are, respectively, the transverse energy of jet $\mathrm{j_i}$ and the
+$x$- and $y$-components of its transverse momentum.  For a perfectly
+measured dijet event with $\Et^{\mathrm{j_1}} = \Et^{\mathrm{j_2}}$
+and the jets in the back-to-back configuration ($\Delta\phi = \pi$),
+and in the limit in which the momentum of each jet is large compared
+with its mass, the value of \alphat is 0.5. For an imbalance in the
+\Et of back-to-back jets, \alphat is reduced to a value $<0.5$, which
+gives the variable its intrinsic robustness. Values significantly
+greater than 0.5 are observed when the two jets are not back-to-back
+and recoil against \ptvecmiss from weakly interacting particles that
+escape the detector.
 
 The definition of the \alphat variable can be generalised for events
 with more than two jets~\cite{RA1Paper}. The mass scale for any
 process is characterised through the scalar sum of the jet transverse
-energies, defined as $\scalst = \sum_{i=1}^{N_\text{jet}}
-\Et^{\mathrm{j}_i}$, where $N_\text{jet}$ is the number of
-jets with \Et above a predefined threshold.\footnote{The definition of
-  \scalst should be contrasted with that of \scalht, the scalar sum of
-  the jet tranverse {\it momenta}. }
+energies, defined as $\scalst = \sum_{\textrm{i}=1}^{N_\text{jet}}
+\Et^{\mathrm{j_i}}$, where $N_\text{jet}$ is the number of jets with
+\Et above a predefined threshold. (The definition of \scalst should be
+contrasted with that of \scalht, the scalar sum of the jet transverse
+momenta.)
 % The estimator for \ptvecmiss is \HTmiss. 
 For events with three or more jets, a pseudo-dijet system is formed by
 combining the jets in the event into two pseudo-jets. The \scalst for
@@ -256,7 +266,7 @@ be generalised to:
 \end{equation}
 
 When jet energies are mismeasured, or there are neutrinos from
-heavy-flavour quark decays, the magnitude of \HTmiss and \dst are
+heavy-flavour quark decays, the magnitudes of \HTmiss and \dst are
 highly correlated. This correlation is much weaker for
 R-parity-conserving SUSY events, where each of the two decay chains
 produces an undetected LSP.
@@ -268,7 +278,7 @@ events with extremely rare but large stochastic fluctuations in the
 calorimetric measurements of jet energies can lead to values of
 \alphat slightly above 0.5. The edge at 0.5 sharpens with increasing
 \scalht for multijet events, primarily due to a corresponding increase
-in the average jet energy and a consequent (relative) improvement in
+in the average jet energy and consequently a (relative) improvement in
 the jet energy resolution.
 
 For events containing at least two jets, thresholds on the minimum
@@ -280,8 +290,8 @@ respectively, the regions $200 < \scalht < 250\GeV$ and $400 < \scalht
 > 800\GeV$. The thresholds employed are summarised in
 Table~\ref{tab:selections}. The \alphat thresholds are motivated both
 by the trigger conditions used to record the candidate signal events,
-described below, and by simulation-based studies and data-derived
-estimates of the multijet background. 
+described below, and by simulation-based studies and estimates of the
+multijet background derived from data. 
 %As a rule of thumb, an \alphat threshold can be converted to an
 %``effective'' lower bound threshold on \HTmiss by forcing $\dst =
 %0\GeV$. Hence, the \alphat thresholds convert to approximate minimum
@@ -293,17 +303,17 @@ between a jet and the negative vector \ptvec sum derived from all
 other jets in the event~\cite{RA1Paper},
 
 %\begin{equation}
-%  \bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
-%  \Delta\phi(\ptvec^{\,j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
-%  \ptvec^{\,j_\text{i}} + \ptvec^{\,j_\text{k}}).   
+%  \bdphi = \min_{\,\forall\, \mathrm{j_k} \,\in\, \njet}
+%  \Delta\phi(\ptvec^{\,\mathrm{j_k}}, -\sum_{\mathrm{j_i}\, =\, 1}^{\njet}
+%  \ptvec^{\,\mathrm{j_i}} + \ptvec^{\,\mathrm{j_k}}).   
 %  \label{eq:bdphi}
 %\end{equation}
 
 \begin{equation}
-  \bdphi = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
-  \Delta\phi( \ptvec^{\,j_\text{k}}, 
-  -\sum_{\substack{j_\text{i}\, =\, 1 \\ j_\text{i} \ne j_\text{k}}}^{\njet}
-  \ptvec^{\,j_\text{i}}).   
+  \bdphi = \min_{\,\forall\, \mathrm{j_k} \,\in\, \njet}
+  \Delta\phi( \ptvec^{\,\mathrm{j_k}}, 
+  -\sum_{\substack{\mathrm{j_i}\, =\, 1 \\ \mathrm{j_i} \ne \mathrm{j_k}}}^{\njet}
+  \ptvec^{\,\mathrm{j_i}}).   
   \label{eq:bdphi}
 \end{equation}
 
@@ -314,9 +324,9 @@ mismeasurements or through the production of neutrinos, collinear with
 the axis of a jet, from semileptonic heavy-flavour decays. Multijet
 events populate the region $\bdphi < 0.5$, with the multijet
 distribution peaking at a value of zero and falling approximately
-exponentially over five orders of magnitude to the event level at a
-value of $\bdphi \approx 0.5$, which is close to the radius parameter
-value of 0.4 used by the anti-$k_\text{t}$ jet clustering
+exponentially over five orders of magnitude to a single-event level at
+a value of $\bdphi \approx 0.5$, which is close to the distance
+parameter value of 0.4 used by the anti-$k_t$ jet clustering
 algorithm. Events with a genuine source of \ptvecmiss exhibit a long
 tail in \bdphi with values as large as $\pi$. The \bdphi variable
 provides comparable or improved performance in terms of discrimination
@@ -324,20 +334,20 @@ according to a simple signal-to-background metric for a wide range of
 signal models with respect to more widely used variables such as:
 
 \begin{equation}
-  \Delta\phi_\text{min} = \min_{\,\forall\, j_\text{k} \,\in\, \njet}
-  \Delta\phi(\ptvec^{\,j_\text{k}}, -\sum_{j_\text{i}\, =\, 1}^{\njet}
-  \ptvec^{\,j_\text{i}}).
+  \Delta\phi_\text{min} = \min_{\,\forall\, \mathrm{j_k} \,\in\, \njet}
+  \Delta\phi(\ptvec^{\,\mathrm{j_k}}, -\sum_{\mathrm{j_i}\, =\, 1}^{\njet}
+  \ptvec^{\,\mathrm{j_i}}).
   \label{eq:dphi}
 \end{equation}
 
-%and $\min_{\,\forall\, j_\text{k} \,\in\, \njet}
-%\Delta\phi(\ptvec^{j_\text{k}}, \ptvecmiss)$.
+%and $\min_{\,\forall\, \mathrm{j_k} \,\in\, \njet}
+%\Delta\phi(\ptvec^{\mathrm{j_k}}, \ptvecmiss)$.
 
 A requirement of $\bdphi > 0.5$ is sufficient to effectively suppress
 the multijet background to a negligible level while maintaining high
-efficency to new-physics signatures. The combined rejection power of
+efficiency for new-physics signatures. The combined rejection power of
 the \alphat and \bdphi requirements for the region $200 < \scalht <
-800\GeV$ are sufficient to suppress multijet events to the few percent
+800\GeV$ is sufficient to suppress multijet events to the few percent
 level with respect to all other SM backgrounds in all \scalht bins for
 all event categories of the signal region. For the region $\scalht >
 800\GeV$, a similar control of the multijet background is achieved
@@ -387,7 +397,7 @@ solely with the $\bdphi > 0.5$ requirement.
 
 
 Figure~\ref{fig:alphat-bdphi} illustrates the performance of the
-\alphat and \bdphi variables, by showing their distributions observed
+\alphat and \bdphi variables by showing their distributions observed
 in data for events that satisfy all other selection criteria that
 define the signal region, summarised in Table~\ref{tab:selections}, as
 well as the following modifications.
@@ -400,7 +410,7 @@ well as the following modifications.
 %set of trigger conditions, and must satisfy the full signal region
 %selection criteria for the region $\scalht > 800\GeV$. 
 In the case of the \alphat distribution, the events that satisfy
-$\alphat < 0.55$ must fulfil only the common preselection criteria
+$\alphat < 0.55$ must fulfill only the common preselection criteria
 defined in Table~\ref{tab:selections}, and no \HTmiss requirement is
 made. Further, all events are required to satisfy $\scalht >
 300\GeV$. In the case of the \bdphi distribution, the only additional
@@ -425,9 +435,9 @@ $\Pt > 25\GeV$ and is henceforth labeled $\bdphimod$, is used as a
 control variable in data to identify multijet contributions arising
 from instrumental effects, such as inefficient detector elements or
 detector noise. The axis of any jet that satisfies $\bdphimod < 0.5$
-is used to identify localised behaviour in the ($\eta$,$\phi$) plane,
+is used to identify localised behaviour in the ($\eta$, $\phi$) plane,
 which may be indicative of instrumental defects. No significant
-anomolies are observed in the sample of candidate signal events
+anomalies are observed in the sample of candidate signal events
 following the application of the dedicated vetoes mentioned in
 Section~\ref{sec:preselection}.
 
@@ -443,14 +453,14 @@ calculations of both \scalht and \alphat to record events with two or
 more jets. An event is recorded if it satisfies any of the following
 pairs of (\scalht,\alphat) thresholds, (200,0.57), (250,0.55),
 (300,0.53), (350,0.52), or (400,0.51), as well as a requirement on the
-mean value of the two highest \Pt jets, $\langle\Pt^{j_\text{1}} +
-\Pt^{j_\text{2}}\rangle > 90\GeV$. These requirements are collectively
+mean value of the two highest \Pt jets, $\langle\Pt^{\mathrm{j_1}} +
+\Pt^{\mathrm{j_2}}\rangle > 90\GeV$. These requirements are collectively
 labelled as the ``\scalht--\alphat'' triggers. In addition, candidate
 signal events with one or more jets are also recorded if they satisfy
 the requirements $\HTmiss > 90\GeV$ and $\ETmiss > 90\GeV$. Finally,
-for events that satisfy $\scalht > 800\GeV$, a further trigger
-requirement, defined by $\scalht > 800\GeV$, is employed in addition
-to the \scalht--\alphat trigger requirements, to record events
+for events that satisfy $\scalht > 800\GeV$, an additional trigger
+condition, defined by $\scalht > 800\GeV$, is employed in addition to
+the \scalht--\alphat trigger requirements to record events
 characterised by high activity in the calorimeters with high
 efficiency. The trigger-level jet energies are corrected to account
 for energy scale and pileup effects. The aforementioned triggers are
@@ -475,7 +485,7 @@ all bins in the signal region.
 %    \multicolumn{5}{c}{Efficiencies Thresholds for trigger quantities} \\
 %    \cline{1-2} \cline{4-8} 
 %
-%    \njet                  & \scalht region & Trigger logic & \HTmiss & \ETmiss & \scalht & $\langle\Pt^{j_\text{1}} + \Pt^{j_\text{2}}\rangle$ & \alphat \\
+%    \njet                  & \scalht region & Trigger logic & \HTmiss & \ETmiss & \scalht & $\langle\Pt^{\mathrm{j_1}} + \Pt^{\mathrm{j_2}}\rangle$ & \alphat \\
 %                           & (GeV)          &   & (GeV)   & (GeV)   & (GeV)   & (GeV)                                               &         \\
 %    \hline                                         
 %    1\B                    & $>$200         &   & 90      & 90      & -       & -                                                   & -       \\
@@ -491,14 +501,14 @@ all bins in the signal region.
 %  \end{tabular}
 %\end{table}
 
-\subsection{\texorpdfstring{\HTmiss}{HTmiss} templates}
+\subsection{Using \texorpdfstring{\HTmiss}{HTmiss} templates}
 \label{sec:mht_templates} 
 
-Following the event selections described above, which provide a sample
-of signal candidate events with a negligible contribution from
-mulitjet events, further discriminating power is required to separate
-new-physics signatures from the remaining SM backgrounds, which are
-dominated by the production of \ttbar or \wlj and \znunuj
+Following the event selection criteria described above, which provide
+a sample of signal candidate events with a negligible contribution
+from multijet events, further discriminating power is required to
+separate new-physics signatures from the remaining SM backgrounds,
+which are dominated by the production of \ttbar or \wlj and \znunuj
 events. Given the characteristic signature of SUSY production at the
 LHC is a final state of multijets accompanied by large values of
 \ptvecmiss from the LSPs, the search exploits the use of the \HTmiss
@@ -510,10 +520,10 @@ templates are used by the likelihood function as a model for the data,
 details on which can be found in Section~\ref{sec:result}. The
 templates are extensively validated against data in multiple control
 regions, and these studies are used to establish the uncertainty in
-the simulation modelling of the \HTmiss variable. The effect of
+the simulation modelling of the \HTmiss variable. The effects of
 theoretical and experimental uncertainties on the \HTmiss
 distributions are also studied. Further details can be found in
-Sections~\ref{sec:ewk_background}.
+Section~\ref{sec:ewk_background}.
 
 %FIXME. push how far? data validation? how many bins?
 
@@ -521,15 +531,14 @@ Sections~\ref{sec:ewk_background}.
 \label{sec:control_regions}
 
 Four control regions in data are employed to estimate the background
-contributions from SM processes, which modify and expand on the
-common preselection criteria described above, according to the
-descriptions found below and summarised in
-Table~\ref{tab:selections}. 
-The first control region comprises a multijet-enriched sample of
-events, and is defined by the signal region selection criteria and the
-inverted requirement $\HTmiss / \ETmiss > 1.25$. The events are
-recorded with the signal triggers described above, and the sample is
-used to estimate the multijet background in the signal region. Three
+contributions from SM processes, which modify and expand the common
+preselection criteria described above according to the descriptions
+found below and summarised in Table~\ref{tab:selections}. The first
+control region comprises a multijet-enriched sample of events, and is
+defined by the signal region selection criteria and the inverted
+requirement $\HTmiss / \ETmiss > 1.25$. The events are recorded with
+the signal triggers described above, and the sample is used to
+estimate the multijet background in the signal region. Three
 additional control regions, defined by inverting one of the photon or
 lepton vetoes to select samples of \gj, \mj, or \mmj events, are used
 to estimate the background contributions from SM processes with final
@@ -548,7 +557,7 @@ contributions from multijet production or a wide variety of SUSY
 models (\ie so-called signal contamination).  The samples are defined,
 and their events are identically categorised and binned, such that the
 kinematic properties of events in the control regions and the signal
-candidate events resemble as closely as possible one another, once the
+candidate events resemble as closely as possible one another once the
 photon, muon, or dimuon system is ignored in the calculation of
 quantities such as \scalht and \HTmiss. The selections are summarised
 in Table~\ref{tab:selections} and described below.
@@ -557,7 +566,7 @@ The \gj event sample is defined by the common preselection
 requirements, but the photon veto is inverted and each event is
 required to contain a single isolated photon, as defined in
 Section~\ref{sec:event_reconstruction}, that satisfies $\Pt > 200\gev$
-and $\abs{\eta} < 1.45$ and well separated from each jet
+and $\abs{\eta} < 1.45$ and is well separated from each jet
 $j_{\text{i}}$ in the event according to $\Delta
 R(\gamma,j_{\text{i}}) > 1.0$. 
 %This tight requirement improves the purity of the \gj sample by
@@ -565,20 +574,21 @@ R(\gamma,j_{\text{i}}) > 1.0$.
 In addition, events must satisfy $\scalht > 400\GeV$, as well as the
 same \scalht-dependent \alphat requirements used to define the signal
 region. The events are recorded using a single-photon trigger
-condition and the selections result in a trigger efficiency
-of~$\gtrsim$99\%.
+condition and the selection criteria result in a trigger efficiency
+of~$\gtrsim 99\%$.
 
 The \mj event sample is defined by the common preselection
 requirements, but the muon veto is inverted and each event is required
 to contain a single isolated muon, as defined in
 Section~\ref{sec:event_reconstruction}, that satisfies $\Pt > 30\gev$
-and $\abs{\eta} < 2.1$ and well separated from each jet $j_{\text{i}}$
-in the event according to $\Delta R(\mu,j_{\text{i}}) > 0.5$.
+and $\abs{\eta} < 2.1$ and is well separated from each jet
+$j_{\text{i}}$ in the event according to $\Delta R(\mu,j_{\text{i}}) >
+0.5$.
 %Furthermore, the muon is required to be well separated from the jets
 %in the event, with a separation in the solid angle between direction
 %of the muon and all jets in the event that satisfies $\Delta
 %R(\mu,j_{\text{i}}) > 0.5$.
-The transverse mass formed by the tranvserve momenta of the muon and
+The transverse mass formed by the transverse momenta of the muon and
 \ptvecmiss system must satisfy $30 < m_\text{T} < 125\GeV$ to select a
 sample of events rich in W bosons, produced promptly or from the decay
 of top quarks. The \mmj sample uses a similar set of selection
@@ -589,9 +599,9 @@ $\abs{\eta} < 2.1$ and are well separated from the jets in the event
 required to have a dilepton invariant mass within a $\pm 25\GeV$
 window around the nominal mass of the Z
 boson~\cite{1674-1137-38-9-090001}. For both the muon and dimuon
-samples, no requirement is made on \alphat, in order to increase the
+samples, no requirement is made on \alphat in order to increase the
 statistical precision of the predictions from these samples. Both the
 \mj and \mmj samples are recorded using a trigger that requires an
 isolated muon. The selection criteria of the \mj and \mmj event
-samples are chosen so that the trigger is maximally efficient with
-values, respectively, in the region of $\sim$90\% and $\sim$99\%.
+samples are chosen so that the trigger is maximally efficient, with
+values in the region of $\sim 90\%$ and $\sim 99\%$, respectively.
