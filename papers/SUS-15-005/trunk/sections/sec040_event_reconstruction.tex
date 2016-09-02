@@ -2,12 +2,12 @@
 \label{sec:event_reconstruction}
 
 Global event reconstruction is provided by the particle flow (PF)
-algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, which aims to
+algorithm~\cite{CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}, designed to
 identify each particle using an optimised combination of information
 from all detector systems. In this process, the identification of the
 particle type (photon, electron, muon, charged hadron, neutral hadron)
-plays an important role in the determination of the particle
-direction and energy.
+plays an important role in the determination of the particle direction
+and energy.
 
 The primary vertex (PV) for each recorded event is assumed to be the
 reconstructed vertex with the largest sum of charged-particle track
@@ -51,6 +51,7 @@ muon system. The track and hit parameters must satisfy various
 quality-related criteria, described in Ref.~\cite{Chatrchyan:2012xi}. 
 % and associated with an energy deficit in the calorimeters.
 The energy of muons is obtained from the corresponding track momentum.
+
 Charged hadrons are identified as charged-particle tracks not
 classified as either electrons or muons.
 %charged particle tracks neither identified as electrons, nor as muons.
@@ -71,7 +72,7 @@ the photon itself. Electrons and muons are also required to be
 isolated from other activity in the event, primarily to suppress
 background contributions from semileptonic heavy-flavour decays in
 multijet events. The isolation $I^\text{mini}_\text{rel}$ is defined
-as the scalar \Pt sum of all charged and neutral hadrons and photons
+as the scalar \Pt sum of all charged and neutral hadrons, and photons, 
 within a cone around the lepton direction, divided by the lepton
 \Pt. The (``mini'') cone radius is dependent on the lepton \Pt,
 primarily to identify with high efficiency the collimated daughter
@@ -92,7 +93,7 @@ radius $R = 0.4$ is assumed.
 Electron and muon candidates identified by the PF algorithm that do
 not satisfy the quality criteria or the $I^\text{mini}_\text{rel}$
 isolation requirements described above, as well as charged hadrons,
-are collectively labeled as ``single isolated tracks'' if they are
+are collectively labelled as ``single isolated tracks'' if they are
 isolated from neighbouring charged-particle tracks associated to the
 PV. The isolation $I^\text{track}_\text{rel}$ is defined as the scalar
 \Pt sum of charged-particle tracks (excluding the track under
