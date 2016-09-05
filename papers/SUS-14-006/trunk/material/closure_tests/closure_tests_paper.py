@@ -128,7 +128,9 @@ class data :
         else : self.regions_ = [ i for i in range(self.nbins_) ]
         self.markers_ = [24,5,25,26,28,30,32,27,31]
         self.size_ = [ 1.7 if x != 20 else 1.3 for x in self.markers_ ]
-        self.offset_ = [ 5.*x-(len(self.files_)/2) for x in range(len(self.files_)) ]
+        self.offset_ = [ 3.+5.5*(x-(len(self.files_)/2)) for x in range(len(self.files_)) ]
+        print self.offset_
+        self.colours_ = [kRed,kBlue,kGreen,kYellow,kCyan,kMagenta,kOrange,kTeal]
         self.energy_ = energy
         self.lumi_ = lumi
         self.prelim_ = prelim
@@ -339,13 +341,21 @@ class data :
 
         setTDRStyle()
         
-        #leg = TLegend( 0.15, 0.91-(0.045*(len(self.data_)+(1 if not pulls else 0))), 0.35, 0.91 )
-        leg = TLegend( 0.15, 0.90-(0.055*len(self.data_)), 0.35, 0.90 )
-        leg.SetFillColor(0)
-        leg.SetLineColor(0) 
-        leg.SetShadowColor(0) 
-        leg.SetTextFont(42)
-        leg.SetTextSize(0.04)
+#        leg1 = TLegend( 0.15, 0.90-(0.055*len(self.data_), 0.35, 0.90 )
+        leg1 = TLegend( 0.15, 0.89-(0.055*4), 0.35, 0.89 )
+        leg1.SetFillColor(0)
+        leg1.SetLineColor(0) 
+        leg1.SetShadowColor(0) 
+        leg1.SetTextFont(42)
+        leg1.SetTextSize(0.04)
+
+#        leg2 = TLegend( 0.55, 0.88-(0.055*4), 0.75, 0.88 )
+        leg2 = TLegend( 0.15, 0.44-(0.055*5), 0.35, 0.44 )
+        leg2.SetFillColor(0)
+        leg2.SetLineColor(0) 
+        leg2.SetShadowColor(0) 
+        leg2.SetTextFont(42)
+        leg2.SetTextSize(0.04)
         
         mg = TMultiGraph()
 
@@ -354,7 +364,7 @@ class data :
             plot.SetLineColor(kGray)
             plot.SetFillColor(kGray)
             mg.Add(plot,"2")
-            leg.AddEntry(plot,"Systematic uncertainty","f")
+            leg1.AddEntry(plot,"Systematic uncertainty","f")
 
         fit0 = []
         fit1 = []
@@ -365,10 +375,15 @@ class data :
             plot.SetTitle("")
             plot.SetMarkerStyle(self.markers_[idx])
             plot.SetMarkerSize(self.size_[idx])
+#            plot.SetMarkerColor(self.colours_[idx])
+#            plot.SetLineColor(self.colours_[idx])
             plot.SetLineColor(1)
             plot.SetLineWidth(2)
             mg.Add(plot,"pZ")
-            leg.AddEntry(plot,self.titles_[key][0],"p")
+            if idx < 3 : #(len(self.data_.keys())+2)/2
+                leg1.AddEntry(plot,self.titles_[key][0],"p")
+            else :
+                leg2.AddEntry(plot,self.titles_[key][0],"p")
             if not pulls :
                 f0,f1 = self.fit(plot,self.titles_[key][1],width = 3 if key is "all" else 1)
                 fit0.append(f0)
@@ -418,14 +433,16 @@ class data :
         if not pulls :
             mg.GetYaxis().SetTitle("( N_{obs} - N_{pred} ) / N_{pred}")
             #mg.GetYaxis().SetRangeUser(-0.3,0.7)
-            mg.GetYaxis().SetRangeUser(-1.1,2.4)
+#            mg.GetYaxis().SetRangeUser(-1.1,2.1) # was 2.6
+            mg.GetYaxis().SetRangeUser(-1.3,1.3) # was 2.6
             #mg.GetYaxis().SetRangeUser(-2.,4.)
         else :
             mg.GetYaxis().SetTitle("Pull")
             mg.GetYaxis().SetRangeUser(-5.,12.)
         mg.GetXaxis().SetRangeUser(200.,self.bins_[self.nbins_])#self.bins_[0],
         mg.GetXaxis().SetNdivisions(510)
-        leg.Draw("same")
+        leg1.Draw("same")
+        leg2.Draw("same")
 
         str1 = "CMS Preliminary" if self.prelim_ else "CMS"
         txt1 = TLatex(0.12,0.935,str1)
@@ -456,7 +473,7 @@ class data :
 #            elif temp.count("_3") > 0 : str2 = "n_{jet} #geq 4"
 #            else : str2 = "n_{jet} ERROR!"
 
-        txt2 = TLatex(0.7,0.75,str2)
+        txt2 = TLatex(0.6,0.8,str2)
         txt2.SetNDC()
         txt2.SetTextFont(42)
         txt2.SetTextSize(0.045)
@@ -541,7 +558,7 @@ class data :
             xe = (self.bins_[next]-self.bins_[curr]) / 2.
             x = self.bins_[curr] + xe
             if idx < len(self.syst_) : error = self.syst_[idx]
-            syst.append( (idx,x,0.,xe,xe,error,error) )
+            syst.append( (idx,x,0.,xe-2.,xe-2.,error,error) )
         return syst
         
 ################################################################################
