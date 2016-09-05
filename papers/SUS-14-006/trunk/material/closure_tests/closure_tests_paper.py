@@ -130,7 +130,7 @@ class data :
         self.size_ = [ 1.7 if x != 20 else 1.3 for x in self.markers_ ]
         self.offset_ = [ 3.+5.5*(x-(len(self.files_)/2)) for x in range(len(self.files_)) ]
         print self.offset_
-        self.colours_ = [kRed,kBlue,kGreen,kYellow,kCyan,kMagenta,kOrange,kTeal]
+        self.colours_ = [kRed+1,kBlue+1,kGreen+1,kYellow+1,kCyan+1,kMagenta,kOrange+1,kOrange-6]
         self.energy_ = energy
         self.lumi_ = lumi
         self.prelim_ = prelim
@@ -375,9 +375,9 @@ class data :
             plot.SetTitle("")
             plot.SetMarkerStyle(self.markers_[idx])
             plot.SetMarkerSize(self.size_[idx])
-#            plot.SetMarkerColor(self.colours_[idx])
-#            plot.SetLineColor(self.colours_[idx])
-            plot.SetLineColor(1)
+            plot.SetMarkerColor(self.colours_[idx])
+            plot.SetLineColor(self.colours_[idx])
+#            plot.SetLineColor(1)
             plot.SetLineWidth(2)
             mg.Add(plot,"pZ")
             if idx < 3 : #(len(self.data_.keys())+2)/2
@@ -434,7 +434,7 @@ class data :
             mg.GetYaxis().SetTitle("( N_{obs} - N_{pred} ) / N_{pred}")
             #mg.GetYaxis().SetRangeUser(-0.3,0.7)
 #            mg.GetYaxis().SetRangeUser(-1.1,2.1) # was 2.6
-            mg.GetYaxis().SetRangeUser(-1.3,1.3) # was 2.6
+            mg.GetYaxis().SetRangeUser(-1.5,1.5) # was 2.6
             #mg.GetYaxis().SetRangeUser(-2.,4.)
         else :
             mg.GetYaxis().SetTitle("Pull")
