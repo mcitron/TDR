@@ -1,0 +1,7 @@
+cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/*.tex .
+cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/*.bib .
+cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/*.pdf .
+cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/build.sh .
+cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/copy.sh .
+cp -r ../../../../AlphaTDR2/papers/SUS-14-006/trunk/figures .
+#rsync -r -exclude=.svn-base ../../../../AlphaTDR2/papers/SUS-14-006/trunk/figures .
