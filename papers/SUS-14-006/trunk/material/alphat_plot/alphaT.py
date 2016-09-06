@@ -167,5 +167,5 @@ ratio.draw("same")
 
 c.Modified()
 c.Update()
-c.SaveAs("temp.pdf")
+c.SaveAs("AlphaT.pdf")
 #raw_input("")
