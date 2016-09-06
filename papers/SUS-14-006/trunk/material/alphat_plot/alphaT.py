@@ -58,9 +58,16 @@ upper.draw()
 str1 = "CMS"
 txt1 = r.TLatex(0.12,0.935,str1)
 txt1.SetNDC()
-txt1.SetTextFont(42)
+txt1.SetTextFont(62)
 txt1.SetTextSize(0.06)
 txt1.Draw("same")
+
+str2 = "Supplementary"
+txt2 = r.TLatex(0.22,0.935,str2)
+txt2.SetNDC()
+txt2.SetTextFont(52)
+txt2.SetTextSize(0.055)
+txt2.Draw("same")
 
 str3 = "%s fb^{-1} (%s TeV)" % ( 18.5, 8 )
 txt3 = r.TLatex(0.69,0.935,str3)
