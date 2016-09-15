@@ -315,8 +315,7 @@ highly correlated. This correlation is much weaker for
 R-parity-conserving SUSY events, where each of the two decay chains
 produces an undetected LSP.
 
-
-\section{Event reconstruction and selections}
+\section{Event reconstruction and selection}
 \label{sec:selections}
 
 The event reconstruction and selection criteria described below are
@@ -608,19 +607,48 @@ the effects of pileup, the simulated events are generated with a
 nominal distribution of pp interactions per bunch crossing and then
 reweighted to match the pileup distribution measured in data.
 
-The method to estimate the nonmultijet backgrounds in the signal
-region relies on the use of transfer factors that are constructed per
-bin (in terms of \njet, \nb, and \scalht) for each control sample in
-data. The transfer factors are determined using simulated events, and
-are given by the ratios of the expected yields in the corresponding
-bins of the signal region and control samples. The transfer factors
-are used to extrapolate from the event yield measured in a data
-control sample to the expectation for background from a particular SM
-process or processes in the signal region. The method aims to minimise
-the effects of simulation mismodelling, as many systematic biases are
-expected to largely cancel in the ratios used to define the transfer
-factors. Uncertainties in the transfer factors are determined from a
-data-derived approach, described below.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.48\textwidth]{AlphaT_CR.pdf} ~~
+  \includegraphics[width=0.48\textwidth]{AlphaT_SR.pdf}
+  \caption{The \alphat distribution observed in data for event samples
+    that are recorded with an inclusive set of trigger conditions and
+    satisfy (left) the selection criteria that define the \mj control
+    region or (right) the criteria that define the signal region, with
+    the additional requirement $\scalht > 375\GeV$. Event yields
+    observed in data (solid circles) and SM expectations determined
+    from simulation (solid histograms) are shown. Contributions from
+    single top quark, diboson, Drell-Yan, and \ttbar + gauge boson
+    production are collectively labelled ``Residual SM''. The final
+    bin contains the overflow events. The lower panels show the ratios
+    of the binned yields obtained from data and Monte Carlo (MC)
+    simulation as a function of $\alpha_\text{T}$. The statistical
+    uncertainties in the SM expectations are represented by the
+    hatched areas. \label{fig:alphat}}
+  }
+\end{figure}
+
+Figure~\ref{fig:alphat} shows the distributions of the \alphat
+variable obtained from samples of events that satisfy the selection
+criteria used to define the \mj control and signal regions, which
+highlight the background composition of the two samples as determined
+from simulation. While the figure also demonstrates an adequate
+modelling of the \alphat variable with simulated events, the method
+employed by the search to estimate the nonmultijet backgrounds is
+designed to mitigate the effects of simulation mismodelling. 
+
+The method relies on the use of transfer factors that are constructed
+per bin (in terms of \njet, \nb, and \scalht) for each control sample
+in data. The transfer factors are determined using simulated events,
+and are given by the ratios of the expected yields in the
+corresponding bins of the signal region and control samples. The
+transfer factors are used to extrapolate from the event yield measured
+in a data control sample to the expectation for background from a
+particular SM process or processes in the signal region. The method
+aims to minimise the effects of simulation mismodelling, as many
+systematic biases are expected to largely cancel in the ratios used to
+define the transfer factors. Uncertainties in the transfer factors are
+determined from a data-derived approach, described below.
 
 The \mj data sample provides an estimate of the total contribution
 from \ttbar and W boson production, as well as of the residual
