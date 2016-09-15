@@ -44,7 +44,7 @@ u.cd()
 ################################################################################
 # Add blank histo
 
-upper = Histo(name="",title="",min=1.,max=100000.)
+upper = Histo(name="",title="",min=5.,max=100000.)
 upper.h_.SetNdivisions(508,"XY")
 upper.h_.SetTickLength(0.03,"XY")
 upper.h_.SetTitleSize(0.06,"X")
@@ -68,7 +68,7 @@ txt2 = r.TLatex(0.22,0.935,str2)
 txt2.SetNDC()
 txt2.SetTextFont(52)
 txt2.SetTextSize(0.055)
-txt2.Draw("same")
+#txt2.Draw("same")
 
 str3 = "%s fb^{-1} (%s TeV)" % ( 18.5, 8 )
 txt3 = r.TLatex(0.69,0.935,str3)
@@ -101,7 +101,9 @@ data.draw("same")
 
 r.gPad.RedrawAxis()
 
-leg = r.TLegend(0.45,0.57,0.7,0.9,"","brNDC");
+ymax = 0.88
+ymin = ymax - 0.06 * 5
+leg = r.TLegend(0.5,ymin,0.7,ymax,"","brNDC");
 leg.SetTextFont(42)
 leg.SetTextSize(0.045)
 leg.SetBorderSize(0)

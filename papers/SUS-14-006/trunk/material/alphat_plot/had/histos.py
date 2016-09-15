@@ -281,20 +281,23 @@ qcd.h_.SetBinError(11,7.30815)
 ################################################################################
 # sums
 
-residual = Histo(name="residual",fill_colour=r.kRed)
+residual = Histo(name="residual",fill_colour=r.kOrange-1)
 residual.h_.Add(qcd.h_,1.) # previous
 residual.h_.Add(dy.h_,1.)
 residual.h_.Add(vv.h_,1.)
 residual.h_.Add(top.h_,1.)
 
-lostlepton = Histo(name="lestlepton",fill_colour=r.kBlue)
-lostlepton.h_.Add(residual.h_,1.) # previous
-lostlepton.h_.Add(wjets.h_,1.)
-lostlepton.h_.Add(ttbar.h_,1.)
+tot_ttbar = Histo(name="tot_ttbar",fill_colour=r.kRed)
+tot_ttbar.h_.Add(residual.h_,1.) # previous
+tot_ttbar.h_.Add(ttbar.h_,1.)
+
+tot_wjets = Histo(name="tot_wjets",fill_colour=r.kBlue)
+tot_wjets.h_.Add(tot_ttbar.h_,1.) # previous
+tot_wjets.h_.Add(wjets.h_,1.)
 
 total = Histo(name="total",fill_colour=r.kYellow)
-total.h_.Add(zinv.h_,1.) # previous
-total.h_.Add(lostlepton.h_,1.)
+total.h_.Add(tot_wjets.h_,1.) # previous
+total.h_.Add(zinv.h_,1.) 
 
 sm = Histo(name="sm")
 sm.h_.Add(total.h_,1.) # previous
@@ -316,10 +319,10 @@ nr = data.h_.Integral(1,25)/total.h_.Integral(1,25)
 
 data.rebin()
 
-for his in [total,lostlepton,residual,zinv,wjets,ttbar,top,vv,qcd,dy,mcstat,sm] :
+for his in [total,tot_wjets,tot_ttbar,residual,zinv,wjets,ttbar,top,vv,qcd,dy,mcstat,sm] :
     his.rebin()
 
-for his in [total,lostlepton,residual,zinv,wjets,ttbar,top,vv,qcd,dy,sm] :
+for his in [total,tot_wjets,tot_ttbar,residual,zinv,wjets,ttbar,top,vv,qcd,dy,sm] :
     his.h_.Scale(nr)
 
 ratio = Histo(name="ratio")

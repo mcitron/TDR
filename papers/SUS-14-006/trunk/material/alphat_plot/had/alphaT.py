@@ -44,7 +44,7 @@ u.cd()
 ################################################################################
 # Add blank histo
 
-upper = Histo(name="",title="",min=0.5,max=5000.)
+upper = Histo(name="",title="",min=1.,max=5000.)
 upper.h_.SetNdivisions(508,"XY")
 upper.h_.SetTickLength(0.03,"XY")
 upper.h_.SetTitleSize(0.06,"X")
@@ -67,7 +67,7 @@ txt2 = r.TLatex(0.22,0.935,str2)
 txt2.SetNDC()
 txt2.SetTextFont(52)
 txt2.SetTextSize(0.055)
-txt2.Draw("same")
+#txt2.Draw("same")
 
 str3 = "%s fb^{-1} (%s TeV)" % ( 18.5, 8 )
 txt3 = r.TLatex(0.69,0.935,str3)
@@ -85,7 +85,8 @@ sm.h_.SetLineWidth(3)
 sm.h_.SetFillStyle(3004)
 sm.draw("sameE1")
 
-lostlepton.draw("samehist")
+tot_wjets.draw("samehist")
+tot_ttbar.draw("samehist")
 residual.draw("samehist")
 qcd.draw("samehist")
 sm.draw("samehist")
@@ -94,7 +95,9 @@ data.draw("same")
 
 r.gPad.RedrawAxis()
 
-leg = r.TLegend(0.45,0.5,0.7,0.9,"","brNDC");
+ymax = 0.88
+ymin = ymax - 0.06 * 7
+leg = r.TLegend(0.5,ymin,0.7,ymax,"","brNDC");
 leg.SetTextFont(42)
 leg.SetTextSize(0.045)
 leg.SetBorderSize(0)
@@ -103,7 +106,8 @@ leg.SetFillColor(0)
 for sample,title,opts in [(data.h_,"Data","p"),
                           (sm.h_,"SM total","lf"),
                           (total.h_,"Z#rightarrow#nu#bar{#nu}+jets","f"),
-                          (lostlepton.h_,"W#rightarrowl#nu+jets, t#bar{t}+jets","f"),
+                          (tot_wjets.h_,"W#rightarrowl#nu+jets","f"),
+                          (tot_ttbar.h_,"t#bar{t}+jets","f"),
                           (residual.h_,"Residual SM","f"),
                           (qcd.h_,"QCD multijet","f"),
                           ] :
