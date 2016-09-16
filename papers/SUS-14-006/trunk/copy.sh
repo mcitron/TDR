@@ -6,4 +6,3 @@ cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/build.sh .
 cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/copy.sh .
 cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/aux.sh .
 cp ../../../../AlphaTDR2/papers/SUS-14-006/trunk/RootFilesAndTarFiles/*.* RootFilesAndTarFiles
-

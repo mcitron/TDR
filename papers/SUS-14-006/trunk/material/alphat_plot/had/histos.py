@@ -309,13 +309,14 @@ mcstat.h_.Add(total.h_,1.) # previous
 for bin in range( mcstat.h_.GetXaxis().GetNbins() ) :
     val = mcstat.h_.GetBinContent(bin+1)
     err = mcstat.h_.GetBinError(bin+1)
-    print bin,val,err,err/val if val > 0. else 0. 
+    #print bin,val,err,err/val if val > 0. else 0. 
     mcstat.h_.SetBinContent(bin+1,1.)
     mcstat.h_.SetBinError(bin+1, err/val if val > 0. else 0. )
     
 nd = data.h_.Integral(1,25)
 nt = total.h_.Integral(1,25)
 nr = data.h_.Integral(1,25)/total.h_.Integral(1,25)
+print "Data/MC scale factor:",nr
 
 data.rebin()
 
