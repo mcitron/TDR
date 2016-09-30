@@ -19,14 +19,14 @@ efficiency by applying a range of dedicated
 vetoes~\cite{1748-0221-5-03-T03014, cms-met}.
 
 In order to suppress SM processes with genuine \ptvecmiss from
-neutrinos, events containing an isolated electron or muon that satisfy
-$\Pt > 10\GeV$ and $\abs{\eta} < 2.5$ are vetoed. Events containing an
-isolated photon with $\Pt > 25\GeV$ and $\abs{\eta} < 2.5$ are also
-vetoed, in order to select only multijet final states. Furthermore,
-events containing a single isolated track satisfying $\Pt > 10\GeV$
-and $\abs{\eta} < 2.5$ are vetoed in order to reduce the background
-contribution from final states containing hadronically decaying tau
-leptons.
+neutrinos, events containing an isolated electron or muon that
+satisfies $\Pt > 10\GeV$ and $\abs{\eta} < 2.5$ are vetoed. Events
+containing an isolated photon with $\Pt > 25\GeV$ and $\abs{\eta} <
+2.5$ are also vetoed, in order to select only multijet final
+states. Furthermore, events containing a single isolated track
+satisfying $\Pt > 10\GeV$ and $\abs{\eta} < 2.5$ are vetoed in order
+to reduce the background contribution from final states containing
+hadronically decaying tau leptons.
 
 Each jet $\mathrm{j_i}$ considered by this search is required to satisfy
 $\Pt^{\mathrm{j_i}} > 40\GeV$ and $|\eta^{\mathrm{j_i}}| < 3$. The number
@@ -328,17 +328,19 @@ exponentially over five orders of magnitude to a single-event level at
 a value of $\bdphi \approx 0.5$, which is close to the distance
 parameter value of 0.4 used by the anti-$k_t$ jet clustering
 algorithm. Events with a genuine source of \ptvecmiss exhibit a long
-tail in \bdphi with values as large as $\pi$. The \bdphi variable
-provides comparable or improved performance in terms of discrimination
-according to a simple signal-to-background metric for a wide range of
-signal models with respect to more widely used variables such as:
+tail in \bdphi with values as large as $\pi$. 
 
-\begin{equation}
-  \Delta\phi_\text{min} = \min_{\,\forall\, \mathrm{j_k} \,\in\, [1,\njet]}
-  \Delta\phi(\ptvec^{\,\mathrm{j_k}}, -\sum_{\mathrm{j_i}\, =\, 1}^{\njet}
-  \ptvec^{\,\mathrm{j_i}}).
-  \label{eq:dphi}
-\end{equation}
+%The \bdphi variable provides comparable or improved performance in
+%terms of discrimination according to a simple signal-to-background
+%metric for a wide range of signal models with respect to more widely
+%used variables such as:
+
+%\begin{equation}
+%  \Delta\phi_\text{min} = \min_{\,\forall\, \mathrm{j_k} \,\in\, [1,\njet]}
+%  \Delta\phi(\ptvec^{\,\mathrm{j_k}}, -\sum_{\mathrm{j_i}\, =\, 1}^{\njet}
+%  \ptvec^{\,\mathrm{j_i}}).
+%  \label{eq:dphi}
+%\end{equation}
 
 %and $\min_{\,\forall\, \mathrm{j_k} \,\in\, \njet}
 %\Delta\phi(\ptvec^{\mathrm{j_k}}, \ptvecmiss)$.
@@ -369,18 +371,24 @@ signal models with respect to more widely used variables such as:
 %    by the hatched areas (visible only for statistically limited
 %    bins). The final bin of each distribution contains the overflow
 %    events.  
-    (Left) The \alphat distribution observed in data for events that
-    are recorded with an inclusive set of trigger conditions and
-    satisfy either the common preselection criteria and $\alphat <
-    0.55$, or the full signal region selection criteria and $\alphat >
-    0.55$, as well as the additional requirement $\scalht > 300\GeV$.
-    (Right) The \bdphi distribution observed in data for events that
-    are recorded with an inclusive set of trigger conditions and
-    satisfy the full signal region selection criteria for the region
-    $\scalht > 800\GeV$. The requirement $\njet \geq 2$ is imposed for
-    both distributions. The statistical uncertainties for the multijet
-    and SM expectations are represented by the hatched areas (visible
-    only for statistically limited bins). The final bin of each
+%    (Left) The \alphat distribution observed in data for events that
+%    are recorded with an inclusive set of trigger conditions and
+%    satisfy either the common preselection criteria and $\alphat <
+%    0.55$, or the full signal region selection criteria and $\alphat >
+%    0.55$, as well as the additional requirement $\scalht > 300\GeV$.
+%    (Right) The \bdphi distribution observed in data for events that
+%    are recorded with an inclusive set of trigger conditions and
+%    satisfy the full signal region selection criteria for the region
+%    $\scalht > 800\GeV$. The requirement $\njet \geq 2$ is imposed for
+%    both distributions. The statistical uncertainties for the multijet
+%    and SM expectations are represented by the hatched areas (visible
+%    only for statistically limited bins). The final bin of each
+%    distribution contains the overflow events.  }
+    The (left) \alphat and (right) \bdphi distributions observed in
+    data for events that satisfy the selection criteria defined in the
+    text. The statistical uncertainties for the multijet and SM
+    expectations are represented by the hatched areas (visible only
+    for statistically limited bins). The final bin of each
     distribution contains the overflow events.  }
   \label{fig:alphat-bdphi} 
 \end{figure*}
@@ -413,13 +421,14 @@ $\alphat < 0.55$ must fulfill only the common preselection criteria
 defined in Table~\ref{tab:selections}, and no \HTmiss requirement is
 made. Further, all events are required to satisfy $\scalht >
 300\GeV$. In the case of the \bdphi distribution, the only additional
-requirement is $\scalht > 800\GeV$. For both distributions, the events
-are recorded with a set of inclusive trigger conditions that are
-independent of the \alphat and \bdphi variables. The distributions for
-the QCD multijet background are determined from simulation while all
-other SM backgrounds (vector boson production in association with
-jets, \ttbar, and other residual contributions from rare SM processes)
-are estimated using a \mj data control sample, described in
+requirement is $\scalht > 800\GeV$. For both distributions, events
+must satisfy the requirement $\njet \geq 2$ and are recorded with a
+set of inclusive trigger conditions that are independent of the
+\alphat and \bdphi variables. The distributions for the QCD multijet
+background are determined from simulation while all other SM
+backgrounds (vector boson production in association with jets, \ttbar,
+and other residual contributions from rare SM processes) are estimated
+using a \mj data control sample, described in
 Section~\ref{sec:ewk_background}. The contribution from multijet
 events is observed to fall by more than five orders of magnitude for
 both variables.
@@ -471,14 +480,15 @@ Multiple trigger conditions are employed in combination to record
 signal candidate events. A set of trigger conditions utilise
 calculations of both \scalht and \alphat to record events with two or
 more jets. An event is recorded if it satisfies any of the following
-pairs of (\scalht,\alphat) thresholds, (200,0.57), (250,0.55),
-(300,0.53), (350,0.52), or (400,0.51), as well as a requirement on the
-mean value of the two highest \Pt jets, $\langle\Pt^{\mathrm{j_1}} +
-\Pt^{\mathrm{j_2}}\rangle > 90\GeV$. These requirements are collectively
-labelled as the ``\scalht--\alphat'' triggers. In addition, candidate
-signal events with one or more jets are also recorded if they satisfy
-the requirements $\HTmiss > 90\GeV$ and $\ETmiss > 90\GeV$. Finally,
-for events that satisfy $\scalht > 800\GeV$, an additional trigger
+pairs of (\scalht [GeV], \alphat) thresholds, (200, 0.57), (250,
+0.55), (300, 0.53), (350, 0.52), or (400, 0.51), as well as a
+requirement on the mean value of the two highest \Pt jets,
+$\langle\Pt^{\mathrm{j_1}} + \Pt^{\mathrm{j_2}}\rangle >
+90\GeV$. These requirements are collectively labelled as the
+``\scalht--\alphat'' triggers. In addition, candidate signal events
+with one or more jets are also recorded if they satisfy the
+requirements $\HTmiss > 90\GeV$ and $\ETmiss > 90\GeV$. Finally, for
+events that satisfy $\scalht > 800\GeV$, an additional trigger
 condition, defined by $\scalht > 800\GeV$, is employed in addition to
 the \scalht--\alphat trigger requirements to record events
 characterised by high activity in the calorimeters with high
@@ -626,4 +636,4 @@ statistical precision of the predictions from these samples. Both the
 \mj and \mmj samples are recorded using a trigger that requires an
 isolated muon. The selection criteria of the \mj and \mmj event
 samples are chosen so that the trigger is maximally efficient, with
-values in the region of $\sim 90\%$ and $\sim 99\%$, respectively.
+values of $\sim 90\%$ and $\sim 99\%$, respectively.
