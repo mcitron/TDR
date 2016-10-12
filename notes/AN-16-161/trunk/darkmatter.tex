@@ -84,7 +84,7 @@ The asymmetric and monojet categories are seen to almost double the acceptance
 to these models compared to the Run~1 symmetric categories alone, justifying the
 inclusion of these selections into the analysis.
 
-The list of simplified Dark Matter MC samples, along with the number of events 
+The list of simplified DM MC samples, along with the number of events 
 generated, are shown in Tab.~\ref{tab:dmj_av}-\ref{tab:dmtt_s}, respectively.
 
 %\begin{table}[]
@@ -331,12 +331,43 @@ Similar sensitivity study is shown for the heavy flavour models producing dark m
 
 
 \clearpage
+\subsection{Systematic uncertainties, signal yields and efficiency}
+The following sources of systematic uncertainty are propagated to the signal 
+acceptance and shape, according to the recommendations agreed on within the
+collaboration.
+\begin{itemize}
+    \item Luminosity: $6.2\%$, taken as correlated across all bins.
+    \item Trigger: systematic measured using the difference between the electron
+        and muon reference triggers (see Sec.~\ref{sec:triggers})
+    \item MC statistics: uncorrelated bin-by-bin uncertainty, affecting the 
+        shape of the signal. 
+    \item Pileup reweighting: uncertainty on the minimum bias cross section 
+        (see Sec.~\ref{sec:pileup-reweighting}).
+    \item b-tag efficiency: uncertainties on the b-tag scale factors are 
+        propagated and taken as correlated across the bins. These are 
+        uncorrelated for mis-tag and efficiency systematics.
+    \item Lepton efficiency: uncertainty on the lepton scale factors is 
+        propagated and taken as correlated across the bins. 
+    \item Jet energy scale: uncertainty on the jet energy corrections is 
+        propagated and taken as correlated across the bins.
+    \item Parton distribution function (PDF): uncertainty on the PDF is
+        propagated and taken correlated across the bins.
+    \item Factorisation/renormalisation: uncertainty on the 
+        factorisation/renormalisation scale is propagated and taken correlated
+        across the bins.
+\end{itemize}
+
+The signal yields and efficiencies, after the full analysis selection is applied
+to the simplified DM MC samples, are listed in Tab.\ref{tab:DMV_yld}-\ref{tab:DMttPS_yld}.
+
+\clearpage
+
 \begin{table}
     \centering
     {\small
     \begin{tabular}{rrlrrrrr}
     \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
+    \mphi & \mchi & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
     \hline
 %%% 12.9 /fb
     $1000$ & $350$ & $2.81\text{e}+01$ & $1279.68$ & $1443.52$ & $2700.70$  & $5423.90$  & $1.50$ \\
