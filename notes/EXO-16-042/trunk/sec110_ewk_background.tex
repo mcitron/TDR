@@ -31,6 +31,33 @@ pileup, the simulated events are generated with a nominal distribution
 of pp interactions per bunch crossing and then reweighted to match the
 pileup distribution as measured in data.
 
+The simulated samples of \gj, \wlj, \zllj, and \ttbar production are
+normalised to data using scale factors derived in data sidebands,
+enriched in the relevant process. The definition of the sidebands, the
+selection applied and the scale factors are listed in
+Table~\ref{tab:sideband-corrs}. These factors are derived after all
+other corrections are applied to the simulated samples.
+
+\begin{table}[!h]
+  \footnotesize
+  \centering
+  \topcaption{Cross section corrections for SM processes determined from
+    data sidebands.}
+  \label{tab:sideband-corrs}
+  \begin{tabular}
+    {lllc}
+    \hline
+    SM process & Control sample & Data sideband           & Corrrection\T\B   \\
+    \hline                   
+    \gj        & \gj            & $0.50 < \alphat < 0.52$ & $1.33 \pm 0.03$\T \\
+    \wlj       & \mj            & $100 < \mht < 130\GeV$  & $1.13 \pm 0.01$   \\
+    \zllj      & \mmj           & $100 < \mht < 130\GeV$  & $0.99 \pm 0.02$   \\
+    \ttbar     & \mj, \mmj      & $100 < \mht < 130\GeV$  & $0.86 \pm 0.01$\B \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
 The method to estimate the non-multijet backgrounds in the signal
 region relies on the use of transfer factors, which are constructed
 per bin (in terms of \njet, \nb, and \scalht) per data control
@@ -87,75 +114,6 @@ contribution as well as the other dominant SM processes, \ttbar and W
 boson production. Residual contributions from processes such as
 single-top-quark, diboson, and Drell-Yan production are also included.
 
-%\begin{table}[thp!]
-%  \caption{%CMS {\it Preliminary}, $\mathcal{L}_{\mathrm{int}} =
-%    % 2.2\fbinv$, $\sqrt{s} = 13\TeV$. 
-%    % \newline
-%    Systematic uncertainties (percent) in the estimates of the
-%    normalisation of the SM background components as a function of
-%    \njet, as determined from ensembles of closure tests based on
-%    multiple data control samples. The quoted ranges correspond to the 
-%    variations determined across the \nb and \scalht bins of a given \njet
-%    category. The additional contributions listed at the foot of the
-%    table are added in quadrature to the \njet-dependent contributions
-%    for each SM background component. } 
-%  \label{tab:bkgd_systs}
-%  \centering
-%  \footnotesize
-%  \begin{tabular}{ lcc }
-%    \hline
-%    \hline
-%    \njet                         & \multicolumn{2}{c}{Uncertainty (\%) in background component} \\
-%    \cline{2-3}
-%                                  & \ttbar, W+jets, residual SM & \znunu\ + jets                 \\
-%    \hline
-%    \multicolumn{2}{l}{``Monojet'':}                                                             \\
-%    1                             & 9--36                       & 9--36                          \\
-%    \hline
-%    \multicolumn{2}{l}{``Asymmetric'':}                                                          \\
-%    2                             & 11--105                     & 9--46                          \\
-%    3                             & 12--86                      & 12--78                         \\
-%    4                             & 16--52                      & 13--43                         \\
-%    $\geq$5                       & 19--47                      & 27--73                         \\
-%    \hline
-%    \multicolumn{2}{l}{``Symmetric'':}                                                           \\
-%    2                             & 7--34                       & 11--30                         \\
-%    3                             & 9--31                       & 13--44                         \\
-%    4                             & 13--36                      & 8--34                          \\
-%    $\geq$5                       & 15--22                      & 17--28                         \\
-%    \hline
-%    \multicolumn{2}{l}{Additional contributions:}                                                \\
-%    \alphat ($\scalht < 800\gev$) & 10-27                       & 10-27                          \\
-%    \dphi ($\scalht > 800\gev$)   & 22                          & 22                             \\
-%    b-quark identification        & $<$5                        & $<$5                           \\
-%    \hline
-%    \hline
-%  \end{tabular}
-%\end{table}
-
-%The uncertainty in the transfer factors derived from simulation is
-%probed through closure tests based on data control
-%samples~\cite{RA1Paper2012}. Each closure test inspects the
-%compatibility of yields in two disjoint data control samples and a
-%corresponding transfer factor derived from simulation. A large
-%ensemble of tests are performed to probe the simulation modelling of a
-%range of key physics effects that may lead to potential biases in the
-%transfer factors~\cite{RA1Paper2012}. For the analysed data sample,
-%the closure tests reveal no significant biases or dependencies on
-%\njet or \scalht for all individual tests. Systematic uncertainties in
-%the transfer factors are typically determined from ensembles of
-%closure tests, which can be considered as ``normalisation''
-%uncertainties for a given component of background events categorised
-%according to \njet, \nb, and \scalht.  Table~\ref{tab:bkgd_systs}
-%summarises typical values for the systematic uncertainties in
-%experimental acceptance effects for the dominant SM background
-%components. These uncertainties are assumed to be fully uncorrelated
-%for events catogorised differently in \njet, \nb, and \scalht. The
-%uncertainties associated with extrapolations in the \alphat and \dphi
-%variables, and the simulation modelling of the efficiency and mistag
-%rates for identifying jets originating from b quarks or light-flavour
-%partons are also listed, which are assumed to be fully correlated
-%across the \nb dimension only.
 
 \newcommand{\phh}{\ensuremath{\phantom{1-}}}
 \begin{table*}[h!]
@@ -207,32 +165,23 @@ tests'' in data that probe various aspects of the accuracy of the
 simulation to model correctly the transfer factors in the phase space
 of this search.
 
-%The uncertainties in the transfer factors are studied for variations
-%in scale factors related to: the jet energy scale (that result in
-%uncertainties in the transfer factors as large as $\sim$15\%), the
-%efficiency and misidentification probability of b quark jets (up to
-%5\%), and the efficiency to identify well-reconstructed, isolated
-%leptons (up to $\sim$5\%). A 5\% uncertainty in the minimum bias cross
-%section, $\sigma_\text{MB} = 69.0 \pm 3.5\unit{mb}$, is assumed and
-%propagated through to the reweighting procedure to account for
-%differences between the simulated and data-derived measurements of the
-%pileup distributions, which results in changes of up to
-%$\sim$10\%. The modelling of the transverse momentum of top quarks
-%($\Pt^\text{t}$) is evaluated by comparing the simulated and measured
-%\Pt spectra of reconstructed top objects in \ttbar events. 
-%% , using the technique described in Ref.~\cite{}. 
-%Simulated events are reweighted according to scale factors that
-%decrease from a value of $\sim$1.2 to $\sim$0.7, with uncertainties of
-%$\sim$0.1, within the range $0 < \Pt^\text{t} < 400\GeV$. The
-%resulting change in the transfer factors is as large as
-%$\sim$20\%. These uncertainties, resulting from variations in scale
-%factors, are summarised in Table~\ref{tab:bkgd_systs}, along with
-%representative magnitudes.  Each source of uncertainty is assumed to
-%vary with a fully correlated behaviour across the full phase space of
-%the signal and control regions.
+The uncertainties in the transfer factors are studied from variations
+in data/MC scale factors related to: the jet energy scale, the efficiency and
+misidentification probability of b quark jets, the efficiency to
+identify or veto well-reconstructed, isolated leptons, and the
+modelling of the transverse momentum of top quarks. %~\cite{}. 
+A 5\% uncertainty in the minimum bias cross section is assumed and
+propagated through to the reweighting procedure to account for
+differences between the simulated and data-derived measurements of the
+pileup distributions.  Uncertainties in the trigger efficiency
+measurements are also propagated to the transfer factors.  The
+aforementioned systematic uncertainties, resulting from variations in
+scale factors, are summarised in Table~\ref{tab:bkgd_systs}, along
+with representative magnitudes.  Each source of uncertainty is assumed
+to vary with a fully correlated behaviour across the full phase space
+of the signal and control regions.
 
-%The second category of sources 
-Sources of uncertainty are determined from sets of ``closure tests''
+Other sources of uncertainty are determined from sets of ``closure tests''
 based on data control samples~\cite{RA1Paper2012}. Each set uses the
 observed event counts in up to eight bins in \scalht for each of the
 nine \njet event categories in one of the three independent data

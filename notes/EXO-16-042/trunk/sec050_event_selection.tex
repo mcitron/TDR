@@ -56,91 +56,54 @@ inefficiencies. These events, with large, non-physical values of
 dedicated vetoes~\cite{RA1Paper2012, cms-met}.
 
 \begin{table*}[tb]
-  \topcaption{Summary of the event selection criteria and
-    categorisation used to define the signal and control
-    regions.}
+  \topcaption{Summary of the event selection requirements and
+    categorisations used to define the signal region and control
+    samples.}
   \label{tab:selections}
   \centering
-  \scriptsize
+  \footnotesize
   \begin{tabular}{ ll }
     \hline
-    \multicolumn{2}{l}{\bf Common baseline preselection}                                                                                                \\
-    \ETmiss cleaning             & Filters related to beam and instrumental effects                                                                  \\ 
-    Lepton/photon vetoes         & $\Pt > 10,\, 10,\, 25\GeV$ for isolated tracks, leptons, photons (respectively) and $\abs{\eta} < 2.5$            \\ 
-    Jet $j_\text{i}$ acceptance  & Consider each jet $j_\text{i}$ that satisfies $\Pt^{j_\text{i}} > 40\GeV$ and $\abs{\eta^{j_\text{1}}} < 3$       \\
-    Jet $j_\text{1}$ acceptance  & $\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$                                                  \\
-    Jet $j_\text{2}$ acceptance  & 
-    $\Pt^{j_\text{2}} < 40\GeV$ (monojet), 
-    $40 < \Pt^{j_\text{2}} < 100\GeV$ (asymmetric), 
-    $\Pt^{j_\text{2}} > 100\GeV$ (symmetric)                                                                                                         \\
-    Forward jet veto             & Veto events containing jet satisfying $\Pt > 40\GeV$ and $\abs{\eta} > 3$                                         \\
-    Jets below threshold         & $\HTmiss / \ETmiss < 1.25$                                                                                        \\
-    Energy sums                  & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                       \\
+    \multicolumn{2}{l}{\bf Baseline selection}\T\B                                                                                             \\
+    \ETmiss cleaning             & Filters related to beam and instrumental effects                                                            \\ 
+    Lepton/photon vetoes         & $\Pt > 10,\, 10,\, 25\GeV$ for isolated tracks, leptons, photons (respectively) and $\abs{\eta} < 2.5$      \\ 
+    Jet $j_\text{i}$ acceptance  & Consider each jet $j_\text{i}$ that satisfies $\Pt^{j_\text{i}} > 40\GeV$ and $\abs{\eta^{j_\text{1}}} < 3$ \\
+    Jet $j_\text{1}$ acceptance  & $\Pt^{j_\text{1}} > 100\GeV$ and $\abs{\eta^{j_\text{1}}} < 2.5$                                            \\
+    Jet $j_\text{2}$ acceptance  & $\Pt^{j_\text{2}} < 40\GeV$ (monojet),                                                                      \\
+                                 & $40 < \Pt^{j_\text{2}} < 100\GeV$ (asymmetric),                                                             \\
+                                 & $\Pt^{j_\text{2}} > 100\GeV$ (symmetric)                                                                    \\
+    Forward jet veto             & Veto events containing jet satisfying $\Pt > 40\GeV$ and $\abs{\eta} > 3$                                   \\
+    Jets below threshold         & $\HTmiss / \ETmiss < 1.25$                                                                                  \\
+    Energy sums                  & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$ \B                                                              \\
     \hline
-    \multicolumn{2}{l}{\bf Event categorisation}                                                                                                     \\
-    \njet                        & 1 (monojet), 2, 3, 4, $\geq$5 (asymmetric), 2, 3, 4, $\geq$5 (symmetric)                                          \\
-    \nb                          & 0, 1, 2, $\geq$3 ($\nb \leq \njet$)                                                                               \\
-    \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>$800\GeV (bins can be dropped/merged \vs \njet) \\
+    \multicolumn{2}{l}{\bf Event categorisation}\T\B                                                                                           \\
+    \njet                        & 1 (monojet); 2, 3, 4, $\geq$5 (asymmetric); 2, 3, 4, $\geq$5 (symmetric)                                    \\
+    \nb                          & 0, 1, 2, $\geq$3 ($\nb \leq \njet$)                                                                         \\
+    \scalht (GeV)                & 200, 250, 300, 350, 400, 500, 600, $>$800\GeV (some bins are dropped/merged \vs \njet) \B                   \\
     \hline
-    {\bf Signal region (SR)}     & Preselection +                                                                                                    \\
-    QCD multijet rejection \quad & $\alphat > 0.65$, 0.60, 0.55, 0.53, 0.52, 0.52, 0.52 (mapped to \scalht bins in range $200 < \scalht < 800\GeV$)  \\
-    QCD multijet rejection       & $\bdphi > 0.5$ (for the region $\scalht > 200\GeV$)                                                               \\[0.5ex]
+    {\bf Signal region (SR)}     & Baseline selection + \T\B                                                                                   \\
+    QCD multijet rejection \quad & $\alphat > 0.65$, 0.60, 0.55, 0.53, 0.52, 0.52, 0.52 (mapped to \scalht bins in range 200--800\GeV)         \\
+    QCD multijet rejection       & $\bdphi > 0.5$\B                                                                                            \\[0.5ex]
     \hline
-    {\bf Control regions (CR)}   & Preselection +                                                                                                    \\
-    Multijet-enriched            & SR + $\HTmiss/\ETmiss > 1.25$ (inverted)                                                                          \\  
+    {\bf Control samples (CS)}   & Baseline selection + \T\B                                                                                   \\
+    Multijet-enriched            & SR + $\HTmiss/\ETmiss > 1.25$ (inverted)                                                                    \\  
     \gj                          & 
     1$\gamma$ with $\Pt > 200\GeV$, $\abs{\eta} < 1.45$, 
     $\Delta R(\gamma,j_{\text{i}}) > 1.0$, 
-    $\scalht > 400\GeV$, same \alphat req. as SR                                                                                                     \\[0.5ex]
+    $\scalht > 400\GeV$, same \alphat req. as SR                                                                                               \\[0.5ex]
     \mj                          & 
     1$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
-    $I^{\mu}_\text{rel} < 0.1$, 
+%    $I^{\mu}_\text{rel} < 0.1$, 
     $\Delta R(\mu,j_{\text{i}}) > 0.5$,
-    $30 < m_\text{T}(\ptvec^\mu,\ptvecmiss) < 125\GeV$                                                                                               \\[0.5ex]
-    \mmj                       & 
+    $30 < m_\text{T}(\ptvec^\mu,\ptvecmiss) < 125\GeV$                                                                                         \\[0.5ex]
+    \mmj                         & 
     2$\mu$ with $\Pt > 30\GeV$, $\abs{\eta} < 2.1$, 
-    $I^{\mu}_\text{rel} < 0.1$, 
+%    $I^{\mu}_\text{rel} < 0.1$, 
     $\Delta R(\mu_{1,2},j_{\text{i}}) > 0.5$, 
-    $ \abs{m_{\mu\mu} - m_\text{Z}} < 25\GeV$                                                                                                        \\[0.5ex]
+    $ \abs{m_{\mu\mu} - m_\text{Z}} < 25\GeV$ \B                                                                                               \\[0.5ex]
     \hline
   \end{tabular}
 \end{table*}
-
-%\begin{table}[h!]
-%  \topcaption{Summary of the selection criteria and
-%    categorisation used in the definitions of the signal and control
-%    regions.} 
-%  \label{tab:selections}
-%  \centering
-%  \footnotesize
-%  \begin{tabular}{ ll }
-%    \hline
-%    \hline
-%%    Selection            & Details                                                                                            \\
-%%    \hline
-%    \multicolumn{2}{l}{\bf Baseline selection:}                                                                                \\
-%    Jets selection        & Select jets satisfying $\PT > 40\gev$ and $|\eta| < 3$                                             \\
-%    Forward jet veto      & Veto events containing jet satisfying $\PT > 40\gev$ and $|\eta| > 3$                              \\
-%    %Lepton/photon vetoes & $\PT > 10\gev$ and $|\eta| < 2.5$ for leptons, $\PT > 25\gev$ and $|\eta| < 2.5$ for photons       \\ 
-%    Lepton/photon vetoes  & $\PT > 10,\, 10,\, 25\gev$ for leptons, isolated tracks, photons (respectively) and $|\eta| < 2.5$ \\ 
-%    Lead jet acceptance   & $\PT > 100\gev$ and $|\eta| < 2.5$                                                                 \\
-%    Second jet acceptance & $\PT > 100\gev$ (symmetric), $40 < \PT < 100\gev$ (asymmetric), $\PT < 40\gev$ (monojet)           \\
-%    Energy sums           & $\scalht > 200\gev$ and $\mht > 130\gev$                                                           \\
-%    \ETmiss cleaning      & Various filters related to beam and instrumental effects                                           \\ 
-%    \hline
-%    \multicolumn{2}{l}{\bf (\njet,nb) categorisation and \scalht binning:}                                                     \\
-%    \njet binning         & 1 (monojet), 2, 3, 4, $\geq$5 (both symmetric and asymmetric)                                      \\
-%    \nb binning           & 0, 1, 2, $\geq3$ ($\nb \leq \njet$)                                                                \\
-%    \scalht (GeV) binning & 200, 250, 300, 350, 400, 500, 600, $>$800\gev (bins can be merged depending on \njet, \nb)         \\
-%    \hline
-%    \multicolumn{2}{l}{\bf Signal region:}                                                                                     \\
-%    QCD suppression       & $\alphat > 0.65$ to $\alphat > 0.52$ (\scalht-dependent, for the region $\scalht < 800\gev$)       \\
-%    QCD suppression       & $\dphi > 0.5$                                                                                      \\
-%    QCD suppression       & $\mht/\ETmiss < 1.25$                                                                              \\
-%    \hline
-%    \hline
-%  \end{tabular}
-%\end{table}
 
 For events satisfying the baseline selection criteria described above,
 summarised in Table~\ref{tab:selections}, the multijet background
