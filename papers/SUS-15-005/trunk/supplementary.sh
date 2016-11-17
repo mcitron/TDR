@@ -1,3 +1,0 @@
-eval `../../tdr runtime -sh` 
-tdr --style paper b SUS-15-005_aux
-# cp ../../tmp/SUS-15-005_aux_temp.pdf ~/www/ # Rob this is nasty...
