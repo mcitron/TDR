@@ -9,9 +9,9 @@
 \cmsNoteHeader{SUS-16-038}
 
 %%__________________________________________________________________||
-\title{An inclusive search for new phenomena in final states with one
-  or more jets and missing transverse momentum at $\sqrt{s} = 13\TeV$
-  with the \alphat variable}
+\title{Search for new physics in pp collisions at $\sqrt{s} = 13\TeV$
+in final states with missing transverse momentum and at least one jet
+using the \alphat variable}
 
 %%__________________________________________________________________||
 \address[cern]{CERN}
@@ -21,23 +21,24 @@
 \date{\today}
 
 %%__________________________________________________________________||
-\abstract{A search for new-physics phenomena is performed in final
-states containing one or more jets and an imbalance in transverse
-momentum in pp collisions at a centre-of-mass energy of 13\TeV. The
-analysed data sample, recorded with the CMS detector in 2016 at the
-CERN Large Hadron Collider, corresponds to an integrated luminosity of
-12.9\fbinv.  Several kinematic variables are employed to strongly
-suppress the dominant background, multijet production from quantum
-chromodynamics, as well as discriminate effectively between other
-standard model and new-physics processes. The search provides
-sensitivity to a broad range of new-physics models that yield a stable
-weakly interacting massive particle. The observed candidate events are
-found to agree with the expected contributions from standard model
-processes. The result is interpreted in the mass parameter space of
-simplified supersymmetric models that assume the gluino-mediated and
-direct production of pairs of third-generation squarks. The gluino
-mass, and bottom and top squark masses, are excluded up to 1775, 1025,
-and 875\GeV, respectively.}
+\abstract{A search for new physics is performed in final states
+containing one or more jets and an imbalance in transverse momentum in
+pp collisions at a centre-of-mass energy of 13\TeV. The analysed data
+sample, recorded with the CMS detector at the CERN LHC, corresponds to
+an integrated luminosity of 2.3\fbinv.  Several kinematic variables
+are employed to suppress the dominant background, multijet production,
+as well as to discriminate between other standard model and new
+physics processes. The search provides sensitivity to a broad range of
+new-physics models that yield a stable weakly interacting massive
+particle. The number of observed candidate events is found to agree
+with the expected contributions from standard model processes, and the
+result is interpreted in the mass parameter space of fourteen
+simplified supersymmetric models that assume the pair production of
+gluinos or squarks and a range of decay modes. For models that assume
+gluino pair production, masses up to 1575 and 975\GeV are excluded for
+gluinos and neutralinos, respectively. For models involving the pair
+production of top squarks and compressed mass spectra, top squark
+masses up to 400\GeV are excluded.}
 
 % 1. **DO NOT use \include or \input** to include the abstract: our
 %    abstract extractor will not search through other files than this
@@ -50,7 +51,6 @@ and 875\GeV, respectively.}
 %    only look within $$. The abstracts for papers are hand formatted
 %    so macros are okay.
 
-
 %%__________________________________________________________________||
 \input{mydefs}
 %\input{symbols}
@@ -61,38 +61,9 @@ and 875\GeV, respectively.}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
 
-\newcommand{\eslash}{{\hbox{$E$\kern-0.6em\lower-.05ex\hbox{/}\kern0.10em}}}
-\newcommand{\met}{\mbox{$\eslash_\text{T}$}\xspace}
-\newcommand{\cls}{\mbox{CL$_s$}\xspace}
-\newcommand{\wtaunu}{\ensuremath{\PW \rightarrow \Pgt\cPgn}}
-\newcommand{\Et}{\ensuremath{{E_{\text T}}}\xspace}
-\newcommand{\Hslash}{{\hbox{$H$\kern-0.8em\lower-.05ex\hbox{/}\kern0.10em}}}
-\newcommand{\scalht}{\ensuremath{H_{\mathrm{T}}}\xspace}
-%\newcommand{\mht}{\mbox{$\Hslash_\text{T}$}\xspace}
-\newcommand{\mht}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
-%\def\mhtmet{\mbox{$\Hslash_\text{T} / \eslash_\text{T}$}\xspace}
-\newcommand{\mhtmet}{\ensuremath{H_{\mathrm{T}}^{\text{miss}} / E_{\mathrm{T}}^{\text{miss}}}\xspace}
-\newcommand{\znunu}{\ensuremath{\cPZ \rightarrow \cPgn\cPagn}\xspace}
-\newcommand{\zmumu}{\ensuremath{\cPZ \rightarrow \mu\mu}\xspace}
-\newcommand\T{\rule{0pt}{2.6ex}}
-\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
-\newcommand{\Pt}{\ensuremath{{p_{\text T}}}\xspace}
-\newcommand{\dphi}{\ensuremath{\Delta\phi^{*}_{\rm min}}\xspace}
-\newcommand{\dm}{\ensuremath{\Delta m}\xspace}
-\newcommand{\HTmiss}{\mht}
-\newcommand{\bdphi}{\dphi}
-
-\newcommand{\ra}{\ensuremath{\rightarrow}}
-\newcommand{\zmumuj}{Z(\ensuremath{\ra\! \mu\mu}) + jets\xspace}
-\newcommand{\wlnu}{W\ensuremath{\, \rightarrow\, \ell\nu}\xspace}
-\newcommand{\wlj}{W(\ensuremath{\rightarrow\ell\nu}) + jets\xspace}
-\newcommand{\wmj}{W(\ensuremath{\rightarrow\mu\nu}) + jets\xspace}
-\newcommand{\zmmj}{Z(\ensuremath{\rightarrow\mu\mu}) + jets\xspace}
-\newcommand{\zllj}{Z(\ensuremath{\rightarrow\ell\ell}) + jets\xspace}
-\newcommand{\znunuj}{Z(\ensuremath{\rightarrow\nu\bar{\nu}}) + jets\xspace}
-
 %%__________________________________________________________________||
 \hypersetup{ 
+
 pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
 Buchmueller, Stefano Casasso, Matthew Citron, Adam Elwood, Henning
 Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah Alam
@@ -101,44 +72,18 @@ pdftitle={An inclusive search for new phenomena in final states with
   one or more jets and missing transverse momentum at 13 TeV with the
   AlphaT variable},
 pdfsubject={CMS},
-pdfkeywords={CMS, jets, missing transverse momentum, supersymmetry,
-dark matter, AlphaT}
-}
-
+pdfkeywords={CMS, jets, monojet, missing transverse momentum,
+supersymmetry, dark matter, AlphaT} }
 
 %%__________________________________________________________________||
 \maketitle
 
 %%__________________________________________________________________||
-% \tableofcontents
 
-%\clearpage
-%\input{signal_systs_table}
-%\clearpage
-%\input{bkgd_systs_table}
-%\clearpage
-%\input{event_selection_table}
-%\clearpage
-%\input{predewkdata_sig_comb_sym_twiki}
-%\clearpage
-%\input{predewkdata_sig_comb_asym_twiki}
-%\clearpage
-%\input{predewkdata_sig_comb_mono_twiki}
-%\clearpage
 
-%% \input{sec010_introduction}
-%% %% \input{sec020_detector}
-%% \input{sec060_event_simulation}
-%% \input{sec050_event_selection}
-%% \input{sec080_qcd_background}
-%% \input{sec110_ewk_background}
-%% \input{sec130_results}
-%% \input{sec140_interpretation}
-%% \input{sec200_summary}
-\clearpage
 
 %%__________________________________________________________________||
-% \nocite{*}
+\clearpage
 \bibliography{auto_generated}
 
 %%__________________________________________________________________||

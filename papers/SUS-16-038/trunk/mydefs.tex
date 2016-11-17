@@ -1,42 +1,54 @@
-\newcommand{\kfactor}{\ensuremath{k\text{-factor}}\xspace}
-\newcommand{\kfactors}{\ensuremath{k\text{-factors}}\xspace}
-\newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
-\newcommand{\njetlow}{\ensuremath{2 \leq \njet \leq 3}\xspace}
-\newcommand{\njethigh}{\ensuremath{\njet \geq 4}\xspace}
-\newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
-\newcommand{\alphat}{\ensuremath{\alpha_{\text{T}}}\xspace}
-\newcommand{\alphatcut}{\ensuremath{\alpha_{\text{T}}^{\text{cut}}}\xspace}
-\newcommand{\htalphat}{\texttt{HT\_AlphaT}\xspace}
-\newcommand{\photon}{\texttt{Photon}\xspace}
-\newcommand{\muht}{\texttt{Mu\_HT}\xspace}
-\newcommand{\httrigger}{\texttt{HT}\xspace}
-\newcommand{\mt}{\ensuremath{M_{\textrm T}}\xspace}
-\newcommand{\gj}{\ensuremath{\gamma} + jets\xspace}
+% Formatting and spacing 
+
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+% Symbols 
+
+\newcommand{\ra}{\ensuremath{\rightarrow}}
+\newcommand{\cls}{\mbox{CL$_s$}\xspace}
+
+% Variables 
+
+\newcommand{\njet}{\ensuremath{n_{\mathrm{jet}}}\xspace}
+\newcommand{\nb}{\ensuremath{n_{\mathrm{b}}}\xspace}
+\newcommand{\HTmiss}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}\xspace}
+
+\newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
+\newcommand{\dphi}{\ensuremath{\Delta\phi_{\mathrm{min}}}\xspace}
+\newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_{\mathrm{min}}}\xspace}
+\newcommand{\mhtmet}{\ensuremath{\HTmiss / \ETmiss}\xspace}
+
+\newcommand{\dm}{\ensuremath{\Delta m}\xspace}
+
+% Selections
+
+\newcommand{\mj}{\ensuremath{\mu \! + \! \rm{jets}}\xspace}
+\newcommand{\mmj}{\ensuremath{\mu\mu \! + \! \rm{jets}}\xspace}
+\newcommand{\gj}{\ensuremath{\gamma \! + \! \rm{jets}}\xspace}
+
+\newcommand{\lj}{\ensuremath{\ell \! + \! \rm{jets}}\xspace}
+\newcommand{\llj}{\ensuremath{\ell\ell \! + \! \rm{jets}}\xspace}
+
+\newcommand{\ej}{\ensuremath{\rm{e} \! + \! \rm{jets}}\xspace}
+\newcommand{\eej}{\ensuremath{\rm{ee} \! + \! \rm{jets}}\xspace}
+
+% Processes 
+
+\newcommand{\cPW}{\ensuremath{\cmsSymbolFace{W}}}
+\newcommand{\wlnu}{\ensuremath{\cPW\, \ra\, \ell\nu}\xspace}
 \newcommand{\wj}{W + jets\xspace}
+\newcommand{\wlj}{W(\ensuremath{\rightarrow\ell\nu}) + jets\xspace}
+\newcommand{\wmj}{W(\ensuremath{\rightarrow\mu\nu}) + jets\xspace}
+\newcommand{\wtaunu}{\ensuremath{\PW \rightarrow \Pgt\cPgn}}
+
 \newcommand{\zj}{Z + jets\xspace}
-\newcommand{\ttj}{\ensuremath{\rm{t}\bar{\rm{t}} + jets}\xspace}
-\newcommand{\mj}{\ensuremath{\mu} + jets\xspace}
-\newcommand{\mmj}{\ensuremath{\mu\mu} + jets\xspace}
-\newcommand{\lj}{\ensuremath{\ell} + jets\xspace}
-\newcommand{\llj}{\ensuremath{\ell\ell} + jets\xspace}
-\newcommand{\ej}{\ensuremath{e} + jets\xspace}
-\newcommand{\eej}{\ensuremath{ee} + jets\xspace}
-\newcommand{\npre}{\ensuremath{N_{\textrm{pred}}}\xspace}
-\newcommand{\nobs}{\ensuremath{N_{\textrm{obs}}}\xspace}
-\newcommand{\njets}{\ensuremath{N_{\textrm{jet}}}\xspace}
-\newcommand{\sq}{\ensuremath{\tilde{\rm q}}\xspace}
-\newcommand{\st}{\ensuremath{\tilde{\rm t}}\xspace}
-\newcommand{\gl}{\ensuremath{\tilde{\rm g}}\xspace}
-\newcommand{\dht}{\ensuremath{\Delta\scalht}\xspace}
-\newcommand{\ewk}{\ensuremath{\mathrm{EWK}}\xspace}
-\newcommand{\qcd}{\ensuremath{\mathrm{QCD}}\xspace}
-\newcommand{\fZinv}[1]{\ensuremath{f_{\rm Zinv}^{#1}}\xspace}
-\newcommand{\zInv}[1]{\ensuremath{Z_{\rm inv}^{#1}}\xspace}
-\newcommand{\meanHt}[1]{\ensuremath{\langle \scalht \rangle^{#1}}\xspace}
-\newcommand{\lk}[2]{\ensuremath{L^{\rm #1}_{\rm #2}}\xspace}
-\newcommand{\sep}{\ensuremath{68^{\mathrm{th}}}\xspace}
-\newcommand{\partonht}{\ensuremath{\scalht^{\rm parton}}\xspace}
-\newcommand{\meff}{\ensuremath{M_{\rm eff}}\xspace}
-\newcommand{\mhttt}{\ensuremath{\hslash_{\rm T}^{TT}}\xspace}
-\newcommand{\ifb}{\ensuremath{\text{fb}^{-1}}\xspace}
-\newcommand{\ipb}{\ensuremath{\text{pb}^{-1}}\xspace}
+\newcommand{\zmumu}{\ensuremath{\cPZ \rightarrow \mu\mu}\xspace}
+\newcommand{\zmumuj}{Z(\ensuremath{\ra\! \mu\mu}) + jets\xspace}
+\newcommand{\zmmj}{Z(\ensuremath{\rightarrow\mu\mu}) + jets\xspace}
+\newcommand{\zllj}{Z(\ensuremath{\rightarrow\ell\ell}) + jets\xspace}
+
+\newcommand{\znunu}{\ensuremath{\cPZ \rightarrow \cPgn\cPagn}\xspace}
+\newcommand{\znunuj}{Z(\ensuremath{\rightarrow\nu\bar{\nu}}) + jets\xspace}
+
+\newcommand{\ttj}{\ensuremath{\ttbar \! + \! \rm{jets}}\xspace}
