@@ -1,26 +1,67 @@
-%%__________________________________________________________________||
-
-%%__________________________________________________________________||
 \RCS$Revision: 315308 $
 \RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/SUS-15-005/trunk/SUS-15-005.tex $
 \RCS$Id: SUS-16-038.tex 315308 2015-12-16 00:05:01Z alcaraz $
 
-%%__________________________________________________________________||
+\newcommand{\jets}{\ensuremath{\text{jets}}}
+\newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
+\newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
+\newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
+\newcommand{\tf}{\ensuremath{\mathcal{T}}\xspace}
+\newcommand{\mj}{\ensuremath{\mu + \jets}\xspace}
+\newcommand{\mmj}{\ensuremath{\mu\mu + \jets}\xspace}
+\newcommand{\mmjpm}{\ensuremath{\mu^\pm\mu^\mp + \jets}\xspace}
+\newcommand{\gj}{\ensuremath{\gamma + \jets}\xspace}
+\newcommand{\wj}{\ensuremath{\PW + \jets}\xspace}
+\newcommand{\wlj}{\ensuremath{\PW (\to  \ell\nu) + \text{jets}}\xspace}
+\newcommand{\wmj}{\ensuremath{\PW (\to  \mu\nu) + \text{jets}}\xspace}
+\newcommand{\zj}{\ensuremath{\cPZ + \jets}\xspace}
+\newcommand{\zmumuj}{\ensuremath{\cPZ (\to  \mu\mu) + \jets}\xspace}
+\newcommand{\znunuj}{\ensuremath{\cPZ (\to  \cPgn\cPagn) + \jets}\xspace}
+\newcommand{\zmumu}{\ensuremath{\cPZ \to  \mu\mu}\xspace}
+\newcommand{\znunu}{\ensuremath{\cPZ \to  \cPgn\cPagn}\xspace}
+\newcommand{\ttw}{\ensuremath{\ttbar\PW}\xspace}
+\newcommand{\ttz}{\ensuremath{\ttbar\cPZ}\xspace}
+\providecommand{\PSl}{\ensuremath{\widetilde{\ell}}\xspace}
+\newcommand{\dphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
+\newcommand{\HTmiss}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\mhtmet}{\ensuremath{H_{\mathrm{T}}^{\text{miss}} / E_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\scalht}{\ensuremath{H_{\mathrm{T}}}\xspace}
+\newcommand{\dm}{\ensuremath{\Delta m}\xspace}
+\newcommand{\ph}{\ensuremath{\phantom{1}}}
+\newcommand{\scalst}{\ensuremath{\mathcal{E}_\mathrm{T}}\xspace}
+\newcommand{\dst}{\ensuremath{\Delta\scalst}\xspace}
+\newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
+\newcommand{\bdphimod}{\ensuremath{\Delta\phi^{*_{\, 25}}_\text{min}}\xspace}
+\newcommand{\cls}{\ensuremath{\mathrm{CL}_\mathrm{s}}\xspace}
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+\newcommand{\NA}{\ensuremath{\text{---}}\xspace}
+
+\newlength\cmsFigWidth
+\newlength\cmsFigWidthTwo
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.49\textwidth}}{\setlength\cmsFigWidth{0.7\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidthTwo{0.95\textwidth}}{\setlength\cmsFigWidthTwo{0.95\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsTable}[1]{#1}}{\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}}
+
+\newlength\cmsTableLabelSkip
+\setlength\cmsTableLabelSkip{-1.2ex}
+
 \cmsNoteHeader{SUS-16-038}
 
-%%__________________________________________________________________||
 \title{Search for new physics in pp collisions at $\sqrt{s} = 13\TeV$
 in final states with missing transverse momentum and at least one jet
 using the \alphat variable}
 
-%%__________________________________________________________________||
-\address[cern]{CERN}
+\titlerunning{Search for new phenomena at 13\TeV with \ETmiss and jets
+  using \alphat}
+
+\address[cern]{CERN} 
 \author[cern]{The CMS Collaboration}
 
-%%__________________________________________________________________||
 \date{\today}
 
-%%__________________________________________________________________||
 \abstract{A search for new physics is performed in final states
 containing one or more jets and an imbalance in transverse momentum in
 pp collisions at a centre-of-mass energy of 13\TeV. The analysed data
@@ -51,17 +92,6 @@ masses up to 400\GeV are excluded.}
 %    only look within $$. The abstracts for papers are hand formatted
 %    so macros are okay.
 
-%%__________________________________________________________________||
-\input{mydefs}
-%\input{symbols}
-
-%%__________________________________________________________________||
-\newlength\cmsFigWidth
-\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
-\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
-\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
-
-%%__________________________________________________________________||
 \hypersetup{ 
 
 pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
@@ -75,16 +105,7 @@ pdfsubject={CMS},
 pdfkeywords={CMS, jets, monojet, missing transverse momentum,
 supersymmetry, dark matter, AlphaT} }
 
-%%__________________________________________________________________||
 \maketitle
 \clearpage
 
-%%__________________________________________________________________||
-
-
-
-%%__________________________________________________________________||
-\clearpage
 \bibliography{auto_generated}
-
-%%__________________________________________________________________||
