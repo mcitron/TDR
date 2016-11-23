@@ -3,6 +3,8 @@
 \RCS$Id: $
 
 %_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 
 % Typesetting
 \newcommand\T{\rule{0pt}{2.6ex}}
@@ -51,8 +53,6 @@
 \newcommand{\ttw}{\ensuremath{\ttbar\PW}\xspace}
 \newcommand{\ttz}{\ensuremath{\ttbar\cPZ}\xspace}
 
-%_______________________________________________________________________________
-
 \newlength\cmsFigWidth
 \newlength\cmsFigWidthTwo
 \ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.49\textwidth}}{\setlength\cmsFigWidth{0.7\textwidth}}
@@ -63,6 +63,10 @@
 
 \newlength\cmsTableLabelSkip
 \setlength\cmsTableLabelSkip{-1.2ex}
+
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 
 \cmsNoteHeader{SUS-16-038}
 
@@ -101,33 +105,35 @@
   and decay to near-degenerate neutralinos, top squark masses up to
   X\GeV are excluded. }
 
-% 1. **DO NOT use \include or \input** to include the abstract: our
-%    abstract extractor will not search through other files than this
-%    one.
-% 2. **DO NOT use %** to comment out sections of the abstract: the
-%    extractor will still grab those lines (and they won't be
-%    comments any longer!).
-% 3. For PASs: **DO NOT use tex macros** in the abstract: CDS MathJax
-%    processor used on the abstract doesn't understand them _and_ will
-%    only look within $$. The abstracts for papers are hand formatted
-%    so macros are okay.
-
 \hypersetup{ 
-pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
-Buchmueller, Stefano Casasso, Matthew Citron, Adam Elwood, Henning
-Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah Alam
-Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex Tapper},
-pdftitle={Search for new physics in pp collisions using final states
-  with at least one jet and missing transverse momentum},
-pdfsubject={CMS},
-pdfkeywords={CMS, jets, monojet, missing transverse momentum,
-supersymmetry, dark matter, AlphaT}
+  pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
+    Buchmueller, Stefano Casasso, Matthew Citron, Adam Elwood, Henning
+    Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah
+    Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
+    Tapper},
+  pdftitle={Search for new physics in pp collisions using final states
+    with at least one jet and missing transverse momentum},
+  pdfsubject={CMS},
+  pdfkeywords={CMS, jets, monojet, missing transverse momentum,
+    supersymmetry, dark matter, AlphaT} 
 }
 
 \maketitle
+
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 %_______________________________________________________________________________
 
-\newpage
+\section{Introduction}
+\label{sec:introduction}
+
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+
+
+
+
 
 \begin{table}[!t]
   \topcaption{Summary of \scalht-dependent thresholds on \alphat that
