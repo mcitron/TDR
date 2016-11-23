@@ -7,8 +7,9 @@
 % Typesetting
 \newcommand\T{\rule{0pt}{2.6ex}}
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
-\newcommand{\ph}{\ensuremath{\phantom{1}}}
 \newcommand{\NA}{\ensuremath{\text{---}}\xspace}
+\newcommand{\dash}{\multicolumn{1}{c}{\NA}}
+\newcommand{\ph}[1]{\phantom{#1}}
 
 % Symbols
 \newcommand{\tf}{\ensuremath{\mathcal{T}}\xspace}
@@ -27,6 +28,7 @@
 \newcommand{\dphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
 \newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
 \newcommand{\bdphimod}{\ensuremath{\Delta\phi^{*_{\, 25}}_\text{min}}\xspace}
+\newcommand{\minchi}{\ensuremath{\chi_\text{min}}\xspace}
 \newcommand{\mhtmet}{\ensuremath{\HTmiss / \ETmiss}\xspace}
 
 % Selections
@@ -64,11 +66,10 @@
 
 \cmsNoteHeader{SUS-16-038}
 
-\title{Search for new physics in pp collisions at $\sqrt{s} = 13\TeV$
-in final states with missing transverse momentum and at least one jet
-using the \alphat variable}
-%\titlerunning{Search for new phenomena at 13\TeV with \ETmiss and jets
-%  using \alphat}
+\title{Search for new physics in pp collisions using final states with
+  at least one jet and missing transverse momentum}
+\titlerunning{Search for new physics in pp collisions using final
+  states with at least one jet and missing transverse momentum}
 
 \address[cern]{CERN} 
 \author[cern]{The CMS Collaboration}
@@ -76,23 +77,29 @@ using the \alphat variable}
 \date{\today}
 
 \abstract{A search for new physics is performed in final states
-containing one or more jets and an imbalance in transverse momentum in
-pp collisions at a centre-of-mass energy of 13\TeV. The analysed data
-sample, recorded with the CMS detector at the CERN LHC, corresponds to
-an integrated luminosity of 2.3\fbinv.  Several kinematic variables
-are employed to suppress the dominant background, multijet production,
-as well as to discriminate between other standard model and new
-physics processes. The search provides sensitivity to a broad range of
-new-physics models that yield a stable weakly interacting massive
-particle. The number of observed candidate events is found to agree
-with the expected contributions from standard model processes, and the
-result is interpreted in the mass parameter space of fourteen
-simplified supersymmetric models that assume the pair production of
-gluinos or squarks and a range of decay modes. For models that assume
-gluino pair production, masses up to 1575 and 975\GeV are excluded for
-gluinos and neutralinos, respectively. For models involving the pair
-production of top squarks and compressed mass spectra, top squark
-masses up to 400\GeV are excluded.}
+  containing one or more jets and an imbalance in transverse
+  momentum. A sample of events resulting from pp collisions at a
+  centre-of-mass energy of 13\TeV is analysed. The event data were
+  recorded with the CMS detector at the CERN LHC and correspond to an
+  integrated luminosity of 36.3\fbinv. The search provides sensitivity
+  to models that predict a stable weakly interacting massive
+  particle. The search employs several kinematic variables to suppress
+  multijet production to a subdominant level with respect to all other
+  standard model backgrounds. Several further kinematic variables are
+  used for signal extraction using a binned maximum-likelihood fit to
+  the data. The number of candidate signal events is found to agree
+  with the expected event counts from standard model processes. A
+  number of simplified supersymmetric models that assume the
+  production of gluino or squark pairs that decay to neutralinos and
+  standard model particles, are used to interpret the result. For
+  models that assume the production of gluino pairs, gluino and
+  neutralino masses up to X and Y\GeV, respectively, are excluded. For
+  models that assume In the case of the production of squark pairs,
+  light-flavour, bottom, and top squarks masses up to X, Y, and Z\GeV
+  are excluded, respectively. Models with near-degenerate mass spectra
+  are also considered. For models that assume top-squark production
+  and decay to near-degenerate neutralinos, top squark masses up to
+  X\GeV are excluded. }
 
 % 1. **DO NOT use \include or \input** to include the abstract: our
 %    abstract extractor will not search through other files than this
@@ -110,17 +117,85 @@ pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
 Buchmueller, Stefano Casasso, Matthew Citron, Adam Elwood, Henning
 Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah Alam
 Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex Tapper},
-pdftitle={Search for new physics with AlphaT},
+pdftitle={Search for new physics in pp collisions using final states
+  with at least one jet and missing transverse momentum},
 pdfsubject={CMS},
 pdfkeywords={CMS, jets, monojet, missing transverse momentum,
 supersymmetry, dark matter, AlphaT}
 }
 
 \maketitle
+%_______________________________________________________________________________
+
+\newpage
+
+\begin{table}[!t]
+  \topcaption{Summary of \scalht-dependent thresholds on \alphat that
+    are used, in addition to the requirements $\HTmiss > 130\GeV$,
+    $\bdphi > 0.5$, and $\mhtmet < 1.25$, to suppress the multijet
+    background to the percent level relative to all other SM
+    backgrounds. }
+  \label{tab:multijet_variables}
+  \centering
+  {\begin{tabular}{ lcccccccc }
+    \hline
+    $\scalht [\GeVns{}]$\T\B & 200--250 & 250--300 & 300--350 & 350--400 & 400--600 & 600--900 & 900-1200 & $>$1200 \\
+    \hline
+    $\alphat$\T\B            & $>$0.65  & $>$0.60  & $>$0.55  & $>$0.53  & $>$0.52  & $>$0.52  & \dash    & \dash   \\
+    \hline
+  \end{tabular}}
+\end{table}
+
+\begin{table}[!t]
+  \topcaption{Summary of the lower bounds of the first and final bins
+    in \scalht [\GeVns{}] as a function of \njet and \nb. The nominal
+    binning scheme comprises four bounded bins and one open bin
+    covering the \scalht ranges 200--400, 400--600, 600-900,
+    900--1200, and $>$1200\GeV.}
+  \label{tab:ht_binning}
+  \centering
+  {\begin{tabular}{ lccccc }
+    \hline
+    $\njet \backslash\, \nb$\T\B & 0              & 1              & 2              & 3              & $\geq$4        \\
+    \hline
+    1\T                          & 200, \ph{1}900 & 200, \ph{1}600 & \dash          & \dash          & \dash          \\
+    2                            & 200, 1200      & 200, 1200      & 200, \ph{1}600 & \dash          & \dash          \\
+    3                            & 200, 1200      & 200, 1200      & 200, 1200      & 200, \ph{1}600 & \dash          \\
+    4                            & 200, 1200      & 200, 1200      & 200, 1200      & 200, \ph{1}900 & 200, \ph{1}\NA \\
+    5                            & 400, 1200      & 400, 1200      & 400, 1200      & 400, \ph{1}900 & 400, \ph{1}\NA \\
+    $\geq$6                      & 400, 1200      & 400, 1200      & 400, 1200      & 400, 1200      & 400, \ph{1}\NA \\
+    asymmetric\B                 & 200, \ph{1}900 & 200, \ph{1}900 & 200, \ph{1}900 & 200, \ph{1}600 & 200, 400       \\
+    \hline
+  \end{tabular}}
+\end{table}
+
+\begin{table}[!t]
+  \topcaption{Summary of the lower bounds of the final bin in \HTmiss
+  [\GeVns{}] as a function of \njet and \scalht region [\GeVns{}]. The
+  nominal binning scheme comprises a bin of 130-200\GeV, further bins
+  of width 100 and 200\GeV in the ranges $200 < \HTmiss < 800\GeV$ and
+  $\HTmiss > 800\GeV$, respectively, until the final open bin, as
+  indicated below.  }
+  \label{tab:mht_binning}
+  \centering
+  {\begin{tabular}{ lccccc }
+    \hline
+    $\njet \backslash\, \scalht [\GeVns{}]$\T\B & 200--400 & 400--600 & 600--900 & 900--1200 & $>$1200 \\
+    \hline
+    1\T                                         & 300      & 500      & 800      & 1000      & \dash   \\
+    2                                           & 300      & 500      & 800      & 1000      & 1000    \\
+    3                                           & 300      & 500      & 800      & 1000      & 1000    \\
+    4                                           & 300      & 500      & 800      & 1000      & 1000    \\
+    5                                           & 300      & 500      & 800      & 1000      & 1000    \\
+    $\geq$6                                     & \dash    & 400      & 700      & 900       & 1000    \\
+    asymmetric\B                                & \dash    & 500      & 800      & 1000      & \dash   \\
+    \hline
+  \end{tabular}}
+\end{table}
+
+
+
+%_______________________________________________________________________________
+
 \clearpage
-%_______________________________________________________________________________
-
-Test!
-%_______________________________________________________________________________
-
 \bibliography{auto_generated}
