@@ -18,7 +18,7 @@ L2Relative, and L3Absolute \cite{Chatrchyan:2011ds}.
 The ``loose'' working point Jet-Id selection criteria is chosen. 
 The cuts are listed in Tab.~\ref{tab:loose-jet-id}. 
 In addition, a dedicated selection is applied to reject ``beam halo'' candidate events, 
-as described thoroughly in section \ref{sec:had-signal}.
+as described in Section~\ref{sec:had-signal}.
 
 \begin{table}[ht!]
   \caption{The ``loose'' jet ID requirements. \label{tab:loose-jet-id}}
@@ -44,15 +44,21 @@ as described thoroughly in section \ref{sec:had-signal}.
 
 \subsection{b-tagged jets}
 \label{sec:btags}
-Jets originating from bottom quarks are identified through vertices 
-that are displaced with respect to the primary interaction \cite{Chatrchyan:2012jua}. 
-The algorithm used to tag b-jets is the Combined Secondary Vertex tagger V2, 
-with the ``medium'' working point, which is achieved by requiring 
-a cut of $>$ 0.80 on the algorithm discriminator variable. 
-This results in a gluon/light-quark mis-tag rate of $\sim$1 \% 
-(where ``light'' means $u$, $d$ and $s$ quarks), 
-a charm-quark mis-tag rate of $\sim$10 \% and 
-a b-quark b-tag efficiency of about 60 \%.
+Jets originating from bottom quarks are identified through vertices
+that are displaced with respect to the primary interaction
+\cite{Chatrchyan:2012jua}.  The algorithm used to tag b-jets is the
+Combined Secondary Vertex tagger V2, with the ``medium'' working
+point, which is achieved by requiring a cut of $>$ 0.800 on the
+algorithm discriminator variable.  This results in a gluon/light-quark
+mis-tag rate of $\sim$1 \% (where ``light'' means $u$, $d$ and $s$
+quarks), a charm-quark mis-tag rate of $\sim$10 \% and a b-quark b-tag
+efficiency of about 60 \%. 
+
+Some validation studies used by the analysis make use of the ``loose''
+and ``tight'' working points, which are defined by the thresholds
+requirements of 0.460 and 0.935 on the discriminator variable. These
+requirements yield light-flavour mistag probabilities of $\sim$10 and
+$\sim$0.1\%, respectively.
 
 
 \subsection{Muons}
@@ -87,10 +93,11 @@ A PF-based isolation is used with a cone size $\Delta R$ $<$ 0.3 and
 $\rho\times A_{eff}$ corrections are applied to remove the effects of pileup \cite{pf-photon}. 
 Table \ref{tab:photon-id-gamma} summarises the identification and isolation selection used. 
 
-Photons are vetoed in the definition of the hadronic signal region, 
-as described in Sec.~\ref{sec:preSelection}, while a 
-control region with one photon (``\gj'') is defined for the purpose of the background estimation, 
-as described in Sec.~\ref{subsec:photoncontrolSelection}.
+Photons are vetoed in the definition of the hadronic signal region and
+muon control regions, as described in Sec.~\ref{sec:preSelection},
+while a control region with one photon (``\gj'') is defined for the
+purpose of the background estimation, as described in
+Sec.~\ref{subsec:photoncontrolSelection}.
 
 
 \begin{table}[ht!]
@@ -128,15 +135,15 @@ as described in Sec.~\ref{subsec:photoncontrolSelection}.
 
 \subsection{Electrons}
 \label{sec:electron-id}
-In order to veto electrons in the hadronic signal region 
-the ``loose'' working point definition ($\sim$ 90 $\%$ efficiency) 
-of the cut-based electron identification \cite{electron-id} is used. 
-Electrons are also require required to be isolated. 
-Similar to muons, in the hadronic signal regions a PF-based isolation
-\cite{pf-photon} is used with a cone size determined by the mini
-isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\rho\times A_{eff}$ 
-corrections are applied to remove the effects of pileup.
-Isolated electrons are defined by $I^{rel}_{comb} < 0.1$. 
+In order to veto electrons in the hadronic signal region and the muon
+and photon control regions, the ``loose'' working point definition
+($\sim$ 90 $\%$ efficiency) of the cut-based electron identification
+\cite{electron-id} is used.  Electrons are also require required to be
+isolated.  Similar to muons, in the hadronic signal regions a PF-based
+isolation \cite{pf-photon} is used with a cone size determined by the
+mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\rho\times
+A_{eff}$ corrections are applied to remove the effects of pileup.
+Isolated electrons are defined by $I^{rel}_{comb} < 0.1$.
 
 Table \ref{tab:ele-id} summarises the identification 
 selection used. 
@@ -173,7 +180,9 @@ Single prong decays of the tau lepton can also be identified: W $\rightarrow$ $\
 A single isolated track comprises a charged PF candidate with $\Pt > 10 \gev$, $\Delta z(\mathrm{track}, \mathrm{PV}) < 0.05 \, \mathrm{cm}$ 
 and with a relative isolation smaller than 0.1, where the isolation is determined from the sum 
 of the \Pt of the charged PF candidates within $\Delta R < 0.3$.
-Events in the signal region containing a SIT candidate identified with these criteria are vetoed. 
+Events in the signal region and all control regions (ignoring the
+selected muons) containing a SIT candidate identified with these
+criteria are vetoed.
 
 
 \subsection{Missing transverse momentum}
