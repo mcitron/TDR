@@ -11,15 +11,18 @@ Table~\ref{tab:cert_json} specifies the periods of the time in which
 these certified data are collected. Table~\ref{tab:datasets_data} lists
 the names of the data sets.
 
-We perform a blind analysis. The data in the signal region was blinded
-with the exception of 5.2~\ifb of the certified data in Run2016G. 
-Data in the control regions is never blinded. 
-These blinding policies are agree in the SUS PAG.
+We perform a blind analysis. The data in the signal region is
+currently blinded with the exception of 5.2~\ifb of the certified data
+in Run2016G, as recommended by the SUS PAG. We have intentionally not
+unblinded the ICHEP data set. The control regions are populated with
+the full 2016 data set.
 
 \begin{table}[!h]
-\topcaption{The JSON file that specifies the periods of the time in
-which 12.9~\ifb of the certified data are collected} \footnotesize
-\input{tables/datasets/cert_json.tex} \label{tab:cert_json}
+\topcaption{The JSON file used to specify the certified data set of
+  36.4~\ifb} 
+\footnotesize
+\input{tables/datasets/cert_json.tex} 
+\label{tab:cert_json}
 \end{table}
 
 \begin{table}[!h]
@@ -43,7 +46,7 @@ data sets, in addition to the main interaction, each event contains on
 average 20 minimum bias interactions which simulate multiple
 interactions per bunch-crossing (in-time pileup). The expected
 detector signal from previous or following bunch crossings
-(out-of-time pileup) with 25ns bunch spacing is overlapped.
+(out-of-time pileup) with 25ns bunch spacing is also overlaid.
 
 \begin{table}[!h]
  \centering
@@ -111,42 +114,35 @@ of \verb!nTrueInt! in the data, simulated events and reweighted
 simulated events. The figure demonstrates that the reweighted
 simulated events have the distribution of \verb!nTrueInt! nearly
 identical to that in the data. 
-It can be noticed that the simulation does not contain events with 37 or more overlapping 
-pp interactions, while the data does, causing the MC weighted distribution not to match perfectly the data. 
-This small issue will be recovered once the new MC samples with updated PU profile will be available. 
+We note that the simulation does not contain events with 37 or more
+overlapping pp interactions, while the data do, causing the MC
+weighted distribution not to match perfectly the data. This small
+issue will be recovered once the new MC samples with updated PU
+profile will be available.
 
 
 
 \subsection{Cross sections for SM samples}
 \label{sec:SMxs}
-Several MC samples of individual SM processes are binned according to a generator level quantity, 
-such as the partonic \HT or bosonic \PT.
-This analysis chooses to use samples binned in partonic \HT 
+This analysis chooses to use \MADGRAPH samples binned in partonic \HT 
 for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets).
 These binned samples are provided with LO cross sections. 
 The \kfactors required to go from LO to NNLO cross section are typically determined using corresponding
 inclusive samples applied to each \HT binned sample.
-Further studies can provide additional corrections to the cross sections, 
-which can prove important to the closure test procedures described in
-Section \ref{sec:closure-tests}. 
-As described in Section~\ref{sec:sideband_corrections}, residual cross section
-corrections are measured using data in sidebands designed to enrich specific processes.
-
-%% In the $8\tev$ LHC results the shape of the top quark $p_{T}$ spectrum
-%% was found to differ between simulation and data. A reweighting is
-%% therefore applied to MC events that contain a generated top. The value of
-%% this correction is provided from the $8\tev$ results, as described in
-%% \cite{twiki-TopPtReweighting}.
-
 The inclusive distributions of the MC samples
 with respect to the binning variable
 $H_{T}^{parton}$ are shown in Fig.~\ref{fig:Lhe_Ht}, with
-the bin by bin derivative drawn below.
-
+the bin by bin derivative drawn below. 
 As can be seen in the distributions, the stitched samples
 exhibit a good level of smoothness,
 further demonstrated by the derivative which shows a flat trend for each 
 cross section.
+
+As described in Section~\ref{sec:sideband_corrections}, residual cross
+section corrections are measured using data in sidebands designed to
+enrich specific SM processes. These corrections can prove to be
+important for the closure test procedures described in Section
+\ref{sec:closure-tests}.
 
 \begin{figure}[!h]
   \begin{center}
