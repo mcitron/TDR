@@ -42,6 +42,49 @@ Additional re-weighting procedures applied to the simulated samples are describe
 \subsubsection{Sideband corrections}
 \label{sec:sideband-corrections}
 
+In the high-\scalht, high-\etmiss corner of the phase space used in this search, the normalisations of the MC samples do not necessarily agree with the observation. 
+Moreover, the cross section is known only to a limited number of perturbative orders and additional corrections could be in principle sizeable. \\
+The analysis strategy for the background predictions is built in such a way to be mildly, if not negligibly, dependent on these corrections. 
+The backgrounds are estimated from control regions in data, and the effect of cross section corrections on the transfer factors is expected to largely cancel out, 
+because the background composition is very similar between the signal region and the control regions used to estimate each background. \\
+However, the ``data-driven'' tests described in Sec.~\ref{sec:closure-tests} would benefit from a better control of the normalisation of MC samples, 
+since more aggressive extrapolations are carried on there with respect to the background predictions in the analysis. 
+
+In this section a procedure is described to derive process-dependent ``sideband corrections'' 
+by means of a likelihood fit using the data in the control regions. 
+The sideband corrections are derived after all the other corrections to the MC and data are applied, 
+such as trigger efficiency, data/MC scale factors (b-tag, lepton ID/isolation, etc.) and jet energy scale. 
+The sideband corrections are applied and propagated to all the steps of the analysis.\\
+No uncertainty is considered for these corrections as any inaccuracy is already accounted 
+for in the data-driven tests described in Sec.~\ref{sec:closure-tests} and would result in inflated systematics. 
+
+To take advantage of the full phase space of the sidebands a simultaneous 
+fit is used to derive the corrections for \wj, \zj, \ttbar, using the $100<\mht<130$ GeV selection. 
+The sideband is binned identically to the control region in \njet, \nb and \scalht and a floating 
+parameter per relevant process encodes the correction for that process (fully correlated across all bins).
+The \wj and \ttbar processes are mainly constrained by the \mj sideband while the \zj process is 
+constrained by the \mmj sideband. The values of the corrections and uncertainties
+given by the fit are shown in Table~\ref{tab:sbCorrsFromFit}.\\
+The correction derived for \zj is also applied to the \znunu sample. 
+
+\begin{table}[!h]
+  \scriptsize
+  \centering
+  \topcaption{Cross section corrections for SM backgrounds derived with fit to sidebands in data.}
+  \label{tab:sbCorrsFromFit}
+  \begin{tabular}
+    {cllc}
+    \hline\hline
+    \textbf{Process} & \textbf{Sideband} & \textbf{Selection} & \textbf{Corrrection} \\
+    \hline
+    \wj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj& $1.13 \pm 0.01$ \\
+    \zj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mmj& $1.08 \pm 0.01$ \\
+    \ttbar + jets & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj, \mmj  & $0.91 \pm 0.01$ \\
+    \hline \hline
+  \end{tabular}
+\end{table}
+
+
 
 \subsubsection{Photon purity}
 \label{sec:photon-purity}
