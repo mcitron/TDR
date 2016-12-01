@@ -34,26 +34,7 @@ to match the pileup distribution as measured in data, as described in~\ref{sec:p
 
 Additional re-weighting procedures applied to the simulated samples are described in the following.
 
-\subsubsection{\texorpdfstring{\gj} k-factor}
-\label{sec:gj-kfactor}
-The \gj cross section is known only at leading order, unlike other processes like 
-\ttj (next-to-next-to leading order) or \zj and \wj (next-to leading order). 
-A data-driven procedure is developed to derive a ``k-factor'' for the \gj cross section 
-by comparing the yields in the \gj and \mmj control regions. 
-An inclusive correction of 1.39 is derived from the ratio of the event yields in the two 
-control regions and is applied to the \gj MC sample. \\
-In order to assess the uncertainty on this correction, the systematic sources affecting 
-the acceptance in the \mmj control region are varied and the effect on the event yields is derived. 
-They include lepton trigger, ID, isolation, tracking efficiency and jet energy corrections. 
-The total systematic uncertainty, obtained by summing in quadrature each independent variation, 
-is 4\% and it's propagated to the likelihood fit. 
-Residual discrepancy in the $Z/\gamma$ ratio as a function of \scalht and \njet are assessed 
-through the data-driven test described in Sec.~\ref{sec:closure-tests}.
-
-
-
-
-\subsubsection{Sideband corrections}
+\subsubsection{Normalisation corrections from a \mht sideband}
 \label{sec:sideband-corrections}
 
 In the high-\scalht, high-\etmiss corner of the phase space used in this search, the normalisations of the MC samples do not necessarily agree with the observation. 
@@ -73,7 +54,7 @@ No uncertainty is considered for these corrections as any inaccuracy is already 
 for in the data-driven tests described in Sec.~\ref{sec:closure-tests} and would result in inflated systematics. 
 
 To take advantage of the full phase space of the sidebands a simultaneous 
-fit is used to derive the corrections for \wj, \zj, \ttbar, using the $100<\mht<130$ GeV selection. 
+fit is used to derive the corrections for \wj, \zj, \ttbar, using the $100<\mht<130$ GeV sideband. 
 The sideband is binned identically to the control region in \njet, \nb and \scalht and a floating 
 parameter per relevant process encodes the correction for that process (fully correlated across all bins).
 The \wj and \ttbar processes are mainly constrained by the \mj sideband while the \zj process is 
@@ -98,16 +79,24 @@ The correction derived for \zj is also applied to the \znunu sample.
   \end{tabular}
 \end{table}
 
-
-
-\subsubsection{Photon purity}
+\subsubsection{Estimate of non-prompt contribution in \gj events}
 \label{sec:photon-purity}
+
 The contribution from non-prompt photons in the \gj control region~\ref{sec:photoncontrolSelection} 
 is expected to be small after the tight ID selection~\ref{sec:photon-id}, the photon acceptance requirements 
 and the \alphat and $\Delta R (\gamma,\mathrm{jet})$ cuts. 
-Nevertheless a data-driven estimation of the non-prompt photons has been developed 
-in order to assess the agreement with the simulation and eventually correct the latter 
-to better match the data. \\
+Nevertheless a data-driven estimation of the non-prompt photons has been developed. 
+%in order to assess the agreement with the simulation and eventually correct the latter 
+%to better match the data. 
+The non-prompt contribution is provided by the QCD MC samples. The
+expected counts from MC are normalised (i.e. corrected) to data in a
+sideband enriched in non-prompt photons (i.e. ``fakes''). These
+corrections are determined as a function of photon \Pt to provide a
+data-driven photon-\Pt-dependent estimate of the non-prompt
+contribution to the \gj sample. No $\eta$ dependence is considered, as
+the analysis only considers barrel photons ($|\eta| < 1.45$) and no
+strong dependence is expected. 
+
 A double-sideband is considered by relaxing the photon ID and isolation, 
 specifically the $\sigma_{i\eta i\eta}$ requirement and the charged hadron isolation requirement. 
 The details of the definition of the sideband are listed in Tab.~\ref{tab:phoPurity-sideband}. 
@@ -138,8 +127,6 @@ photon \pt bins in Fig.~\ref{fig:chHadIsoSideband}.
   \caption{\label{fig:chHadIsoSideband} 
   The $\sigma_{i\eta i\eta}$ distribution in the charged hadron isolation sideband for two photon \pt bins. }
 \end{figure}
-
-
 
 The data in the sideband are used to normalise the non-prompt component in simulation, 
 after subtracting the small contribution ($<5$\%) from prompt photons taken from simulation. 
@@ -172,6 +159,27 @@ especially at low photon \pt,
 the non-prompt component in simulation is re-weighted as a function of the photon transverse momentum 
 and both the statistical and systematic uncertainties are propagated to these correction factors. 
 
+
+\subsubsection{Correction to \texorpdfstring{\gj}{photon+jets} cross section}
+\label{sec:gj-kfactor}
+
+The \gj cross section used in this analysis is calculated at leading
+order, unlike other processes like \ttj (next-to-next-to leading
+order) or \zj and \wj (next-to leading order).  A data-driven
+procedure is developed to derive a ``k-factor'' for the \gj cross
+section by comparing the yields in the \gj and \mmj control regions.
+An inclusive correction of 1.39 is derived from the ratio of the event
+yields in the two
+control regions and is applied to the \gj MC sample. \\
+In order to assess the uncertainty on this correction, the systematic
+sources affecting the acceptance in the \mmj control region are varied
+and the effect on the event yields is derived.  They include lepton
+trigger, ID, isolation, tracking efficiency and jet energy
+corrections.  The total systematic uncertainty, obtained by summing in
+quadrature each independent variation, is 4\% and it's propagated to
+the likelihood fit.  Residual discrepancy in the $Z/\gamma$ ratio as a
+function of \scalht and \njet are assessed through the data-driven
+test described in Sec.~\ref{sec:closure-tests}.
 
 
 %% \subsection{The ``transfer factor'' method}
