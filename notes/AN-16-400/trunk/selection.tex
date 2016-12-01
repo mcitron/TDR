@@ -163,13 +163,25 @@ Further, an additional powerful variable \bdphi is used to suppress
 multijet contamination due to both instrumental effects and
 semi-leptonic heavy-flavour decays with genuine \met in the final
 state. The variable is determined as follows. The jet-based estimate
-of the missing transverse energy, ${\mhtvec}$, is recomputed while
-ignoring one of the reconstructed jets (the ``test'' jet). The
-difference in the azimuthal angle between the recomputed $\mhtvec$
-and the ``test'' jet is then determined. This process is repeated for
-each jet in the event and the minimum of all the azimuthal
-differences, \bdphi, is determined. For monojet events, the calculation is 
-performed using all jets with $\Pt > 20\gev$. 
+of the missing transverse energy, ${\mhtvec}$, is determined from all
+jets ($\mathrm{j}_i \,\in\, [1,\njet], \mathrm{j}_i \ne \mathrm{j}_k$)
+except for one of the reconstructed jets (the ``test'' jet
+$\mathrm{j}_k$). The difference in the azimuthal angle between the
+recomputed $\mhtvec$ and the ``test'' jet is then determined. This
+process is repeated for each jet $\mathrm{j}_i$ in the event and the
+minimum of all the azimuthal differences, \bdphi, is determined.:
+
+\begin{equation}
+  \bdphi = \min_{\,\forall\, \mathrm{j}_k\,\in\, [1,\njet]}
+  \Delta\phi \Bigl( \ptvec^{\,\mathrm{j}_k}, \,
+    -\hspace{-0.5em}\sum_{\substack{\mathrm{j}_i= 1 \\ \mathrm{j}_i \ne \mathrm{j}_k}}^{\njet}
+    \ptvec^{\,\mathrm{j}_i} \Bigr).
+  \label{eq:bdphi}
+\end{equation}
+
+For monojet events, the calculation is performed using all jets with
+$\Pt > 25\gev$, with the variable identified as $\bdphilow$.
+
 The ``test'' jet corresponding to \bdphi is 
 identified as the jet that is most likely to have given rise to the
 missing transverse energy in the event. Events with significant \mht
