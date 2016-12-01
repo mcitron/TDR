@@ -182,94 +182,96 @@ function of \scalht and \njet are assessed through the data-driven
 test described in Sec.~\ref{sec:closure-tests}.
 
 
-%% \subsection{The ``transfer factor'' method}
-%% \label{sec:ewk-method}
+\subsection{The ``transfer factor'' method}
+\label{sec:ewk-method}
 
-%% The method used to estimate the aforementioned SM background
-%% contributions in the hadronic signal region relies on the use of a
-%% transfer factor (TF) determined from MC samples to transform the
-%% observed yield in a given \scalht, jet (\njet) and b-tag (\nb)
-%% multiplicity bin of a control sample, $\nobs^{\rm
-%%   control}(\njet,\nb,\scalht)$, into a predicted yield for the
-%% corresponding bin of the hadronic signal region, $\npre^{\rm
-%%   signal}(\njet,\nb,\scalht)$. The choice of \njet and \nb~event
-%% categorisation and \scalht binning in the control samples is identical
-%% to that for the signal region, as defined in
-%% Sec.~\ref{sec:selection}. 
+The method used to estimate the aforementioned SM background
+contributions in the hadronic signal region relies on the use of a
+transfer factor (TF) determined from MC samples to transform the
+observed yield in a given \scalht, jet (\njet) and b-tag (\nb)
+multiplicity bin of a control sample, $\nobs^{\rm
+  control}(\njet,\nb,\scalht)$, into a predicted yield for the
+corresponding bin of the hadronic signal region, $\npre^{\rm
+  signal}(\njet,\nb,\scalht)$. The choice of \njet and \nb~event
+categorisation and \scalht binning in the control samples is identical
+to that for the signal region, as defined in
+Sec.~\ref{sec:selection}. 
 
-%% Each transfer factor is simply a ratio of the yields obtained from MC
-%% simulation for the same bin of the signal region and a given control
-%% sample:
+Each transfer factor is simply a ratio of the yields obtained from MC
+simulation for the same bin of the signal region and a given control
+sample:
 
-%% \begin{equation}
-%%   \label{equ:tf-ratio}
-%%   {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
-%%       MC}^{\rm control}(\njet,\nb,\scalht)} 
-%% \end{equation}
+\begin{equation}
+  \label{equ:tf-ratio}
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
+      MC}^{\rm control}(\njet,\nb,\scalht)} 
+\end{equation}
 
-%% In this way, predictions of background counts from SM processes can be
-%% made based on the various control samples:
+In this way, predictions of background counts from SM processes can be
+made based on the various control samples:
 
-%% \begin{equation}
-%%   \label{equ:pred-method}
-%%   \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
-%%       signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
-%%       control}(\njet,\nb,\scalht)} \times \nobs^{\rm
-%%     control}(\njet,\nb,\scalht)   
-%% \end{equation}
+\begin{equation}
+  \label{equ:pred-method}
+  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
+      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
+      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
+    control}(\njet,\nb,\scalht)   
+\end{equation}
 
-%% When constructing the transfer factors, the MC expectations for the
-%% following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar
-%% + jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets
-%% ($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets
-%% production via the $s$, $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or
-%% $\ttbar$H ($N_{\rm {\ttbar}X}$). Details on the MC
-%% samples used are given in Sec.~\ref{sec:datasets}. All MC samples
-%% are normalised to the integrated luminosity of the appropriate data
-%% sample.
+When constructing the transfer factors, the MC expectations for the
+following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar
++ jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets
+($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets
+production via the $s$, $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or
+$\ttbar$H ($N_{\rm {\ttbar}X}$). Details on the MC
+samples used are given in Sec.~\ref{sec:datasets}. All MC samples
+are normalised to the integrated luminosity of the appropriate data
+sample.
 
-%% The selection criteria for the data control samples closely resemble
-%% those for the signal region, differing mainly through the use of a
-%% lepton or photon object {\it tag} (that is ignored in the calculation
-%% of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
-%% and minimal additional kinematic requirements (\eg invariant or
-%% transverse mass windows) to obtain W, Z, and \ttbar-enriched event
-%% samples. The same selection criteria are designed to suppress signal
-%% contamination in the control samples so that unbiased data-driven
-%% estimates for the SM backgrounds in the signal region can be
-%% made. More detail on the selection criteria can be found in Sec.~\ref{sec:selection}.
+The selection criteria for the data control samples closely resemble
+those for the signal region, differing mainly through the use of a
+lepton or photon object {\it tag} (that is ignored in the calculation
+of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
+and minimal additional kinematic requirements (\eg invariant or
+transverse mass windows) to obtain W, Z, and \ttbar-enriched event
+samples. The same selection criteria are designed to suppress signal
+contamination in the control samples so that unbiased data-driven
+estimates for the SM backgrounds in the signal region can be
+made. More detail on the selection criteria can be found in Sec.~\ref{sec:selection}.
 
-%% The transfer factors account for differences in cross sections and
-%% branching ratios, acceptance and reconstruction efficiencies, and/or
-%% kinematic requirements between the signal and control regions. Any
-%% dependence on \njet, \nb, or \HT is largely attributable to
-%% differences in acceptance due to the presence or otherwise of \alphat
-%% or \mht requirements.
+The transfer factors account for differences in cross sections and
+branching ratios, acceptance and reconstruction efficiencies, and/or
+kinematic requirements between the signal and control regions. Any
+dependence on \njet, \nb, or \HT is largely attributable to
+differences in acceptance due to the presence or otherwise of \alphat
+or \mht requirements.
 
-%% Many systematic effects are expected to cancel largely in the transfer
-%% factor. However, a systematic uncertainty is assigned to each transfer
-%% factor to account for theoretical uncertainties and effects such as
-%% the mismodelling of kinematics (\eg acceptances) and instrumental
-%% effects (\eg reconstruction efficiencies).
+Many systematic effects are expected to cancel largely in the transfer
+factor. However, a systematic uncertainty is assigned to each transfer
+factor to account for theoretical uncertainties and effects such as
+the mismodelling of kinematics (\eg acceptances) and instrumental
+effects (\eg reconstruction efficiencies).
 
-%% In the end, a fitting procedure that provides the final result is
-%% defined formally by the likelihood model described in
-%% Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
-%% (defined in terms of the variables \njet, \nb, and \scalht) of the
-%% signal sample is modelled as Poisson-distributed about the sum of a SM
-%% expectation (and a potential signal contribution). The components of
-%% this SM expectation are related to the expected yields in the control
-%% samples via transfer factors derived from simulation. The observations
-%% in each bin (again defined by \njet, \nb, and \scalht) of the control
-%% samples are similarly modelled as Poisson-distributed about the
-%% expected yields for each control sample. In this way, for a given
-%% bin, the observed yields in the signal and control samples are
-%% connected via the transfer factors derived from simulation. 
-
+In the end, a fitting procedure that provides the final result is
+defined formally by the likelihood model described in
+Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
+(defined in terms of the variables \njet, \nb, and \scalht) of the
+signal sample is modelled as Poisson-distributed about the sum of a SM
+expectation (and a potential signal contribution). The components of
+this SM expectation are related to the expected yields in the control
+samples via transfer factors derived from simulation. The observations
+in each bin (again defined by \njet, \nb, and \scalht) of the control
+samples are similarly modelled as Poisson-distributed about the
+expected yields for each control sample. In this way, for a given
+bin, the observed yields in the signal and control samples are
+connected via the transfer factors derived from simulation. 
 %% The transfer factors are shown in Tables~\ref{tab:tf_mu_zinv_sym}-
 %% \ref{tab:tf_mumu_zinv_mono}. The procedure to determine the systematic
 %% uncertainties associated with these transfer factors is described in
-%% Sec.~\ref{sec:systematics}.
+%% Sec.~\ref{sec:systematics}. 
+The procedure to determine the systematic uncertainties associated
+with these transfer factors is described in
+Sec.~\ref{sec:systematics}.
 
 
 %% The transfer factors are shown in tables below.
@@ -289,28 +291,27 @@ test described in Sec.~\ref{sec:closure-tests}.
 
 %% \clearpage
 
-%% \subsection{Adding the \mht dimension}
+\subsection{Adding the \mht dimension}
 
-%% The aforementioned description of the TFs provide an estimate of the
-%% total SM background as a function of the (\njet,\nb,\HT) bin that is
-%% integrated over \mht. However, the analysis takes advantage of \mht
-%% distribution obtained from simulation. This information is propagated
-%% to the likelihood model via an \mht template per (\njet,\nb,\HT) bin,
-%% which is equivalent to dicing the numerator of the TF according to
-%% \mht, \ie $N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht,\mht)$. In this
-%% regard, the TFs described above provide an estimate of the
-%% normalisation for each \mht template.
+The aforementioned description of the TFs provide an estimate of the
+total SM background as a function of the (\njet,\nb,\HT) bin that is
+integrated over \mht. However, the analysis takes advantage of \mht
+distribution obtained from simulation. This information is propagated
+to the likelihood model via an \mht template per (\njet,\nb,\HT) bin,
+which is equivalent to dicing the numerator of the TF according to
+\mht, \ie $N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht,\mht)$. In this
+regard, the TFs described above provide an estimate of the
+normalisation for each \mht template.
 
-%% \subsection{Data control samples used in the method}
+\subsection{Data control samples used in the method}
 
-%% To estimate the contributions from backgrounds with genuine missing transverse momentum, three data
-%% control regions are used, which are binned identically to the signal
-%% region: \mj, \mmj and \gj.  Their definitions are provided
-%% in Sec.~\ref{sec:selection}. The \ej and \eej control regions are not
-%% used now, but are investigated to be used analogously to the \mj and \mmj regions in
-%% the future. The selection criteria for these
-%% control regions are defined such that any potential contamination from
-%% new physics processes or QCD multijets is negligible.
+To estimate the contributions from backgrounds with genuine missing
+transverse momentum, three data control regions are used, which are
+binned identically to the signal region: \mj, \mmj and \gj.  Their
+definitions are provided in Sec.~\ref{sec:selection}. The selection
+criteria for these control regions are defined such that any potential
+contamination from new physics processes or QCD multijets is
+negligible.
 
 %% In previous versions of this analysis, the \mmj and \gj control
 %% samples are used to predict the \znunu +jets background. We plan to
