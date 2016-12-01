@@ -10,6 +10,8 @@ selection criteria that are specific to each region.
 \subsection{Pre-selection}
 \label{sec:preSelection}
 
+\subsubsection{MET filters}
+
 A number of beam- and detector-related effects can induce significant
 \met. Examples include beam halo, reconstruction failures, spurious
 detector noise, or event misreconstruction due to detector
@@ -18,11 +20,7 @@ are rejected with high efficiency by applying a range of dedicated
 vetoes. All ``MET filters'' recommended by the JetMET POG and SUSY PAG
 are applied by default in this analysis and listed in Table~\ref{tab:pre-selections}.
 
-To protect against multiple jets failing the $\pt$ threshold or
-falling out of detector acceptance, the jet-based
-estimate of the missing transverse energy, \mht, is compared to the
-missing transverse energy variable, $\met$, and events with 
-$R_{\mathrm{miss}}=\mht/\met > 1.25$ are rejected.
+\subsubsection{Jet requirements}
 
 Jets considered in the analysis are required to satisfy $\PT>40\gev$
 and $|\eta|<2.4$. Events containing jets in the forward region that
@@ -47,6 +45,8 @@ The asymmetric and mono-jet categories have been added to
 the analysis to help improve acceptance to a range of DM models and compressed
 SUSY.
 
+\subsubsection{Jet-based energy sums}
+
 Events are required to have significant hadronic activity by requiring
 $\scalht > 200\GeV$. Despite an increase in both multijet production
 cross sections and pileup in Run~2, the lowest \HT threshold is
@@ -54,11 +54,30 @@ kept at the same value of the Run~1 analysis~\cite{Chatrchyan:2013lya}
 in order to maintain acceptance to DM models or compressed
 SUSY. 
 
-Events are also required to have appreciable missing hadronic energy
-by requiring $\mht>130\gev$. This ensures that all events used within
-the analysis have a degree of missing energy similar to that required
-in the signal region via an \alphat cut. This is outlined in
-Sec.~\ref{sec:had-signal}. 
+An estimator of the missing transverse energy for each event, \ETmiss,
+is determined from the vectorial sum of the jet transverse momenta,
+known as \mht. Events are required to have appreciable missing
+transverse energy by requiring $\mht>130\gev$. This requirement is
+applied to events in the signal and control regions. The
+\scalht-dependent \alphat thresholds, required to suppress multijet
+events as outlined in Sec.~\ref{sec:had-signal}, provide an effective
+threshold on \mht comparable to 130\GeV via the relationship in
+Eq.~(\ref{eq:alphat3}). Hence, the extrapolation from control to
+signal region in \mht is minimal. 
+
+\subsubsection{The \mht/\met variable}
+
+Finally, the value of \mht is compared to the missing transverse
+energy variable, $\met$. Only events that satisfy
+$R_{\mathrm{miss}}=\mht/\met < 1.25$ are considered in order to
+protect against events containing multiple jets outside the
+experimental acceptance that contribute significantly to \mht. In the
+case of the control regions, in which well-reconstructed, isolated
+muons and photons are selected, the $R_{\mathrm{miss}} < 1.25$
+requirement is also applied. The \mht sum does not consider the
+transverse momentum of the muons or photon. Hence their momenta are
+also added to the \met such that the \mht and \met can be considered
+on an equal footing.
 
 The pre-selection requirements are summarised in Tab.~\ref{tab:pre-selections}
 
@@ -119,18 +138,18 @@ No \alphat cut is applied in the monojet bins, as the variable is defined only f
 
 \begin{table}[h!]
   \caption{\alphat thresholds versus
-    lower bound of \scalht bin. For all \HT bins satisfying $\HT > 800
-    \gev$, no \alphat cut is applied. No \alphat requirement is imposed in the
-    monojet bins.}
+    lower bound of \scalht bin. For all \HT bins satisfying $\HT >
+    900\gev$, no \alphat cut is applied. No \alphat requirement is
+    imposed in the monojet bins.}
   \label{tab:alphat-thresholds}
   \centering
   \footnotesize
-  \begin{tabular}{ lcccccccc }
+  \begin{tabular}{ lccccccccc }
     \hline
     \hline
-    \scalht            & 200       & 250       & 300       & 350       & 400       & 500       & 600       \\
+    \scalht            & 200       & 250       & 300       & 350       & 400       & 500       & 600 &  $>$900    \\
     \hline                                                                                     
-    \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      & 0.52      \\
+    \alphat threshold  & 0.65      & 0.60      & 0.55      & 0.53      & 0.52      & 0.52      & 0.52 & --    \\
     \hline
     \hline
   \end{tabular}
@@ -224,9 +243,10 @@ in Table~\ref{tab:sr-selections}.
     Selection             & Requirement                                                    \\    
     \hline
     Veto                  & Veto on leptons, photons and SITs                              \\
-    \alphat               & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 800\gev$ \\
+    \alphat               & $>$0.52--0.65 (\HT-dependent) for region $200 < \HT < 900\gev$ \\
     \bdphi                & $>0.5$                                                         \\
     ``Beam Halo Filter''  &  $CHF(\textrm{leading jet})>0.1$                                \\
+    ``Protection against QCD''  &  $CHF(\textrm{leading jet})<0.95$                                \\
     \hline
     \hline
   \end{tabular}
@@ -243,16 +263,22 @@ in Table~\ref{tab:sr-selections}.
 The selection criteria for the \mj sample are chosen to identify W
 bosons decaying to a muon and a neutrino in the phase-space of the
 signal. In order to select events containing W bosons, exactly one
-tight isolated muon \ref{sec:muon-id} within an acceptance of \PT $>$ 30 \gev and
+tight isolated muon (defined in Sec.~\ref{sec:muon-id}) within an acceptance of \PT $>$ 30 \gev and
 $|\eta| <$ 2.1 is required. The muons is removed from the event while computing the \met-based quantities, like \mht, \alphat. 
 The transverse mass of the W candidate must satisfy $30 < \mt(\mu,\pfmet) < 125\gev$. 
 This cut is also effective in reducing potential signal contamination 
 for final states with leptons. 
 Events are vetoed if $\Delta R(\mu,\textrm{jet}) < 0.5$ for at least one jet. 
-The single isolated track veto, described in
-Sections~\ref{sec:objects} and~\ref{sec:vetoes}, is also applied,
-which considers all single isolated tracks in the event except that
-associated with the identified, isolated muon. 
+
+Events are vetoed if well-reconstructed, isolated electrons and
+photons, defined in Sec.~\ref{sec:objects}, are found to be within the
+acceptances defined in Sec.~\ref{sec:vetoes}. Hence the vetoes mirror
+exactly those used in the signal region, except for the selected
+muon. Similarly, events containing single isolated tracks are also
+vetoed according to the object and acceptance definitions found in
+Secs.~\ref{sec:objects} and~\ref{sec:vetoes}. All single isolated
+tracks in the event are considered, except for that associated with
+the identified, isolated muon.
 
 \subsubsection{The \texorpdfstring{\mmj}{di-muon plus jets} control sample}
 \label{sec:mumucontrolSelection}
@@ -261,19 +287,26 @@ The selection criteria are identical to those for the \mj sample, with
 the following exceptions that are tuned to identify Z bosons decaying
 to two muons in the kinematic phase space of the signal region. 
 In order to select an event sample containing Z bosons, exactly two
-tight isolated muons within an acceptance of $\Pt > 30\gev$ and
+tight isolated muons (defined in Sec.~\ref{sec:muon-id}) within an acceptance of $\Pt > 30\gev$ and
 $|\eta| < 2.1$ are required. The two muons are required to have opposite electric charge 
 and the invariant mass of the two muons must satisfy $m_{Z} - 25 < M_{\mu_1\mu_2} < m_{Z} +25$. 
 Events are vetoed if $\Delta R(\mu,\textrm{jet}) < 0.5$ is satisfied, running over all muons
-and all jets. The single isolated track veto is also applied
-considering all single isolated tracks in the event except those
-associated with the two identified, isolated muons. 
+and all jets. 
 
+Events are vetoed if well-reconstructed, isolated electrons and
+photons, defined in Sec.~\ref{sec:objects}, are found to be within the
+acceptances defined in Sec.~\ref{sec:vetoes}. Hence the vetoes mirror
+exactly those used in the signal region, except for the selected
+muons. Similarly, events containing single isolated tracks are also
+vetoed according to the object and acceptance definitions found in
+Secs.~\ref{sec:objects} and~\ref{sec:vetoes}. All single isolated
+tracks in the event are considered, except for that associated with
+the identified, isolated muons.
 
 \subsubsection{The \texorpdfstring{\gj}{photon plus jets} control sample}
 \label{sec:photoncontrolSelection}
 
-The \gj sample is defined by requiring exactly one photon satisfying
+The \gj sample is defined by requiring exactly one photon (defined in Sec.~\ref{sec:photon-id}) satisfying
 tight isolation criteria and within an acceptance of $\pt > 200\gev$
 (limited by trigger requirements) and $|\eta| < 1.45$. Furthermore,
 events are vetoed if $\Delta R(\gamma,\textrm{jet}) < 1.0$ is
@@ -285,10 +318,15 @@ control sample and signal region are subject to identical kinematic
 requirements and the photon carries sufficient transverse energy so
 that the mass of the Z boson becomes a negligible effect when using
 the \gj sample to predict the kinematic distributions of the \znunu
-background. The cleaning cut $\mht/\met$ is also applied, as done in
-the signal region, where the \met is adjusted to account for the
-transverse energy of the identified, isolated photon. 
+background. 
 
+Events are vetoed if well-reconstructed, isolated muons and electrons,
+defined in Sec.~\ref{sec:objects}, are found to be within the
+acceptances defined in Sec.~\ref{sec:vetoes}. Hence the vetoes mirror
+exactly those used in the signal region, except for the selected
+photon. Similarly, events containing single isolated tracks are also
+vetoed according to the object and acceptance definitions found in
+Secs.~\ref{sec:objects} and~\ref{sec:vetoes}. 
 
 \subsection{Event categorisation}
 \label{sec:event-categorisation}
@@ -335,7 +373,8 @@ The \textit{nominal} binning for these variables is summarised in Tab.~\ref{tab:
     \hline
     \nb & $\nb=0,1,2,3,\geq 4$ \\
     \hline
-    \scalht (GeV) & (200,250), (250,300), (300,350), (350,400), (400,500), (500,600), (600,900), (900,1200), $>$1200 \\
+    \scalht (GeV) & \parbox[t]{12cm}{(200,250), (250,300), (300,350), (350,400),
+      (400,500), (500,600), \\ (600,750), (750,900), (900,1050), (1050,1200), $>$1200 } \\
     \hline
     \hline
   \end{tabular}
@@ -344,27 +383,37 @@ The \textit{nominal} binning for these variables is summarised in Tab.~\ref{tab:
 
 Starting from the definition of nominal binning, it has to be remarked that not all the (\njet,\nb,\scalht) combinations 
 are kinematically accessible. For example, no $\njet=2,\nb=3$ bin exists (due to the jet multiplicity constraint) 
-or $\njet^{sym}=4,\scalht<400\,\mathrm{GeV}$ (due to jet acceptance requirements). \\
+or $\njet^{sym} \geq 6,\scalht<400\,\mathrm{GeV}$ (due to jet acceptance requirements). 
+
 Moreover, a requirement is made in order to ensure a reasonable number of events is available in data 
 in each (\njet,\nb,\scalht) bin for the background prediction. 
 A minimum of 10 events in every bin is required for at least one of the 3 control regions (\mj,\mmj,\gj). 
 
 In order to improve the sensitivity to the signal, the search region is also binned in the \MHT dimension. 
-The extrapolation in this variable is minimized by binning the control regions finely in \scalht, i.e. by predicting 
+Simulation mismodelling in this variable is reduced by binning the control regions finely in \scalht, i.e. by predicting 
 events at the same ``scale''. A careful validation of the \MHT shape is carried out to assess 
-the uncertainty in this extrapolation and it's described in Sec.~\ref{sec:syst-on-shape}. \\
-The \MHT templates which are used in the likelihood fit are built using a minimum bin width of 
-100 GeV for $\MHT<600$ GeV and 200 GeV above. The lowest nominal bin is $130<\MHT<200\,\mathrm{GeV}$, 
-while the last open bin is $\MHT>1000\,\mathrm{GeV}$. 
-The \MHT templates are naturally bounded from above by \scalht, apart from the last open \scalht bin. 
-Starting from this nominal binning, a requirement is made to ensure that each bin in the template is well populated in the simulation. 
-At least 100 unweighted MC events are required in each \njet,\scalht,\MHT bin (inclusive in \nb). \\
+the uncertainty in this extrapolation and it's described in Sec.~\ref{sec:syst-on-shape}. 
+
+The \MHT templates which are used in the likelihood fit are built
+using a minimum bin width of 100 GeV for $\MHT<400$ GeV and 200 GeV
+above. The lowest nominal bin is $130<\MHT<200\,\mathrm{GeV}$. The
+\MHT templates are naturally bounded from above by \scalht, apart from
+the last open \scalht bin. However, the lower bound of the last open
+bin is limited to $\MHT>1000\,\mathrm{GeV}$, to ensure sufficient data
+counts in the control regions to validate the modelling at high \mht. 
+Starting from this nominal binning, a requirement is made to ensure
+that each bin in the template is well populated in the simulation.  At
+least 100 unweighted MC events are required in each \njet,\scalht,\MHT
+bin (inclusive in \nb). Adjacent \mht bins are merged until this
+requirement is satisfied. 
+
 The binning of the \MHT templates derived using these metrics is summarised in Tab.~\ref{tab:mht-binning}.
 
 
 \newpage
 \begin{table}[h!]
-  \topcaption{Summary of the nominal \MHT binning in each signal region category. The \MHT binning is identical in each \nb bin by construction.}
+  \topcaption{Summary of the \MHT binning in each signal region
+    category, determined according to the metrics described in this Section. The \MHT binning is identical in each \nb bin by construction.}
   \label{tab:mht-binning}
   \centering
   \begin{tabular}{ ccll }
@@ -406,7 +455,7 @@ The binning of the \MHT templates derived using these metrics is summarised in T
     & & [900,1200] & [130,300], [300,500], [500,700], [700,900], [900,inf] \\
     & & [1200,inf] & [130,300], [300,400], [400,600], [600,800], [800,1000], [1000,inf] \\
     \hline
-    \multirow{5}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} \geq 6$} & \multirow{5}{*}{all} & [200,400] & [130,inf] \\
+    \multirow{5}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} \geq 6$} 
     & & [400,600] & [130,200], [200,300], [300,inf] \\
     & & [600,900] & [130,300], [300,400], [400,600], [600,inf] \\
     & & [900,1200] & [130,200], [200,300], [300,400], [400,600], [600,800], [800,inf] \\
