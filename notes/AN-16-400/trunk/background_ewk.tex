@@ -34,26 +34,7 @@ to match the pileup distribution as measured in data, as described in~\ref{sec:p
 
 Additional re-weighting procedures applied to the simulated samples are described in the following.
 
-\subsubsection{\texorpdfstring{\gj} k-factor}
-\label{sec:gj-kfactor}
-The \gj cross section is known only at leading order, unlike other processes like 
-\ttj (next-to-next-to leading order) or \zj and \wj (next-to leading order). 
-A data-driven procedure is developed to derive a ``k-factor'' for the \gj cross section 
-by comparing the yields in the \gj and \mmj control regions. 
-An inclusive correction of 1.39 is derived from the ratio of the event yields in the two 
-control regions and is applied to the \gj MC sample. \\
-In order to assess the uncertainty on this correction, the systematic sources affecting 
-the acceptance in the \mmj control region are varied and the effect on the event yields is derived. 
-They include lepton trigger, ID, isolation, tracking efficiency and jet energy corrections. 
-The total systematic uncertainty, obtained by summing in quadrature each independent variation, 
-is 4\% and it's propagated to the likelihood fit. 
-Residual discrepancy in the $Z/\gamma$ ratio as a function of \scalht and \njet are assessed 
-through the data-driven test described in Sec.~\ref{sec:closure-tests}.
-
-
-
-
-\subsubsection{Sideband corrections}
+\subsubsection{Normalisation corrections from a \mht sideband}
 \label{sec:sideband-corrections}
 
 In the high-\scalht, high-\etmiss corner of the phase space used in this search, the normalisations of the MC samples do not necessarily agree with the observation. 
@@ -73,7 +54,7 @@ No uncertainty is considered for these corrections as any inaccuracy is already 
 for in the data-driven tests described in Sec.~\ref{sec:closure-tests} and would result in inflated systematics. 
 
 To take advantage of the full phase space of the sidebands a simultaneous 
-fit is used to derive the corrections for \wj, \zj, \ttbar, using the $100<\mht<130$ GeV selection. 
+fit is used to derive the corrections for \wj, \zj, \ttbar, using the $100<\mht<130$ GeV sideband. 
 The sideband is binned identically to the control region in \njet, \nb and \scalht and a floating 
 parameter per relevant process encodes the correction for that process (fully correlated across all bins).
 The \wj and \ttbar processes are mainly constrained by the \mj sideband while the \zj process is 
@@ -98,16 +79,24 @@ The correction derived for \zj is also applied to the \znunu sample.
   \end{tabular}
 \end{table}
 
-
-
-\subsubsection{Photon purity}
+\subsubsection{Estimate of non-prompt contribution in \gj events}
 \label{sec:photon-purity}
+
 The contribution from non-prompt photons in the \gj control region~\ref{sec:photoncontrolSelection} 
 is expected to be small after the tight ID selection~\ref{sec:photon-id}, the photon acceptance requirements 
 and the \alphat and $\Delta R (\gamma,\mathrm{jet})$ cuts. 
-Nevertheless a data-driven estimation of the non-prompt photons has been developed 
-in order to assess the agreement with the simulation and eventually correct the latter 
-to better match the data. \\
+Nevertheless a data-driven estimation of the non-prompt photons has been developed. 
+%in order to assess the agreement with the simulation and eventually correct the latter 
+%to better match the data. 
+The non-prompt contribution is provided by the QCD MC samples. The
+expected counts from MC are normalised (i.e. corrected) to data in a
+sideband enriched in non-prompt photons (i.e. ``fakes''). These
+corrections are determined as a function of photon \Pt to provide a
+data-driven photon-\Pt-dependent estimate of the non-prompt
+contribution to the \gj sample. No $\eta$ dependence is considered, as
+the analysis only considers barrel photons ($|\eta| < 1.45$) and no
+strong dependence is expected. 
+
 A double-sideband is considered by relaxing the photon ID and isolation, 
 specifically the $\sigma_{i\eta i\eta}$ requirement and the charged hadron isolation requirement. 
 The details of the definition of the sideband are listed in Tab.~\ref{tab:phoPurity-sideband}. 
@@ -138,8 +127,6 @@ photon \pt bins in Fig.~\ref{fig:chHadIsoSideband}.
   \caption{\label{fig:chHadIsoSideband} 
   The $\sigma_{i\eta i\eta}$ distribution in the charged hadron isolation sideband for two photon \pt bins. }
 \end{figure}
-
-
 
 The data in the sideband are used to normalise the non-prompt component in simulation, 
 after subtracting the small contribution ($<5$\%) from prompt photons taken from simulation. 
@@ -173,95 +160,118 @@ the non-prompt component in simulation is re-weighted as a function of the photo
 and both the statistical and systematic uncertainties are propagated to these correction factors. 
 
 
+\subsubsection{Correction to \texorpdfstring{\gj}{photon+jets} cross section}
+\label{sec:gj-kfactor}
 
-%% \subsection{The ``transfer factor'' method}
-%% \label{sec:ewk-method}
+The \gj cross section used in this analysis is calculated at leading
+order, unlike other processes like \ttj (next-to-next-to leading
+order) or \zj and \wj (next-to leading order).  A data-driven
+procedure is developed to derive a ``k-factor'' for the \gj cross
+section by comparing the yields in the \gj and \mmj control regions.
+An inclusive correction of 1.39 is derived from the ratio of the event
+yields in the two
+control regions and is applied to the \gj MC sample. \\
+In order to assess the uncertainty on this correction, the systematic
+sources affecting the acceptance in the \mmj control region are varied
+and the effect on the event yields is derived.  They include lepton
+trigger, ID, isolation, tracking efficiency and jet energy
+corrections.  The total systematic uncertainty, obtained by summing in
+quadrature each independent variation, is 4\% and it's propagated to
+the likelihood fit.  Residual discrepancy in the $Z/\gamma$ ratio as a
+function of \scalht and \njet are assessed through the data-driven
+test described in Sec.~\ref{sec:closure-tests}.
 
-%% The method used to estimate the aforementioned SM background
-%% contributions in the hadronic signal region relies on the use of a
-%% transfer factor (TF) determined from MC samples to transform the
-%% observed yield in a given \scalht, jet (\njet) and b-tag (\nb)
-%% multiplicity bin of a control sample, $\nobs^{\rm
-%%   control}(\njet,\nb,\scalht)$, into a predicted yield for the
-%% corresponding bin of the hadronic signal region, $\npre^{\rm
-%%   signal}(\njet,\nb,\scalht)$. The choice of \njet and \nb~event
-%% categorisation and \scalht binning in the control samples is identical
-%% to that for the signal region, as defined in
-%% Sec.~\ref{sec:selection}. 
 
-%% Each transfer factor is simply a ratio of the yields obtained from MC
-%% simulation for the same bin of the signal region and a given control
-%% sample:
+\subsection{The ``transfer factor'' method}
+\label{sec:ewk-method}
 
-%% \begin{equation}
-%%   \label{equ:tf-ratio}
-%%   {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
-%%       MC}^{\rm control}(\njet,\nb,\scalht)} 
-%% \end{equation}
+The method used to estimate the aforementioned SM background
+contributions in the hadronic signal region relies on the use of a
+transfer factor (TF) determined from MC samples to transform the
+observed yield in a given \scalht, jet (\njet) and b-tag (\nb)
+multiplicity bin of a control sample, $\nobs^{\rm
+  control}(\njet,\nb,\scalht)$, into a predicted yield for the
+corresponding bin of the hadronic signal region, $\npre^{\rm
+  signal}(\njet,\nb,\scalht)$. The choice of \njet and \nb~event
+categorisation and \scalht binning in the control samples is identical
+to that for the signal region, as defined in
+Sec.~\ref{sec:selection}. 
 
-%% In this way, predictions of background counts from SM processes can be
-%% made based on the various control samples:
+Each transfer factor is simply a ratio of the yields obtained from MC
+simulation for the same bin of the signal region and a given control
+sample:
 
-%% \begin{equation}
-%%   \label{equ:pred-method}
-%%   \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
-%%       signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
-%%       control}(\njet,\nb,\scalht)} \times \nobs^{\rm
-%%     control}(\njet,\nb,\scalht)   
-%% \end{equation}
+\begin{equation}
+  \label{equ:tf-ratio}
+  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
+      MC}^{\rm control}(\njet,\nb,\scalht)} 
+\end{equation}
 
-%% When constructing the transfer factors, the MC expectations for the
-%% following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar
-%% + jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets
-%% ($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets
-%% production via the $s$, $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or
-%% $\ttbar$H ($N_{\rm {\ttbar}X}$). Details on the MC
-%% samples used are given in Sec.~\ref{sec:datasets}. All MC samples
-%% are normalised to the integrated luminosity of the appropriate data
-%% sample.
+In this way, predictions of background counts from SM processes can be
+made based on the various control samples:
 
-%% The selection criteria for the data control samples closely resemble
-%% those for the signal region, differing mainly through the use of a
-%% lepton or photon object {\it tag} (that is ignored in the calculation
-%% of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
-%% and minimal additional kinematic requirements (\eg invariant or
-%% transverse mass windows) to obtain W, Z, and \ttbar-enriched event
-%% samples. The same selection criteria are designed to suppress signal
-%% contamination in the control samples so that unbiased data-driven
-%% estimates for the SM backgrounds in the signal region can be
-%% made. More detail on the selection criteria can be found in Sec.~\ref{sec:selection}.
+\begin{equation}
+  \label{equ:pred-method}
+  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
+      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
+      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
+    control}(\njet,\nb,\scalht)   
+\end{equation}
 
-%% The transfer factors account for differences in cross sections and
-%% branching ratios, acceptance and reconstruction efficiencies, and/or
-%% kinematic requirements between the signal and control regions. Any
-%% dependence on \njet, \nb, or \HT is largely attributable to
-%% differences in acceptance due to the presence or otherwise of \alphat
-%% or \mht requirements.
+When constructing the transfer factors, the MC expectations for the
+following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar
++ jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets
+($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets
+production via the $s$, $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or
+$\ttbar$H ($N_{\rm {\ttbar}X}$). Details on the MC
+samples used are given in Sec.~\ref{sec:datasets}. All MC samples
+are normalised to the integrated luminosity of the appropriate data
+sample.
 
-%% Many systematic effects are expected to cancel largely in the transfer
-%% factor. However, a systematic uncertainty is assigned to each transfer
-%% factor to account for theoretical uncertainties and effects such as
-%% the mismodelling of kinematics (\eg acceptances) and instrumental
-%% effects (\eg reconstruction efficiencies).
+The selection criteria for the data control samples closely resemble
+those for the signal region, differing mainly through the use of a
+lepton or photon object {\it tag} (that is ignored in the calculation
+of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
+and minimal additional kinematic requirements (\eg invariant or
+transverse mass windows) to obtain W, Z, and \ttbar-enriched event
+samples. The same selection criteria are designed to suppress signal
+contamination in the control samples so that unbiased data-driven
+estimates for the SM backgrounds in the signal region can be
+made. More detail on the selection criteria can be found in Sec.~\ref{sec:selection}.
 
-%% In the end, a fitting procedure that provides the final result is
-%% defined formally by the likelihood model described in
-%% Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
-%% (defined in terms of the variables \njet, \nb, and \scalht) of the
-%% signal sample is modelled as Poisson-distributed about the sum of a SM
-%% expectation (and a potential signal contribution). The components of
-%% this SM expectation are related to the expected yields in the control
-%% samples via transfer factors derived from simulation. The observations
-%% in each bin (again defined by \njet, \nb, and \scalht) of the control
-%% samples are similarly modelled as Poisson-distributed about the
-%% expected yields for each control sample. In this way, for a given
-%% bin, the observed yields in the signal and control samples are
-%% connected via the transfer factors derived from simulation. 
+The transfer factors account for differences in cross sections and
+branching ratios, acceptance and reconstruction efficiencies, and/or
+kinematic requirements between the signal and control regions. Any
+dependence on \njet, \nb, or \HT is largely attributable to
+differences in acceptance due to the presence or otherwise of \alphat
+or \mht requirements.
 
+Many systematic effects are expected to cancel largely in the transfer
+factor. However, a systematic uncertainty is assigned to each transfer
+factor to account for theoretical uncertainties and effects such as
+the mismodelling of kinematics (\eg acceptances) and instrumental
+effects (\eg reconstruction efficiencies).
+
+In the end, a fitting procedure that provides the final result is
+defined formally by the likelihood model described in
+Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
+(defined in terms of the variables \njet, \nb, and \scalht) of the
+signal sample is modelled as Poisson-distributed about the sum of a SM
+expectation (and a potential signal contribution). The components of
+this SM expectation are related to the expected yields in the control
+samples via transfer factors derived from simulation. The observations
+in each bin (again defined by \njet, \nb, and \scalht) of the control
+samples are similarly modelled as Poisson-distributed about the
+expected yields for each control sample. In this way, for a given
+bin, the observed yields in the signal and control samples are
+connected via the transfer factors derived from simulation. 
 %% The transfer factors are shown in Tables~\ref{tab:tf_mu_zinv_sym}-
 %% \ref{tab:tf_mumu_zinv_mono}. The procedure to determine the systematic
 %% uncertainties associated with these transfer factors is described in
-%% Sec.~\ref{sec:systematics}.
+%% Sec.~\ref{sec:systematics}. 
+The procedure to determine the systematic uncertainties associated
+with these transfer factors is described in
+Sec.~\ref{sec:systematics}.
 
 
 %% The transfer factors are shown in tables below.
@@ -281,28 +291,27 @@ and both the statistical and systematic uncertainties are propagated to these co
 
 %% \clearpage
 
-%% \subsection{Adding the \mht dimension}
+\subsection{Adding the \mht dimension}
 
-%% The aforementioned description of the TFs provide an estimate of the
-%% total SM background as a function of the (\njet,\nb,\HT) bin that is
-%% integrated over \mht. However, the analysis takes advantage of \mht
-%% distribution obtained from simulation. This information is propagated
-%% to the likelihood model via an \mht template per (\njet,\nb,\HT) bin,
-%% which is equivalent to dicing the numerator of the TF according to
-%% \mht, \ie $N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht,\mht)$. In this
-%% regard, the TFs described above provide an estimate of the
-%% normalisation for each \mht template.
+The aforementioned description of the TFs provide an estimate of the
+total SM background as a function of the (\njet,\nb,\HT) bin that is
+integrated over \mht. However, the analysis takes advantage of \mht
+distribution obtained from simulation. This information is propagated
+to the likelihood model via an \mht template per (\njet,\nb,\HT) bin,
+which is equivalent to dicing the numerator of the TF according to
+\mht, \ie $N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht,\mht)$. In this
+regard, the TFs described above provide an estimate of the
+normalisation for each \mht template.
 
-%% \subsection{Data control samples used in the method}
+\subsection{Data control samples used in the method}
 
-%% To estimate the contributions from backgrounds with genuine missing transverse momentum, three data
-%% control regions are used, which are binned identically to the signal
-%% region: \mj, \mmj and \gj.  Their definitions are provided
-%% in Sec.~\ref{sec:selection}. The \ej and \eej control regions are not
-%% used now, but are investigated to be used analogously to the \mj and \mmj regions in
-%% the future. The selection criteria for these
-%% control regions are defined such that any potential contamination from
-%% new physics processes or QCD multijets is negligible.
+To estimate the contributions from backgrounds with genuine missing
+transverse momentum, three data control regions are used, which are
+binned identically to the signal region: \mj, \mmj and \gj.  Their
+definitions are provided in Sec.~\ref{sec:selection}. The selection
+criteria for these control regions are defined such that any potential
+contamination from new physics processes or QCD multijets is
+negligible.
 
 %% In previous versions of this analysis, the \mmj and \gj control
 %% samples are used to predict the \znunu +jets background. We plan to
