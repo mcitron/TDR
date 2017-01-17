@@ -3,7 +3,7 @@ import csv
 values = {}
 
 with open('RootFilesAndTarFiles/aggregated_results_crfit.csv') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=',')#, quotechar='|')
+    spamreader = csv.reader(csvfile, delimiter=',')
     for row in spamreader:
         if "njet" in row[0] : continue 
         #print row
