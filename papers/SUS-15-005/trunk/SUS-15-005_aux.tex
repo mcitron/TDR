@@ -36,8 +36,11 @@
 }
 
 \maketitle
+\tableofcontents
 
 \clearpage
+\section{Tabulated results}
+
 \begin{table*}[h!]
   \scriptsize
   \centering
@@ -207,6 +210,8 @@ SM post-fit & $(\geq 5a,\geq 3)$ & --               & --               & $0.5\pm
 \end{table*}
 
 \clearpage
+\section{Interpretations}
+
 \begin{figure*}[!h]
  \begin{center}
    \subfigure[]{\includegraphics[height=0.15\textwidth]{Supplementary/T1qqqq_feyn_aux}} ~~
@@ -438,10 +443,6 @@ SM post-fit & $(\geq 5a,\geq 3)$ & --               & --               & $0.5\pm
   \label{fig:T2bW_X05_excl}}
 \end{figure*}
 
-
-
-
-
 \clearpage
 \begin{figure*}[!h]
   \begin{center}
@@ -477,4 +478,227 @@ SM post-fit & $(\geq 5a,\geq 3)$ & --               & --               & $0.5\pm
       \label{fig:third-gen-summary-zoomed-plots} }
   \end{center}
 \end{figure*}
+
+\clearpage
+\section{Material for recasters}
+
+\begin{table*}[h!]
+  \centering
+  \caption{Summary of a simplified ``aggregated'' binning scheme
+    comprising \HTmiss shapes for eight representative ``topologies''
+    defined in terms of requirements on \njet (both symmetric and
+    asymmetric categories) and \nb.  
+    For each topology, event yields are integrated over the full
+    \scalht range, $\scalht > 200\GeV$, and are categorised according
+    to eight bins in \HTmiss: $130 < \HTmiss < 200\GeV$, six bins
+    100\GeV wide in the region $200 < \HTmiss < 800\GeV$, and an open
+    final bin, $\HTmiss > 800\GeV$.  
+    This categorisation scheme leads to 64 bins that are exclusive, 
+    contiguous, and provide complete coverage of the signal region. 
+    The corresponding SM backgrounds estimates for these 64 bins are
+    based on an aggregation of estimates determined with the nominal
+    binning scheme and likelihood model.
+    \label{tab:aggr_signal_regions}
+  }
+  \begin{tabular}{lcccccc}
+    \hline
+    Topology              & \multicolumn{3}{c}{Aggregate over \dots} &             & \multicolumn{2}{c}{Number of bins in \dots} \\[0.5ex]
+    \cline{2-4}
+    \cline{6-7}
+                          & \njet symm.                              & \njet asym. & \nb     &  & \scalht & \HTmiss              \\[0.5ex]
+    \hline
+    monojet-like, low \nb & 1--2                                     & 2           & 0       &  & 1       & 8                    \\
+    monojet-like, low \nb & 1--2                                     & 2           & $\geq$1 &  & 1       & 8                    \\
+    asymmetric, low \nb   & -                                        & $\geq$3     & 0--1    &  & 1       & 8                    \\
+    asymmetric, high \nb  & -                                        & $\geq$3     & $\geq$2 &  & 1       & 8                    \\
+    low \njet, low \nb    & 3--4                                     & -           & 0--1    &  & 1       & 8                    \\
+    low \njet, high \nb   & 3--4                                     & -           & $\geq$2 &  & 1       & 8                    \\
+    high \njet, low \nb   & $\geq$5                                  & -           & 0--1    &  & 1       & 8                    \\
+    high \njet, high \nb  & $\geq5$                                  & -           & $\geq$2 &  & 1       & 8                    \\[0.5ex]
+    \hline
+    Total number of bins  & \multicolumn{5}{c}{}                     & 64                                                        \\[0.5ex]
+    \hline
+  \end{tabular}
+\end{table*}
+
+\clearpage
+\begin{table*}[h!]
+  \scriptsize
+  \centering
+  \caption{
+    Observed data yields and ``CR-only fit'' SM background
+    expectations for the aggregated binning schema, as a function of
+    topology and \HTmiss. The SM backgrounds are determined from a
+    simultaneous fit to data in the control regions. The data yields
+    in the signal region are masked and excluded from the fit.  
+    The uncertainties include statistical as well as systematic
+    contributions.
+  }
+  \label{tab:aggregated}  
+  \scalebox{0.85}{
+    \begin{tabular}{lllccccccccc}
+      \hline
+     & \multicolumn{2}{c}{Topology} & & \multicolumn{8}{c}{\HTmiss bins [GeV]}                                                                                                                          \\[0.5ex]
+     \cline{2-3}\cline{5-12}
+     & \njet                        & \nb  & & 130--200           & 200--300             & 300--400           & 400--500         & 500--600         & 600--700        & 700--800       & 800--$\infty$      \\[0.5ex]
+      \hline
+Data & mono.                        & low  & & 2830               & 25115                & 3474               & 745              & 182              & 64              & 22             & 24             \\
+SM   & mono.                        & low  & & $2740.0 \pm 268.0$ & $24600.0 \pm 1600.0$ & $3310.0 \pm 242.0$ & $706.0 \pm 52.9$ & $208.0 \pm 38.5$ & $61.8 \pm 15.1$ & $23.9 \pm 5.6$ & $27.6 \pm 5.8$ \\[0.5ex]
+Data & mono.                        & high & & 320                & 1406                 & 205                & 50               & 12               & 0               & 1              & 0              \\
+SM   & mono.                        & high & & $278.0 \pm 39.5$   & $1410.0 \pm 162.0$   & $200.0 \pm 27.1$   & $45.8 \pm 7.3$   & $12.5 \pm 2.9$   & $3.5 \pm 0.8$   & $1.9 \pm 0.6$  & $1.4 \pm 0.7$  \\[0.5ex]
+Data & asym.                        & low  & & 3124               & 3367                 & 422                & 75               & 14               & 3               & 3              & 2              \\
+SM   & asym.                        & low  & & $2960.0 \pm 217.0$ & $3330.0 \pm 258.0$   & $459.0 \pm 42.6$   & $78.4 \pm 9.5$   & $15.4 \pm 3.7$   & $4.6 \pm 1.2$   & $3.3 \pm 0.9$  & $3.9 \pm 1.3$  \\[0.5ex]
+Data & asym.                        & high & & 190                & 133                  & 16                 & 1                & 0                & 0               & 0              & 0              \\
+SM   & asym.                        & high & & $201.0 \pm 28.1$   & $138.0 \pm 26.0$     & $12.3 \pm 3.0$     & $1.7 \pm 0.5$    & $0.4 \pm 0.2$    & $0.0 \pm 0.0$   & $0.0 \pm 0.0$  & $0.1 \pm 0.1$  \\[0.5ex]
+Data & low                          & low  & & 955                & 2027                 & 768                & 228              & 91               & 34              & 15             & 9              \\
+SM   & low                          & low  & & $925.0 \pm 87.8$   & $1970.0 \pm 157.0$   & $786.0 \pm 62.0$   & $251.0 \pm 22.6$ & $86.2 \pm 10.5$  & $34.7 \pm 4.9$  & $15.4 \pm 1.7$ & $16.5 \pm 2.3$ \\[0.5ex]
+Data & low                          & high & & 55                 & 77                   & 23                 & 5                & 2                & 1               & 0              & 1              \\
+SM   & low                          & high & & $55.4 \pm 12.8$    & $87.1 \pm 17.4$      & $21.8 \pm 5.4$     & $5.1 \pm 1.2$    & $1.4 \pm 0.4$    & $0.6 \pm 0.2$   & $0.3 \pm 0.2$  & $0.5 \pm 0.3$  \\[0.5ex]
+Data & high                         & low  & & 138                & 252                  & 88                 & 36               & 22               & 6               & 3              & 2              \\
+SM   & high                         & low  & & $129.0 \pm 22.5$   & $259.0 \pm 32.7$     & $111.0 \pm 12.6$   & $37.8 \pm 4.2$   & $15.1 \pm 1.8$   & $6.9 \pm 1.1$   & $3.2 \pm 0.6$  & $3.7 \pm 0.8$  \\[0.5ex]
+      \hline
+    \end{tabular}
+  }
+\end{table*}
+
+\newcommand{\customcaption}[4]{(Upper panel) Event yields observed in
+  data (solid circles) and SM expectations with their associated
+  uncertainties (blue histogram with grey shaded band) determined from
+  a simultaneous fit to data in the control regions only (CR-only
+  fit), as a function of \HTmiss for events in the #1 aggregated
+  signal region bins that satisfy $\scalht > 200\GeV$, #2, and
+  (\cmsLeft) #3 or (\cmsRight) #4. 
+  (Lower panel) The significance of deviations (pulls) observed in
+  data with respect to both the SM expectations from the CR-only fit,
+  expressed in terms of the total uncertainty in the SM
+  expectations. The pulls cannot be considered independently due to
+  inter-bin correlations.}
+
+\clearpage
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_eq0b_le2j_200_Inf_crfit_aux.pdf} 
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_ge1b_le2j_200_Inf_crfit_aux.pdf} \\
+    \caption{\customcaption{``monojet-like''}{$1 \leq \njet \leq 2$ or $\njetasym = 2$}{$\nb = 0$}{$\nb \geq 1$}
+      \label{fig:aggr_monojet} 
+    }
+  \end{center}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_le1b_ge3a_200_Inf_crfit_aux.pdf} 
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_ge2b_ge3a_200_Inf_crfit_aux.pdf} \\
+    \caption{\customcaption{``asymmetric''}{$\njetasym \geq 3$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+      \label{fig:aggr_asym} 
+    }
+  \end{center}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_le1b_ge3j_200_Inf_crfit_aux.pdf} 
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_ge2b_ge3j_200_Inf_crfit_aux.pdf} \\
+    \caption{\customcaption{``low \njet''}{$3 \leq \njet \leq 4$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+      \label{fig:aggr_mid} 
+    }
+  \end{center}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_le1b_ge5j_200_Inf_crfit_aux.pdf} 
+    \includegraphics[width=0.49\textwidth]{Supplementary/aggregated_mhtShape_ge2b_ge5j_200_Inf_crfit_aux.pdf} \\
+    \caption{\customcaption{``high \njet''}{$\njet \geq 5$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+      \label{fig:aggr_high} 
+    }
+  \end{center}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[width=\textwidth]{Supplementary/aggregated_covariance_aux.pdf} 
+    \caption{Covariance matrix for the SM background estimates
+      the 64 aggregated signal region bins, determined from a
+      simultaneous fit to data in the control regions only (CR-only
+      fit).
+      \label{fig:aggr_corr} 
+    }
+  \end{center}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[!h]
+  \begin{center}
+    \includegraphics[width=\textwidth]{Supplementary/aggregated_correlation_aux.pdf} 
+    \caption{Correlation matrix for the SM background estimates
+      the 64 aggregated signal region bins, determined from a
+      simultaneous fit to data in the control regions only (CR-only
+      fit).
+      \label{fig:aggr_corr} 
+    }
+  \end{center}
+\end{figure*}
+
+\clearpage
+\begin{table*}[!t]
+  \topcaption{Expected ($\mu_{\text{exp}}$) and observed 
+    ($\mu_{\text{obs}}$) upper limits on the production cross section, 
+    expressed in terms of the signal strength parameter, obtained using
+    both the nominal and aggregated binning schema for the signal
+    region. Comparable values are obtained from the two schema for
+    these benchmark SUSY models because the signal events typically
+    populate bins at high values of \scalht and \HTmiss and so are at
+    or near the limit of the search sensitivity. Larger differences in
+    $\mu$ can be observed for models that populate the core of these
+    distributions. 
+  }
+  \label{tab:aggr_limits}
+  \centering
+  \begin{tabular}{ llccccc }
+    \hline
+    \multicolumn{2}{c}{Benchmark models}    & \multicolumn{2}{c}{Nominal}
+                                            & 
+                                            & \multicolumn{2}{c}{Aggregated}             \\ [0.3ex]
+    \cline{3-4}
+    \cline{6-7}
+    \multicolumn{2}{c}{$(m_{\text{SUSY}}, m_{\mathrm{LSP}})$ [\GeVns{}]} 
+                                            & $\mu_{\text{exp}}$
+                                            & $\mu_{\text{obs}}$
+                                            & 
+                                            & $\mu_{\text{exp}}$
+                                            & $\mu_{\text{obs}}$                         \\ [0.3ex]
+    \hline
+    \multirow{2}{*}{\texttt{T1qqqq}}        & (1300, 100) & 0.79 & 0.76 &  & 0.89 & 0.65 \\
+                                            & (900, 700)  & 0.58 & 0.44 &  & 0.72 & 0.54 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2qq\_8fold}}   & (1050, 100) & 0.90 & 0.63 &  & 0.84 & 0.45 \\
+                                            & (650, 550)  & 0.93 & 0.80 &  & 0.98 & 0.67 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2qq\_1fold}}   & (600, 50)   & 0.78 & 0.84 &  & 0.96 & 0.98 \\
+                                            & (400, 250)  & 0.73 & 0.71 &  & 0.83 & 0.66 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T1bbbb}}        & (1500, 100) & 0.81 & 0.79 &  & 1.04 & 0.84 \\
+                                            & (1000, 800) & 0.33 & 0.32 &  & 0.58 & 0.91 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T1tttt}}        & (1300, 100) & 1.00 & 1.89 &  & 1.41 & 1.19 \\
+                                            & (800, 400)  & 0.56 & 1.03 &  & 1.33 & 1.86 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T1ttbb}}        & (1300, 100) & 0.60 & 0.91 &  & 0.86 & 0.72 \\
+                                            & (1000, 700) & 0.51 & 0.70 &  & 0.89 & 1.55 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T5tttt\_DM175}} & (800, 100)  & 0.69 & 1.19 &  & 0.97 & 1.41 \\
+                                            & (700, 400)  & 1.00 & 1.35 &  & 2.16 & 3.35 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T5ttcc}}        & (1200, 200) & 0.58 & 0.87 &  & 0.80 & 0.67 \\
+                                            & (750, 600)  & 0.89 & 0.72 &  & 1.37 & 1.12 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2bb}}          & (800, 50)   & 0.96 & 1.06 &  & 1.60 & 1.10 \\
+                                            & (375, 300)  & 0.67 & 0.87 &  & 1.25 & 1.28 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2tb}}          & (600, 50)   & 0.70 & 1.35 &  & 0.96 & 1.45 \\
+                                            & (350, 225)  & 0.79 & 0.88 &  & 1.60 & 1.95 \\ [0.5ex]
+    \multirow{2}{*}{\texttt{T2tt}}          & (700, 50)   & 0.90 & 1.19 &  & 1.17 & 1.58 \\
+                                            & (350, 100)  & 0.44 & 0.50 &  & 0.82 & 0.97 \\ [0.5ex]
+    \multirow{1}{*}{\texttt{T2cc}}          & (325, 305)  & 0.92 & 0.68 &  & 1.30 & 0.95 \\ [0.5ex]
+    \multirow{1}{*}{\texttt{T2tt\_degen}}   & (300, 290)  & 0.56 & 0.41 &  & 0.77 & 0.57 \\ [0.5ex]
+    \multirow{1}{*}{\texttt{T2tt\_mixed}}   & (300, 250)  & 0.99 & 0.58 &  & 1.41 & 1.09 \\ [0.5ex]
+    \hline
+  \end{tabular}
+\end{table*}
 
