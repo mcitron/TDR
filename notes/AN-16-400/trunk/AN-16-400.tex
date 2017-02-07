@@ -1,6 +1,4 @@
 %%____________________________________________________________________________||
-
-%%____________________________________________________________________________||
 \RCS$Revision: 339081 $
 \RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/notes/AN-16-161/trunk/AN-16-161.tex $
 \RCS$Id: AN-16-400.tex 339081 2016-04-18 15:39:58Z sakuma $
@@ -12,12 +10,11 @@
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
 
 %%____________________________________________________________________________||
-\cmsNoteHeader{AN-16-161}
+\cmsNoteHeader{AN-16-400}
 
 %%____________________________________________________________________________||
-\title{Search for new physics in final states with jets and missing
-transverse momentum in $\sqrt{s}$ = 13~TeV pp collisions with the
-$\alpha_{\text{T}}$ variable}
+\title{Search for supersymmetry in pp collisions using final states
+with at least one jet and missing transverse momentum}
 
 %%____________________________________________________________________________||
 \author[imperial]{R.~Bainbridge}
@@ -34,7 +31,7 @@ $\alpha_{\text{T}}$ variable}
 \author[imperial]{S.A.~Malik}
 \author[imperial]{B.~Penning}
 \author[bristol]{T.~Sakuma}
-\author[vub]{D.~Smith^{1,}}
+\author[vub]{D.~Smith$^{1}$}
 \author[imperial]{A.~Tapper}
 
 \address[bristol]{University of Bristol, Bristol, UK}
@@ -46,34 +43,43 @@ $\alpha_{\text{T}}$ variable}
 \date{\today}
 
 %%____________________________________________________________________________||
-\abstract{This note summarises an inclusive search for new physics
-processes that produce final states with jets and missing transverse
-energy in pp collisions at a centre-of-mass energy of $\sqrt{s} = 13$~TeV. 
-In this search, a dimensionless kinematic variable,
-$\alpha_{\text{T}}$, is used, which provides powerful discrimination between
-events with genuine and misreconstructed missing transverse energy 
-and allows the use of soft final-state objects in the definition of
-the trigger and candidate signal event selections. The search is based
-on the total number of jets per event, the number of jets originating
-from bottom quarks per event and the scalar and vector sum of transverse
-momenta of these jets. We analyse 12.9~$\text{fb}^{-1}$ of data collected by the CMS detector at the LHC 
-and provide interpretations with simplified supersymmetric models of
-direct and gluino-mediated production of squarks .}
+\abstract{A search for supersymmetry is performed in final states
+containing one or more jets and an imbalance in transverse momentum. A
+sample of events resulting from pp collisions at a centre-of-mass
+energy of 13\TeV is analysed. The event data were recorded with the
+CMS detector at the CERN LHC in 2016 and correspond to an integrated
+luminosity of 36.3\fbinv. The search provides sensitivity to models
+that predict a stable weakly interacting massive particle, such as the
+neutralino. The search employs several kinematic variables to suppress
+multijet production to a subdominant level with respect to all other
+standard model backgrounds. Several further kinematic variables are
+used for signal extraction using a binned maximum-likelihood fit to
+the data. The number of candidate signal events is found to agree with
+the expected event counts from standard model processes. A number of
+simplified supersymmetric models that assume the production of gluino
+or squark pairs that decay to neutralinos and standard model
+particles, are used to interpret the result. For models that assume
+the production of gluino pairs, gluino and neutralino masses up to X
+and Y\GeV, respectively, are excluded. For models that assume In the
+case of the production of squark pairs, light-flavour, bottom, and top
+squarks masses up to X, Y, and Z\GeV are excluded,
+respectively. Models with near-degenerate mass spectra are also
+considered. For models that assume top-squark production and their
+decays to nearly mass-degenerate neutralinos, top squark masses up to
+X\GeV are excluded.  }
 
 %%____________________________________________________________________________||
 \hypersetup{ 
-  pdfauthor={Robert Bainbridge, Freya
-Blekman, Shane Breeze, Oliver Buchmueller, Stefano Casasso, Matthew
-Citron, Adam Elwood, Henning Flaecher, Aran Garcia-Bellido, Christian
-Laner, Kin Ho Lo, Sarah Alam Malik, Bjoern Penning, Tai
-Sakuma, Dominic Smith, Alex Tapper.},
-  pdftitle={Search for new physics in final states with jets and missing
-  transverse momentum in 13 TeV pp collisions with the AlphaT variable:
-  the Early Analysis exercise},
-  pdfsubject={CMS, jets, missing transverse momentum, supersymmetry,
-  dark matter, AlphaT},
-  pdfkeywords={CMS, jets, missing transverse momentum, supersymmetry,
-  dark matter, AlphaT},
+  pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
+    Buchmueller, Stefano Casasso, Matthew Citron, Adam Elwood, Henning
+    Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah
+    Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
+    Tapper},
+  pdftitle={Search for supersymmetry in pp collisions using final
+    states with at least one jet and missing transverse momentum},
+  pdfsubject={CMS},
+  pdfkeywords={CMS, jets, monojet, missing transverse momentum,
+    supersymmetry, dark matter, AlphaT} 
 }
 
 %%____________________________________________________________________________||
@@ -87,31 +93,32 @@ Sakuma, Dominic Smith, Alex Tapper.},
 \input{symbols}
 
 %%____________________________________________________________________________||
-%% \include{intro}
-%% \include{strategy}
-%% \include{alphat}
-%% \include{datasets}
-%% \include{triggers}
-%% \include{objects}
-%% \include{selection}
-%% %% \include{btag_formula}
-%% \include{sideband_corrections}
-%% \include{charac}
-%% \include{background_qcd}
-%% \include{background_ewk}
-%% \include{systematics}
-%% \include{mhtTemplate}
-%% \include{likelihood}
+\include{intro}
+\include{alphat}
+\include{datasets}
+\include{triggers}
+\include{objects}
+\include{selection}
+\include{btag_formula}
+\include{charac}
+\include{background_qcd}
+\include{background_ewk}
+\include{systematics}
+\include{mhtTemplate}
+\include{likelihood}
 %% \include{results}
 %% \include{susy}
 %% \include{darkmatter}
-%% \include{summary}
+\include{summary}
 
 %%____________________________________________________________________________||
 \bibliography{auto_generated}
 
 %%____________________________________________________________________________||
-%% \appendix
+\appendix
+\include{app_systematics}
+\include{qcdTrigger}
+
 %% \include{alphaTTriggerEfficiencies}
 %% \include{bias_injection}
 %% %% \include{jetRanking}
