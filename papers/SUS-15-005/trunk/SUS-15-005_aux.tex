@@ -484,23 +484,23 @@ SM post-fit & $(\geq 5a,\geq 3)$ & --               & --               & $0.5\pm
 
 \begin{table*}[h!]
   \centering
-  \caption{Summary of a simplified ``aggregated'' binning scheme
-    comprising \HTmiss shapes for eight representative ``topologies''
-    defined in terms of requirements on \njet (both symmetric and
-    asymmetric categories) and \nb.  
-    For each topology, event yields are integrated over the full
+  \caption{Summary of a simplified binning scheme comprising \HTmiss
+    shapes for eight representative event topologies, defined in terms
+    of requirements on \njet (both symmetric and asymmetric
+    categories) and \nb. 
+    For each topology, event yields are integrated over the full 
     \scalht range, $\scalht > 200\GeV$, and are categorised according
     to eight bins in \HTmiss: $130 < \HTmiss < 200\GeV$, six bins
     100\GeV wide in the region $200 < \HTmiss < 800\GeV$, and an open
     final bin, $\HTmiss > 800\GeV$. 
-    This categorisation scheme leads to 64 bins that are exclusive, 
+    This categorisation scheme leads to 64 bins that are exclusive,
     contiguous, and provide complete coverage of the signal region. 
     The corresponding SM background estimates for these 64 bins are
     obtained using the nominal likelihood model. The \HTmiss template 
     for each topology is determined from simulation and the
     normalisation for each template is given by an aggregate of
     estimates from several (\njet, \nb, \scalht) bins, defined
-    according to nominal binning scheme.
+    according to the nominal binning scheme.
     \label{tab:aggr_signal_regions}
   }
   \begin{tabular}{lcccccc}
@@ -530,12 +530,12 @@ SM post-fit & $(\geq 5a,\geq 3)$ & --               & --               & $0.5\pm
   \centering
   \caption{
     Observed data yields and ``CR-only fit'' SM background
-    expectations for the aggregated binning schema, as a function of
-    topology and \HTmiss. The SM backgrounds are determined from a
+    expectations using the simplified binning scheme, as a function of
+    topology and \HTmiss. The SM backgrounds are determined from a 
     simultaneous fit to data in the control regions. The data yields
-    in the signal region are masked and excluded from the fit.  
-    The uncertainties include statistical as well as systematic
-    contributions.
+    in the signal region are masked and excluded from the fit. The
+    uncertainties include statistical as well as systematic
+    contributions. 
   }
   \label{tab:aggregated}  
   \scalebox{0.85}{
@@ -586,14 +586,26 @@ SM    & high                         & high &  & $22.5 \pm 6.9$     & $32.8 \pm 
   data (solid circles) and SM expectations with their associated
   uncertainties (blue histogram with grey shaded band) determined from
   a simultaneous fit to data in the control regions only (CR-only
-  fit), as a function of \HTmiss for events in the #1 aggregated
-  signal region bins that satisfy $\scalht > 200\GeV$, #2, and
-  (\cmsLeft) #3 or (\cmsRight) #4. 
+  fit). Event yields and expectations are shown as a function of
+  \HTmiss for events in the #1 topology that are required to satisfy
+  #2, $\scalht > 200\GeV$, and (\cmsLeft) #3 or (\cmsRight) #4.
   (Lower panel) The significance of deviations (pulls) observed in
   data with respect to both the SM expectations from the CR-only fit,
   expressed in terms of the total uncertainty in the SM
   expectations. The pulls cannot be considered independently due to
   inter-bin correlations.}
+
+%\newcommand{\customcaption}[4]{(Upper panel) Event yields observed in
+%  data (solid circles) and SM expectations with their associated
+%  uncertainties (blue histogram with grey shaded band) determined from
+%  a simultaneous fit to data in the control regions only (CR-only
+%  fit), as a function of \HTmiss for events in the #1 topology that
+%  satisfy $\scalht > 200\GeV$, #2, and (\cmsLeft) #3 or (\cmsRight)
+%  #4.  (Lower panel) The significance of deviations (pulls) observed
+%  in data with respect to both the SM expectations from the CR-only
+%  fit, expressed in terms of the total uncertainty in the SM
+%  expectations. The pulls cannot be considered independently due to
+%  inter-bin correlations.}
 
 \clearpage
 \begin{figure*}[!h]
@@ -643,12 +655,13 @@ SM    & high                         & high &  & $22.5 \pm 6.9$     & $32.8 \pm 
 \begin{figure*}[!h]
   \begin{center}
     \includegraphics[width=\textwidth]{Supplementary/aggregated_covariance_aux.pdf} 
-    \caption{Covariance matrix for the aggregated SM background
-      estimates in the signal region, determined from a simultaneous
-      fit to data in the control regions only (CR-only fit). The
-      uncertainties in the background estimates are correlated in such
-      a way that the covariance is typically positive. Small positive
-      values, as well as the few negative values, are not shown.
+    \caption{Covariance matrix for the SM background estimates
+      obtained using the simplified binning scheme, determined from a
+      simultaneous fit to data in the control regions only (CR-only
+      fit). The uncertainties in the background estimates are
+      correlated in such a way that the covariance is typically
+      positive. Small positive values, as well as the few negative
+      values, are not shown.  
       \label{fig:aggr_corr} 
     }
   \end{center}
@@ -658,9 +671,10 @@ SM    & high                         & high &  & $22.5 \pm 6.9$     & $32.8 \pm 
 \begin{figure*}[!h]
   \begin{center}
     \includegraphics[width=\textwidth]{Supplementary/aggregated_correlation_aux.pdf} 
-    \caption{Correlation matrix for the aggregated SM background
-      estimates in the signal region, determined from a simultaneous
-      fit to data in the control regions only (CR-only fit).
+    \caption{Correlation matrix for the SM background estimates
+      obtained using the simplified binning scheme, determined from a
+      simultaneous fit to data in the control regions only (CR-only
+      fit).  
       \label{fig:aggr_corr} 
     }
   \end{center}
@@ -671,13 +685,12 @@ SM    & high                         & high &  & $22.5 \pm 6.9$     & $32.8 \pm 
   \topcaption{Expected ($\mu_{\text{exp}}$) and observed 
     ($\mu_{\text{obs}}$) upper limits on the production cross section, 
     expressed in terms of the signal strength parameter, obtained using
-    both the nominal and aggregated binning schema for the signal
-    region. Comparable values are obtained from the two schema for
-    these benchmark SUSY models because the signal events typically
-    populate bins at high values of \scalht and \HTmiss and so are at
-    or near the limit of the search sensitivity. Larger differences in
-    $\mu$ can be observed for models that populate the core of these
-    distributions. 
+    both the nominal and simplified binning schema. Comparable values
+    are obtained from the two schema for these benchmark SUSY models
+    because the signal events typically populate bins at high values
+    of \scalht and \HTmiss and so are at or near the limit of the
+    search sensitivity. Larger differences in $\mu$ can be observed
+    for models that populate the core of these distributions. 
   }
   \label{tab:aggr_limits}
   \centering
@@ -685,7 +698,7 @@ SM    & high                         & high &  & $22.5 \pm 6.9$     & $32.8 \pm 
     \hline
     \multicolumn{2}{c}{Benchmark models}    & \multicolumn{2}{c}{Nominal}
                                             & 
-                                            & \multicolumn{2}{c}{Aggregated}             \\ [0.3ex]
+                                            & \multicolumn{2}{c}{Simplified}             \\ [0.3ex]
     \cline{3-4}
     \cline{6-7}
     \multicolumn{2}{c}{$(m_{\text{SUSY}}, m_{\mathrm{LSP}})$ [\GeVns{}]} 
