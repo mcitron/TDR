@@ -1,8 +1,9 @@
+===============
 Nominal result:
 ===============
 
 1) results_prefit.csv
-2) results_prefit.csv
+2) results_postfit.csv
 
 The two .csv files contain the nominal result: 
 1) provides the pre-fit SM background estimates;
@@ -25,15 +26,38 @@ Notes:
 - "symm": implies symmetric pT thresholds of >100GeV on the two leading jets
 - "asym": implies asymmetric pT thresholds of >100 and >40GeV on the two leading jets
 
-Aggregated result:
-==================
+=====================================================================
+Result based on a simplified binning scheme ("super signal regions"):
+=====================================================================
+
+This result is based on a simplified categorisation of candidate
+signal events. The SM background estimates are obtained from a
+"CR-only fit", in which a simultaneous fit to data yields in all
+control regions is performed, while the signal region is excluded
+from the fit.
+
+Event yields are provided for eight representative "topologies",
+defined in terms of requirements on Njet and Nb. For each topology,
+the event yields are integrated over the full HT range, HT > 200 GeV,
+and categorised according to eight bins in HTmiss. This categorisation
+scheme leads to 64 bins that are exclusive, contiguous, and provide
+complete coverage of the signal region. The corresponding background
+estimates are determined from the nominal likelihood model. The
+covariance matrix for the background estimates in the 64 bins is also
+available. This minimal set of information can be used to aid the
+reinterpretation of the search result using physics models not covered
+in this paper. The procedure using a simplified likelihood approach,
+as described in Ref. [1] below, demonstrates a good degree of accuracy
+for a wide range of models. A discussion of the assumptions and
+approximations is also provided therein. Further information is
+available upon request.
+
+[1] CMS Collaboration, "Simplified likelihood for the
+re-interpretation of public CMS results", CMS Note
+CMS-NOTE-2017-001. CERN-CMS-NOTE-2017-001, 2017,
+https://cds.cern.ch/record/2242860
 
 1) aggregated_results_crfit.csv
-
-This file provides the SM background estimates from a "CR-only fit",
-in which a simultaneous fit is performed to data yields in all control
-regions, while the signal region is excluded from the fit. The nominal
-result is presented in a simplified format, with 64 bins 
 
 The first line of each .csv file defines the contents of the columns:
 njet,btag,htlow,hthigh,mhtlow,mhthigh,bkg,bkgErr,data
@@ -55,19 +79,17 @@ Notes:
 
 2) aggregated_results_crfit.root
 
-This file provides the identical information to 1), but in a histogram
+This file provides identical information to 1), but in a histogram
 format (TH1F). The relevant histograms are found in the "shapes_fit_b"
-directory and are called "total_data" and "total_background". 
+directory and are called "total_data" and "total_background".
 
 In the same file and directory, the covariance matrix is also provided
 in a TH2D histogram format ("total_covar"). The matrix can be used in
 conjunction with the "result_data" and "total_background" histograms
-to form a "simplified likelihood", as detailed in Ref [1] in order to
-aid the re-interpretation of the analysis result.
+to form a "simplified likelihood", as detailed in Ref [1] (above) in
+order to aid the reinterpretation of the analysis result.
 
-[1] CMS Collaboration, "Simplified likelihood for the
-re-interpretation of public CMS results", CMS-ID-XXX-YY, [CDS entry] 
-
+==================================
 Code implementations of variables:
 ==================================
 
