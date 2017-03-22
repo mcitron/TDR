@@ -1,5 +1,4 @@
 from collections import OrderedDict as odict
-from tabulate import tabulate
 from os import path
 
 #_______________________________________________________________________________
@@ -39,41 +38,62 @@ models_dict = odict([
 
 #_______________________________________________________________________________
 
-#row_headers = [
-#    "-"
-##    "Trigger selection"
-#    "$n_jet >= 2 (pT^j > 40 GeV)$", 
-#    "$pT^j1 > 100 GeV$",
-#    "$|eta^j1| < 2.5$",
-#    "$CHF^j1$",
-##    "$pT^j2 > 100 GeV$",
-#    "$HT^miss > 130 GeV (pT^j > 40 GeV)$",
-#    "$bDPhi > 0.5$",
-#    "$Alpha_T H_T-dependent cuts$",
-#    "$HT^miss / E_T^miss < 1.25$",
-#    "$Forward jet veto$",
-#    "$Photon veto$",
-#    "$Lepton vetoes$",
-#    "$Isolated track veto$",
-##    "$n_jet >= 5$",
-##    "$HT > 800 GeV (pT^j > 40 GeV)$",
-##    "$HT^miss > 800 GeV (pT^j > 40 GeV)$",
-##    "$n_b-jet >= 1 (pT^j > 40 GeV)$",
-##    "$n_b-jet >= 2 (pT^j > 40 GeV)$",
-#    ]
-row_headers = ["Cut"]*13
+def caption(models) :
+    sms = list(set([ x.split()[0].replace("_","\\_") for x in models ]))
+    acc = "$\\mathcal{A}\,\\varepsilon$"
+    caption = "A summary of the cumulative signal acceptance times efficiency "+acc+" [\\%] "
+    caption += "for various benchmark models"# ("+ ", ".join(sms[:-1])+", and "+sms[-1]+")"
+    caption += ", with both compressed and uncompressed mass spectra, following "
+    caption += "the application the event selection criteria that define the signal region. "
+    caption += "Values for "+acc+" are also shown following the application of additional "
+    caption += "requirements that define the four most sensitive event categories, "
+    caption += "as defined in Table 5. "
+    return caption 
 
 #_______________________________________________________________________________
 
-str = ""
-str += "\\documentclass{article}\n"
-str += "\\usepackage[utf8]{inputenc}\n"
-str += "\\begin{document}\n"
+#row_headers = ["Cut"]*13
+row_headers = [
+    "Before selection",
+    "Trigger selection",
+    "$n_{\\mathrm{jet}} \\geq 2$", 
+    "$p_{\\mathrm{T}}^{\\mathrm{j_1}} > 100\\,\mathrm{GeV}$",
+    "$|\\eta^{\\mathrm{j_1}}| < 2.5$",
+    #"$\\mathrm{CHF}(\\mathrm{j_1}) < 0.95$",
+    "$E_{\\mathrm{T}}^{\\mathrm{miss}}$ filters",
+    "$H_{\\mathrm{T}} > 200\,\\mathrm{GeV}$",
+    "$H_{\\mathrm{T}}^{\\mathrm{miss}} > 130\,\\mathrm{GeV}$",
+    "$\\Delta\phi^{*}_{\\mathrm{min}} > 0.5$",
+    "$H_{\\mathrm{T}}$-dependent $\\alpha_{\\mathrm{T}}$ cuts",
+    "$H_{\\mathrm{T}}^{\\mathrm{miss}} / E_{\\mathrm{T}}^{\\mathrm{miss}} < 1.25$",
+    "Forward jet veto",
+    "Photon veto",
+    "Lepton vetoes",
+    "Single isolated track veto",
+    ]
+
+#_______________________________________________________________________________
+
+string = ""
+string += "\\documentclass{article}\n"
+string += "\\usepackage[utf8]{inputenc}\n"
+string += "\\begin{document}\n"
 
 for category,models in models_dict.items() :
 
+    if len(models) == 0 : continue 
+
+    string += "\\clearpage"+"\n"
+    string += "\\begin{table}"+"\n"
+#    string += "\\centering"+"\n"
+    string += "\\caption{"+caption(models)+"}"+"\n"
+    string += "\\begin{tabular}{l"+"c"*(len(models)/2)+"}"+"\n"
+    string += "  \\hline"+"\n"
+
     # create list for column headers 
-    column_headers = ["Event selection"]
+    column_headers_1 = ["  Event selection","\multicolumn{"+str(len(models)/2)+"}{c}{Benchmark model}"]
+    column_headers_2 = ["  "]
+    column_headers_3 = ["  "]
 
     # create nested list for this category, add row headers 
     table_list = []
@@ -81,16 +101,21 @@ for category,models in models_dict.items() :
         table_list.append([row])
 
     # iterate through models for this category
-    for model in models : 
+    for model in models :
 
         # open file 
         name = "input/"+model+"/tbl_cutflow.txt"
         if not path.exists(name) : continue 
         file = open(name,"r")
 
-        # add model 
-        column_headers.append(model)
-
+        # add headers
+        sms = model.split()[0].replace("_","\_")
+        msusy = model.split()[1].strip("(").strip(",")
+        mlsp = model.split()[2].strip(")")
+        #print sms,msusy,mlsp
+        column_headers_2.append(sms)
+        column_headers_3.append("({:s},\,{:s})".format(msusy,mlsp))
+        
         # extract effs
         effs = []
         denom = -1.
@@ -109,19 +134,31 @@ for category,models in models_dict.items() :
         # populate nested list 
         for row,eff in zip(table_list,effs) : row.append(eff)
     
-    # print table contents
+    string += " & ".join(column_headers_1)+" \\\\"+"\n"
+    string += "  \\cline{2-"+str(1+len(models)/2)+"}"+"\n"
+    string += " & ".join(column_headers_2)+" \\\\"+"\n"
+    string += " & ".join(column_headers_3)+" \\\\"+"\n"
+    string += "  \\hline"+"\n"
+    for row in table_list :
+        print row
+        if len(row) < 2 : continue 
+        string += "  "+row[0]+" & "+" & ".join(["\\phantom{1}"+"{:2.0f}".format(x*100.) 
+                                                if x < 0.995 
+                                                else "100" 
+                                                for x in row[1:] ] )+" \\\\"+"\n"
 
-    str += "\n\n"
-    str += tabulate( table_list, column_headers, numalign="decimal", floatfmt=".2f", tablefmt="latex" )
+    string += "  \\hline"+"\n"
+    string += "\\end{tabular}"+"\n"
+    string += "\\end{table}"+"\n"
+    string += "\n"
 
-str += "\n\n"
-str += "\end{document}"
+string += "\end{document}"
 
 file = open("tables.tex","w")
-file.write(str)
+file.write(string)
 file.close()
 
 
-print str 
+print string
 
 #_______________________________________________________________________________
