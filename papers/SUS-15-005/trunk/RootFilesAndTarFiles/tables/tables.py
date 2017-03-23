@@ -41,13 +41,16 @@ models_dict = odict([
 def caption(models) :
     sms = list(set([ x.split()[0].replace("_","\\_") for x in models ]))
     acc = "$\\mathcal{A}\,\\varepsilon$"
-    caption = "A summary of the cumulative signal acceptance times efficiency "+acc+" [\\%] "
+    caption = "A summary of the cumulative signal acceptance times efficiency, "+acc+" [\\%], "
     caption += "for various benchmark models"# ("+ ", ".join(sms[:-1])+", and "+sms[-1]+")"
-    caption += ", with both compressed and uncompressed mass spectra, following "
-    caption += "the application the event selection criteria that define the signal region. "
+    caption += " with both compressed and uncompressed mass spectra, following "
+    caption += "the application of the event selection criteria used to define the signal region. "
+#    caption += "A requirement on the fractional energy content from charged hadrons for the highest-$p_{\\mathrm{T}}$ jet, "
+ #   caption += "$\\mathrm{CHF}(\\mathrm{j_1})$, is used to remove events with anomolous activity due to beam halo. "
     caption += "Values for "+acc+" are also shown following the application of additional "
-    caption += "requirements that define the four most sensitive event categories, "
-    caption += "as defined in Table 5. "
+    caption += "requirements that define the four most sensitive $n_{\\mathrm{jet}}$ event "
+    caption += "categories, as defined in Table 5, as well as tight requirements on "
+    caption += "$H_{\\mathrm{T}}^{\\mathrm{miss}}$ and $H_{\\mathrm{T}}^{\\mathrm{miss}}$."
     return caption 
 
 #_______________________________________________________________________________
@@ -55,24 +58,25 @@ def caption(models) :
 #row_headers = ["Cut"]*13
 row_headers = [
     "Before selection",
-    "Photon veto",
-    "Lepton vetoes",
-    "Single isolated track veto",
-    "Trigger selection",
-    "$E_{\\mathrm{T}}^{\\mathrm{miss}}$ filters",
-    #"$\\mathrm{CHF}(\\mathrm{j_1}) < 0.95$",
-    "$n_{\\mathrm{jet}} \\geq 2$", 
+    "Event veto for muons and electrons",
+    "Event veto for single isolated tracks",
+    "Event veto for photons",
+    "Event veto for forward jets ($|\\eta| > 3.0$)",
+    "$n_{\\mathrm{jet}} \\geq 1$", 
+    "Charged hadron fraction, $\\mathrm{CHF}(\\mathrm{j_1}) > 0.1$",
+#    "Charged hadron fraction for $\\mathrm{j_1}$ $> 0.1$",
     "$p_{\\mathrm{T}}^{\\mathrm{j_1}} > 100\\,\mathrm{GeV}$",
     "$|\\eta^{\\mathrm{j_1}}| < 2.5$",
     "$H_{\\mathrm{T}} > 200\,\\mathrm{GeV}$",
     "$H_{\\mathrm{T}}^{\\mathrm{miss}} > 130\,\\mathrm{GeV}$",
-    "$\\Delta\phi^{*}_{\\mathrm{min}} > 0.5$",
-    "$H_{\\mathrm{T}}$-dependent $\\alpha_{\\mathrm{T}}$ cuts",
     "$H_{\\mathrm{T}}^{\\mathrm{miss}} / E_{\\mathrm{T}}^{\\mathrm{miss}} < 1.25$",
-    "Forward jet veto",
-    "Four most sensitive categories",
+    "$H_{\\mathrm{T}}$-dependent $\\alpha_{\\mathrm{T}}$ requirements ($H_{\\mathrm{T}} < 800\,\\mathrm{GeV}$)",
+    "$\\Delta\phi^{*}_{\\mathrm{min}} > 0.5$",
+    "Four most sensitive $n_{\\mathrm{jet}}$ event categories",
     "$H_{\\mathrm{T}} > 800\,\\mathrm{GeV}$",
     "$H_{\\mathrm{T}}^{\\mathrm{miss}} > 800\,\\mathrm{GeV}$",
+#    "$E_{\\mathrm{T}}^{\\mathrm{miss}}$ filters",
+#    "Trigger selection",
     ]
 
 #_______________________________________________________________________________
@@ -123,15 +127,11 @@ for category,models in models_dict.items() :
         effs = []
         denom = -1.
         for iline,line in enumerate(file.readlines()) :
-            if iline not in [3,5,6,7,8,9,10,11,32,33,34,36,37,38] : continue # relevant counts on these lines 
+            if iline not in [3,7,8,9,10,11,12,13,14,15,16,17,18,39,40,53,54] : continue # relevant counts on these lines  
             entries = line.split()
             if denom < 0. : 
                 denom = float(entries[-2]) # pre-cut-flow count
-                effs.append(1.00) # hack 
-                effs.append(1.00) # hack 
-                effs.append(1.00) # hack 
-                effs.append(1.00) # no cut flow 
-                effs.append(1.00) # trigger eff (hack)
+                effs.append(100.)
             else :
                 eff = float(entries[-2]) / denom 
                 effs.append(eff)
@@ -145,8 +145,9 @@ for category,models in models_dict.items() :
     string += " & ".join(column_headers_2)+" \\\\"+"\n"
     string += " & ".join(column_headers_3)+" \\\\"+"\n"
     string += "  \\hline"+"\n"
-    for row in table_list :
+    for irow,row in enumerate(table_list) :
         if len(row) < 2 : continue 
+        if len(table_list) - irow == 3 : string += "  \\hline"+"\n"
         string += "  "+row[0]+" & "+" & ".join(["\\phantom{1}"+"{:2.0f}".format(x*100.) 
                                                 if x < 0.995 
                                                 else "100" 
