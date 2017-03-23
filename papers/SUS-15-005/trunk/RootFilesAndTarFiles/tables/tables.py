@@ -55,21 +55,24 @@ def caption(models) :
 #row_headers = ["Cut"]*13
 row_headers = [
     "Before selection",
+    "Photon veto",
+    "Lepton vetoes",
+    "Single isolated track veto",
     "Trigger selection",
+    "$E_{\\mathrm{T}}^{\\mathrm{miss}}$ filters",
+    #"$\\mathrm{CHF}(\\mathrm{j_1}) < 0.95$",
     "$n_{\\mathrm{jet}} \\geq 2$", 
     "$p_{\\mathrm{T}}^{\\mathrm{j_1}} > 100\\,\mathrm{GeV}$",
     "$|\\eta^{\\mathrm{j_1}}| < 2.5$",
-    #"$\\mathrm{CHF}(\\mathrm{j_1}) < 0.95$",
-    "$E_{\\mathrm{T}}^{\\mathrm{miss}}$ filters",
     "$H_{\\mathrm{T}} > 200\,\\mathrm{GeV}$",
     "$H_{\\mathrm{T}}^{\\mathrm{miss}} > 130\,\\mathrm{GeV}$",
     "$\\Delta\phi^{*}_{\\mathrm{min}} > 0.5$",
     "$H_{\\mathrm{T}}$-dependent $\\alpha_{\\mathrm{T}}$ cuts",
     "$H_{\\mathrm{T}}^{\\mathrm{miss}} / E_{\\mathrm{T}}^{\\mathrm{miss}} < 1.25$",
     "Forward jet veto",
-    "Photon veto",
-    "Lepton vetoes",
-    "Single isolated track veto",
+    "Four most sensitive categories",
+    "$H_{\\mathrm{T}} > 800\,\\mathrm{GeV}$",
+    "$H_{\\mathrm{T}}^{\\mathrm{miss}} > 800\,\\mathrm{GeV}$",
     ]
 
 #_______________________________________________________________________________
@@ -124,6 +127,9 @@ for category,models in models_dict.items() :
             entries = line.split()
             if denom < 0. : 
                 denom = float(entries[-2]) # pre-cut-flow count
+                effs.append(1.00) # hack 
+                effs.append(1.00) # hack 
+                effs.append(1.00) # hack 
                 effs.append(1.00) # no cut flow 
                 effs.append(1.00) # trigger eff (hack)
             else :
@@ -140,7 +146,6 @@ for category,models in models_dict.items() :
     string += " & ".join(column_headers_3)+" \\\\"+"\n"
     string += "  \\hline"+"\n"
     for row in table_list :
-        print row
         if len(row) < 2 : continue 
         string += "  "+row[0]+" & "+" & ".join(["\\phantom{1}"+"{:2.0f}".format(x*100.) 
                                                 if x < 0.995 
@@ -157,7 +162,6 @@ string += "\end{document}"
 file = open("tables.tex","w")
 file.write(string)
 file.close()
-
 
 print string
 
