@@ -95,9 +95,10 @@ for category,models in models_dict.items() :
     if len(models) == 0 : continue 
 
     string += "\\clearpage"+"\n"
-    string += "\\begin{sidewaystable}"+"\n"
+    string += "\\begin{table}"+"\n"
 #    string += "\\centering"+"\n"
     string += "\\caption{"+caption(models)+"}"+"\n"
+    string += "\\resizebox{\\textwidth}{!}{"+"\n"
     string += "\\begin{tabular}{l"+"c"*len(models)+"}"+"\n"
     string += "  \\hline"+"\n"
 
@@ -163,7 +164,8 @@ for category,models in models_dict.items() :
 
     string += "  \\hline"+"\n"
     string += "\\end{tabular}"+"\n"
-    string += "\\end{sidewaystable}"+"\n"
+    string += "}"+"\n"
+    string += "\\end{table}"+"\n"
     string += "\n"
 
 string += "\end{document}"
