@@ -1,0 +1,339 @@
+%%____________________________________________________________________________||
+\section{Systematic uncertainties in the \mht dimension}
+\label{sec:syst-on-shape}
+
+The estimate of the number of events per (\njet,~\nb,~\scalht) bin,
+integrated over \mht, is derived from data control samples, with
+the associated systematic uncertainty determined as 
+described in Sec.~\ref{sec:closure-tests}. This section
+describes the method used to assess the systematic uncertainties in
+the distribution of events according to \mht. A data driven approach is
+utilised under the hypothesis of zero bias in the data and MC agreement.
+The level of closure in the control regions is used
+to derive alternative templates accounting for systematic uncertainties.
+It is important to note that the data-driven systematics on the 
+\mht distribution are included in addition to known uncertainties.
+
+When looking at the \mht dimension inclusively in \scalht there are
+large theoretical uncertainties that originate from mixing events
+at different scales. These uncertainties can be mitigated if the events 
+are binned according to a variable, such as \scalht, 
+which is strongly correlated with the scale of the event. 
+After this categorisation is applied, the uncertainty in 
+the distribution of the \mht variable
+(as well as any other MET-like variable) is expected to be 
+mainly affected by the MC modelling of the particle 
+decays and, to a lesser extent, by jet reconstruction effects, 
+such as jet energy scale and resolution. 
+This approach, which will be often referred to as \textit{scale anchoring}
+in the following, is used in this analysis. The distribution in \mht
+is measured in data using the control regions and compared to MC
+to determine the validity of the zero bias hypothesis after scale anchoring.
+
+In Sec.~\ref{sec:valid13} the 13 \TeV data is used used 
+to validate the scale anchoring approach. 
+In Sec.~\ref{sec:systMhtDimension} 
+the procedure used to extract the systematic uncertainties in the 
+\mht dimension is described and results shown with 13 \TeV data. 
+% In Appendix~\ref{sec:bias_injection} the results of a bias injection test described. 
+% This shows that the fit is sensitive to a bias affecting only the last \mht bin.
+%% Finally, in Sec.~\ref{app:closureTests3fb} the expected systematics for 3\ifb in Run 2 are be shown. 
+
+
+% extent to which the control regions can constrain this bias 
+% to the flat hypothesis
+%Motivated by the inclusive distribution, a linear bias is assumed.
+
+\subsection{Validation with 13 TeV Data}
+\label{sec:valid13}
+In previous versions of this analysis three control regions
+were used: \mj, \mmj and \gj. To parameterise the data/MC agreement
+orthogonal polynomials are used such that odd and even powers 
+are decorrelated \cite{cohen2013applied}. 
+The $n^{th}$ order orthogonal polynomial which is fitted to the data/MC 
+distribution is defined in Eq.~\ref{equ:orthog-polynomial}.
+
+\begin{equation}
+  \label{equ:orthog-polynomial}
+  f_n(x) = \sum_{k=0}^{k=n}{(p_k)\times(\bar{x}-x)^k}
+\end{equation}
+
+where $\bar{x}$ is the weighted mean of the distribution and $p_k = 0$ 
+implies the $k^{th}$ order term is negligible.
+In Fig.~\ref{fig:linearMotiv} the data/MC 
+distribution against \mht for the control region selection 
+(detailed in \cite{Khachatryan:2016pxa}) is shown inclusive 
+in \scalht and categories. By fitting a first order
+orthogonal polynomial it can be seen that there is a large bias. 
+This bias in the data/MC agreement is expected as events 
+at different scales are mixed.
+The first order orthogonal polynomial
+is used to measure the level of bias remaining 
+when the \mht dimension is binned in \scalht.
+This allows the normalisation parameter to be
+decorrelated from the parameter which controls
+the distribution in \mht.
+The normalisation in each \scalht bin and its systematics 
+is then defined following the data-driven method used in Run 1, see Sec,~\ref{sec:systMhtDimension} for details.
+\begin{figure}[h!]
+  \centering
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/inclusive/mht_Inc_Inc_ht_Inc_SingleMu_Graph.pdf}
+  }~~
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/inclusive/mht_Inc_Inc_ht_Inc_SinglePhoton_Graph.pdf}
+  }\\
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/inclusive/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
+  }\\
+  \caption{\label{fig:linearMotiv} 
+  The data/MC distribution against \mht for an inclusive selection on category and \scalht
+  showing the results of a linear fit. A large bias is observed as well as a low pValue for the constant fits. 
+ }
+\end{figure}
+
+By anchoring the scale using binning in the \scalht dimension the remaining
+bias is assumed to be negligible. In Fig.~\ref{fig:linearFitExamples} 
+example fits of an orthogonal linear function to the data/MC ratio 
+are shown for the three control regions. Comparing to the inclusive distribution 
+the linear component can be seen to be compatible with the null hypothesis, 
+i.e. no bias. In order to formalise this assertion 
+the pull of the linear component from zero is calculated.
+This pull distribution is shown for each of the three control regions in
+in Fig.~\ref{fig:pulls}. For the \mmj and \gj samples the mean is consistent 
+with zero implying no overall bias. The \mj sample shows some evidence for a small
+bias of around 0.3 sigma. Section~\ref{sec:systMhtDimension} details how this bias
+is covered in the signal region. All three samples have a sigma consistent with one.
+Fig.~\ref{fig:frenchFlagPulls} shows the distribution of the pulls 
+in category and \scalht bins showing the pulls are randomly spread across
+the categories.
+
+
+% The linear fits to the data/MC ratio additionally show a p-value following 
+% a uniform distribution between 0 and 1 as shown in Fig.~\ref{fig:pValues}.
+% This confirms that the linear component is reasonably compatible with zero ($p_1 = 0$), %i.e. no significant bias is observed, 
+
+%Finally, an additional validation 
+%can be seen from the p-value distribution of the constant fits
+% -- should add p value of constant fit but currently not flat due to
+% non guassian behaviour.
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\gj, 0b, 5j category and \scalht 750-900\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/examples/Pho/ht750_900_control_eq0b_eq5j_Pho.pdf}
+  }~~
+  \subfigure[\mj, 0b, 4j category and \scalht 500-600\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/examples/Mu/ht500_600_control_eq0b_eq4j_Mu.pdf}
+  }\\
+  \subfigure[\mmj,2b, 2a category and \scalht 300-350\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/examples/MuMu/ht300_350_control_eq2b_ge2a_MuMu.pdf}
+  }~~
+  \subfigure[\gj, 1b, 5j category and \scalht 900-1050\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/examples/Pho/ht900_1050_control_eq1b_eq5j_Pho.pdf}
+  }\\
+  \subfigure[\mj, 2b, 5j category and \scalht 600-750\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/examples/Mu/ht600_750_control_eq2b_eq5j_Mu.pdf}
+  }~~
+  \subfigure[\mmj, 1b, 2j category and \scalht 400-500\GeV bin]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/examples/MuMu/ht400_500_control_eq1b_eq2j_MuMu.pdf}
+  }\\
+  \caption{\label{fig:linearFitExamples} 
+  The data/MC distribution against \mht for example categories and control regions.
+  The large bias in the linear component seen in Fig.~\ref{fig:linearMotiv} is mitigated.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/pulls/Mu}
+  }~~
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/pulls/Pho}
+  }\\
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/pulls/MuMu}
+  }~~
+  \\
+  \caption{\label{fig:pulls} 
+  The pull distribution of the linear parameter from the flat hypothesis showing no large significant bias.}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/pulls/Mu_2D}
+  }~~
+  \subfigure[\gj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/pulls/Pho_2D}
+  }\\
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/pulls/MuMu_2D}
+  }~~
+  \\
+  \caption{\label{fig:frenchFlagPulls} The pull distribution of the linear parameter from the flat hypothesis across all
+  \scalht bins and categories. There are no pulls for the \scalht binned are approximately consistent with gaussian scatter}
+\end{figure}
+
+% \begin{figure}[h!]
+%   \centering
+%   \subfigure[\mj]{
+%     \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutput12Fb/scale_ht_variable_mht/SingleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SingleMu.pdf}
+%   }~~
+%   \subfigure[\gj]{
+%     \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutput12Fb/scale_ht_variable_mht/SinglePhoton/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_SinglePhoton.pdf}
+%   }\\
+%   \subfigure[\mmj]{
+%     \includegraphics[width=0.5\textwidth]{figures/template2016Data/shapeOutput12Fb/scale_ht_variable_mht/DoubleMu/fitOut/Linear2DShiftMean/pValue_Linear2DShiftMean_DoubleMu.pdf}
+%   }~~
+%   \\
+%   \caption{\label{fig:pValues} The distributions of the p-value for the linear fit.} 
+% \end{figure}
+\subsection{Deriving systematics on the \texorpdfstring{\mht}~dimension}
+\label{sec:systMhtDimension}
+
+Systematics in the \mht dimension are extracted using the data in the control 
+regions to determine the statistical precision to which the hypothesis of zero bias can
+be confirmed. In this analysis the main discriminating variables
+are \njet,\nb and \scalht. Two sets of systematic uncertainties on the \mht distributions,
+correlated in \scalht and \njet, are derived using data from the control regions.
+The set of systematics decorrelated in \scalht allows any disagreement which 
+is localised at a particular scale to be covered while the set of systematics 
+decorrelated in \njet covers systematic effects localised in the
+number of partons or ISR jets. The \nb dimension is not decorrelated as this discriminating
+variable is not directly related to the scale of the event and will be strongly correlated to \njet.
+The sets of 7 and 5 systematics for decorrelation in \njet and \scalht respectively
+are derived in data as described in the following.
+
+Each background in the signal region (\ttbar/W  and \zInv~) is predicted 
+using several control regions. In order to determine the uncertainty in
+the \mht dimension a combined linear fit is made over all relevant control regions
+In each case the normalisation term is decorrelated across all categories while the linear 
+term is correlated across the correlated categories for the systematic. The 
+post fit values and uncertainties of the linear parameters are shown in
+Figure~\ref{fig:postFitPerNJet} and Figure~\ref{fig:postFitPerHt} for the systematics decorrelated in \njet and \scalht respectively.
+The uncertainty on the linear parameters from the fit are then
+used to define the up and down one sigma variations of the nominal templates in the signal region
+for each systematic. As a conservative estimate, the best fit value of the parameter is 
+added in quadrature to its uncertainty in order to derive the overall variation for each template.
+The templates decorrelated in \njet and \scalht are added as independant nuisances on the \mht 
+distribution in the signal region in the fit.
+
+Example templates with this uncertainty are shown in Fig.~\ref{fig:mht-templates-sym}, \ref{fig:mht-templates-asym} 
+in Sec.~\ref{sec:results}. Here the template variations for both relevant 
+backgrounds are combined to show the overall uncertainty on the \mht dimension. 
+The scatter of the points around one is compatible with statistical fluctuations.
+
+The relative uncertainties per 100 \GeV from the weighted mean of \mht
+for \ttbar/W and \zInv~ are shown in Fig.~\ref{fig:uncPerNJet}
+and Fig.~\ref{fig:uncPerHt} for the systematics decorrelated in
+\njet and \scalht respectively. As an additional gauge of the 
+effect of the template variations the uncertainty parameter 
+can be translate to an uncertainty on the last bin. This is typically
+of the order of 10\% depending on the category and is shown
+in Fig.~\ref{fig:frenchFlagLastBin} for the \ttbar/W prediction.
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\ttbar/W]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/Mu_perNJet_graph.pdf}
+  }~~
+  \subfigure[\zInv~]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/All_perNJet_graph.pdf}
+  }\\
+  \caption{\label{fig:postFitPerNJet} 
+  Post fit values and uncertainties of the linear parameters used to determine the systematics decorrelated in \njet for 
+  the \ttbar/W and \zInv~ predictions}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \subfigure[\ttbar/W]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/Mu_perHt_graph.pdf}
+  }~~
+  \subfigure[\zInv~]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/All_perHt_graph.pdf}
+  }\\
+  \caption{\label{fig:postFitPerHt} 
+  Post fit values and uncertainties of the linear parameters used to determine the systematics decorrelated in \scalht for 
+  the \ttbar/W and \zInv~ predictions}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \subfigure[\ttbar/W]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/Mu_perNJet_unc.pdf}
+  }~~
+  \subfigure[\zInv~]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/All_perNJet_unc.pdf}
+  }\\
+  \caption{\label{fig:uncPerNJet} 
+     Percentage uncertainties per 100 GeV on the \mht distribution in the signal region for the systematics decorrelated in \njet
+    for the \ttbar/W and \zInv~ predictions}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \subfigure[\ttbar/W]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/Mu_perHt_unc.pdf}
+  }~~
+  \subfigure[\zInv~]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/All_perHt_unc.pdf}
+  }\\
+  \caption{\label{fig:uncPerHt} 
+    Percentage uncertainties per 100 GeV on the \mht distribution in the signal region for the systematics decorrelated in \scalht
+    for the \ttbar/W and \zInv~ predictions}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\ttbar/W]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/quadAddMu.pdf}
+  }~~
+  \subfigure[\zInv~]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/postFitValues/quadAddAll.pdf}
+  }\\
+  \caption{\label{fig:frenchFlagLastBin} Observed percentage uncertainties in the 
+  last bin of \mht over all categories and \scalht bins for the \ttbar/W and \zInv~ predictions.}
+\end{figure}
+
+\newpage
+% \subsection{Comparison to known systematic sources}
+% \label{sec:mcSystStudiesShape}
+% To further validate the data driven procedure a range of known systematic sources are studied.
+% The size of the variation of the \mht distribution under $\pm1\sigma$ shifts of these sources is compared 
+% to that of the orthogonal polynomial systematic described in \ref{sec:valid13} to ensure they are
+% covered. The sources considered are the b-tag scale factor uncertainty, jet energy correction uncertainty, 
+% pile-up reweighting uncertainty, and top \Pt rewieghting uncertainty. For each source of systematic the prediction
+% is varied by $\pm1\sigma$. To study the effect of this systematic variation on the \mht dimension, and not normalisation, 
+% the resulting template is normalised to the nominal template in each jet category and \scalht bin. 
+% These systematic effects can then be compared to the data-driven orthogonal polynomial systematic. 
+%
+% Figures~\ref{fig:mcCompLow} and \ref{fig:mcCompHigh} show the representative examples for two different \scalht 
+% bins and jet-categories. As can be seen in each case the \mht dimension change under the variation of all 
+% systematics considered is easily contained within the orthogonal polynomial variation. 
+% To show the effect across all jet categories, except the monojet categories for which the \mht dimension is not used,
+% and \scalht bins Fig~\ref{fig:lastBinVar} shows the maximum upwards/downwards variation in the last 
+% \mht bin as a proportion of the orthogonal polynomial variation. In almost all bins this is shown to be 
+% significantly less than unity confirming that the orthogonal polynomial can cover the known systematic
+% deviations.
+%
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figures/template13TeV/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_ge5j_ge3b_800.pdf}
+%   \caption{\label{fig:mcCompLow} MC based systematic variations shown to be considerably smaller 
+%   than the orthogonal polynomial data-driven systematic for an example bin \scalht $800-\infty$, \njet $\geq 5$, \nb $\geq 2$.}
+% \end{figure}
+% \begin{figure}[h!]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figures/template13TeV/mcComparison6fb/totalSMS-T1tttt_mGluino-1000_mLSP-100_25ns_mht_eq2j_eq0b_400.pdf}
+%   \caption{\label{fig:mcCompHigh} MC based systematic variations shown to be considerably smaller 
+%   than the orthogonal polynomial data-driven systematic for an example bin \scalht 400-500, \njet $= 2$, \nb $= 0$.}
+% \end{figure}
+%
+% \begin{figure}[h!]
+% \centering
+% \subfigure[Upwards deviation]{
+% \includegraphics[width=0.5\textwidth]{figures/template13TeV/mcComparison6fb/lastBinRatioMax.pdf}
+% }
+% \subfigure[Downwards deviation]{
+% \includegraphics[width=0.5\textwidth]{figures/template13TeV/mcComparison6fb/lastBinRatioMin.pdf}
+% }\\
+% \caption{\label{fig:lastBinVar} Maximum upwards and downwards variations in the last \mht bin as a proportion of the orthogonal polynomial deviation}
+% \end{figure}
