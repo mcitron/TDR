@@ -1,18 +1,23 @@
 %%____________________________________________________________________________||
+
 \newlength\cmsFigWidth
 \ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
 
 %%____________________________________________________________________________||
+
 \cmsNoteHeader{AN-17-122}
 
 %%____________________________________________________________________________||
+
 \title{Search for supersymmetry in pp collisions using final states
 with at least one jet and missing transverse momentum}
 
 %%____________________________________________________________________________||
+
 \author[imperial]{R.~Bainbridge}
+\author[bristol]{E.~Bhal}
 \author[vub]{F.~Blekman}
 \author[imperial]{S.~Breeze}
 \author[imperial]{O.~Buchm\"uller}
@@ -35,9 +40,11 @@ with at least one jet and missing transverse momentum}
 \address[rochester]{University of Rochester, NY, US}
 
 %%____________________________________________________________________________||
+
 \date{\today}
 
 %%____________________________________________________________________________||
+
 \abstract{A search for supersymmetry is performed in final states
 containing one or more jets and an imbalance in transverse momentum. A
 sample of events resulting from pp collisions at a centre-of-mass
@@ -64,12 +71,13 @@ decays to nearly mass-degenerate neutralinos, top squark masses up to
 X\GeV are excluded.  }
 
 %%____________________________________________________________________________||
+
 \hypersetup{ 
-  pdfauthor={Robert Bainbridge, Freya Blekman, Shane Breeze, Oliver
-    Buchmueller, Stefano Casasso, Matthew Citron, Adam Elwood, Henning
-    Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah
-    Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
-    Tapper},
+  pdfauthor={Robert Bainbridge, Eshwen Bhal, Freya Blekman, Shane
+  Breeze, Oliver Buchmueller, Stefano Casasso, Matthew Citron, Adam
+  Elwood, Henning Flaecher, Aran Garcia-Bellido, Christian Laner, Kin
+  Ho Lo, Sarah Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith,
+  Alex Tapper},
   pdftitle={Search for supersymmetry in pp collisions using final
     states with at least one jet and missing transverse momentum},
   pdfsubject={CMS},
@@ -78,42 +86,48 @@ X\GeV are excluded.  }
 }
 
 %%____________________________________________________________________________||
+
 \maketitle
 
 %%____________________________________________________________________________||
+
 \tableofcontents
 
 %%____________________________________________________________________________||
+
 \input{mydefs}
 \input{symbols}
 
 %%____________________________________________________________________________||
-\include{intro}
-\include{alphat}
-\include{datasets}
-\include{triggers}
-\include{objects}
-\include{selection}
-\include{btag_formula}
-\include{charac}
-\include{background_qcd}
-\include{background_ewk}
-\include{systematics}
-\include{mhtTemplate}
-\include{likelihood}
-%% \include{results}
-%% \include{susy}
-%% \include{darkmatter}
-\include{summary}
+
+\include{000_changes}
+%\include{010_intro}
+%\include{020_alphat}
+%\include{030_datasets}
+%\include{040_triggers}
+%\include{050_objects}
+%\include{060_selection}
+%\include{070_btag_formula}
+%\include{080_charac}
+%\include{090_background_qcd}
+%\include{100_background_ewk}
+%\include{110_systematics}
+%\include{120_mhtTemplate}
+%\include{130_likelihood}
+%\include{140_results}
+%\include{150_susy}
+%\include{160_darkmatter}
+%\include{170_summary}
 
 %%____________________________________________________________________________||
+
 \bibliography{auto_generated}
 
 %%____________________________________________________________________________||
+
 \appendix
 \include{app_systematics}
 \include{qcdTrigger}
-
 %% \include{alphaTTriggerEfficiencies}
 %% \include{bias_injection}
 %% %% \include{jetRanking}
