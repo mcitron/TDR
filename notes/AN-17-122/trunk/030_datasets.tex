@@ -1,72 +1,162 @@
 %%____________________________________________________________________________||
-\section{Data sets}
+\section{Data sets and simulation}
 \label{sec:datasets}
 
-\subsection{Data}
+\subsection{Primary data sets, certification, and integrated luminosity}
 
+In this analysis, we use proton-proton collision data at $\sqrt{s} =
+13\TeV$. The data set collected in 2016 corresponds to an integrated
+luminosity of $35.9 \pm 0.9~\ifb$~\cite{lumi}. The studies reported in
+this AN are based on control regions populated with the full 2016 data
+set.
 
-In this note, we use 36.4~\ifb of proton-proton collision data at
-$\sqrt{s} =$ 13~TeV collected in 2016. The JSON file listed in
-Table~\ref{tab:cert_json} specifies the periods of the time in which
-these certified data are collected. Table~\ref{tab:datasets_data} lists
-the names of the data sets.
+Table~\ref{tab:cert_json} specifies the JSON file used to identify the
+certified data.  Table~\ref{tab:datasets_data} lists the names of the
+primary data sets used in this analysis.
 
-We perform a blind analysis. The data in the signal region is
-currently blinded with the exception of 5.2~\ifb of the certified data
-in Run2016G, as recommended by the SUS PAG. We have intentionally not
-unblinded the ICHEP data set. The control regions are populated with
-the full 2016 data set.
-
-\begin{table}[!h]
-  \topcaption{The JSON file used to specify the certified data set of
-    36.4~\ifb} 
+\begin{table}[h!]
+  \topcaption{The JSON file used to define the certified data set of
+    35.9~\ifb} 
   \footnotesize
   \input{tables/datasets/cert_json.tex} 
   \label{tab:cert_json}
 \end{table}
 
-\begin{table}[!h]
-  \topcaption{Data sets}
+\subsection{Blinding statement}
+
+The data in the signal region is currently blinded, with the exception
+of 4.5~\ifb of the certified data set, which comprises a sample of
+events selected randomly (1 in 8) from throughout the full data taking
+period. \fixme{ARE WE DOING THIS?!}
+
+\subsection{Simulated event samples}
+
+Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2} list the
+simulated event samples of all relevant standard model background
+processes for this analysis.
+
+The dominant SM processes in the signal and control regions, \znunu\ +
+jets, W + jets, \ttbar\ + jets, Drell--Yan ($\cPq\bar{\cPq} \to
+\PZ/\gamma^* \to \ell^+\ell^-$) + jets, and \gj, are generated at
+leading order (LO) using the {\MADGRAPH{}5\_a\MCATNLO} 2.2.2 generator
+code~\cite{Alwall2014}. These samples are listed in
+Table~\ref{tab:datasets_bkg}.
+
+The {\MADGRAPH{}5\_a\MCATNLO} 2.2.2 code is also used at LO to
+generate QCD multijet events, as well as W + jets and Z + jets via
+vector boson fusion. The \MADGRAPH{} code is also used to generate at
+next-to-leading order (NLO) in the strong coupling constant
+($\alpha_\textrm{s}$) samples of s-channel production of single top
+and ttW, ttZ, and ttG events. The t-channel and tW-channel single top
+samples, as well as ttH samples, are generated using
+\POWHEG~\cite{}. The diboson samples (WW, WZ, and ZZ) are generated
+using \PYTHIA~\cite{}. These samples are listed in
+Table~\ref{tab:datasets_bkg2}.
+
+The {NNPDF}3.0 LO and NLO~\cite{nnpdf} parton distribution functions
+(PDFs) are used, respectively, with the LO and NLO generators
+described above. The \PYTHIA program with the CUETP8M1 underlying
+event tune~\cite{Khachatryan:2015pea} is used to describe parton
+showering and hadronisation for all simulated samples, except ttH that
+uses CUETP8M2.
+
+The dominant background processes simulated with \MADGRAPH{}@LO
+(\znunu\ + jets, Drell--Yan ($\cPq\bar{\cPq} \to \PZ/\gamma^* \to
+\ell^+\ell^-$) ($q\bar{q} \ra Z/\gamma \ra l^+l^-$) + jets, \gj, W +
+jets, and QCD multijet events) are produced according to the
+generator-level scalar sum of partonic transverse energies (``parton
+\scalht''). The \ttbar\ + jets samples are also produced according to
+the fully or semi-lepton decay of \ttbar\ system. These ``exclusive''
+subsamples are filtered according to parton \scalht, in order to
+remove any overlaps, and are then ``stitched'' together to provide an
+effective inclusive sample that allows for a high effective
+intergrated luminosity in the tails of the parton \scalht
+distributions.
+
+Inclusive simulated event samples are normalised to inclusive cross
+sections calculated with (N)NLO precision. The full detector response
+is simulated using the \GEANTfour~\cite{geant} package for these
+samples. Each ``exclusive'' subsample is accompanied by an exclusive
+LO cross section calculation, which is used to normalise the simulated
+event counts to the integrated luminosity. Any \kfactors required to
+go from LO to (N)NLO cross sections are typically determined using a
+corresponding inclusive sample, which are then applied to each
+subsample. The cross sections used for each sample are listed in
+Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2}.
+
+The full parton \scalht distribution obtained from the ``stitched''
+subsamples relative to that obtained from the corresponding inclusive
+sample are shown in Fig.~\ref{fig:Lhe_Ht} (in Appendix), with the
+bin-by-bin derivative drawn below. The stitched subsamples demonstate
+a smooth behaviour compatible with the inclusive samples.
+
+Table~\ref{tab:datasets_signal} lists the simulated events samples of
+signal processes used in this analysis. The event samples for SUSY
+signal models involving gluino or squark pair production in
+association with up to two additional partons are generated at LO with
+{\MADGRAPH{}5\_a\MCATNLO}, and the decay of the SUSY particles is
+performed with \PYTHIA 8.205~\cite{pythia}. Inclusive,
+process-dependent, signal production cross sections are calculated
+with NLO plus next-to-leading-logarithmic (NLL)
+accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
+  PhysRevD.80.095004, 1126-6708-2009-12-041,
+  doi:10.1142/S0217751X11053560, susynlo}. The theoretical systematic
+uncertainties are typically dominated by the parton density function
+(PDF) uncertainties, evaluated using the
+CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} PDFs.
+The detector response for signal models is provided by the CMS fast
+simulation package~\cite{fastsim}.
+
+\begin{table}[hp!]
+  \topcaption{List of primary data sets used in this analysis.}
   \footnotesize \input{tables/datasets/c140607_c151022_l001.tex}
   \label{tab:datasets_data}
 \end{table}
 
-%% \begin{table}[!h]
-%% \topcaption{The JSON file specifying the 0.8~\ifb of the certified
-%% data that we never blind} \footnotesize
-%% \input{tables/datasets/cert_unblind_json.tex}
-%% \label{tab:cert_unblind_json}
-%% \end{table}
-
-\subsection{Simulation}
-
-Table~\ref{tab:datasets_bkg} lists the data sets of simulated events
-of the standard model background processes used in this note. In these
-data sets, in addition to the main interaction, each event contains on
-average 20 minimum bias interactions which simulate multiple
-interactions per bunch-crossing (in-time pileup). The expected
-detector signal from previous or following bunch crossings
-(out-of-time pileup) with 25ns bunch spacing is also overlaid.
-
-\begin{table}[!h]
+\begin{table}[hp!]
   \centering
-  \topcaption{Simulated background samples}
-  \tiny
-  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
+  \topcaption{Simulated event samples of SM background processes used
+    by this analysis. Symbols used as shorthand are defined at the
+    bottom of the table.}
+  \resizebox{!}{0.35\paperheight}{\input{tables/datasets/backgrounds.tex}}
   \label{tab:datasets_bkg}
 \end{table}
 
+\begin{table}[hp!]
+  \centering
+  \topcaption{Simulated event samples of SM background processes used
+    by this analysis. Symbols used as shorthand are defined at the
+    bottom of the table.}
+  \resizebox{!}{0.35\paperheight}{\input{tables/datasets/rare.tex}}
+  \label{tab:datasets_bkg2}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \topcaption{Simulated event samples of signal processes used
+    by this analysis. Symbols used as shorthand are defined at the
+    bottom of the table. 
+  }
+  \scriptsize
+  \input{tables/datasets/signal.tex}
+  \label{tab:datasets_signal}
+\end{table}
 
 \clearpage
+\subsection{Corrections to simulation for SM processes}
+\label{sec:sim-corrs}
 
-\subsection{Pileup reweighting}
+\subsubsection{Pileup}
 \label{sec:pileup-reweighting}
 
-The distribution of the numbers of the pileup interactions in the
-simulated events is different from that in the data; the simulated
-events contain, on average, a larger number of pileup interactions than
-the data. We reweight simulated events to correct for this difference.
-This procedure is called \textit{pileup reweighting}.
+To model the effects of multiple pp collisions within the same or
+neighbouring bunch crossings (pileup), all simulated events are
+generated with a nominal distribution of pp interactions per bunch
+crossing. On average, approximately twenty different pp collisions,
+identifiable via their primary interaction vertex, are reconstructed
+per event. The simulated event samples are reweighted to match the
+pileup distribution as measured in data. This procedure is called
+\textit{pileup reweighting}.
 
 In deriving the pileup reweighting factors, we follow the
 recommendation by the physics validation group
@@ -99,15 +189,19 @@ The pileup reweighting factors are the ratios of the distributions of
 \verb!nTrueInt! in the data and in the simulated events and are
 normalised so as to preserve the number of the simulated events.
 
-\begin{figure}[!b]
+\begin{figure}[h!]
   \centering
-  \includegraphics[scale=1.00]{figures/pileup_reweighting/f044_corr_nTrueInt_data_mc_norm}
-  \caption{The distribution of the average numbers of the inelastic
-    interactions per colliding bunch pair per lumi section in the data,
-    corresponding distribution in the simulated events, and that of the
-    reweighted simulated events.} \label{f044_corr_nTrueInt_data_mc_norm}
+  \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/pileup_reweighting/summarized_data.pdf}} ~
+  \subfigure[]{\includegraphics[width=0.5\textwidth]{figures/pileup_reweighting/tbl_20170125_01-tbl_corr_nTrueInt.pdf}} 
+  \caption{(a) The distribution of the average numbers of the
+    inelastic interactions per colliding bunch pair per lumi section
+    in the data, corresponding distribution in the simulated events,
+    and that of the reweighted simulated events. (b) The weights
+    applied to simulated events as a function of the average number of
+    the inelastic interactions per colliding bunch pair per lumi
+    section.}
+  \label{f044_corr_nTrueInt_data_mc_norm}
 \end{figure}
-
 
 Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
 of \verb!nTrueInt! in the data, simulated events and reweighted
@@ -120,40 +214,62 @@ weighted distribution not to match perfectly the data. This small
 issue will be recovered once the new MC samples with updated PU
 profile will be available.
 
+\subsubsection{Lepton and photon scale factors}
 
+Simulation mismodelling of efficiencies related to object
+identification and isolation requirements are mitigated by the use of
+scale factors. Corrections related to trigger and tracking
+reconstruction efficiencies are also considered. Typically, the scale
+factors are near-unity and are determined by the POGs or the SUSY
+lepton scale factor working group. We follow the SUSY Moriond17
+recommendations, detailed here~\cite{susymoriond}. Further details
+are given in later sections. 
 
-\subsection{Cross sections for SM samples}
-\label{sec:SMxs}
-This analysis chooses to use \MADGRAPH samples binned in partonic \HT 
-for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets).
-These binned samples are provided with LO cross sections. 
-The \kfactors required to go from LO to NNLO cross section are typically determined using corresponding
-inclusive samples applied to each \HT binned sample.
-The inclusive distributions of the MC samples
-with respect to the binning variable
-$H_{T}^{parton}$ are shown in Fig.~\ref{fig:Lhe_Ht}, with
-the bin by bin derivative drawn below. 
-As can be seen in the distributions, the stitched samples
-exhibit a good level of smoothness,
-further demonstrated by the derivative which shows a flat trend for each 
-cross section.
+\subsubsection{Jet energy scale corrections and b-tag scale factors}
 
-As described in Section~\ref{sec:mc-corrections}, residual cross
-section corrections are measured using data in sidebands designed to
-enrich specific SM processes. These corrections can prove to be
-important for the closure test procedures described in Section
-\ref{sec:closure-tests}.
+Jet energy scale corrections and b-tag scale factors are applied to
+the simulated event samples following the JetMET and BTV POG
+recommendations. Details in subsequent sections. 
 
-\begin{figure}[!h]
-  \begin{center}
-    \subfigure[$Z\rightarrow \nu\nu$ +jets] {\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/Zinv.pdf}} ~~
-    \subfigure[$W\rightarrow l \nu$ + jets]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/WJetsToLNu_HT.pdf}} \\
-    \subfigure[$DY\rightarrow ll$ + jets]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/DYJetsToLL_M50_HT.pdf}} ~~
-    \subfigure[QCD]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/QCD_HT.pdf}} \\
-    \subfigure[$\gamma$+jets]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/GJets_HT.pdf}} ~~
-    \caption{Generator-level $H_{T}^{parton}$ distributions for SM process, $Z\rightarrow \nu\nu$ + jets, W+jets, DY+jets, QCD and $\gamma$+jets}
-    \label{fig:Lhe_Ht}
-  \end{center}
-\end{figure}
+\subsubsection{Boson-\Pt-dependent NLO corrections}
+
+The \MADGRAPH generator is used to simulate W + jets, DY + jets,
+\znunu\ + jets, and \gj at leading order. Missing higher order
+corrections, which can result in a modified boson \Pt distribution,
+can be determined from (QCD) NLO simulation and (EWK) theory
+calculations, as done by the the monojet search in the EXO
+PAG~\cite{}. We do not apply these corrections to our simulated
+samples, but instead include the corrections as a source of systematic
+uncertainty in our transfer factors via a nuisance in our likelihood
+model. Further details are given in Sec.~\ref{}.
+
+\subsubsection{\nisr reweighting for \ttbar}
+
+To improve on the \MADGRAPH modelling of the multiplicity of
+additional jets from initial state radiation (ISR), the SUSY group
+recommends to reweight \MADGRAPH \ttbar Monte Carlo events according
+to the number of ISR jets ($N_J^{ISR}$) identified in the event so as
+to improve the jet multiplicity agreement with data. The reweighting
+factors vary between 0.92 and 0.51 for $N_J^{ISR}$ between 1 and 6. In
+this analysis, we categorise identically the events in the control and
+signal regions according to the number of jets reconstructed in an
+event. Hence such a correction is expected to have very little impact
+on the final result. 
+
+Further, this procedure attempts to correct for the mismodelling of
+associated jet production for \ttbar processes, which may be due to
+missing higher-order calculations in the LO \MADGRAPH MC. Hence, for
+consistency with the V + jets samples (also produced with
+\MADGRAPH{}@LO), we prefer not to apply the $N_J^{ISR}$ corrections to
+our simulated samples, but instead include the corrections as a source
+of systematic uncertainty in our transfer factors via a nuisance in
+our likelihood model. Further details are given in Sec.~\ref{}.
+\fixme{ARE WE DOING THIS? ``We take one half of the deviation from
+  unity as the systematic uncertainty on these reweighting factors.''}
+
+\subsection{Corrections to simulation for signal processes}
+
+\fixme{IDENTIFY THE MAIN CORRECTIONS TO BE APPLIED, AS DETAILED IN THE
+SUSY TWIKI}
 
 %%____________________________________________________________________________||

@@ -1,157 +1,20 @@
 %%____________________________________________________________________________||
-\section{Data sets}
-\label{sec:datasets}
+\section{Data sets and simulation}
+\label{app:datasets}
 
-\subsection{Data}
-
-
-In this note, we use 36.4~\ifb of proton-proton collision data at
-$\sqrt{s} =$ 13~TeV collected in 2016. The JSON file listed in
-Table~\ref{tab:cert_json} specifies the periods of the time in which
-these certified data are collected. Table~\ref{tab:datasets_data} lists
-the names of the data sets.
-
-We perform a blind analysis. The data in the signal region is
-currently blinded with the exception of 5.2~\ifb of the certified data
-in Run2016G, as recommended by the SUS PAG. We have intentionally not
-unblinded the ICHEP data set. The control regions are populated with
-the full 2016 data set.
-
-\begin{table}[!h]
-  \topcaption{The JSON file used to specify the certified data set of
-    36.4~\ifb} 
-  \footnotesize
-  \input{tables/datasets/cert_json.tex} 
-  \label{tab:cert_json}
-\end{table}
-
-\begin{table}[!h]
-  \topcaption{Data sets}
-  \footnotesize \input{tables/datasets/c140607_c151022_l001.tex}
-  \label{tab:datasets_data}
-\end{table}
-
-%% \begin{table}[!h]
-%% \topcaption{The JSON file specifying the 0.8~\ifb of the certified
-%% data that we never blind} \footnotesize
-%% \input{tables/datasets/cert_unblind_json.tex}
-%% \label{tab:cert_unblind_json}
-%% \end{table}
-
-\subsection{Simulation}
-
-Table~\ref{tab:datasets_bkg} lists the data sets of simulated events
-of the standard model background processes used in this note. In these
-data sets, in addition to the main interaction, each event contains on
-average 20 minimum bias interactions which simulate multiple
-interactions per bunch-crossing (in-time pileup). The expected
-detector signal from previous or following bunch crossings
-(out-of-time pileup) with 25ns bunch spacing is also overlaid.
-
-\begin{table}[!h]
-  \centering
-  \topcaption{Simulated background samples}
-  \tiny
-  \scalebox{.7}[1.0]{\input{tables/datasets/c140607_c151022_l002.tex}}
-  \label{tab:datasets_bkg}
-\end{table}
-
-
-\clearpage
-
-\subsection{Pileup reweighting}
-\label{sec:pileup-reweighting}
-
-The distribution of the numbers of the pileup interactions in the
-simulated events is different from that in the data; the simulated
-events contain, on average, a larger number of pileup interactions than
-the data. We reweight simulated events to correct for this difference.
-This procedure is called \textit{pileup reweighting}.
-
-In deriving the pileup reweighting factors, we follow the
-recommendation by the physics validation group
-\cite{twiki-PdmVPileUpDescription, twiki-PileupJSONFileforData}. In
-the recommendation, the reweighting factors are a function of the
-variable called \verb!nTrueInt!.
-
-The variable \verb!nTrueInt! is the parameter of the Poisson
-distribution from which the numbers of pileup interactions are drown
-as random numbers. In each simulated event, the number of the in-time
-pileup interactions and the number of the interactions in each
-neighbouring bunch crossing to simulate the out-of-time pileup are
-random numbers from the Poisson distribution with the same parameter,
-\verb!nTrueInt!. The value of \verb!nTrueInt! is not a constant of the
-data set. It is a random number from the distribution specified in
-Ref. \cite{github-mix_2016_25ns_SpringMC_PUScenarioV1_PoissonOOTPU_cfi}.
-
-The \verb!nTrueInt! in the data is the average pileup interactions for
-a colliding bunch pair in a lumi section. The distribution of
-\verb!nTrueInt! in the data is derived from the measured instantaneous
-luminosity for each colliding bunch pair in each lumi section and the
-cross section of the total inelastic pp interaction. We use the method
-in Ref. \cite{twiki-PileupJSONFileforData} in deriving the
-distribution with the recommended value of 63.00~mb as the minimum
-bias cross section. In addition, we derive distributions with $\pm
-5\%$ of the variations of the minimum bias cross section, i.e,
-66.15~mb and 59.850~mb.
-
-The pileup reweighting factors are the ratios of the distributions of
-\verb!nTrueInt! in the data and in the simulated events and are
-normalised so as to preserve the number of the simulated events.
-
-\begin{figure}[!b]
-  \centering
-  \includegraphics[scale=1.00]{figures/pileup_reweighting/f044_corr_nTrueInt_data_mc_norm}
-  \caption{The distribution of the average numbers of the inelastic
-    interactions per colliding bunch pair per lumi section in the data,
-    corresponding distribution in the simulated events, and that of the
-    reweighted simulated events.} \label{f044_corr_nTrueInt_data_mc_norm}
-\end{figure}
-
-
-Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
-of \verb!nTrueInt! in the data, simulated events and reweighted
-simulated events. The figure demonstrates that the reweighted
-simulated events have the distribution of \verb!nTrueInt! nearly
-identical to that in the data. 
-We note that the simulation does not contain events with 37 or more
-overlapping pp interactions, while the data do, causing the MC
-weighted distribution not to match perfectly the data. This small
-issue will be recovered once the new MC samples with updated PU
-profile will be available.
-
-
-
-\subsection{Cross sections for SM samples}
-\label{sec:SMxs}
-This analysis chooses to use \MADGRAPH samples binned in partonic \HT 
-for the set of MC samples (W+jets, DY+jets, QCD, $\gamma$+jets, $Z\rightarrow \nu\nu$+jets).
-These binned samples are provided with LO cross sections. 
-The \kfactors required to go from LO to NNLO cross section are typically determined using corresponding
-inclusive samples applied to each \HT binned sample.
-The inclusive distributions of the MC samples
-with respect to the binning variable
-$H_{T}^{parton}$ are shown in Fig.~\ref{fig:Lhe_Ht}, with
-the bin by bin derivative drawn below. 
-As can be seen in the distributions, the stitched samples
-exhibit a good level of smoothness,
-further demonstrated by the derivative which shows a flat trend for each 
-cross section.
-
-As described in Section~\ref{sec:mc-corrections}, residual cross
-section corrections are measured using data in sidebands designed to
-enrich specific SM processes. These corrections can prove to be
-important for the closure test procedures described in Section
-\ref{sec:closure-tests}.
+\subsection{Stitched MC samples}
 
 \begin{figure}[!h]
   \begin{center}
-    \subfigure[$Z\rightarrow \nu\nu$ +jets] {\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/Zinv.pdf}} ~~
-    \subfigure[$W\rightarrow l \nu$ + jets]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/WJetsToLNu_HT.pdf}} \\
-    \subfigure[$DY\rightarrow ll$ + jets]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/DYJetsToLL_M50_HT.pdf}} ~~
-    \subfigure[QCD]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/QCD_HT.pdf}} \\
-    \subfigure[$\gamma$+jets]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/2016/6p3/GJets_HT.pdf}} ~~
-    \caption{Generator-level $H_{T}^{parton}$ distributions for SM process, $Z\rightarrow \nu\nu$ + jets, W+jets, DY+jets, QCD and $\gamma$+jets}
+    \subfigure[$Z\rightarrow \nu\nu$ + jets]{\includegraphics[width=0.35\textwidth]{figures/binnedMCsamples/Zinv.pdf}} ~
+    \subfigure[$W\rightarrow l \nu$ + jets]{\includegraphics[width=0.35\textwidth]{figures/binnedMCsamples/WJetsToLNu_HT.pdf}} \\
+    \subfigure[$DY\rightarrow ll$ + jets]{\includegraphics[width=0.35\textwidth]{figures/binnedMCsamples/DYJetsToLL_M50_HT.pdf}} ~
+    \subfigure[QCD]{\includegraphics[width=0.40\textwidth]{figures/binnedMCsamples/QCD_HT.pdf}} \\
+    \subfigure[$\gamma$ + jets]{\includegraphics[width=0.35\textwidth]{figures/binnedMCsamples/GJets_HT.pdf}} ~
+    \subfigure[\ttbar\ + jets]{\includegraphics[width=0.35\textwidth]{figures/binnedMCsamples/TTbar.pdf}} 
+    \caption{Generator-level parton \scalht distributions for SM
+      process, $Z\rightarrow \nu\nu$ + jets, W + jets, DY + jets, QCD,
+      \gj, and \ttbar\ + jets (subsamples not shown). }
     \label{fig:Lhe_Ht}
   \end{center}
 \end{figure}
