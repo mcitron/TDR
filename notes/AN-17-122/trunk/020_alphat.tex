@@ -1,119 +1,182 @@
 %%____________________________________________________________________________||
-\section{Definition of alphaT}
-\label{sec:alphatdef}
+\section{Key kinematic variables}
 
-The \alphat~\cite{Randall:2008rw, CMS:2008vya, CMS-PAS-SUS-09-001} variable is used to
-efficiently reject multijet events without significant \met or with
-transverse energy mismeasurements, while retaining a large sensitivity
-to new physics with final-state signatures containing significant
-\met.
+This search considers all-jet (or all-hadronic) final states. The
+details on the reconstruction algorithms used to identify jets are
+provided in Sec.~\ref{}. The experimental acceptance for jets used in
+this analysis is defined in Sec.~\ref{}. The event selection criteria
+that define the signal and control regions are detailed in
+Sec.~\ref{}. The following section introduces the key variables used
+in this analysis, without providing details on the recontruction
+algorithms nor the final event selection criteria. 
+
+\subsection{\njet}
+
+The jets considered in this search are required to satisfy criteria
+related to the ``quality'' of the physics object (to reject anomalous
+from \eg reconstruction failures or spurious detector noise, see
+Sec.~\ref{}), as well as thresholds related to the transverse momentum
+(\Pt) and pseudorapidity ($\eta$) of each jet. In this analysis,
+higher thresholds for transverse momentum are required for the
+highest-\Pt jets. The number of jets that satisfy these selection
+criteria is defined as \njet.
+
+\subsection{\scalht}
+
+The mass scale of the physics processes being probed is characterised
+by the scalar \pt sum of the jets, defined as $\scalht =
+\sum_{i=1}^{\njet} \pt^{\,\mathrm{j}_i}$.  
+
+\subsection{\HTmiss}
+
+The magnitude of the vector \ptvec sum of these jets, defined by
+$\HTmiss = \abs{\sum_{{i}=1}^{\njet} \ptvec^{\,\mathrm{j}_i}}$, is
+used to identify events with significant \ptvecmiss.
+
+\subsection{\ETmiss}
+
+The most accurate estimator of \ptvecmiss is given by the projection
+on the plane perpendicular to the beams of the negative vector sum of
+the momenta of all candidate particles in an event~\cite{cms-met}, as
+determined by the PF algorithm (Sec~\ref{}). Its magnitude is referred
+to as \ETmiss.
 
 The measurement of \met typically relies on independent sources of
 information from each of the calorimeter, tracking, and muon
-subdetectors. Relative to other physics objects, this
-measurement is particularly sensitive to the beam conditions and
-detector performance. This difficulty is compounded by the
-high-energy, high-luminosity hadron collider environment at the LHC
-and the lack of precise theoretical predictions for the kinematic
-properties and cross sections of multijet events. Hence it is very
-challenging to control and model accurately the multijet background in
-the high-\met phase space that is typical of SUSY searches.
+subdetectors. Relative to other physics objects, this measurement is
+particularly sensitive to the beam conditions and detector
+performance. This difficulty is compounded by the high-energy,
+high-luminosity hadron collider environment at the LHC and the lack of
+precise theoretical predictions for the kinematic properties and cross
+sections of multijet events. Hence it is very challenging to control
+and model accurately the multijet background in the high-\met phase
+space that is typical of SUSY searches. Given these difficulties, this
+search relies primarily on \HTmiss as an estimator for \ptvecmiss. 
 
-Given these difficulties, the variable \alphat was developed to avoid
-direct reliance on a measurement of \met, instead depending solely on
-the measurements of the transverse energies and (relative) azimuthal
-angles of jets. The variable is
+\subsection{\alphat}
+\label{sec:alphatdef}
+
+For an event sample of all-jet final states, the multijet background
+dominates over all other SM backgrounds. Several variables are
+employed to reduce the multijet contribution to a low level with
+respect to other SM backgrounds, the first of which is described
+below. 
+
+The dimensionless kinematic variable \alphat~\cite{Randall:2008rw,
+  CMS:2008vya, CMS-PAS-SUS-09-001}, defined in Eq.~(\ref{eq:alphat})
+below, is used to provide discrimination against multijet events that
+do not contain significant \ptvecmiss or that contain large \ptvecmiss
+only because of \pt mismeasurements, while retaining sensitivity to
+new-physics events with significant \ptvecmiss. The \alphat variable
+depends solely on the transverse component of jet four-momenta and is
 intrinsically robust against the presence of jet energy
-mismeasurements in multijet systems.\\
-%and is observed to be robust against the effects of pileup. 
-For dijet events, the \alphat variable is defined
-as:
+mismeasurements in multijet systems. The variable does not rely on the
+\ETmiss variable.
 
-\begin{equation}
-\label{eq:alphat}
-\alphat\, =\, \frac{\Et^{{\rm j}_2}}{M_\text{T}} \, ,
-\end{equation}
-
-where $\Et^{\rm j_2}$ is the transverse energy of the less energetic
-jet and $M_\text{T}$ is the transverse mass of the dijet system,
-defined as
-
+For events containing only two jets, \alphat is defined as $\alphat =
+\ET^{\mathrm{j}_2}/M_\mathrm{T}$, where $\ET= E\sin\theta$, where $E$
+is the energy of the jet and $\theta$ is its polar angle with respect
+to the beam axis, $\ET^{\mathrm{j}_2}$ is the transverse energy of the
+jet with smaller \ET, and $M_\mathrm{T}$ is the transverse mass of the
+dijet system, defined as:
 \begin{equation}
   \label{eq:mt}
-  M_\text{T}\, = \,\sqrt{ \left( \sum_{i=1}^2 \Et^{{\rm j}_i}
-    \right)^2 - \left( \sum_{i=1}^2 p_x^{{\rm j}_i} \right)^2 - \left(
-      \sum_{i=1}^2 p_y^{{\rm j}_i} \right)^2} \, .
+  M_\mathrm{T} = \sqrt{ \Bigl( \sum_{i=1,2} \ET^{\mathrm{j}_i}
+    \Bigr)^2 - \Bigl( \sum_{i=1,2} p_x^{\mathrm{j}_i} \Bigr)^2 - \Bigl(
+      \sum_{i=1,2} p_y^{\mathrm{j}_i} \Bigr)^2}\, ,
 \end{equation}
+where $\ET^{\mathrm{j}_i}$, $p_x^{\mathrm{j}_i}$, and
+$p_y^{\mathrm{j}_i}$ are, respectively, the transverse energy, and the
+$x$ and $y$ components of the transverse momentum of jet
+$\mathrm{j}_i$.
 
-where $\Et^{{\rm j}_i}$ is the transverse energy of jet ${\rm j}_i$ (
-$\Et^{{\rm j}_i} = E^{{\rm j}_i}\sin\theta^{{\rm j}_i}$), and
-$p_x^{{\rm j}_i}$ and $p_y^{{\rm j}_i}$ are the $x$ and $y$ components
-of the transverse momentum of the jet.
+For a perfectly measured dijet event with $\ET^{\mathrm{j_1}} =
+\ET^{\mathrm{j_2}}$ and back-to-back jets ($\Delta\phi = \pi$), and in
+the limit in which the momentum of each jet is large compared with its
+mass, the value of \alphat is 0.5. For an imbalance in the \ET of
+back-to-back jets, \alphat is reduced to a value $<$0.5, which gives
+the variable its intrinsic robustness. Values significantly greater
+than 0.5 are observed when the two jets are not back-to-back and
+recoil against \ptvecmiss from weakly interacting particles that
+escape the detector.
 
-For a perfectly measured dijet event with $\Et^{\rm j_1} = \Et^{\rm
-  j_2}$ and jets back-to-back in $\phi$, and in the limit in which the
-momentum of each jet is large compared with its mass, the value of
-\alphat is 0.5. For the case of an imbalance in the measured
-transverse energies of back-to-back jets, \alphat is reduced to a
-value smaller than 0.5, which gives the variable its intrinsic
-robustness with respect to jet energy mismeasurements. Values
-significantly greater than 0.5 are observed when the two jets are not
-back-to-back and are recoiling against significant, genuine \met.
+\newcommand{\scalst}{\ensuremath{\mathcal{E}_\mathrm{T}}\xspace}
+\newcommand{\dst}{\ensuremath{\Delta\scalst}\xspace}
 
 The definition of the \alphat variable can be generalised for events
-with two or more jets as follows. The mass scale of the physics
-processes being probed is characterised by the scalar sum of the
-transverse energy $\Et$ of jets considered in the analysis,
-$\sum_{i=1}^{\njet} \Et^{{\rm j}_i}$, where \njet is the
-number of jets with \Et above a predefined threshold.\footnote{We note
-here that the variable \scalht is reserved for the scalar sum of the
-transverse momentum $\Pt$ of jets considered in the analysis.} 
-The estimator
-for \met is given by the magnitude of the transverse momenta
-$\vec{\pt}$ vectorial sum over these jets, defined as $\mht =
-|\sum_{i=1}^{n_{\rm jet}} \vec{\pt}^{{\rm j}_i}|$.
-
-For events with three or more jets, a pseudo-dijet system is formed by
-combining the jets in the event into two pseudo-jets. The total \Et
-for each of the two pseudo-jets is calculated as the scalar sum of the
-measured \Et of the contributing jets. The combination chosen is the
-one that minimises the absolute \Et difference between the two
-pseudo-jets, \dEt. This simple clustering criterion provides the best
-separation between multijet events and events with genuine
-\met. Eq.~\ref{eq:alphat} can therefore be generalised as:
-
+with more than two jets~\cite{RA1Paper} as follows. For events with
+three or more jets, a pseudo-dijet system is formed by combining the
+jets in the event into two pseudo-jets. The mass scale is
+characterised by the scalar sum of the jet transverse energies,
+$\scalst = \sum_{i=1}^{N_\text{jet}} \ET^{\mathrm{j}_i}$, where
+$N_\text{jet}$ is the number of jets with \ET above a predefined
+threshold.\footnote{{\it Nota bene} the use of \Et and \scalst versus
+  \Pt and \scalht. This difference arises due to the implementation in
+  the trigger logic, described in Sec.~\ref{}, which relies on \Et
+  rather than \Pt. Ultimately, the effects due nonnegligible jet
+  masses is small, at the percent level.} The \scalst for each of the
+two pseudo-jets is given by the scalar \ET sum of its contributing
+jets. The combination chosen is the one that minimises \dst, defined
+as the difference between these sums for the two pseudo-jets.  This
+clustering criterion assumes a balanced-event hypothesis, which
+provides strong separation between SM multijet events and events with
+genuine \ptvecmiss. The \alphat definition can be generalised to:
 \begin{equation}
-  \label{eq:alphat2}
-   \alpha_\textrm{T} = \frac{\sum_{i} E_\textrm{T}^{j_i} - \Delta E_\textrm{T}}{2\sqrt{\left(\sum_{i} E_\textrm{T}^{j_i}\right)^2 - {H_\textrm{T}^{\textrm{miss}}}^2}}
+  \label{eq:alphat}
+  \alphat = \frac{1}{2} \frac{\scalst -
+    \dst}{\sqrt{(\scalst)^2 - (\HTmiss)^2}}.
 \end{equation}
 
-% with the explicit bounds of the summations
-%\begin{equation}
-%  \label{eq:alphat2}
-%   \alpha_\textrm{T} = \frac{\displaystyle\sum_{i=1}^{\njet} E_\textrm{T}^{j_i} -
-%   \Delta E_\textrm{T}}
-%   {\displaystyle 2\sqrt{\left(\sum_{i=1}^{\njet} E_\textrm{T}^{j_i}\right)^2 - {H_\textrm{T}^{\textrm{miss}}}^2}}
-%\end{equation}
+When jet energies are mismeasured, or there are neutrinos from
+heavy-flavour quark decays, the magnitudes of \HTmiss and \dst are
+highly correlated. This correlation is much weaker for
+$R$-parity-conserving SUSY events, where each of the two decay chains
+produces an undetected LSP.
 
-In the presence of jet energy mismeasurements, the direction and
-magnitude of the apparent missing transverse energy, \mht, and energy
-imbalance of the pseudo-dijet system, \dEt, are highly correlated.
-This correlation is much weaker for R-parity-conserving SUSY with each
-of the two decay chains producing the LSP.
+Multijet events populate the region $\alphat< 0.5$ and the $\alphat$
+distribution is characterised by a sharp edge at 0.5, beyond which the
+multijet event yield falls by several orders of magnitude. Multijet
+events with extremely rare but large stochastic fluctuations in the
+calorimetric measurements of jet energies can lead to values of
+\alphat slightly above 0.5. The edge at 0.5 sharpens with increasing
+\scalht for events containing at least three jets, primarily due to a
+corresponding increase in the average jet energy and consequently a
+(relative) improvement in the jet energy resolution. 
 
-It is useful to consider the limiting case $\dEt \rightarrow 0$ to
-understand the relationship between \alphat and the ratio
-$\mht/\sum_{i} E_\textrm{T}^{j_i}$:
-
+As a result, a \scalht-dependent threshold is imposed on the \alphat
+variable (see Sec.~\ref{}). Hence, it is useful to consider the
+limiting case $\dst \rightarrow 0$ to understand the relationship
+between \alphat and the ratio $\mht/\sum_{i} E_\textrm{T}^{j_i}$: 
 \begin{equation}
   \label{eq:alphat3}
-  \frac{\mht}{\sum_{i} E_\textrm{T}^{j_i}} \, = \, \sqrt{ 1 - \frac{1}{4 \cdot \alphat^2} }
+  \frac{\mht}{\scalst} \, = \, \sqrt{ 1 - \frac{1}{4 \cdot \alphat^2} }.
 \end{equation}
 
-For reference, under the assumption of $\dEt = 0$, the values of
-$\alphat = 0.65$, 0.60, 0.55, 0.53, and 0.52 map onto values of the ratio
-$\mht/\sum_{i} E_\textrm{T}^{j_i} = 0.64$, 0.55, 0.42, 0.33, and 0.27, 
-respectively.
+For reference, under the assumption of $\dst = 0$, the values of
+$\alphat = 0.65$, 0.60, 0.55, 0.53, and 0.52 map onto values of the
+ratio $\mht/\scalst = 0.64$, 0.55, 0.42, 0.33, and 0.27, respectively.
 
+\subsection{\bdphi}
+
+An additional variable is based on the minimum azimuthal separation
+between a jet and the negative vector \ptvec sum derived from all
+other jets in the event~\cite{RA1Paper},
+\begin{equation}
+  \bdphi = \min_{\,\forall\, \mathrm{j}_k\,\in\, [1,\njet]}
+  \Delta\phi \Bigl( \ptvec^{\,\mathrm{j}_k}, \,
+    -\hspace{-0.5em}\sum_{\substack{\mathrm{j}_i= 1 \\ \mathrm{j}_i \ne \mathrm{j}_k}}^{\njet}
+    \ptvec^{\,\mathrm{j}_i} \Bigr).
+  \label{eq:bdphi}
+\end{equation}
+
+This variable discriminates between final states with genuine
+\ptvecmiss, \eg from the leptonic decay of the W boson, and energetic
+multijet events that have significant \ptvecmiss through jet energy
+mismeasurements or through the production of neutrinos, collinear with
+the axis of a jet, from semileptonic heavy-flavour decays. Multijet
+events exhibit a population at $\bdphi \approx
+0\,\mathrm{radians}$. Events with a genuine source of \ptvecmiss
+exhibit a long tail in \bdphi with values as large as
+$\pi\,\mathrm{radians}$. More details can be found in Sec.~\ref{}.
 
 %%____________________________________________________________________________||
