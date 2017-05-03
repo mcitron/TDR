@@ -155,9 +155,20 @@ ratio $\mht/\scalst = 0.64$, 0.55, 0.42, 0.33, and 0.27, respectively.
 
 \subsection{\bdphi}
 
-An additional variable is based on the minimum azimuthal separation
-between a jet and the negative vector \ptvec sum derived from all
-other jets in the event~\cite{RA1Paper},
+An additional powerful variable \bdphi is used to suppress multijet
+contamination due to both instrumental effects and semi-leptonic
+heavy-flavour decays with genuine \met in the final state. The
+variable is defined as follows. 
+
+The jet-based estimate
+of the missing transverse energy, ${\mhtvec}$, is determined from all
+jets except for one of the reconstructed jets, the ``test'' jet
+$\mathrm{j}_k$, \ie $\mathrm{j}_i \,\in\, [1,\njet], \mathrm{j}_i \ne
+\mathrm{j}_k$. The difference in the azimuthal angle between the
+recomputed $\mhtvec$ and the ``test'' jet $\mathrm{j}_k$ is then
+determined. This process is repeated for each jet $\mathrm{j}_i$ in
+the event. The \bdphi variables is defined as the minimum value of the
+differences in azimuthal angles: 
 \begin{equation}
   \bdphi = \min_{\,\forall\, \mathrm{j}_k\,\in\, [1,\njet]}
   \Delta\phi \Bigl( \ptvec^{\,\mathrm{j}_k}, \,
@@ -166,14 +177,27 @@ other jets in the event~\cite{RA1Paper},
   \label{eq:bdphi}
 \end{equation}
 
-This variable discriminates between final states with genuine
-\ptvecmiss, \eg from the leptonic decay of the W boson, and energetic
-multijet events that have significant \ptvecmiss through jet energy
-mismeasurements or through the production of neutrinos, collinear with
-the axis of a jet, from semileptonic heavy-flavour decays. Multijet
-events exhibit a population at $\bdphi \approx
+For monojet events, the calculation is performed using a lower \Pt
+threshold on all jets, $\Pt > 25\gev$, with the variable identified as
+$\bdphimod$.
+
+The ``test'' jet corresponding to \bdphi is identified as the jet that
+is most likely to have given rise to the missing transverse energy in
+the event. This variable discriminates between final states with
+genuine \ptvecmiss, \eg from the leptonic decay of the W boson, and
+energetic multijet events that have significant \ptvecmiss through jet
+energy mismeasurements or through the production of neutrinos,
+collinear with the axis of a jet, from semileptonic heavy-flavour
+decays. Multijet events exhibit a population at $\bdphi \approx
 0\,\mathrm{radians}$. Events with a genuine source of \ptvecmiss
 exhibit a long tail in \bdphi with values as large as
-$\pi\,\mathrm{radians}$. More details can be found in Sec.~\ref{}.
+$\pi\,\mathrm{radians}$. 
+
+The use of both the \bdphi and \alphat variables provide an extremely
+powerful rejection factor against contamination from multijet events
+and allow to maintain low jet-\PT, \HT, and \mht thresholds, which in
+turn maximises signal acceptance for a large range of DM and SUSY
+models with final states characterised by the presence of significant
+\met.
 
 %%____________________________________________________________________________||
