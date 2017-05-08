@@ -11,35 +11,31 @@ selection criteria that are specific to each region.
 \label{sec:preSelection}
 
 The event selection criteria described in this section are common to
-the signal and all control regions. These selections are summarised in
-Table~\ref{tab:pre-selections} and described in further detail below. 
+all signal and control regions. These selections are summarised in
+Table~\ref{tab:pre-selections} and described in further detail below.
 
 \begin{table}[h!]
   \topcaption{Summary of the pre-selection criteria.}
   \label{tab:pre-selections}
   \centering
-  \footnotesize
+  \small
   \begin{tabular}{ ll }
     \hline
-    \ETmiss quality               & Filters related to beam and instrumental effects, and reconstruction failures                                       \\
+    \ETmiss quality               & Filters related to beam and instrumental effects, and reconstruction failures                               \\
                                   & \parbox[t]{12cm}{
-                                    Primary Vertex, 
+                                    (Primary Vertex, 
                                     CSC Beam Halo,
-                                    HBHE Noise and Isolation, 
-                                    ECAL Endcap SC Noise,                                                                                               \\
+                                    HBHE Noise and Isolation,                                                                                   \\
+                                    ECAL Endcap SC Noise, 
                                     ECAL TP, 
                                     Bad Muon, 
-                                    Bad Charged Hadron}                                                                                                 \\
-    Beam halo                     & $0.1 < \mathrm{CHF} < 0.95$ for highest-\Pt jet                                                                     \\
-    Jet $\mathrm{j}_i$ acceptance & Consider each jet $\mathrm{j}_i$ that satisfies $\pt^{\mathrm{j}_i} > 40\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 2.4$ \\
-    Jet $\mathrm{j_1}$ acceptance & $\pt^{\mathrm{j_1}} > 100\GeV$                                                                                      \\
-    Jet $\mathrm{j_2}$ acceptance & 
-    $\pt^{\mathrm{j_2}} < 40\GeV$ (monojet),
-    $40 < \pt^{\mathrm{j_2}} < 100\GeV$ (asymmetric),
-    $\pt^{\mathrm{j_2}} > 100\GeV$ (symmetric)                                                                                                          \\
-    Jets below threshold          & $\HTmiss / \ETmiss < 1.25$                                                                                          \\
-    Forward jet veto              & Veto events containing a jet satisfying $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                                       \\
-    Energy sums                   & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                         \\
+                                    Bad Charged Hadron)}                                                                                        \\
+    Beam halo                     & $0.1 < \mathrm{CHF} < 0.95$ for highest-\Pt jet                                                             \\
+    Jet $\mathrm{j}_i$ acceptance & Each jet $\mathrm{j}_i$ that satisfies $\pt^{\mathrm{j}_i} > 40\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 2.4$ \\
+    Jet $\mathrm{j_1}$ acceptance & $\pt^{\mathrm{j_1}} > 100\GeV$                                                                              \\
+    Jets below threshold          & $\HTmiss / \ETmiss < 1.25$                                                                                  \\
+    Forward jet veto              & Veto events containing a jet satisfying $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                               \\
+    Energy sums                   & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                 \\
     \hline
   \end{tabular}
 \end{table}
@@ -64,9 +60,10 @@ compared to the previous run.
 
 Beam halo events manifest themselves as single energy deposits in the
 calorimeters, which introduces large amounts of ``fake'' \met. This
-effect is especially prominent in the signal region monojet category,
-particularly at $\phi$ coordinates of 0 and $\pi$ because of the
-tendency of halo particles to lie within the plane of the LHC ring.
+effect is especially prominent in low-\njet events that satisfy the
+signal region requirements, particularly at $\phi$ coordinates of 0
+and $\pi$ because of the tendency of halo particles to lie within the
+plane of the LHC ring.
 
 Such spurious events are suppressed by requiring at least 10\% of the
 for the highest-\Pt jet's energy to originate from charged
@@ -82,22 +79,22 @@ muons, which are prevelant in simulated multijet events.
 %naturally removes spurious events of this kind.
 
 The requirement $0.1 < \mathrm{CHF} < 0.95$ for the highest-\Pt jet
-can be regarded as an additional tight jet ID requirement employed by
-this analysis, with efficiency close to unity for real jets and thus
-not affecting the signal efficiency significantly.
+can be regarded as an additional jet ID requirement employed by this
+analysis, with efficiency close to unity for real jets and thus not
+affecting the signal efficiency significantly.
 
 \begin{figure}[h!]
     \begin{center}
         {\includegraphics[width=0.32\textwidth]{figures/selection/jet_chHEF_mono_all_before.pdf}}
         {\includegraphics[width=0.32\textwidth]{figures/selection/jet_phi[0]_mono_all_before.pdf}}
         {\includegraphics[width=0.32\textwidth]{figures/selection/jet_phi[0]_mono_all_after.pdf}}
-        \caption{Distributions in the signal region of the jet charged
-          hadron energy fraction (CHF) (Left), jet $\phi$ direction
-          (Centre), and jet $\phi$ direction after applying a
-          requirement of {CHF~$>0.1$}. The large excess in data at
-          charged hadron fractions close to zero and ${\phi = 0, \pi}$
-          is consistent with beam halo effects, and is effectively
-          suppressed by the aforementioned selection.}
+        \caption{Distributions in the signal region of (Left) the jet
+          charged hadron energy fraction (CHF), (Centre) the jet
+          $\phi$ direction, and (Right) jet $\phi$ direction after
+          applying a requirement of {CHF~$>0.1$}. The large excess in
+          data at charged hadron fractions close to zero and ${\phi =
+            0, \pi}$ is consistent with beam halo effects, and is
+          effectively suppressed by the aforementioned selection.}
         \label{fig:leadJetCleaning}
     \end{center}
 \end{figure}
@@ -113,23 +110,8 @@ The highest-\Pt jet in the event is required to satisfy $\Pt^{\mathrm
   j_2} > 100\gev$. This helps to ensure high trigger efficiencies
 while maintaining high efficiency for a broad range of signal models.
 
-Events are classified based on the second highest-\Pt jet,
-$\Pt^{\mathrm j_2}$:
-\begin{itemize}
-\item In the case that a second leading jet satisfies $\PT > 100\gev$,
-  the event is categorised as exhibiting a ``symmetric''
-  topology. This threshold helps to improve the S/B for a wide range
-  of models involving pair production with respect to SM processes,
-  such as V + jets production.
-\item If $40 < \Pt^{\mathrm j_2} < 100\gev$, the event is assigned to
-  the ``asymmetric'' topology.
-\item If $\Pt^{\mathrm j_2} < 40\gev$, the event is assigned to the
-  ``monojet'' topology.
-\end{itemize}
-
-The asymmetric and monojet topologies have been added to the analysis
-to help improve acceptance to a range of DM models and compressed
-SUSY. This event categorisation is detailed further in Sec.~\ref{}.
+Events are classified based on the second highest-\Pt jet, as
+described in Sec.~\ref{sec:subleading-jet}.
 
 \subsubsection{The \mht/\met variable} 
 
@@ -192,7 +174,6 @@ Table~\ref{tab:sr-selections}.
   }
   \label{tab:sr-selections}
   \centering
-  \footnotesize
   \begin{tabular}{ ll }
     \hline
     Lepton vetoes              & $\pt > 10\GeV$ and $\abs{\eta} < 2.5$ for isolated muons and electrons                          \\
@@ -204,7 +185,7 @@ Table~\ref{tab:sr-selections}.
   \end{tabular}
 \end{table}
 
-\subsubsection{Lepton, photons and SIT vetoes}
+\subsubsection{Lepton, photon, and single isolated track vetoes}
 \label{sec:vetoes}
 
 Using the identification criteria described in Sec.~\ref{sec:objects},
@@ -213,7 +194,8 @@ hadronic signal region:
 \begin{itemize}
 \item muons with $\pt>10\,\mathrm{GeV}$ and $|\eta|<2.5$;
 \item electrons with $\pt>10\,\mathrm{GeV}$ and $|\eta|<2.5$;
-\item single isolated tracks with $\pt>10\,\mathrm{GeV}$ and $|\eta|<2.5$;
+\item single isolated tracks with $\pt>10\,\mathrm{GeV}$ and
+  $|\eta|<2.5$;
 \item photons with $\pt>25\,\mathrm{GeV}$ and $|\eta|<2.5$;
 \end{itemize}
 
@@ -235,11 +217,10 @@ can be found in Sec.~\ref{sec:triggers}.
   \caption{\alphat thresholds versus
     lower bound of \scalht bin. For all \HT bins satisfying $\HT >
     900\gev$, no \alphat cut is applied. No \alphat requirement is
-    imposed for events in the monojet category, nor $\scalht >
-    1200\GeV$.} 
+    imposed for events satisfying $\njet = 1$ (``monojet'' events, see
+    Sec.~\ref{sec:subleading-jet}), nor $\scalht > 1200\GeV$.} 
   \label{tab:alphat-thresholds}
   \centering
-  \footnotesize
   \begin{tabular}{ lccccccccc }
     \hline
     \scalht           & 200  & 250  & 300  & 350  & 400  & 600  & 900  & $>$1200 \\
@@ -251,16 +232,18 @@ can be found in Sec.~\ref{sec:triggers}.
 Table~\ref{tab:alphat-thresholds} summarises the \alphat thresholds
 for each \HT bin. The \alphat threshold is dependent only on \HT and
 not on \njet nor \nb that are used to define the event categories. No
-\alphat cut is applied in the monojet bins, as the variable is defined
+\alphat cut is applied for events satisfying $\njet = 1$ (``monojet''
+events, see Sec.~\ref{sec:subleading-jet}), as the variable is defined
 only for $\njet \geq 2$. Further, no requirement is made for events
-satisfying $\scalht > 1200\GeV$. 
+satisfying $\scalht > 1200\GeV$.
 
 \subsubsection{\bdphi requirement} 
 \label{sec:bdphi-selection}
 
 Candidate signal events with two or more jets are accepted only if
-they satisfy $\bdphi > 0.5$. In the case of monojet events, the
-requirement $\bdphimod > 0.5$ must be satisfied. 
+they satisfy $\bdphi > 0.5$. In the case of events satisfying $\njet =
+1$ (``monojet'' events, see Sec.~\ref{sec:subleading-jet}), the
+requirement $\bdphimod > 0.5$ must be satisfied.
 
 \subsection{The control regions}
 \label{sec:control-region-selection}
@@ -392,7 +375,7 @@ and control regions, from the point of view of signal extraction
 (using the likelihood fit) and validation of the simulation modelling
 of variables in which extrapolations are performed.
 
-\subsubsection{Variables}
+\subsubsection{Discriminating variables}
 
 \begin{table}[!h]
   \topcaption{Summary of the variables used to categorise events in
@@ -402,15 +385,14 @@ of variables in which extrapolations are performed.
   }
   \label{tab:cr-categorisation}
   \centering
-  \small
   \begin{tabular}{ lll }
     \hline
-    Sample   & Likelihood model    & Modelling (validation) studies \\ 
+    Sample   & Used in likelihood model & Used for modelling (\ie validation) studies \\ 
     \hline
-    \mj      & \njet, \nb, \scalht & \HTmiss                        \\
-    \mmj     & \njet, \scalht      & \nb, \HTmiss                   \\
-    \gj      & n/a                 & \njet, \scalht, \nb, \HTmiss   \\
-    Multijet & \njet, \scalht      & \nb, \HTmiss                   \\
+    \mj      & \njet, \scalht, \nb      & \HTmiss                                     \\
+    \mmj     & \njet, \scalht           & \nb, \HTmiss                                \\
+    Multijet & \njet, \scalht           & \nb, \HTmiss                                \\
+    \gj      & --                       & \njet, \scalht, \nb, \HTmiss                \\
     \hline
   \end{tabular}
 \end{table}
@@ -439,184 +421,266 @@ region in terms of \njet and \scalht, and use the \nb and \mht
 dimensions to validate the assumptions (\ie extrapolations) in the
 likelihood model. 
 
-\subsubsection{Binning for control regions}
+\subsubsection{Event categorisation by subleading jet \Pt}
+\label{sec:subleading-jet}
 
-Table~\ref{tab:cr-binning} shows the nominal binning of the control
-regions, in terms of \njet and \scalht. Seven bins in \njet are
-employed: the ``monojet'' 1-jet bin; exclusive 2-, 3-, 4- and 5-jet
-bins; an open $\geq$6 jet bin with a ``symmetric'' topology (\ie both
-the highest and second-highest-\Pt jets are required to satisfy $\Pt >
-100\GeV$); and an open $\geq$2 jet bin with an ``asymmetric'' topology
-(\ie $40 < \Pt^{\mathrm j_2} < 100\GeV$). Up to eleven \scalht bins
-are employed with: 50\GeV bin widths in the region 200--400\GeV;
-100\GeV bin widths for 400--600\GeV; 150\GeV bin widths for
-600--1200\GeV; and a final open bin, $\scalht > 1200\GeV$. The \scalht
-bins are merged or dropped in case of low event counts or restricted
-phase space. 
+Events are categorised according to the ``topology'' exhibited by the
+two leading jets in the event. The topology is defined in terms of the
+\Pt of the subleading jet, $\pt^{\mathrm{j_2}}$, as summarised in
+Table~\ref{tab:subleading-jet}.
 
-\begin{table}[!h]
-  \topcaption{Summary of the nominal event categorisation in terms of
-    \njet and \scalht, which is used by the \mj, \mmj, \gj, and
-    multijet control regions. The ``(a)'' signifies the ``asymmetric''
-    topology. }  
-  \label{tab:cr-binning}
+\begin{table}[h!]
+  \topcaption{Summary of topologies, based on \Pt requirement for the
+    subleading jet.} 
+  \label{tab:subleading-jet}
   \centering
-  \footnotesize
-  \begin{tabular}{ ll }
+  \begin{tabular}{ lr }
     \hline
-    \njet             & 1 (monojet), 2, 3, 4, 5, $\geq$6 (all symmetric), $\geq$2a (dijet symmetric) \\
-%    \nb              & 0, 1, 2, $\geq$3 ($\nb \leq \njet$)                                          \\
-    \scalht(\GeVns{}) & 200, 250, 300, 350, 400, 500, 600, 750, 900, 1050, $>1200\GeV$               \\
+    Monojet    & $\pt^{\mathrm{j_2}} < \phantom{1}40\GeV$       \\
+    Asymmetric & $40 < \pt^{\mathrm{j_2}} < 100\GeV$ \\
+    Symmetric  & $\pt^{\mathrm{j_2}} > 100\GeV$      \\
     \hline
   \end{tabular}
 \end{table}
 
-The final (\njet, \nb, \scalht) binning used in the analysis is chosen
-based on data event counts in the \mj and \mmj samples. The binning in
-\nb is bounded from above by \njet and determined based on data event
-counts in the \mj control region. The event counts in the \mmj sample
-are integrated over \nb and so counts per (\njet, \scalht) bin are
-considered. 
+If the subleading jet is outside the experimental acceptance (\ie
+$\Pt^{\mathrm j_2} < 40\gev$), the event is assigned to the
+``monojet'' topology. If $40 < \Pt^{\mathrm j_2} < 100\gev$, the event
+is assigned to the ``asymmetric'' topology. The asymmetric and monojet
+topologies have been added to the analysis to help improve acceptance
+to a range of DM models and compressed SUSY.
+
+In the case that a second leading jet satisfies $\PT > 100\gev$, the
+event is categorised as exhibiting a ``symmetric'' topology. This
+raised threshold helps to improve the S/B for a wide range of models
+involving pair production with respect to SM processes, such as V +
+jets production.
+
+\subsubsection{Event categorisation by \njet}
+\label{sec:njet-categorisation}
+
+\begin{table}[h!]
+  \topcaption{Summary of \njet categorisation (including topology)
+    used in this analysis. The character labels used throughout
+    the documentation are also listed.}
+  \label{tab:njet-binning}
+  \centering
+  \begin{tabular}{ lll }
+    \hline
+    \njet   & Topology   & Label \\ 
+    \hline
+    1       & Monojet    & eq1j  \\
+    $\geq$2 & Asymmetric & eq2a  \\
+    2       & Symmetric  & eq2j  \\
+    3       & Symmetric  & eq3j  \\
+    4       & Symmetric  & eq4j  \\
+    5       & Symmetric  & eq5j  \\
+    $\geq$6 & Symmetric  & ge6j  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Table~\ref{tab:njet-binning} shows the categorisation of events,
+according to \njet and topology, used in this analysis. Seven ``\njet
+bins'' (categories in \njet and topology) are employed, and this
+scheme is used identically in all signal and control regions.
+
+\subsubsection{Event categorisation by \scalht}
+\label{sec:ht-categorisation}
+
+In the control regions, up to eleven \scalht bins are employed with
+variable bin widths:
+\begin{itemize}
+\item 4 bins of width 50\GeV in the region 200--400\GeV;
+\item 2 bins of width 100\GeV for 400--600\GeV; 
+\item 4 bins of width 150\GeV for 600--1200\GeV;
+\item and a final open bin, $\scalht > 1200\GeV$. 
+\end{itemize}
+
+For the signal region, the predictions derived from the eleven bins in
+\scalht in each control region are aggregated to reduce the number of
+\scalht bins in the signal region to just five: 
+\begin{itemize}
+\item 200--400, 
+\item 400--600,
+\item 600--900, 
+\item 900--1200, 
+\item $>$1200\GeV.  
+\end{itemize}
+
+The aggregation scheme preserves information on the \scalht shape in
+data from the control region while reducing the number of bins in the
+signal region. The aggregation scheme is incorporated into the
+likelihood model and preserves all assumptions on systematic
+uncertainties and any correlated behaviour across bins. 
+
+\begin{table}[!h]
+  \topcaption{Summary of the \scalht [GeV] binning schemes used by the
+    control and signal regions, and the aggregation scheme. The
+    horizontal lines delineate the aggregation regions.
+  }  
+  \label{tab:ht-aggr}
+  \centering
+  \begin{tabular}{ cc }
+    \hline
+    Control regions  & Signal region       \\
+    (Nominal scheme) & (Aggregated scheme) \\
+    \hline
+    200--250         & 200--400            \\
+    250--300         & 200--400            \\
+    300--350         & 200--400            \\
+    350--400         & 200--400            \\
+    \hline
+    400--500         & 400--600            \\
+    500--600         & 400--600            \\
+    \hline
+    600--750         & 600--900            \\
+    750--900         & 600--900            \\
+    \hline
+    900--1050        & 900--1200           \\
+    1050--1200       & 900--1200           \\
+    \hline
+    $>$1200          & $>$1200             \\
+    \hline
+  \end{tabular}
+\end{table}
+
+The nominal and aggregated \scalht binning schemes, for the control
+and signal regions respectively, are summarised in 
+Table~\ref{tab:ht-aggr}.
+
+The \scalht bins in the signal region, and the corresponding \scalht
+bins in each control region, are merged or dropped in case of
+restricted phase space or low event counts. In the case of low values
+of \scalht and high values of \njet, the phase space is nonphysical or
+restricted, and so the \scalht bins are not used in the analysis. The
+lower bound of the first \scalht bin as a function of \njet is
+summarised in Table~\ref{tab:sr-ht-binning}. The merging of bins at
+high \scalht is depedent on both \njet and \nb, and is summarised in
+Table~\ref{tab:sr-binning} in Sec.~\ref{sec:nb-categorisation}. 
+
+\begin{table}[!h]
+  \topcaption{Summary of the lower bound of the first \scalht bin as a
+    function of \njet category used in the analysis. 
+  }
+  \label{tab:sr-ht-binning}
+  \centering
+  \begin{tabular}{ lccccccc }
+    \hline
+    \njet         & eq1j & eq2a & eq2j & eq3j & eq4j & eq5j & ge6j \\
+    \scalht [GeV] & 200  & 200  & 200  & 200  & 400  & 400  & 400  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Event categorisation by  \nb}
+\label{sec:nb-categorisation}
+
+Event categorisation by \nb depends on \njet and \scalht, and is
+chosen based on data event counts in the \mj and \mmj samples. The
+binning in \nb is bounded from above by \njet and determined based on
+data event counts in the \mj control region. The event counts in the
+\mmj sample are integrated over \nb and so counts per (\njet, \scalht)
+bin are considered.
 
 Figure~\ref{fig:cr-counts} (in Appendix~\ref{app:selection}) shows the
 event counts as a function of \njet, \nb, and \scalht in \mj, \mmj,
 and \gj samples. The binning utilised by the analysis aims to maintain
 sufficiently high counts to operate mainly in the Gaussian regime, and
-is summarised in Table~\ref{cr-binning-merged}.
+is summarised in Table~\ref{tab:sr-binning}.
 
+%\newcommand{\gef}{$\geq$4}
+%\begin{table}[!h]
+%  \topcaption{Summary of the final event categorisation used in the
+%    signal region. Each entry in the table represents the value of \nb 
+%    that defines the lower bound of the final bin, as a function of 
+%    \njet and the lower bound of each \scalht bin [GeV]. The dashes
+%    (--) signify that the (\njet, \scalht) bin is not used.  
+%  }
+%  \label{tab:sr-binning}
+%  \centering
+%  \begin{tabular}{ lccccc }
+%    \hline
+%    $\njet \backslash\, \scalht$ [GeV] & 200 & 400  & 600 & 900 & $>$1200 \\
+%    \hline
+%    1                                  & 1   & 1    & 1   & --  & --      \\ 
+%    2a                                 & 3   & 3    & 3   & 2   & --      \\ 
+%    2                                  & 2   & 2    & 2   & 2   & 1       \\ 
+%    3                                  & 3   & 3    & 3   & 3   & 2       \\ 
+%    4                                  & --  & 3    & 3   & 3   & 2       \\ 
+%    5                                  & --  & \gef & 3   & 3   & 2       \\ 
+%    $\geq$6                            & --  & \gef & 3   & 3   & 3       \\ 
+%    \hline
+%  \end{tabular}
+%\end{table}
 
-
-
-
-
-
-The bins used in the signal region are the result of an aggregation of
-the finer control region bins, with each of multiple control region
-bins predicting separately a category of events in the same aggregate
-bin in the signal region.  This scheme, which is fully implemented in
-the likelihood as described in Sec. \ref{sec:likelihood}, allows
-to avoid any extrapolation while reducing the number of search
-categories. 
-
-\begin{table}[h!]
-  \topcaption{Summary of the nominal \njet, \nb, \scalht binning.}
-  \label{tab:nominal-binning}
+\newcommand{\gef}{$\geq$4}
+\begin{table}[!h]
+  \topcaption{Summary of the lower bound of the final open \scalht bin
+    [GeV] as a function of \njet and \nb. The lower bound of the first
+    \scalht bin is summarised in Table~\ref{tab:sr-ht-binning}. The
+    dashes (--) signify (\njet, \nb) bins that are not possible or
+    used.
+  }
+  \label{tab:sr-binning}
   \centering
-  \begin{tabular}{ cl }
+  \begin{tabular}{ lccccc }
     \hline
+    $\njet\, / \,\nb$ & 0    & 1    & 2    & 3    & \gef \\
     \hline
-    \multicolumn{2}{c}{Signal region} \\
-    \hline
-    Variable & Binning \\
-    \hline
-    \multirow{3}{*}{\njet}
-     & Monojet:    $\njet=1$ \\
-     & Asymmetric: $\njet \geq 2$ \\
-     & Symmetric:  $\njet =2,3,4,5 \geq 6$ \\
-    \hline
-    \nb & $\nb=0,1,2,3,\geq 4$ \\
-    \hline
-    \scalht (GeV) & (200,400), (400,600), (600,900), (900,1200), $>$1200 \\
-    \hline
-    \hline
-    \multicolumn{2}{c}{Control regions} \\
-    \hline
-    Variable & Binning \\
-    \hline
-    \multirow{3}{*}{\njet}
-     & Monojet:    $\njet=1$ \\
-     & Asymmetric: $\njet=2,3,4, \geq 5$ \\
-     & Symmetric:  $\njet =2,3,4,5 \geq 6$ \\
-    \hline
-    \nb & $\nb=0,1,2,3,\geq 4$ \\
-    \hline
-    \scalht (GeV) & \parbox[t]{12cm}{(200,250), (250,300), (300,350), (350,400),
-      (400,500), (500,600), \\ (600,750), (750,900), (900,1050), (1050,1200), $>$1200 } \\
-    \hline
+    eq1j              & 900  & 900  & --   & --   & --   \\ 
+    eq2a              & 900  & 900  & 900  & 600  & --   \\ 
+    eq2j              & 1200 & 1200 & 900  & --   & --   \\ 
+    eq3j              & 1200 & 1200 & 1200 & 900  & --   \\ 
+    eq4j              & 1200 & 1200 & 1200 & 900  & --   \\ 
+    eq5j              & 1200 & 1200 & 1200 & 900  & 400  \\ 
+    ge6j              & 1200 & 1200 & 1200 & 1200 & 400  \\ 
     \hline
   \end{tabular}
 \end{table}
 
+\subsubsection{Event categorisation by \HTmiss}
+\label{sec} 
 
-Starting from the definition of nominal binning, it has to be remarked that not all the (\njet,\nb,\scalht) combinations 
-are kinematically accessible. For example, no $\njet=2,\nb=3$ bin exists (due to the jet multiplicity constraint) 
-or $\njet^{sym} \geq 6,\scalht<400\,\mathrm{GeV}$ (due to jet acceptance requirements). 
+Events in the signal region are additionally categorised according to
+\HTmiss. The lower bound of the first \HTmiss bin is 200\GeV. Bin
+widths of 100 and 200\GeV are used for the ranges 200--400\GeV and
+$>$400\GeV respectively. The lower bound of the final open bin is
+limited to 1000\GeV, to ensure sufficient event counts in the data
+control regions to validate the modelling at high \HTmiss. By
+construction, the \HTmiss templates are bounded from above by the
+value corresponding to the upper bound of each (bounded) \scalht
+bin. The binning scheme for \HTmiss is determined as a function of
+\njet and \scalht, and is summarised in Table~\ref{tab:mht-binning}.
 
-Moreover, a requirement is made in order to ensure a reasonable number of events is available in data 
-in each (\njet,\nb,\scalht) bin for the background prediction. 
-A minimum of 10 events in every bin is required for at least one of the 3 control regions (\mj,\mmj,\gj). 
+Finally, the aforementioned \HTmiss binning scheme is modified to
+account for finite-size simulation samples. To ensure a sufficiently
+populated \HTmiss template can be constructed from simulated events,
+at least 500 unweighted simulation events are required in each (\njet,
+\scalht, \MHT) bin, inclusive with respect to \nb. Adjacent \HTmiss
+bins for each template are merged until this requirement is satisfied.
 
-In order to improve the sensitivity to the signal, the search region is also binned in the \MHT dimension. 
-Simulation mismodelling in this variable is reduced by binning the control regions finely in \scalht, i.e. by predicting 
-events at the same ``scale''. A careful validation of the \MHT shape is carried out to assess 
-the uncertainty in this extrapolation and it's described in Sec.~\ref{sec:syst-on-shape}. 
-
-The \MHT templates which are used in the likelihood fit are built
-using a minimum bin width of 100 GeV for $\MHT<400$ GeV and 200 GeV
-above. The lowest nominal bin is $130<\MHT<200\,\mathrm{GeV}$. The
-\MHT templates are naturally bounded from above by \scalht, apart from
-the last open \scalht bin. However, the lower bound of the last open
-bin is limited to $\MHT>1000\,\mathrm{GeV}$, to ensure sufficient data
-counts in the control regions to validate the modelling at high \mht. 
-Starting from this nominal binning, a requirement is made to ensure
-that each bin in the template is well populated in the simulation.  At
-least 100 unweighted MC events are required in each \njet,\scalht,\MHT
-bin (inclusive in \nb). Adjacent \mht bins are merged until this
-requirement is satisfied. 
-
-The binning of the \MHT templates derived using these metrics is summarised in Tab.~\ref{tab:mht-binning}.
-
-
-\newpage
-\begin{table}[h!]
-  \topcaption{Summary of the \MHT binning in each signal region
-    category, determined according to the metrics described in this Section. The \MHT binning is identical in each \nb bin by construction.}
-  \label{tab:mht-binning}
+\begin{table}[!h]
+  \topcaption{Summary of the lower bound of the final \HTmiss bin
+    [GeV] as a function of \njet and \scalht. The lower bound of the
+    first \scalht bin is summarised in
+    Table~\ref{tab:sr-ht-binning}. The dashes (--) signify (\njet,
+    \nb) bins that are not possible or used.
+  }
+  \label{tab:sr-binning}
   \centering
-  \begin{tabular}{ ccll }
+  \begin{tabular}{ lccccc }
     \hline
+    $\njet\, / \,\nb$ & 200 & 400 & 600 & 900  & $>$1200 \\
     \hline
-    \njet & \nb & \scalht & \MHT \\
-    \hline
-    \multirow{4}{*}{$n_{\mathrm{jet}} = 1$} & \multirow{4}{*}{all} & [200,400] & [200,300], [300,inf] \\      
-    & & [400,600] & [400,inf] \\ 
-    & & [600,900] & [600,800], [800,inf] \\ 
-    & & [900,inf] & [900,inf] \\     
-    \hline
-    \multirow{4}{*}{$n^{asym}_{\mathrm{jet}} \geq 2$} & \multirow{4}{*}{all} & [200,400] & [130,200], [200,300], [300,inf] \\
-    & & [400,600] & [130,200], [200,300], [300,500], [500,inf] \\
-    & & [600,900] & [130,400], [400,600], [600,800], [800,inf] \\
-    & & [900,inf] & [130,800], [800,1000], [1000,inf] \\
-    \hline
-    \multirow{5}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} = 2$} & \multirow{5}{*}{all} & [200,400] & [130,200], [200,300], [300,inf] \\
-    & & [400,600] & [130,200], [200,300], [300,500], [500,inf] \\
-    & & [600,900] & [130,300], [300,400], [400,600], [600,800], [800,inf] \\
-    & & [900,1200] & [130,300], [300,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    & & [1200,inf] & [130,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    \hline
-    \multirow{5}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} = 3$} & \multirow{5}{*}{all} & [200,400] & [130,200], [200,300], [300,inf] \\    
-    & & [400,600] & [130,200], [200,300], [300,500], [500,inf] \\
-    & & [600,900] & [130,300], [300,500], [500,700], [700,inf] \\
-    & & [900,1200] & [130,300], [300,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    & & [1200,inf] & [130,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    \hline
-    \multirow{5}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} = 4$} & \multirow{5}{*}{all} & [200,400] & [130,200], [200,300], [300,inf] \\
-    & & [400,600] & [130,200], [200,300], [300,500], [500,inf] \\
-    & & [600,900] & [130,200], [200,300], [300,500], [500,700], [700,inf] \\
-    & & [900,1200] & [130,300], [300,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    & & [1200,inf] & [130,300], [300,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    \hline
-    \multirow{5}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} = 5$} & \multirow{5}{*}{all} & [200,400] & [130,200], [200,inf] \\
-    & & [400,600] & [130,200], [200,300], [300,400], [400,inf] \\
-    & & [600,900] & [130,300], [300,500], [500,700], [700,inf] \\
-    & & [900,1200] & [130,300], [300,500], [500,700], [700,900], [900,inf] \\
-    & & [1200,inf] & [130,300], [300,400], [400,600], [600,800], [800,1000], [1000,inf] \\
-    \hline
-    \multirow{4}{*}{$n^{\mathrm{sym}}_{\mathrm{jet}} \geq 6$} & \multirow{4}{*}{all} & [400,600] & [130,200], [200,300], [300,inf] \\
-    & & [600,900] & [130,300], [300,400], [400,600], [600,inf] \\
-    & & [900,1200] & [130,200], [200,300], [300,400], [400,600], [600,800], [800,inf] \\
-    & & [1200,inf] & [130,300], [300,400], [400,600], [600,1000], [1000,inf] \\
-    \hline
+    eq1j              & 300 & 500 & 800 & 1000 & --      \\ 
+    eq2a              & 300 & 500 & 800 & 1000 & --      \\ 
+    eq2j              & 300 & 500 & 800 & 1000 & 1000    \\ 
+    eq3j              & 300 & 500 & 800 & 1000 & 1000    \\ 
+    eq4j              & --  & 500 & 800 & 1000 & 1000    \\ 
+    eq5j              & --  & 500 & 800 & 1000 & 1000    \\ 
+    ge6j              & --  & 500 & 800 & 1000 & 1000    \\ 
     \hline
   \end{tabular}
 \end{table}
+
