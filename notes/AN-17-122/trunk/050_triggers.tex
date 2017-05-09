@@ -1,0 +1,188 @@
+%%____________________________________________________________________________||
+\section{Trigger strategy}
+\label{sec:triggers}
+
+\subsection{Signal regions\label{sec:hadronic_signal_region}}
+
+In Run~2, the RA1 analysis retains low thresholds comparable to those
+used during Run~1 with developments to the trigger selection,
+maintaining sensitivity to signatures of new physics with hadronic
+energies as low as $\scalht = 200$ GeV. This in part is achieved by a
+migration to PF-based jet reconstruction within the HLT which, in
+conjunction with a reduction of clustering radius parameter $\Delta R
+= 0.4$, provides improvements in jet energy resolution in high-pileup
+conditions and mitigates the effects of pileup contamination within
+the jet cone.
+
+The RA1 analysis utilises a range of triggers for the selection of
+events in the hadronic signal region to provide coverage over a wide
+range of event topologies. A guiding principle of the analysis is to
+be as inclusive as possible by maintaining low online and offline
+thresholds. 
+
+A suite of cross-triggers of the form
+\verb!HLT_PFHTXXX_PFDijetAveYYY_AlphaT0pZZ!, comprising requirements
+on \scalht, \alphat, and the average \pt of the leading two jets, are
+used to record candidate signal events. The jets considered by these
+cross-triggers satisfy $\Pt > 40\GeV$ and $|\eta| < 3.0$. A further
+cross-trigger, \verb!HLT_PFMETNoMuXX_PFMHTNoMuXX_IDTight!  comprising
+requirements on \MET, \HTmiss, and the presence of a jet with $|\eta|
+< 3.0$, as well as a single-object \scalht trigger, are also employed
+to record candidate signal events. The trigger requirements and
+thresholds are summarised in
+Table~\ref{tab:2015_Hadronic_Signal_Triggers}.
+
+%The use of a \pt-averaged threshold of the two leading jets suppresses
+%the QCD multijet background while providing acceptance to events
+%exhibiting asymmetric jet topologies, such as monojet-like signatures
+%of compressed spectrum and DM models. It was found that a dijet
+%average threshold of 90 \GeV ensured the optimum performance when
+%balancing efficiency and rate, with both the $\scalht$ and $\alphat$
+%thresholds across all jet topologies. The dijet average requirement
+%does however lead to a loss in efficiency for asymmetric jet events
+%where the sub-leading jet is soft.
+%This loss in efficiency is mitigated by taking the disjunction of the
+%\alt and monojet triggers which provides a recovery of efficiency in
+%the turn-on and close to the plateau for the low-\scalht asymmetric
+%categories.  
+
+%The Level-1 seeds for the $\scalht$--$\alphat$ HLT paths are given by
+%the disjunction of all available hadronic scalar energy and missing
+%energy sum seeds for the given run scenario. A loose calorimeter
+%trigger prefilter is utilised to reduce the pass-through rate prior to
+%track-based reconstruction, ensuring the PF-based filters meet timing
+%requirements. The calorimeter prefilter utilises loose \scalht and
+%dijet average \pt requirements in addition to a new variable \alphat',
+%defined as \alphat in the limit $\Delta\scalht \rightarrow 0$, which
+%better correlates \alphat between calorimeter and PF-based
+%reconstruction.
+
+%The choice of threshold for the \scalht--\alphat triggers were tuned
+%to maintain acceptance for a range of signal topologies whilst
+%effectively suppressing QCD multijet events to maintain acceptable
+%trigger rates.
+
+\begin{table}[h!]
+  \topcaption{Summary of the L1 seeds and HLT trigger paths used by
+    the analysis. The lowest and highest (in parentheses) thresholds
+    used for each HLT trigger path during the 2016 data taking period
+    are given. } 
+  \footnotesize
+  \centering
+\begin{tabular}{l|l} 
+  \hline
+  \hline
+  L1 seed & HLT path \\
+  \hline
+  {\scriptsize\verb!HTT or ETM!} & {\scriptsize\verb!HLT_PFHT200_PFDijetAve90_AlphaT0p57(65)!} \\
+  {\scriptsize\verb!HTT or ETM!} & {\scriptsize\verb!HLT_PFHT250_PFDijetAve90_AlphaT0p55(57)!} \\
+  {\scriptsize\verb!HTT or ETM!} & {\scriptsize\verb!HLT_PFHT300_PFDijetAve90_AlphaT0p53(55)!} \\
+  {\scriptsize\verb!HTT or ETM!} & {\scriptsize\verb!HLT_PFHT350_PFDijetAve90_AlphaT0p52(53)!} \\
+  {\scriptsize\verb!HTT or ETM!} & {\scriptsize\verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51(52)!} \\
+  {\scriptsize\verb!HTT!}        & {\scriptsize\verb!HLT_PFHT800(900)!} \\
+  {\scriptsize\verb!ETM!}        & {\scriptsize\verb!HLT_PFMETNoMu90(110)_PFMHTNoMu90(110)_IDTight!} \\
+  \hline
+  \hline
+\end{tabular}
+\label{tab:2015_Hadronic_Signal_Triggers}
+\end{table}
+
+%An important goal of the analysis is to have good acceptance to
+%compressed SUSY and general DM models. It is therefore critical that
+%we operate in the trigger turn on regions for the lower thresholds. We
+%have already successfully exercised this approach with the Run 1
+%analysis and will repeat this mode or operating during Run 2.  As in
+%Run~1, multiple efficiency measurements are employed, which are
+%performed with data and propagated through to the analysis with cross
+%checks in simulation.
+
+The efficiency of the signal triggers are measured in data using event
+samples containing an electron and muon, recorded with unprescaled
+electron and muon ``reference'' triggers and defined by a
+signal-region-like selection criteria (when ignoring the lepton in the
+computation of event-level variables, such as \scalht or \MET). Biases
+in these measurements can be introduced due to the contamination in
+the computation of event-level variables and different treatments
+between trigger and offline reconstructions, the degree of which
+varies with \scalht and \njet. In the case of efficiency measurements
+using the electron reference trigger, no cross-cleaning of electrons
+from jets is performed offline, with the electron being included in
+the computation of event-level jet energy sums, such as \scalht, \MHT
+and \alt. When using the muon reference triggers, offline
+cross-cleaning of the muons is performed. 
+
+The trigger efficiency as a function of \mht for the full suite of
+triggers, as determined from the data samples described above, is
+shown per \scalht bin (following the \scalht binning scheme of the
+signal region) in Fig.~\ref{fig:alphat_turnons} (in
+Appendix~\ref{sec:triggers}). The figure contains efficiency curves
+determined from both the muon and electron event samples. Significant
+differences are visible in the turn-on region, due to the
+cross-cleaning issues through the various steps of the
+trigger--analysis chain (L1, HLT Calo-based pre-filter, HLT PF-based
+decision, offline) as described above. However, the efficiencies are
+close to 100\% for the requirement $\HTmiss > 200\GeV$, as illustrated
+by Table~\ref{tab:trigger-eff}, which is now the default \HTmiss
+requirement used in this analysis. The measured efficiencies and their
+uncertainties are applied as corrections to the MC samples. The
+central value of the correction is taken from the efficiency measured
+with the electron reference trigger. The statistical uncertainties in
+the central values, as well as the difference in efficiencies between
+those measured with the electron and muon triggers, are propagated.
+
+\begin{table}[h!]
+  \topcaption{Efficiency of the full suite of signal triggers as a
+    function of \scalht after applying the signal region selection
+    criteria, determined from $e$ + jets and \mj event samples.
+  } 
+  \footnotesize
+  \centering
+  \begin{tabular}{lccccc} 
+    \hline
+    \hline
+    Event sample & \multicolumn{5}{c}{\scalht bin [GeV]}                                              \\
+    \cline{2-6}
+                 & 200--400       & 400--600       & 600--900       & 900--1200      & $>$1200        \\
+    \hline
+    $e$ + jets   & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ \\
+    \mj          & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ & $99.0 \pm 0.5$ \\
+    \hline
+    \hline
+  \end{tabular}
+  \label{tab:trigger-eff}
+\end{table}
+
+\subsection{Control regions\label{sec:control_samples}}
+
+The \mj and \mmj control samples are selected with the logical OR of
+the \verb!HLT_IsoMu22!, \verb!HLT_IsoTkMu22!, \verb!HLT_IsoMu24! and
+\verb!HLT_IsoTkMu24! triggers. The trigger efficiencies are provided
+by the muon POG and are determined by the muon for both data and
+simulated samples (containing a trigger emulation) using a tag and
+probe method. The POG also provide data-to-simulation scale factors,
+which we apply to the trigger-efficiency-corrected event yields from
+simulation. The \Pt- and $\eta$-averaged triggers efficiencies
+determined per (\njet, \nb, \scalht) bin for the \mj sample are
+typically and rather independent of \njet, \nb, and \scalht. For the
+\mmj sample, the average efficiencies are $\sim99\%$ (as either muon
+can provided the positive trigger decision). Statistical and
+systematic uncertainties are propagated through via the scale factor
+corrections, following the prescription from the muon POG.
+
+The \gj event sample is recorded with an \verb!OR! of the
+\verb!HLT_Photon175! and \verb!HLT_ECALHT800! triggers. The efficiency
+is measured as a function of both photon \Pt and \HTmiss for events in
+the JetHT data set satisfying the \gj control region selection, as
+shown in Fig.~\ref{fig:photon_turnons_photonPt}. The single photon
+trigger alone exhibits a decreasing efficiency with increasing photon
+\Pt, which is attributed to an H/E cut at Level 1. The inefficiency
+can be largely recovered by also employing the \verb!ECALHT800!
+trigger. In this way, the inefficiency can be recovered for photon
+$\Pt > 600\GeV$. The photon efficiency is $\sim 98\%$. The
+efficiencies are used to correct the simulated event counts in the \gj
+sample, and a systematic uncertainty is assumed to be the magnitude of
+the inefficiency ($\sim 2\%$).
+
+\fixme{WHAT ABOUT THE QCD SIDEBAND TRIGGER EFFS??}
+
+%%____________________________________________________________________________||
