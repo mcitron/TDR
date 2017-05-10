@@ -170,7 +170,7 @@ Table~\ref{tab:sr-selections}.
 \begin{table}[!h]
   \topcaption{Summary of the event selection criteria for the signal
     region. The criteria are applied in addition to the pre-selection
-    requirements listed in Table~\ref{tab:sr-selections}.
+    requirements listed in Table~\ref{tab:pre-selections}.
   }
   \label{tab:sr-selections}
   \centering
@@ -221,10 +221,10 @@ can be found in Sec.~\ref{sec:triggers}.
     Sec.~\ref{sec:subleading-jet}), nor $\scalht > 1200\GeV$.} 
   \label{tab:alphat-thresholds}
   \centering
-  \begin{tabular}{ lccccccccc }
+  \begin{tabular}{ lccccccc }
     \hline
-    \scalht           & 200  & 250  & 300  & 350  & 400  & 600  & 900  & $>$1200 \\
-    \alphat threshold & 0.65 & 0.60 & 0.55 & 0.53 & 0.52 & 0.52 & 0.52 & (none)  \\
+    \scalht           & 200--250 & 250--300 & 300--350 & 350--400 & 400--900 & $>$900 \\
+    \alphat threshold & 0.65     & 0.60     & 0.55     & 0.53     & 0.52     & (none) \\
     \hline
   \end{tabular}
 \end{table}
@@ -280,7 +280,7 @@ Table~\ref{tab:cr-selections}.
     \gj      & 
     1$\gamma$ with $\pt > 200\GeV$, $\abs{\eta} < 1.45$,
     $\Delta R(\gamma,\mathrm{j}_i) > 1.0$                \\[0.5ex]
-    Multijet & SR + $\HTmiss/\ETmiss > 1.25$ (inverted)  \\
+    Multijet & Signal region selection (Table~\ref{}) two inverted requirements: $\HTmiss/\ETmiss > 1.25$ and $\bdphi < 0.5$  \\
     \hline
   \end{tabular}
 \end{table}
@@ -470,7 +470,7 @@ jets production.
     \njet   & Topology   & Label \\ 
     \hline
     1       & Monojet    & eq1j  \\
-    $\geq$2 & Asymmetric & eq2a  \\
+    $\geq$2 & Asymmetric & ge2a  \\
     2       & Symmetric  & eq2j  \\
     3       & Symmetric  & eq3j  \\
     4       & Symmetric  & eq4j  \\
@@ -567,7 +567,7 @@ Table~\ref{tab:sr-binning} in Sec.~\ref{sec:nb-categorisation}.
   \centering
   \begin{tabular}{ lccccccc }
     \hline
-    \njet         & eq1j & eq2a & eq2j & eq3j & eq4j & eq5j & ge6j \\
+    \njet         & eq1j & ge2a & eq2j & eq3j & eq4j & eq5j & ge6j \\
     \scalht [GeV] & 200  & 200  & 200  & 200  & 400  & 400  & 400  \\
     \hline
   \end{tabular}
@@ -589,32 +589,6 @@ and \gj samples. The binning utilised by the analysis aims to maintain
 sufficiently high counts to operate mainly in the Gaussian regime, and
 is summarised in Table~\ref{tab:sr-binning}.
 
-%\newcommand{\gef}{$\geq$4}
-%\begin{table}[!h]
-%  \topcaption{Summary of the final event categorisation used in the
-%    signal region. Each entry in the table represents the value of \nb 
-%    that defines the lower bound of the final bin, as a function of 
-%    \njet and the lower bound of each \scalht bin [GeV]. The dashes
-%    (--) signify that the (\njet, \scalht) bin is not used.  
-%  }
-%  \label{tab:sr-binning}
-%  \centering
-%  \begin{tabular}{ lccccc }
-%    \hline
-%    $\njet \backslash\, \scalht$ [GeV] & 200 & 400  & 600 & 900 & $>$1200 \\
-%    \hline
-%    1                                  & 1   & 1    & 1   & --  & --      \\ 
-%    2a                                 & 3   & 3    & 3   & 2   & --      \\ 
-%    2                                  & 2   & 2    & 2   & 2   & 1       \\ 
-%    3                                  & 3   & 3    & 3   & 3   & 2       \\ 
-%    4                                  & --  & 3    & 3   & 3   & 2       \\ 
-%    5                                  & --  & \gef & 3   & 3   & 2       \\ 
-%    $\geq$6                            & --  & \gef & 3   & 3   & 3       \\ 
-%    \hline
-%  \end{tabular}
-%\end{table}
-
-\newcommand{\gef}{$\geq$4}
 \begin{table}[!h]
   \topcaption{Summary of the lower bound of the final open \scalht bin
     [GeV] as a function of \njet and \nb. The lower bound of the first
@@ -626,15 +600,15 @@ is summarised in Table~\ref{tab:sr-binning}.
   \centering
   \begin{tabular}{ lccccc }
     \hline
-    $\njet\, / \,\nb$ & 0    & 1    & 2    & 3    & \gef \\
+    $\njet\, / \,\nb$ & 0    & 1    & 2    & 3    & $\geq$4 \\
     \hline
-    eq1j              & 900  & 900  & --   & --   & --   \\ 
-    eq2a              & 900  & 900  & 900  & 600  & --   \\ 
-    eq2j              & 1200 & 1200 & 900  & --   & --   \\ 
-    eq3j              & 1200 & 1200 & 1200 & 900  & --   \\ 
-    eq4j              & 1200 & 1200 & 1200 & 900  & --   \\ 
-    eq5j              & 1200 & 1200 & 1200 & 900  & 400  \\ 
-    ge6j              & 1200 & 1200 & 1200 & 1200 & 400  \\ 
+    eq1j              & 900  & 900  & --   & --   & --      \\ 
+    ge2a              & 900  & 900  & 900  & 600  & --      \\ 
+    eq2j              & 1200 & 1200 & 900  & --   & --      \\ 
+    eq3j              & 1200 & 1200 & 1200 & 900  & --      \\ 
+    eq4j              & 1200 & 1200 & 1200 & 900  & --      \\ 
+    eq5j              & 1200 & 1200 & 1200 & 900  & 400     \\ 
+    ge6j              & 1200 & 1200 & 1200 & 1200 & 400     \\ 
     \hline
   \end{tabular}
 \end{table}
@@ -662,25 +636,24 @@ bins for each template are merged until this requirement is satisfied.
 
 \begin{table}[!h]
   \topcaption{Summary of the lower bound of the final \HTmiss bin
-    [GeV] as a function of \njet and \scalht. The lower bound of the
-    first \scalht bin is summarised in
-    Table~\ref{tab:sr-ht-binning}. The dashes (--) signify (\njet,
-    \nb) bins that are not possible or used.
+    [GeV] as a function of \njet and \scalht (signal region,
+    aggregated scheme). The lower bound of the first \scalht bin is
+    summarised in Table~\ref{tab:sr-ht-binning}. The dashes (--)
+    signify (\njet, \nb) bins that are not possible or used.  
   }
   \label{tab:mht-binning}
   \centering
   \begin{tabular}{ lccccc }
     \hline
-    $\njet\, / \,\nb$ & 200 & 400 & 600 & 900  & $>$1200 \\
+    $\njet\, / \,\scalht$ [GeV] & 200--400 & 400--600 & 600--900 & 900--1200 & $>$1200 \\
     \hline
-    eq1j              & 300 & 500 & 800 & 1000 & --      \\ 
-    eq2a              & 300 & 500 & 800 & 1000 & --      \\ 
-    eq2j              & 300 & 500 & 800 & 1000 & 1000    \\ 
-    eq3j              & 300 & 500 & 800 & 1000 & 1000    \\ 
-    eq4j              & --  & 500 & 800 & 1000 & 1000    \\ 
-    eq5j              & --  & 500 & 800 & 1000 & 1000    \\ 
-    ge6j              & --  & 500 & 800 & 1000 & 1000    \\ 
+    eq1j                        & 300      & 500      & 800      & 1000      & --      \\ 
+    ge2a                        & 300      & 500      & 800      & 1000      & --      \\ 
+    eq2j                        & 300      & 500      & 800      & 1000      & 1000    \\ 
+    eq3j                        & 300      & 500      & 800      & 1000      & 1000    \\ 
+    eq4j                        & --       & 500      & 800      & 1000      & 1000    \\ 
+    eq5j                        & --       & 500      & 800      & 1000      & 1000    \\ 
+    ge6j                        & --       & 500      & 800      & 1000      & 1000    \\ 
     \hline
   \end{tabular}
 \end{table}
-
