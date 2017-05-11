@@ -3,49 +3,56 @@
 
 %%____________________________________________________________________________||
 \newpage
-\section{Background estimation for QCD multijet events \label{sec:qcd}}
+\section{QCD multijet background estimation\label{sec:qcd}}
 
 One of the major challenges for searches of new physics in the jets +
 \met final state is the control of background events from QCD multijet
 production. The difficulties in the determination of precise estimates
-for this background stem from the large cross sections expected in the
-high-energy, high-luminosity hadron collider environment at the LHC,
-which are further compounded by the lack of precise theoretical
-predictions for the cross sections and kinematic properties of
-multijet events. Hence, without special consideration and treatment,
+for this background stem from the large cross sections expected at the
+LHC, compounded by the lack of precise theoretical predictions for
+these cross sections and the kinematic properties of multijet
+events. Hence, without special consideration and treatment,
 significant uncertainties on large background expectations can
 overwhelm any potential sensitivity to new physics signatures.
 
 With regards to QCD multijet production, the approach of this search
 is to favour the suppression of the multijet background to a
-negligible level over the goal of high efficiency for any given signal
-model. A conservative uncertainty on a negligible contribution is
-preferred over a procedure that attempts to accurately estimate a
-non-negligible contribution from multijet events. The level of
-contamination should be sufficiently small (\ie sub-percent level)
-such that the associated uncertainty, even if large, will be
-sub-dominant with respect to the uncertainties on the remaining SM
-backgrounds with genuine \met such as \wj, \znunu, and \ttbar,
-henceforth labelled as non-multijet processes.
+negligible level. A conservative uncertainty on a negligible
+contribution is preferred over a procedure that attempts to accurately
+estimate a non-negligible contribution from multijet events. The level
+of contamination should be sufficiently small (\ie percent level) such
+that the associated uncertainty, even if large, will be subdominant
+with respect to the uncertainties on the remaining SM backgrounds with
+genuine \met, such as \wj, \ttbar, and \znunu.
 
-Any contamination from QCD multijet events is controlled primarily
-through the \alphat and \bdphi variables. The \alphat variable,
-described in Section~\ref{sec:alphatdef}, is able to distinguish with
-high efficiency the sources of ``fake'' \met, such as jet energy
-mismeasurement, from those with ``genuine'' \met, such as neutrinos.
-The \bdphi variable, described in Section~\ref{sec:bdphi-selection},
-is also very efficient at identifying jets that suffer
-under-measurements, as well as over-measurements, in (otherwise
-balanced) multijet events. The variable is also particularly suited to
+Hence, the signal region is defined in a manner that suppresses the
+expected contribution from multijet production to a low (\ie percent)
+level with respect to the total expected background from other SM
+processes for all signal region bins. This is achieved primarily
+through the application of very tight requirements on the variables
+\alphat, \bdphi, and $\mhtmet$, as described in
+Section~\ref{sec:signal_region}. 
+
+The \alphat variable, described in Section~\ref{sec:alphatdef}, is
+able to distinguish with high efficiency the sources of ``fake'' \met,
+such as jet energy mismeasurement, from those with ``genuine'' \met,
+such as neutrinos.  The \bdphi variable, described in
+Section~\ref{sec:bdphi-def}, is also very efficient at identifying
+jets that suffer under-measurements, as well as over-measurements, in
+multijet events. The variable is also particularly suited to
 identifying multijet events that exhibit significant \met due to the
-production of neutrinos (collinear with a jet axis) in semileptonic
+production of neutrinos, collinear with a jet axis, in semileptonic
 heavy-flavour decays. Both variables are individually capable of
 reducing the yields from multijet events by several orders of
 magnitude, and combined provide an extremely robust method to reject
 multijet events. Figure~\ref{fig:alphat_bdphi_distr} shows the
-distributions in data for the \alphat and \bdphi variables.
+distributions in data for the \alphat and \bdphi variables. The
+$\mht/\met$ variable, described in Sec.~\ref{sec:mhtmet}, further
+suppresses the QCD multijet background due to events containing
+multiple jets outside the experimental acceptance that contribute
+significantly to \mht.
 
-\begin{figure}[!t]
+\begin{figure}[!h]
  \centering
  \subfigure[\bdphi distribution.\label{fig:alphat_distr}]{
  \includegraphics[width=0.5\textwidth]{figures/qcd/CMS-PAS-SUS-16-016_Figure-aux_001.pdf}
@@ -57,264 +64,194 @@ distributions in data for the \alphat and \bdphi variables.
    satisfying the pre-selection criteria when $\alphat < 0.55$ and the
    full signal selection criteria when $\alphat > 0.55$. (Right) The
    \bdphi distribution in data for events satisfying the pre-selection
-   criteria and $\scalht > 800\GeV$. \fixme{Needs updating to the full
-     data set.}
- }
+   criteria and $\scalht > 800\GeV$. \fixme{Both plots need to be
+     updated to the full data set.}  }
  \label{fig:alphat_bdphi_distr}
 \end{figure}
 
-\subsection{The method}
+\subsection{Overview of the method}
 \label{sec:qcdMethod}
 
-Potential contamination from multijet events in the signal region is
-estimated by exploiting the ratio $\rmhtmet$ of multijet events that
-satisfy or fail a sideband requirement, as determined from
-simulation, for events categorised according to \njet and \scalht.
-Estimates of the QCD multijet background counts are determined in
-three data sidebands, defined by the requirement $1.25 < \mht/\met <
-5.0$, $\bDPhi<0.5$ and both these requirements as illuatrated in
-Table~\ref{tab:qcd_sidebands}. The method corrects the observed counts
-in data to account for contamination from non-multijet backgrounds
-(vector boson and \ttbar production, plus residual contributions from
-other SM processes), henceforth in this section collectively labelled
-as the ``EWK'' backgrounds. The products of the corrected counts and
-ratios provide independent estimates of the multijet background as a
-function of \njet and \scalht.
+An estimate of the QCD multijet background is determined using three
+multijet-enriched data sidebands, defined by inverting one or both
+signal-region requirements on \bdphi and
+$\mht/\met$. Table~\ref{tab:qcd_sidebands} summarises the requirements
+for the three sideband regions and the signal region, labelled
+\textbf{A}, \textbf{B}, \textbf{C}, and \textbf{D},
+respectively. Further details on the selection requirements can be
+found in Sec.~\ref{sec:multijetcontrolSelection}. The triggers used to
+record the event samples are described in
+Sec.~\ref{sec:control_samples}.
 
 \begin{table}[h!]
-  \caption{Definition of sidebands used in the determination of the
-    QCD background contributions in the signal region. }
+  \caption{Definitions of data sidebands used in the determination of
+    the QCD multijet background in the signal region. }  
   \label{tab:qcd_sidebands}
   \centering
   \footnotesize
-  \begin{tabular}{ l|l|l }
-                           & $0.2 < \bdphi < 0.5$           & $\bdphi > 0.5$                  \\[0.2ex]
+  \begin{tabular}{ r|l|l }
+                           & \multicolumn{1}{c|}{$0.2 < \bdphi < 0.5$} & \multicolumn{1}{c}{$\bdphi > 0.5$} \\[0.8ex]
     \hline
-    $1.25 < \mhtmet < 3.0$ & \textbf{A} ``Double sideband'' & \textbf{B} ``\mhtmet sideband'' \\[0.2ex]
+    $1.25 < \mhtmet < 3.0$ & \textbf{A} (``Double sideband'')         & \textbf{B} (``\mhtmet sideband'')  \\[0.8ex]
     \hline
-    $\mhtmet < 1.25$       & \textbf{C} ``\bdphi sideband'' & \textbf{D} ``Signal region''    \\[0.2ex]
+    $\mhtmet < 1.25$       & \textbf{C} (``\bdphi sideband'')         & \textbf{D} (``Signal region'')     \\[0.8ex]
   \end{tabular}
 \end{table}
 
-A binned maximum-likelihood fit to data counts in the sideband,
+The observed counts of events categorised according to \njet and
+\scalht in each of the data sidebands are corrected to account for
+contamination from nonmultijet SM processes. The corrected counts
+$\mathcal{N}_i^\text{data}(\njet, \scalht)$ are assumed to arise
+solely from QCD multijet production. The subscript $i$ indicates the
+sideband under consideration (\textbf{A}, \textbf{B}, or
+\textbf{C}). The nonmultijet processes, which comprise vector boson
+and \ttbar production and residual contributions from other SM
+processes, are estimated using the \mj control region, as described in
+Section~\ref{sec:ewk_background}.
+
+Independent ratios $\mathcal{R}_i^\mathrm{QCD}(\njet, \scalht)$ of the
+number of multijet events that satisfy one or both of the
+signal-region requirements to the number that fail the same
+requirements are determined from simulation for events categorised
+according to \njet and \scalht, and inclusively with respect to \nb
+and \HTmiss. The subscript $i$ for each ratio $\mathcal{R}_i$
+indicates the sideband (\textbf{A}, \textbf{B}, or \textbf{C}) from
+which the extrapolation is being performed. The product of each ratio
+$\mathcal{R}_i^\mathrm{QCD}(\njet, \scalht)$ and the corresponding
+corrected data count $\mathcal{N}_i^\text{data}(\njet, \scalht)$
+provides the estimate of the multijet background $\mathcal{P}_i(\njet,
+\scalht)$. 
+
+The estimates as a function of \njet, \scalht, \nb, and \HTmiss of the
+signal region are assumed to factorise as follows:
+\begin{equation}
+  \label{eq:qcd1}
+  \mathcal{P}_i( \njet, \scalht )  =
+  \mathcal{N}_i^\text{data}( \njet, \scalht )\;
+  \mathcal{R}_i^\mathrm{QCD}( \njet, \scalht ),
+\end{equation}
+\begin{equation}
+  \label{eq:qcd2}
+  \mathcal{P}_i( \njet, \scalht, \nb, \HTmiss ) = 
+  \mathcal{P}_i( \njet, \scalht )\;
+  \mathcal{K}_{\njet, \scalht}( \nb, \HTmiss ), 
+\end{equation}
+where the subscript $i$ refers to the sideband (\textbf{A},
+\textbf{B}, or \textbf{C}). 
+
+The $\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$ are multiplier
+terms that provide the estimated distribution of events as a function
+of \nb and \HTmiss while preserving the normalisation $\mathcal{P}_i(
+\njet, \scalht )$. Hence, the distribution of multijet events as a
+function of \nb and \HTmiss, $\mathcal{K}_{\njet, \scalht}( \nb,
+\HTmiss )$, is assumed to be identical to the distribution expected
+for the nonmultijet backgrounds.
+
+\subsection{Binned maximum-likelihood approach}
+%estimate per \texorpdfstring{(\njet, \scalht)}{(Njet, HT)} bin}
+% for \texorpdfstring{$\mathcal{P}_i( \njet, \scalht )$}{P(Njet,HT)}}
+
+In this section, the multijet process is henceforth labelled as
+``QCD''. The non-multijet processes (primarily \wj, \ttbar, and
+\znunu) are henceforth labelled as collectively as the ``EWK''
+processes.
+
+A binned maximum-likelihood (ML) fit to data counts in each sideband,
 analagous to that described in Sec.~\ref{sec:likelihood}, is performed
-to obtain an estimate of the number of QCD multijet events in each
-(\njet, \scalht) bin of the sideband regions. The sideband data are
-collected with a logical \verb!OR!  of the ``monojet'',
-\verb!HLT_HTxxx_AlphaT0pyy!, and \verb!HLT_HT800!  signal triggers,
-described in Sec.~\ref{sec:triggers}. The efficiencies of these triggers
-in each sideband are measured separately for the QCD and electroweak
-components. A sample of events tagged with a photon are used to
-calculate the efficiencies for the QCD portion of the background. In
-the calculation the photon is treated as a jet. For the electroweak
-measurements a sample of events that contain a single muon are
-used. {\it FIXME : more detail here?}
-%%%%%%%%%%%%%%%%%%% STUFF ABOUT TRIGGER EFFICIENCES? (muons + photons)
+to obtain a estimate of the number of QCD multijet events in each
+(\njet, \scalht) bin of a given sideband region. The EWK contributions
+in the data sidebands are estimated using the ``transfer factor''
+method, described in Sec.~\ref{sec:ewk-method}, and the \mj and \mmj
+control regions, defined by the same selection criteria described in
+Sec.~\ref{sec:control-region-selection} except for the inverted
+requirement on the sideband variables. The fit to data assumes only
+the presence of QCD and EWK contributions. Signal contamination is
+expected to be negligible. All relevant systematic uncertainties in
+the EWK background estimates are taken into account, including the
+sources of experimental uncertainties described in Secs.~\ref{sec:}
+and~\ref{sec:}. Independent fits are performed per sideband region.
 
-The sidebands are enriched in QCD multijet events, but the contribution
-from EWK backgrounds can be sizeable and must be accounted for. The
-EWK backgrounds are estimated with the ``transfer method'', described
-in Sec.~\ref{sec:ewk-method}, using the single muon, double muon and
-single photon control regions separately in each sideband. These regions are defined by the same
-selection criteria described in Sec.~\ref{sec:selection}, except for
-the inverted requirement on the sideband variables. All relevant systematic
-uncertainties in the EWK background estimates are taken into account,
-including the sources of experimental uncertainties described in
-Sec.~\ref{sec:mc-variations} and the data-driven uncertainties
-determined from ``closure tests'', described in
-Sec.~\ref{sec:closure-tests}. The fit to data assumes only the
-presence of QCD and EWK contributions. Signal contamination is
-expected to be negligible. A floating parameter per (\njet, \scalht)
-bin is assigned as a multiplier (``signal strength'') term,
-$\mu_{\textrm{QCD}}$, on the QCD expectation from simulation. The fit
-is used to constrain these floating parameters, which are then used to
-``correct'' the raw counts from the simulation in order to provide an
-accurate estimate of the QCD counts ($\mathcal{Q}$) in each bin of the
-sideband. The products of these predicted QCD counts and the ratio,
-$\mathcal{Q} \times \rmhtmet$, provide an estimate of the level of QCD
-multijet events in each (\njet, \scalht) bin of the signal region.
+The fit for each sideband region is used to constrain a free parameter
+$\mu_{\textrm{QCD}}$ per (\njet, \scalht) bin that acts as a
+multiplier term on the nominal QCD expection per bin, as determined
+from simulation. The ML value of the (``signal strength'')
+$\mu_{\textrm{QCD}}$ parameter per bin is applied to the nominal QCD
+expectation (from simulation) in the corresponding bin of the signal
+region to give an estimate for the QCD background. The three
+independent fits therefore provide three independent predictions per
+(\njet, \scalht) bin.
 
-Figures~\ref{fig:mhtmet_sideband,fig:bDPhi_sideband,fig:double_sideband}
-summarises the observed data counts, post-fit estimates of the EWK and
-QCD background contributions, and the constrained values of the
-floating parameters $\mu_{\textrm{QCD}}$, as a function of \njet and
-\scalht for each of the sidebands. Pre-fit QCD values are not shown,
-but can be inferred from the post-fit and $\mu_{\textrm{QCD}}$ values. 
+Figures~\ref{fig:mhtmet_sideband} (see Appendix~\ref{app:qcd})
+summarises the following information obtained from the fit in the
+$\mhtmet$ sideband: the observed data counts, the post-fit estimates
+of the both the EWK and QCD contributions, and the constrained values
+of the floating parameters $\mu_{\textrm{QCD}}$, as a function of
+\njet and \scalht for the each of the sidebands. The pre-fit QCD
+expectations are shown, but these can be inferred from the post-fit
+expectations and ML values of $\mu_{\textrm{QCD}}$. Similarly, the
+same information is shown for the \bdphi and ``double'' sidebands in
+Figs~\ref{fig:bdphi_sideband} and~\ref{fig:double_sideband} (both in
+Appendix~\ref{app:qcd}), respectively.
 
-% Figure~\ref{fig:qcd_estimate} summarises the pass/fail ratios
-% \rmhtmet, the EWK and QCD background predictions, and the ratios of
-% QCD/EWK predictions in the (\njet, \scalht) bins of the signal
-% region. 
-Figure~\ref{fig:qcd_estimate} summarises the predicted QCD
-contamination as a ratio of the QCD and EWK backgrounds. The QCD
-counts are predicted with each sideband by multiplying the value of
-$\mu_{\textrm{QCD}}$ by the counts of QCD simulation in the signal
-region. In the case that there is a zero yield in simulation the error
-is estimated by taking a poisson error with the average weight of QCD
-events in that bin before any analysis selection is applied. The
-predictions are then combined in a weighted average to reach a final
-number. This takes advantage of the fact that different sidebands
-typically populate different ares of the \njet and \scalht phase
-space.  The QCD background estimates are typically very small, and
-below the percent level with respect to the total non-multijet
-backgrounds. This level of suppression is compatible with the levels
-seen for pervious iterations of this search, at both $\sqrt{s} = 8$
-and 13\TeV. The predicted multijet event counts are included as a
-background contribution to the likelihood model, described in
-Sec~\ref{sec:likelihood}.
+The QCD background estimate for each (\njet, \scalht) bin in the
+signal region is determined from a weighted average of the predictions
+based on each of the three sideband regions. 
+%\footnote{In the case of zero QCD expectation in any given signal
+%  region bin due to finite-size simulated event samples, the
+%  uncertainty is estimated from neighouring bins.}
+%the error is estimated by taking a poisson error with the average
+%weight of QCD events in that bin before any analysis selection is
+%applied.
+%This takes advantage of the fact that different sidebands typically
+%populate different ares of the \njet and \scalht phase space.  
+Figure~\ref{fig:qcd_estimate} (Appendix~\ref{app:qcd}) shows the
+(weighted) expected QCD background per (\njet, \scalht) bin, as
+determined from the procedure above, and the expected EWK background
+per bin in the signal region, as determined from the methods described
+in Secs.~\ref{} and~\ref{}. Finally, the ratio of the QCD and EWK
+background expectations per bin is also shown. The QCD background is
+estimated to be negligible with respect to the EWK background,
+typically below the percent level. This level of contamination is
+compatible with the levels seen for pervious iterations of this
+search, at both $\sqrt{s} = 8$ and 13\TeV. The predicted multijet
+event counts are included as a background contribution to the
+likelihood model, described in Sec~\ref{sec:likelihood}.
 
-\clearpage
-\begin{figure}[!t]
-  \centering
-  \subfigure[Data counts.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/mhtDivMet/obsYields_QcdSb}
-  } 
-  \subfigure[Post-fit EWK background estimates.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/mhtDivMet/postFitEwkYields_QcdSb}
-  } \\
-  \subfigure[Post-fit constraints on $\mu_{\textrm{QCD}}$.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/mhtDivMet/rateParsQcd_QcdSb}
-  } 
-  \subfigure[Post-fit QCD background estimates.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/mhtDivMet/postFitQcdYields_QcdSb}
-  } \\
-  \caption{Data counts, post-fit estimates of the EWK and QCD
-    background contributions, and the constrained values of the
-    floating parameters $\mu_{\textrm{QCD}}$, in (\njet, \scalht) bins
-    of the \mhtmet sideband (region ``B'' in Table~\ref{tab:qcd_sidebands}).}
-  \label{fig:mhtmet_sideband}
-\end{figure}
-
-\clearpage
-\begin{figure}[!t]
-  \centering
-  \subfigure[Data counts.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/bDPhi/obsYields_QcdSb}
-  } 
-  \subfigure[Post-fit EWK background estimates.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/bDPhi/postFitEwkYields_QcdSb}
-  } \\
-  \subfigure[Post-fit constraints on $\mu_{\textrm{QCD}}$.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/bDPhi/rateParsQcd_QcdSb}
-  } 
-  \subfigure[Post-fit QCD background estimates.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/bDPhi/postFitQcdYields_QcdSb}
-  } \\
-  \caption{Data counts, post-fit estimates of the EWK and QCD
-    background contributions, and the constrained values of the
-    floating parameters $\mu_{\textrm{QCD}}$, in (\njet, \scalht) bins
-    of the \bdphi sideband (region ``C'' in Table~\ref{tab:qcd_sidebands}).}
-  \label{fig:bDPhi_sideband}
-\end{figure}
-
-\clearpage
-\begin{figure}[!t]
-  \centering
-  \subfigure[Data counts.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/double/obsYields_QcdSb}
-  } 
-  \subfigure[Post-fit EWK background estimates.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/double/postFitEwkYields_QcdSb}
-  } \\
-  \subfigure[Post-fit constraints on $\mu_{\textrm{QCD}}$.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/double/rateParsQcd_QcdSb}
-  } 
-  \subfigure[Post-fit QCD background estimates.]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/double/postFitQcdYields_QcdSb}
-  } \\
-  \caption{Data counts, post-fit estimates of the EWK and QCD
-    background contributions, and the constrained values of the
-    floating parameters $\mu_{\textrm{QCD}}$, in (\njet, \scalht) bins
-    of the ``double'' \mhtmet and \bdphi sideband (region ``A'' in Table~\ref{tab:qcd_sidebands}).}
-  \label{fig:double_sideband}
-\end{figure}
-
-\clearpage
-\begin{figure}[!t]
-  \centering
-  % \subfigure[Pass/fail ratios \rmhtmet.]{
-  %   \includegraphics[width=0.5\textwidth]{figures/qcd/qcdANPlots/signalQcdDivSbQcd_MC}
-  % } 
-  % \subfigure[QCD background estimates.]{
-  %   \includegraphics[width=0.5\textwidth]{figures/qcd/qcdANPlots/predictedQcdYields_Signal}
-  % } \\
-  % \subfigure[QCD background estimates.]{
-  %   \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/meanPredictedQcd_Signal}
-  % } 
-  %\subfigure[Ratios of QCD/EWK background estimates.]{
-  \includegraphics[width=0.7\textwidth]{figures/qcd/newMethod/meanPredictedQcdDivEwk_Signal}
-  %} \\
-  % \caption{The pass/fail ratios \rmhtmet, the EWK and QCD background
-  %   predictions, and the ratio of QCD/EWK predictions in the signal
-  %   region.}
-  \caption{The QCD background estimate taken from the mean prediction
-  for the three different sidebands, \bdphi, \mhtmet and both at
-  once.}
-  \label{fig:qcd_estimate}
-\end{figure}
-
-
-
-\clearpage
-\subsection{Validation}
+\subsection{Validation of the model and systematic uncertainties}
 \label{sec:qcdValidation}
 
-The method for predicting the QCD contamination in the signal region
-described in Sec.~\ref{sec:qcdMethod} relies on the ratio, \rmhtmet,
-of QCD counts that is derived with simulation in the various sidebands
-detailed in Table~\ref{tab:qcd_sidebands}.  This ratio can be
-validated by comparing the results of the different sidebands.  It is
-assumed that if the simulation of the ratios between the sidebands
-agree with the ratio expeced from data, the simulated ratio from the
-sidebands to the signal region is valid. Any disagreement is covered
-by a systematic error on the signal region QCD prediction. The
-percentage difference of $\mu_{\textrm{QCD}}$ for the different
-sidebands is shown in Fig.~\ref{fig:qcdVal}. Bins in which there are
-insufficient statistics in data or simulation to make the calculation
-are left out.  This plot illustrates that a fully correlated
-systematic of 100\% taken on the predicted QCD contamination in the
-signal region should cover any disagreement between simulation and
-data.
+The reliance on simulation to model correctly the extrapolation from
+each data sideband via the ratios $\mathcal{R}_i^\mathrm{QCD}$ is
+validated by comparing the independent estimates $\mathcal{P}_i(\njet,
+\scalht)$ from each sideband region. The level of closure in the
+method is determed by comparing the differences in the ML values of
+$\mu_{\textrm{QCD}}$ determined from each sideband region. The ML
+values for $\mu_{\textrm{QCD}}$ determined from the \mhtmet and \bdphi
+sideband regions are shown relative to the those obtained from the
+``double'' sideband, the largest and purist event sample, in
+Fig.~\ref{fig:qcdVal}. Bins for which there are insufficient event
+counts in data or simulation to make the calculation are not
+shown. Good agreement between the estimates indicates a good control
+over the simulation modelling and the determination of EWK
+contamination and trigger efficiencies in each of the sideband
+regions. An adequate level of agreement between the independent
+predictions is observed, and is amply covered by an assumed systematic
+uncertainty of 100\% in each (weighted) estimate. This uncertainty is
+assume to be unccorrelated across (\njet, \scalht) bins.
 
-\begin{figure}[!t]
-  \centering
-  \subfigure[Difference between \mhtmet and \bdphi sidebands]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/validation/rateParRatioMhtMetDivBDPhi1d}
-  } 
-  \subfigure[Difference between \bdphi and double sidebands]{
-    \includegraphics[width=0.5\textwidth]{figures/qcd/newMethod/validation/rateParRatioBDPhiDivDoubleSb1d}
-  } \\
-  \caption{The percentage difference in the scaling factors of the QCD
-  simulation, $\mu_{\textrm{QCD}}$, calculated for each of the sidebands.}
-  \label{fig:qcdVal}
-\end{figure}
+The distribution of multijet events as a function of \nb and \HTmiss,
+$\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$, is assumed to be
+identical to the distribution expected for the nonmultijet
+backgrounds. This final assumption is based on studies in simulation
+and is a valid approximation given the magnitude of this background
+contribution, as well as the magnitude of the statistical and
+systematic uncertainties in the ratios
+$\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$, as described above.
 
-% This ratio is validated
-% with data in a further QCD-enriched sideband, where the full signal
-% region selection criteria are applied, except for the inverted
-% requirement $0.2 < \bdphi < 0.5$.
-% In this sideband a data driven estimation of the QCD counts is carried
-% out in two further sub-regions, defined by $\mhtmet < 1.25$ and $1.25
-% < \mhtmet < 3.0$. These sidebands are summarised in
-% Table~\ref{tab:qcd_sidebands}.
-%
-% To validate the ratio \rmhtmet it is assumed that if the simulation of
-% the ratio in the \bdphi sideband agrees with that derived from data,
-% the simulated ratio that is not in the sideband is valid. Any
-% disagreement is covered by a systematic error on the signal region QCD
-% prediction. The double ratio of $\rmhtmet_{\bdphi<0.5}$ and
-% $\rmhtmet_{\bdphi<0.5}^{data}$ in \scalht and \njet bins is shown in
-% Fig.~\ref{fig:RR_qcd}. Bins in which there are insufficient statistics
-% in data or simulation to make the calculation are left out.  This plot
-% illustrates that a fully correlated systematic of 100\% taken on the
-% predicted QCD contamination in the signal region should cover any
-% disagreement between simulation and data.
-
-As the prediction of QCD in the signal region is carried out
-inclusively over \nb and \mht, the QCD shapes for these variables are
-taken from the EWK simulation and normalised to the QCD counts. 
-A lack of statistics in
-the QCD MC led to the adoption of this approach. 
+%As the prediction of QCD in the signal region is carried out
+%inclusively over \nb and \mht, the QCD shapes for these variables are
+%taken from the EWK simulation and normalised to the QCD counts.  A
+%lack of statistics in the QCD MC led to the adoption of this approach.
 % To validate it, the simulated \mht distributions
 % for the QCD and EWK processes in the signal region are divided. This is shown in
 % Figs.~\ref{fig:qcd_validation}.%~\ref{fig:asym_qcd_validation}-\ref{fig:asym_qcd_validation}.
@@ -322,81 +259,8 @@ the QCD MC led to the adoption of this approach.
 % of the ratio is enough for validation. Within uncertainties, the level of agreement is acceptable given the
 % small total QCD contribution to the signal region and its large
 % systematic uncertainty.
-%
-% \begin{figure}[h!]
-%   \begin{center}        
-%     \includegraphics[width=\textwidth]{figures/qcd/qcdANPlots/doubleQcdSbSrRatio1D}
-%     \caption{ Ratio of the measurement of \rmhtmet, the pass/fail
-%       ratio for the \mhtmet selection, from data and Monte Carlo in
-%       the $\bdphi < 0.5$ sideband in (\scalht, \njet) bins.   
-%     }
-%     \label{fig:RR_qcd}
-%   \end{center} 
-% \end{figure}
-
-% MORE INCLUSIVE QCD VALIDATION
-% \clearpage
-% \begin{figure}[h!]
-%   \begin{center}
-%     \subfigure[{ Symmetric
-%     }]{\includegraphics[width=0.5\textwidth]{figures/qcd/mht_ht_allsym}} ~~
-%     \subfigure[{ Symmetric
-%     }]{\includegraphics[width=0.5\textwidth]{figures/qcd/nB_ht_allsym}} \\
-%     \subfigure[{ Asymmetric
-%     }]{\includegraphics[width=0.5\textwidth]{figures/qcd/mht_ht_allasym}} ~~
-%     \subfigure[{ Asymmetric
-%     }]{\includegraphics[width=0.5\textwidth]{figures/qcd/nB_ht_allasym}} \\
-%     \caption{ Ratio of QCD to EWK Monte Carlo prediction in
-%     the signal region for different jet topologies a function
-%     of \mht (Left) and $\nb$ (Right).
-%     %A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
-%     }
-%     \label{fig:qcd_validation}
-%   \end{center} 
-% \end{figure}
 
 
-% LESS INCLUSIVE QCD VALIDATION
-% \clearpage
-% \begin{figure}[h!]
-%   \begin{center}
-%     \subfigure[{ Asymmetric,
-%     $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_lt400asym}} ~~
-%     \subfigure[{ Asymmetric,
-%     $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_lt400asym}} \\
-%     \subfigure[{ Asymmetric,
-%     $400<\scalht<800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_lt800asym}} ~~
-%     \subfigure[{ Asymmetric,
-%     $400<\scalht<800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_lt800asym}} \\
-%     \caption{ Ratio of QCD to EWK Monte Carlo prediction in
-%     the signal region for different \scalht selections as a function
-%     of \mht (Left) and $\nb$ (Right) for the asymmetric jet category.
-%     %A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
-%     }
-%     \label{fig:asym_qcd_validation}
-%   \end{center} 
-% \end{figure}
-%
-% \clearpage
-% \begin{figure}[h!]
-%   \begin{center}
-%     \subfigure[{ Symmetric,
-%     $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_lt400sym}} ~~
-%     \subfigure[{ Symmetric,
-%     $\scalht<400$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_lt400sym}} \\
-%     \subfigure[{ Symmetric,
-%     $400<\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_lt800sym}} ~~
-%     \subfigure[{ Symmetric,
-%     $400<\scalht<800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_lt800sym}} \\
-%     \subfigure[{ Symmetric,
-%     $\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/mht_ht_ltInfsym}} ~~
-%     \subfigure[{ Symmetric,
-%     $\scalht>800$~GeV}]{\includegraphics[width=0.5\textwidth]{figures/qcd/plots/nB_ht_ltInfsym}} \\
-%       \caption{ Ratio of QCD to EWK Monte Carlo prediction in
-%       the signal region for different \scalht selections as a function
-%       of \mht (Left) and $\nb$ (Right) for the asymmetric jet
-%       category. %A constant fit to the data is represented by the red line, with the $\pm$100\% uncertainty represented by the blue hashed region.
-%     }
-%     \label{fig:sym_qcd_validation}
-%   \end{center} 
-% \end{figure}
+
+
+
