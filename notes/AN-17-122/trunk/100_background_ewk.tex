@@ -82,82 +82,72 @@ The correction derived for \zj is also applied to the \znunu sample.
 \subsubsection{Estimate of non-prompt contribution in \gj events}
 \label{sec:photon-purity}
 
-The contribution from non-prompt photons in the \gj control region~\ref{sec:photoncontrolSelection} 
-is expected to be small after the tight ID selection~\ref{sec:photon-id}, the photon acceptance requirements 
-and the \alphat and $\Delta R (\gamma,\mathrm{jet})$ cuts. 
-Nevertheless a data-driven estimation of the non-prompt photons has been developed. 
-%in order to assess the agreement with the simulation and eventually correct the latter 
-%to better match the data. 
-The non-prompt contribution is provided by the QCD MC samples. The
-expected counts from MC are normalised (i.e. corrected) to data in a
-sideband enriched in non-prompt photons (i.e. ``fakes''). These
-corrections are determined as a function of photon \Pt to provide a
-data-driven photon-\Pt-dependent estimate of the non-prompt
-contribution to the \gj sample. No $\eta$ dependence is considered, as
-the analysis only considers barrel photons ($|\eta| < 1.45$) and no
-strong dependence is expected. 
+The contribution from non-prompt (``fake'') photons in the \gj control 
+region~(\ref{sec:photoncontrolSelection}) is expected to be small after
+the tight ID and acceptance requirements~(\ref{sec:photon-id}). 
+Nevertheless a data-driven estimation of the non-prompt photons is
+employed. 
 
-A double-sideband is considered by relaxing the photon ID and isolation, 
-specifically the $\sigma_{i\eta i\eta}$ requirement and the charged hadron isolation requirement. 
-The details of the definition of the sideband are listed in Tab.~\ref{tab:phoPurity-sideband}. 
-The $\sigma_{i\eta i\eta}$ distribution in the charged hadron isolation sideband is shown for two 
-photon \pt bins in Fig.~\ref{fig:chHadIsoSideband}.
+In the previous version of the analysis, the QCD Monte Carlo samples
+were reweighted using data$/$MC corrections derived in a fake-enriched
+$\sigma_{i\eta i\eta}$ sideband as a function of photon \Pt. This
+required subtracting the prompt photon contribution in the sideband
+using simulation, which although small for the most part, was quite
+sizeable in analysis bins with large \njet and \HT (up to 50-70\%).
+Therefore this method was not sufficiently robust, and an alternative
+method (a ``template fit'' method) has been employed as described 
+in the following.
+%Both methods agree within statistical uncertainties
 
-\begin{table}[h!]
-  \topcaption{Summary of the photon selection for the sideband used to estimate the non-prompt component. }
-  \label{tab:phoPurity-sideband}
-  \centering
-  \footnotesize
-  \begin{tabular}{ ccccc }
-    \hline
-    \hline
-    Variable & Nominal selection & Sideband selection & Sideband up variation & Sideband down variation \\
-    \hline
-    $\sigma_{i\eta i\eta}$   & $<0.010$ & $>0.011$ & $>0.012$ & $>0.010$ \\
-    charged hadron isolation & $<0.76$  & $>1.00$  & $>1.50$  & $>0.76$  \\ 
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
+In this method, a template maximum likelihood fit is performed to the
+charged hadron isolation distribution of the photons in data. This
+allows both the fake and prompt components to be constrained
+simultaneously. The templates for the non-prompt photons are either
+taken from simulation or are extracted
+from the fake-enriched $\sigma_{i\eta i\eta}$ sideband (0.011 $< \sigma_{i\eta i\eta} <$ 0.02).
+The templates for the prompt photons is obtained via the ``random
+cone'' method \cite{random-cone}, in which the charged hadron
+isolation distribution is constructed by randomising the direction of
+prompt photons in data and recomputing their isolation value.
+
+The fit is performed over a 0-10~GeV range in isolation, and the
+resulting best fit value for the fraction of fakes is used to compute
+an estimate of the non-prompt yield in the nominal \gj control region
+(chHadIso $<$ 0.202). The fit is performed twice, using templates for
+the non-prompt component from simulation and from the $\sigma_{i\eta
+i\eta}$ sideband. The final value for the yield is taken as the
+average of those obtained using these two schemes. The difference
+halved is taken as a systematic uncertainty.
+% fake templates integrated over HT
+
+Two example fits are shown in Fig.~\ref{fig:photonTemplateFits}. The
+relative conribution of non-prompt photons in the \gj control region 
+is shown as a function of (\njet,\HT) in Fig.~\ref{fig:photon-purities}.
+The study confirms a high photon purity for the selection applied
+in this analysis, with a typical fake photon component between 1-5\%.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/sigmaIetaIeta_chHadIsoSB_all_gammaPt_200_250_nominal} 
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/sigmaIetaIeta_chHadIsoSB_all_gammaPt_700_999999_nominal} 
-  \caption{\label{fig:chHadIsoSideband} 
-  The $\sigma_{i\eta i\eta}$ distribution in the charged hadron isolation sideband for two photon \pt bins. }
+  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fakeFit_eq2j_600_prefit} ~
+  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fakeFit_eq2j_600_postfit} \\
+  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fakeFit_ge5j_900_prefit} ~
+  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fakeFit_ge5j_900_postfit}
+  \caption{\label{fig:photonTemplateFits} 
+  Example prefit (left) and postfit (right) charged hadron isolation
+  distributions in the (\njet$=2$, \HT$=600-900$) (top) and 
+  (\njet$=5$, \HT$=900-1200$) (bottom) bins.}
 \end{figure}
 
-The data in the sideband are used to normalise the non-prompt component in simulation, 
-after subtracting the small contribution ($<5$\%) from prompt photons taken from simulation. 
-All the statistical uncertainties, from both data and MC counts are propagated. \\
-In order to assess the systematic uncertainties in the modelling of $\sigma_{i\eta i\eta}$ 
-and charged hadron fraction the boundaries of the sideband are shifted from the 
-nominal definition in both directions and for both variables, for a total of 4 different variations. 
-The details on the sideband definitions for the systematic variations are given in Tab.~\ref{tab:phoPurity-sideband}. 
-The 4 variations are conservatively summed in quadrature to obtain the total uncertainties. 
-The systematic uncertainties ranges between 10-80\% depending on the photon \pt, 
-and is larger at low photon \pt.
-
-The relative contribution of non-prompt photons in the \gj control region 
-is shown as a function of the photon transverse momentum in Fig.~\ref{fig:photon-purities}.
-The study confirms a very high photon purity for the selection applied in this analysis, 
-with a ``fake'' photon component between 1-3\%. 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fakes} 
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/purity} 
+  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fake_rate_MC}
+  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fake_rate_see}
   \caption{\label{fig:photon-purities} 
-  The relative contribution of non-prompt photon (left) and
-  the photon purity (right) as a function of the photon \pt, 
-  comparing simulation with the data-driven estimation. }
+  The relative contribution of non-prompt photon as a function
+  of (\njet,\HT), when using fakes templates from simulation (left)
+  and from the $\sigma_{i\eta i\eta}$ sideband.}
 \end{figure}
-
-Given the significant discrepancy observed between the prediction from simulation and data, 
-especially at low photon \pt, 
-the non-prompt component in simulation is re-weighted as a function of the photon transverse momentum 
-and both the statistical and systematic uncertainties are propagated to these correction factors. 
 
 
 \subsubsection{Correction to \texorpdfstring{\gj}{photon+jets} cross section}
