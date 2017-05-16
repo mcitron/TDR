@@ -10,7 +10,7 @@ input = pickle.load(file)
 
 njet_bins = ["eq1j","ge2a","eq2j","eq3j","eq4j","eq5j","ge6j"]
 nb_bins = ["eq0b","eq1b","eq2b","eq3b","ge4b"]
-ht_bins = [200,250,300,350,400,500,600,750,900,1050,1200]
+ht_bins = [[200,250,300,350,400,500,600,750,900,1050,1200],[200,400,600,900,1200]][0]
 mht_bins = [200,400,600,900]
 
 # print input dict
