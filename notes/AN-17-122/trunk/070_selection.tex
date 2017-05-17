@@ -650,13 +650,49 @@ bins for each template are merged until this requirement is satisfied.
     \hline
     $\njet\, / \,\scalht$ [GeV] & 200--400 & 400--600 & 600--900 & 900--1200 & $>$1200 \\
     \hline
-    eq1j                        & 300      & 500      & 800      & 1000      & --      \\ 
-    ge2a                        & 300      & 500      & 800      & 1000      & --      \\ 
-    eq2j                        & 300      & 500      & 800      & 1000      & 1000    \\ 
-    eq3j                        & 300      & 500      & 800      & 1000      & 1000    \\ 
-    eq4j                        & --       & 500      & 800      & 1000      & 1000    \\ 
-    eq5j                        & --       & 500      & 800      & 1000      & 1000    \\ 
-    ge6j                        & --       & 500      & 800      & 1000      & 1000    \\ 
+    eq1j                        & 900      & 900      & --       & --        & --      \\ 
+    ge2a                        & 900      & 900      & 900      & 600       & --      \\ 
+    eq2j                        & 900      & 900      & 900      & --        & --      \\ 
+    eq3j                        & 900      & 900      & 900      & 900       & --      \\ 
+    eq4j                        & 900      & 900      & 900      & 900       & --      \\ 
+    eq5j                        & 900      & 900      & 900      & 900       & 400     \\ 
+    ge6j                        & 900      & 900      & 900      & 900       & 400     \\ 
     \hline
   \end{tabular}
 \end{table}
+
+\subsubsection{Summary of event categorisation}
+\label{sec:binning-summary}
+
+The binning strategy is summarised as follows: 
+\begin{itemize}
+\item In the signal and all control regions, seven \njet categories
+  are employed (Table~\ref{tab:njet-binning}). 
+\item In the control regions, up to eleven \scalht categories are
+  used (Tables~\ref{tab:ht-aggr}, \ref{tab:sr-ht-binning}, and
+  \ref{tab:sr-binning}).  
+\item In the signal and all control regions, up to five \nb categories
+  are used.
+\item In the signal region, up to four \HTmiss categories are used.
+\item The number of (\njet, \scalht) categories in each control region
+  is 61.
+\item The number of (\njet, \scalht, \nb) categories in the \mj
+  control region is 207.
+\item An extrapolation in \nb is performed from the \mmj and multijet
+  control regions.
+\item An extrapolation in \HTmiss is performed from all control regions.
+\end{itemize}
+In the signal region, after aggregation across \scalht bins: 
+\begin{itemize}
+\item There are up to five \scalht categories.
+\item The number of (\njet, \scalht) cateogories is 30.
+\item the number of (\njet, \scalht, \nb) categories is 104.
+\item the total number of (\njet, \scalht, \nb, \HTmiss) categories is
+  276. 
+\end{itemize}
+
+The total number of measurements used in the binned likelihood fit,
+which includes the signal, \mj, and \mmj control regions, is 276 + 204
++ 61 = 541. (The multijet background estimates are determined in a
+separate fit.) Further details can be found in
+Sec.~\ref{sec:likelihood}.
