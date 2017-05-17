@@ -5,6 +5,9 @@ def rreplace(s, old, new, occurrence):
     li = s.rsplit(old, occurrence)
     return new.join(li)
 
+# summary table or detailed? 
+summary = 1
+
 # SR or CR? 
 region_str = "SR"
 region = {"CR":0,"SR":1}[region_str]
@@ -40,11 +43,6 @@ nb_string = {"eq0b":"0",
 # print input dict
 for key,val in input.items() :
     print key,val
-
-# count number of (Njet,Nb,HT) bins (Njet,Nb,HT,MHT) bins  
-print 
-print "Njet,Nb,HT:",len(input.keys())
-print "Njet,Nb,HT,MHT:",sum([ len(x) for x in input.values() ])
 
 # overrides input dict by keeping only 200,400,600,900 boundaries for MHT binning (probably now obsolete? fixed by Lucien?)
 input = odict([ (key,list(filter(lambda x: x == 200 or x == 400 or x == 600 or x == 900, val))) for key,val in input.items()  ])
@@ -88,7 +86,7 @@ for njet in njet_bins :
 #            if len(nb_dict.keys()) > 1 and len(nb_dict.values()) > 1 :
 #                new_dicts["ht_N_mht_N-1"][njet][nb] = str(int(nb_dict.values()[-2][-1]))
 
-if 0 :
+if summary :
 
     # format new dicts to create latex for summary tables 
     for key1,val1 in new_dicts.items() :
@@ -156,8 +154,14 @@ else :
         print "  \\end{tabular}"
         print "\\end{table}"
 
+# count number of bins
+print 
+print "Njet,HT:       ",len(list(set([ (key[0],key[2][0]) for key,val in input.items() ]))) 
+print "Njet,Nb,HT:    ",len(input.keys())
+print "Njet,Nb,HT,MHT:",sum([ len(x) for x in input.values() ])
+
+
+
 #for key,val in odict([ (key,val) for key,val in input.items() if "ge6j" in key[0] ]).items() : print key,val
-#print odict([ (key[1],val) for key,val in input.items() if "ge6j" in key[0] and 1200 == key[2][0] ]) 
-
-
+#print odict([ (key,val) for key,val in input.items() if "ge6j" in key[0] and 1200 == key[2][0] ]) 
 
