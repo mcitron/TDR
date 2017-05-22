@@ -207,25 +207,29 @@ After the pre-selection criteria and the vetoes are applied, the
 multijet background is still several orders of magnitude larger than
 the typical signal expected from SUSY. Background events from multijet
 production populate the region $\alphat \lesssim 0.5$ and therefore
-can be rejected with very high efficiency by requiring an appropriate
-cut on \alphat.
+can be rejected with very high efficiency by requiring events to
+exhibit an \alphat value above an appropriate
+threshold. Sec.~\ref{sec:alphatdef} defines the \alphat variable.
 
-The cut on \alphat is chosen in order to ensure a trigger efficiency
-close to unity in all the bins. More details on the trigger strategy
-can be found in Sec.~\ref{sec:triggers}.
+The \alphat thresholds are also chosen in order to ensure a trigger
+efficiency close to unity in all the bins. More details on the trigger
+strategy can be found in Sec.~\ref{sec:triggers}.
 
 \begin{table}[h!]
   \caption{\alphat thresholds versus
     lower bound of \scalht bin. For all \HT bins satisfying $\HT >
     900\gev$, no \alphat cut is applied. No \alphat requirement is
     imposed for events satisfying $\njet = 1$ (``monojet'' events, see
-    Sec.~\ref{sec:subleading-jet}), nor $\scalht > 1200\GeV$.} 
+    Sec.~\ref{sec:subleading-jet}), nor $\scalht > 1200\GeV$. Also
+    shown is the flat \bdphi requirement
+    (Sec.~\ref{sec:bdphi-selection}).}   
   \label{tab:alphat-thresholds}
   \centering
-  \begin{tabular}{ lccccccc }
+  \begin{tabular}{ lcccccccc }
     \hline
-    \scalht           & 200--250 & 250--300 & 300--350 & 350--400 & 400--900 & $>$900 \\
-    \alphat threshold & 0.65     & 0.60     & 0.55     & 0.53     & 0.52     & (none) \\
+    \scalht [GeV]     & 200--250 & 250--300 & 300--350 & 350--400 & 400--900 & 900--1200 & $>$1200 \\
+    \alphat threshold & 0.65     & 0.60     & 0.55     & 0.53     & 0.52     & (none)    & (none)  \\
+    \bdphi threshold  & 0.5      & 0.5      & 0.5      & 0.5      & 0.5      & 0.5       & 0.5     \\
     \hline
   \end{tabular}
 \end{table}
@@ -242,9 +246,13 @@ satisfying $\scalht > 1200\GeV$.
 \label{sec:bdphi-selection}
 
 Candidate signal events with two or more jets are accepted only if
-they satisfy $\bdphi > 0.5$. In the case of events satisfying $\njet =
-1$ (``monojet'' events, see Sec.~\ref{sec:subleading-jet}), the
-requirement $\bdphimod > 0.5$ must be satisfied.
+they satisfy $\bdphi > 0.5$. This threshold is independent of \scalht,
+unlike the \alphat requirement described above, and is applied in
+\scalht categories, as summarised in
+Table~\ref{tab:alphat-thresholds}. In the case of events satisfying
+$\njet = 1$ (``monojet'' events, see Sec.~\ref{sec:subleading-jet}),
+the requirement $\bdphimod > 0.5$ must be satisfied. The definitions
+of \bdphi and \bdphimod can be found in Sec.~\ref{sec:bdphi-def}. 
 
 \subsection{The control regions}
 \label{sec:control-region-selection}
