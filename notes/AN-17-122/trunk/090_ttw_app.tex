@@ -1,374 +1,355 @@
 %%____________________________________________________________________________||
+\clearpage
+\section{``Lost lepton'' background estimation}
+\label{app:ttw}
 
-\section{Background estimation for processes with genuine \met}
-\label{sec:backgroundmet}
+\subsection{PU reweighting}
 
-Once all the signal region selection requirements have been imposed,
-the contribution from QCD multijet events is expected to be
-negligible, as demonstrated in Sec.~\ref{sec:qcd}. 
-In the absence of multijet events, the background counts in the signal region arise from
-SM processes with significant \met in the final state. In events with
-low statistics of jets and b-quark jets, the largest backgrounds with
-genuine \met are from the associated production of W or Z bosons with
-jets, followed by either the weak decays \znunu or \wtaunu, where the
-$\tau$ decays hadronically and is identified as a jet; or by leptonic
-decays that are not rejected by the dedicated electron or muon
-vetoes. The veto of events containing isolated tracks is efficient at
-further suppressing these backgrounds as well as the single-prong
-hadronic decay of the tau lepton. At higher jet and b-quark jet
-multiplicities, top quark production followed by semileptonic weak top
-quark decay becomes important.  Residual contributions from processes
-such as single-top-quark, $\ttbar$V or $\ttbar$H, diboson, and
-Drell-Yan production are also expected. These SM processes are
-collectively referred to as the non-multijet backgrounds.
-
-\subsection{Additional corrections to simulated samples}
-\label{sec:mc-corrections}
-
-The simulated samples are normalised using the most accurate cross
-section calculations currently available, usually with
-next-to-leading-order (NLO) accuracy~\ref{sec:datasets}. 
-To model the effect of pileup, the simulated events are generated with a nominal distribution
-of pp interactions per bunch crossing, which are then reweighted
-to match the pileup distribution as measured in data, as described in Section~\ref{sec:pileup-reweighting}.
-
-Additional re-weighting procedures applied to the simulated samples are described in the following.
-
-\subsubsection{Normalisation corrections from a \mht sideband}
-\label{sec:sideband-corrections}
-
-In the high-\scalht, high-\etmiss corner of the phase space used in this search, the normalisations of the MC samples do not necessarily agree with the observation. 
-Moreover, the cross section is known only to a limited number of perturbative orders and additional corrections could be in principle sizeable. \\
-The analysis strategy for the background predictions is built in such a way to be mildly, if not negligibly, dependent on these corrections. 
-The backgrounds are estimated from control regions in data, and the effect of cross section corrections on the transfer factors is expected to largely cancel out, 
-because the background composition is very similar between the signal region and the control regions used to estimate each background. \\
-However, the ``data-driven'' tests described in Sec.~\ref{sec:closure-tests} would benefit from a better control of the normalisation of MC samples, 
-since more aggressive extrapolations are carried on there with respect to the background predictions in the analysis. 
-
-In this section a procedure is described to derive process-dependent ``sideband corrections'' 
-by means of a likelihood fit using the data in the control regions. 
-The sideband corrections are derived after all the other corrections to the MC and data are applied, 
-such as trigger efficiency, data/MC scale factors (b-tag, lepton ID/isolation, etc.) and jet energy scale. 
-The sideband corrections are applied and propagated to all the steps of the analysis.\\
-No uncertainty is considered for these corrections as any inaccuracy is already accounted 
-for in the data-driven tests described in Sec.~\ref{sec:closure-tests} and would result in inflated systematics. 
-
-To take advantage of the full phase space of the sidebands a simultaneous 
-fit is used to derive the corrections for \wj, \zj, \ttbar, using the $100<\mht<130$ GeV sideband. 
-The sideband is binned identically to the control region in \njet, \nb and \scalht and a floating 
-parameter per relevant process encodes the correction for that process (fully correlated across all bins).
-The \wj and \ttbar processes are mainly constrained by the \mj sideband while the \zj process is 
-constrained by the \mmj sideband. The values of the corrections and uncertainties
-given by the fit are shown in Table~\ref{tab:sbCorrsFromFit}.\\
-The correction derived for \zj is also applied to the \znunu sample. 
-
-\begin{table}[!h]
-  \scriptsize
+\begin{figure}[!h]
   \centering
-  \topcaption{Cross section corrections for SM backgrounds derived with fit to sidebands in data.}
-  \label{tab:sbCorrsFromFit}
-  \begin{tabular}
-    {cllc}
-    \hline\hline
-    \textbf{Process} & \textbf{Sideband} & \textbf{Selection} & \textbf{Corrrection} \\
-    \hline
-    \wj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj& $1.13 \pm 0.01$ \\
-    \zj & $100 < \mht < 130 \, \mathrm{GeV}$ & \mmj& $1.08 \pm 0.01$ \\
-    \ttbar + jets & $100 < \mht < 130 \, \mathrm{GeV}$ & \mj, \mmj  & $0.91 \pm 0.01$ \\
-    \hline \hline
-  \end{tabular}
-\end{table}
+  \subfigure[PU weight up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
+  } ~~
+  \subfigure[PU weight down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+  }\\
 
-\subsubsection{Estimate of non-prompt contribution in \gj events}
-\label{sec:photon-purity}
-
-The contribution from non-prompt photons in the \gj control region~\ref{sec:photoncontrolSelection} 
-is expected to be small after the tight ID selection~\ref{sec:photon-id}, the photon acceptance requirements 
-and the \alphat and $\Delta R (\gamma,\mathrm{jet})$ cuts. 
-Nevertheless a data-driven estimation of the non-prompt photons has been developed. 
-%in order to assess the agreement with the simulation and eventually correct the latter 
-%to better match the data. 
-The non-prompt contribution is provided by the QCD MC samples. The
-expected counts from MC are normalised (i.e. corrected) to data in a
-sideband enriched in non-prompt photons (i.e. ``fakes''). These
-corrections are determined as a function of photon \Pt to provide a
-data-driven photon-\Pt-dependent estimate of the non-prompt
-contribution to the \gj sample. No $\eta$ dependence is considered, as
-the analysis only considers barrel photons ($|\eta| < 1.45$) and no
-strong dependence is expected. 
-
-A double-sideband is considered by relaxing the photon ID and isolation, 
-specifically the $\sigma_{i\eta i\eta}$ requirement and the charged hadron isolation requirement. 
-The details of the definition of the sideband are listed in Tab.~\ref{tab:phoPurity-sideband}. 
-The $\sigma_{i\eta i\eta}$ distribution in the charged hadron isolation sideband is shown for two 
-photon \pt bins in Fig.~\ref{fig:chHadIsoSideband}.
-
-\begin{table}[h!]
-  \topcaption{Summary of the photon selection for the sideband used to estimate the non-prompt component. }
-  \label{tab:phoPurity-sideband}
-  \centering
-  \footnotesize
-  \begin{tabular}{ ccccc }
-    \hline
-    \hline
-    Variable & Nominal selection & Sideband selection & Sideband up variation & Sideband down variation \\
-    \hline
-    $\sigma_{i\eta i\eta}$   & $<0.010$ & $>0.011$ & $>0.012$ & $>0.010$ \\
-    charged hadron isolation & $<0.76$  & $>1.00$  & $>1.50$  & $>0.76$  \\ 
-    \hline
-    \hline
-  \end{tabular}
-\end{table}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/sigmaIetaIeta_chHadIsoSB_all_gammaPt_200_250_nominal} 
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/sigmaIetaIeta_chHadIsoSB_all_gammaPt_700_999999_nominal} 
-  \caption{\label{fig:chHadIsoSideband} 
-  The $\sigma_{i\eta i\eta}$ distribution in the charged hadron isolation sideband for two photon \pt bins. }
+  \caption{\label{fig:tfSyst_pu_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  factors when varying PU weight in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
 \end{figure}
 
-The data in the sideband are used to normalise the non-prompt component in simulation, 
-after subtracting the small contribution ($<5$\%) from prompt photons taken from simulation. 
-All the statistical uncertainties, from both data and MC counts are propagated. \\
-In order to assess the systematic uncertainties in the modelling of $\sigma_{i\eta i\eta}$ 
-and charged hadron fraction the boundaries of the sideband are shifted from the 
-nominal definition in both directions and for both variables, for a total of 4 different variations. 
-The details on the sideband definitions for the systematic variations are given in Tab.~\ref{tab:phoPurity-sideband}. 
-The 4 variations are conservatively summed in quadrature to obtain the total uncertainties. 
-The systematic uncertainties ranges between 10-80\% depending on the photon \pt, 
-and is larger at low photon \pt.
+\subsection{Signal trigger efficiency}
 
-The relative contribution of non-prompt photons in the \gj control region 
-is shown as a function of the photon transverse momentum in Fig.~\ref{fig:photon-purities}.
-The study confirms a very high photon purity for the selection applied in this analysis, 
-with a ``fake'' photon component between 1-3\%. 
-
-\begin{figure}[h!]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/fakes} 
-  \includegraphics[width=0.45\textwidth]{figures/photonpurity/purity} 
-  \caption{\label{fig:photon-purities} 
-  The relative contribution of non-prompt photon (left) and
-  the photon purity (right) as a function of the photon \pt, 
-  comparing simulation with the data-driven estimation. }
+  \subfigure[trigger weight up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
+  } ~~
+  \subfigure[trigger weight down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_trigger_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  factors when varying trigger weight in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
 \end{figure}
 
-Given the significant discrepancy observed between the prediction from simulation and data, 
-especially at low photon \pt, 
-the non-prompt component in simulation is re-weighted as a function of the photon transverse momentum 
-and both the statistical and systematic uncertainties are propagated to these correction factors. 
+\clearpage
+\subsection{Lepton trigger / identification / isolation efficiency}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[muon scale factor up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
+  } ~~
+  \subfigure[muon scale factor down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_muon_scale_factor_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  factors when varying muon scale factor in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\subsection{Jet energy scale}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[JEC up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
+  } ~~
+  \subfigure[JEC down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
+  $\mj \rightarrow \mathrm{\ttbar+W}$ transfer
+  factors when varying JEC in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\clearpage
+\subsection{b-tagging efficiency}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[b-tag SF (heavy) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
+  } ~~
+  \subfigure[b-tag SF (heavy) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_bsf_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  factors when varying b-tag SF for heavy jets in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\subsection{b-tagging mistag}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[b-tag SF (light) up variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfLightWeight_Up.pdf}
+  } ~~
+  \subfigure[b-tag SF (light) down variation]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfLightWeight_Down.pdf}
+  }\\
+
+  \caption{\label{fig:tfSyst_bsfl_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+  factors when varying b-tag SF for light jets in MC within its uncertainties, as a function of \scalht and jet category. 
+  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+  }
+\end{figure}
+
+\clearpage
+\subsection{Extrapolation in \texorpdfstring{\alphat}{AlphaT}}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/SingleMu_alphaTExtrapolation_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/SingleMu_alphaTExtrapolation_nJet.pdf}\\
+    \caption{Data-driven closure tests probing the modelling of an
+      extrapolation in the \alphat variable with the \mj sample. The
+      level of closure (solid markers) is indicated as a function of
+      \scalht (left) and \njet (right). The blue histogram indicates
+      the quadrature sum of the magnitude of non-closure and its
+      statistical uncertainty. The post-fit closure (open markers) is
+      also shown (see text for details).  }
+    \label{fig:closure_AlphaT_mu}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/DoubleMu_alphaTExtrapolation_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/DoubleMu_alphaTExtrapolation_nJet.pdf}\\ 
+    \caption{As for Fig.~\ref{fig:closure_AlphaT_mu} but probing the
+      modelling of an extrapolation in the \alphat variable with the
+      \mmj sample.
+    }
+    \label{fig:closure_AlphaT_mumu}
+  \end{center} 
+\end{figure}
+
+%\begin{figure}[h!]
+%  \begin{center}
+%    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/SinglePhoton_alphaTExtrapolation_ht.pdf}~
+%    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/SinglePhoton_alphaTExtrapolation_nJet.pdf}\\ 
+%    \caption{As for Fig.~\ref{fig:closure_AlphaT_mu} but probing the
+%      modelling of an extrapolation in the \alphat variable with the
+%      \gj sample.
+%    }
+%    \label{fig:closure_AlphaT_phot}
+%  \end{center} 
+%\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/AlphaT_Correlated_nuisances.pdf}
+    \caption{The post-fit nuisance parameter values (relative to
+      pre-fit) for the \alphat closure test when implemented as a
+      binned likelihood fit.} 
+    \label{fig:closure_AlphaT_LH_mu}
+  \end{center} 
+\end{figure}
+
+\clearpage
+\subsection{Extrapolation in \texorpdfstring{\bdphi}{biased dPhi}}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/SingleMu_bdphiExtrapolation_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/SingleMu_bdphiExtrapolation_nJet.pdf}\\
+    \caption{Data-driven closure tests probing the modelling of an
+      extrapolation in the \bdphi variable with the \mj sample. The
+      level of closure (solid markers) is indicated as a function of
+      \scalht (left) and \njet (right). The blue histogram indicates
+      the quadrature sum of the magnitude of non-closure and its
+      statistical uncertainty. The post-fit closure (open markers) is
+      also shown (see text for details).  }
+    \label{fig:closure_bDPhi_mu}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/DoubleMu_bdphiExtrapolation_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/DoubleMu_bdphiExtrapolation_nJet.pdf}\\ 
+    \caption{As for Fig.~\ref{fig:closure_bDPhi_mu} but probing the
+      modelling of an extrapolation in the \bdphi variable with the
+      \mmj sample.
+    }
+    \label{fig:closure_bDPhi_mumu}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/SinglePhoton_bdphiExtrapolation_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/SinglePhoton_bdphiExtrapolation_nJet.pdf}\\ 
+    \caption{As for Fig.~\ref{fig:closure_bDPhi_mu} but probing the
+      modelling of an extrapolation in the \bdphi variable with the
+      \gj sample.
+    }
+    \label{fig:closure_bDPhi_phot}
+  \end{center} 
+\end{figure}
+
+\clearpage
+\subsection{Extrapolation in \texorpdfstring{\alphat}{AlphaT} and
+  \texorpdfstring{\bdphi}{biased dPhi}}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT_bDPhi/SingleMu_alphaTbdphi_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT_bDPhi/SingleMu_alphaTbdphi_nJet.pdf}\\
+    \caption{Data-driven closure tests probing the modelling of an
+      extrapolation in both \alphat and \bdphi variables, as done in
+      the analysis, with the \mj sample. The level of closure (solid
+      markers) is indicated as a function of \scalht (left) and \njet
+      (right). The blue histogram indicates the quadrature sum of the
+      magnitude of non-closure and its statistical uncertainty. The
+      post-fit closure (open markers) is also shown (see text for
+      details). \fixme{UPDATE PLOTS WITH CLOSURE FIT!} }
+    \label{fig:closure_AlphaT_bDPhi_mu}
+  \end{center} 
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/AlphaT_Correlated_nuisances.pdf}
+    \caption{The post-fit nuisance parameter values (relative to
+      pre-fit) for the combined \alphat and \bdphi closure test when
+      implemented as a binned likelihood fit. \fixme{UPDATE PLOT!!!}} 
+    \label{fig:closure_AlphaT_bDPhi_LH_mu}
+  \end{center} 
+\end{figure}
+
+\clearpage
+\subsection{The effect of W polarisation on lepton acceptance}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/WPol/SingleMuPlus_to_SingleMuMinus_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/WPol/SingleMuPlus_to_SingleMuMinus_nJet.pdf}\\
+    \caption{Data-driven closure tests that probe the modelling of W
+      polarisation in the \mj sample. The level of closure (solid
+      markers) is indicated as a function of \scalht (left) and \njet
+      (right). The blue histogram indicates the quadrature sum of the
+      magnitude of non-closure and its statistical uncertainty. }
+    \label{fig:closure_WPol_mu}
+  \end{center} 
+\end{figure}
+
+\clearpage
+\subsection{The single isolated track veto}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/SITV/SingleMu_Sit_ht.pdf}~
+    \includegraphics[width=0.45\textwidth]{figures/closureTests/SITV/SingleMu_Sit_nJet.pdf}\\
+    \caption{Data-driven closure tests that probe the modelling of the
+      single isolated track veto. The level of closure (solid markers)
+      is indicated as a function of \scalht (left) and \njet
+      (right). The blue histogram indicates the quadrature sum of the
+      magnitude of non-closure and its statistical uncertainty. }
+    \label{fig:closure_SITV_mu}
+  \end{center} 
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.3\textwidth,page=10,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \includegraphics[width=0.3\textwidth,page=6,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \includegraphics[width=0.3\textwidth,page=5,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}\\
+    \includegraphics[width=0.3\textwidth,page=8,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \includegraphics[width=0.3\textwidth,page=4,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \includegraphics[width=0.3\textwidth,page=7,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}\\
+    \includegraphics[width=0.3\textwidth,page=2,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \includegraphics[width=0.3\textwidth,page=1,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \includegraphics[width=0.3\textwidth,page=9,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}\\
+    \includegraphics[width=0.3\textwidth,page=3,trim=0 100 50 100,clip]{figures/SITV/SIT/SIT.pdf}~
+    \caption{Distributions of various quantities related to SITs
+      within a sample of \mj events containing at least SIT.}
+    \label{fig:dataMC_SIT_mu}
+  \end{center} 
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[width=0.3\textwidth,page=18,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}~
+    \includegraphics[width=0.3\textwidth,page=17,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}~
+    \includegraphics[width=0.3\textwidth,page=13,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}\\
+    \includegraphics[width=0.3\textwidth,page=3,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}~
+    \includegraphics[width=0.3\textwidth,page=1,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}~
+    \includegraphics[width=0.3\textwidth,page=2,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}\\
+    \includegraphics[width=0.3\textwidth,page=11,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}~
+    \includegraphics[width=0.3\textwidth,page=9,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}~
+    \includegraphics[width=0.3\textwidth,page=12,trim=0 100 50 100,clip]{figures/SITV/Event/Event.pdf}\\
+    \caption{Distributions of various event-level quantities within a
+      sample of \mj events containing at least SIT.}
+    \label{fig:dataMC_SITEvent_mu}
+  \end{center} 
+\end{figure}
 
 
-\subsubsection{Correction to \texorpdfstring{\gj}{photon+jets} cross section}
-\label{sec:gj-kfactor}
-
-The \gj cross section used in this analysis is calculated at leading
-order, unlike other processes like \ttj (next-to-next-to leading
-order) or \zj and \wj (next-to leading order).  A data-driven
-procedure is developed to derive a ``k-factor'' for the \gj cross
-section by comparing the yields in the \gj and \mmj control regions.
-An inclusive correction of 1.39 is derived from the ratio of the event
-yields in the two
-control regions and is applied to the \gj MC sample. \\
-In order to assess the uncertainty on this correction, the systematic
-sources affecting the acceptance in the \mmj control region are varied
-and the effect on the event yields is derived.  They include lepton
-trigger, ID, isolation, tracking efficiency and jet energy
-corrections.  The total systematic uncertainty, obtained by summing in
-quadrature each independent variation, is 4\% and it's propagated to
-the likelihood fit.  Residual discrepancy in the $Z/\gamma$ ratio as a
-function of \scalht and \njet are assessed through the data-driven
-test described in Sec.~\ref{sec:closure-tests}.
 
 
-\subsection{The ``transfer factor'' method}
-\label{sec:ewk-method}
-
-The method used to estimate the aforementioned SM background
-contributions in the hadronic signal region relies on the use of a
-transfer factor (TF) determined from MC samples to transform the
-observed yield in a given \scalht, jet (\njet) and b-tag (\nb)
-multiplicity bin of a control sample, $\nobs^{\rm
-  control}(\njet,\nb,\scalht)$, into a predicted yield for the
-corresponding bin of the hadronic signal region, $\npre^{\rm
-  signal}(\njet,\nb,\scalht)$. The choice of \njet and \nb~event
-categorisation and \scalht binning in the control samples is identical
-to that for the signal region, as defined in
-Sec.~\ref{sec:selection}. 
-
-Each transfer factor is simply a ratio of the yields obtained from MC
-simulation for the same bin of the signal region and a given control
-sample:
-
-\begin{equation}
-  \label{equ:tf-ratio}
-  {\rm TF} = \frac{N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht)}{N_{\rm
-      MC}^{\rm control}(\njet,\nb,\scalht)} 
-\end{equation}
-
-In this way, predictions of background counts from SM processes can be
-made based on the various control samples:
-
-\begin{equation}
-  \label{equ:pred-method}
-  \npre^{\rm signal}(\njet,\nb,\scalht) = \frac{N_{\rm MC}^{\rm
-      signal}(\njet,\nb,\scalht)}{N_{\rm MC}^{\rm
-      control}(\njet,\nb,\scalht)} \times \nobs^{\rm
-    control}(\njet,\nb,\scalht)   
-\end{equation}
-
-When constructing the transfer factors, the MC expectations for the
-following SM processes are considered: W + jets ($N_{\rm W}$), \ttbar
-+ jets ($N_{\ttbar}$), \znunu\ + jets ($N_{\znunu}$), DY + jets
-($N_{\mathrm DY}$), \gj ($N_\gamma$), single top + jets
-production via the $s$, $t$, and $tW$-channels ($N_{\rm top}$), $WW+$~jets, $WZ~+$~jets, and $ZZ + \textrm{jets}$ ($N_{\rm di-boson}$), and $\ttbar$V or
-$\ttbar$H ($N_{\rm {\ttbar}X}$). Details on the MC
-samples used are given in Sec.~\ref{sec:datasets}. All MC samples
-are normalised to the integrated luminosity of the appropriate data
-sample.
-
-The selection criteria for the data control samples closely resemble
-those for the signal region, differing mainly through the use of a
-lepton or photon object {\it tag} (that is ignored in the calculation
-of jet-based kinematic variables such as \scalht, \mht, \alphat, \etc)
-and minimal additional kinematic requirements (\eg invariant or
-transverse mass windows) to obtain W, Z, and \ttbar-enriched event
-samples. The same selection criteria are designed to suppress signal
-contamination in the control samples so that unbiased data-driven
-estimates for the SM backgrounds in the signal region can be
-made. More detail on the selection criteria can be found in Sec.~\ref{sec:selection}.
-
-The transfer factors account for differences in cross sections and
-branching ratios, acceptance and reconstruction efficiencies, and/or
-kinematic requirements between the signal and control regions. Any
-dependence on \njet, \nb, or \HT is largely attributable to
-differences in acceptance due to the presence or otherwise of \alphat
-or \mht requirements.
-
-Many systematic effects are expected to cancel largely in the transfer
-factor. However, a systematic uncertainty is assigned to each transfer
-factor to account for theoretical uncertainties and effects such as
-the mismodelling of kinematics (\eg acceptances) and instrumental
-effects (\eg reconstruction efficiencies).
-
-In the end, a fitting procedure that provides the final result is
-defined formally by the likelihood model described in
-Sec.~\ref{sec:likelihood}. In summary, the observation in each bin
-(defined in terms of the variables \njet, \nb, and \scalht) of the
-signal sample is modelled as Poisson-distributed about the sum of a SM
-expectation (and a potential signal contribution). The components of
-this SM expectation are related to the expected yields in the control
-samples via transfer factors derived from simulation. The observations
-in each bin (again defined by \njet, \nb, and \scalht) of the control
-samples are similarly modelled as Poisson-distributed about the
-expected yields for each control sample. In this way, for a given
-bin, the observed yields in the signal and control samples are
-connected via the transfer factors derived from simulation. 
-%% The transfer factors are shown in Tables~\ref{tab:tf_mu_zinv_sym}-
-%% \ref{tab:tf_mumu_zinv_mono}. The procedure to determine the systematic
-%% uncertainties associated with these transfer factors is described in
-%% Sec.~\ref{sec:systematics}. 
-The procedure to determine the systematic uncertainties associated
-with these transfer factors is described in
-Sec.~\ref{sec:systematics}.
-
-
-%% The transfer factors are shown in tables below.
-
-%% \input{tables/dataLumi/tf_mu_zinv_sym.tex}
-%% \input{tables/dataLumi/tf_mu_zinv_asym.tex}
-%% \input{tables/dataLumi/tf_mu_zinv_mono.tex}
-%% \input{tables/dataLumi/tf_gj_zinv_sym.tex}
-%% \input{tables/dataLumi/tf_gj_zinv_asym.tex}
-%% \input{tables/dataLumi/tf_gj_zinv_mono.tex}
-%% \input{tables/dataLumi/tf_mu_ttw_sym.tex}
-%% \input{tables/dataLumi/tf_mu_ttw_asym.tex}
-%% \input{tables/dataLumi/tf_mu_ttw_mono.tex}
-%% \input{tables/dataLumi/tf_mumu_zinv_sym.tex}
-%% \input{tables/dataLumi/tf_mumu_zinv_asym.tex}
-%% \input{tables/dataLumi/tf_mumu_zinv_mono.tex}
-
-%% \clearpage
-
-\subsection{Adding the \mht dimension}
-
-The aforementioned description of the TFs provide an estimate of the
-total SM background as a function of the (\njet,\nb,\HT) bin that is
-integrated over \mht. However, the analysis takes advantage of \mht
-distribution obtained from simulation. This information is propagated
-to the likelihood model via an \mht template per (\njet,\nb,\HT) bin,
-which is equivalent to dicing the numerator of the TF according to
-\mht, \ie $N_{\rm MC}^{\rm signal}(\njet,\nb,\scalht,\mht)$. In this
-regard, the TFs described above provide an estimate of the
-normalisation for each \mht template.
-
-%\subsection{Data control samples used in the method}
+%\subsection{Top $p_T$ reweighting}
 %
-%To estimate the contributions from backgrounds with genuine missing
-%transverse momentum, three data control regions are used, which are
-%binned identically to the signal region: \mj, \mmj and \gj.  Their
-%definitions are provided in Sec.~\ref{sec:selection}. The selection
-%criteria for these control regions are defined such that any potential
-%contamination from new physics processes or QCD multijets is
-%negligible.
-
-%% In previous versions of this analysis, the \mmj and \gj control
-%% samples are used to predict the \znunu +jets background. We plan to
-%% extend this approach by relying on all (and not just a sub-set of)
-%% relevant control samples to predict the two dominant components of the
-%% total SM background (\wj and \ttbar, or \znunu + jets). Specifically,
-%% we are using the \mj sample to predict the \wj and \ttbar backgrounds
-%% (across all \nb bins) and up to three samples comprising \zmmj,
-%% \gj and \wmj to predict the \znunu + jets background for events
-%% containing exactly zero or one b-tagged jets. Any correlations are
-%% appropriately handled by the likelihood model (via the
-%% \texttt{Combine} tool).
-
-%% The predictions of the \znunu + jets background based on the \zmmj
-%% control samples exhibits significantly larger statistical
-%% uncertainties at high \njet, \nb, \scalht, or \mht due to lower event
-%% counts arising from the lower Z cross section (w.r.t. \gj and
-%% \wj). Regardless, these samples are included in the likelihood fit
-%% to provide additional confidence in the control of the \znunu + jets
-%% background.
-
-%% Concerning the use of $W$-enriched samples to predict the \znunu +jets
-%% background, we have studied this approach
-%% in detail with the 8\TeV dataset. Based on the outcome of these studies,
-%% we have decided to proceed with this approach, as part
-%% of the baseline likelihood description. Studies were
-%% based on data-driven tests with 8\TeV data
-%% (as described in Sec.~\ref{sec:closure-tests}). Closure tests are a critical
-%% tool to determine which samples can be used to predict the SM
-%% background components. In particular, we have studied the effect of
-%% new closure tests designed to test the $W$-enriched to $Z$-enriched
-%% extrapolation, specifically \mj to \gj, \mj to \mmj
-%% and $\mu^{+}$ to $\mu^{-}$ closure tests. 
-%% If further studies of the closure tests with $13\tev$
-%% data suggest that using the \mj control region to predict the \znunu
-%% background is not feasible, we will revert back to the approach
-%% used in Run~I analysis (\ie relying solely on the \zll and \gj
-%% samples). Early investigations suggest there are not any major problems.
-%% %The closure tests provide important event samples for probing the
-%% %accuracy of the simulation modelling implicit in the transfer factors.
-%% %Specific examples include ``\mj to predict \mmj'' and ``zeej to
-%% %predict \gj'' with events containing exactly zero or one b-tagged
-%% %jets. The former test relies on a \wmj-enriched sample to predict
-%% %yields in the \zmmj sample (in the presence of some ``\ttbar
-%% %contamination'' for events with $\nb = 1$). The latter test is a
-%% %consistency check between a dilepton and a \gj sample (as done in
-%% %previous iterations of the analysis).
-%% Most importantly, we retain full flexibility in our approach and the
-%% control samples used to predict the various background components.
-
-%% Currently, the projected sensitivity, as described in the current
-%% version of this note, is based on predictions of SM background
-%% components made from control regions as follows. For events containing
-%% exactly zero or one b-tagged jets, the \mj (enriched in \wej), \gj and
-%% \mmj control samples are used to estimate the irreducible \znunu + jets
-%% background, while the \mj control sample is used to estimate all
-%% remaining SM processes (predominately \wj and \ttbar). For events
-%% containing two or more b-tagged jets, the \mj sample is
-%% used to predict the total SM background (dominated by \ttbar).
+%\begin{figure}[!h]
+%  \centering
+%  \subfigure[top $p_{T}$ weight up variation]{
+%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%  } ~~
+%  \subfigure[top $p_{T}$ weight down variation]{
+%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%  }\\
+%
+%  \caption{\label{fig:tfSyst_topPt_muToZinv} The relative change in
+%  the $\mj \rightarrow (\znunu)$ transfer
+%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%  }
+%\end{figure}
+%
+%\begin{figure}[!h]
+%  \centering
+%  \subfigure[top $p_{T}$ weight up variation]{
+%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%  } ~~
+%  \subfigure[top $p_{T}$ weight down variation]{
+%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%  }\\
+%
+%  \caption{\label{fig:tfSyst_topPt_mumuToZinv} The relative change in
+%  the $\mmj \rightarrow (\znunu)$ transfer
+%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%  }
+%\end{figure}
+%
+%\begin{figure}[!h]
+%  \centering
+%  \subfigure[top $p_{T}$ weight up variation]{
+%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
+%  } ~~
+%  \subfigure[top $p_{T}$ weight down variation]{
+%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
+%  }\\
+%
+%  \caption{\label{fig:tfSyst_topPt_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
+%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
+%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
+%  }
+%\end{figure}
 
