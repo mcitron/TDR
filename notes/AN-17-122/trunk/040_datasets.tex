@@ -108,6 +108,45 @@ CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} PDFs.
 The detector response for signal models is provided by the CMS fast
 simulation package~\cite{fastsim}.
 
+\clearpage
+\begin{table}[h!]
+  \topcaption{List of primary data sets used in this analysis.}
+  \footnotesize 
+  \input{tables/datasets/c140607_c151022_l001.tex}
+  \label{tab:datasets_data}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \topcaption{Simulated event samples of SM background processes used
+    by this analysis. Symbols used as shorthand are defined at the
+    bottom of the table.}
+  \fontsize{7}{8.4}\selectfont
+  \input{tables/datasets/backgrounds.tex}
+  \label{tab:datasets_bkg}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \topcaption{Simulated event samples of SM background processes used
+    by this analysis. Symbols used as shorthand are defined at the
+    bottom of the table.}
+  \fontsize{7}{8.4}\selectfont
+  \input{tables/datasets/rare.tex}
+  \label{tab:datasets_bkg2}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \topcaption{Simulated event samples of signal processes used
+    by this analysis. Symbols used as shorthand are defined at the
+    bottom of the table. 
+  }
+  \footnotesize
+  \input{tables/datasets/signal.tex}
+  \label{tab:datasets_signal}
+\end{table}
+
 \subsection{Reducing statistical uncertainties from simulation at high \texorpdfstring{\nb}{Nb}}
 
 In order to maximise sensitivity to potential new physics signatures
@@ -204,45 +243,6 @@ events categorised by \nb depends strongly on whether an extrapolation
 in \nb is required to estimate a particular background process in the
 signal region. These details are covered in Secs.~\ref{sec:}. 
 
-\begin{table}[h!]
-  \topcaption{List of primary data sets used in this analysis.}
-  \footnotesize 
-  \input{tables/datasets/c140607_c151022_l001.tex}
-  \label{tab:datasets_data}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \topcaption{Simulated event samples of SM background processes used
-    by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table.}
-  \fontsize{7}{8.4}\selectfont
-  \input{tables/datasets/backgrounds.tex}
-  \label{tab:datasets_bkg}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \topcaption{Simulated event samples of SM background processes used
-    by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table.}
-  \fontsize{7}{8.4}\selectfont
-  \input{tables/datasets/rare.tex}
-  \label{tab:datasets_bkg2}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \topcaption{Simulated event samples of signal processes used
-    by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table. 
-  }
-  \footnotesize
-  \input{tables/datasets/signal.tex}
-  \label{tab:datasets_signal}
-\end{table}
-
-\clearpage
 \subsection{Corrections to simulation for SM processes}
 \label{sec:sim-corrs}
 
@@ -308,11 +308,21 @@ of \verb!nTrueInt! in the data, simulated events and reweighted
 simulated events. The figure demonstrates that the reweighted
 simulated events have the distribution of \verb!nTrueInt! nearly
 identical to that in the data. 
-We note that the simulation does not contain events with 37 or more
-overlapping pp interactions, while the data do, causing the MC
-weighted distribution not to match perfectly the data. This small
-issue will be recovered once the new MC samples with updated PU
-profile will be available.
+%We note that the simulation does not contain events with 37 or more
+%overlapping pp interactions, while the data do, causing the MC
+%weighted distribution not to match perfectly the data. This small
+%issue will be recovered once the new MC samples with updated PU
+%profile will be available.
+
+\subsubsection{Trigger efficiencies}
+\label{sec:trigger-sf}
+
+Simulated events in the signal region are corrected to account for
+signal trigger inefficiencies. Simulated events in the muon control
+regions rely on the use of an emulated muon trigger and the
+application of data/MC scale factors to correct for differences in the
+muon trigger efficiencies determined from data and simulation. Further
+details are found in Sec.~\ref{sec:trigger}.
 
 \subsubsection{Lepton and photon scale factors}
 
@@ -322,8 +332,8 @@ scale factors. Corrections related to trigger and tracking
 reconstruction efficiencies are also considered. Typically, the scale
 factors are near-unity and are determined by the POGs or the SUSY
 lepton scale factor working group. We follow the SUSY Moriond17
-recommendations, detailed here~\cite{susymoriond}. Further details
-are given in later sections. 
+recommendations, detailed here~\cite{susymoriond}. Further details are
+given in later sections.
 
 \subsubsection{Jet energy scale corrections and b-tag scale factors}
 \label{sec:jecs-and-btag-sf}
