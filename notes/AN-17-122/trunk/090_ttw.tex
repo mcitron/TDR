@@ -34,7 +34,7 @@ using the \mj control region. (The \mmj sample is reserved to estimate
 solely the \znunu\ background.)
 
 \subsection{The ``transfer factor'' method}
-\label{sec:ewk-method}
+\label{sec:tf-method-ttw}
 
 The method used to estimate the lost lepton background relies on the
 use of a transfer factor (TF) determined from simulated event samples
@@ -97,40 +97,6 @@ the mismodelling of kinematics (\eg acceptances) and instrumental
 effects (\eg reconstruction efficiencies). These uncertainties are
 discussed below. 
 
-%In the end, a fitting procedure that provides the final result is
-%defined formally by the likelihood model described in 
-%Sec.~\ref{sec:likelihood}.
-%In summary, the observation in each bin (defined in terms of the
-%variables \njet, \scalht, and \nb) of the signal sample is modelled as
-%Poisson-distributed about the sum of a SM expectation (and a potential
-%signal contribution). The components of this SM expectation are
-%related to the expected yields in the control samples via transfer
-%factors derived from simulation. The observations in each bin (again
-%defined by \njet, \nb, and \scalht) of the control samples are
-%similarly modelled as Poisson-distributed about the expected yields
-%for each control sample. In this way, for a given bin, the observed
-%yields in the signal and control samples are connected via the
-%transfer factors derived from simulation.
-%The procedure to determine the systematic uncertainties associated
-%with these transfer factors is described in
-%Sec.~\ref{sec:systematics}.
-
-
-%% The transfer factors are shown in tables below.
-
-%% \input{tables/dataLumi/tf_mu_zinv_sym.tex}
-%% \input{tables/dataLumi/tf_mu_zinv_asym.tex}
-%% \input{tables/dataLumi/tf_mu_zinv_mono.tex}
-%% \input{tables/dataLumi/tf_gj_zinv_sym.tex}
-%% \input{tables/dataLumi/tf_gj_zinv_asym.tex}
-%% \input{tables/dataLumi/tf_gj_zinv_mono.tex}
-%% \input{tables/dataLumi/tf_mu_ttw_sym.tex}
-%% \input{tables/dataLumi/tf_mu_ttw_asym.tex}
-%% \input{tables/dataLumi/tf_mu_ttw_mono.tex}
-%% \input{tables/dataLumi/tf_mumu_zinv_sym.tex}
-%% \input{tables/dataLumi/tf_mumu_zinv_asym.tex}
-%% \input{tables/dataLumi/tf_mumu_zinv_mono.tex}
-
 \subsection{\texorpdfstring{\mht}{MHT} templates}
 
 The transfer factors described above provide an estimate of the lost
@@ -140,20 +106,20 @@ but inclusive with respect to \mht. However, the analysis utilises the
 \eg a potential contribution from SUSY processes. The \HTmiss
 information is incorporated into the likelihood model via an \mht
 template per (\njet, \scalht, \nb) category, $N_{\rm
-  MC}^{\ttw}(\HTmiss; \njet, \scalht, \nb)$, which is equivalent to
+  MC}^{\ttw}(\HTmiss;\; \njet, \scalht, \nb)$, which is equivalent to
 dicing the numerator of the TF according to \mht, \ie
 \begin{equation}
   \label{equ:pred-method}
   \npre^{\ttw}(\njet, \scalht, \nb, \HTmiss) = 
-  \frac{N_{\rm MC}^{\ttw}(\HTmiss; \njet, \scalht, \nb)}{N_{\rm MC}^{\mj}(\njet, \scalht, \nb)} 
+  \frac{N_{\rm MC}^{\ttw}(\HTmiss;\; \njet, \scalht, \nb)}{N_{\rm MC}^{\mj}(\njet, \scalht, \nb)} 
   \times 
   \nobs^{\mj}(\njet, \scalht, \nb)
 \end{equation}
-In this regard, the TFs described in Sec.~\ref{sec:ewk-method} provide
-an estimate of the normalisation for each \mht template. The \HTmiss
-templates are taken from simulation and the validity of the simulation
-modelling is tested extensively in the control regions, as described
-in Sec.~\ref{}.
+In this regard, the TFs described in Sec.~\ref{sec:tf-method-ttw}
+provide an estimate of the normalisation for each \mht template. The
+\HTmiss templates are taken from simulation and the validity of the
+simulation modelling is tested extensively in the control regions, as
+described in Sec.~\ref{}. 
 
 \subsection{Correcting the normalisation of the \texorpdfstring{\wj}{W+jets} and \texorpdfstring{\ttbar}{TTbar} simulated samples} 
 \label{sec:sideband-corrections}
@@ -166,29 +132,28 @@ procedure is the \HTmiss sideband, defined by $100 < \HTmiss <
 200\GeV$.
 
 Corrections to the inclusive cross sections of the dominant processes
-in the signal and control regions, namely \wj, \ttbar, and \zmumu\ +
-jets (and correspondingly \znunu\ + jets) are determined. These
-corrections are derived after all relevant corrections are applied to
-the simulated samples. Hence, these corrections are expected to be
-near unity for each process given that, for example, the simulated
-samples are normalised to the integrated luminosity of the data sets
-using the most accurate cross section calculations available,
-typically NNLO or better. However, there are various potential sources
-of bias that may lead to a non-negligible correction. For example,
-non-unity corrections may be due to the limited applicability of
-inclusive cross section calculations in the high-\scalht, high-\ETmiss
-corner of phase space used in this analysis. 
+in the signal and control regions, namely \wj and \ttbar, as well as
+\zmmj and \znunuj, are determined.\footnote{Corrections for the latter
+  two processes, \zmmj and \znunuj, are discussed in further \ detail
+  in Sec.~\ref{sec:sideband-corrections-zinv}.} These corrections are
+derived after all relevant corrections are applied to the simulated
+samples. Hence, these corrections are expected to be near unity for
+each process given that, for example, the simulated samples are
+normalised to the integrated luminosity of the data sets using the
+most accurate cross section calculations available, typically NNLO or
+better. However, there are various potential sources of bias that may
+lead to a non-negligible correction. For example, non-unity
+corrections may be due to the limited applicability of inclusive cross
+section calculations in the high-\scalht, high-\ETmiss corner of phase
+space used in this analysis.
 
 It is important to note that this iteration of the analysis is {\em
   not} sensitive to whether these corrections are applied or not, due
-to the way the transfer factors are constructed. Only the \zmmj
-sample is used to predict the \znunu\ background.\footnote{In the
-  previous iteration of the analysis, all three control regions (\mj,
-  \mmj, and \gj) were used to predict the \znunu\ background.}  The
-\mj sample, rich in \wj and \ttbar events, is used to predict the lost
-lepton background. Both control regions are constructed and binned to
-cover a kinematically similar phase space. Hence, the extrapolations
-are minimal and so the corrections have little impact on the transfer
+to the way the transfer factors are constructed. The \mj sample, rich
+in \wj and \ttbar events, is used to predict the lost lepton
+background. Both control regions are constructed and binned to cover a
+kinematically similar phase space. Hence, the extrapolations are
+minimal and so the corrections have little impact on the transfer
 factors.
 
 However, the corrections are still determined and propagated to all
@@ -205,16 +170,17 @@ uncertainties.
 The \HTmiss sidebands to the control regions are defined with an
 identical acceptance to the control regions (except for the \HTmiss
 requirement itself) and the sidebands are binned identically in terms
-of \njet, \scalht, and \nb.  
+of \njet, \scalht, and \nb. 
 
-A floating parameter per dominant process, namely \wj, \ttbar, and
-\zllj, encodes the correction for that process (fully correlated
-across all bins).  The \wj and \ttbar processes are mainly constrained
-by the \mj sideband while the \zllj process is constrained by the \mmj
-sideband. The values of the corrections and uncertainties
-given by the fit are shown in Table~\ref{tab:sbCorrsFromFit}.\\
-The correction derived for \zllj is also applied to the \znunu + jets
-simulated event sample.
+A single floating parameter per dominant process, namely \wj, \ttbar,
+and \zllj, encodes the correction for that process (fully correlated
+across all bins).  The \wj and \ttbar processes are constrained by the
+\mj sideband.\footnote{The \zllj process is constrained by the \mmj
+  sideband. The correction derived for \zllj is also applied to the
+  \znunu + jets simulated event sample. Details can be found in
+  Sec.\ref{sec:sideband-corrections-zinv}.}  The corrections and
+uncertainties for \wj and \ttbar, as determined by the fit, are shown
+in Table~\ref{tab:sbCorrsFromFit}.
 
 \begin{table}[!h]
   \scriptsize
@@ -229,8 +195,7 @@ simulated event sample.
     \textbf{Process} & \textbf{Sample} & \textbf{Corrrection} \\
     \hline
     \wj              & \mj             & $1.21 \pm 0.01$      \\
-    \ttbar + jets    & \mj, \mmj       & $0.93 \pm 0.01$      \\
-    \zj              & \mmj            & $1.07 \pm 0.01$      \\
+    \ttbar           & \mj, \mmj       & $0.93 \pm 0.01$      \\
     \hline
   \end{tabular}
 \end{table}
@@ -240,10 +205,43 @@ simulated event sample.
 
 The following sections address the estimation of systematic
 uncertainties related to the lost lepton background estimation. All
-relevant uncertainties are listed in Table~\ref{tab:systs}, along with
+relevant uncertainties are listed in Table~\ref{tab:systs-ttw}, along with
 their representative magnitudes and assumptions on inter-bin
 correlations. How the uncertainties are incorporated into the
 likelihood model is described in Sec.~\ref{sec:likelihood}. 
+
+\begin{table}[h!]
+  \caption{Sources of systematic uncertainty in the transfer factors
+    used to estimate the lost lepton background using the \mj control
+    region. Also shown are the correlating assumptions used and
+    representative magnitudes for the uncertainties [\%]. 
+  }   
+  \label{tab:systs-ttw}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lll }
+    \hline
+    Source of uncertainty               & Nuisance parameters (\ie correlation scheme)     & Magnitude                        \\
+    \hline
+    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    \wj / \ttbar composition            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    $N_\textrm{isr}$ (\ttbar)           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
+    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
+    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
+    W polarisation                      & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
+    Single isolated track veto          & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
+    \hline
+  \end{tabular}
+\end{table}
 
 Several sources of uncertainty are evaluated.  The most relevant
 effects are discussed below, and generally fall into one of two
@@ -285,7 +283,7 @@ unique underlying source and so the effect of each source is varied
 assuming a fully correlated behaviour across the full phase space of
 the signal and control regions.
 
-\subsubsection{PU reweighting}
+\subsubsection{Minimum bias cross section / pileup}
 \label{sec:tfSyst_pu}
 
 Events in simulation are reweighted in order to match the distribution
