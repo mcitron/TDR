@@ -3,109 +3,398 @@
 \section{``Lost lepton'' background estimation}
 \label{app:ttw}
 
+\subsection{The ``transfer factor'' method}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Transfer factors as a function of (\njet,\nb) and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tf_mu_Ttw_2d_nominalUp.pdf}
+  } \\
+  \subfigure[Transfer factor as a function of \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tf_mu_Ttw_njet_nominalUp.pdf}
+  } ~
+  \subfigure[Transfer factor as a function of \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tf_mu_Ttw_ht_nominalUp.pdf}
+  } \\
+  \subfigure[Transfer factor as a function of \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tf_mu_Ttw_bjet_nominalUp.pdf}
+  } ~
+  \subfigure[Transfer factor as a function of \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tf_mu_Ttw_ht_nominalUp.pdf}
+  } \\
+  \caption{\label{fig:tf_muToTtw} Transfer factors as a function of
+    (\njet, \nb) event category and \scalht. Also shown are
+    ``inclusive'' transfer factors as a function of \njet, \scalht,
+    \nb, and \HTmiss. (Each ``inclusive'' dependence is shown when
+    integrating over all other variables.) }
+\end{figure}
+
+\clearpage
 \subsection{PU reweighting}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[PU weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Up.pdf}
-  } ~~
-  \subfigure[PU weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allpuWeight_Down.pdf}
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_puWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_puWeightDown.pdf}
   }\\
-
-  \caption{\label{fig:tfSyst_pu_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying PU weight in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_puWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_puWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_puWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_puWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_pu_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in pileup.  }
 \end{figure}
 
+\clearpage
+\subsection{Effect of scale and PDF on lepton acceptance}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_scaleWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_scaleWeightDown.pdf}
+  }\\
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_scaleWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_scaleWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_scaleWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_scaleWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_scale_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in
+    renormalisation/factorisation scales.  }
+\end{figure}
+
+\clearpage
+\begin{figure}[!h]
+  \centering
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_pdfWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_pdfWeightDown.pdf}
+  }\\
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_pdfWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_pdfWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_pdfWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_pdfWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_pdf_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in parton density
+    functions.  } 
+\end{figure}
+
+\clearpage
+\subsection{\texorpdfstring{\wj}{W+jets} and \texorpdfstring{\ttbar}{TTbar} composition}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_xsWeightWUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_xsWeightWDown.pdf}
+  }\\
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_xsWeightWUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_xsWeightWUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_xsWeightWUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_xsWeightWUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_wjetxs_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in the \wj inclusive
+    cross section.  } 
+\end{figure}
+
+\clearpage
+\begin{figure}[!h]
+  \centering
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_xsWeightTtUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_xsWeightTtDown.pdf}
+  }\\
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_xsWeightTtUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_xsWeightTtUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_xsWeightTtUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_xsWeightTtUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_ttbarxs_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in the \ttbar
+    inclusive cross section.  }
+\end{figure}
+
+\clearpage
+\subsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
+  samples}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Correction versus W boson \Pt.]{
+    \includegraphics[width=0.4\textwidth,trim=0 150 0 150,crop]{figures/NLO/W.pdf}
+  } ~
+  \subfigure[Variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_bosonPtWeightDown.pdf}
+  }\\
+  \subfigure[Variation versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_bosonPtWeightUp.pdf}
+  } ~
+  \subfigure[Variation versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_bosonPtWeightUp.pdf}
+  } \\
+  \subfigure[Variation versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_bosonPtWeightUp.pdf}
+  } ~
+  \subfigure[Variation versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_bosonPtWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_nlo_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation when assuming uncertainties equal in magnitude to QCD +
+    EWK NLO corrections versus W boson \Pt.  }
+\end{figure}
+
+\clearpage
+\subsection{\texorpdfstring{\njet}{Njet}-dependent (``\texorpdfstring{$N_\textrm{isr}$}{Nisr}'') corrections for \ttbar}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_nIsrCenWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_nIsrCenWeightDown.pdf}
+  }\\
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_nIsrCenWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_nIsrCenWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_nIsrCenWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_nIsrCenWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_nisr_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in TTBAR NISR.  }
+\end{figure}
+
+\clearpage
 \subsection{Signal trigger efficiency}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[trigger weight up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Up.pdf}
-  } ~~
-  \subfigure[trigger weight down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltriggerWeight_Down.pdf}
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_triggerWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_triggerWeightDown.pdf}
   }\\
-
-  \caption{\label{fig:tfSyst_trigger_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying trigger weight in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_triggerWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_triggerWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_triggerWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_triggerWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_trigger_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in the signal trigger
+    efficiencies.  }
 \end{figure}
 
 \clearpage
-\subsection{Lepton trigger / identification / isolation efficiency}
+\subsection{Lepton trigger / identification / isolation efficiencies}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[muon scale factor up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Up.pdf}
-  } ~~
-  \subfigure[muon scale factor down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allmuonSfWeight_Down.pdf}
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_muonSfWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_muonSfWeightDown.pdf}
   }\\
-
-  \caption{\label{fig:tfSyst_muon_scale_factor_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying muon scale factor in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_muonSfWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_muonSfWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_muonSfWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_muonSfWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_muonsf_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in efficiencies
+    related to muon trigger, identification, and isolation.  }
 \end{figure}
 
+\clearpage
+\begin{figure}[!h]
+  \centering
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_leptonVetoSystFullSimWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_leptonVetoSystFullSimWeightDown.pdf}
+  }\\
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_leptonVetoSystFullSimWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_leptonVetoSystFullSimWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_leptonVetoSystFullSimWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_leptonVetoSystFullSimWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_leptonveto_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in the efficiency
+    with which leptons are vetoed for the signal region.  }
+\end{figure}
+
+\clearpage
 \subsection{Jet energy scale}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[JEC up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Up.pdf}
-  } ~~
-  \subfigure[JEC down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alljecWeight_Down.pdf}
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_jecUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_jecDown.pdf}
   }\\
-
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_jecUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_jecUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_jecUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_jecUp.pdf}
+  } \\
   \caption{\label{fig:tfSyst_jec_muToTtw} The relative change in the
-  $\mj \rightarrow \mathrm{\ttbar+W}$ transfer
-  factors when varying JEC in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in corrections to the
+    jet energy scale.  }
 \end{figure}
 
 \clearpage
-\subsection{b-tagging efficiency}
+\subsection{B-tagging efficiency and mistag probability}
 
 \begin{figure}[!h]
   \centering
-  \subfigure[b-tag SF (heavy) up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Up.pdf}
-  } ~~
-  \subfigure[b-tag SF (heavy) down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfWeight_Down.pdf}
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_bsfWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_bsfWeightDown.pdf}
   }\\
-
-  \caption{\label{fig:tfSyst_bsf_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying b-tag SF for heavy jets in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_bsfWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_bsfWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_bsfWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_bsfWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_bsf_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in the data/MC scale
+    factors associated with b-quark tag efficiency.  }
 \end{figure}
 
-\subsection{b-tagging mistag}
-
+\clearpage
 \begin{figure}[!h]
   \centering
-  \subfigure[b-tag SF (light) up variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfLightWeight_Up.pdf}
-  } ~~
-  \subfigure[b-tag SF (light) down variation]{
-    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_allbsfLightWeight_Down.pdf}
+  \subfigure[Up variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_bsfLightWeightUp.pdf}
+  } ~
+  \subfigure[Down variation versus (\njet,\nb) category and \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_2d_bsfLightWeightDown.pdf}
   }\\
-
-  \caption{\label{fig:tfSyst_bsfl_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-  factors when varying b-tag SF for light jets in MC within its uncertainties, as a function of \scalht and jet category. 
-  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-  }
+  \subfigure[Up/down variations versus \njet.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_njet_bsfLightWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \scalht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_bsfLightWeightUp.pdf}
+  } \\
+  \subfigure[Up/down variations versus \nb.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_bjet_bsfLightWeightUp.pdf}
+  } ~
+  \subfigure[Up/down variations versus \mht.]{
+    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/plots/tfratio_mu_Ttw_ht_bsfLightWeightUp.pdf}
+  } \\
+  \caption{\label{fig:tfSyst_bsfl_muToTtw} The relative change in the
+    ``$\mj \rightarrow \mathrm{tt+W}$'' transfer factors from
+    simulation due to $\pm1\sigma$ uncertainties in the data/MC scale
+    factors associated with b-quark mistag probabilities.  }
 \end{figure}
 
 \clearpage
@@ -125,30 +414,6 @@
     \label{fig:closure_AlphaT_mu}
   \end{center} 
 \end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/DoubleMu_alphaTExtrapolation_ht.pdf}~
-    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/DoubleMu_alphaTExtrapolation_nJet.pdf}\\ 
-    \caption{As for Fig.~\ref{fig:closure_AlphaT_mu} but probing the
-      modelling of an extrapolation in the \alphat variable with the
-      \mmj sample.
-    }
-    \label{fig:closure_AlphaT_mumu}
-  \end{center} 
-\end{figure}
-
-%\begin{figure}[h!]
-%  \begin{center}
-%    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/SinglePhoton_alphaTExtrapolation_ht.pdf}~
-%    \includegraphics[width=0.45\textwidth]{figures/closureTests/AlphaT/SinglePhoton_alphaTExtrapolation_nJet.pdf}\\ 
-%    \caption{As for Fig.~\ref{fig:closure_AlphaT_mu} but probing the
-%      modelling of an extrapolation in the \alphat variable with the
-%      \gj sample.
-%    }
-%    \label{fig:closure_AlphaT_phot}
-%  \end{center} 
-%\end{figure}
 
 \begin{figure}[h!]
   \begin{center}
@@ -175,30 +440,6 @@
       statistical uncertainty. The post-fit closure (open markers) is
       also shown (see text for details).  }
     \label{fig:closure_bDPhi_mu}
-  \end{center} 
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/DoubleMu_bdphiExtrapolation_ht.pdf}~
-    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/DoubleMu_bdphiExtrapolation_nJet.pdf}\\ 
-    \caption{As for Fig.~\ref{fig:closure_bDPhi_mu} but probing the
-      modelling of an extrapolation in the \bdphi variable with the
-      \mmj sample.
-    }
-    \label{fig:closure_bDPhi_mumu}
-  \end{center} 
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/SinglePhoton_bdphiExtrapolation_ht.pdf}~
-    \includegraphics[width=0.45\textwidth]{figures/closureTests/bDPhi/SinglePhoton_bdphiExtrapolation_nJet.pdf}\\ 
-    \caption{As for Fig.~\ref{fig:closure_bDPhi_mu} but probing the
-      modelling of an extrapolation in the \bdphi variable with the
-      \gj sample.
-    }
-    \label{fig:closure_bDPhi_phot}
   \end{center} 
 \end{figure}
 
@@ -300,56 +541,4 @@
     \label{fig:dataMC_SITEvent_mu}
   \end{center} 
 \end{figure}
-
-
-
-
-%\subsection{Top $p_T$ reweighting}
-%
-%\begin{figure}[!h]
-%  \centering
-%  \subfigure[top $p_{T}$ weight up variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-%  } ~~
-%  \subfigure[top $p_{T}$ weight down variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-%  }\\
-%
-%  \caption{\label{fig:tfSyst_topPt_muToZinv} The relative change in
-%  the $\mj \rightarrow (\znunu)$ transfer
-%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-%  }
-%\end{figure}
-%
-%\begin{figure}[!h]
-%  \centering
-%  \subfigure[top $p_{T}$ weight up variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-%  } ~~
-%  \subfigure[top $p_{T}$ weight down variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Zinv/mumu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-%  }\\
-%
-%  \caption{\label{fig:tfSyst_topPt_mumuToZinv} The relative change in
-%  the $\mmj \rightarrow (\znunu)$ transfer
-%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-%  }
-%\end{figure}
-%
-%\begin{figure}[!h]
-%  \centering
-%  \subfigure[top $p_{T}$ weight up variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Up.pdf}
-%  } ~~
-%  \subfigure[top $p_{T}$ weight down variation]{
-%    \includegraphics[width=0.5\textwidth]{figures/mcSystematics36p4fb/Ttw/mu/ratiotfh_ht_mht_alltopPtWeight_Down.pdf}
-%  }\\
-%
-%  \caption{\label{fig:tfSyst_topPt_muToTtw} The relative change in the $\mj \rightarrow \mathrm{tt+W}$ transfer
-%  factors when varying top $p_{T}$ weight in MC within its uncertainties, as a function of \scalht and jet category. 
-%  Variations corresponding to $+1\sigma$ ($-1\sigma$) are shown in the left (right) figure. 
-%  }
-%\end{figure}
 
