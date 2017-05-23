@@ -81,12 +81,14 @@ estimates for the SM backgrounds in the signal region can be
 made. Any signal contamination is accounted for in the likelihood
 model (Sec.~\ref{sec:likelihood}). 
 
-The transfer factors account for differences between the \mj control
-and signal due to the acceptance times efficiency for the
-reconstructed muon and extrapolations in kinematic quantities. For
-example, the dependence on \njet, \scalht, and \nb is largely
-attributable to the \alphat and \bdphi requirements for the signal
-region (that are not used in the \mj control region). 
+Figure~\ref{fig:tf_muToTtw} (App.~\ref{app:ttw}) shows the magnitude
+of the transfer factors, typically $\ll 1$, The transfer factors
+account for differences between the \mj control and signal due to the
+acceptance times efficiency for the reconstructed muon and
+extrapolations in kinematic quantities. For example, the dependence on
+\njet, \scalht, and \nb is largely attributable to the \alphat and
+\bdphi requirements for the signal region (that are not used in the
+\mj control region).
 
 Many systematic effects are expected to cancel largely in the transfer
 factor. However, a systematic uncertainty is assigned to each transfer
@@ -193,23 +195,26 @@ However, the corrections are still determined and propagated to all
 steps of the analysis, as they are relevant for some of the
 data-driven derivation of systematic uncertainties, such as the
 closure tests (Sec.~\ref{sec:closure-tests}) and cross checks of the
-\HTmiss modelling (Sec.~\ref{sec:}). Further, the uncertainty in these
-corrections are not propagated, as any inaccuracy is -- by
-construction -- covered by the aforementioned data-driven procedures
-to determine systematic uncertainties.
+\HTmiss modelling (Sec.~\ref{sec:}). Without these corrections, the
+derived systematic uncertainties could be (unnecessarily)
+inflated. Further, the uncertainty in these corrections are not
+propagated, as any inaccuracy is -- by construction -- covered by the
+aforementioned data-driven procedures to determine systematic
+uncertainties.
 
 The \HTmiss sidebands to the control regions are defined with an
 identical acceptance to the control regions (except for the \HTmiss
 requirement itself) and the sidebands are binned identically in terms
 of \njet, \scalht, and \nb.  
 
-A floating parameter per process (\wj ) encodes the correction for
-that process (fully correlated across all bins).  The \wj and \ttbar
-processes are mainly constrained by the \mj sideband while the \zj
-process is constrained by the \mmj sideband. The values of the
-corrections and uncertainties
+A floating parameter per dominant process, namely \wj, \ttbar, and
+\zllj, encodes the correction for that process (fully correlated
+across all bins).  The \wj and \ttbar processes are mainly constrained
+by the \mj sideband while the \zllj process is constrained by the \mmj
+sideband. The values of the corrections and uncertainties
 given by the fit are shown in Table~\ref{tab:sbCorrsFromFit}.\\
-The correction derived for \zj is also applied to the \znunu sample.
+The correction derived for \zllj is also applied to the \znunu + jets
+simulated event sample.
 
 \begin{table}[!h]
   \scriptsize
@@ -237,7 +242,8 @@ The following sections address the estimation of systematic
 uncertainties related to the lost lepton background estimation. All
 relevant uncertainties are listed in Table~\ref{tab:systs}, along with
 their representative magnitudes and assumptions on inter-bin
-correlations.  
+correlations. How the uncertainties are incorporated into the
+likelihood model is described in Sec.~\ref{sec:likelihood}. 
 
 Several sources of uncertainty are evaluated.  The most relevant
 effects are discussed below, and generally fall into one of two
@@ -290,6 +296,91 @@ section used in the reweighting procedure.  The relative change in the
 transfer factors under this variation is small, at the few percent
 level, as shown in Fig.~\ref{fig:tfSyst_pu_muToTtw}
 (App~\ref{app:ttw}).
+
+\subsubsection{Effect of scale and PDF on lepton acceptance}
+\label{sec:tfSyst_pdf}
+
+Theoretical uncertainties from choices in the renormalisation and
+factorisation scales, as well as the parton distribution function, can
+introduce systematic uncertaintes on lepton acceptance. The scales
+$\mu_R$ and $\mu_F$ are varied by 0.5 and 2.0. Theoretical
+uncertainties from parton distribution function are varied according
+to the recommended prescription from PDF4LHC~\cite{PDF4LHC:2015}. The
+magnitude of the variations in the transfer factors are small,
+typically at the $\sim X\%$
+level. Figures~\ref{fig:tfSyst_scale_muToTtw} and
+\ref{fig:tfSyst_pdf_muToTtw} (App.~\ref{app:ttw}) show the behaviour
+in the transfer factors for variations in scale and PDF, respectively.
+
+\subsubsection{\texorpdfstring{\wj}{W+jets} and \texorpdfstring{\ttbar}{TTbar} composition}
+\label{sec:tfSyst_ttW_composition}
+
+The relative composition of \wj with respect to \ttbar in the \mj
+control region differs relative to that in the signal region, due to
+the application of different kinematic requirements (\eg \mt in the
+control region, \alphat and \bdphi in the signal region). Hence,
+uncertainties in the inclusive cross sections for \wj and \ttbar may
+result in variations in the transfer factors as a function of \njet,
+\scalht, and \nb, as well as the \HTmiss templates.
+
+A correction to the inclusive cross sections is applied via the
+procedure described in Sec.~\ref{sec:sideband-corrections}, which
+adjusts the normalisation of the simulated \wj and \ttbar event
+samples to match the data counts in a \HTmiss sideband that
+(otherwise) covers an identical region of phase space to the \mj
+control region.
+
+Following this procedure, the normalisation for the \wj process is
+varied by twice the relative uncertainty in the latest CMS measurement
+of the inclusive cross section, while preserving the {\it sum} of the
+\wj and \ttbar (and other residual) contributions integrated across
+the full phase space of the signal region and, separately, the \mj
+control region, in order to see the effect on the ``shape'' of the
+transfer factors and the \HTmiss templates. Similarly, the same same
+procedure is repeated for variations in the \ttbar normalisation. The
+resulting variations are summarised in
+Fig.~\ref{fig:tfSyst_ttW_composition_muToTtw} (App.~\ref{app:ttw}).
+
+\subsubsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
+  samples}
+\label{sec:nlo}
+
+The \wj process are generated at leading order with the \MADGRAPH
+code. The effect of missing higher-order QCD and EWK corrections are
+studied by considering the effect of LO$\rightarrow$NLO corrections,
+determined as a function of W boson \Pt and shown in in
+Fig.~\ref{fig:tfSyst_nlo_muToTtw} (App.~\ref{app:ttw}), on the
+transfer factors and \HTmiss templates. 
+
+All events in the control and signal regions are categorised
+identically according to \njet and \scalht. The NLO corrections are
+determined based on matrix element calculations that consider up to 3
+(1) radiated partons for QCD (EWK) processes. Hence the calculations
+are not necessarily correct for the high-\njet phase space covered by
+this analysis. Hence, these NLO corrections are not applied directly,
+but instead are propagated as an uncertainty through the
+analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw} (App.~\ref{app:ttw}) show
+the effect on the transfer factors as a function of the various
+discriminating variables. Uncertainties are typically at the percent
+level and as large as $\sim 10\%$.
+
+\subsubsection{\texorpdfstring{\njet}{Njet}-dependent (``\texorpdfstring{$N_\textrm{isr}$}{Nisr}'') corrections for \ttbar}
+\label{sec:nisr}
+
+The recommendations from the SUSY group to reweight \MADGRAPH \ttbar
+Monte Carlo events according to the number of ISR jets ($N_J^{ISR}$)
+identified in the event is described in
+Sec.~\ref{sec:nisr}. 
+
+For consistency, we follow a similar treatment to the NLO corrections
+described above. All events in the control and signal regions are
+categorised identically according to \njet, hence the analysis is not
+sensitive to the $N_\textrm{isr}$ corrections. Hence, these
+corrections are not applied directly, but instead are propagated as an
+uncertainty through the analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw}
+(App.~\ref{app:ttw}) show the effect on the transfer factors as a
+function of the various discriminating variables. Uncertainties are in
+typically $\ll 5\%$.
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
@@ -374,7 +465,7 @@ a function of \scalht and jet category in
 Fig.~\ref{fig:tfSyst_jec_muToTtw} (App.~\ref{app:ttw}). The changes
 are typically in the range of $1-5\%$.
 
-\subsubsection{B-tagging efficiency}
+\subsubsection{B-tagging efficiency and mistag probability}
 \label{sec:tfSyst_btag}
 
 Scale factors provided by the BTV POG are applied to the MC samples to
@@ -396,43 +487,6 @@ separately.  The relative change in the transfer factors is presented
 as a function of \scalht and jet category in
 Figs.~\ref{fig:tfSyst_bsf_muToTtw} and \ref{fig:tfSyst_bsfl_muToTtw}
 (App.~\ref{app:ttw}).  They are typically in the range of $1-3\%$.
-
-\subsubsection{PDF and scale uncertainties}
-\label{sec:tfSyst_pdf}
-
-Theoretical uncertainties from choices in the parton distribution
-function and renormalisation/factorisation scale can introduce
-systematic uncertaintes on lepton acceptance, \ie the fraction of
-leptons out of $p_{T}$ or $\eta$ range. The effect can then be
-parametrized with the variable \flepAccep in
-Section~\ref{sec:leptonSyst}. Theoretical uncertainties from parton
-distribution function are varied according to the recommended
-prescription from PDF4LHC~\cite{PDF4LHC:2015}. The scales $\mu_R$ and
-$\mu_F$ are varied by 0.5 and 2.0. The systematic variations are found
-to be less than 1\%.
-
-\subsubsection{\texorpdfstring{\wj}{W+jets} and \texorpdfstring{\ttbar}{TTbar} composition}
-\label{sec:tfSyst_ttW_composition}
-
-The normalisation of the simulated \wj and \ttbar event samples are
-corrected to data in the \HTmiss sideband using the procedure
-described in Sec.~\ref{sec:sideband-corrections}. 
-
-Subsequently, the normalisation for the \wj process is varied by twice
-the relative uncertainty in the latest CMS measurement of the
-inclusive cross section, while preserving the sum of the \wj and
-\ttbar contributions, to see the effect on the ``shape'' of the
-transfer factors and the \HTmiss templates. Similarly, the same
-same procedure is repeated for variations in the \ttbar
-normalisation. The resulting variations are summarised in
-Fig.~\ref{fig:tfSyst_ttW_composition_muToTtw} (App.~\ref{app:ttw}). 
-
-\subsubsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
-  samples}
-\label{sec:nlo}
-
-\subsubsection{\texorpdfstring{\njet}{Njet}-dependent (``\texorpdfstring{$N_\textrm{isr}$}{Nisr}'') corrections for \ttbar}
-\label{sec:nisr}
 
 \subsection{Systematics uncertainties from data-driven tests}
 \label{sec:closure-tests}
@@ -458,7 +512,7 @@ is used per \scalht category (\ie correlated over \njet and \nb) and
 per \njet category (\ie correlated over \scalht and \nb) for all
 sources of uncertainty listed in this section. 
 
-\subsection{Extrapolation in \texorpdfstring{\alphat}{AlphaT} and
+\subsubsection{Extrapolation in \texorpdfstring{\alphat}{AlphaT} and
   \texorpdfstring{\bdphi}{biased dPhi}}
 \label{sec:tfSyst_alphaT}
 
