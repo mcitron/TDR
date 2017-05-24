@@ -119,10 +119,11 @@ and systematic uncertainties associated with the method, are
 propagated through the analysis.
 
 The distribution of the number of bjets (\nb) is estimated from
-generator-level information contained in the simulation. The number of
+generator-level information contained in the simulation.
+The number of
 reconstruction-level jets matched to underlying bottom quarks
 ($\nb^{\rm gen}$), charm quarks ($n_{\rm c}^{\rm gen}$), and
-light-flavoured (LF) partons, i.e. $u,d,s$ quarks and gluons ($n_{\rm
+light-flavoured (LF) partons, (i.e.\ $u,d,s$ quarks and gluons, $n_{\rm
   LF}^{\rm gen}$) per event, $N(\nb^{\rm gen},n_{\rm c}^{\rm
   gen},n_{\rm LF}^{\rm gen})$, is recorded in bins of (\njet ,
 \scalht, \mht).  The matching between truth-level partons and
@@ -138,22 +139,40 @@ each of $\epsilon_{\rm b}$, $\epsilon_{\rm c}$, and $\epsilon_{\rm
 data. These corrections, or ``scale factors'', are provided by the BTV
 POG~\cite{btagMCTools}.
 
-The above information is sufficient to predict the total number of
-b-tagged jets in the event $n^{\rm tag} \equiv n_{\rm b}^{\rm tag} +
-n_{\rm c}^{\rm tag} + n_{\rm LF}^{\rm tag}$ and thus also determine the
-event yield $N(n^{\rm tag})$ from simulation for a given bin in
-(\njet,~\scalht,~\mht) with the expression:
+Based on the known the mean tagging efficiency and mistag rates, for a given
+number of truth-level jets of a particular type (b, c, or LF) the probability of
+identifying a particular number of b-tagged jets is given by a binomial distribution:
 \begin{equation}
-  \label{equ:btag-formula}
-  N(n^{\rm tag}) = \sum_{n_{i}^{\rm gen}} N(n_{\rm b}^{\rm gen},n_{\rm
-    c}^{\rm gen},n_{\rm LF}^{\rm gen}) \times (\sum_{n_{i}^{\rm
-      tag}}P_{\rm b}\times P_{\rm c} \times P_{\rm LF}) 
+P_i = P(n_{i}^{\rm tag}| n_{i}^{\rm gen}, \epsilon_{i}) =
+     \left(\begin{matrix}{n_{i}^{\rm tag} \\ n_{i}^{\rm gen}\end{matrix}\right)
+     \left(\epsilon_i\right)^{\left(n_{i}^{\rm tag}\right)}
+     \left(1 - \epsilon_i\right)^{\left(n_{i}^{\rm gen} - n_{i}^{\rm tag}\right)}
 \end{equation}
-where $n_{\rm b}^{\rm tag}$, $n_{\rm c}^{\rm tag}$ and $n_{\rm
-  LF}^{\rm tag}$ are the number of reconstructed and b-tagged jets
-which are matched to a b, c, and LF quark respectively and $P_{i} =
-P_{\mathrm{binomial}}(n_{i}^{\rm tag}; n_{i}^{\rm gen}, \epsilon_{i})$
-is the usual binomial probability density.
+where $i$ is either b, c, or an LF quark.
+
+The overall probability of a given combination of tagged jets is the product of
+the individual probabilities for each category, i.e.:
+\begin{equation}
+	P\left(n_{\rm b}^{\rm tag},  n_{\rm c}^{\rm tag}, n_{\rm LF}^{\rm tag}| 
+  n_{\rm b}^{\rm gen},  n_{\rm c}^{\rm gen}, n_{\rm LF}^{\rm gen}\right) = 
+	P_{\rm b} P_{\rm c} P_{\rm LF} 
+\end{equation}
+
+Since the total number of tags in an event is given by 
+$\nb \equiv n_{\rm b}^{\rm tag} + n_{\rm c}^{\rm tag} + n_{\rm LF}^{\rm tag}$
+the predicted number of events with a total number of b-tagged jets can be evaluated
+by the sum:
+\begin{equation}
+	N(\nb) = \sum_{\nb^{\rm gen}} \sum_{n_{\rm c}^{\rm gen}} \sum_{n_{\rm LF}^{\rm gen}}
+	\left[
+N\left(\nb^{\rm gen},n_{\rm c}^{\rm gen},n_{\rm LF}^{\rm gen}\right)
+\sum P\left(n_{\rm b}^{\rm tag},  n_{\rm c}^{\rm tag}, n_{\rm LF}^{\rm tag}| 
+  n_{\rm b}^{\rm gen},  n_{\rm c}^{\rm gen}, n_{\rm LF}^{\rm gen}\right) 
+	\right]
+\end{equation}
+where the inner-most sum runs over all combinations of 
+$\nb^{\rm tag},n_{\rm c}^{\rm tag},n_{\rm LF}^{\rm tag}$
+such that the total number of tagged jets is equal to \nb.
 
 As a simple example, consider a bin with 2 reconstructed jets, in
 which 1000 events contain 2 light-flavoured jets, i.e. $(n_{\rm
@@ -175,16 +194,18 @@ N(1) = & \; 1000\times (1-\epsilon_{\rm LF})\times \epsilon_{\rm LF} \times 2 \;
      = & \; \phantom{1}343.3                                                      \\
 N(2) = & \; \phantom{1}500\times \epsilon_{\rm b} \times \epsilon_{\rm LF} \;+    \\
        & \; 1000\times \epsilon_{\rm LF}^2                                        \\
-     = & \; \phantom{100}3.35                                                     \\
-%% \end{split}
+     = & \; \phantom{100}3.35
 \end{align*}
-  
+
 The method exploits the ability to make precise measurements of
 $N(n_{\rm b}^{\rm gen},n_{\rm c}^{\rm gen},n_{\rm LF}^{\rm gen})$,
-$\epsilon$, \fixme{$f_{\rm c}$, and $f_{\rm LF}$} independently of $n_{\rm b}$,
-which means that event yields for a given b-quark jet multiplicity can
+and the average b-tag and mis-tag efficiencies,
+$\epsilon$, $f_{\rm c}$, and $f_{\rm LF}$
+independently of $n_{\rm b}$, allowing for 
+event yields for a given b-quark jet multiplicity to
 be predicted with a higher statistical precision than obtained
-directly from simulation. Precise measurements of $f_{\rm c}$ and
+directly from simulation.
+Precise measurements of $f_{\rm c}$ and
 $f_{\rm LF}$ are particularly important for events with $n_{\rm b} \geq
 3$, which often occur in the SM because of the presence of mistagged
 jets in the event. In this case, the largest background is \ttbar,
