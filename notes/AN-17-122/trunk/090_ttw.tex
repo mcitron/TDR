@@ -194,7 +194,9 @@ in Table~\ref{tab:sbCorrsFromFit}.
     \hline
     \textbf{Process} & \textbf{Sample} & \textbf{Corrrection} \\
     \hline
-    \wj              & \mj             & $1.21 \pm 0.01$      \\
+%    \wj              & \mj             & $1.21 \pm 0.01$      \\ % no NLO/NISR 
+%    \ttbar           & \mj, \mmj       & $0.92 \pm 0.01$      \\ % no NLO/NISR
+    \wj              & \mj             & $1.06 \pm 0.01$      \\
     \ttbar           & \mj, \mmj       & $0.93 \pm 0.01$      \\
     \hline
   \end{tabular}
@@ -213,32 +215,36 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
 \begin{table}[h!]
   \caption{Sources of systematic uncertainty in the transfer factors
     used to estimate the lost lepton background using the \mj control
-    region. Also shown are the correlating assumptions used and
-    representative magnitudes for the uncertainties [\%]. 
+    region. Also shown are the nuisance parameters and correlation
+    scheme, as well as representative magnitudes for the uncertainties
+    [\%]. The ``type'' refers to whether the nuisance parameters are
+    unique to the lost lepton background or shared with the \znunuj
+    background estimate (see Table~\ref{tab:systs-zinv}). 
   }   
   \label{tab:systs-ttw}
   \centering
   \footnotesize
-  \begin{tabular}{ lll }
+  \begin{tabular}{ llll }
     \hline
-    Source of uncertainty               & Nuisance parameters (\ie correlation scheme)     & Magnitude                        \\
+    Source of uncertainty               & Nuisance parameters / correlation                & Magnitude                        & Shared \\
     \hline
-    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    \wj / \ttbar composition            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    $N_\textrm{isr}$ (\ttbar)           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           \\
-    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
-    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
-    W polarisation                      & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
-    Single isolated track veto          & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) \\
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories     & 1--$\sim$50\%                    & Unique \\
+    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    \wj / \ttbar composition            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
+    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    $N_\textrm{isr}$ (\ttbar)           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
+    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
+    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
+    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    W polarisation                      & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    Single isolated track veto          & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
     \hline
   \end{tabular}
 \end{table}
@@ -350,17 +356,24 @@ determined as a function of W boson \Pt and shown in in
 Fig.~\ref{fig:tfSyst_nlo_muToTtw} (App.~\ref{app:ttw}), on the
 transfer factors and \HTmiss templates. 
 
-All events in the control and signal regions are categorised
-identically according to \njet and \scalht. The NLO corrections are
-determined based on matrix element calculations that consider up to 3
-(1) radiated partons for QCD (EWK) processes. Hence the calculations
-are not necessarily correct for the high-\njet phase space covered by
-this analysis. Hence, these NLO corrections are not applied directly,
-but instead are propagated as an uncertainty through the
-analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw} (App.~\ref{app:ttw}) show
-the effect on the transfer factors as a function of the various
-discriminating variables. Uncertainties are typically at the percent
-level and as large as $\sim 10\%$.
+Simulated \wj events are weighted according to these NLO corrections,
+and the magnitude of each correction is propagated as an uncertainty
+throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw}
+(App.~\ref{app:ttw}) show the effect on the transfer factors as a
+function of the various discriminating variables. Uncertainties are
+typically at the percent level and as large as $\sim 10\%$.
+
+%All events in the control and signal regions are categorised
+%identically according to \njet and \scalht. The NLO corrections are
+%determined based on matrix element calculations that consider up to 3
+%(1) radiated partons for QCD (EWK) processes. Hence the calculations
+%are not necessarily correct for the high-\njet phase space covered by
+%this analysis. Hence, these NLO corrections are not applied directly,
+%but instead are propagated as an uncertainty through the
+%analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw} (App.~\ref{app:ttw}) show
+%the effect on the transfer factors as a function of the various
+%discriminating variables. Uncertainties are typically at the percent
+%level and as large as $\sim 10\%$.
 
 \subsubsection{\texorpdfstring{\njet}{Njet}-dependent (``\texorpdfstring{$N_\textrm{isr}$}{Nisr}'') corrections for \ttbar}
 \label{sec:nisr}
@@ -370,15 +383,14 @@ Monte Carlo events according to the number of ISR jets ($N_J^{ISR}$)
 identified in the event is described in
 Sec.~\ref{sec:nisr}. 
 
-For consistency, we follow a similar treatment to the NLO corrections
-described above. All events in the control and signal regions are
-categorised identically according to \njet, hence the analysis is not
-sensitive to the $N_\textrm{isr}$ corrections. Hence, these
-corrections are not applied directly, but instead are propagated as an
-uncertainty through the analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw}
-(App.~\ref{app:ttw}) show the effect on the transfer factors as a
-function of the various discriminating variables. Uncertainties are in
-typically $\ll 5\%$.
+All events in the control and signal regions are categorised
+identically according to \njet, hence the analysis is not sensitive to
+the $N_\textrm{isr}$ corrections. Regardless, these corrections are
+applied to simulated \ttbr event, and half the correction is
+propagated as an uncertainty throughout the
+analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw} (App.~\ref{app:ttw}) show
+the effect on the transfer factors as a function of the various
+discriminating variables. Uncertainties are in typically $\ll 5\%$.
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
@@ -393,58 +405,132 @@ Fig.~\ref{fig:tfSyst_trigger_muToTtw} (App~\ref{app:ttw}).
 \subsubsection{Lepton trigger / identification / isolation efficiencies}
 \label{sec:leptonSyst}
 
-The muon trigger efficiency is emulated in the simulation and data/MC
-scale factors provided by the muon POG are applied to account for
-differences in the determination of the muon trigger efficiency from
-data and simulation.
-
-Leptons out of $p_{T}$ and $\eta$ acceptance, or within detector
-acceptance but not identified properly by lepton identification or
-isolation requirements contribute to the so-called ``lost-lepton
-background'', which mainly stem from W and \ttbar events.  The
-fraction of events with leptons out of acceptance (\flepAccep) is
-calculated from generator truth level information for each MC
-sample. Differences in efficiencies between data and simulation are
-accounted for with data/MC scale factors for trigger, lepton
-identification and isolation~\cite{twiki-leptonSF}, and change the
-lost lepton background in the signal region and yields in muon control
-regions simultaneously. 
-
-The effect of lepton reconstruction on the lost lepton background can
-be summarised in the following expressions respectively:
+The number of events $N^{\mj}$ in the \mj control region is given by
 \begin{equation}
-    \label{eq:lostLepSR}
-    \sum_{sample} [ R_{sample} \times \flepAccep \times N^{GEN}_{sample} \times ( 1 - \epsilon_{Loose} ) + ( 1 - \flepAccep ) \times N^{GEN}_{sample} ]
+  \label{eq:lepton_eff_mj}
+  N^{\mj} = 
+  N^\textrm{gen}_\mu \,
+  \mathcal{A}_\mu \,
+  \varepsilon^\textrm{trig}_\mu \,
+  \varepsilon^\textrm{ID}_\mu \,
+  \varepsilon^\textrm{iso}_\mu  
 \end{equation}
+where: $N^\textrm{gen}_\mu$ is the expected number of simulated events
+(weighted to the integrated luminosity) containing a generator-level
+prompt muon prior to event selection requirements; and
+$\mathcal{A}^\mu$, $\varepsilon^\textrm{trig}^\mu$,
+$\mathcal{A}^\mu$, $\varepsilon^\textrm{ID}^\mu$, and
+$\varepsilon^\textrm{iso}^\mu$, are the muon acceptance and the
+trigger, identification, and isolation efficiencies, respectively,
+which are assumed to factorise. 
+
+%The number of events $N^\textrm{SR}$ in the signal region is defined
+%by
+%\begin{equation}
+%  \label{eq:lepton_eff_sr}
+%  N^\textrm{SR} 
+%  \; = \; 
+%  \sum_{\ell = \mu,e} \; N^\textrm{SR}_\ell
+%\end{equation}
+%where $N^\textrm{SR}_\ell$ is the number of events containing a
+%generator-level particle $\ell$ in the signal region, and the
+%summation is performed assuming $\ell$ is either a generator-level
+%prompt muon or electron.
+
+The number of events $N^\textrm{SR}$ in the signal region is given by
 \begin{equation}
-    \label{eq:lostLepCR}
-    \sum_{sample} N^{GEN}_{sample} \times \epsilon_{Tight} \times R_{sample}
+  \label{eq:lepton_eff_sr}
+  N^\textrm{SR} 
+  \; = \; 
+  \sum_{\ell = \mu,e} 
+  N^\textrm{gen}_\ell 
+  \; [ \;
+  (1-\mathcal{A}_\ell)
+  \; + \;
+  \mathcal{A}_\ell \,
+  (1-\varepsilon^\textrm{trig}_\ell)
+  \; + \;
+  \mathcal{A}_\ell \,
+  \varepsilon^\textrm{trig}_\ell \,
+  (1-\varepsilon^\textrm{ID}_\ell)
+  \; + \;
+  \mathcal{A}_\ell \,
+  \varepsilon^\textrm{trig}_\ell \,
+  \varepsilon^\textrm{ID}_\ell \,
+  (1-\varepsilon^\textrm{iso}_\ell)
+  \; ]
 \end{equation}
-where $R_{sample}$ is the cross section reweighting factor for each
-sample, $N^{GEN}_{sample}$ is the total MC events for the category,
-$\epsilon_{Tight}$ and $\epsilon_{Loose}$ are the lepton efficiency
-for Tight and Loose working point. For the numerator, full signal
-selection except the lepton veto to mimic signal region phase space as
-closely as possible. For the denominator, the full selection for the
-\mj control sample is applied.
+where: $N^\textrm{gen}_\ell$ is the expected number of simulated
+events (weighted to the integrated luminosity) containing the
+generator-level particle $i$ prior to event selection requirements;
+and $\mathcal{A}_\ell$, $\varepsilon^\textrm{ID}_\ell$, and
+$\varepsilon^\textrm{iso}_\ell$ are the experimental acceptance and
+the trigger, identification, and isolation efficiencies for the lepton
+$\ell$, respectively. The summation is performed assuming $\ell$ is
+either a generator-level prompt muon or electron. The four terms of
+Eq.~\ref{eq:lepton_eff_sr_ell} are assumed to factorise and provide
+the number of events (containing either a muon or an electron) that
+fail requirements on acceptance, trigger, identification, and
+isolation, respectively.
 
-The systematic variations on the signal region and control region are
-computed by varying the lepton scale factor up and down according to
-each source of uncertainty.  Data/MC lepton scale factors have
-negligible statistical uncertainties. The procedure is repeated
-separately for muons and electrons. The relative change in the
-transfer factors is summarised in
-Fig.~\ref{fig:tfSyst_muon_scale_factor_muToTtw} (App~\ref{app:ttw}).
+The effect of theory related uncertainties on lepton acceptance,
+$\mathcal{A}_\ell$, for the \mj control and signal regions is
+described in other sections (\eg Sec.~\ref{sec:tfSyst_pdf} for scale
+and PDF uncertainties).
 
-A log-normal systematic uncertainty of 5\% is assigned to
-$\mathrm{tt+W}$ in the signal region, and one with 2\% to the control
-region. The two systematics are taken to be anti-correlated with each
-other.
+The effect of experimental uncertainties in efficiency measurements
+related to trigger, identification, and isolation requirements are
+dsecribed below for both the \mj sample (Eq.~\ref{eq:lepton_eff_mj})
+and signal region (Eq.~\ref{eq:lepton_eff_sr}).
 
-Finally, the $\eta$-dependent muon tracking scale factors provided by
-the muon POG to cover the effect of HIP inefficiencies have been
+\subsubsection*{Selection efficiencies (\mj control region)}
+
+The various efficiencies in Eq.~\ref{eq:lepton_eff_mj} are emulated as
+part of the detector simulation. Further, (typically near-unity)
+data/simulation scale factors are determined and applied to the
+simulated events to ensure the emulated efficiencies match the
+corresponding measurements in data.
+
+The muon trigger efficiency $\varepsilon^\textrm{trigger}_\mu$ is
+emulated in the simulation. Data/MC scale factors provided by the muon
+POG are applied to account for differences in the determination of the
+muon trigger efficiency from data and simulation. The scale factors
+are near-unity and their uncertainties are at the percent level. 
+
+The Tight working point for identification and relative isolation
+requirements are applied, as described in
+Sec.~\ref{sec:muon-id}. Data/simulation scale factors provided by the
+muon POG are applied. Again, the scale factors are near-unity and
+their uncertainties are at the percent level.
+
+Finally, $\eta$-dependent muon tracking scale factors provided by the
+muon POG, to cover inefficiencies due to the ``HIP effect'', have been
 applied and their uncertainties taken into consideration. Their effect
-on the transfer factors is found to be less than 1\%.
+is typically at the percent level. 
+
+The uncertainties in the scale factors have been propagated through to
+the transfer factors and \mht templates. A flat 2\% uncertainty, shown
+in Fig~\ref{fig:tfSyst_muonsf_muToTtw} (App.~\ref{app:ttw}), fully
+correlated in \njet, \scalht, \nb, and \mht, is assumed to cover the
+aforementioned effects.
+
+\subsubsection*{Veto efficiencies (signal region)}
+
+Uncertainties in the signal trigger efficiencies are covered in
+Sec.~\ref{sec:tfSyst_trigger}. In terms of vetoing leptons (both muons
+and electrons) within the experimental acceptance of the signal
+region, the Loose working point for identification and
+``mini-isolation'' requirements are applied, as detailed in
+Secs.~\ref{sec:muon-id} and \ref{sec:electron-id}. The data/simulation
+scale factors are provided by the SUSY scale factor working
+group~\cite{twiki-leptonSF}. Again, the scale factors are near unity
+with uncertainties of a few percent, which have been propagated
+through to the transfer factors and \mht templates. A flat 5\%
+uncertainty, shown in Fig~\ref{fig:tfSyst_leptonveto_muToTtw}
+(App.~\ref{app:ttw}), fully correlated in \njet, \scalht, \nb, and
+\mht, is assumed to cover the aforementioned effects. This uncertainty
+is assumed to be anti-correlated with respect to the corresponding
+uncertainty in the \mj control region, described above. 
 
 \subsubsection{Jet energy scale}
 \label{sec:tfSyst_jec}

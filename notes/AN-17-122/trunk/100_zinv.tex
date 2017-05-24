@@ -131,10 +131,176 @@ the fit, are shown in Table~\ref{tab:sbCorrsFromFit-zinv}.
     \hline
     \textbf{Process} & \textbf{Sample} & \textbf{Corrrection} \\
     \hline
-    \zmmj            & \mmj            & $1.07 \pm 0.01$      \\
-    \znunuj          & (\mmj as proxy) & $1.07 \pm 0.01$      \\
+%    \zmmj            & \mmj            & $1.06 \pm 0.01$      \\ % no NLO/NISR
+    \zmmj            & \mmj            & $0.91 \pm 0.01$      \\
+    \znunuj          & (\mmj as proxy) & $0.91 \pm 0.01$      \\
     \hline
   \end{tabular}
 \end{table}
 
 
+\subsection{Overview of systematic uncertainties}
+\label{sec:systematics-zinv}
+
+The following sections address the estimation of systematic
+uncertainties related to the \znunuj background estimation. All
+relevant uncertainties are listed in Table~\ref{tab:systs-zinv}, along
+with their representative magnitudes and assumptions on inter-bin
+correlations. How the uncertainties are incorporated into the
+likelihood model is described in Sec.~\ref{sec:likelihood}.
+
+\begin{table}[h!]
+  \caption{Sources of systematic uncertainty in the transfer factors
+    used to estimate the \znunuj background using the \mmj control
+    region. Also shown are the nuisance parameters and correlation
+    scheme, as well as representative magnitudes for the uncertainties
+    [\%]. The ``type'' refers to whether the nuisance parameters are
+    unique to the \znunuj background or shared with the lost lepton 
+    background estimate (see Table~\ref{tab:systs-ttw}). 
+  }   
+  \label{tab:systs-zinv}
+  \centering
+  \footnotesize
+  \begin{tabular}{ llll }
+    \hline
+    Source of uncertainty               & Nuisance parameters / correlation                & Magnitude                        & Shared \\
+    \hline
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories     & 1--$\sim$50\%                    & Unique \\
+    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
+    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
+    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
+    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Several sources of uncertainty are evaluated.  The most relevant
+effects are discussed below, and generally fall into one of two
+categories. The first category concerns known theoretical and
+experimental effects that are propagated through to the transfer
+factors and \HTmiss templates. These are decribed in
+Sec.~\ref{sec:mc-variations-zinv}. The second set can be considered as
+``known unknowns'' that are derived from dedicated ``closure test''
+and \HTmiss-modelling studies that involve confronting transfer
+factors determined in the phase space of this search against data in
+the control regions. This latter category of uncertainties are
+summarised in Secs.~\ref{sec:closure-tests-zinv} and
+\ref{sec:syst-on-shape-zinv}.
+
+\subsection{Known theoretical and experimental uncertainties}
+\label{sec:mc-variations-zinv}
+
+Most of the uncertainties considered for the determination of the lost
+lepton background, described in Sec.~\ref{sec:mc-variations} are also
+considered here. The same treatment and assumptions are made. Below,
+we simply highlight relevant behvaviours and reference the
+corresponding figures. 
+
+\subsubsection{Minimum bias cross section / pileup}
+\label{sec:tfSyst_pu-zinv}
+
+The relative change in the transfer factors under this variation is
+small, at the few percent level, as shown in
+Fig.~\ref{fig:tfSyst_pu_mumuToZinv} (App~\ref{app:zinv}).
+
+\subsubsection{Effect of scale and PDF on lepton acceptance}
+\label{sec:tfSyst_pdf-zinv}
+
+Figures~\ref{fig:tfSyst_scale_mumuToZinv} and
+\ref{fig:tfSyst_pdf_mumuToZinv} (App.~\ref{app:zinv}) show the behaviour
+in the transfer factors for variations in scale and PDF, respectively.
+
+\subsubsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
+  samples}
+\label{sec:nlo-zinv}
+
+The \zmmj and \znunuj processes are generated at leading order with
+the \MADGRAPH code. The effect of missing higher-order QCD and EWK
+corrections are studied by considering the effect of
+LO$\rightarrow$NLO corrections, determined as a function of Z boson
+\Pt and shown in in Fig.~\ref{fig:tfSyst_nlo_mumuToZinv}
+(App.~\ref{app:zinv}), on the transfer factors and \HTmiss templates.
+
+Simulated \zmmj and \znunuj events are weighted according to these NLO
+corrections, and the magnitude of each correction is propagated as an
+uncertainty throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_mumuToZinv}
+(App.~\ref{app:zinv}) show the effect on the transfer factors as a
+function of the various discriminating variables. Uncertainties are
+typically at the percent level and as large as $\sim 10\%$.
+
+\subsubsection{Signal trigger uncertainty}
+\label{sec:tfSyst_trigger-zinv}
+
+The relative change in the transfer factors is typically at the few
+percent level, as presented in Fig.~\ref{fig:tfSyst_trigger_mumuToZinv}
+(App~\ref{app:zinv}).
+
+\subsubsection{Lepton trigger / identification / isolation efficiencies}
+\label{sec:leptonSyst-zinv}
+
+Figures~\ref{fig:tfSyst_muonsf_mumuToZinv} and
+\ref{fig:tfSyst_leptonveto_mumuToZinv} (App.~\ref{app:zinv}) show the
+systematic uncertainties associated with the data/simulation scale
+factors related to the trigger, identification, and isolation
+efficiencies for muon selection and identification and isolation
+efficiencies for lepton veto, repectively.
+
+\subsubsection{Jet energy scale}
+\label{sec:tfSyst_jec-zinv}
+
+The relative change in the transfer factors is presented as a function
+of \scalht and jet category in Fig.~\ref{fig:tfSyst_jec_mumuToZinv}
+(App.~\ref{app:zinv}). The changes are typically in the range of
+$1-5\%$.
+
+\subsubsection{B-tagging efficiency and mistag probability}
+\label{sec:tfSyst_btag-zinv}
+
+The relative change in the transfer factors is presented as a function
+of \scalht and jet category in Figs.~\ref{fig:tfSyst_bsf_mumuToZinv} and
+\ref{fig:tfSyst_bsfl_mumuToZinv} (App.~\ref{app:zinv}).  They are
+typically in the range of $1-3\%$.
+
+\subsection{Systematics uncertainties from data-driven tests}
+\label{sec:closure-tests-zinv}
+
+As described in Sec.~\ref{sec:closure-tests}, a second category of
+uncertainty is determined from sets of closure tests based on data
+control samples~\cite{RA1Paper2012}. The tests relevant to the \znunuj
+background estimate are listed below. 
+
+\subsubsection{Extrapolation in \texorpdfstring{\alphat}{AlphaT} and
+  \texorpdfstring{\bdphi}{biased dPhi}}
+\label{sec:tfSyst_alphaT-zinv}
+
+Events in the \mmj control region are not required to satisfy any
+requirement on \alphat or \bdphi. Hence, the accuracy of the modelling
+of the the \alphat and \bdphi variables are estimated using the \mmj
+sample using dedicated closure tests that confront data yields in a
+subsample of \mmj events, satisfying the \alphat and/or \bdphi
+requirements, against predictions that are determined using another
+subsample of \mmj events that satisfy an inverted requirement on
+\alphat and/or \bdphi. Further details of the procedure are found in
+Sec.~\ref{sec:closure-tests}. 
+
+The level of closure for an extrapolation in \alphat (only) with the
+\mj sample is shown in Fig.~\ref{fig:closure_AlphaT_mu}
+(App.~\ref{app:zinv}) as function of \scalht and \njet. Similarly,
+Fig.~\ref{fig:closure_bDPhi_mu} (App.~\ref{app:zinv}) shows the same
+information for the extrapolation in \bdphi (only). Finally, the level
+of closure observed when both \alphat and \bdphi requirements are
+simultaneously imposed is summarised in
+Fig.~\ref{fig:closure_AlphaT_bDPhi_mu} (App.~\ref{app:zinv}).
+
+Any non-closure in the extrapolation of both \alphat and \bdphi is
+covered by a systematic uncertainty, which is defined as the
+quadrature sum of the observed non-closure and its statistical
+uncertainty (indicated by the blue histogram in the figures). 
