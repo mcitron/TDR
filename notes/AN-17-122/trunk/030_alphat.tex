@@ -39,25 +39,25 @@ The magnitude of the vector \ptvec sum of these jets, defined by
 $\HTmiss = \abs{\sum_{{i}=1}^{\njet} \ptvec^{\,\mathrm{j}_i}}$, is
 used to identify events with significant \ptvecmiss.
 
-\subsection{\texorpdfstring{\ETmiss}{ETmiss}}
-
-The most accurate estimator of \ptvecmiss is given by the projection
-on the plane perpendicular to the beams of the negative vector sum of
-the momenta of all candidate particles in an event~\cite{cms-met}, as
-determined by the PF algorithm (Sec.~\ref{sec:}). Its magnitude is
-referred to as \ETmiss.
-
-The measurement of \met typically relies on independent sources of
-information from each of the calorimeter, tracking, and muon
-subdetectors. Relative to other physics objects, this measurement is
-particularly sensitive to the beam conditions and detector
-performance. This difficulty is compounded by the high-energy,
-high-luminosity hadron collider environment at the LHC and the lack of
-precise theoretical predictions for the kinematic properties and cross
-sections of multijet events. Hence it is very challenging to control
-and model accurately the multijet background in the high-\met phase
-space that is typical of SUSY searches. Given these difficulties, this
-search relies primarily on \HTmiss as an estimator for \ptvecmiss.
+%\subsection{\texorpdfstring{\ETmiss}{ETmiss}}
+%
+%The most accurate estimator of \ptvecmiss is given by the projection
+%on the plane perpendicular to the beams of the negative vector sum of
+%the momenta of all candidate particles in an event~\cite{cms-met}, as
+%determined by the PF algorithm (Sec.~\ref{sec:}). Its magnitude is
+%referred to as \ETmiss.
+%
+%The measurement of \met typically relies on independent sources of
+%information from each of the calorimeter, tracking, and muon
+%subdetectors. Relative to other physics objects, this measurement is
+%particularly sensitive to the beam conditions and detector
+%performance. This difficulty is compounded by the high-energy,
+%high-luminosity hadron collider environment at the LHC and the lack of
+%precise theoretical predictions for the kinematic properties and cross
+%sections of multijet events. Hence it is very challenging to control
+%and model accurately the multijet background in the high-\met phase
+%space that is typical of SUSY searches. Given these difficulties, this
+%search relies primarily on \HTmiss as an estimator for \ptvecmiss.
 
 \subsection{\texorpdfstring{\alphat}{AlphaT}}
 \label{sec:alphatdef}
@@ -76,8 +76,8 @@ only because of \pt mismeasurements, while retaining sensitivity to
 new-physics events with significant \ptvecmiss. The \alphat variable
 depends solely on the transverse component of jet four-momenta and is
 intrinsically robust against the presence of jet energy
-mismeasurements in multijet systems. The variable does not rely on the
-\ETmiss variable.
+mismeasurements in multijet systems. 
+%The variable does not rely on the \ETmiss variable.
 
 For events containing only two jets, \alphat is defined as $\alphat =
 \ET^{\mathrm{j}_2}/M_\mathrm{T}$, where $\ET= E\sin\theta$, where $E$
@@ -117,13 +117,16 @@ threshold.\footnote{{\it Nota bene} the use of \Et and \scalst versus
   \Pt and \scalht. This difference arises due to the implementation in
   the trigger logic, described in Sec.~\ref{sec:}, which relies on \Et
   rather than \Pt. Ultimately, the effects due nonnegligible jet
-  masses is small, at the percent level.} The \scalst for each of the
-two pseudo-jets is given by the scalar \ET sum of its contributing
-jets. The combination chosen is the one that minimises \dst, defined
-as the difference between these sums for the two pseudo-jets.  This
-clustering criterion assumes a balanced-event hypothesis, which
-provides strong separation between SM multijet events and events with
-genuine \ptvecmiss. The \alphat definition can be generalised to:
+  masses is small, at the percent level. Only in the definition of
+  \alphat are scalar energy sums based on jet \Et; otherwise,
+  throughout the analysis, the scalar sum \scalht uses jet \Pt.} The
+\scalst for each of the two pseudo-jets is given by the scalar \ET sum
+of its contributing jets. The combination chosen is the one that
+minimises \dst, defined as the difference between these sums for the
+two pseudo-jets.  This clustering criterion assumes a balanced-event
+hypothesis, which provides strong separation between SM multijet
+events and events with genuine \ptvecmiss. The \alphat definition can
+be generalised to:
 \begin{equation}
   \label{eq:alphat}
   \alphat = \frac{1}{2} \frac{\scalst -
