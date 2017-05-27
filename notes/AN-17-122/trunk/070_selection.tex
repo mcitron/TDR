@@ -65,8 +65,8 @@ signal region requirements, particularly at $\phi$ coordinates of 0
 and $\pi$ because of the tendency of halo particles to lie within the
 plane of the LHC ring.
 
-Such spurious events are suppressed by requiring at least 10\% of the
-for the highest-\Pt jet's energy to originate from charged
+Such spurious events are suppressed by requiring at least 10\% of 
+the highest-\Pt jet's energy to originate from charged
 hadrons. The effectiveness of this charged hadron fraction (CHF)
 requirement is demonstrated in Fig.~\ref{fig:leadJetCleaning}.
 
@@ -107,7 +107,7 @@ all jet-based event-level variables, such as \njet, \HT, \mht, and
 \alphat (see Sec.~\ref{sec:} for their definitions).
 
 The highest-\Pt jet in the event is required to satisfy $\Pt^{\mathrm
-  j_2} > 100\gev$. This helps to ensure high trigger efficiencies
+  j_1} > 100\gev$. This helps to ensure high trigger efficiencies
 while maintaining high efficiency for a broad range of signal models.
 
 Events are classified based on the second highest-\Pt jet, as
@@ -125,7 +125,7 @@ contribute significantly to \mht. In the case of the control regions,
 in which well-reconstructed, isolated muons and photons are selected,
 the $R_{\mathrm{miss}} < 1.25$ requirement is also applied. The \mht
 sum does not consider the transverse momentum of the muons or
-photon. Hence their momenta are also added to the \met such that the
+photon. Hence their momenta are also excluded from the \met sum, such that the
 \mht and \met can be considered on an equal footing.
 
 \subsubsection{The forward jet veto} 
@@ -218,9 +218,9 @@ strategy can be found in Sec.~\ref{sec:triggers}.
 \begin{table}[h!]
   \caption{\alphat thresholds versus
     lower bound of \scalht bin. For all \HT bins satisfying $\HT >
-    900\gev$, no \alphat cut is applied. No \alphat requirement is
-    imposed for events satisfying $\njet = 1$ (``monojet'' events, see
-    Sec.~\ref{sec:subleading-jet}), nor $\scalht > 1200\GeV$. Also
+    900\gev$, no \alphat cut is applied, and similarly for events with
+     $\njet = 1$ (``monojet'' events, see
+    Sec.~\ref{sec:subleading-jet}). Also
     shown is the flat \bdphi requirement
     (Sec.~\ref{sec:bdphi-selection}).}   
   \label{tab:alphat-thresholds}
@@ -247,8 +247,7 @@ satisfying $\scalht > 1200\GeV$.
 
 Candidate signal events with two or more jets are accepted only if
 they satisfy $\bdphi > 0.5$. This threshold is independent of \scalht,
-unlike the \alphat requirement described above, and is applied in
-\scalht categories, as summarised in
+unlike the \alphat requirement described above, as summarised in
 Table~\ref{tab:alphat-thresholds}. In the case of events satisfying
 $\njet = 1$ (``monojet'' events, see Sec.~\ref{sec:subleading-jet}),
 the requirement $\bdphimod > 0.5$ must be satisfied. The definitions
@@ -268,7 +267,7 @@ Table~\ref{tab:cr-selections}.
     lepton or photon vetoes in Table~\ref{tab:sr-selections} are
     inverted to define each lepton- or photon-based control
     region. Additional kinematic requirements are made to ensure the
-    sampeles are signal-depleted (and multijet-depleted in
+    samples are signal-depleted (and multijet-depleted in
     the case of the muon and photon samples). 
   }
   \label{tab:cr-selections}

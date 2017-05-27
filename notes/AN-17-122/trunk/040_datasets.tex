@@ -65,12 +65,19 @@ The dominant background processes simulated with \MADGRAPH{}@LO
 \ell^+\ell^-$) ($q\bar{q} \ra Z/\gamma \ra l^+l^-$) + jets, \gj, W +
 jets, and QCD multijet events) are produced according to the
 generator-level scalar sum of partonic transverse energies (``parton
-\scalht''). The \ttbar\ + jets samples are also produced according to
-the fully or semi-lepton decay of \ttbar\ system. These ``exclusive''
-subsamples are filtered according to parton \scalht, in order to
+\scalht''). 
+Since simulated events at low parton \scalht are
+produced much more  frequently than at higher  parton \scalht, whilst it  is the high
+parton \scalht  events which have  most impact in this  sort of analysis,
+simulated QCD events are produced in parton \scalht bins, where events with parton \scalht outside
+of the  current bin are killed  before the hadronisation stage,  in order to
+populate the high-parton \scalht phase space.
+The \ttbar\ + jets samples are also produced according to
+the fully or semi-leptonic decay of the \ttbar\ system. These ``exclusive''
+subsamples are then filtered according to parton \scalht, in order to
 remove any overlaps, and are then ``stitched'' together to provide an
 effective inclusive sample that allows for a high effective
-intergrated luminosity in the tails of the parton \scalht
+integrated luminosity in the tails of the parton \scalht
 distributions.
 
 Inclusive simulated event samples are normalised to inclusive cross
@@ -88,7 +95,7 @@ The full parton \scalht distribution obtained from the ``stitched''
 subsamples relative to that obtained from the corresponding inclusive
 sample are shown in Fig.~\ref{fig:Lhe_Ht} (in
 Appendix~\ref{app:datasets}), with the bin-by-bin derivative drawn
-below. The stitched subsamples demonstate a smooth behaviour
+below. The stitched subsamples demonstrate a smooth behaviour
 compatible with the inclusive samples.
 
 Table~\ref{tab:datasets_signal} lists the simulated events samples of
@@ -120,7 +127,8 @@ simulation package~\cite{fastsim}.
   \centering
   \topcaption{Simulated event samples of SM background processes used
     by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table.}
+    bottom of the table.
+    Other samples are described in Table~\ref{tab:datasets_bkg2}}
   \fontsize{7}{8.4}\selectfont
   \input{tables/datasets/backgrounds.tex}
   \label{tab:datasets_bkg}
@@ -130,7 +138,8 @@ simulation package~\cite{fastsim}.
   \centering
   \topcaption{Simulated event samples of SM background processes used
     by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table.}
+    bottom of the table.
+    Other samples are described in Table~\ref{tab:datasets_bkg}}
   \fontsize{7}{8.4}\selectfont
   \input{tables/datasets/rare.tex}
   \label{tab:datasets_bkg2}
@@ -290,7 +299,7 @@ the recommendation, the reweighting factors are a function of the
 variable called \verb!nTrueInt!.
 
 The variable \verb!nTrueInt! is the parameter of the Poisson
-distribution from which the numbers of pileup interactions are drown
+distribution from which the numbers of pileup interactions are drawn
 as random numbers. In each simulated event, the number of the in-time
 pileup interactions and the number of the interactions in each
 neighbouring bunch crossing to simulate the out-of-time pileup are
