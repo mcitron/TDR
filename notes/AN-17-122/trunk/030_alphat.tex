@@ -1,31 +1,33 @@
 %%____________________________________________________________________________||
 \section{Key kinematic variables}
+\label{sec:kine}
 
 This search considers all-jet (or all-hadronic) final states. The
 details on the reconstruction algorithms used to identify jets are
-provided in Sec.~\ref{sec:}. The experimental acceptance for jets used
-in this analysis is defined in Sec.~\ref{sec:}. The event selection
-criteria that define the signal and control regions are detailed in
-Sec.~\ref{sec:}. The following section introduces the key variables
-used in this analysis, without providing details on the recontruction
-algorithms nor the final event selection criteria.
+provided in Sec.~\ref{sec:jetreco}. The experimental acceptance for
+jets used in this analysis is defined in Sec.~\ref{sec:jetsacc}. The
+event selection criteria that define the signal and control regions
+are detailed in Sec.~\ref{sec:selection}. The following section
+introduces the key variables used in this analysis, without providing
+details on the recontruction algorithms nor the final event selection
+criteria.
 
 \subsection{\texorpdfstring{\njet}{Njet}}
 
 The jets considered in this search are required to satisfy criteria
 related to the ``quality'' of the physics object (to reject anomalies
-from \eg reconstruction failures or spurious detector noise, see
-Sec.~\ref{sec:}), as well as thresholds related to the transverse
-momentum (\Pt) and pseudorapidity ($\eta$) of each jet. In this
-analysis, higher thresholds for transverse momentum are required for
-the highest-\Pt jets. The number of jets that satisfy these selection
-criteria is defined as \njet.
+due to \eg reconstruction failures or spurious detector noise, see
+Sec.~\ref{sec:jetreco}), as well as thresholds related to the
+transverse momentum (\Pt) and pseudorapidity ($\eta$) of each jet. In
+this analysis, higher thresholds for transverse momentum are required
+for the highest-\Pt jets. The number of jets that satisfy these
+selection criteria is defined as \njet.
 
 \subsection{\texorpdfstring{\nb}{Nb}}
 
 Jets identified as orignating from b-quarks are ``tagged'' with a
-dedicated algorithm (see Sec.~\ref{sec:}). The number of ``b-jets''
-per event is identified by the variable \nb.
+dedicated algorithm (see Sec.~\ref{sec:btags}). The number of
+``b-jets'' per event is identified by the variable \nb.
 
 \subsection{\texorpdfstring{\scalht}{HT}}
 
@@ -107,23 +109,24 @@ recoil against \ptvecmiss from weakly interacting particles that
 escape the detector.
 
 The definition of the \alphat variable can be generalised for events
-with more than two jets~\cite{RA1Paper} as follows. For events with
-three or more jets, a pseudo-dijet system is formed by combining the
-jets in the event into two pseudo-jets. The mass scale is
-characterised by the scalar sum of the jet transverse energies,
+with more than two jets~\cite{Khachatryan:2011tk} as follows. For
+events with three or more jets, a pseudo-dijet system is formed by
+combining the jets in the event into two pseudo-jets. The mass scale
+is characterised by the scalar sum of the jet transverse energies,
 $\scalst = \sum_{i=1}^{N_\text{jet}} \ET^{\mathrm{j}_i}$, where
 $N_\text{jet}$ is the number of jets with \ET above a predefined
-threshold.\footnote{{\it Nota bene} the use of \Et and \scalst versus
+threshold.\footnote{{\it Nota bene}: the use of \Et and \scalst versus
   \Pt and \scalht. This difference arises due to the implementation in
-  the trigger logic, described in Sec.~\ref{sec:}, which relies on \Et
-  rather than \Pt. Ultimately, the effects due non-negligible jet
-  masses is small, at the percent level. Only in the definition of
-  \alphat are scalar energy sums based on jet \Et; otherwise,
-  throughout the analysis, the scalar sum \scalht uses jet \Pt.} The
-\scalst for each of the two pseudo-jets is given by the scalar \ET sum
-of its contributing jets. The combination chosen is the one that
-minimises \dst, defined as the difference between these sums for the
-two pseudo-jets.  This clustering criterion assumes a balanced-event
+  the trigger logic, described in
+  Sec.~\ref{sec:hadronic_signal_region}, which relies on \Et rather
+  than \Pt. Ultimately, the effects due non-negligible jet masses is
+  small, at the percent level. Only in the definition of \alphat are
+  scalar energy sums based on jet \Et; otherwise, throughout the
+  analysis, the scalar sum \scalht uses jet \Pt.} The \scalst for each
+of the two pseudo-jets is given by the scalar \ET sum of its
+contributing jets. The combination chosen is the one that minimises
+\dst, defined as the difference between these sums for the two
+pseudo-jets.  This clustering criterion assumes a balanced-event
 hypothesis, which provides strong separation between SM multijet
 events and events with genuine \ptvecmiss. The \alphat definition can
 be generalised to:
@@ -150,9 +153,10 @@ corresponding increase in the average jet energy and consequently a
 (relative) improvement in the jet energy resolution.
 
 As a result, a \scalht-dependent threshold is imposed on the \alphat
-variable (see Sec.~\ref{sec:}). Hence, it is useful to consider the
-limiting case $\dst \rightarrow 0$ to understand the relationship
-between \alphat and the ratio $\mht/\sum_{i} E_\textrm{T}^{j_i}$:
+variable (see Sec.~\ref{sec:HT-AT-selection}). Hence, it is useful to
+consider the limiting case $\dst \rightarrow 0$ to understand the
+relationship between \alphat and the ratio $\mht/\sum_{i}
+E_\textrm{T}^{j_i}$:
 \begin{equation}
   \label{eq:alphat3}
   \frac{\mht}{\scalst} \, = \, \sqrt{ 1 - \frac{1}{4 \cdot \alphat^2} }.
@@ -165,10 +169,10 @@ ratio $\mht/\scalst = 0.64$, 0.55, 0.42, 0.33, and 0.27, respectively.
 \subsection{\texorpdfstring{\bdphi}{biased dPhi}}
 \label{sec:bdphi-def}
 
-An additional powerful variable \bdphi is used to suppress multijet
-contamination due to both instrumental effects and semi-leptonic
-heavy-flavour decays with genuine \met in the final state. The
-variable is defined as follows.
+An additional powerful variable \bdphi~\cite{Khachatryan:2011tk} is
+used to suppress multijet contamination due to both instrumental
+effects and semi-leptonic heavy-flavour decays with genuine \met in
+the final state. The variable is defined as follows.
 
 The jet-based estimate of the missing transverse energy, ${\mhtvec}$,
 is determined from all jets except for one of the reconstructed jets,
