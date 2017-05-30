@@ -6,8 +6,9 @@
 The irreducible background contribution from the \znunu\ + jets
 process can be a sizeable, and often the dominating, contribution in
 many event categories of the signal region, particularly at high
-\HTmiss. Table~\ref{} (App.~\ref{}) shows
+\HTmiss. 
 
+%Table~\ref{} (App.~\ref{}) shows % add SM breakdown plots? 
 \fixme{Diff w.r.t. old analysis. Heavy flavour.}
 
 \subsection{The ``transfer factor'' method}
@@ -31,21 +32,21 @@ transfer factor is simply a ratio of the yields obtained from Monte
 Carlo (MC) simulation for the same (\njet, \scalht) category of the
 \mmj control and signal regions:
 \begin{equation}
-  \label{equ:tf-ratio}
+  \label{equ:tf-ratio-zinv}
   {\rm TF} = \frac{N_{\rm MC}^{\znunu}(\njet, \scalht)}{N_{\rm MC}^{\mmj}(\njet, \scalht)} 
 \end{equation}
 
 In this way, predictions for the \znunuj background can be made, based
 on the \mmj control region, as follows:
 \begin{equation}
-  \label{equ:pred-method}
+  \label{equ:pred-method-zinv}
   \npre^{\znunu}(\njet, \scalht) = 
   \frac{N_{\rm MC}^{\znunu}(\njet, \scalht)}{N_{\rm MC}^{\mmj}(\njet, \scalht)} 
   \times 
   \nobs^{\mmj}(\njet, \scalht)   
 \end{equation}
 
-The selection criteria for the \m,j control region
+The selection criteria for the \mmj control region
 (Sec.~\ref{sec:selection}) closely resemble those for the signal
 region, differing mainly through the use of a dimuon {\it tag} (that
 is ignored in the calculation of jet-based kinematic variables such as
@@ -86,7 +87,7 @@ via \nb and \mht templates per (\njet, \scalht) category, $N_{\rm
   MC}^{\ttw}(\nb, \HTmiss;\; \njet, \scalht)$, which is equivalent to
 dicing the numerator of the TF according to \nb and \mht, \ie
 \begin{equation}
-  \label{equ:pred-method}
+  \label{equ:pred-method-zinv-mht}
   \npre^{\ttw}(\njet, \scalht, \nb, \HTmiss) = 
   \frac{N_{\rm MC}^{\ttw}(\nb, \HTmiss;\; \njet, \scalht)}{N_{\rm MC}^{\mj}(\njet, \scalht)} 
   \times 
@@ -96,9 +97,9 @@ In this regard, the TFs described in Sec.~\ref{sec:tf-method-zinv}
 provide an estimate of the normalisation for each \nb and \mht
 template. The \nb and \HTmiss templates are taken from simulation and
 the validity of the simulation modelling is tested extensively in the
-control regions, as described in Sec.~\ref{}.
+control regions, as described in Sec.~\ref{sec:mht-zinv}.
 
-\subsection{Correcting the normalisation of the \texorpdfstring{\zj}{Z+jets} simulated samples} 
+\subsection{Sideband normalisation for \texorpdfstring{\zj}{Z+jets}} 
 \label{sec:sideband-corrections-zinv}
 
 Corrections to the inclusive cross section used for the \zmmj
@@ -193,7 +194,7 @@ and \HTmiss-modelling studies that involve confronting transfer
 factors determined in the phase space of this search against data in
 the control regions. This latter category of uncertainties are
 summarised in Secs.~\ref{sec:closure-tests-zinv} and
-\ref{sec:syst-on-shape-zinv}.
+\ref{sec:mht-zinv}.
 
 \subsection{Known theoretical and experimental uncertainties}
 \label{sec:mc-variations-zinv}
