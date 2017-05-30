@@ -69,8 +69,7 @@ Table~\ref{tab:2015_Hadronic_Signal_Triggers}.
     are given. } 
   \footnotesize
   \centering
-\begin{tabular}{l|l} 
-  \hline
+\begin{tabular}{ll} 
   \hline
   L1 seed & HLT path \\
   \hline
@@ -81,7 +80,6 @@ Table~\ref{tab:2015_Hadronic_Signal_Triggers}.
   {\scriptsize\verb!HTT or ETM!} & {\scriptsize\verb!HLT_PFHT400_PFDijetAve90_AlphaT0p51(52)!} \\
   {\scriptsize\verb!HTT!}        & {\scriptsize\verb!HLT_PFHT800(900)!} \\
   {\scriptsize\verb!ETM!}        & {\scriptsize\verb!HLT_PFMETNoMu90(110)_PFMHTNoMu90(110)_IDTight!} \\
-  \hline
   \hline
 \end{tabular}
 \label{tab:2015_Hadronic_Signal_Triggers}
@@ -139,14 +137,12 @@ those measured with the electron and muon triggers, are propagated.
   \centering
   \begin{tabular}{lcccc} 
     \hline
-    \hline
     Event sample & \multicolumn{4}{c}{\scalht bin [GeV]}                                              \\
     \cline{2-5}
                  & 200--400       & 400--600       & 600--900       & $>$900        \\
     \hline
     $e$ + jets   & $97.4^{+0.5}_{-0.6}$ & $97.9^{+0.8}_{-1.2}$ & $100.0^{+0.0}_{-1.8}$ & $100.0^{+0.0}_{-3.6}$ \\
     \mj          & $98.0^{+0.0}_{-0.0}$ & $98.9^{+0.0}_{-0.0}$ & $99.4^{+0.1}_{-0.1}$  & $99.9^{+0.0}_{-0.1}$  \\
-    \hline
     \hline
   \end{tabular}
   \label{tab:trigger-eff}
@@ -161,9 +157,12 @@ by the muon POG and are determined by the muon for both data and
 simulated samples (containing a trigger emulation) using a tag and
 probe method. The POG also provide data-to-simulation scale factors,
 which we apply to the trigger-efficiency-corrected event yields from
-simulation. The \Pt- and $\eta$-averaged trigger efficiencies are
-determined per (\njet, \nb, \scalht) bin for the \mj sample and are
-typically around 90\% . For the
+simulation. The muon trigger efficiencies per (\njet, \nb, \scalht)
+bin are determined for both the \mj and \mmj samples. For each bin,
+the trigger efficiency values provided by the POG are weighted
+according to \Pt and $\eta$ distributions of the muon(s) to give a
+bin-averaged value. For the \mj sample, the efficiencies are typically
+around 90\% and rather independent of \njet, \nb, and \scalht. For the
 \mmj sample, the average efficiencies are $\sim99\%$ (as either muon
 can provided the positive trigger decision). Statistical and
 systematic uncertainties are propagated through via the scale factor
