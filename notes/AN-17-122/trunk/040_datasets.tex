@@ -10,37 +10,38 @@ luminosity of $35.9 \pm 0.9~\ifb$~\cite{lumi}. The studies reported in
 this AN are based on control regions populated with the full 2016 data
 set.
 
-Table~\ref{tab:cert_json} specifies the JSON file used to identify the
-certified data.  Table~\ref{tab:datasets_data} lists the names of the
-primary data sets used in this analysis.
-
 \begin{table}[h!]
   \topcaption{The JSON file used to define the certified data set of
     35.9~\ifb} 
-  \footnotesize
+  \centering
   \input{tables/datasets/cert_json.tex} 
   \label{tab:cert_json}
 \end{table}
+
+Table~\ref{tab:cert_json} specifies the JSON file used to identify the
+certified data. Table~\ref{tab:datasets_data}
+(App.~\ref{app:datasets}) lists the names of the primary
+data sets used in this analysis.
 
 \subsection{Blinding statement}
 
 The data in the signal region is currently blinded, with the exception
 of 4.5~\ifb of the certified data set, which comprises a sample of
 events selected randomly (1 in 8) from throughout the full data taking
-period. \fixme{ARE WE DOING THIS?!}
+period. 
 
 \subsection{Simulated event samples}
 
-Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2} list the
-simulated event samples of all relevant standard model background
-processes for this analysis.
+Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2}
+(App.~\ref{app:datasets}) list the simulated event samples of all
+relevant standard model background processes for this analysis.
 
 The dominant SM processes in the signal and control regions, \znunu\ +
 jets, W + jets, \ttbar\ + jets, Drell--Yan ($\cPq\bar{\cPq} \to
 \PZ/\gamma^* \to \ell^+\ell^-$) + jets, and \gj, are generated at
 leading order (LO) using the {\MADGRAPH{}5\_a\MCATNLO} 2.2.2 generator
 code~\cite{Alwall2014}. These samples are listed in
-Table~\ref{tab:datasets_bkg}.
+Table~\ref{tab:datasets_bkg} (App.~\ref{app:datasets}).
 
 The {\MADGRAPH{}5\_a\MCATNLO} 2.2.2 code is also used at LO to
 generate QCD multijet events, as well as W + jets and Z + jets via
@@ -51,7 +52,7 @@ and ttW, ttZ, and ttG events. The t-channel and tW-channel single top
 samples, as well as ttH samples, are generated using
 \POWHEG~\cite{}. The diboson samples (WW, WZ, and ZZ) are generated
 using \PYTHIA~\cite{}. These samples are listed in
-Table~\ref{tab:datasets_bkg2}.
+Table~\ref{tab:datasets_bkg2} (App.~\ref{app:datasets}).
 
 The {NNPDF}3.0 LO and NLO~\cite{nnpdf} parton distribution functions
 (PDFs) are used, respectively, with the LO and NLO generators
@@ -89,72 +90,31 @@ event counts to the integrated luminosity. Any \kfactors required to
 go from LO to (N)NLO cross sections are typically determined using a
 corresponding inclusive sample, which are then applied to each
 subsample. The cross sections used for each sample are listed in
-Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2}.
+Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2}
+(App.~\ref{app:datasets}). 
 
 The full parton \scalht distribution obtained from the ``stitched''
 subsamples relative to that obtained from the corresponding inclusive
-sample are shown in Fig.~\ref{fig:Lhe_Ht} (in
-Appendix~\ref{app:datasets}), with the bin-by-bin derivative drawn
-below. The stitched subsamples demonstrate a smooth behaviour
-compatible with the inclusive samples.
+sample are shown in Fig.~\ref{fig:Lhe_Ht} (App.~\ref{app:datasets}),
+with the bin-by-bin derivative drawn below. The stitched subsamples
+demonstrate a smooth behaviour compatible with the inclusive samples.
 
-Table~\ref{tab:datasets_signal} lists the simulated events samples of
-signal processes used in this analysis. The event samples for SUSY
-signal models involving gluino or squark pair production in
-association with up to two additional partons are generated at LO with
-{\MADGRAPH{}5\_a\MCATNLO}, and the decay of the SUSY particles is
-performed with \PYTHIA 8.205~\cite{pythia}. Inclusive,
-process-dependent, signal production cross sections are calculated
-with NLO plus next-to-leading-logarithmic (NLL)
-accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
-  PhysRevD.80.095004, 1126-6708-2009-12-041,
+Table~\ref{tab:datasets_signal} (App.~\ref{app:datasets}) lists the
+simulated events samples of signal processes used in this
+analysis. The event samples for SUSY signal models involving gluino or
+squark pair production in association with up to two additional
+partons are generated at LO with {\MADGRAPH{}5\_a\MCATNLO}, and the
+decay of the SUSY particles is performed with \PYTHIA
+8.205~\cite{pythia}. Inclusive, process-dependent, signal production
+cross sections are calculated with NLO plus
+next-to-leading-logarithmic (NLL) accuracy~\cite{Beenakker:1996ch,
+  PhysRevLett.102.111802, PhysRevD.80.095004, 1126-6708-2009-12-041,
   doi:10.1142/S0217751X11053560, susynlo}. The theoretical systematic
 uncertainties are typically dominated by the parton density function
 (PDF) uncertainties, evaluated using the
 CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} PDFs.
 The detector response for signal models is provided by the CMS fast
 simulation package~\cite{fastsim}.
-
-\clearpage
-\begin{table}[h!]
-  \topcaption{List of primary data sets used in this analysis.}
-  \footnotesize 
-  \input{tables/datasets/c140607_c151022_l001.tex}
-  \label{tab:datasets_data}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \topcaption{Simulated event samples of SM background processes used
-    by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table.
-    Other samples are described in Table~\ref{tab:datasets_bkg2}}
-  \fontsize{7}{8.4}\selectfont
-  \input{tables/datasets/backgrounds.tex}
-  \label{tab:datasets_bkg}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \topcaption{Simulated event samples of SM background processes used
-    by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table.
-    Other samples are described in Table~\ref{tab:datasets_bkg}}
-  \fontsize{7}{8.4}\selectfont
-  \input{tables/datasets/rare.tex}
-  \label{tab:datasets_bkg2}
-\end{table}
-
-\begin{table}[h!]
-  \centering
-  \topcaption{Simulated event samples of signal processes used
-    by this analysis. Symbols used as shorthand are defined at the
-    bottom of the table. 
-  }
-  \footnotesize
-  \input{tables/datasets/signal.tex}
-  \label{tab:datasets_signal}
-\end{table}
 
 \subsection{Reducing statistical uncertainties from simulation at high \texorpdfstring{\nb}{Nb}}
 
@@ -339,9 +299,10 @@ normalised so as to preserve the number of the simulated events.
 
 Figure~\ref{f044_corr_nTrueInt_data_mc_norm} shows the distributions
 of \verb!nTrueInt! in the data, simulated events and reweighted
-simulated events. The figure demonstrates that the reweighted
-simulated events have the distribution of \verb!nTrueInt! nearly
-identical to that in the data. 
+simulated events. The figure demonstrates that the simulated events
+have the distribution of \verb!nTrueInt! very similar to that found in
+the data and after reweighting, the distributions from simulations
+from data and simulation are identical.
 %We note that the simulation does not contain events with 37 or more
 %overlapping pp interactions, while the data do, causing the MC
 %weighted distribution not to match perfectly the data. This small
@@ -383,10 +344,10 @@ The \MADGRAPH generator is used to simulate W + jets, DY + jets,
 corrections, which can result in a modified boson \Pt distribution,
 can be determined from (QCD) NLO simulation and (EWK) theory
 calculations, as done by the the monojet search in the EXO
-PAG~\cite{}. We do not apply these corrections to our simulated
-samples, but instead include the corrections as a source of systematic
-uncertainty in our transfer factors via a nuisance in our likelihood
-model. Further details are given in Sec.~\ref{sec:}.
+PAG~\cite{}. We apply these corrections to our simulated samples and
+assume a 100\% uncertainty in these corrections, which is propagated
+through the analysis and introduced to the likelihood model via a
+dedicated nuisance. Further details are given in Sec.~\ref{sec:}.
 
 \subsubsection{\texorpdfstring{\nisr}{Nisr} reweighting for \texorpdfstring{\ttbar}{TTbar}}
 \label{sec:nisr}
@@ -406,12 +367,11 @@ Further, this procedure attempts to correct for the mismodelling of
 associated jet production for \ttbar processes, which may be due to
 missing higher-order calculations in the LO \MADGRAPH MC. Hence, for
 consistency with the V + jets samples (also produced with
-\MADGRAPH{}@LO), we prefer not to apply the $N_J^{ISR}$ corrections to
-our simulated samples, but instead include the corrections as a source
-of systematic uncertainty in our transfer factors via a nuisance in
-our likelihood model. Further details are given in Sec.~\ref{sec:}.
-\fixme{ARE WE DOING THIS? ``We take one half of the deviation from
-  unity as the systematic uncertainty on these reweighting factors.''}
+\MADGRAPH{}@LO), we follow the recommendations of the SUSY group and
+apply the $N_J^{ISR}$ corrections to our simulated samples. The
+uncertainty is assumed to be 50\% of the corrections, which is
+propagated through the analysis and introduced to the likelihood model
+via a dedicated nuisance.
 
 \subsection{Corrections to simulation for signal processes}
 
