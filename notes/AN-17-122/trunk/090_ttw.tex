@@ -223,29 +223,29 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   }   
   \label{tab:systs-ttw}
   \centering
-  \footnotesize
-  \begin{tabular}{ llll }
+  \fontsize{8}{9.6}\selectfont
+  \begin{tabular}{ llllc }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation                & Magnitude                        & Shared \\
+    Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Type   & Figure                    \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories     & 1--$\sim$50\%                    & Unique \\
-    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    \wj cross section                   & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    \ttbar cross section                & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    $N_\textrm{isr}$ (\ttbar)           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    W polarisation                      & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    Single isolated track veto          & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories   & 1--100                       & Unique & -- \\
+    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst__muToTtw} \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst__muToTtw} \\
+    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst__muToTtw} \\
+    \wj cross section                   & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.4                     & Unique & \ref{fig:tfSyst__muToTtw} \\
+    \ttbar cross section                & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.7                     & Unique & \ref{fig:tfSyst__muToTtw} \\
+    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--10.2                    & Shared & \ref{fig:tfSyst__muToTtw} \\
+    $N_\textrm{isr}$ (\ttbar)           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--8.8                     & Unique & \ref{fig:tfSyst__muToTtw} \\
+    Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--3.1                     & Shared & \ref{fig:tfSyst__muToTtw} \\
+    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst__muToTtw} \\
+    Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst__muToTtw} \\
+    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 3.3--7.0                     & Shared & \ref{fig:tfSyst__muToTtw} \\
+    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst__muToTtw} \\
+    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.1--1.7                     & Shared & \ref{fig:tfSyst__muToTtw} \\
+    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:tfSyst__muToTtw} \\
+    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:tfSyst__muToTtw} \\
+    W polarisation                      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:tfSyst__muToTtw} \\
+    Single isolated track veto          & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:tfSyst__muToTtw} \\
     \hline
   \end{tabular}
 \end{table}
@@ -387,7 +387,7 @@ Sec.~\ref{sec:nisr}.
 All events in the control and signal regions are categorised
 identically according to \njet, hence the analysis is not sensitive to
 the $N_\textrm{isr}$ corrections. Regardless, these corrections are
-applied to simulated \ttbr event, and half the correction is
+applied to simulated \ttbar event, and half the correction is
 propagated as an uncertainty throughout the
 analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw} (App.~\ref{app:ttw}) show
 the effect on the transfer factors as a function of the various
@@ -419,9 +419,9 @@ The number of events $N^{\mj}$ in the \mj control region is given by
 where: $N^\textrm{gen}_\mu$ is the expected number of simulated events
 (weighted to the integrated luminosity) containing a generator-level
 prompt muon prior to event selection requirements; and
-$\mathcal{A}^\mu$, $\varepsilon^\textrm{trig}^\mu$,
-$\mathcal{A}^\mu$, $\varepsilon^\textrm{ID}^\mu$, and
-$\varepsilon^\textrm{iso}^\mu$, are the muon acceptance and the
+$\mathcal{A}_\mu$, $\varepsilon^\textrm{trig}_\mu$,
+$\mathcal{A}_\mu$, $\varepsilon^\textrm{ID}_\mu$, and
+$\varepsilon^\textrm{iso}_\mu$, are the muon acceptance and the
 trigger, identification, and isolation efficiencies, respectively,
 which are assumed to factorise. 
 
@@ -632,6 +632,8 @@ Any non-closure in the extrapolation of both \alphat and \bdphi is
 covered by a systematic uncertainty, which is defined as the
 quadrature sum of the observed non-closure and its statistical
 uncertainty (indicated by the blue histogram in the figures). 
+
+\fixme{CLOSURE FITS!}
 
 \subsubsection{The effect of W polarisation on lepton acceptance}
 \label{sec:tfSyst_Wpol}
