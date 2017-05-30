@@ -12,3 +12,4 @@ rm tf*_mu_Zinv_*.pdf
 rm tf*_mu_Ewk_*.pdf
 rm tf*_mumu_Ttw_*.pdf
 rm tf*_mumu_Ewk_*.pdf
+rm tf*1d*.pdf
