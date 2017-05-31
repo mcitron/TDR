@@ -58,7 +58,7 @@ for the SM backgrounds in the signal region can be made. Any signal
 contamination is accounted for in the likelihood model
 (Sec.~\ref{sec:likelihood}).
 
-Figure~\ref{fig:tf_mumuToZinv} (App.~\ref{app:zinv}) shows the
+Figure~\ref{fig:tf_mmZinv} (App.~\ref{app:zinv}) shows the
 magnitude of the transfer factors, typically $\ll 1$, The transfer
 factors account for differences between the \mmj control and signal
 due to the different branching fractions for the decays to neutrinos
@@ -120,7 +120,7 @@ uncertainties for the \zmmj and \znunuj processes, as determined by
 the fit, are shown in Table~\ref{tab:sbCorrsFromFit-zinv}.
 
 \begin{table}[!h]
-  \scriptsize
+%  \scriptsize
   \centering
   \topcaption{Corrections to the inclusive cross sections 
     for the \zmmj and \znunuj processes determined from a binned
@@ -161,24 +161,25 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   }   
   \label{tab:systs-zinv}
   \centering
-  \footnotesize
-  \begin{tabular}{ llll }
+  \fontsize{8}{9.6}\selectfont
+  \begin{tabular}{ llllc }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation                & Magnitude                        & Shared \\
+    Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Shared & Figure                              \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories     & 1--$\sim$50\%                    & Unique \\
-    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) category     & 1--100                       & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & 2.3--2.8                     & Shared & \ref{fig:tfSyst_pu_mmZinv}          \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_scale_mmZinv}       \\
+    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pdf_mmZinv}         \\
+    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 2.2--14.3                    & Shared & \ref{fig:tfSyst_nlo_mmZinv}         \\
+    Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--2.0                     & Shared & \ref{fig:tfSyst_trigger_mmZinv}     \\
+    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst_muonsf_mmZinv}      \\
+    Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst_leptonveto_mmZinv}  \\
+    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 5.3--8.0                     & Shared & \ref{fig:tfSyst_jec_mmZinv}         \\
+    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst_bsf_mmZinv}         \\
+    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--1.8                     & Shared & \ref{fig:tfSyst_bsfl_mmZinv}        \\
+    \alphat + \bdphi extrapolation      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_bDPhi_mumu} \\
+%    \alphat extrapolation              & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_mumu}       \\
+%    \bdphi extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_bDPhi_mumu}        \\
     \hline
   \end{tabular}
 \end{table}
@@ -210,14 +211,14 @@ corresponding figures.
 
 The relative change in the transfer factors under this variation is
 small, at the few percent level, as shown in
-Fig.~\ref{fig:tfSyst_pu_mumuToZinv} (App~\ref{app:zinv}).
+Fig.~\ref{fig:tfSyst_pu_mmZinv} (App~\ref{app:zinv}).
 
 \subsubsection{Effect of scale and PDF on lepton acceptance}
 \label{sec:tfSyst_pdf-zinv}
 
-Figures~\ref{fig:tfSyst_scale_mumuToZinv} and
-\ref{fig:tfSyst_pdf_mumuToZinv} (App.~\ref{app:zinv}) show the behaviour
-in the transfer factors for variations in scale and PDF, respectively.
+Figures~\ref{fig:tfSyst_scale_mmZinv} and \ref{fig:tfSyst_pdf_mmZinv}
+(App.~\ref{app:zinv}) show the behaviour in the transfer factors for
+variations in scale and PDF, respectively.
 
 \subsubsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
   samples}
@@ -227,28 +228,28 @@ The \zmmj and \znunuj processes are generated at leading order with
 the \MADGRAPH code. The effect of missing higher-order QCD and EWK
 corrections are studied by considering the effect of
 LO$\rightarrow$NLO corrections, determined as a function of Z boson
-\Pt and shown in in Fig.~\ref{fig:tfSyst_nlo_mumuToZinv}
+\Pt and shown in in Fig.~\ref{fig:tfSyst_nlo_mmZinv}
 (App.~\ref{app:zinv}), on the transfer factors and \HTmiss templates.
 
 Simulated \zmmj and \znunuj events are weighted according to these NLO
 corrections, and the magnitude of each correction is propagated as an
-uncertainty throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_mumuToZinv}
+uncertainty throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_mmZinv}
 (App.~\ref{app:zinv}) show the effect on the transfer factors as a
 function of the various discriminating variables. Uncertainties are
-typically at the percent level and as large as $\sim 10\%$.
+typically at the percent level and as large as $\sim 15\%$.
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger-zinv}
 
 The relative change in the transfer factors is typically at the few
-percent level, as presented in Fig.~\ref{fig:tfSyst_trigger_mumuToZinv}
+percent level, as presented in Fig.~\ref{fig:tfSyst_trigger_mmZinv}
 (App~\ref{app:zinv}).
 
 \subsubsection{Lepton trigger / identification / isolation efficiencies}
 \label{sec:leptonSyst-zinv}
 
-Figures~\ref{fig:tfSyst_muonsf_mumuToZinv} and
-\ref{fig:tfSyst_leptonveto_mumuToZinv} (App.~\ref{app:zinv}) show the
+Figures~\ref{fig:tfSyst_muonsf_mmZinv} and
+\ref{fig:tfSyst_leptonveto_mmZinv} (App.~\ref{app:zinv}) show the
 systematic uncertainties associated with the data/simulation scale
 factors related to the trigger, identification, and isolation
 efficiencies for muon selection and identification and isolation
@@ -258,17 +259,17 @@ efficiencies for lepton veto, repectively.
 \label{sec:tfSyst_jec-zinv}
 
 The relative change in the transfer factors is presented as a function
-of \scalht and jet category in Fig.~\ref{fig:tfSyst_jec_mumuToZinv}
+of \scalht and jet category in Fig.~\ref{fig:tfSyst_jec_mmZinv}
 (App.~\ref{app:zinv}). The changes are typically in the range of
-$1-5\%$.
+$5-8\%$.
 
 \subsubsection{B-tagging efficiency and mistag probability}
 \label{sec:tfSyst_btag-zinv}
 
 The relative change in the transfer factors is presented as a function
-of \scalht and jet category in Figs.~\ref{fig:tfSyst_bsf_mumuToZinv} and
-\ref{fig:tfSyst_bsfl_mumuToZinv} (App.~\ref{app:zinv}).  They are
-typically in the range of $1-3\%$.
+of \scalht and jet category in Figs.~\ref{fig:tfSyst_bsf_mmZinv} and
+\ref{fig:tfSyst_bsfl_mmZinv} (App.~\ref{app:zinv}).  They are
+typically in the range of $0-2\%$.
 
 \subsection{Systematics uncertainties in transfer factors from closure tests}
 \label{sec:closure-tests-zinv}
@@ -305,3 +306,77 @@ Any non-closure in the extrapolation of both \alphat and \bdphi is
 covered by a systematic uncertainty, which is defined as the
 quadrature sum of the observed non-closure and its statistical
 uncertainty (indicated by the blue histogram in the figures). 
+
+\subsection{Systematics uncertainties in the \texorpdfstring{\HTmiss}{MHT} templates}
+\label{sec:mht-zinv}
+
+The modelling of the \mht variable for the \znunuj background is
+performed with the \mmj sample as a proxy. Discussion and motivation
+for these tests of the \mht modelling against data are provided in
+Sec.~\ref{sec:mht}. Here, for brevity, only the figures are
+summarised.
+
+The figures in App.~\ref{app:mht-zinv} show the ratio of events
+obtained from data and simulation as a function of \mht based on a
+sample of \mj events that are {\it categorised} according to \njet,
+\scalht, and \nb. Note that the \scalht categorisation scheme of the
+control regions (Sec.~\ref{sec:ht-categorisation}) is used in this
+validation of the \mht modelling. The \nb categorisation is not
+relevant for this discussion.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive/MuMu_2D}~
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive/MuMu}\\
+  \caption{(Left) The best fit value for the linear parameter
+    relative to unity in units of the associated statistical
+    uncertainty, \ie the statistical ``pull'', as a function of \njet,
+    \nb, and \scalht. (Right) The histogram of the pull values.}
+  \label{fig:pulls-zinv} 
+\end{figure}
+
+The fit information in the figures of App.~\ref{app:mht-zinv} is
+summarised in Fig.\ref{fig:pulls} (left), which shows the best fit
+value for the linear parameter (of the first-order orthogonal
+polynomial) relative to unity (\ie no trend) in units of the
+associated statistical uncertainty, \ie the statistical ``pull'', as a
+function of \njet, \nb, and \scalht. As for the studies based on the
+\mj sample, the pulls appear not to exhibit any structure as a
+function of \njet, \nb, nor \scalht, and are approximately
+gaussian-distributed, with a mean and width compatible with zero and
+unity, respectively. This indicates that no large, significant bias is
+found in the simulation modelling of the \mht variable when events are
+categorised by \njet, \scalht, and \nb. (The same conclusion is also
+reached without categorising by \nb.)
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_njet/MuMu_graph}~
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_ht/MuMu_graph}\\
+  \caption{\label{fig:postFitMuMu} Post fit values and uncertainties of
+    the linear parameters used to determine the systematics,
+    correlated in (left) \njet and (right) \scalht.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_njet/MuMu_2D_unc}~
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_ht/MuMu_2D_unc}\\
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_ht/MuMu_uncLast}\\
+  \caption{\label{fig:postFitErrMuMu} Systematic uncertainties (\%) per
+    100\GeV-interval in \mht for effects correlated in (left) \njet
+    and (right) \scalht, as determined in the \mj control
+    region. (Bottom) Also shown is the systematic uncertainty (\%) in
+    the final open \mht bin for each (\njet, \scalht, \nb) category.}
+\end{figure}
+
+The procedure described in Sec.~\ref{sec:mht_syst_mu} is used to
+determine the systematic uncertainties in the \mht
+modelling. Figure~\ref{fig:postFitMuMu} summarises the post-fit values
+and uncertainties of the linear parameters of the orthogonal
+polynomials. Figure~\ref{fig:postFitErrMuMu} shows the systematic
+uncertainty assumed per 100\GeV-interval in \mht due to effects
+correlated in (left) \njet and (right) \scalht, as determined in the
+\mj control region. The values are at the few percent level. Finally,
+Figure~\ref{fig:postFitErrMuMu} also shows the systematic uncertainty
+in the final open \mht bin for each (\njet, \scalht, \nb) category,
+which is typically at the level of 5--20\%.

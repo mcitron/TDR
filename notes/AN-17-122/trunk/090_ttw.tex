@@ -98,6 +98,7 @@ effects (\eg reconstruction efficiencies). These uncertainties are
 discussed below. 
 
 \subsection{\texorpdfstring{\mht}{MHT} templates}
+\label{sec:mht-intro}
 
 The transfer factors described above provide an estimate of the lost
 lepton background as a function of the (\njet, \scalht, \nb) category,
@@ -183,7 +184,7 @@ uncertainties for \wj and \ttbar, as determined by the fit, are shown
 in Table~\ref{tab:sbCorrsFromFit}.
 
 \begin{table}[!h]
-  \scriptsize
+%  \scriptsize
   \centering
   \topcaption{Corrections to the inclusive cross sections 
     for SM processes determined from a binned likelihood fit to data
@@ -228,20 +229,20 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
     \hline
     Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Type   & Figure                              \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories   & 1--100                       & Unique & n/a                                 \\
-    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pu_muToTtw}         \\
-    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_scale_muToTtw}      \\
-    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pdf_muToTtw}        \\
-    \wj cross section                   & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.4                     & Unique & \ref{fig:tfSyst_wjetxs_muToTtw}     \\
-    \ttbar cross section                & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.7                     & Unique & \ref{fig:tfSyst_ttbarxs_muToTtw}    \\
-    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--10.2                    & Shared & \ref{fig:tfSyst_nlo_muToTtw}        \\
-    $N_\textrm{isr}$ (\ttbar)           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--8.8                     & Unique & \ref{fig:tfSyst_nisr_muToTtw}       \\
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) category     & 1--100                       & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & 0.6--3.8                     & Shared & \ref{fig:tfSyst_pu_muToTtw}         \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & 2.3--3.6                     & Shared & \ref{fig:tfSyst_scale_muToTtw}      \\
+    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & 1.1--2.7                     & Shared & \ref{fig:tfSyst_pdf_muToTtw}        \\
+    \wj cross section                   & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--1.4                     & Unique & \ref{fig:tfSyst_wjetxs_muToTtw}     \\
+    \ttbar cross section                & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.0                     & Unique & \ref{fig:tfSyst_ttbarxs_muToTtw}    \\
+    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 0.5--5.4                     & Shared & \ref{fig:tfSyst_nlo_muToTtw}        \\
+    $N_\textrm{isr}$ (\ttbar)           & 1, correlated across \njet, \scalht, \nb, \mht & 0.8--1.1                     & Unique & \ref{fig:tfSyst_nisr_muToTtw}       \\
     Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--3.1                     & Shared & \ref{fig:tfSyst_trigger_muToTtw}    \\
-    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst_muonsf_muToTtw}     \\
+    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--2.1                     & Unique & \ref{fig:tfSyst_muonsf_muToTtw}     \\
     Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst_leptonveto_muToTtw} \\
-    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 3.3--7.0                     & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
-    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
-    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.1--1.7                     & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
+    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 3.4--5.5                     & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
+    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.4--0.6                     & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
+    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.1--1.4                     & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
     \alphat + \bdphi extrapolation      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_bDPhi_mu}   \\
 %    \alphat extrapolation              & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_mu}         \\
 %    \bdphi extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_bDPhi_mu}          \\
@@ -256,13 +257,14 @@ effects are discussed below, and generally fall into one of two
 categories. The first category concerns known theoretical and
 experimental effects that are propagated through to the transfer
 factors and \HTmiss templates. These are decribed in
-Sec.~\ref{sec:mc-variations}. The second set can be considered as
-``known unknowns'' that are derived from dedicated ``closure test''
-and \HTmiss-modelling studies that involve confronting transfer
+Sec.~\ref{sec:mc-variations}. The second category aim to cover
+additional (unknown) sources of bias, which are determined from
+dedicated ``closure test'' studies that involve confronting transfer
 factors determined in the phase space of this search against data in
-the control regions. This latter category of uncertainties are
-summarised in Secs.~\ref{sec:closure-tests} and
-\ref{sec:mht}.
+the control regions. Analogous studies with data are performed to
+probe the accuracy of the \HTmiss modelling. Studies concerning this
+second category of uncertainties are summarised in
+Secs.~\ref{sec:closure-tests} and \ref{sec:mht}.
 
 %These uncertainties will be often referred to as
 %\textit{``normalisation uncertainties''}, as opposed to the
@@ -313,7 +315,7 @@ $\mu_R$ and $\mu_F$ are varied by 0.5 and 2.0. Theoretical
 uncertainties from parton distribution function are varied according
 to the recommended prescription from PDF4LHC~\cite{PDF4LHC:2015}. The
 magnitude of the variations in the transfer factors are small,
-typically at the $\sim X\%$
+typically at the few percent
 level. Figures~\ref{fig:tfSyst_scale_muToTtw} and
 \ref{fig:tfSyst_pdf_muToTtw} (App.~\ref{app:ttw}) show the behaviour
 in the transfer factors for variations in scale and PDF, respectively.
@@ -345,7 +347,8 @@ control region, in order to see the effect on the ``shape'' of the
 transfer factors and the \HTmiss templates. Similarly, the same same
 procedure is repeated for variations in the \ttbar normalisation. The
 resulting variations are summarised in
-Fig.~\ref{fig:tfSyst_ttW_composition_muToTtw} (App.~\ref{app:ttw}).
+Figs.~\ref{fig:tfSyst_wjetxs_muToTtw} and
+\ref{fig:tfSyst_ttbarxs_muToTtw} (App.~\ref{app:ttw}). 
 
 \subsubsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
   samples}
@@ -363,7 +366,7 @@ and the magnitude of each correction is propagated as an uncertainty
 throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw}
 (App.~\ref{app:ttw}) show the effect on the transfer factors as a
 function of the various discriminating variables. Uncertainties are
-typically at the percent level and as large as $\sim 10\%$.
+typically at the percent level and as large as $\sim 5\%$.
 
 %All events in the control and signal regions are categorised
 %identically according to \njet and \scalht. The NLO corrections are
@@ -392,7 +395,8 @@ applied to simulated \ttbar event, and half the correction is
 propagated as an uncertainty throughout the
 analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw} (App.~\ref{app:ttw}) show
 the effect on the transfer factors as a function of the various
-discriminating variables. Uncertainties are in typically $\ll 5\%$.
+discriminating variables. Uncertainties are in typically at the
+percent level. 
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
@@ -401,7 +405,7 @@ The effect of uncertainties in the signal trigger efficiency for the
 signal region are studied (Sec.~\ref{sec:triggers}). A systematic is
 taken as the difference in the efficiency measured using muon and
 electron reference triggers.  The relative change in the transfer
-factors is typically at the few percent level, as presented in
+factors is typically 0--3\%, as presented in
 Fig.~\ref{fig:tfSyst_trigger_muToTtw} (App~\ref{app:ttw}).
 
 \subsubsection{Lepton trigger / identification / isolation efficiencies}
@@ -549,7 +553,7 @@ effect due to jets moving in and out acceptance (above and below
 $40\gev$). The relative change in the transfer factors is presented as
 a function of \scalht and jet category in
 Fig.~\ref{fig:tfSyst_jec_muToTtw} (App.~\ref{app:ttw}). The changes
-are typically in the range of $1-5\%$.
+are typically in the range of $3-6\%$.
 
 \subsubsection{B-tagging efficiency and mistag probability}
 \label{sec:tfSyst_btag}
@@ -572,9 +576,9 @@ correlated), while those associated with light jets are varied
 separately.  The relative change in the transfer factors is presented
 as a function of \scalht and jet category in
 Figs.~\ref{fig:tfSyst_bsf_muToTtw} and \ref{fig:tfSyst_bsfl_muToTtw}
-(App.~\ref{app:ttw}).  They are typically in the range of $1-3\%$.
+(App.~\ref{app:ttw}).  They are typically in the range of $0-2\%$.
 
-\subsection{Systematics uncertainties from data-driven tests}
+\subsection{Systematics uncertainties in transfer factors from closure tests}
 \label{sec:closure-tests}
 
 The second category of uncertainty is determined from sets of closure
@@ -685,3 +689,231 @@ Figs.~\ref{fig:dataMC_SIT_mu} and \ref{fig:dataMC_SITEvent_mu}
 shapes, only normalisation. The data/MC scale factors (1.42) shown in
 each plot are consistent with the bias observed in the aforementioned
 closure tests.
+
+\subsection{Systematics uncertainties in the \texorpdfstring{\HTmiss}{MHT} templates}
+\label{sec:mht}
+
+\subsubsection{Testing the \texorpdfstring{\HTmiss}{MHT} modelling against data}
+
+The lost lepton background estimate per (\njet, \scalht, \nb) event
+category, integrated over \mht, is derived from data control regions
+according to the transfer factor method, decsribed in
+Sec.~\ref{sec:tf-method-ttw} (\eg Eq.~\ref{equ:pred-method}). The
+distribution of events as a function of \HTmiss is estimated using
+\mht templates determined from simulation, as described in in
+Sec.~\ref{sec:mht-intro} (\eg Eq.~\ref{equ:pred-method-mht}).  The
+effect of known theoretical and experimental sources of uncertainties
+on the background estimates, as a function of \njet, \scalht, \nb,
+{\bf and} \HTmiss are studied in
+Sec.~\ref{sec:mc-variations}. 
+
+Further, additional (unknown) sources of systematic bias that may
+effect the transfer factors are probed with data using the closure
+test approach described above. Finally, this section describes an
+analoguous data-driven method that is used to identify potential
+biases and determine systematic uncertainties in the simulation
+modelling of \mht. The method probes the agreement between simulation
+and (control region) data. The level of closure as a function of \mht
+in each (\njet, \scalht, \nb) bin is used to determine alternative
+templates (\ie systematic uncertainties) to cover sources of bias. It
+is important to note that these alternative templates systematics are
+used in addition to the ``known'' theoretical and experimental
+uncertainties described in Sec.~\ref{sec:mc-variations} and provide an
+additional level of information with regards to the accuracy of the
+simulation modelling. 
+
+The simulated event samples used in this analysis are produced at LO
+and so the ability of the simulation to model correctly the dynamical
+behaviour of SM processes is limited by the use of tree-level
+calculations only.\footnote{This is mitigated, partially, by the
+  inclusion of additional radiated partons in the (tree-level) matrix
+  element calculation. The number of additional partons is process
+  dependent and can be as large as 4 for \eg V + jets production.}
+This limitation in the simulated samples may be manifest in the
+mismodelling of kinematical variables, such as \HTmiss, especially if
+variables are considered over an inclusive phase space, with events
+generated over a range of energy scales.
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[\mj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/inclusive/mht_Inc_Inc_ht_Inc_SingleMu_Graph.pdf}
+  }~
+  \subfigure[\mmj]{
+    \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/inclusive/mht_Inc_Inc_ht_Inc_DoubleMu_Graph.pdf}
+  }\\
+  \caption{\label{fig:linearMotiv} The ratio of event yields obtained
+    from data and simulation as a function of \mht [GeV] based on a
+    sample of (left) \mj and (right) \mmj events that satisfy {\it
+      inclusive selection} requirements on \njet and \scalht. Also
+    shown are the results of linear fits (\ie first-order orthogonal
+    polynomials). No NLO corrections (Sec.~\ref{sec:nlo-intro}) are
+    applied to simulated events.}
+\end{figure}
+
+Figure~\ref{fig:linearMotiv} shows the ratio of events obtained from
+data and simulation as a function of \mht based on a sample of \mj or
+\mmj events that satisfy an {\it inclusive selection} on \njet and
+\scalht. A significant trend in the ratios versus \HTmiss is observed.
+
+Orthogonal polynomials are used to parameterise the agreement between
+data and simulation, such that the odd and even powers of the
+polynomial are decorrelated~\cite{cohen2013applied}. The
+$n^\textrm{th}$-order orthogonal polynomial is defined in
+Eq.~\ref{equ:orthog-polynomial}:
+\begin{equation}
+  \label{equ:orthog-polynomial}
+  f_n(x) = \sum_{k=0}^{k=n}{(p_k)\times(\bar{x}-x)^k}
+\end{equation}
+where $\bar{x}$ is the weighted mean of the distribution and $p_k = 0$
+implies the $k^\textrm{th}$ order term is negligible.
+
+The trend observed in Fig.~\ref{fig:linearMotiv} can be adequately
+modelled by a first-order orthogonal polynomial (\ie a linear
+function), as indicated by the red line. The fit indicates a
+significant trend, which is somewhat expected given that events at
+very different energy scales are considered and the ability of the
+simulation to model correctly the dynamical behaviour of SM processes
+is only known with LO accuracy. The ``flat'' or ``no bias'' hypothesis
+(using a zeroeth-order polynomial parameterisation), indicated by the
+blue line, is rejected based on a p-value of $\ll 0.05$.
+
+Biases due to limited accuracy in the matrix element calculation for
+simulated events may be mitigated if the events are categorised
+according to variables that are adequately correlated with the energy
+scale of an event, such as \scalht, and the number of additional
+partons, such as \njet. In this way, the dynamical behaviour of events
+can be {\it measured} with multiple control regions. Once the
+simulated events are corrected to data counts in the (\njet, \scalht)
+categories (via unconstrained ``rate'' parameters in the likelihood
+model, see Sec.~\ref{sec:likelihood}), any potential bias in the
+simulation modelling of the \mht variable (as well as any other
+\met-like variable) due to energy scale may be mitigated. Other
+sources of bias may be the description of the kinematical (rather than
+dynamical) behaviour of the SM processes, as well as potential biases
+from experimental effects such as jet energy scale and
+resolution. This approach is labelled ``scale anchoring'' in the
+following discussion. 
+
+The figures in App.~\ref{app:mht} show the ratio of events obtained
+from data and simulation as a function of \mht based on a sample of
+\mj events that are {\it categorised} according to \njet, \scalht, and
+\nb. Note that the \scalht categorisation scheme of the control
+regions (Sec.~\ref{sec:ht-categorisation}) is used in this validation
+of the \mht modelling. The \nb categorisation is not relevant
+for this discussion.
+
+First-order orthogonal polynomials are used to identify significant
+trends as a function of \mht via the ``linear'' parameter ($k = 1$),
+which is uncorrelated with respect to the ``normalisation'' parameter
+($k = 0$). This is done such that the value of the normalisation
+parameter can be ignored when attempting to determine biases versus
+\mht.\footnote{The normalisation parameter is not relevant for this
+  study. Non-unity values are accommodated in the analysis through the
+  use of rate parameters in the likelihood model and the transfer
+  factor method.}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive/Mu_2D}~
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive/Mu}\\
+  \caption{(Left) The best fit value for the linear parameter
+    relative to unity in units of the associated statistical
+    uncertainty, \ie the statistical ``pull'', as a function of \njet,
+    \nb, and \scalht. (Right) The histogram of the pull values.}
+  \label{fig:pulls} 
+\end{figure}
+
+Importantly, in this iteration of the analysis, we now also apply
+corrections to simulated event samples as a function of vector boson
+\Pt that account for the missing higher-order corrections, namely NLO
+QCD and EWK contributions, as discussed in
+Sec.~\ref{sec:nlo-intro}. Hence, the ``scale anchoring'' approach now
+concerns higher order effects beyond NLO (assuming the NLO corrections
+themselves are valid). The following discussion assumes these NLO
+corrections are applied to simulated events, unless stated otherwise. 
+
+Following the application of NLO corrections and due to the ``scale
+anchoring'' approach, no significant trend as a function of \mht is
+expected. The fit information in the figures of App.~\ref{app:mht} is
+summarised in Fig.\ref{fig:pulls} (left), which shows the best fit
+value for the linear parameter (of the first-order orthogonal
+polynomial) relative to unity (\ie no trend) in units of the
+associated statistical uncertainty, \ie the statistical ``pull'', as a
+function of \njet, \nb, and \scalht. The pulls appear not to exhibit
+any structure as a function of \njet, \nb, nor \scalht, and are
+approximately gaussian-distributed, with a mean and width compatible
+with zero and unity, respectively. This indicates that no large,
+significant bias is found in the simulation modelling of the \mht
+variable when events are categorised by \njet, \scalht, and \nb. (The
+same conclusion is also reached without categorising by \nb.)
+
+This behaviour is consistent with past experience (for which no NLO
+corrections were applied). The \HTmiss modelling was inspected in
+three data control regions, comprising \mj, \mmj, and \gj event
+samples, with the 8\TeV and 13\TeV data sets collected in 2012 and
+2015~\cite{Khachatryan:2016dvc}, with no evidence for large,
+significant biases.
+
+\subsubsection{Determination of systematic uncertainties}
+\label{sec:mht_syst_mu}
+
+Uncertainties in the \mht dimension are extracted using the data
+control regions to determine the statistical precision to which the
+hypothesis of zero bias can be confirmed. Two sets of systematic
+uncertainties in the \mht distributions, correlated in \scalht and
+\njet, are determined. The set of systematics decorrelated in \scalht
+allows any disagreement to be covered that is localised at a
+particular scale, while the set of systematics decorrelated in \njet
+covers systematic effects localised in the number of additional
+partons. The \nb dimension is not decorrelated as this discriminating
+variable is not directly related to the scale of the event and will be
+strongly correlated to \njet.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_njet/Mu_graph}~
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_ht/Mu_graph}\\
+  \caption{\label{fig:postFitMu} Post fit values and uncertainties of
+    the linear parameters used to determine the systematics,
+    correlated in (left) \njet and (right) \scalht.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_njet/Mu_2D_unc}~
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_ht/Mu_2D_unc}\\
+  \includegraphics[width=0.5\textwidth]{figures/mhtTemplate/exclusive_corr_ht/Mu_uncLast}\\
+  \caption{\label{fig:postFitErrMu} Systematic uncertainties (\%) per
+    100\GeV-interval in \mht for effects correlated in (left) \njet
+    and (right) \scalht, as determined in the \mj control
+    region. (Bottom) Also shown is the systematic uncertainty (\%) in
+    the final open \mht bin for each (\njet, \scalht, \nb) category.}
+\end{figure}
+
+In order to determine the systematic uncertainties in the \mht
+modelling, a linear fit is performed to event yields per (\njet,
+\scalht, \nb) event category in the \mj control region. Each fit has
+an independent normalisation parameter (\ie uncorrelated across
+categories). However, a single linear parameter is used per \scalht
+category and shared across \njet categories (\ie correlated across
+\njet). A second set of fits are performed with this correlation
+pattern reversed: a single linear parameter is used per \njet category
+and shared across \scalht categories (\ie correlated across
+\scalht). The post-fit values and uncertainties of these linear
+parameters are summarised in Fig.~\ref{fig:postFitMu}. The post-fit
+value of each parameter is added in quadrature to its uncertainty,
+which is used to define $\pm 1\sigma$ variations in the nominal
+templates. The alternative templates are added to the likelihood model
+with the corresponding correlation pattern.
+
+Figure~\ref{fig:postFitErrMu} shows the systematic uncertainty assumed
+per 100\GeV-interval in \mht due to effects correlated in (left)
+\njet and (right) \scalht, as determined in the \mj control
+region. The values are at the few percent level. Finally,
+Figure~\ref{fig:postFitErrMu} also shows the systematic uncertainty in
+the final open \mht bin for each (\njet, \scalht, \nb) category, which
+is typically at the level of 5--20\%.
+
+
+
