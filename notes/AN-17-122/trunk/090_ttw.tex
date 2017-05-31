@@ -184,7 +184,7 @@ uncertainties for \wj and \ttbar, as determined by the fit, are shown
 in Table~\ref{tab:sbCorrsFromFit}.
 
 \begin{table}[!h]
-  \scriptsize
+%  \scriptsize
   \centering
   \topcaption{Corrections to the inclusive cross sections 
     for SM processes determined from a binned likelihood fit to data
@@ -315,7 +315,7 @@ $\mu_R$ and $\mu_F$ are varied by 0.5 and 2.0. Theoretical
 uncertainties from parton distribution function are varied according
 to the recommended prescription from PDF4LHC~\cite{PDF4LHC:2015}. The
 magnitude of the variations in the transfer factors are small,
-typically at the $\sim X\%$
+typically at the few percent
 level. Figures~\ref{fig:tfSyst_scale_muToTtw} and
 \ref{fig:tfSyst_pdf_muToTtw} (App.~\ref{app:ttw}) show the behaviour
 in the transfer factors for variations in scale and PDF, respectively.
@@ -347,7 +347,8 @@ control region, in order to see the effect on the ``shape'' of the
 transfer factors and the \HTmiss templates. Similarly, the same same
 procedure is repeated for variations in the \ttbar normalisation. The
 resulting variations are summarised in
-Fig.~\ref{fig:tfSyst_ttW_composition_muToTtw} (App.~\ref{app:ttw}).
+Figs.~\ref{fig:tfSyst_wjetxs_muToTtw} and
+\ref{fig:tfSyst_ttbarxs_muToTtw} (App.~\ref{app:ttw}). 
 
 \subsubsection{Missing higher-order corrections in LO \texorpdfstring{\MADGRAPH}{MadGraph}
   samples}
@@ -365,7 +366,7 @@ and the magnitude of each correction is propagated as an uncertainty
 throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw}
 (App.~\ref{app:ttw}) show the effect on the transfer factors as a
 function of the various discriminating variables. Uncertainties are
-typically at the percent level and as large as $\sim 10\%$.
+typically at the percent level and as large as $\sim 5\%$.
 
 %All events in the control and signal regions are categorised
 %identically according to \njet and \scalht. The NLO corrections are
@@ -394,7 +395,8 @@ applied to simulated \ttbar event, and half the correction is
 propagated as an uncertainty throughout the
 analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw} (App.~\ref{app:ttw}) show
 the effect on the transfer factors as a function of the various
-discriminating variables. Uncertainties are in typically $\ll 5\%$.
+discriminating variables. Uncertainties are in typically at the
+percent level. 
 
 \subsubsection{Signal trigger uncertainty}
 \label{sec:tfSyst_trigger}
@@ -403,7 +405,7 @@ The effect of uncertainties in the signal trigger efficiency for the
 signal region are studied (Sec.~\ref{sec:triggers}). A systematic is
 taken as the difference in the efficiency measured using muon and
 electron reference triggers.  The relative change in the transfer
-factors is typically at the few percent level, as presented in
+factors is typically 0--3\%, as presented in
 Fig.~\ref{fig:tfSyst_trigger_muToTtw} (App~\ref{app:ttw}).
 
 \subsubsection{Lepton trigger / identification / isolation efficiencies}
@@ -551,7 +553,7 @@ effect due to jets moving in and out acceptance (above and below
 $40\gev$). The relative change in the transfer factors is presented as
 a function of \scalht and jet category in
 Fig.~\ref{fig:tfSyst_jec_muToTtw} (App.~\ref{app:ttw}). The changes
-are typically in the range of $1-5\%$.
+are typically in the range of $3-6\%$.
 
 \subsubsection{B-tagging efficiency and mistag probability}
 \label{sec:tfSyst_btag}
@@ -574,7 +576,7 @@ correlated), while those associated with light jets are varied
 separately.  The relative change in the transfer factors is presented
 as a function of \scalht and jet category in
 Figs.~\ref{fig:tfSyst_bsf_muToTtw} and \ref{fig:tfSyst_bsfl_muToTtw}
-(App.~\ref{app:ttw}).  They are typically in the range of $1-3\%$.
+(App.~\ref{app:ttw}).  They are typically in the range of $0-2\%$.
 
 \subsection{Systematics uncertainties in transfer factors from closure tests}
 \label{sec:closure-tests}
@@ -854,6 +856,7 @@ samples, with the 8\TeV and 13\TeV data sets collected in 2012 and
 significant biases.
 
 \subsubsection{Determination of systematic uncertainties}
+\label{sec:mht_syst_mu}
 
 Uncertainties in the \mht dimension are extracted using the data
 control regions to determine the statistical precision to which the
