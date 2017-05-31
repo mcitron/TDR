@@ -164,21 +164,22 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   \footnotesize
   \begin{tabular}{ llll }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation                & Magnitude                        & Shared \\
+    Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Shared & Figure                              \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories     & 1--$\sim$50\%                    & Unique \\
-    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) category     & 1--100                       & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & 2.3--2.8                     & Shared & \ref{fig:tfSyst_pu_muToTtw}         \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_scale_muToTtw}      \\
+    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pdf_muToTtw}        \\
+    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 2.2--14.3                    & Shared & \ref{fig:tfSyst_nlo_muToTtw}        \\
+    Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--2.0                     & Shared & \ref{fig:tfSyst_trigger_muToTtw}    \\
+    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst_muonsf_muToTtw}     \\
+    Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst_leptonveto_muToTtw} \\
+    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 5.3--8.0                     & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
+    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
+    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--1.8                     & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
+    \alphat + \bdphi extrapolation      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_bDPhi_mu}   \\
+%    \alphat extrapolation              & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_mu}         \\
+%    \bdphi extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_bDPhi_mu}          \\
     \hline
   \end{tabular}
 \end{table}
