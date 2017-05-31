@@ -109,7 +109,7 @@ template per (\njet, \scalht, \nb) category, $N_{\rm
   MC}^{\ttw}(\HTmiss;\; \njet, \scalht, \nb)$, which is equivalent to
 dicing the numerator of the TF according to \mht, \ie
 \begin{equation}
-  \label{equ:pred-method}
+  \label{equ:pred-method-mht}
   \npre^{\ttw}(\njet, \scalht, \nb, \HTmiss) = 
   \frac{N_{\rm MC}^{\ttw}(\HTmiss;\; \njet, \scalht, \nb)}{N_{\rm MC}^{\mj}(\njet, \scalht, \nb)} 
   \times 
@@ -119,9 +119,9 @@ In this regard, the TFs described in Sec.~\ref{sec:tf-method-ttw}
 provide an estimate of the normalisation for each \mht template. The
 \HTmiss templates are taken from simulation and the validity of the
 simulation modelling is tested extensively in the control regions, as
-described in Sec.~\ref{}. 
+described in Sec.~\ref{sec:mht}. 
 
-\subsection{Correcting the normalisation of the \texorpdfstring{\wj}{W+jets} and \texorpdfstring{\ttbar}{TTbar} simulated samples} 
+\subsection{Sideband normalisation for \texorpdfstring{\wj}{W+jets} and \texorpdfstring{\ttbar}{TTbar}} 
 \label{sec:sideband-corrections}
 
 In this section, a procedure is described to derive process-dependent
@@ -160,7 +160,7 @@ However, the corrections are still determined and propagated to all
 steps of the analysis, as they are relevant for some of the
 data-driven derivation of systematic uncertainties, such as the
 closure tests (Sec.~\ref{sec:closure-tests}) and cross checks of the
-\HTmiss modelling (Sec.~\ref{sec:}). Without these corrections, the
+\HTmiss modelling (Sec.~\ref{sec:mht}). Without these corrections, the
 derived systematic uncertainties could be (unnecessarily)
 inflated. Further, the uncertainty in these corrections are not
 propagated, as any inaccuracy is -- by construction -- covered by the
@@ -223,28 +223,30 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   }   
   \label{tab:systs-ttw}
   \centering
-  \footnotesize
-  \begin{tabular}{ llll }
+  \fontsize{8}{9.6}\selectfont
+  \begin{tabular}{ llllc }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation                & Magnitude                        & Shared \\
+    Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Type   & Figure                              \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories     & 1--$\sim$50\%                    & Unique \\
-    Minimum bias cross section (pileup) & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    $\mu_R$ / $\mu_F$ scales            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Parton density functions            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    \wj / \ttbar composition            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    QCD + EWK NLO corrections           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    $N_\textrm{isr}$ (\ttbar)           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Signal trigger efficiency           & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    Lepton efficiency (selection)       & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Lepton efficiency (veto)            & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Unique \\
-    Jet energy scale                    & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark tag efficiency              & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    b-quark mistag probability          & 1 for all (\njet, \scalht, \nb, \mht) categories & X--Y\%                           & Shared \\
-    \alphat extrapolation               & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    \bdphi extrapolation                & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    W polarisation                      & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
-    Single isolated track veto          & 1 per \njet category, 1 per \scalht category     & X--Y\% (\njet), X--Y\% (\scalht) & Unique \\
+    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) categories   & 1--100                       & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pu_muToTtw}         \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_scale_muToTtw}      \\
+    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pdf_muToTtw}        \\
+    \wj cross section                   & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.4                     & Unique & \ref{fig:tfSyst_wjetxs_muToTtw}     \\
+    \ttbar cross section                & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--1.7                     & Unique & \ref{fig:tfSyst_ttbarxs_muToTtw}    \\
+    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--10.2                    & Shared & \ref{fig:tfSyst_nlo_muToTtw}        \\
+    $N_\textrm{isr}$ (\ttbar)           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--8.8                     & Unique & \ref{fig:tfSyst_nisr_muToTtw}       \\
+    Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--3.1                     & Shared & \ref{fig:tfSyst_trigger_muToTtw}    \\
+    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst_muonsf_muToTtw}     \\
+    Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst_leptonveto_muToTtw} \\
+    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 3.3--7.0                     & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
+    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
+    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.1--1.7                     & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
+    \alphat + \bdphi extrapolation      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_bDPhi_mu}   \\
+%    \alphat extrapolation              & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_mu}         \\
+%    \bdphi extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_bDPhi_mu}          \\
+    W polarisation                      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_WPol_mu}           \\
+    Single isolated track veto          & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_SITV_mu}           \\
     \hline
   \end{tabular}
 \end{table}
@@ -260,7 +262,7 @@ and \HTmiss-modelling studies that involve confronting transfer
 factors determined in the phase space of this search against data in
 the control regions. This latter category of uncertainties are
 summarised in Secs.~\ref{sec:closure-tests} and
-\ref{sec:syst-on-shape}.
+\ref{sec:mht}.
 
 %These uncertainties will be often referred to as
 %\textit{``normalisation uncertainties''}, as opposed to the
@@ -375,7 +377,7 @@ typically at the percent level and as large as $\sim 10\%$.
 %discriminating variables. Uncertainties are typically at the percent
 %level and as large as $\sim 10\%$.
 
-\subsubsection{\texorpdfstring{\njet}{Njet}-dependent (``\texorpdfstring{$N_\textrm{isr}$}{Nisr}'') corrections for \ttbar}
+\subsubsection{\texorpdfstring{\njet}{Njet}-dependent (``\texorpdfstring{\nisr}{Nisr}'') corrections for \texorpdfstring{\ttbar}{TTbar}}
 \label{sec:nisr}
 
 The recommendations from the SUSY group to reweight \MADGRAPH \ttbar
@@ -386,7 +388,7 @@ Sec.~\ref{sec:nisr}.
 All events in the control and signal regions are categorised
 identically according to \njet, hence the analysis is not sensitive to
 the $N_\textrm{isr}$ corrections. Regardless, these corrections are
-applied to simulated \ttbr event, and half the correction is
+applied to simulated \ttbar event, and half the correction is
 propagated as an uncertainty throughout the
 analysis. Fig.~\ref{fig:tfSyst_nisr_muToTtw} (App.~\ref{app:ttw}) show
 the effect on the transfer factors as a function of the various
@@ -418,9 +420,9 @@ The number of events $N^{\mj}$ in the \mj control region is given by
 where: $N^\textrm{gen}_\mu$ is the expected number of simulated events
 (weighted to the integrated luminosity) containing a generator-level
 prompt muon prior to event selection requirements; and
-$\mathcal{A}^\mu$, $\varepsilon^\textrm{trig}^\mu$,
-$\mathcal{A}^\mu$, $\varepsilon^\textrm{ID}^\mu$, and
-$\varepsilon^\textrm{iso}^\mu$, are the muon acceptance and the
+$\mathcal{A}_\mu$, $\varepsilon^\textrm{trig}_\mu$,
+$\mathcal{A}_\mu$, $\varepsilon^\textrm{ID}_\mu$, and
+$\varepsilon^\textrm{iso}_\mu$, are the muon acceptance and the
 trigger, identification, and isolation efficiencies, respectively,
 which are assumed to factorise. 
 
@@ -468,7 +470,7 @@ $\varepsilon^\textrm{iso}_\ell$ are the experimental acceptance and
 the trigger, identification, and isolation efficiencies for the lepton
 $\ell$, respectively. The summation is performed assuming $\ell$ is
 either a generator-level prompt muon or electron. The four terms of
-Eq.~\ref{eq:lepton_eff_sr_ell} are assumed to factorise and provide
+Eq.~\ref{eq:lepton_eff_sr} are assumed to factorise and provide
 the number of events (containing either a muon or an electron) that
 fail requirements on acceptance, trigger, identification, and
 isolation, respectively.
@@ -483,7 +485,7 @@ related to trigger, identification, and isolation requirements are
 dsecribed below for both the \mj sample (Eq.~\ref{eq:lepton_eff_mj})
 and signal region (Eq.~\ref{eq:lepton_eff_sr}).
 
-\subsubsection*{Selection efficiencies (\mj control region)}
+\subsubsection*{Selection efficiencies (\texorpdfstring{\mj}{mu+jets} control region)}
 
 The various efficiencies in Eq.~\ref{eq:lepton_eff_mj} are emulated as
 part of the detector simulation. Further, (typically near-unity)
@@ -590,11 +592,11 @@ The level of closure with respect to data is inspected:
 Any non-closure is covered by a systematic uncertainty based on
 summing in quadrature the level of closure and its statistical
 uncertainty. The magnitude of the uncertainties are summarised in
-Table~\ref{tab:systs} at the end of this section. In the likelihood
-model (Sec.~\ref{sec:likelihood}), one log-normal nuisance parameter
-is used per \scalht category (\ie correlated over \njet and \nb) and
-per \njet category (\ie correlated over \scalht and \nb) for all
-sources of uncertainty listed in this section. 
+Table~\ref{tab:systs-ttw} in Sec.~\ref{sec:systematics}. In the
+likelihood model (Sec.~\ref{sec:likelihood}), one log-normal nuisance
+parameter is used per \scalht category (\ie correlated over \njet and
+\nb) and per \njet category (\ie correlated over \scalht and \nb) for
+all sources of uncertainty listed in this section.
 
 \subsubsection{Extrapolation in \texorpdfstring{\alphat}{AlphaT} and
   \texorpdfstring{\bdphi}{biased dPhi}}
@@ -631,6 +633,8 @@ Any non-closure in the extrapolation of both \alphat and \bdphi is
 covered by a systematic uncertainty, which is defined as the
 quadrature sum of the observed non-closure and its statistical
 uncertainty (indicated by the blue histogram in the figures). 
+
+\fixme{CLOSURE FITS!}
 
 \subsubsection{The effect of W polarisation on lepton acceptance}
 \label{sec:tfSyst_Wpol}
@@ -681,126 +685,3 @@ Figs.~\ref{fig:dataMC_SIT_mu} and \ref{fig:dataMC_SITEvent_mu}
 shapes, only normalisation. The data/MC scale factors (1.42) shown in
 each plot are consistent with the bias observed in the aforementioned
 closure tests.
-
-
-
-
-
-
-
-
-%\subsubsection{Top $p_T$ reweighting}
-%\label{sec:tfSyst_topPt}
-%
-%Variations in the reweighting of top $p_{T}$ distribution, as first outlined in 
-%Sec.~\ref{sec:SMxs}, are studied. A conservative systematic
-%uncertainty on this correction is taken as the size of the correction itself. 
-%The relative change in transfer factors is presented in Fig.
-%~\ref{fig:tfSyst_topPt_muToZinv}-\ref{fig:tfSyst_topPt_muToTtw}. The
-%variation is typically in the range $0-15\%$.
-
-%\subsubsection{QCD contamination}
-%\label{sec:tfSyst_qcdCont}
-%
-%A check has also been performed on the systematic effect on the
-%background prediction due to QCD contamination in the control samples,
-%which has been found to be at the ~5\% level for the \gj
-%control region. Applying an arbitrarily large variation of $\pm
-%100\%$ on the number of Monte Carlo QCD events leads to a systematic
-%variation on the transfer factors of at most 5\% in the majority of bins.
-%This preliminary study suggests that effect from QCD
-%contamination in the \gj control region is small compared 
-%to the total uncertainty assigned to transfer factors. 
-%This systematic source is covered in the data-driven study  
-%using the photon control region, described in Sec. ~\ref{sec:tfSyst_ZGratio}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%\subsection{Data control samples used in the method}
-%
-%To estimate the contributions from backgrounds with genuine missing
-%transverse momentum, three data control regions are used, which are
-%binned identically to the signal region: \mj, \mmj and \gj.  Their
-%definitions are provided in Sec.~\ref{sec:selection}. The selection
-%criteria for these control regions are defined such that any potential
-%contamination from new physics processes or QCD multijets is
-%negligible.
-
-%% In previous versions of this analysis, the \mmj and \gj control
-%% samples are used to predict the \znunu +jets background. We plan to
-%% extend this approach by relying on all (and not just a sub-set of)
-%% relevant control samples to predict the two dominant components of the
-%% total SM background (\wj and \ttbar, or \znunu + jets). Specifically,
-%% we are using the \mj sample to predict the \wj and \ttbar backgrounds
-%% (across all \nb bins) and up to three samples comprising \zmmj,
-%% \gj and \wmj to predict the \znunu + jets background for events
-%% containing exactly zero or one b-tagged jets. Any correlations are
-%% appropriately handled by the likelihood model (via the
-%% \texttt{Combine} tool).
-
-%% The predictions of the \znunu + jets background based on the \zmmj
-%% control samples exhibits significantly larger statistical
-%% uncertainties at high \njet, \nb, \scalht, or \mht due to lower event
-%% counts arising from the lower Z cross section (w.r.t. \gj and
-%% \wj). Regardless, these samples are included in the likelihood fit
-%% to provide additional confidence in the control of the \znunu + jets
-%% background.
-
-%% Concerning the use of $W$-enriched samples to predict the \znunu +jets
-%% background, we have studied this approach
-%% in detail with the 8\TeV dataset. Based on the outcome of these studies,
-%% we have decided to proceed with this approach, as part
-%% of the baseline likelihood description. Studies were
-%% based on data-driven tests with 8\TeV data
-%% (as described in Sec.~\ref{sec:closure-tests}). Closure tests are a critical
-%% tool to determine which samples can be used to predict the SM
-%% background components. In particular, we have studied the effect of
-%% new closure tests designed to test the $W$-enriched to $Z$-enriched
-%% extrapolation, specifically \mj to \gj, \mj to \mmj
-%% and $\mu^{+}$ to $\mu^{-}$ closure tests. 
-%% If further studies of the closure tests with $13\tev$
-%% data suggest that using the \mj control region to predict the \znunu
-%% background is not feasible, we will revert back to the approach
-%% used in Run~I analysis (\ie relying solely on the \zll and \gj
-%% samples). Early investigations suggest there are not any major problems.
-%% %The closure tests provide important event samples for probing the
-%% %accuracy of the simulation modelling implicit in the transfer factors.
-%% %Specific examples include ``\mj to predict \mmj'' and ``zeej to
-%% %predict \gj'' with events containing exactly zero or one b-tagged
-%% %jets. The former test relies on a \wmj-enriched sample to predict
-%% %yields in the \zmmj sample (in the presence of some ``\ttbar
-%% %contamination'' for events with $\nb = 1$). The latter test is a
-%% %consistency check between a dilepton and a \gj sample (as done in
-%% %previous iterations of the analysis).
-%% Most importantly, we retain full flexibility in our approach and the
-%% control samples used to predict the various background components.
-
-%% Currently, the projected sensitivity, as described in the current
-%% version of this note, is based on predictions of SM background
-%% components made from control regions as follows. For events containing
-%% exactly zero or one b-tagged jets, the \mj (enriched in \wej), \gj and
-%% \mmj control samples are used to estimate the irreducible \znunu + jets
-%% background, while the \mj control sample is used to estimate all
-%% remaining SM processes (predominately \wj and \ttbar). For events
-%% containing two or more b-tagged jets, the \mj sample is
-%% used to predict the total SM background (dominated by \ttbar).

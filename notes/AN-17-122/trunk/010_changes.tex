@@ -24,7 +24,7 @@ discriminating variables employed by this search.\footnote{The fit
   understood to be correctly executed and healthy. However, a mistake
   in the data cards for this fit was realised soon afterwards. Only
   then was the excess observed, which prompted the reblinding of the
-  signal region and further detailed control-region-based studies.}
+  signal region and further detailed studies of the control regions.}
 The data sets at the time were based on the \verb!Prompt!
 reconstruction and the calibrations from the various POGs were still
 considered very preliminary. Known issues with the data at the time,
@@ -33,50 +33,66 @@ Collaboration.
 
 \subsection{April 2017 (v2)}
 
-This version contains several updates w.r.t. v1, as detailed
-below. Some of the updates were planned, and stated at the time of, or
-prior to, the Full Status talk (\ie they were still outstanding). Some
-updates concern the addition of new control-region-based (cross check)
-studies. Some updates represent modifications to the analysis methods,
-as indicated below.
+This analysis note has received a substantial overhaul since v1. Both
+the content and the structure have significantly changed.  We have
+reorganised the sections on the background estimation methods, and
+tried to minimise the length of the body of the document, by providing
+summary figures / tables and much of the detailed figures / tables to
+appendices. The updated content reflect changes to the analysis, which
+are detailed below.
+
+Some of the changes were planned and stated at the time of, or prior
+to, the Full Status talk. Some changes concern the addition of new
+cross check studies based on the control regions. Some changes
+represent modifications to the analysis selections and/or
+methods. These updates, labelled as ``Planned'', ``Checks'', or
+``Mod'', are summarised below.
   
 \begin{itemize}
   
 \item (Planned) We have updated to now use the \verb!23Sep2016!
   \verb!ReReco! campaign, the \verb!re-miniAOD!, the
   \verb!Summer16!-campaign MC samples, and all the latest relevant
-  recommended scale factors from the POGs (Secs~\ref{sec:},
-  \ref{sec:}, and \ref{sec:}.)
+  recommended scale factors from the POGs. \eg see
+  Sec.~\ref{sec:sim-corrs}.
+  
+\item (Mod) We have raised the \HTmiss threshold used on the signal
+  and all control regions to $\HTmiss > 200\GeV$. See
+  Sec.~\ref{sec:energysums}. 
     
 \item (Planned) Several new studies have been performed. The most
   important one concerns the use of (missing) higher order corrections
-  that modify the boson \Pt distributions obtained from simulation.
+  that modify the boson \Pt distributions obtained from
+  simulation. \eg see Secs.~\ref{sec:nlo-intro}, \ref{sec:nlo}, and
+  \ref{sec:nlo-zinv}.
 
-\item (New cross checks) New closure tests have been added, the
-  correlation model for the systematic uncertainties derived from
-  closure tests has been revisited, and a likelihood description of
-  these closure tests has also been implemented to understand if any
-  observed non-closure can be explained away by the known experimental
-  or theoretical uncertainties included in our likelihood model.
+\item (Checks) New closure tests have been added, and a likelihood
+  description of these closure tests has also been implemented to
+  understand if any observed non-closure can be explained away by the
+  known experimental or theoretical uncertainties included in our
+  likelihood model. In particular, the modelling of the \alphat and
+  \bdphi variables has been studied in detail. \eg see
+  Secs.~\ref{sec:tfSyst_alphaT} and \ref{sec:tfSyst_alphaT-zinv}.
 
-\item (New cross checks) Fits to data across multiple control regions
-  using a likelihood model as close as possible to that used to
-  determine the final result have been studied, in order to
-  identify/demonstrate a good understanding of the data in the control
-  regions.
+\item (Mod) The correlation model for the systematic uncertainties
+  derived from closure tests has been revisited. See
+  Secs.~\ref{sec:closure-tests} and \ref{sec:closure-tests}.
 
-\item (Planned) The event selection criteria for the \gj sample has
-  been relaxed (removed \alphat requirement, $\Delta R > 0.4$) and the
-  treatment for estimating the sample contamination from fakes and
-  fragmentation has been improved.
+\item (Checks) Fits to data across multiple control regions using a
+  likelihood model as close as possible to that used to determine the
+  final result have been studied, in order to identify/demonstrate a
+  good understanding of the data in the control regions. See
+  Sec.~\ref{sec:crfits}.
 
-\item (New) We now rely solely on the \mmj sample to predict the
-  \znunu\ + jets background. The \gj sample is now reserved for
-  testing assumptions in our likelihood model (Sec.~\ref{sec:}).
-  
-\item (New) We have raised the \HTmiss threshold used on the signal
-  and all control regions to $\HTmiss > 200\GeV$
-  (Sec.~\ref{sec:trigger}).
+\item (Mod) We now rely solely on the \mmj sample to predict the
+  \znunu\ + jets background. See Sec.~\ref{sec:zinv}. The \gj sample
+  is now reserved for testing assumptions in our likelihood model. See
+  Sec.~\ref{app:gjets}.
+
+\item (Planned) The event selection criteria for the \gj (cross check)
+  sample has been relaxed (removed \alphat requirement, $\Delta R >
+  0.4$) and the treatment for estimating the sample contamination from
+  fakes and fragmentation has been improved. See App.~\ref{app:gjets}.
 
 \end{itemize}
 
