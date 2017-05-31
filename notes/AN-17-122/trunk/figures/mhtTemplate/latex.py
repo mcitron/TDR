@@ -1,6 +1,6 @@
 import os
 
-base = "figures/mhtTemplate/exclusive"
+base = "figures/mhtTemplate/exclusive/"
 samples = [("Mu","\\mj"),
            ("MuMu","\\mmj"),]
 njet_bins = [("eq1j","\\njet = 1"),
@@ -15,12 +15,22 @@ bjet_bins = [("eq0b","\\nb = 0"),
              ("eq2b","\\nb = 2"),
              ("eq3b","\\nb = 3"),
              ("ge4b","\\nb \\geq 4"),]
-ht_bins = [(("200","400"),"200 < \\scalht < 400\\GeV"),
-           (("400","600"),"400 < \\scalht < 600\\GeV"),
-           (("600","900"),"600 < \\scalht < 900\\GeV"),
-           (("900","1200"),"900 < \\scalht < 1200\\GeV"),
-           (("1200","Inf"),"\\scalht > 1200\\GeV"),
-           (("900","Inf"),"\\scalht > 900\\GeV"),]
+ht_bins = [
+    [(("200","400"),"200 < \\scalht < 400\\GeV"), # SR binning
+     (("400","600"),"400 < \\scalht < 600\\GeV"),
+     (("600","900"),"600 < \\scalht < 900\\GeV"),
+     (("900","1200"),"900 < \\scalht < 1200\\GeV"),
+     (("1200","Inf"),"\\scalht > 1200\\GeV"),
+     (("900","Inf"),"\\scalht > 900\\GeV"),],
+    [(("400","500"),"400 < \\scalht < 500\\GeV"), # CR binning
+     (("500","600"),"500 < \\scalht < 600\\GeV"),
+     (("600","750"),"600 < \\scalht < 750\\GeV"),
+     (("750","900"),"750 < \\scalht < 900\\GeV"),
+     (("900","1050"),"900 < \\scalht < 1050\\GeV"),
+     (("1050","1200"),"1050 < \\scalht < 1200\\GeV"),
+     (("1200","Inf"),"\\scalht > 1200\\GeV"),
+     (("900","Inf"),"\\scalht > 900\\GeV"),]
+    ][1] # use CR
 used_bins = [("eq1j","eq0b"),("eq1j","eq1b"),
              ("ge2j","eq0b"),("ge2j","eq1b"),("ge2j","eq2b"),("ge2j","eq3b"),
              ("eq2j","eq0b"),("eq2j","eq1b"),("eq2j","eq2b"),
@@ -63,7 +73,6 @@ for (sample,sample_str) in samples :
             string += "    \\label{"+"fig:mhtval_{:s}_{:s}_{:s}".format(sample,njet,bjet)+"}\n"
             string += "  \\end{center}\n"
             string += "\\end{figure}\n"
-            print cntr
             if cntr > 0 : full_string += string # only create table if at least one file found 
 
 print full_string
