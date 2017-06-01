@@ -21,21 +21,14 @@ Table~\ref{tab:pre-selections} and described in further detail below.
   \small
   \begin{tabular}{ ll }
     \hline
-    \ETmiss quality               & Filters related to beam and instrumental effects, and reconstruction failures                               \\
-                                  & \parbox[t]{12cm}{
-                                    (Primary Vertex, 
-                                    CSC Beam Halo,
-                                    HBHE Noise and Isolation,                                                                                   \\
-                                    ECAL Endcap SC Noise, 
-                                    ECAL TP, 
-                                    Bad Muon, 
-                                    Bad Charged Hadron)}                                                                                        \\
-    Beam halo                     & $0.1 < \mathrm{CHF} < 0.95$ for highest-\Pt jet                                                             \\
+    \ETmiss quality               & \parbox[t]{12cm}{(Primary Vertex, CSC Beam Halo, HBHE Noise and Isolation,                                 \\
+                                    ECAL Endcap SC Noise, ECAL TP, Bad Muon, Bad Charged Hadron)}                                              \\
+    Beam halo                     & $0.1 < \mathrm{CHF} < 0.95$ for highest-\Pt jet                                                            \\
     Jet $\mathrm{j}_i$ acceptance & Each jet $\mathrm{j}_i$ that satisfies $\pt^{\mathrm{j}_i} > 40\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 2.4$ \\
-    Jet $\mathrm{j_1}$ acceptance & $\pt^{\mathrm{j_1}} > 100\GeV$                                                                              \\
-    Jets below threshold          & $\HTmiss / \ETmiss < 1.25$                                                                                  \\
-    Forward jet veto              & Veto events containing a jet satisfying $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                               \\
-    Energy sums                   & $\scalht > 200\GeV$ and $\HTmiss > 130\GeV$                                                                 \\
+    Jet $\mathrm{j_1}$ acceptance & $\pt^{\mathrm{j_1}} > 100\GeV$                                                                             \\
+    Jets below threshold          & $\HTmiss / \ETmiss < 1.25$                                                                                 \\
+    Forward jet veto              & Veto events containing a jet satisfying $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                              \\
+    Energy sums                   & $\scalht > 200\GeV$ and $\HTmiss > 200\GeV$                                                                \\
     \hline
   \end{tabular}
 \end{table}
@@ -150,21 +143,22 @@ at the same value of the Run~1 analysis~\cite{Chatrchyan:2013lya} in
 order to maintain acceptance to DM models or compressed SUSY.
 
 Events are required to have appreciable missing transverse energy by
-requiring $\mht>200\gev$.\footnote{This differs with respect to the
-  previous iteration of the analysis, the ICHEP prelimary
-  result~\cite{CMS-PAS-SUS-16-016}, which used $\HTmiss >
-  130\GeV$. This change is motivated through studies that demonstrate
-  a lack of knowledge of the trigger efficiency in the turn on of the
-  efficiency curve, prior to the efficiency plateau at $\HTmiss
-  \approx 200\GeV$.}  This requirement is applied to events in the
-signal and control regions. The \scalht-dependent \alphat thresholds,
-required to suppress multijet events as outlined in
-Sec.~\ref{sec:had-signal}, provide an effective threshold on \mht in
-the range 130--200\GeV, via the relationship in
-Eq.~(\ref{eq:alphat3}). Hence, the extrapolation from control to
-signal region in terms of the \alphat requirement for the signal
-region (that is not required for the control regions, see below) is
-minimised.
+requiring $\mht>200\gev$. This requirement is applied to events in the
+signal and control regions. The threshold differs with respect to the
+previous iteration of the analysis, the ICHEP prelimary
+result~\cite{CMS-PAS-SUS-16-016}, which used $\HTmiss > 130\GeV$. This
+change is motivated through studies that demonstrate a lack of
+knowledge of the trigger efficiency in the turn on of the efficiency
+curve, prior to the efficiency plateau at $\HTmiss \approx 200\GeV$
+(see Sec.~\ref{sec:triggers}).
+
+The \scalht-dependent \alphat thresholds, required to suppress
+multijet events as outlined in Sec.~\ref{sec:had-signal}, provide an
+effective threshold on \mht in the range 130--200\GeV, via the
+relationship in Eq.~(\ref{eq:alphat3}). Hence, the extrapolation from
+control to signal region in terms of the \alphat requirement for the
+signal region (that is not required for the control regions, see
+below) is reduced by the $\mht>200\gev$ requirement.  
 
 \subsection{The signal region}
 \label{sec:had-signal}
@@ -576,8 +570,7 @@ Table~\ref{tab:sr-binning} in Sec.~\ref{sec:nb-categorisation}.
 
 \begin{table}[!h]
   \topcaption{Summary of the lower bound of the first \scalht bin as a
-    function of \njet category used in the analysis. \fixme{MONOJET
-      BIN SHOULD BE 600!}
+    function of \njet category. }
   }
   \label{tab:sr-ht-binning}
   \centering
