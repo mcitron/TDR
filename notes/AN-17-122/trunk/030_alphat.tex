@@ -95,18 +95,19 @@ combining the jets in the event into two pseudo-jets. The mass scale
 is characterised by the scalar sum of the jet transverse energies,
 $\scalst = \sum_{i=1}^{N_\text{jet}} \ET^{\mathrm{j}_i}$, where
 $N_\text{jet}$ is the number of jets with \ET above a predefined
-threshold.\footnote{{\it Nota bene}: the use of \Et and \scalst versus
-  \Pt and \scalht. This difference arises due to the implementation in
-  the trigger logic, described in
-  Sec.~\ref{sec:hadronic_signal_region}, which relies on \Et rather
-  than \Pt. Ultimately, the effects due non-negligible jet masses is
-  small, at the percent level. Only in the definition of \alphat are
-  scalar energy sums based on jet \Et; otherwise, throughout the
-  analysis, the scalar sum \scalht uses jet \Pt.} The \scalst for each
-of the two pseudo-jets is given by the scalar \ET sum of its
-contributing jets. The combination chosen is the one that minimises
-\dst, defined as the difference between these sums for the two
-pseudo-jets.  This clustering criterion assumes a balanced-event
+threshold.  {\it Nota bene}: the use of \Et and \scalst versus \Pt and
+\scalht. This difference arises due to the implementation in the
+trigger logic, described in Sec.~\ref{sec:hadronic_signal_region},
+which relies on \Et rather than \Pt. Ultimately, the effects due
+non-negligible jet masses is small, at the percent level. Scalar
+energy sums based on jet \Et are only used in the definition of
+\alphat; otherwise, the scalar sum \scalht, based on jet \Pt, is used
+throughout the analysis.
+
+The \scalst for each of the two pseudo-jets is given by the scalar \ET
+sum of its contributing jets. The combination chosen is the one that
+minimises \dst, defined as the difference between these sums for the
+two pseudo-jets.  This clustering criterion assumes a balanced-event
 hypothesis, which provides strong separation between SM multijet
 events and events with genuine \ptvecmiss. The \alphat definition can
 be generalised to:
@@ -188,9 +189,8 @@ $\pi\,\mathrm{radians}$.
 
 The use of both the \bdphi and \alphat variables provides an extremely
 powerful rejection factor against contamination from multijet events
-and allows the analysis to maintain low jet-\PT, \HT, and \mht thresholds, which in
-turn maximises signal acceptance for a large range of DM and SUSY
-models with final states characterised by the presence of significant
-\met.
+and allows the analysis to maintain low jet-\PT, \HT, and \mht
+thresholds, which in turn maximises signal acceptance for a large
+range of dark-matter-inspired models.
 
 %}%____________________________________________________________________________||
