@@ -16,19 +16,6 @@ to support additional studies. Table~\ref{tab:datasets_data}
 (App.~\ref{app:datasets}) provides the details on all the primary data
 sets used in this analysis.
 
-%\begin{table}[h!]
-%  \topcaption{The JSON file used to define the certified data set of
-%    35.9~\ifb} 
-%  \centering
-%  \input{tables/datasets/cert_json.tex} 
-%  \label{tab:cert_json}
-%\end{table}
-%
-%Table~\ref{tab:cert_json} specifies the JSON file used to identify the
-%certified data. Table~\ref{tab:datasets_data}
-%(App.~\ref{app:datasets}) lists the names of the primary data sets
-%used in this analysis.
-
 \subsection{Blinding statement}
 
 The data in the signal region is currently blinded, with the exception
@@ -55,8 +42,8 @@ next-to-leading order (NLO) in the strong coupling constant
 ($\alpha_\textrm{s}$) samples of s-channel production of single top
 and ttW, ttZ, and ttG events. The t-channel and tW-channel single top
 samples, as well as ttH samples, are generated using
-\POWHEG~\cite{nlotop}. The diboson samples (WW, WZ, and ZZ) are generated
-using \PYTHIA~\cite{pythia}. These samples are listed in
+\POWHEG~\cite{nlotop}. The diboson samples (WW, WZ, and ZZ) are
+generated using \PYTHIA~\cite{pythia}. These samples are listed in
 Table~\ref{tab:datasets_bkg2} (App.~\ref{app:datasets}).
 
 The {NNPDF}3.0 LO and NLO~\cite{nnpdf} parton distribution functions
@@ -68,23 +55,22 @@ uses CUETP8M2.
 
 The dominant background processes simulated with \MADGRAPH{}@LO
 (\znunu\ + jets, Drell--Yan ($\cPq\bar{\cPq} \to \PZ/\gamma^* \to
-\ell^+\ell^-$) ($q\bar{q} \ra Z/\gamma \ra l^+l^-$) + jets, \gj, W +
-jets, and QCD multijet events) are produced according to the
-generator-level scalar sum of partonic transverse energies (``parton
-\scalht''). 
-Since simulated events at low parton \scalht are
-produced much more  frequently than at higher  parton \scalht, whilst it  is the high
-parton \scalht  events which have  most impact in this  sort of analysis,
-simulated QCD events are produced in parton \scalht bins, where events with parton \scalht outside
-of the  current bin are killed  before the hadronisation stage,  in order to
-populate the high-parton \scalht phase space.
-The \ttbar\ + jets samples are also produced according to
-the fully or semi-leptonic decay of the \ttbar\ system. These ``exclusive''
+\ell^+\ell^-$) + jets, \gj, W + jets, and QCD multijet events) are
+produced according to the generator-level scalar sum of partonic
+transverse energies (``parton \scalht''). Since simulated events at
+low parton \scalht are produced much more frequently than at higher
+parton \scalht, whilst it is the high parton \scalht events which have
+most impact in this sort of analysis, simulated events are produced in
+parton \scalht bins, where events with parton \scalht outside of the
+current bin are killed before the hadronisation stage, in order to
+populate the high-parton \scalht phase space. 
+
+The \ttbar\ + jets samples are also produced according to the fully or
+semi-leptonic decay of the \ttbar\ system. These ``exclusive''
 subsamples are then filtered according to parton \scalht, in order to
 remove any overlaps, and are then ``stitched'' together to provide an
-effective inclusive sample that allows for a high effective
-integrated luminosity in the tails of the parton \scalht
-distributions.
+effective inclusive sample that allows for a high effective integrated
+luminosity in the tails of the parton \scalht distributions.
 
 Inclusive simulated event samples are normalised to inclusive cross
 sections calculated with (N)NLO precision. The full detector response
@@ -96,7 +82,7 @@ go from LO to (N)NLO cross sections are typically determined using a
 corresponding inclusive sample, which are then applied to each
 subsample. The cross sections used for each sample are listed in
 Tables~\ref{tab:datasets_bkg} and~\ref{tab:datasets_bkg2}
-(App.~\ref{app:datasets}). 
+(App.~\ref{app:datasets}).
 
 The full parton \scalht distribution obtained from the ``stitched''
 subsamples relative to that obtained from the corresponding inclusive
@@ -377,6 +363,6 @@ nuisance.
 
 \subsection{Corrections to simulation for signal processes}
 
-\fixme{DOCUMENT THE CORRECTIONS TO BE APPLIED, AS DETAILED IN THE SUSY TWIKI}
+\fixme{DOCUMENT THE CORRECTIONS TO BE APPLIED!}
 
 %%____________________________________________________________________________||
