@@ -162,24 +162,25 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   \label{tab:systs-zinv}
   \centering
   \fontsize{8}{9.6}\selectfont
+  \newcommand{\cat}{\njet, \scalht, \nb, \mht}
   \begin{tabular}{ llllc }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Shared & Figure                              \\
+    Source of uncertainty               & Nuisance parameters / correlation   & Magnitude (\%)                       & Shared & Figure                              \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) category     & 1--100                       & Unique & n/a                                 \\
-    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & 2.3--2.8                     & Shared & \ref{fig:tfSyst_pu_mmZinv}          \\
-    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_scale_mmZinv}       \\
-    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pdf_mmZinv}         \\
-    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 2.2--14.3                    & Shared & \ref{fig:tfSyst_nlo_mmZinv}         \\
-    Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--2.0                     & Shared & \ref{fig:tfSyst_trigger_mmZinv}     \\
-    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst_muonsf_mmZinv}      \\
-    Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst_leptonveto_mmZinv}  \\
-    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 5.3--8.0                     & Shared & \ref{fig:tfSyst_jec_mmZinv}         \\
-    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst_bsf_mmZinv}         \\
-    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--1.8                     & Shared & \ref{fig:tfSyst_bsfl_mmZinv}        \\
-    \alphat + \bdphi extrapolation      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_bDPhi_mumu} \\
-%    \alphat extrapolation              & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_mumu}       \\
-%    \bdphi extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_bDPhi_mumu}        \\
+    Finite-size simulated samples       & 1 per (\cat) category               & 1--100                               & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 1, correlated across \cat           & 2.3--2.8                             & Shared & \ref{fig:tfSyst_pu_mmZinv}          \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \cat           & X--Y                                 & Shared & \ref{fig:tfSyst_scale_mmZinv}       \\
+    Parton density functions            & 1, correlated across \cat           & X--Y                                 & Shared & \ref{fig:tfSyst_pdf_mmZinv}         \\
+    QCD + EWK NLO corrections           & 1, correlated across \cat           & 2.2--14.3                            & Shared & \ref{fig:tfSyst_nlo_mmZinv}         \\
+    Signal trigger efficiency           & 1, correlated across \cat           & 0.0--2.0                             & Shared & \ref{fig:tfSyst_trigger_mmZinv}     \\
+    Lepton efficiency (selection)       & 1, correlated across \cat           & 0.0--4.2                             & Unique & \ref{fig:tfSyst_muonsf_mmZinv}      \\
+    Lepton efficiency (veto)            & 1, correlated across \cat           & X--Y                                 & Unique & \ref{fig:tfSyst_leptonveto_mmZinv}  \\
+    Jet energy scale                    & 1, correlated across \cat           & 5.3--8.0                             & Shared & \ref{fig:tfSyst_jec_mmZinv}         \\
+    b-quark tag efficiency              & 1, correlated across \cat           & 0.3--0.6                             & Shared & \ref{fig:tfSyst_bsf_mmZinv}         \\
+    b-quark mistag probability          & 1, correlated across \cat           & 0.2--1.8                             & Shared & \ref{fig:tfSyst_bsfl_mmZinv}        \\
+%    \alphat + \bdphi extrapolation     & 1 per \njet, 1 per \scalht category & X--Y (\njet), X--Y (\scalht)         & Unique & \ref{fig:closure_AlphaT_bDPhi_mumu} \\
+    \alphat extrapolation               & 1 per \njet, 1 per \scalht category & 3.3--9.4 (\njet), 2.1--5.9 (\scalht) & Unique & \ref{fig:closure_AlphaT_mumu}       \\
+    \bdphi extrapolation                & 1 per \njet, 1 per \scalht category & 2.7--22. (\njet), 1.6--18. (\scalht) & Unique & \ref{fig:closure_bDPhi_mumu}        \\
     \hline
   \end{tabular}
 \end{table}
