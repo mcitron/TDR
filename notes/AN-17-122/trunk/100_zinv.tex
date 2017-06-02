@@ -162,24 +162,25 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   \label{tab:systs-zinv}
   \centering
   \fontsize{8}{9.6}\selectfont
+  \newcommand{\cat}{\njet, \scalht, \nb, \mht}
   \begin{tabular}{ llllc }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation              & Magnitude (\%)               & Shared & Figure                              \\
+    Source of uncertainty               & Nuisance parameters / correlation   & Magnitude (\%)                       & Shared & Figure                              \\
     \hline
-    Finite-size simulated samples       & 1 per (\njet, \scalht, \nb, \mht) category     & 1--100                       & Unique & n/a                                 \\
-    Minimum bias cross section (pileup) & 1, correlated across \njet, \scalht, \nb, \mht & 2.3--2.8                     & Shared & \ref{fig:tfSyst_pu_mmZinv}          \\
-    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_scale_mmZinv}       \\
-    Parton density functions            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Shared & \ref{fig:tfSyst_pdf_mmZinv}         \\
-    QCD + EWK NLO corrections           & 1, correlated across \njet, \scalht, \nb, \mht & 2.2--14.3                    & Shared & \ref{fig:tfSyst_nlo_mmZinv}         \\
-    Signal trigger efficiency           & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--2.0                     & Shared & \ref{fig:tfSyst_trigger_mmZinv}     \\
-    Lepton efficiency (selection)       & 1, correlated across \njet, \scalht, \nb, \mht & 0.0--4.2                     & Unique & \ref{fig:tfSyst_muonsf_mmZinv}      \\
-    Lepton efficiency (veto)            & 1, correlated across \njet, \scalht, \nb, \mht & X--Y                         & Unique & \ref{fig:tfSyst_leptonveto_mmZinv}  \\
-    Jet energy scale                    & 1, correlated across \njet, \scalht, \nb, \mht & 5.3--8.0                     & Shared & \ref{fig:tfSyst_jec_mmZinv}         \\
-    b-quark tag efficiency              & 1, correlated across \njet, \scalht, \nb, \mht & 0.3--0.6                     & Shared & \ref{fig:tfSyst_bsf_mmZinv}         \\
-    b-quark mistag probability          & 1, correlated across \njet, \scalht, \nb, \mht & 0.2--1.8                     & Shared & \ref{fig:tfSyst_bsfl_mmZinv}        \\
-    \alphat + \bdphi extrapolation      & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_bDPhi_mumu} \\
-%    \alphat extrapolation              & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_AlphaT_mumu}       \\
-%    \bdphi extrapolation               & 1 per \njet category, 1 per \scalht category   & X--Y (\njet), X--Y (\scalht) & Unique & \ref{fig:closure_bDPhi_mumu}        \\
+    Finite-size simulated samples       & 1 per (\cat) category               & 1--100                               & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 1, correlated across \cat           & 2.3--2.8                             & Shared & \ref{fig:tfSyst_pu_mmZinv}          \\
+    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \cat           & X--Y                                 & Shared & \ref{fig:tfSyst_scale_mmZinv}       \\
+    Parton density functions            & 1, correlated across \cat           & X--Y                                 & Shared & \ref{fig:tfSyst_pdf_mmZinv}         \\
+    QCD + EWK NLO corrections           & 1, correlated across \cat           & 2.2--14.3                            & Shared & \ref{fig:tfSyst_nlo_mmZinv}         \\
+    Signal trigger efficiency           & 1, correlated across \cat           & 0.0--2.0                             & Shared & \ref{fig:tfSyst_trigger_mmZinv}     \\
+    Lepton efficiency (selection)       & 1, correlated across \cat           & 0.0--4.2                             & Unique & \ref{fig:tfSyst_muonsf_mmZinv}      \\
+    Lepton efficiency (veto)            & 1, correlated across \cat           & X--Y                                 & Unique & \ref{fig:tfSyst_leptonveto_mmZinv}  \\
+    Jet energy scale                    & 1, correlated across \cat           & 5.3--8.0                             & Shared & \ref{fig:tfSyst_jec_mmZinv}         \\
+    b-quark tag efficiency              & 1, correlated across \cat           & 0.3--0.6                             & Shared & \ref{fig:tfSyst_bsf_mmZinv}         \\
+    b-quark mistag probability          & 1, correlated across \cat           & 0.2--1.8                             & Shared & \ref{fig:tfSyst_bsfl_mmZinv}        \\
+%    \alphat + \bdphi extrapolation     & 1 per \njet, 1 per \scalht category & X--Y (\njet), X--Y (\scalht)         & Unique & \ref{fig:closure_AlphaT_bDPhi_mumu} \\
+    \alphat extrapolation               & 1 per \njet, 1 per \scalht category & 3.3--9.4 (\njet), 2.1--5.9 (\scalht) & Unique & \ref{fig:closure_AlphaT_mumu}       \\
+    \bdphi extrapolation                & 1 per \njet, 1 per \scalht category & 2.7--22. (\njet), 1.6--18. (\scalht) & Unique & \ref{fig:closure_bDPhi_mumu}        \\
     \hline
   \end{tabular}
 \end{table}
@@ -380,3 +381,45 @@ correlated in (left) \njet and (right) \scalht, as determined in the
 Figure~\ref{fig:postFitErrMuMu} also shows the systematic uncertainty
 in the final open \mht bin for each (\njet, \scalht, \nb) category,
 which is typically at the level of 5--20\%.
+
+\subsection{Modelling of the \texorpdfstring{\nb}{Nb} templates}
+\label{sec:nb-zinv}
+
+The modelling of the \nb variable for the \znunuj background is
+checked with the \mmj sample as a proxy. Uncertainties in the b-tag
+scale factor corrections for genuine tags and mistags from the BTV POG
+are fully propagated through the method to estimate the \znunuj
+background. Given the issues related to the ``HIP effect'' observed
+during the run eras B-F of the 2016 data taking period, a dedicated
+study has been performed to check the behaviour of the nuisances that
+encapsulate the b-tag scale factor uncertainties. The BTV POG has
+provided era-dependent scale factors (and uncertainties), covering
+eras B-F and G-H independently. A binned likelihood fit to the data in
+the \mmj sample is performed for the full data set and these two
+separate sets of eras. The likelihood fit includes several other
+nuisances related to known theoretical and experimental sources of
+uncertainty, as well as those related to the b-tag scale factors for
+genuine tags of b-quark jets (``bsf'') and mistag of light flavour
+(``bsfl''). Unconstrained ``rate'' parameters are used per (\njet,
+\scalht) event category to correct the simulation normalisation to
+data and the simulation modelling of the \nb dimension in each (\njet,
+\scalht) category is fit to data within the statistical uncertainties
+associated with the data and smiulated counts. The systematic effects
+of the b-tag scale-factor uncertainties are encapsulated by the two
+nuisances ``bsf'' and ``bsfl'', which correlate each behaviour across
+all (\njet, \scalht) event categories. Figure~\ref{fig:btagsf} shows
+the post-fit nuisances for the three sets of run eras: full, B-F, and
+G-H. The accuracy of the \nb modelling, following the application of
+the (era-dependent) scale factor corrections, appears to depend on the
+run era.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/full/Correlated_nuisances}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/BF/Correlated_nuisances}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/GH/Correlated_nuisances}
+  \caption{\label{fig:btagsf} Post-fit nuisances of a likelihood fit
+    to data in the \mmj control region for (top) the full data set,
+    (middle) run eras B-F, and (bottom) run eras G-H.}
+\end{figure}
+
