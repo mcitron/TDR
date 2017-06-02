@@ -380,3 +380,45 @@ correlated in (left) \njet and (right) \scalht, as determined in the
 Figure~\ref{fig:postFitErrMuMu} also shows the systematic uncertainty
 in the final open \mht bin for each (\njet, \scalht, \nb) category,
 which is typically at the level of 5--20\%.
+
+\subsection{Modelling of the \texorpdfstring{\nb}{Nb} templates}
+\label{sec:nb-zinv}
+
+The modelling of the \nb variable for the \znunuj background is
+checked with the \mmj sample as a proxy. Uncertainties in the b-tag
+scale factor corrections for genuine tags and mistags from the BTV POG
+are fully propagated through the method to estimate the \znunuj
+background. Given the issues related to the ``HIP effect'' observed
+during the run eras B-F of the 2016 data taking period, a dedicated
+study has been performed to check the behaviour of the nuisances that
+encapsulate the b-tag scale factor uncertainties. The BTV POG has
+provided era-dependent scale factors (and uncertainties), covering
+eras B-F and G-H independently. A binned likelihood fit to the data in
+the \mmj sample is performed for the full data set and these two
+separate sets of eras. The likelihood fit includes several other
+nuisances related to known theoretical and experimental sources of
+uncertainty, as well as those related to the b-tag scale factors for
+genuine tags of b-quark jets (``bsf'') and mistag of light flavour
+(``bsfl''). Unconstrained ``rate'' parameters are used per (\njet,
+\scalht) event category to correct the simulation normalisation to
+data and the simulation modelling of the \nb dimension in each (\njet,
+\scalht) category is fit to data within the statistical uncertainties
+associated with the data and smiulated counts. The systematic effects
+of the b-tag scale-factor uncertainties are encapsulated by the two
+nuisances ``bsf'' and ``bsfl'', which correlate each behaviour across
+all (\njet, \scalht) event categories. Figure~\ref{fig:btagsf} shows
+the post-fit nuisances for the three sets of run eras: full, B-F, and
+G-H. The accuracy of the \nb modelling, following the application of
+the (era-dependent) scale factor corrections, appears to depend on the
+run era.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/full/Correlated_nuisances}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/BF/Correlated_nuisances}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/GH/Correlated_nuisances}
+  \caption{\label{fig:btagsf} Post-fit nuisances of a likelihood fit
+    to data in the \mmj control region for (top) the full data set,
+    (middle) run eras B-F, and (bottom) run eras G-H.}
+\end{figure}
+
