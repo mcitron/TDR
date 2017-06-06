@@ -1,0 +1,155 @@
+%%____________________________________________________________________________||
+
+\newlength\cmsFigWidth
+\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.85\columnwidth}}{\setlength\cmsFigWidth{0.4\textwidth}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
+
+%%____________________________________________________________________________||
+
+\cmsNoteHeader{AN-17-122}
+
+%%____________________________________________________________________________||
+
+\title{Search for supersymmetry in pp collisions using final states
+with at least one jet and missing transverse momentum}
+
+%%____________________________________________________________________________||
+
+\author[imperial]{R.~Bainbridge}
+\author[bristol]{E.~Bhal}
+\author[vub]{F.~Blekman}
+\author[imperial]{S.~Breeze}
+\author[imperial]{O.~Buchm\"uller}
+\author[imperial]{S.~Casasso}
+\author[imperial]{M.~Citron}
+\author[imperial]{A.~Elwood}
+\author[bristol]{H.~Fl\"acher}
+\author[rochester]{A.~Garcia-Bellido}
+\author[bristol]{B.~Krikler}
+\author[imperial]{C.~Laner}
+\author[rochester]{K.H.~Lo}
+\author[imperial]{S.A.~Malik}
+\author[imperial]{B.~Penning}
+\author[bristol]{T.~Sakuma}
+\author[vub]{D.~Smith$^{1,}$}
+\author[imperial]{A.~Tapper}
+
+\address[imperial]{Imperial College, London, UK}
+\address[bristol]{University of Bristol, Bristol, UK}
+\address[rochester]{University of Rochester, NY, US}
+\address[vub]{Vrije Universiteit Brussel, Brussel, BE}
+
+%%____________________________________________________________________________||
+
+\date{\today}
+
+%%____________________________________________________________________________||
+
+\abstract{A search for supersymmetry is performed in final states
+containing one or more jets and an imbalance in transverse momentum. A
+sample of events resulting from pp collisions at a centre-of-mass
+energy of 13\TeV is analysed. The event data were recorded with the
+CMS detector at the CERN LHC in 2016 and correspond to an integrated
+luminosity of 35.9\fbinv. The search provides sensitivity to models
+that predict a stable weakly interacting massive particle, such as the
+neutralino. The search employs several kinematic variables to suppress
+multijet production to a subdominant level with respect to all other
+standard model backgrounds. Several further kinematic variables are
+used for signal extraction using a binned maximum-likelihood fit to
+the data. The number of candidate signal events is found to agree with
+the expected event counts from standard model processes. A number of
+simplified supersymmetric models that assume the production of gluino
+or squark pairs that decay to neutralinos and standard model
+particles, are used to interpret the result.
+%For models that assume the production of gluino pairs, gluino and
+%neutralino masses up to X and Y\GeV, respectively, are excluded. For
+%models that assume In the case of the production of squark pairs,
+%light-flavour, bottom, and top squarks masses up to X, Y, and Z\GeV
+%are excluded, respectively. Models with near-degenerate mass spectra
+%are also considered. For models that assume top-squark production and
+%their decays to nearly mass-degenerate neutralinos, top squark masses
+%up to X\GeV are excluded.  
+}
+
+%%____________________________________________________________________________||
+
+\hypersetup{ 
+  pdfauthor={Robert Bainbridge, Eshwen Bhal, Freya Blekman, Shane
+  Breeze, Oliver Buchmueller, Stefano Casasso, Matthew Citron, Adam
+  Elwood, Henning Flaecher, Aran Garcia-Bellido, Christian Laner, Kin
+  Ho Lo, Sarah Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith,
+  Alex Tapper},
+  pdftitle={Search for supersymmetry in pp collisions using final
+    states with at least one jet and missing transverse momentum},
+  pdfsubject={CMS},
+  pdfkeywords={CMS, jets, monojet, missing transverse momentum,
+    supersymmetry, dark matter, AlphaT} 
+}
+
+%%____________________________________________________________________________||
+
+\maketitle
+
+%%____________________________________________________________________________||
+
+\tableofcontents
+
+%%____________________________________________________________________________||
+
+\input{mydefs}
+\input{symbols}
+
+%%____________________________________________________________________________||
+
+\include{010_changes}
+\include{020_intro}
+\include{030_alphat}
+\include{040_datasets}
+\include{050_triggers}
+%\include{qcdTrigger}
+\include{060_objects}
+\include{070_selection}
+\include{080_qcd}
+\include{090_ttw}
+\include{100_zinv}
+\include{110_likelihood}
+\include{120_results}
+\include{130_susy}
+\include{140_summary}
+
+%%\include{100_background_ewk}
+%%\include{110_systematics}
+%\include{120_mhtTemplate}
+%\include{150_susy}
+%%\include{160_darkmatter}
+%\include{170_summary}
+
+%%____________________________________________________________________________||
+
+\bibliography{auto_generated}
+
+%%____________________________________________________________________________||
+
+\appendix
+\include{040_datasets_app}
+\include{050_triggers_app}
+\include{070_selection_app}
+\include{080_qcd_app}
+\include{090_ttw_app}
+\include{100_zinv_app}
+\include{100_gjets_app}
+\include{120_results_app}
+
+%\include{app_systematics}
+%\include{qcdTrigger}
+%% \include{alphaTTriggerEfficiencies}
+%% \include{bias_injection}
+%% %% \include{jetRanking}
+%% %% \include{sensitivitySUSBenchmarks}
+%% \include{systShift}
+%% \include{sideband_corrections_old}
+%% \include{mhtBinning}
+%% \include{qcdMcStudy}
+%% \include{signalInjection}
+
