@@ -340,8 +340,7 @@ respectively. Finally, we summarise in Section~\ref{sec:summary}.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-\clearpage
-
+%\clearpage
 \section{The CMS detector}
 \label{sec:detector}
 
@@ -353,9 +352,8 @@ and a brass and scintillator hadron calorimeter (HCAL), each composed
 of a barrel and two endcap sections. Forward calorimeters extend the
 pseudorapidity coverage provided by the barrel and endcap
 detectors. Muons are measured in gas-ionization detectors embedded in
-the steel flux-return yoke outside the solenoid. 
-
-Events of interest are selected using a two-tiered trigger
+the steel flux-return yoke outside the solenoid. Events of interest
+are selected using a two-tiered trigger
 system~\cite{Khachatryan:2016bia}. The first level (L1), composed of
 custom hardware processors, uses information from the calorimeters and
 muon detectors to select events at a rate of around 100\unit{kHz}
@@ -363,17 +361,16 @@ within a time interval of less than 4\mus. The second level, known as
 the high-level trigger (HLT), consists of a farm of processors running
 a version of the full event reconstruction software optimized for fast
 processing, and reduces the event rate to less than 1\unit{kHz} before
-data storage.
-
-A more detailed description of the CMS detector, together with a
-definition of the coordinate system used and the relevant kinematic
-variables, can be found in Ref.~\cite{Chatrchyan:2008zzk}.
+data storage.  A more detailed description of the CMS detector,
+together with a definition of the coordinate system used and the
+relevant kinematic variables, can be found in
+Ref.~\cite{Chatrchyan:2008zzk}.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-\clearpage
+%\clearpage
 \section{Simulated event samples}
 \label{sec:simulation}
 
@@ -381,32 +378,51 @@ variables, can be found in Ref.~\cite{Chatrchyan:2008zzk}.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-\clearpage
+%\clearpage
 \section{Event reconstruction}
 \label{sec:reconstruction}
-
-\subsection{Identifying physics objects}
 
 The physics objects used by this search are determined from particle
 candidates provided by the particle-flow (PF) event algorithm, which
 aims to reconstruct and identify each individual particle in an event
 with an optimized combination of information from the various elements
-of the CMS detector. 
+of the CMS detector~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-001}.
 
-The energy of photons is directly obtained from
-the ECAL measurement, corrected for zero-suppression effects. The
-energy of electrons is determined from a combination of the electron
-momentum at the primary interaction vertex as determined by the
-tracker, the energy of the corresponding ECAL cluster, and the energy
-sum of all bremsstrahlung photons spatially compatible with
-originating from the electron track. The energy of muons is obtained
-from the curvature of the corresponding track. The energy of charged
-hadrons is determined from a combination of their momentum measured in
-the tracker and the matching ECAL and HCAL energy deposits, corrected
-for zero-suppression effects and for the response function of the
-calorimeters to hadronic showers. Finally, the energy of neutral
-hadrons is obtained from the corresponding corrected ECAL and HCAL
-energy.
+The energy of photons is directly obtained from the ECAL measurement,
+corrected for zero-suppression effects. The energy of electrons is
+determined from a combination of the electron momentum at the primary
+interaction vertex as determined by the tracker, the energy of the
+corresponding ECAL cluster, and the energy sum of all bremsstrahlung
+photons spatially compatible with originating from the electron
+track. The energy of muons is obtained from the curvature of the
+corresponding track. The energy of charged hadrons is determined from
+a combination of their momentum measured in the tracker and the
+matching ECAL and HCAL energy deposits, corrected for zero-suppression
+effects and for the response function of the calorimeters to hadronic
+showers. Finally, the energy of neutral hadrons is obtained from the
+corresponding corrected ECAL and HCAL energy.
+
+Jets are reconstructed from the PF candidate particles, clustered by
+the anti-$k_\mathrm{t}$ algorithm~\cite{Cacciari:2008gp,
+  Cacciari:2011ma} with a size parameter of 0.4. In this process, raw
+jet energy is obtained from the sum of the candidate particle
+energies, and the raw jet momentum by the vectorial sum of the
+candidate particle momenta, which results in a nonzero jet
+mass. Selection criteria are applied to each event to remove spurious
+jet-like features originating from isolated noise patterns from the
+calorimeter systems. An offset correction is applied to jet energies
+to take into account the contribution from additional proton-proton
+interactions within the same or nearby bunch crossings~\cite{pileup}.
+The raw jet energies are then corrected to establish a relative
+uniform response of the calorimeter in $\eta$ and a calibrated
+absolute response in transverse momentum \pt. Jet energy corrections
+are derived from simulation, and are confirmed with in situ
+measurements of the energy balance in dijet and photon + jet
+events~\cite{Chatrchyan:2011ds}. The jet energy resolution amounts
+typically to 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV,
+respectively. 
+%Jet momentum is determined from simulation to be within 5 to 10\% of
+%the true momentum over the whole \pt spectrum and detector acceptance.
 
 The most accurate estimator for the missing transverse momentum vector
 \ptvecmiss is defined as the projection on the plane perpendicular to
@@ -414,35 +430,13 @@ the beams of the negative vector sum of the momenta of all PF
 candidate particles in an event. Its magnitude is referred to as
 \ETmiss.
 
-Jets are reconstructed from the PF candidate particles, clustered by
-the anti-$k_\mathrm{t}$ algorithm~\cite{Cacciari:2008gp,
-  Cacciari:2011ma} with a size parameter of 0.4. In this process, raw
-jet energy is obtained from the sum of the candidate particle
-energies, and the raw jet momentum by the vectorial sum of the
-candidate particle momenta, which results in a nonzero jet mass.
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 
-
-Jet momentum is determined from simulation to be within 5 to
-10\% of the true momentum over the whole \pt spectrum and detector
-acceptance. An offset correction is applied to jet energies to take
-into account the contribution from additional proton-proton
-interactions within the same or nearby bunch
-crossings~\cite{pileup}. 
-The raw jet energies are then corrected to establish a relative
-uniform response of the calorimeter in $\eta$ and a calibrated
-absolute response in transverse momentum \pt. 
-
-Jet energy corrections are derived from simulation, and are confirmed
-with in situ measurements of the energy balance in dijet and photon +
-jet events~\cite{Chatrchyan:2011ds}. The jet energy resolution amounts
-typically to 15\% at 10\GeV, 8\% at 100\GeV, and 4\% at 1\TeV,
-respectively. 
-
-
-Selection criteria are applied to each event to
-remove spurious jet-like features originating from isolated noise
-patterns in certain HCAL regions.
-
+%\clearpage
+\section{Event selection}
+\label{sec:selection}
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
