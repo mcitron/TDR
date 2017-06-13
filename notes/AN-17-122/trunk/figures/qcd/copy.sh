@@ -34,4 +34,10 @@ wgetr ${DIR}/Validation/Combined/rateParRatioMhtMetDivDouble1d.pdf
 wgetr ${DIR}/Validation/Combined/rateParRatioBDPhiDivDoubleSb1d.pdf
 cd ../
 
+cd val_nb_mht/
+# point to plots here: http://www.hep.ph.ic.ac.uk/~sdb15/Analysis/RA1/201706_Jun/04_McQcdEwkYields/
+#wgetr ${DIR}/Validation/Combined/rateParRatioMhtMetDivDouble1d.pdf
+#wgetr ${DIR}/Validation/Combined/rateParRatioBDPhiDivDoubleSb1d.pdf
+cd ../
+
 unalias wgetr
