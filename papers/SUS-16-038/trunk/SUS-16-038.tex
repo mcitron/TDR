@@ -59,6 +59,7 @@
 \newcommand{\ttw}{\ensuremath{\ttbar\PW}\xspace}
 \newcommand{\ttz}{\ensuremath{\ttbar\cPZ}\xspace}
 \newcommand{\lost}{\ensuremath{\ell_\textrm{lost}}\xspace}
+\newcommand{\ra}{\ensuremath{\rightarrow}}
 
 \newlength\cmsFigWidth
 \newlength\cmsFigWidthTwo
@@ -377,7 +378,7 @@ Ref.~\cite{Chatrchyan:2008zzk}.
 %_______________________________________________________________________________
 
 %\clearpage
-\section{Simulated event samples}
+\section{Monte Carlo simulation}
 \label{sec:simulation}
 
 %_______________________________________________________________________________
@@ -388,30 +389,38 @@ Ref.~\cite{Chatrchyan:2008zzk}.
 \section{Event reconstruction}
 \label{sec:reconstruction}
 
-The physics objects used by this search are determined from particle
-candidates provided by the particle-flow (PF) event algorithm, which
-aims to reconstruct and identify each individual particle in an event
-with an optimized combination of information from the various elements
-of the CMS detector~\cite{CMS-PAS-PFT-09-001, CMS-PAS-PFT-10-001}.
+The particle-flow (PF) algorithm~\cite{CMS-PAS-PFT-09-001,
+  CMS-PAS-PFT-10-001} is used to reconstruct and identify candidate
+physics objects such as photons~\cite{CMS:EGM-14-001},
+electrons~\cite{Khachatryan:2015hwa}, muons~\cite{Chatrchyan:2012xi},
+and charged and neutral hadrons through an optimal combination of
+information from all detector systems. The reconstructed vertex with
+the largest value of summed physics-object $\Pt^2$ is taken to be the
+primary $\Pp\Pp$ interaction vertex. Charged-particle tracks
+associated with vertices from pileup events are not considered by the
+PF algorithm as part of the global event reconstruction.
 
-The energy of photons is directly obtained from the ECAL measurement,
-corrected for zero-suppression effects. The energy of electrons is
-determined from a combination of the electron momentum at the primary
-interaction vertex as determined by the tracker, the energy of the
-corresponding ECAL cluster, and the energy sum of all bremsstrahlung
-photons spatially compatible with originating from the electron
-track. The energy of muons is obtained from the curvature of the
-corresponding track. The energy of charged hadrons is determined from
-a combination of their momentum measured in the tracker and the
-matching ECAL and HCAL energy deposits, corrected for zero-suppression
-effects and for the response function of the calorimeters to hadronic
-showers. Finally, the energy of neutral hadrons is obtained from the
-corresponding corrected ECAL and HCAL energy.
+Candidate signal events, as well as control samples, are defined by
+the absence or presence of photons, electrons, and muons that are
+isolated from other activity in the event. All isolation variables
+exclude the contributions from the physics object itself and pileup
+events. Photons use an isolation cone defined by the radius $\Delta R
+= \sqrt{\smash[b]{(\Delta\phi)^2 + (\Delta\eta)^2}} = 0.3$.
+%Photons are required to be isolated from additional event activity
+%within a cone $\Delta R = \sqrt{\smash[b]{(\Delta\phi)^2 +
+%    (\Delta\eta)^2}} = 0.3$ around its trajectory. 
+Isolation for an electron or muon is a relative quantity,
+$\mathcal{I}_\textrm{rel}$, defined as the scalar \Pt sum of all
+candidate particles within a cone around its trajectory, divided by
+the lepton \Pt. The cone radius is dependent on the lepton \Pt:
+$\Delta R = \min [ \max( 0.05, 10\GeV / \Pt ), 0.2 ]$. Isolated
+electrons and muons are required to satisfy $\mathcal{I}_\text{rel} <
+0.1$ and 0.2, respectively.
 
-Jets are reconstructed from the PF candidate particles, clustered by
+Jets are reconstructed from the PF particle candidates, clustered by
 the anti-$k_\mathrm{t}$ algorithm~\cite{Cacciari:2008gp,
-  Cacciari:2011ma} with a size parameter of 0.4. In this process, raw
-jet energy is obtained from the sum of the candidate particle
+  Cacciari:2011ma} with a radius parameter of 0.4. In this process,
+raw jet energy is obtained from the sum of the candidate particle
 energies, and the raw jet momentum by the vectorial sum of the
 candidate particle momenta, which results in a nonzero jet
 mass. Selection criteria are applied to each event to remove spurious
@@ -948,66 +957,94 @@ result.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-\section{Background evaluation}
-\label{sec:background}
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
-\section{Non-multijet backgrounds}
+\section{Non-multijet background evaluation}
 \label{sec:ewk}
 
 The application of the \alphat and \bdphi variables reduce the
-multijet background in the signal region, estimated using the method
-described in Sec.~\ref{sec:qcd}, to a negligible level. Hence, the SM
-processes that provide the dominant contributions to background counts
-involve the production of high-\pt neutrinos in the final state.
-
-The associated production of jets and Z or W bosons that decay,
+multijet background in the signal region to a negligible level, as
+estimated with the method described in Sec.~\ref{sec:qcd}. Hence, the
+SM processes that provide the dominant contributions to the background
+counts involve the production of high-\pt neutrinos in the final
+state. The associated production of jets and Z or W bosons that decay,
 respectively, to \znunu and $\PW^\pm \to \ell\nu$ ($\ell=\Pe$, $\Pgm$,
-$\Pgt$), dominate the background counts for events containing few jets
-and few b-tagged jets. The production of top quark-antiquark pairs,
-followed by semileptonic top quark decay to a W boson and b quark,
-becomes the dominant source of background for events containing high
-numbers of jets or b-tagged jets. The \znunuj background is
-irreducible. The ``lost lepton'' (\lost) background arises from the
-decay of W bosons (produced directly or via a top quark) that yield an
-electron or muon, possibly originating from leptonic $\Pgt$
+$\Pgt$) dominate the background counts for events containing low
+numbers of jets and b-tagged jets. The production and semileptonic
+decay of top quark-antiquark pairs to W bosons and b quarks becomes
+the dominant background process for events containing high numbers of
+jets or b-tagged jets. The ``lost lepton'' (\lost) background arises
+from the decay of W bosons (produced directly or via a top quark) that
+yield an electron or muon, possibly originating from leptonic $\Pgt$
 decays. These events are rejected by vetoes that identify the presence
 of leptons or single isolated tracks.
+%The \znunuj background is irreducible.
 
-The \lost and \znunuj backgrounds are estimated using data counts in
-the \mj and \mmj control regions, respectively, and the use of
-``transfer factors'' determined from simulation. Each transfer factor,
-\tf, allows to extrapolate from an observed event count in each
-(\njet, \nb, \scalht) bin of a given control region to an estimate for
-a background contribution in the corresponding (\njet, \nb, \scalht,
-\mht) bins of the signal region.
+The \lost and \znunuj backgrounds are estimated using data control
+regions and ``transfer factors'' determined from simulation: 
 
-The \znunuj and \zmumuj processes have different acceptances but
-similar kinematic properties when the muons are ignored. The \lost
-background is primarily due to unidentified leptons arising from
-\ttbar and W + jets production, but other processes also contribute,
-albeit at a much reduced level. The \mj control region is used to
-estimate the \lost contributions from \ttbar, W + jets, single top
-quark, diboson, and Drell--Yan production, as well as the associated
-production of \ttbar and W, Z, \gamma, or Higgs bosons.
+\begin{align}
+  \mathcal{N}^{\lost}_\textrm{pred} \, & = \,
+  \tf^{\lost} \; \mathcal{N}^{\mj}_\textrm{data} \; ,
+  & 
+  \tf^{\lost} \, & = \,
+  \frac{\mathcal{N}^{\lost}_\textrm{MC}(\njet, \scalht, \nb, \mht)}
+  {\mathcal{N}^{\mj}_\textrm{MC}(\njet, \scalht, \nb)\hfill} \; ;
+  \\
+  \mathcal{N}^\textrm{\znunu}_\textrm{pred} \, & = \,
+  \tf^{\znunu} \; \mathcal{N}^{\mmj}_\textrm{data} \; ,
+  & 
+  \tf^{\znunu} \, & = \,
+  \frac{\mathcal{N}^{\znunu}_\textrm{MC}(\njet, \scalht, \nb, \mht)}
+  {\mathcal{N}^{\mmj}_\textrm{MC}(\njet, \scalht, \nb)\hfill} \; ;
+\end{align}
 
+where $\tf^{\lost}$ and $\tf^{\znunu}$ are the transfer factors that
+act as multiplier terms on the event counts observed in each (\njet,
+\nb, \scalht) bin of, respectively, the \mj and \mmj control regions,
+$\mathcal{N}^{\mj}_\textrm{data}$ and
+$\mathcal{N}^{\mmj}_\textrm{data}$, to estimate the \lost or \znunuj
+background in the corresponding (\njet, \nb, \scalht, \mht) bins of
+the signal region, $\mathcal{N}^{\lost}_\textrm{pred}$ and
+$\mathcal{N}^{\znunuj}_\textrm{pred}$. The transfer factors are simply
+ratios of the expected yields as determined from simulation (``sim'') 
 
-defined as the ratio of the expected yields in the same (\njet, \nb,
-\scalht) bins of the signal region $\mathcal{N}^\text{SR}_\text{MC}$
-and one of the control regions $\mathcal{N}^\text{CR}_\text{MC}$.  The
-\tf factors are used to extrapolate from the event yields observed in
-each bin of a data control sample $\mathcal{N}^\text{CR}_\text{data}$
-to provide an estimate for the background, integrated over \HTmiss,
-from a particular SM process or processes in the corresponding bin of
-the signal region $\mathcal{N}^\text{SR}_\text{data}$.  The
+in the same (\njet, \nb, \scalht) bins
+of the signal region $\mathcal{N}^\textrm{SR}_\textrm{MC}$ and one of
+the control regions $\mathcal{N}^\textrm{CR}_\textrm{MC}$.
+
+The
 superscript SR or CR refers to, respectively, the process or processes
 being estimated and one of the \mj and \mmj control regions, described
 in Section~\ref{sec:control_regions}. The subscript refers to whether
 the counts are obtained from data, simulation (``MC''), or an estimate
 (``pred'').
+
+
+
+
+The
+\tf factors are used to extrapolate from the event yields observed in
+each bin of a data control sample $\mathcal{N}^\textrm{CR}_\textrm{data}$
+to provide an estimate for the background, integrated over \HTmiss,
+from a particular SM process or processes in the corresponding bin of
+the signal region $\mathcal{N}^\textrm{SR}_\textrm{data}$.  
+
+
+
+
+The \znunuj and \zmumuj processes have different acceptances but
+similar kinematic properties when the muons are ignored. 
+
+The \lost background is primarily due to unidentified leptons arising
+from \ttbar and W + jets production, but other processes also
+contribute, albeit at a much reduced level. The \mj control region is
+used to estimate the \lost contributions from \ttbar, W + jets, single
+top quark, diboson, and Drell--Yan production, as well as the
+associated production of \ttbar and W, Z, $\gamma$, or Higgs bosons.
+
+The transfer factors are defined as 
+
+
+
 
 
 %_______________________________________________________________________________
