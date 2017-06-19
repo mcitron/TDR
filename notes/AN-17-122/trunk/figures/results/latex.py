@@ -1,6 +1,7 @@
 import os
 
-base = ["figures/results/prefit/shapes/","figures/results/crfit/shapes/","figures/results/postfit/shapes/"][1]
+base = "figures/results/36invfb/"
+fit = ["prefit/shapes/","crfit/shapes/","postfit/shapes/"][1]
 
 njet_bins = [("eq1j","\\njet = 1"),
              ("ge2j","\\njet \\geq 2 \textrm{(asymmetric)}"),
@@ -49,7 +50,8 @@ for (njet,njet_str) in njet_bins :
         string += "  \\begin{center}\n"
         for iht,(ht,ht_str) in enumerate(ht_bins) : 
             # latex path for "file" is not same as path needed by os.isfile, so concatenate "pwd" and "file" strings before checking 
-            file = base+"/{0:s}_{1:s}__{2:s}_{3:s}/mhtShape_{0:s}_{1:s}_{2:s}_{3:s}_fit_b.pdf".format(bjet,njet,ht[0],ht[1])
+            #file = base+"/"+fit+"/{0:s}_{1:s}__{2:s}_{3:s}/mhtShape_{0:s}_{1:s}_{2:s}_{3:s}_fit_b.pdf".format(bjet,njet,ht[0],ht[1])
+            file = base+"/"+fit+"/mhtShape_{0:s}_{1:s}_{2:s}_{3:s}_fit_b.pdf".format(bjet,njet,ht[0],ht[1])
             pwd = os.getcwd()
             path = list(pwd.split("/") + file.split("/")) 
             path = "/".join(list(sorted(set(path),key=lambda x: path.index(x))))
@@ -75,6 +77,6 @@ for (njet,njet_str) in njet_bins :
         if cntr > 0 : full_string += string # only create table if at least one file found 
 
 print full_string
-f = open("tables.tex","w")
+f = open("results.tex","w")
 f.write(full_string)
 f.close()
