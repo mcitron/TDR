@@ -7,17 +7,17 @@ alias wget='wget -e robots=off --no-parent -nH -r -R index.html*,*.png,*.root,*.
 #NUIS_PRE="https://www.hep.ph.ic.ac.uk/~cl4010/RA1/Stats/Fit_wMHT_1in8_noQcdMono_toys1_nuisances-prefit/"
 #NUIS_POST="https://www.hep.ph.ic.ac.uk/~cl4010/RA1/Stats/Fit_wMHT_1in8_noQcdMono_toys1_nuisances-postfit/"
 #SHAPE_PRE="https://www.hep.ph.ic.ac.uk/~cl4010/RA1/Stats/Fit_wMHT_1in8_noQcdMono_toys200_Shapes-prefit/"
-#SHAPE_POST="https://www.hep.ph.ic.ac.uk/~cl4010/RA1/Stats/Fit_wMHT_1in8_noQcdMono_toys200_Shapes-postfit/"
 #SHAPE_CR="https://www.hep.ph.ic.ac.uk/~cl4010/RA1/Stats/Fit_wMHT_1in8_noQcdMono_toys200_Shapes-CRfit/"
+#SHAPE_POST="https://www.hep.ph.ic.ac.uk/~cl4010/RA1/Stats/Fit_wMHT_1in8_noQcdMono_toys200_Shapes-postfit/"
 
 # Unblinded 
 BASE="36invfb/"
 MR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_IncMht_formulaSyst/postFitNorm/"
-NUIS_PRE="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_IncMht_formulaSyst/postFitNuisance/" #@@
-NUIS_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_IncMht_formulaSyst/postFitNuisance/"
-SHAPE_PRE="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postCRFitShape/" #@@
-SHAPE_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postFitShape/"
+#NUIS_PRE="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_IncMht_formulaSyst/postFitNuisance/" #@@
+NUIS_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postFitNuisance/"
+#SHAPE_PRE="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postCRFitShape/" #@@
 SHAPE_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postCRFitShape/"
+SHAPE_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postFitShape/"
 
 wget -P ${BASE}/mono/ ${MR}/summaryPlot_Monojet_prefit.pdf
 wget -P ${BASE}/mono/ ${MR}/summaryPlot_Monojet_fit_b.pdf
@@ -34,10 +34,10 @@ wget -P ${BASE}/symm/ ${MR}/summaryPlot_Symmetric_prefit_overlay_fit_b.pdf
 wget -P ${BASE}/all/ ${MR}/ratios_all_prefit.pdf
 wget -P ${BASE}/all/ ${MR}/pulls_all_prefit.pdf
 
-wget -P ${BASE}/prefit/nuis/ ${NUIS_PRE}/
+#wget -P ${BASE}/prefit/nuis/ ${NUIS_PRE}/
 wget -P ${BASE}/postfit/nuis/ ${NUIS_POST}/
 
-wget -P ${BASE}/prefit/shapes/ ${SHAPE_PRE}/
+#wget -P ${BASE}/prefit/shapes/ ${SHAPE_PRE}/
 wget -P ${BASE}/crfit/shapes/ ${SHAPE_CR}/
 wget -P ${BASE}/postfit/shapes/ ${SHAPE_POST}/
 
