@@ -379,45 +379,44 @@ of variables in which extrapolations are performed.
   \topcaption{Summary of the variables used to categorise events in
     the likelihood model for the signal and each control region. Also
     shown are the variables used for modelling (\ie validation)
-    studies. 
+    studies. $\dagger$The \mmj sample performs a limited extrapolation
+    in \nb, as described in the text below and in
+    Sec.~\ref{sec:nb-categorisation}. 
   }
   \label{tab:cr-categorisation}
   \centering
   \begin{tabular}{ lll }
     \hline
-    Sample   & Used in likelihood model & Used for modelling (\ie validation) studies \\ 
+    Sample   & Used in likelihood model   & Used for modelling (\ie validation) studies \\ 
     \hline
-    \mj      & \njet, \scalht, \nb      & \HTmiss                                     \\
-    \mmj     & \njet, \scalht           & \nb, \HTmiss                                \\
-    Multijet & \njet, \scalht           & \nb, \HTmiss                                \\
-    \gj      & --                       & \njet, \scalht, \nb, \HTmiss                \\
+    \mj      & \njet, \scalht, \nb        & \HTmiss                                     \\
+    \mmj     & \njet, \scalht, \nb\dagger & \nb, \HTmiss                                \\
+    Multijet & \njet, \scalht             & \nb, \HTmiss                                \\
+    \gj      & --                         & \njet, \scalht, \nb, \HTmiss                \\
     \hline
   \end{tabular}
 \end{table}
 
 The event categorisation used by the likelihood model differs
 according to the sample. Events in the signal region are categorised
-according to \njet, \nb, \scalht, and \HTmiss. The \mj events are
-categorised according to \njet, \nb, and \scalht. The \mmj events are
-categorised according to \njet and \scalht. Events in the
-multijet-enriched control region are also categorised according to
-\njet and \scalht. 
+according to \njet, \nb, \scalht, and \HTmiss. 
 
-The simulation modelling of the \nb and \HTmiss variables is checked
-in the \mmj sample. The modelling of \HTmiss is also checked in the
-\mj sample. The \gj sample is not used at all in the likelihood model
-to estimate the SM backgrounds in the signal region, but the \gj
-sample is used to check the modelling of all variables, \njet, \nb,
-\scalht, and \HTmiss. This information is summarised in
-Table~\ref{tab:cr-categorisation}.
+The \mj events are categorised identically according to \njet, \nb,
+and \scalht. The modelling of \HTmiss is checked in the \mj sample.
 
-In short, the \mj sample is used to predict the W + jets and \ttbar
-(plus other residual) backgrounds and ``mirrors'' exactly the event
-categorisation of the signal region, except for the \HTmiss
-dimension. The \mmj and multijet-enriched samples mirror the signal
-region in terms of \njet and \scalht, and use the \nb and \mht
-dimensions to validate the assumptions (\ie extrapolations) in the
-likelihood model. 
+Events in the \mmj and multijet-enriched control regions are also
+categorised indentically according to \njet and \scalht. However, for
+the \mmj events, two \nb categories are employed, $\nb = 0$ and $\nb
+\geq 1$, and an extrapolation in \nb is performed for the region $\nb
+\geq 1$. The simulation modelling of the \nb and \mht variables are
+checked with both samples.
+
+The \gj sample is not used at all in the likelihood model to estimate
+the SM backgrounds in the signal region, but the \gj sample is used to
+check the modelling of all variables, \njet, \nb, \scalht, and
+\HTmiss. 
+
+This information is summarised in Table~\ref{tab:cr-categorisation}.
 
 \subsubsection{Event categorisation by subleading jet \texorpdfstring{\Pt}{pT}}
 \label{sec:subleading-jet}
@@ -577,8 +576,10 @@ Event categorisation by \nb depends on \njet and \scalht, and is
 chosen based on data event counts in the \mj and \mmj samples. The
 binning in \nb is bounded from above by \njet and determined based on
 data event counts in the \mj control region. The event counts in the
-\mmj sample are integrated over \nb and so counts per (\njet, \scalht)
-bin are considered.
+\mmj sample are categorised according to counts in (\njet, \scalht,
+$\nb = 0$) and (\njet, \scalht, $\nb \geq 1$), with the single
+exception of ($\njet = 1$, $\scalht > 900$, $\nb \geq 0$), for which
+the \nb dimension is completely collapsed. 
 
 Figure~\ref{fig:cr-counts} (in Appendix~\ref{app:selection}) shows the
 event counts as a function of \njet, \nb, and \scalht in \mj, \mmj,
@@ -678,8 +679,10 @@ The binning strategy is summarised as follows:
   is 61.
 \item The number of (\njet, \scalht, \nb) categories in the \mj
   control region is 207.
-\item An extrapolation in \nb is performed from the \mmj and multijet
-  control regions.
+\item The number of (\njet, \scalht, \nb) categories in the \mmj
+  control region is 121.
+\item An extrapolation in \nb is performed from the \mmj (for the
+  region $\nb \geq 1$ only) and multijet control regions.
 \item An extrapolation in \HTmiss is performed from all control regions.
 \end{itemize}
 In the signal region, after aggregation across \scalht bins: 
@@ -693,6 +696,6 @@ In the signal region, after aggregation across \scalht bins:
 
 The total number of measurements used in the binned likelihood fit,
 which includes the signal, \mj, and \mmj control regions, is 276 + 204
-+ 61 = 541. (The multijet background estimates are determined in a
++ 121 = 601. (The multijet background estimates are determined in a
 separate fit.) Further details can be found in
 Sec.~\ref{sec:likelihood}.
