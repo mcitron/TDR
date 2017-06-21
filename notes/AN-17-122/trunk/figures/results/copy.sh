@@ -19,20 +19,20 @@ NUIS_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616
 SHAPE_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postCRFitShape/"
 SHAPE_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postFitShape/"
 
-wget -P ${BASE}/mono/ ${MR}/summaryPlot_Monojet_prefit.pdf
-wget -P ${BASE}/mono/ ${MR}/summaryPlot_Monojet_fit_b.pdf
-wget -P ${BASE}/mono/ ${MR}/summaryPlot_Monojet_prefit_overlay_fit_b.pdf
+wget -O ${BASE}/mono/summaryPlot_Monojet_prefit.pdf               ${MR}/summaryPlot_Monojet_prefit.pdf
+wget -O ${BASE}/mono/summaryPlot_Monojet_fit_b.pdf                ${MR}/summaryPlot_Monojet_fit_b.pdf
+wget -O ${BASE}/mono/summaryPlot_Monojet_prefit_overlay_fit_b.pdf ${MR}/summaryPlot_Monojet_prefit_overlay_fit_b.pdf
 
-wget -P ${BASE}/asym/ ${MR}/summaryPlot_Asymmetric_prefit.pdf
-wget -P ${BASE}/asym/ ${MR}/summaryPlot_Asymmetric_fit_b.pdf
-wget -P ${BASE}/asym/ ${MR}/summaryPlot_Asymmetric_prefit_overlay_fit_b.pdf
+wget -O ${BASE}/asym/summaryPlot_Asymmetric_prefit.pdf		     ${MR}/summaryPlot_Asymmetric_prefit.pdf
+wget -O ${BASE}/asym/summaryPlot_Asymmetric_fit_b.pdf		     ${MR}/summaryPlot_Asymmetric_fit_b.pdf
+wget -O ${BASE}/asym/summaryPlot_Asymmetric_prefit_overlay_fit_b.pdf ${MR}/summaryPlot_Asymmetric_prefit_overlay_fit_b.pdf
 
-wget -P ${BASE}/symm/ ${MR}/summaryPlot_Symmetric_prefit.pdf
-wget -P ${BASE}/symm/ ${MR}/summaryPlot_Symmetric_fit_b.pdf
-wget -P ${BASE}/symm/ ${MR}/summaryPlot_Symmetric_prefit_overlay_fit_b.pdf
+wget -O ${BASE}/symm/summaryPlot_Symmetric_prefit.pdf		    ${MR}/summaryPlot_Symmetric_prefit.pdf
+wget -O ${BASE}/symm/summaryPlot_Symmetric_fit_b.pdf		    ${MR}/summaryPlot_Symmetric_fit_b.pdf
+wget -O ${BASE}/symm/summaryPlot_Symmetric_prefit_overlay_fit_b.pdf ${MR}/summaryPlot_Symmetric_prefit_overlay_fit_b.pdf
 
-wget -P ${BASE}/all/ ${MR}/ratios_all_prefit.pdf
-wget -P ${BASE}/all/ ${MR}/pulls_all_prefit.pdf
+wget -O ${BASE}/all/ratios_all_prefit.pdf ${MR}/ratios_all_prefit.pdf
+wget -O ${BASE}/all/pulls_all_prefit.pdf ${MR}/pulls_all_prefit.pdf
 
 #wget -P ${BASE}/prefit/nuis/ ${NUIS_PRE}/
 wget -P ${BASE}/postfit/nuis/ ${NUIS_POST}/
