@@ -4,7 +4,7 @@ base = "figures/results/36invfb/"
 fit = ["prefit/shapes/","crfit/shapes/","postfit/shapes/"][1]
 
 njet_bins = [("eq1j","\\njet = 1"),
-             ("ge2j","\\njet \\geq 2 \textrm{(asymmetric)}"),
+             ("ge2a","\\njet \\geq 2 \\; \\textrm{(asymmetric)}"),
              ("eq2j","\\njet = 2"),
              ("eq3j","\\njet = 3"),
              ("eq4j","\\njet = 4"),
@@ -14,6 +14,7 @@ bjet_bins = [("eq0b","\\nb = 0"),
              ("eq1b","\\nb = 1"),
              ("eq2b","\\nb = 2"),
              ("eq3b","\\nb = 3"),
+             ("ge3b","\\nb \\geq 3"),
              ("ge4b","\\nb \\geq 4"),]
 ht_bins = [
     [(("200","400"),"200 < \\scalht < 400\\GeV"), # SR binning
@@ -32,10 +33,10 @@ ht_bins = [
      (("900","Inf"),"\\scalht > 900\\GeV"),]
     ][0] # use SR
 used_bins = [("eq1j","eq0b"),("eq1j","eq1b"),
-             ("ge2j","eq0b"),("ge2j","eq1b"),("ge2j","eq2b"),("ge2j","eq3b"),
+             ("ge2a","eq0b"),("ge2a","eq1b"),("ge2a","eq2b"),("ge2a","ge3b"),
              ("eq2j","eq0b"),("eq2j","eq1b"),("eq2j","eq2b"),
              ("eq3j","eq0b"),("eq3j","eq1b"),("eq3j","eq2b"),("eq3j","eq3b"),
-             ("eq4j","eq0b"),("eq4j","eq1b"),("eq4j","eq2b"),("eq4j","eq3b"),
+             ("eq4j","eq0b"),("eq4j","eq1b"),("eq4j","eq2b"),("eq4j","ge3b"),
              ("eq5j","eq0b"),("eq5j","eq1b"),("eq5j","eq2b"),("eq5j","eq3b"),("eq5j","ge4b"),
              ("ge6j","eq0b"),("ge6j","eq1b"),("ge6j","eq2b"),("ge6j","eq3b"),("ge6j","ge4b"),]
 
