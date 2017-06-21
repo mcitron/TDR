@@ -80,7 +80,10 @@ for the three sideband regions and the signal region, labelled
 respectively. Further details on the selection requirements can be
 found in Sec.~\ref{sec:multijetcontrolSelection}. The triggers used to
 record the event samples are described in
-Sec.~\ref{sec:control_samples}.
+Sec.~\ref{sec:control_samples}. A study of the correlation between
+\bdphi and $\mht/\met$, per $(\njet, \scalht)$ is shown in Tab.~\ref{tab:bdphi_mhtmet_correlation}. A low level of correlation was found between the two variables since
+the \bdphi sideband probes multijet events with real \met and $\mht/\met$
+probes multijet events below threshold.
 
 \begin{table}[h!]
   \caption{Definitions of data sidebands used in the determination of
@@ -94,6 +97,28 @@ Sec.~\ref{sec:control_samples}.
     $1.25 < \mhtmet < 3.0$ & \textbf{A} (``Double sideband'')         & \textbf{B} (``\mhtmet sideband'')  \\[0.8ex]
     \hline
     $\mhtmet < 1.25$       & \textbf{C} (``\bdphi sideband'')         & \textbf{D} (``Signal region'')     \\[0.8ex]
+  \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+  \caption{Correlation of the \bdphi against $\mht/\met$ distribution
+    in MC for the region defined by the sum of sidebands \textbf{A},
+    \textbf{B}, \textbf{C} and \textbf{D}. The correlation is diced into
+    \njet and \scalht bins with an inclusive ``all'' bin.}
+  \label{tab:bdphi_mhtmet_correlation}
+  \centering
+  \footnotesize
+  \begin{tabular}{l|rrrrrr}
+    \njet / \scalht & all & $200$ & $400$ & $600$ & $900$ & $1200$ \\
+    \hline
+    all  & $0.44$ & $0.33$ & $ 0.27$ & $0.48$ & $ 0.24$ & $ 0.16$ \\
+    eq1j & $0.00$ & $0.00$ & $ 0.00$ & $0.00$ & $ 0.00$ & $ 0.00$ \\
+    eq2j & $0.29$ & $0.27$ & $-0.09$ & $0.00$ & $-0.15$ & $ 0.44$ \\
+    eq3j & $0.10$ & $0.19$ & $ 0.27$ & $0.46$ & $ 0.22$ & $ 0.12$ \\
+    eq4j & $0.33$ & $0.00$ & $ 0.30$ & $0.55$ & $ 0.23$ & $ 0.22$ \\
+    eq5j & $0.11$ & $0.00$ & $ 0.09$ & $0.44$ & $ 0.43$ & $ 0.12$ \\
+    ge6j & $0.29$ & $0.00$ & $ 0.08$ & $0.54$ & $ 0.18$ & $-0.01$ \\
+    ge2a & $0.21$ & $0.16$ & $ 0.31$ & $1.00$ & $ 0.00$ & $ 0.00$ \\
   \end{tabular}
 \end{table}
 
