@@ -2,97 +2,89 @@
 \section{Likelihood model}
 \label{sec:likelihood}
 
-\fixme{COMING SOON.}
+The \alphat~analysis relies on control regions to predict the normalisation of each category of \njet, \nb~and \scalht 
+(which are in the following identified with \htcat) and on simulation to predict the shape 
+of \mht~within each category. The likelihood model is split into hadronic and control components
+linked by floating parameters for the prediction. In one signal \htcat~category, J, 
+the hadronic component may be written as a multiple of Poisson likelihoods
+for the observation in each \mht bin 
+($\mathrm{Pois}(n|\lambda) \equiv e^{-n}\frac{\lambda^{n}}{n!}$):
 
-%Consider a given category of event as defined by \njet, \nb~and \scalht, which are in the following identified with \htcat. 
-%In each category, the signal is extracted using the discriminating variable \mht. 
-%Histogram templates of the \mht distribution are built for the signal and the background processes 
-%using the MC samples described in Sec.~\ref{sec:datasets}. 
-%The \mht binning is tabulated in Sec.~\ref{sec:event-categorisation}.\\
-%The binning of the templates is chosen taking into account both the limited statistics in the simulation and 
-%the control of the background in data. 
-%%A maximum MC statistical uncertainty of 50\% (corresponding to 4 unweighted events) is required in each bin of the MC histogram template, 
-%%in order to ensure a statistically meaningful The uncertainty on the MC statistics in each bin is then 
-%taken into account with a dedicated nuisance parameter, one per template bin, as explained below. 
-%A minimum bin width constraint of 50 GeV is applied
-%in order to reduce the bin-by-bin migration due to the finite \mht resolution.\\
-%
-%For each category \htcat and \mht bin, $i$, in the signal region, let $n^{\htcat}_{\mathrm{had},i}$ be the number of observed events, 
-%$b^{\htcat}_{\mathrm{had},i}$ the number of predicted background events and $s^{\htcat}_{\mathrm{had},i}$ the expected number of signal events. \\
-%The likelihood function for the hadronic signal region is, in each \htcat:
-%
-%\begin{equation}
-%\mathcal{L}^{\htcat}_{\mathrm{had}}=\prod_i \mathrm{Poisson}(n^{\htcat}_{\mathrm{had},i} |\, b^{\htcat}_{\mathrm{had},i} + s^{\htcat}_{\mathrm{had},i})
-%\label{eq:hadronicLikelihood}
-%\end{equation}
-%
-%The \mht dimension is not used for the control region, and they are used to constrain only the normalisation of the background processes 
-%in the signal region, as described in Sec.~\ref{sec:backgroundmet}. 
-%Their likelihood is therefore written as:
-%
-%\begin{equation}
-%\mathcal{L}^{\htcat}_{\mathrm{CR,j}}=\mathrm{Pois}(n^{\htcat}_{\mathrm{CR,j}} |\, b^{\htcat}_{\mathrm{CR,j}} + s^{\htcat}_{\mathrm{CR,j}})
-%\label{eq:controlLikelihood}
-%\end{equation}
-%
-%In Eq.~\ref{eq:controlLikelihood}, $n^{\htcat}_{\mathrm{CR,j}}$ is the number of observed events, $b^{\htcat}_{\mathrm{CR,j}}$ the number of predicted 
-%background events and $s^{\htcat}_{\mathrm{CR,j}}$ the expected number of signal events in the control region $j$. \\
-%Eq.~\ref{eq:controlLikelihood} applies to all the control region used for the background estimation, 
-%as defined in Sec.~\ref{sec:selection}. \\
-%Notice that the signal contribution $s^{\htcat}_{\mathrm{CR,j}}$ in Eq.~\ref{eq:controlLikelihood}, as estimated from MC, is in general negligible. 
-%Where the signal contamination is sizeable, it is included in the likelihood as an additional process contributing to the event yield in that particular bin.
-%
-%The prediction of the background yields in the signal region and in the corresponding control samples are connected 
-%by means of transfer factors, as explained in Sec.~\ref{sec:backgroundmet}. 
-%This connection is implemented by introducing a floating parameter, which is correlated 
-%between the signal region and the control regions. 
-%One floating parameter is used for both background 
-%processes ($Z_{\mathrm{inv.}}$ and \ttbar/W) \footnote{In the following we use $Z_{\mathrm{inv}}$ to indicate 
-%the $Z\to \mathrm{inv}$ process and \ttbar/W to indicate the sum of the yields of the $t\bar{t}$ and $W+\mathrm{jets}$ processes.}
-%giving a prediction for each background source depending on the relevant nuisances described below. \\
-%This binds the background yields in the signal and control regions to float together, 
-%taking into account the statistical uncertainty associated with the counts in the control samples. 
-%
-%The systematic uncertainties affecting the transfer factors, described in Sec.~\ref{sec:systematics}, 
-%are incorporated in the likelihood by means of nuisance parameters with gaussian constraints which act on the floating
-%parameter. These depend on the background process and the control region used for the prediction and
-%are taken as uncorrelated between each of the \htcat bins. Additionally, systematic effects studied 
-%through variations in simulation, like b-tag SF and jet energy corrections, are included as shape uncertainties on the transfer factors. 
-%The are taken as fully correlated across all bins but have different sizes depending on the bin. The effects 
-%of these systematics are determined using the method described in Sec~\ref{sec:systematics}. \\
-%The uncertainties on the signal efficiency times acceptance, described in Sec.~\ref{sec:susy}, 
-%are also taken as shape uncertainties correlated across all the \htcat bins. 
-%The uncertainty that encapsulates the potential for bin migration within the \mht distribution of events is implemented 
-%providing alternative templates corresponding to up/down variation of each source, separately for each \htcat bin. 
-%The procedure to assess the alternative templates is described in detail in Sec.~\ref{sec:syst-on-shape}. \\
-%The uncertainty due to the limited statistics in the MC samples used to populate the template histograms is incorporated 
-%as additional nuisance parameters, one per template bin, taken as uncorrelated across the histogram bins. 
-%
-%The total likelihood is the product over all the \htcat bins and all the control regions, and can be written as:
-%
-%\begin{equation}
-%\label{eq:total_likelihood}
-%\mathcal{L} = \prod_{\htcat} \mathcal{L}_{\text{had}}^{\htcat} \times \prod_{\text{j}} \mathcal{L}_{\text{CR,j}}^{\htcat}
-%\end{equation}
-%
-%The fit is carried out in two steps. 
-%In the first, the background predictions for the signal region $b^{\htcat}_{\mathrm{had},i}$ are extracted from a likelihood fit 
-%using the control regions in Eq.~\ref{eq:controlLikelihood} without the signal region. 
-%This fit provides the best knowledge of the background yields in the signal region, 
-%and the predictions can therefore be used to re-interpret the analysis. 
-%In the second step, the fit is done using the full likelihood (Eq.~\ref{eq:total_likelihood}) and all 
-%the correlations between the backgrounds in control regions and signal region are taken into account, 
-%together with the statistical uncertainty associated to the finite number of events in the control region. \\
-%The likelihood is profiled against all nuisance parameters in order to derive expected exclusion limits and sensitivity, 
-%which will be discussed in Sec.\ref{sec:susy}, \ref{sec:darkmatter}.
-%
-%%For technical limitations, only a subset of jet multiplicity categories are combined to derive the exclusion limits. 
-%%Four out of nine \nj\ categories are included, while considering all the \nb, \scalht, \mht bins within each \nj category. 
-%%These four categories are chosen as the ones providing the best expected exclusion for each signal point separately. \\
-%%% In App.~\ref{app:jetRanking}, the details of this ranking are given for all the models considered in the analysis. 
-%%% The four categories used in the limits are also shown in tabular format for some benchmark models in Tab.~\ref{tab:sig-eff-bestCat}.
-%
-%
-%
-%
-%%%____________________________________________________________________________||
+\begin{multline}
+\label{eq:hadronicLikelihood}
+\mathcal{L}^{J}_{\mathrm{had}} = \prod_i \mathcal{L}^{J,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{J,i}_{\mathrm{had}} |\sum_{j \in J}\, b^{j,i}_{\zInv~,\mathrm{had}}\times\phi^{j}(\mu\mu\rightarrow\zInv~)\times a_{\zInv~}^{j}\times\rho^{j,i}_{\zInv~,\mathrm{had}}\, + \\ 
+b^{j,i}_{\ttw,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttw)\times a_{\ttw}^{j}\times\rho^{j,i}_{\ttw,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}) 
+\end{multline}
+
+where 
+the product is over each \mht bin, i, in the \htcat~category;
+the sum over j accounts for the fine control region predictions in \scalht; 
+$b^{j,i}_{\zInv~/\ttw,\mathrm{had}}$ are the predicted number 
+of events from simulation for the electroweak backgrounds (categorised according to the control region binning); 
+$b^{j,i}_{\text{QCD},\mathrm{had}}$ are the predicted 
+number of events for the QCD multijet component (from the method described in Section~\ref{sec:qcd});
+the $a_{\zInv~/\ttw}^{j}$ parameters are unconstrained and connect the prediction of the signal region
+to the control regions (see below); $\phi^{j}$ contains the systematic uncertainties on the 
+transfer factors from the data-driven tests; $\rho^{j,i}$ contains the systematics from 
+variations in simulation, the systematics derived from the control regions on the~\mht shape 
+and the uncertainty from the limited number of simulated events; 
+$r$ is the unconstrained `signal strength' parameter and $\omega_{\text{QCD},\mathrm{had}}^{j,i}$ 
+contains the uncertainties on the QCD multijet component. 
+
+The \ttw component is predicted using the \mj control region. The relevant 
+components of the likelihood, which is not categorised in \mht, may be written as:
+
+\begin{equation}
+\label{eq:muLikelihood}
+\mathcal{L}^{j}_{\mu} = \mathrm{Pois}(n^{j}_{\mu} |\, b^{j}_{\mu}\times a_{\ttw}^{j}\times\rho^{j}_{\mu} +\, b^{j}_{\text{QCD},\,\mu} + \,r \times s^{j}_{\mu}\times\rho^{j}_{s,\mu})
+\end{equation}
+
+similarly to Equation~\ref{eq:hadronicLikelihood}, $\rho^{j}_{\mu}$ contains the uncertainty in the control \htcat from variations in simulation. 
+The signal contamination in the control region is encoded by $s^{j}_{\mu}$, which is small by design. 
+The connection between the control and signal region
+is included by the unconstrained $a_{\ttw}^{j}$ parameter. The 
+subdominant QCD component, $b^{j}_{\text{QCD},\,\mu}$, is taken from simulation. 
+
+The \zInv~component in the signal region is predicted using the \mmj control regions. 
+Within each category of \nj and \scalht the prediction is correlated 
+for  $\nb > 0$. The relevant components of the likelihood, which is not categorised in \mht, may be written as:
+
+\begin{equation}
+\label{eq:mumuLikelihood}
+\mathcal{L}^{j}_{\mu\mu} = \mathrm{Pois}(n^{j}_{\mu\mu} |\, b^{j}_{\mu\mu}\times a_{\zInv~}^{j}\times\rho^{j}_{\mu\mu} +\, b^{j}_{\text{QCD},\,\mu\mu} + \,r \times s^{j}_{\mu\mu}\times\rho^{j}_{s,\mu\mu})
+\end{equation}
+
+where parameters are defined as in Equations~\ref{eq:hadronicLikelihood} and~\ref{eq:muLikelihood}. 
+The $a_{\zInv~}^{j}$ parameter is correlated for $\nb > 0$ within each 
+category of \nj and \scalht.
+
+The modifier and constraint terms of the parameters representing the systematic uncertainties and 
+connections between control and signal regions are summarised below:
+
+\begin{itemize}
+\item The transfer factor systematics and uncertainties on the QCD multijet contribution 
+are taken to be `log normal' uncertainties such that the logarithm of the variable has 
+a Gaussian (normal) constraint~\cite{templateMorphing}. These uncertainties are correlated per topology and \scalht bin 
+(pair of \scalht bins for uncertainties derived using \mmj)
+\item The systematic uncertainties from variations in simulation and those derived on the \mht~shape from the control regions 
+are included using `vertical template morphing'~\cite{templateMorphing}. For vertical template morphing, the yield
+in each bin is interpolated quadratically between the $\pm 1\sigma$ variations for each source of
+uncertainty and extrapolated linearly beyond this range. The constraint term is Gaussian
+with mean 0 and width 1. The uncertainties from simulation and those derived from the control regions
+are fully correlated and uncorrelated across all categories respectively.
+\item The Poisson uncertainty due to the limited number of simulated events is approximated using
+two parameters per bin that multiply the total background and signal contributions and 
+are Gaussian constrained. The relevant correlations induced from the 'formula method` (described in Sec.~\ref{sec:formula}) 
+are included. 
+\end{itemize}
+
+The total likelihood (including the constraint terms in $\mathcal{L}_\mathrm{constraint}$) 
+can be written as a product over all (signal) \htcat~bins:
+
+\begin{equation}
+\label{eq:totalLikelihood}
+\mathcal{L} =  \mathcal{L}_\mathrm{constraint} \times \prod_{J\in\htcat} \mathcal{L}^{J}_{\mathrm{had}} \times  \prod_{j\in J} \mathcal{L}^{j}_{\mu\mu} 
+\times \mathcal{L}^{j}_{\mu}
+\end{equation}
+
+
