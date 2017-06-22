@@ -517,4 +517,53 @@
   \end{center}
 \end{figure}
 
+\clearpage
+\subsection{Era-dependent behaviour related to the \texorpdfstring{\nb}{Nb} modelling}
+\label{app:nb-zinv}
+
+Given the issues related to the ``HIP effect'' observed during the run
+eras B-F of the 2016 data taking period, a dedicated study has been
+performed to check the behaviour of the nuisances that encapsulate the
+b-tag scale factor uncertainties. The BTV POG has provided
+era-dependent scale factors (and uncertainties), covering eras B-F and
+G-H independently. A binned likelihood fit to the data in the \mmj
+sample is performed for the full data set and these two separate sets
+of eras. The likelihood fit includes several other nuisances related
+to known theoretical and experimental sources of uncertainty, as well
+as those related to the b-tag scale factors for genuine tags of
+b-quark jets (``bsf'') and mistag of light flavour (``bsfl'').
+
+Unconstrained ``rate'' parameters are used per (\njet, \scalht) event
+category to correct the simulation normalisation to data and the
+simulation modelling of the \nb dimension in each (\njet, \scalht)
+category is fit to data within the statistical uncertainties
+associated with the data and smiulated counts. {\it Nota bene that the
+  extrapolation from $\nb \geq 0$ is not done in the analysis, but
+  this study demonstrates the effect of the era-dependent behaviour,
+  which is mitigated by the subdivision of the \mmj event counts
+  according to $\nb = 0$ and $\nb \geq 1$.} The systematic effects of
+the b-tag scale-factor uncertainties are encapsulated by the two
+nuisances ``bsf'' and ``bsfl'', which correlate each behaviour across
+all (\njet, \scalht) event categories. Figure~\ref{fig:btagsf} shows
+the post-fit nuisances for the three sets of run eras: full, B-F, and
+G-H. The accuracy of the \nb modelling, following the application of
+the (era-dependent) scale factor corrections, appears to depend on the
+run era. 
+
+It is noted here that Figure~\ref{fig:btagsf} (top) can be compared
+directly with Figure~\ref{fig:btagsfge1b} (top) in
+Sec.~\ref{sec:nb-zinv}, with the only difference being that the fit
+reported in this section uses ``vanilla'' Monte Carlo counts to obtain
+the \nb distriution, whereas the study in Sec.~\ref{sec:nb-zinv}
+relies on the ``formula method'' described in Sec.~\ref{sec:formula}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/full/Correlated_nuisances}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/BF/Correlated_nuisances}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/GH/Correlated_nuisances}
+  \caption{\label{fig:btagsf} Post-fit nuisances of a likelihood fit
+    to data in the \mmj control region for (top) the full data set,
+    (middle) run eras B-F, and (bottom) run eras G-H.}
+\end{figure}
 
