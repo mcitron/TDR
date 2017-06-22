@@ -71,20 +71,6 @@ significantly to \mht.
 \subsection{Overview of the method}
 \label{sec:qcdMethod}
 
-An estimate of the QCD multijet background is determined using three
-multijet-enriched data sidebands, defined by inverting one or both
-signal-region requirements on \bdphi and
-$\mht/\met$. Table~\ref{tab:qcd_sidebands} summarises the requirements
-for the three sideband regions and the signal region, labelled
-\textbf{A}, \textbf{B}, \textbf{C}, and \textbf{D},
-respectively. Further details on the selection requirements can be
-found in Sec.~\ref{sec:multijetcontrolSelection}. The triggers used to
-record the event samples are described in
-Sec.~\ref{sec:control_samples}. A study of the correlation between
-\bdphi and $\mht/\met$, per $(\njet, \scalht)$ is shown in Tab.~\ref{tab:bdphi_mhtmet_correlation}. A low level of correlation was found between the two variables since
-the \bdphi sideband probes multijet events with real \met and $\mht/\met$
-probes multijet events below threshold.
-
 \begin{table}[h!]
   \caption{Definitions of data sidebands used in the determination of
     the QCD multijet background in the signal region. }  
@@ -100,40 +86,39 @@ probes multijet events below threshold.
   \end{tabular}
 \end{table}
 
-\begin{table}[h!]
-  \caption{Correlation of the \bdphi against $\mht/\met$ distribution
-    in MC for the region defined by the sum of sidebands \textbf{A},
-    \textbf{B}, \textbf{C} and \textbf{D}. The correlation is diced into
-    \njet and \scalht bins with an inclusive ``all'' bin.}
-  \label{tab:bdphi_mhtmet_correlation}
-  \centering
-  \footnotesize
-  \begin{tabular}{l|rrrrrr}
-    \njet / \scalht & all & $200$ & $400$ & $600$ & $900$ & $1200$ \\
-    \hline
-    all  & $0.44$ & $0.33$ & $ 0.27$ & $0.48$ & $ 0.24$ & $ 0.16$ \\
-    eq1j & $0.00$ & $0.00$ & $ 0.00$ & $0.00$ & $ 0.00$ & $ 0.00$ \\
-    eq2j & $0.29$ & $0.27$ & $-0.09$ & $0.00$ & $-0.15$ & $ 0.44$ \\
-    eq3j & $0.10$ & $0.19$ & $ 0.27$ & $0.46$ & $ 0.22$ & $ 0.12$ \\
-    eq4j & $0.33$ & $0.00$ & $ 0.30$ & $0.55$ & $ 0.23$ & $ 0.22$ \\
-    eq5j & $0.11$ & $0.00$ & $ 0.09$ & $0.44$ & $ 0.43$ & $ 0.12$ \\
-    ge6j & $0.29$ & $0.00$ & $ 0.08$ & $0.54$ & $ 0.18$ & $-0.01$ \\
-    ge2a & $0.21$ & $0.16$ & $ 0.31$ & $1.00$ & $ 0.00$ & $ 0.00$ \\
-  \end{tabular}
-\end{table}
+An estimate of the QCD multijet background is determined using three
+multijet-enriched data sidebands, defined by inverting one or both
+signal-region requirements on \bdphi and
+$\mht/\met$. Table~\ref{tab:qcd_sidebands} summarises the requirements
+for the three sideband regions and the signal region, labelled
+\textbf{A}, \textbf{B}, \textbf{C}, and \textbf{D},
+respectively. Further details on the selection requirements can be
+found in Sec.~\ref{sec:multijetcontrolSelection}. The triggers used to
+record the event samples are described in
+Sec.~\ref{sec:control_samples}. A study of the correlation between
+\bdphi and $\mht/\met$, per $(\njet, \scalht)$ category, is shown in
+Tab.~\ref{tab:bdphi_mhtmet_correlation} (Appendix~\ref{app:qcd}). A
+low level of correlation was found between the two variables since the
+\bdphi variable identifies multijet events characterised by
+significant ``fake'' \met due to the mismeasurement of jets within the
+experimental acceptance, while $\mht/\met$ identifies events
+characterised by significant ``fake'' \met due to the presence of jets
+outside the experimental acceptance that contribute to \mht. 
 
-The QCD estimation is performed in (\njet, \scalht) bins in each of the data
-sidebands. The \njet and \scalht distributions in each of the QCD sidebands
-can be found in Figs.~\ref{fig:qcd_distributions_1}~and~\ref{fig:qcd_distributions_2}.
-The observed counts in each $(\njet, \scalht)$ are corrected to account
-for contamination from non-multijet SM processes. The corrected counts
-$\mathcal{N}_i^\text{data}(\njet, \scalht)$ are assumed to arise solely
-from QCD multijet production. The subscript $i$ indicates the sideband
-under consideration (\textbf{A}, \textbf{B}, or \textbf{C}). The non-multijet
-processes, which comprise vector boson and \ttbar production and residual
-contributions from other SM processes, are estimated using corresponding
-sidebands to the \mj and \mmj control regions, as described in
-Secs.~\ref{sec:ttw} and \ref{sec:zinv}, respectively.
+The background estimation is performed in (\njet, \scalht) bins in
+each of the data sidebands. The \njet and \scalht distributions in
+each of the sidebands can be found in
+Figs.~\ref{fig:qcd_distributions_1}~and~\ref{fig:qcd_distributions_2}.
+The observed counts in each $(\njet, \scalht)$ are corrected to
+account for contamination from non-multijet SM processes. The
+corrected counts $\mathcal{N}_i^\text{data}(\njet, \scalht)$ are
+assumed to arise solely from QCD multijet production. The subscript
+$i$ indicates the sideband under consideration (\textbf{A},
+\textbf{B}, or \textbf{C}). The non-multijet processes, which comprise
+vector boson and \ttbar production and residual contributions from
+other SM processes, are estimated using corresponding sidebands to the
+\mj and \mmj control regions, as described in Secs.~\ref{sec:ttw} and
+\ref{sec:zinv}, respectively.
 
 Independent ratios $\mathcal{R}_i^\mathrm{QCD}(\njet, \scalht)$ of the
 number of multijet events that satisfy one or both of the
@@ -276,12 +261,14 @@ estimate. This uncertainty is assume to be unccorrelated across
 (\njet, \scalht) bins.
 
 The distribution of multijet events as a function of \nb and \HTmiss,
-$\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$, is assumed to be
-identical to the distribution expected for the non-multijet
-backgrounds. This final assumption is based on studies in simulation
-and is a valid approximation given the magnitude of this background
-contribution, as well as the magnitude of the statistical and
-systematic uncertainties in the ratios
+as described by the multiplier term $\mathcal{K}_{\njet, \scalht}(
+\nb, \HTmiss )$, is assumed to be identical to the distribution
+expected for the non-multijet backgrounds. This final assumption is
+based on studies in simulation, as summarised in
+Figs.~\ref{fig:qcd_nb_shapes_mhtmetsb}--\ref{fig:qcd_mht_shapes_doublesb}
+(Appendix~\ref{app:qcd}), and is a valid approximation given the
+magnitude of this background contribution, as well as the magnitude of
+the statistical and systematic uncertainties in the ratios
 $\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$, as described above.
 
 %As the prediction of QCD in the signal region is carried out
