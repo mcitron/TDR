@@ -5,99 +5,113 @@
 
 The irreducible background contribution from the \znunu\ + jets
 process can be a sizeable, and often the dominating, contribution in
-many event categories of the signal region, particularly at high
-\HTmiss. 
+many event categories of the signal region, as illustrated by
+Fig.~\ref{fig:breakdownmc} in Sec.~\ref{sec:smbreakdown}, and
+particularly at high \HTmiss.
 
-%Table~\ref{} (App.~\ref{}) shows % add SM breakdown plots? 
-\fixme{Diff w.r.t. old analysis. Heavy flavour.}
+The method to estimate the \znunuj background is very similar to that
+used for the lost lepton background estimate described in
+Sec.~\ref{sec:ttw}, as it is based on the use of transfer factors as
+well as templates taken from simulation that are validated against
+control region data. However, there are some minor differences, which
+are described below. 
+
+%\fixme{Diff w.r.t. old analysis. Heavy flavour.}
 
 \subsection{The ``transfer factor'' method}
 \label{sec:tf-method-zinv}
 
-The method used to estimate the \znunuj background relies on the use
-of a transfer factor (TF) determined from simulated event samples to
-transform the observed event yields in the \mmj sample, categorised
-according to \njet and \scalht, $\nobs^{\mmj}(\njet, \scalht)$, into
-an estimate of the lost lepton background for the corresponding
-(\njet, \scalht) category of the signal region, $\npre^{\znunu}(\njet,
-\scalht)$. The categorisation of events according to \njet and \scalht
-in the \mmj control region is identical to that for the signal region,
-as defined in Sec.~\ref{sec:selection}.\footnote{One detail here is
-  that predictions are made according to the \scalht categorisation
-  used in the control regions (up to 11 bins), but the predictions are
-  then aggregated over a range in \scalht to map onto a coarser
-  binning scheme is used in the signal region (up to 5 bins). Further
-  details can be found in Sec.~\ref{sec:ht-categorisation}.}  Each
-transfer factor is simply a ratio of the yields obtained from Monte
-Carlo (MC) simulation for the same (\njet, \scalht) category of the
-\mmj control and signal regions:
-\begin{equation}
-  \label{equ:tf-ratio-zinv}
-  {\rm TF} = \frac{N_{\rm MC}^{\znunu}(\njet, \scalht)}{N_{\rm MC}^{\mmj}(\njet, \scalht)} 
-\end{equation}
+As for the lost lepton background estimate described in
+Sec.~\ref{sec:tf-method-ttw}, the method used to estimate the \znunuj
+background also relies on the use of transfer factors determined from
+simulated event samples. 
 
-In this way, predictions for the \znunuj background can be made, based
-on the \mmj control region, as follows:
-\begin{equation}
-  \label{equ:pred-method-zinv}
-  \npre^{\znunu}(\njet, \scalht) = 
-  \frac{N_{\rm MC}^{\znunu}(\njet, \scalht)}{N_{\rm MC}^{\mmj}(\njet, \scalht)} 
+The categorisation of events according to \njet in the \mmj control
+region is identical to that in the signal region, and the
+categorisation according to \scalht is very similar.\footnote{Again,
+  as for the lost lepton background method, the predictions are based
+  on the \scalht categorisation used in the control regions (up to 11
+  bins) and aggregated over a range in \scalht to map onto a coarser
+  binning scheme that is used in the signal region (up to 5
+  bins). Further details can be found in
+  Sec.~\ref{sec:ht-categorisation}.} With regards to \nb, the \mmj
+event sample is subdivided as follows, $\nb = 0$ and $\nb \geq 1$, as
+outlined in Sec.~\ref{sec:nb-categorisation}. For the former
+subsample, no extrapolation in \nb is performed when predicting the
+\znunuj background in the corresponding (\njet, \scalht, $\nb = 0$)
+bin of the signal region. However, for the latter subsample, counts in
+data and from simulation for the \mmj control region are integrated
+for the region $\nb \geq 1$. These integrated counts are used to
+predict the \nb distribution (for the region $\nb \geq 1$ only) in the
+signal region using \nb templates obtained from simulation per (\njet,
+\scalht) bin. The extrapolation in \nb is validated through control
+region studies, as described in Sec.~\ref{sec:nb-zinv}.
+
+The transfer factors and predictions for the \znunuj background are
+defined as follows:
+\begin{eqnarray}
+  \label{equ:tf-ratio-zinv}
+  {\rm TF} & = &   
+  \frac{N_{\rm MC}^{\znunu}(\njet, \scalht, \nb)}
+  {N_{\rm MC}^{\mmj}(\njet, \scalht, \nb)} \\
+  \npre^{\znunu}(\njet, \scalht, \nb) & = &
+  {\rm TF}
   \times 
-  \nobs^{\mmj}(\njet, \scalht)   
-\end{equation}
+  \nobs^{\mmj}(\njet, \scalht, \nb)   
+\end{eqnarray}
+where $N_{\rm MC}^{\mmj}$ and $\nobs^{\mmj}$ reflect counts in regions
+defined by $\nb = 0$ and $\nb \geq 1$.
 
 The selection criteria for the \mmj control region
 (Sec.~\ref{sec:selection}) closely resemble those for the signal
-region, differing mainly through the use of a dimuon {\it tag} (that
-is ignored in the calculation of jet-based kinematic variables such as
-\scalht, \mht, \alphat, \etc) and minimal additional kinematic
-requirements (\eg a dimuon invariant mas window) to obtain a sample
-enriched in \zmmj events. The same selection criteria are designed to
-suppress signal contamination so that unbiased data-driven estimates
-for the SM backgrounds in the signal region can be made. Any signal
-contamination is accounted for in the likelihood model
-(Sec.~\ref{sec:likelihood}).
+region, differing mainly through the requirement of a dimuon system
+and minimal additional kinematic requirements, such as a dimuon
+invariant mass requirement compatiable with the mass of the Z
+boson. These criteria provide a sample enriched in \zmmj events and
+depleted in signal and multijet events. Any signal contamination is
+accounted for in the likelihood model (Sec.~\ref{sec:likelihood}).
 
-Figure~\ref{fig:tf_mmZinv} (App.~\ref{app:zinv}) shows the
-magnitude of the transfer factors, typically $\ll 1$, The transfer
-factors account for differences between the \mmj control and signal
-due to the different branching fractions for the decays to neutrinos
-or muons, as well as differences in acceptance times efficiency for
-the reconstructed muons and extrapolations in kinematic
-quantities. For example, the dependence on \njet and \scalht is
-largely attributable to the \alphat and \bdphi requirements for the
-signal region (that are not used in the \mmj control region).
+Figure~\ref{fig:tf_mmZinv} (App.~\ref{app:zinv}) shows the magnitude
+of the transfer factors, typically $>1$, The transfer factors account
+for differences between the \mmj control and signal due to the
+different branching fractions for the decays to neutrinos or muons, as
+well as differences in acceptance times efficiency for the
+reconstructed muons and extrapolations in kinematic quantities. As for
+the \mj sample, the dependence on \njet and \scalht is largely
+attributable to the \alphat and \bdphi requirements for the signal
+region (that are not used in the \mmj control region).
 
-Many systematic effects are expected to cancel largely in the transfer
-factor. However, a systematic uncertainty is assigned to each transfer
-factor to account for theoretical uncertainties and effects such as
-the mismodelling of kinematics (\eg acceptances) and instrumental
-effects (\eg reconstruction efficiencies). These uncertainties are
-discussed below. 
+Systematic uncertainties are assigned to the transfer factors to
+account for theoretical uncertainties as well as effects such as the
+mismodelling of kinematics (\eg acceptances) and instrumental effects
+(\eg reconstruction efficiencies). These uncertainties are discussed
+below.
 
-\subsection{\texorpdfstring{\nb}{Nb} and \texorpdfstring{\mht}{MHT} templates}
+\subsection{\texorpdfstring{\mht}{MHT} template}
 
-The transfer factors described above provide an estimate of the lost
-lepton background as a function of the (\njet, \scalht) category, but
-inclusive with respect to \nb and \mht. However, the analysis utilises
-the \nb and \mht variables to discriminate effectively between SM
-background and \eg a potential contribution from SUSY processes. The
-\nb and \HTmiss information is incorporated into the likelihood model
-via \nb and \mht templates per (\njet, \scalht) category, $N_{\rm
-  MC}^{\ttw}(\nb, \HTmiss;\; \njet, \scalht)$, which is equivalent to
-dicing the numerator of the TF according to \nb and \mht, \ie
+As discussed above, the \mmj events are categorised similarly to
+candidate signal events in terms of \njet, \scalht, and \nb. However,
+no categorisation of \mmj events is performed as a function of \mht,
+which is used in the signal region to discriminate effectively between
+SM background and \eg a potential contribution from SUSY processes.
+
+An \mht template per (\njet, \scalht, \nb) category is used, which is
+equivalent to dicing the numerator of the transfer factor according to
+\mht. Hence, the transfer factors can be written as:
 \begin{equation}
   \label{equ:pred-method-zinv-mht}
-  \npre^{\ttw}(\njet, \scalht, \nb, \HTmiss) = 
-  \frac{N_{\rm MC}^{\ttw}(\nb, \HTmiss;\; \njet, \scalht)}{N_{\rm MC}^{\mj}(\njet, \scalht)} 
+  \npre^{\znunu}(\njet, \scalht, \HTmiss, \nb) = 
+  \frac{N_{\rm MC}^{\znunu}(\HTmiss;\; \njet, \scalht, \nb)}
+  {N_{\rm MC}^{\mj}(\njet, \scalht, \nb)} 
   \times 
-  \nobs^{\mj}(\njet, \scalht)
+  \nobs^{\mj}(\njet, \scalht, \nb)
 \end{equation}
+
 In this regard, the TFs described in Sec.~\ref{sec:tf-method-zinv}
-provide an estimate of the normalisation for each \nb and \mht
-template. The \nb and \HTmiss templates are taken from simulation and
-the validity of the simulation modelling is tested extensively in the
-control regions, as described in Sec.~\ref{sec:mht-zinv}.
+provide an estimate of the normalisation for each \mht template. The
+\HTmiss templates are taken from simulation and the validity of the
+simulation modelling is tested extensively in the control regions, as
+described in Sec.~\ref{sec:mht-zinv}.
 
 \subsection{Sideband normalisation for \texorpdfstring{\zj}{Z+jets}} 
 \label{sec:sideband-corrections-zinv}
@@ -389,37 +403,50 @@ The modelling of the \nb variable for the \znunuj background is
 checked with the \mmj sample as a proxy. Uncertainties in the b-tag
 scale factor corrections for genuine tags and mistags from the BTV POG
 are fully propagated through the method to estimate the \znunuj
-background. Given the issues related to the ``HIP effect'' observed
-during the run eras B-F of the 2016 data taking period, a dedicated
-study has been performed to check the behaviour of the nuisances that
-encapsulate the b-tag scale factor uncertainties. The BTV POG has
-provided era-dependent scale factors (and uncertainties), covering
-eras B-F and G-H independently. A binned likelihood fit to the data in
-the \mmj sample is performed for the full data set and these two
-separate sets of eras. The likelihood fit includes several other
-nuisances related to known theoretical and experimental sources of
-uncertainty, as well as those related to the b-tag scale factors for
-genuine tags of b-quark jets (``bsf'') and mistag of light flavour
+background. A binned likelihood fit to the data in the \mmj sample is
+performed. The likelihood fit includes several other nuisances related
+to known theoretical and experimental sources of uncertainty, as well
+as those related to the b-tag scale factors for genuine tags of
+b-quark jets (``bsf'') and mistag of light flavour
 (``bsfl''). Unconstrained ``rate'' parameters are used per (\njet,
-\scalht) event category to correct the simulation normalisation to
-data and the simulation modelling of the \nb dimension in each (\njet,
-\scalht) category is fit to data within the statistical uncertainties
+\scalht, $\nb = 0$) or (\njet, \scalht, $\nb \geq 1$) event category
+to correct the simulation normalisation to data and the simulation
+modelling of the \nb dimension in each (\njet, \scalht, $\nb \geq 1$)
+category is fit to data within the statistical uncertainties
 associated with the data and smiulated counts. The systematic effects
 of the b-tag scale-factor uncertainties are encapsulated by the two
 nuisances ``bsf'' and ``bsfl'', which correlate each behaviour across
-all (\njet, \scalht) event categories. Figure~\ref{fig:btagsf} shows
-the post-fit nuisances for the three sets of run eras: full, B-F, and
-G-H. The accuracy of the \nb modelling, following the application of
-the (era-dependent) scale factor corrections, appears to depend on the
-run era.
+all (\njet, \scalht) event categories. 
+
+Figure~\ref{fig:btagsfge1b} (top) shows the post-fit nuisances for a
+likelihood fit to data in the \mmj control region when the fit is only
+given freedom via rate parameters to account for normalisation
+differences between simulation and data for the two regions $\nb = 0$
+and $\nb \geq 1$. Hence, the fit is sensitive to simulation
+mismodelling of the \nb distribution in the region $\nb \geq 1$. The
+post-fit nuisance behaviour is consistent with the pre-fit values.
+
+For comparison, Figure~\ref{fig:btagsfge1b} (bottom) shows the same
+study, but with only a single rate parameter per (\njet, \scalht)
+category, such that the full \nb shape is taken from simulation. Here,
+the ``bsf'' and ``bsfl'' nuisances show behaviour that is in tension
+with respect to their pre-fit values. The underlying issue in the
+mismodelling is unknown, but the behaviour does appear to be dependent
+on the run conditions and it has been traced to the run eras B-F, as
+summarised in Appendix~\ref{app:nb-zinv}.
+
+In summary, the use of \mmj events subdivided according to $\nb = 0$
+and $\nb \geq 1$ appears to fully mitigate the era-dependent issues
+and the \nb modelling from simulation appears to be fully adequate for
+the purposes of this analysis. 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/full/Correlated_nuisances}
-  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/BF/Correlated_nuisances}
-  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/GH/Correlated_nuisances}
-  \caption{\label{fig:btagsf} Post-fit nuisances of a likelihood fit
-    to data in the \mmj control region for (top) the full data set,
-    (middle) run eras B-F, and (bottom) run eras G-H.}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/formula/Correlated_nuisances_ge1b}
+  \includegraphics[width=0.6\textwidth]{figures/btag/nuisances/formula/Correlated_nuisances_ge0b}
+  \caption{\label{fig:btagsfge1b} Post-fit nuisances of a likelihood
+    fit to data in the \mmj control region using the formula method
+    for \mmj event counts (top) subdivided according to $\nb = 0$ and
+    $\nb \geq 1$, and (bottom) integrated over \nb. }
 \end{figure}
 

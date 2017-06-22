@@ -71,17 +71,6 @@ significantly to \mht.
 \subsection{Overview of the method}
 \label{sec:qcdMethod}
 
-An estimate of the QCD multijet background is determined using three
-multijet-enriched data sidebands, defined by inverting one or both
-signal-region requirements on \bdphi and
-$\mht/\met$. Table~\ref{tab:qcd_sidebands} summarises the requirements
-for the three sideband regions and the signal region, labelled
-\textbf{A}, \textbf{B}, \textbf{C}, and \textbf{D},
-respectively. Further details on the selection requirements can be
-found in Sec.~\ref{sec:multijetcontrolSelection}. The triggers used to
-record the event samples are described in
-Sec.~\ref{sec:control_samples}.
-
 \begin{table}[h!]
   \caption{Definitions of data sidebands used in the determination of
     the QCD multijet background in the signal region. }  
@@ -97,16 +86,38 @@ Sec.~\ref{sec:control_samples}.
   \end{tabular}
 \end{table}
 
-The observed counts of events categorised according to \njet and
-\scalht in each of the data sidebands are corrected to account for
-contamination from non-multijet SM processes. The corrected counts
-$\mathcal{N}_i^\text{data}(\njet, \scalht)$ are assumed to arise
-solely from QCD multijet production. The subscript $i$ indicates the
-sideband under consideration (\textbf{A}, \textbf{B}, or
-\textbf{C}). The non-multijet processes, which comprise vector boson
-and \ttbar production and residual contributions from other SM
-processes, are estimated using corresponding sidebands to the \mj and
-\mmj control regions, as described in Secs.~\ref{sec:ttw} and
+An estimate of the QCD multijet background is determined using three
+multijet-enriched data sidebands, defined by inverting one or both
+signal-region requirements on \bdphi and
+$\mht/\met$. Table~\ref{tab:qcd_sidebands} summarises the requirements
+for the three sideband regions and the signal region, labelled
+\textbf{A}, \textbf{B}, \textbf{C}, and \textbf{D},
+respectively. Further details on the selection requirements can be
+found in Sec.~\ref{sec:multijetcontrolSelection}. The triggers used to
+record the event samples are described in
+Sec.~\ref{sec:control_samples}. A study of the correlation between
+\bdphi and $\mht/\met$, per $(\njet, \scalht)$ category, is shown in
+Tab.~\ref{tab:bdphi_mhtmet_correlation} (Appendix~\ref{app:qcd}). A
+low level of correlation was found between the two variables since the
+\bdphi variable identifies multijet events characterised by
+significant ``fake'' \met due to the mismeasurement of jets within the
+experimental acceptance, while $\mht/\met$ identifies events
+characterised by significant ``fake'' \met due to the presence of jets
+outside the experimental acceptance that contribute to \mht. 
+
+The background estimation is performed in (\njet, \scalht) bins in
+each of the data sidebands. The \njet and \scalht distributions in
+each of the sidebands can be found in
+Figs.~\ref{fig:qcd_distributions_1}~and~\ref{fig:qcd_distributions_2}.
+The observed counts in each $(\njet, \scalht)$ are corrected to
+account for contamination from non-multijet SM processes. The
+corrected counts $\mathcal{N}_i^\text{data}(\njet, \scalht)$ are
+assumed to arise solely from QCD multijet production. The subscript
+$i$ indicates the sideband under consideration (\textbf{A},
+\textbf{B}, or \textbf{C}). The non-multijet processes, which comprise
+vector boson and \ttbar production and residual contributions from
+other SM processes, are estimated using corresponding sidebands to the
+\mj and \mmj control regions, as described in Secs.~\ref{sec:ttw} and
 \ref{sec:zinv}, respectively.
 
 Independent ratios $\mathcal{R}_i^\mathrm{QCD}(\njet, \scalht)$ of the
@@ -142,10 +153,15 @@ where the subscript $i$ refers to the sideband (\textbf{A},
 The $\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$ are multiplier
 terms that provide the estimated distribution of events as a function
 of \nb and \HTmiss while preserving the normalisation $\mathcal{P}_i(
-\njet, \scalht )$. Hence, the distribution of multijet events as a
-function of \nb and \HTmiss, $\mathcal{K}_{\njet, \scalht}( \nb,
-\HTmiss )$, is assumed to be identical to the distribution expected
-for the non-multijet backgrounds.
+\njet, \scalht )$. The distribution of multijet events as a functions
+of \nb and \HTmiss, $\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$, for
+the multijet and non-multijet backgrounds are compared in 
+Figs.~\ref{fig:qcd_nb_shapes_mhtmetsb}~to~\ref{fig:qcd_mht_shapes_doublesb}.
+Although the multijet components falloff faster than the non-multijet
+components with increasing \nb or \HTmiss, the within the applied
+systematic uncertainty, the multijet and non-multijet $(\nb, \HTmiss)$
+shapes are consistent. Hence, the non-multijet shape is used for the
+multijet prediction due to the higher MC statistics.
 
 \subsection{Binned maximum-likelihood approach}
 %estimate per \texorpdfstring{(\njet, \scalht)}{(Njet, HT)} bin}
@@ -245,12 +261,14 @@ estimate. This uncertainty is assume to be unccorrelated across
 (\njet, \scalht) bins.
 
 The distribution of multijet events as a function of \nb and \HTmiss,
-$\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$, is assumed to be
-identical to the distribution expected for the non-multijet
-backgrounds. This final assumption is based on studies in simulation
-and is a valid approximation given the magnitude of this background
-contribution, as well as the magnitude of the statistical and
-systematic uncertainties in the ratios
+as described by the multiplier term $\mathcal{K}_{\njet, \scalht}(
+\nb, \HTmiss )$, is assumed to be identical to the distribution
+expected for the non-multijet backgrounds. This final assumption is
+based on studies in simulation, as summarised in
+Figs.~\ref{fig:qcd_nb_shapes_mhtmetsb}--\ref{fig:qcd_mht_shapes_doublesb}
+(Appendix~\ref{app:qcd}), and is a valid approximation given the
+magnitude of this background contribution, as well as the magnitude of
+the statistical and systematic uncertainties in the ratios
 $\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$, as described above.
 
 %As the prediction of QCD in the signal region is carried out
