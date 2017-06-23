@@ -381,6 +381,61 @@ Ref.~\cite{Chatrchyan:2008zzk}.
 \section{Monte Carlo simulation}
 \label{sec:simulation}
 
+The search relies on several event samples, recorded by the CMS
+experiment or simulated with Monte Carlo (MC) generator programs, to
+estimate the contributions from SM backgrounds, as described in
+Section~\ref{sec:event_selection}.
+%The search relies on multiple control regions in data and simulated
+%event samples to estimate contributions from SM backgrounds. 
+%The definitions of the control regions in data and the background
+%estimation procedures are described in
+%Section~\ref{needtoaddthisref}. 
+The dominant SM backgrounds for the search are QCD multijet production
+and the associated production of jets and an top-antitop quark pair
+(\ttbar), a single top quark, or a vector boson (\wlnu,
+\znunu). Residual contributions from other processes, such as WW, WZ,
+ZZ (diboson) production and the associated production of \ttbar and a
+vector boson ({\ttbar}W and {\ttbar}Z), are also considered. Other
+processes, such as Drell-Yan ($\cPq\bar{\cPq}\!  \rightarrow\!
+\PZ/\gamma^*\!  \rightarrow\!  \ell^+\ell^-$) and \gj production, are
+also relevant for some control regions, defined below.
+
+The \MADGRAPH5 aMC@NLO 2.2.2~\cite{Alwall2014} event generator is used
+at leading order (LO) accuracy to produce samples of \wj, \zj, \gj,
+\ttbar, and multijet events. The same generator is used at
+next-to-leading order (NLO) accuracy to generate samples of s-channel
+production of single top, as well as {\ttbar}W and {\ttbar}Z
+events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is
+used to describe the t- and tW-channel production of events containing
+single top quarks. The \PYTHIA 8.2~\cite{pythia} program is used to
+generate diboson (WW, WZ, ZZ) production. The simulated samples are
+normalised according to production cross sections that are calculated
+with NLO and next-to-NLO precision~\cite{Alwall2014, wphys, fewz,
+  wwxs, top++, nlotop, powheg_top_Wt}. The description of the detector
+response, for these SM processes, is implemented using the
+\GEANTfour~\cite{geant} package.
+
+Event samples for signal models involving the gluino-mediated or
+direct pair production of squarks, in association with up to two
+additional partons, are generated at leading order with \MADGRAPH5
+aMC@NLO, and the decay of the sparticles is performed with \PYTHIA
+8.2~\cite{pythia}. Inclusive, process-dependent, signal production
+cross sections are calculated with NLO plus next-to-leading-logarithm
+(NLL) accuracy~\cite{Beenakker:1996ch, PhysRevLett.102.111802,
+  PhysRevD.80.095004, 1126-6708-2009-12-041,
+  doi:10.1142/S0217751X11053560, susynlo}. The detector response is
+provided by the CMS fast simulation package~\cite{fastsim}.
+
+The \textsc{NNPDF}3.0 LO and \textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton
+distribution functions (PDF) are used, respectively, with the LO and
+NLO generators described above. The \PYTHIA 8.2~\cite{pythia} program
+is used to describe parton showering and hadronisation for all
+simulated samples. To model the effects of multiple pp collisions
+within the same or neighboring bunch crossings (pileup), all simulated
+events are generated with a nominal distribution of pp interactions
+per bunch crossing and then reweighted to match the pileup
+distribution as measured in data.
+
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1024,7 +1079,7 @@ the counts are obtained from data, simulation (``MC''), or an estimate
 The
 \tf factors are used to extrapolate from the event yields observed in
 each bin of a data control sample $\mathcal{N}^\textrm{CR}_\textrm{data}$
-to provide an estimate for the background, integrated over \HTmiss,
+to provide an estimate for the background, integrated over \mht,
 from a particular SM process or processes in the corresponding bin of
 the signal region $\mathcal{N}^\textrm{SR}_\textrm{data}$.  
 
@@ -1043,6 +1098,7 @@ associated production of \ttbar and W, Z, $\gamma$, or Higgs bosons.
 
 The transfer factors are defined as 
 
+\fixme{FIX THE ABOVE!!}
 
 
 
@@ -1051,130 +1107,325 @@ The transfer factors are defined as
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-%\section{Multijet background}
-%\label{sec:qcd}
-%
-%The multijet background in the signal region is estimated by
-%exploiting data sidebands to the signal region using the variables
-%\mhtmet and \bdphi. These sidebands are enriched in multijet events,
-%which are used with ``transfer factors'' determined from simulation to
-%provide independent estimates of the multijet background for each
-%(\njet, \scalht) event category of the signal region.
-%
-%
-%Three data sidebands are used, defined and labelled as follows. The
-%``\mhtmet'' sideband comprises events that satisfy the signal region
-%selection criteria except for the inverted requirement $1.25 < \mhtmet
-%< 5.0$. The ``\bdphi'' sideband is defined similarly, except for the
-%inverted requirement $0.2 < \bdphi < 0.5$. Finally, a ``double''
-%sideband, for which events must satisfy the signal region selection
-%criteria except for both inverted requirements $1.25 < \mhtmet < 5.0$
-%and $0.2 < \bdphi < 0.5$.
-%
-%Events are categorised identically to the signal region in terms of
-%\njet and \scalht.
-%
-%, as determined from simulation, for events categorised according to
-%\njet and \scalht. Estimates of the QCD multijet background counts are
-%determined in a data sideband, defined by the requirement $\mhtmet >
-%1.25$, by correcting the observed counts in data to account for
-%contamination from non-multijet backgrounds (vector boson and \ttbar
-%production, plus residual contributions from other SM processes). The
-%products of the corrected counts and ratios provide independent
-%estimates of the multijet background as a function of \njet and
-%\scalht.
-%
-%
-%The signal region is defined in a manner that suppresses the expected
-%contribution from multijet production to a low level with respect to
-%the total expected background from other SM processes for all signal
-%region bins. This is achieved primarily through the application of
-%very tight requirements on the variables \alphat and \dphi, as
-%described in Section~\ref{sec:signal_region}, as well as the
-%requirement $\mhtmet < 1.25$. In this section, we discuss these
-%requirements further, and present the estimate of the multijet
-%background.
-%
-%The contamination from multijet events in the signal region is
-%estimated using a multijet-enriched data sideband to the signal
-%region, defined by the (inverted) requirement $\mhtmet > 1.25$. The
-%observed counts in data, categorised according to \njet and \scalht,
-%are corrected to account for contamination from nonmultijet SM
-%processes, and the corrected counts $\mathcal{N}^\text{data}(\njet,
-%\scalht)$ are assumed to arise solely from QCD multijet
-%production. The nonmultijet processes, which comprise vector boson
-%and \ttbar production and residual contributions from other SM
-%processes, are estimated using the \mj control region, as
-%described in Section~\ref{sec:ewk_background}.
-%
-%Independent ratios $\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$ of the
-%number of multijet events that satisfy the requirement $\mhtmet <
-%1.25$ to the number that fail this requirement are determined from
-%simulation for events categorised according to \njet and \scalht, and
-%inclusively with respect to \nb and \HTmiss. The product of each ratio
-%$\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$ and the corresponding
-%corrected data count $\mathcal{N}^\text{data}(\njet, \scalht)$
-%provides the estimate of the multijet background $\mathcal{P}(\njet,
-%\scalht)$. The estimates as a function of \njet, \scalht, \nb, and
-%\HTmiss of the signal region are assumed to factorise as follows:
-%\begin{equation}
-%  \label{eq:qcd1}
-%  \mathcal{P}( \njet, \scalht )  =
-%  \mathcal{N}^\text{data}( \njet, \scalht )\;
-%  \mathcal{R}^\mathrm{QCD}( \njet, \scalht ),
-%\end{equation}
-%\begin{equation}
-%  \label{eq:qcd2}
-%  \mathcal{P}( \njet, \scalht, \nb, \HTmiss ) = 
-%  \mathcal{P}( \njet, \scalht )\;
-%  \mathcal{K}_{\njet, \scalht}( \nb, \HTmiss ), 
-%\end{equation}
-%where $\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$ are multiplier
-%terms that provide the estimated distribution of events as a function
-%of \nb and \HTmiss while preserving the normalisation $\mathcal{P}(
-%\njet, \scalht )$.
-%
-%The use of simulation to determine $\mathcal{R}^\mathrm{QCD}(\njet,
-%\scalht)$ is validated using a multijet-enriched data sideband defined
-%by $\bdphi < 0.5$. Each ratio $\mathcal{R}^\text{data}(\njet,
-%\scalht)$ is constructed from data counts, corrected to account for
-%contributions from nonmultijet processes, and compared with the
-%corresponding ratio $\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$,
-%determined from simulation, through the double ratio
-%$\mathcal{R}^\text{data}/\mathcal{R}^\mathrm{QCD}$, as shown in
-%Fig.~\ref{fig:qcd}. The double ratios are statistically compatible
-%with unity across the full phase space of the signal region, including
-%the bins at high \scalht, which exhibit the highest statistical
-%precision. In addition to statistical uncertainties as large as
-%$\sim$100\%, a systematic uncertainty of 100\% in
-%$\mathcal{R}^\mathrm{QCD}$ is assumed to adequately cover the observed
-%level of agreement for the full signal region phase space. 
-%
-%The distribution of multijet events as a function of \nb and \HTmiss,
-%$\mathcal{K}_{\njet, \scalht}( \nb, \HTmiss )$, is assumed to be
-%identical to the distribution expected for the nonmultijet
-%backgrounds. This final assumption is based on studies in simulation
-%and is a valid approximation given the magnitude of this background
-%contribution, as well as the magnitude of the statistical and
-%systematic uncertainties in the ratios
-%$\mathcal{R}^\mathrm{QCD}(\njet, \scalht)$, as described above.
-% 
-%\begin{figure*}[!thb]
+\section{Multijet background evaluation}
+\label{sec:qcd}
+
+The multijet background is estimated by using three multijet-enriched
+sidebands to the signal region defined in terms of the variables
+\mhtmet and \bdphi. The sidebands are defined as follows. The
+``\mhtmet'' sideband comprises events that satisfy the signal region
+selection criteria except for the inverted requirement $1.25 < \mhtmet
+< 5.0$. The ``\bdphi'' sideband is defined similarly, except for the
+inverted requirement $0.2 < \bdphi < 0.5$. Finally, a ``double''
+sideband, for which events must satisfy the signal region selection
+criteria except for both inverted requirements $1.25 < \mhtmet < 5.0$
+and $0.2 < \bdphi < 0.5$.
+
+Events in each of the three sidebands are categorised according to
+\njet and \scalht. The event counts in data are corrected to account
+for contamination from nonmultijet SM processes, such as vector boson
+and \ttbar production, plus residual contributions from other SM
+processes. The corrected counts are assumed to arise solely from
+multijet production. The nonmultijet processes are estimated from the
+\mj and \mmj control regions, as described in Secs.~\ref{sec:ttw} and
+\ref{sec:zinv}.
+
+For each of the three sidebands, a transfer factor per (\njet,
+\scalht) bin is obtained from simulation, defined as the ratio of the
+number of multijet events that satisfy the sideband requirement to the
+number that fail this requirement. Three estimates of the multijet
+background per (\njet, \scalht) bin are obtained from the product of
+these transfer factors and the corrected data counts from the three
+sidebands. The multijet background is found to be small, typically at
+the percent level, relative to the sum of all other SM backgrounds in
+all (\njet, \nb) bins of the signal region.
+
+Statistical uncertainties as large as $\sim$100\%, associated with the
+finite event counts in data and simulated event samples, are
+propagated to each estimate. Uncertainties as large as $\sim$20\% in
+the estimates of nonmultijet contamination, determined following the
+prescriptions described in Secs.~\ref{sec:ttw} and \ref{sec:zinv}, are
+also propagated to the corrected events. Finally, differences between
+the three estimates per (\njet, \scalht) bin are adequately covered by
+a systematic uncertainty of 100\% assumed to be uncorrelated for
+different (\njet, \scalht) bins.
+
+Finally, the distribution of multijet events as a function of \nb and
+\mht per (\njet, \scalht) bin is assumed to be identical to the
+distribution expected for the nonmultijet backgrounds. This final
+assumption is based on studies in simulation and is a valid
+simplification given the magnitude of the multijet background relative
+to the sum of all other SM backgrounds, as well as the magnitude of
+the statistical and systematic uncertainties in the estimates
+described above.
+
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+
+\section{Results}
+\label{sec:result}
+
+A likelihood model of the observations in all data samples is used to
+obtain a consistent prediction of the SM backgrounds and to test for
+the presence of a variety of signal models.  In each bin of \scalht
+for events in the same category of \njet and \nb, the observation is
+modelled as a Poisson-distributed variable around the sum of the SM
+expectation (and a potential signal contribution). The SM expectation
+is related to the expected yields in the \mj and \mmj control samples
+via the transfer factors derived from simulation. Likelihood functions
+describe the yields in the \scalht bins of the \mj and \mmj control
+samples in the same category of \njet and \nb as the signal
+region. The systematic uncertainties summarised in
+Table~\ref{tab:bkgd_systs} are accommodated in the likelihood function
+by nuisance parameters, the measurements of which are assumed to
+follow a gaussian distribution.
+
+The expected number of events from SM processes is determined from a
+simultaneous fit to data in the two control regions (``CR-only fit''),
+as well as a fit including the signal region (``full fit''). The
+likelihood function is maximised over all fit parameters under the
+SM-only hypothesis. Figures~\ref{fig:mono}--\ref{fig:sym} summarise,
+respectively, the observed number of candidate signal events and the
+SM expectations from the CR-only fit, in the monojet, asymmetric, and
+symmetric topologies. No significant tension is observed between the
+predictions and data in the signal region, which is well described by
+the SM-only hypothesis.
+
+\begin{figure}[!tb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{summaryPlot_Monojet_prefit_overlay_fit_b}
+    \caption{(Top panel) Event yields observed in data (solid circles)
+      and SM expectations with their associated uncertainties (black
+      histogram with shaded band) from a CR-only fit as a function of
+      \nb and \scalht for the monojet topology ($\njet = 1$) in the
+      signal region. (Bottom panel). The significance of deviations
+      (pulls) observed in data with respect to the SM expectations
+      from the CR-only (red circles) and full fit (blue circles). The
+      pulls are indicative only and cannot be considered
+      independently.}
+    \label{fig:mono}
+  \end{center}
+\end{figure}
+
+\begin{figure*}[!tb]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{summaryPlot_Asymmetric_prefit_overlay_fit_b}
+    \caption{(Top panel) Event yields observed in data (solid circles)
+      and SM expectations with their associated uncertainties (black
+      histogram with shaded band) from a CR-only fit, integrated over
+      \mht, as a function of \njet, \nb, and \scalht for the
+      asymmetric topology in the signal region. (Bottom panel). The
+      significance of deviations (pulls) observed in data with respect
+      to the SM expectations from the CR-only (red circles) and full
+      fit (blue circles). The pulls are indicative only and cannot be
+      considered independently.}
+    \label{fig:asym}
+  \end{center}
+\end{figure*}
+
+\begin{figure*}[!tb]
+  \begin{center}
+    \includegraphics[angle=90,width=0.65\textwidth]{summaryPlot_Symmetric_prefit_overlay_fit_b}
+    \caption{(Top panel) Event yields observed in data (solid circles)
+      and SM expectations with their associated uncertainties (black
+      histogram with shaded band) from a CR-only fit, integrated over
+      \mht, as a function of \njet, \nb, and \scalht for the
+      symmetric topology in the signal region. (Bottom panel). The
+      significance of deviations (pulls) observed in data with respect
+      to the SM expectations from the CR-only (red circles) and full
+      fit (blue circles). The pulls are indicative only and cannot be
+      considered independently.}
+    \label{fig:sym}
+  \end{center}
+\end{figure*}
+
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+
+\section{Interpretation}
+\label{sec:interpretation}
+
+The results of the search are used to constrain the parameter space of
+simplified supersymmetric models~\cite{Alwall:2008ag, Alwall:2008va,
+  sms}. Each model represents a unique production and decay mode (\ie
+100\% branching ratio). The gluino-mediated or direct production of
+third-generation squark pairs, and the decay of of each squark to SM
+particles and the \chiz, are considered. All other sparticles are
+assumed to be too heavy to be produced directly. In the case of gluino
+pair production, three-body decays of the gluinos are assumed via
+off-shell squarks.
+
+Under the background + signal hypothesis, and in the presence of a
+non-zero signal contribution, a modified frequentist approach is used
+to determine upper limits at 95\% confidence level (CL) on the cross
+section, $\sigma_\text{UL}$ (pb), to produce pairs of supersymmetric
+particles as a function of the parent sparticle and the LSP
+masses. The potential contributions from a new-physics signal to each
+of the signal and control regions are considered, even though the only
+significant contribution occurs in the signal region and not the
+control region (\ie signal contamination). The approach is based on
+the one-sided (LHC-style) profile likelihood ratio as the test
+statistic, the \cls criterion~\cite{junk, read}, and asymptotic
+formulae~\cite{Cowan:2010js} are utilised to approximate the
+distributions of the test statistics under the SM background-only and
+signal + background hypotheses. 
+
+The experimental acceptance times efficiency
+($\mathcal{A}\times\varepsilon$) and its uncertainty are evaluated
+independently for each model as a function of the gluino or squark
+mass and the \chiz mass. Several sources to the uncertainty in
+$\mathcal{A}\times\varepsilon$ are considered. The effect of each
+source of uncertainty on the \mht templates is evaluated from
+simulated signal events, categorised according to \njet, \nb, and
+\scalht. Correlations are taken into account where appropriate,
+including those relevant to signal contamination that may contribute
+to counts in the control samples.
+
+\begin{table}[h!]
+  \caption{
+    Representative magnitudes of systematic uncertainties in the
+    experimental acceptance for simplified models that assume the 
+    pair production of bottom squarks and their decay to a b
+    quark and a \chiz.}  
+  \label{tab:signal_systs}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lccc }
+    \hline
+    Systematic source\T\B          & Type          & Correlated & Typical magnitude (\%) \\
+    \hline
+    Luminosity\T                   & Normalisation & Yes        & 2.5                    \\
+    Monte Carlo statistics         & Norm. + shape & No         & 1--50                  \\
+    Jet energy scale               & Norm. + shape & Yes        & 3--10                  \\
+    b-tag efficiency scale factors & Norm. + shape & Yes        & 5--40                  \\
+    Lepton scale factors           & Normalisation & Yes        & 1--5                   \\
+    Pile-up                        & Norm. + shape & Yes        & 0--5                   \\
+    Trigger efficiency             & Norm. + shape & Yes        & 0--4                   \\
+    Initial state radiation        & Norm. + shape & Yes        & 1--20                  \\
+    Modelling of \mht\B            & Normalisation & Yes        & 1--5                   \\
+%    Renormalisation/factorisation & Norm. + shape & No         & 10                     \\
+    \hline
+  \end{tabular}
+\end{table}
+
+The magnitude of each contribution depends on the model and the masses
+of the parent sparticle and LSP. The following sources of uncertainty
+are dominant: the statistical uncertainty arising from the finite size
+of simulated signal samples, the modelling of initial-state radiation
+(ISR), corrections to the jet energy scale evaluated in simulation,
+and the modelling of scale factors applied to simulated event samples
+that correct for differences in the efficiency and misidentification
+probability for b-tagged jets. The choice of PDF set, or variations
+therein, predominantly affects $\mathcal{A}\times\varepsilon$ through
+changes in the \Pt spectrum of the system recoil, which is covered by
+the ISR uncertainty, hence no additional uncertainty is
+adopted. Uncertainties in $\mathcal{A}\times\varepsilon$ due to
+variations in the renormalisation and factorisation scales are
+determined to be relatively small. In both cases, contributions to the
+uncertainty in the theory production cross section are considered. The
+uncertainty in the integrated luminosity is assumed to be
+2.5\%. Representative values of the dominant systematic uncertainties
+are summarised in Table~\ref{tab:signal_systs}.
+
+\begin{figure}[!tb]
+  \centering
+  \includegraphics[width=0.49\textwidth]{T1bbbbRA1XSEC.pdf} ~
+  \includegraphics[width=0.49\textwidth]{T2bbRA1XSEC.pdf} \\
+  \includegraphics[width=0.49\textwidth]{T2ttRA1XSEC.pdf} ~
+  \includegraphics[width=0.49\textwidth]{T2ccRA1XSEC.pdf} 
+  \caption{Observed upper limit in cross section at 95\% confidence
+    level (indicated by the colour scale) for simplified models that
+    assume (Top Left) gluino-mediated and (Top Right) direct
+    production of bottom squarks or the direct production of top
+    squarks that each decay to (Bottom Left) the top quark or
+    (Bottom Right) the charm quark and the $\chiz_{1}$, as a
+    function of the gluino or squark mass and the $\chiz_{1}$ 
+    mass. The black solid thick (thin) line indicates the observed
+    mass exclusion regions assuming the nominal (${\pm}1 \sigma$
+    theory uncertainty) production cross section. The red dashed
+    thick (thin) line indicates the median (${\pm}1 \sigma$
+    experimental uncertainty) expected mass exclusion
+    regions. 
+  }
+  \label{fig:limits-sms} 
+  \centering
+\end{figure}
+
+Figure~\ref{fig:limits-sms} shows the observed upper limit on the
+production cross section at 95\% confidence level as a function of the
+gluino or squark and \chiz masses for models that assume the
+gluino-mediated or direct production of bottom and top squark
+pairs. Also shown are the observed mass exclusion regions when varying
+the production cross section by its theoretical uncertainty, and the
+expected mass exclusion regions with the ${\pm}1$ and ${\pm}2$
+standard-deviation variations.
+
+The search places stringent limits in the mass parameter space of
+these models, with observed exclusions in gluino and \chiz masses as
+high as 1900 and 1175\GeV, respectively. In the case of direct
+production of bottom squarks, masses as high as 1075 and 535\GeV are
+excluded. Finally, top squark and \chiz masses up to 1040 and 580\GeV
+are excluded. 
+
+%A summary of the limits is provided in
+%Table~\ref{tab:simplified-models-limits}.
+
+%\newcommand{\ph}{\ensuremath{\phantom{1}}}
+%\begin{table}[tb]
+%  \topcaption{Summary of the mass limits obtained for the four 
+%    classes of simplified models. The limits indicate the strongest
+%    observed (expected) mass exclusions for the gluino or squarks, and
+%    $\chiz_1$, and the quoted values have uncertainties of
+%    $\pm$25\GeV.  
+%  }
+%  \label{tab:simplified-models-limits}
 %  \centering
-%    \includegraphics[width=\cmsFigWidthTwo]{Figure_002.pdf} \\
-%  \caption{Validation of the ratio $\mathcal{R}^\mathrm{QCD}$ determined
-%    from simulation in bins of \njet and \scalht [\GeVns{}] by comparing
-%    with an equivalent ratio $\mathcal{R}^\text{data}$ constructed
-%    from data in a multijet-enriched sideband to the signal region. A
-%    value of unity is expected for the double ratio
-%    $\mathcal{R}^\text{data} / \mathcal{R}^\mathrm{QCD}$, and the grey
-%    shaded band represents the assumed systematic uncertainty of 100\%
-%    in $\mathcal{R}^\mathrm{QCD}$.  }
-%  \label{fig:qcd}
-%\end{figure*}
+%  \footnotesize
+%  \begin{tabular}{ llcc }
+%    \hline
+%    Production mode & Squark & \multicolumn{2}{c}{Strongest obs. (exp.) mass exclusion [GeV]}\T\B \\
+%    \cline{3-4}                     
+%                    &        & Gluino or squark\T\B & \chiz                                       \\
+%    \hline                          
+%    Gluino-mediated & Bottom & 1775 \ph(1850)       & 1175 \ph(1200)                              \\ 
+%    Gluino-mediated & Top    & 1450 \ph(1600)       & \ph750 \ph\ph(800)                          \\ 
+%    Direct          & Bottom & 1025 \ph\ph(975)     & \ph525 \ph\ph(500)                          \\ 
+%    Direct\B        & Top    & \ph875 \ph\ph(925)   & \ph350 \ph\ph(350)                          \\
+%    \hline
+% \end{tabular}
+%\end{table}
 
+%_______________________________________________________________________________
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 
+\section{Summary}
+\label{sec:summary}
 
+An inclusive search for supersymmetry with the CMS experiment is
+reported, based on a data sample of pp collisions collected in 2016 at
+$\sqrt{s} = 13\TeV$, corresponding to an integrated luminosity of
+$35.9 \pm 0.9 \fbinv$. Final states with jets and significant
+\ptvecmiss, as expected from the production and decay of massive
+gluinos and squarks, have been analysed. Candidate signal events are
+categorised according to the number of reconstructed jets, the number
+of jets identified to originate from bottom quarks, and the scalar and
+vector sums of the transverse momentum of jets. The sum of standard
+model backgrounds per bin has been estimated from a simultaneous
+binned likelihood fit to event yields in the signal region and control
+samples. The observed yields in the signal region are found to be in
+agreement with the expected contributions from standard model
+processes. Limits are determined in the mass parameter space of
+simplified models involving the gluino-mediated and direct production
+of third-generation squark pairs. The excluded mass parameter space
+extends significantly beyond that set by previous searches, with
+observed exclusions in gluino mass, and bottom and top squark masses,
+as high as 1900, 1075, and 1040\GeV, respectively.
+
+%_______________________________________________________________________________
+%_______________________________________________________________________________
 %_______________________________________________________________________________
 
 \clearpage
