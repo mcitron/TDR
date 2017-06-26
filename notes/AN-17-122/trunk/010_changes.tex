@@ -1,0 +1,120 @@
+%%____________________________________________________________________________||
+
+\section{History}
+\label{sec:history}
+
+This Analysis Note (AN-17-122) supersedes that with the identifier
+AN-16-400, which is now deprecated. The changes to this AN for each
+version are summarised below.
+
+\subsection{December 2016 (v1)}
+
+This version (v1) supports the Full Status report talk given on
+2\superscript{nd} December 2016~\cite{fullstatus}. It is identical to
+AN-16-400 v2 (now deprecated).
+
+This version contains studies in the control regions based on
+36\fbinv. Following the release of the preliminary public result for
+ICHEP 2016~\cite{CMS-PAS-SUS-16-016}, the signal region was
+reblinded. In time for the Full Status report, a partial unblinding of
+the signal region data corresponding to 5\fbinv (from Run Era G) was
+performed, which revealed an excess of events in the core of
+distributions of the discriminating variables employed by this
+search.\footnote{The fit result shown in the Full Status
+  report~\cite{fullstatus} was understood to be correctly executed and
+  healthy. However, a mistake in the data cards for this fit was
+  realised soon afterwards. Only then was the excess observed, which
+  prompted the reblinding of the signal region and further detailed
+  studies of the control regions.}  The data sets at the time were
+based on the \verb!Prompt!  reconstruction and the calibrations from
+the various POGs were still considered very preliminary. Known issues
+with the data at the time, such as the ``HIP effect'', were still
+under study by the Collaboration.
+
+\subsection{April 2017 (v2)}
+
+This analysis note has received a substantial overhaul since v1. Both
+the structure and content have significantly changed.  We have
+reorganised the sections on the background estimation methods, and
+tried to minimise the length of the body of the document, by providing
+summary figures / tables, while much of the detailed figures / tables
+have been moved to appendices. The updated content reflect changes to
+the analysis, which are detailed below.
+
+Some of the updates were planned and stated at the time of (or prior
+to) the Full Status talk. Some updates concern the addition of new
+cross check studies based on the control regions. Some updates
+represent modifications to the analysis selections and/or
+methods. These updates, labelled as ``Planned'', ``Checks'', or
+``Mod'', are summarised below.
+  
+\begin{itemize}
+  
+\item (Planned) We have updated to now use the \verb!23Sep2016!
+  \verb!ReReco! campaign, the \verb!re-miniAOD!, the
+  \verb!Summer16!-campaign MC samples, and all the latest relevant
+  recommended scale factors from the POGs. \eg see
+  Sec.~\ref{sec:sim-corrs}.
+  
+\item (Mod) We have raised the \HTmiss threshold used for the signal
+  and all control regions to $\HTmiss > 200\GeV$. See
+  Sec.~\ref{sec:energysums}.
+    
+\item (Planned) Several new studies of systematics have been
+  performed. The most important one concerns the use of (missing)
+  higher order corrections that modify the boson \Pt distributions
+  obtained from simulation. \eg see Secs.~\ref{sec:nlo-intro},
+  \ref{sec:nlo}, and \ref{sec:nlo-zinv}.
+
+\item (Checks) New closure tests have been added, and a likelihood
+  model of these closure tests has also been implemented to understand
+  if any observed non-closure can be explained away by known
+  experimental or theoretical effects (such as jet energy scale
+  corrections). In particular, the modelling of the \alphat and \bdphi
+  variables has been studied in detail. \eg see
+  Secs.~\ref{sec:tfSyst_alphaT} and \ref{sec:tfSyst_alphaT-zinv}.
+
+\item (Mod) The correlation model for the systematic uncertainties
+  derived from closure tests has been revisited. See
+  Secs.~\ref{sec:closure-tests} and \ref{sec:closure-tests}.
+
+%\item (Checks) Fits to data {\it across} multiple control regions
+%  using a likelihood model have been studied, in order to demonstrate
+%  a good modelling of the data in and across control regions. See
+%  Sec.~\ref{sec:crfits}. \fixme{SEC NEEDS TO BE ADDED.}
+
+\item (Mod) We now rely solely on the \mmj sample to predict the
+  \znunu\ + jets background. Further, an extrapolation in \nb is
+  performed as part of the \znunuj background estimate. See
+  Sec.~\ref{sec:zinv}. The \gj sample is now reserved for testing
+  assumptions in our likelihood model. See Sec.~\ref{app:gjets}.
+
+\item (Planned) The event selection criteria for the \gj (cross check)
+  sample has been relaxed (removed \alphat requirement, $\Delta R >
+  0.4$) and the treatment for estimating the sample contamination from
+  fakes and fragmentation has been improved. See App.~\ref{app:gjets}.
+
+\end{itemize}
+
+\subsection{June  2017 (v3)}
+
+In addition to several minor tweaks, the following major changes have
+been made:
+\begin{itemize}
+\item The use of the \mmj sample to predict the \znunuj background has
+  been modified slightly. Secs~\ref{sec:event-categorisation} and
+  \ref{sec:zinv} have been updated accordingly.
+\item A brief description of corrections and uncertainties to the
+  signal samples has been provided in Sec.~\ref{sec:signalcorrs}.
+\item The multijet background estimation method is unchanged, but some
+  figures have been updated, and others added to further support the
+  method, in Sec.~\ref{sec:qcd}. 
+\item The likelihood description has been added in
+  Sec.~\ref{sec:likelihood}. 
+\item The signal region has been fully unblinded using the 2016 data
+  set and documented in Sec.~\ref{sec:results}. 
+\item Interpretations with SUSY simplified models have been provided
+  in Sec.~\ref{sec:susy}. 
+\end{itemize}
+
+%%____________________________________________________________________________||

@@ -1,0 +1,209 @@
+\section{Results}
+\label{sec:result}
+
+A model of the observations in all data samples, described by a
+likelihood function, is used to obtain a prediction of the SM
+backgrounds and to test for the presence of new-physics signals if
+the signal region is included in the ML fit. The
+observation in each bin defined by the \njet, \nb, \scalht, and
+\HTmiss variables is modelled as a Poisson-distributed variable around
+the SM expectation and a potential signal contribution (assumed to be
+zero in the following discussion), where the SM expectation is the sum
+over the estimated contributions from all background processes
+according to the methods described in Section~\ref{sec:backgrounds}.
+
+The nonmultijet backgrounds 
+%, which comprise the \wlj and \ttj (``lost
+%lepton'') backgrounds, the residual contributions from other
+%processes, such as single top, diboson, and Drell-Yan production, and
+%the irreducible \znunuj background, 
+are related to the expected yields in the \mj, \mmj, and \gj control
+samples via the transfer factors derived from simulation, as described
+in Section~\ref{sec:control_regions}.
+%For event categories that satisfy $\nb < 2$, all three of the
+%aforementioned control samples are considered in the estimation of the
+%\znunuj background. For events with $\nb > 1$, only the \mj control
+%sample is used to determine the total contribution from all
+%nonmultijet backgrounds in the signal region.  
+Estimates of the contribution from multijet events in the signal
+region are determined according to the method described in
+Section~\ref{sec:qcd_background}, and are included in the likelihood
+function.
+%Estimates of the contribution from multijet events in the control and
+%signal regions are determined, respectively, directly from simulation
+%or according to the method described in
+%Section~\ref{sec:qcd_background}, and are included in the likelihood
+%function.
+
+%The likelihood function is the product of Poisson probability density
+%functions, one for each signal region, and constraint terms that
+%account for uncertainties in the background predictions and signal
+%yields. These uncertainties are treated as nuisance parameters with
+%log-normal probability density functions. Correlations are taken into
+%account where appropriate.
+
+The systematic uncertainties summarised in Table~\ref{tab:bkgd_systs}
+are accommodated in the likelihood function through the use of
+nuisance parameters, the measurements of which are assumed to follow a
+log-normal distribution. Alternative templates are used to describe
+the uncertainties in the modelling of the \HTmiss variable. A vertical
+template morphing scheme~\cite{Prosper:2011zz} is used to interpolate
+between the nominal and alternative \HTmiss templates. A nuisance
+parameter controls the interpolation, which is Gaussian distributed
+with a mean of zero and a standard deviation of one, where $\pm$1
+corresponds to the alternative templates for a $\pm$1$\sigma$
+variation in the uncertainty. Each template is interpolated
+quadratically between $\pm$1$\sigma$, and a linear extrapolation is
+employed beyond these bounds.
+
+\begin{figure}[!t]
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/result/v4/summaryPlot_Monojet_prefit_overlay_fit_b}
+    \caption{(Upper panel) Event yields observed in data (solid
+      circles) and pre-fit SM expectations with their associated
+      uncertainties (black histogram with shaded band), integrated
+      over \HTmiss, as a function of \nb and \scalht for the monojet
+      category ($\njet = 1$) in the signal region. For illustration
+      only, the expectations for a benchmark model
+      (\texttt{T2tt\_degen} with $m_{\,\PSQt} = 300\GeV$ and
+      $m_{\chiz_1} = 290\GeV$) are superimposed on the SM-only
+      expectations. (Lower panel) The significance of deviations
+      (pulls) observed in data with respect to the pre-fit (open
+      circles) and post-fit (closed circles) SM expectations,
+      expressed in terms of the total uncertainty in the SM
+      expectations. The pulls cannot be considered independently due
+      to inter-bin correlations.}
+    \label{fig:mono}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[angle=90,width=0.60\textwidth]{figures/result/v4/summaryPlot_Asymmetric_prefit_overlay_fit_b}
+    \caption{(Upper panel) Event yields observed in data (solid
+      circles) and pre-fit SM expectations with their associated
+      uncertainties (black histogram with shaded band), integrated
+      over \HTmiss, as a function of \njet, \nb, and \scalht for the
+      asymmetric \njet categories in the signal region. For
+      illustration only, the expectations for two benchmark models
+      (\texttt{T2bb} with $m_{\,\PSQb} = 400\GeV$ and $m_{\chiz_1} =
+      325\GeV$, \texttt{T1tttt} with $m_{\,\sGlu} = 800\GeV$ and
+      $m_{\chiz_1} = 400\GeV$) are superimposed on the SM-only
+      expectations. (Lower panel) The significance of deviations
+      (pulls) observed in data with respect to the pre-fit (open
+      circles) and post-fit (closed circles) SM expectations,
+      expressed in terms of the total uncertainty in the SM
+      expectations. The pulls cannot be considered independently due
+      to inter-bin correlations.}
+    \label{fig:asym}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[angle=90,width=0.60\textwidth]{figures/result/v4/summaryPlot_Symmetric_prefit_overlay_fit_b}
+    \caption{(Upper panel) Event yields observed in data (solid
+      circles) and pre-fit SM expectations with their associated
+      uncertainties (black histogram with shaded band), integrated
+      over \HTmiss, as a function of \njet, \nb, and \scalht for the
+      symmetric \njet categories in the signal region. For
+      illustration only, the expectations for two benchmark models
+      (\texttt{T1tttt} with $m_{\,\sGlu} = 1200\GeV$ and $m_{\chiz_1}
+      = 100\GeV$, \texttt{T1qqqq} with $m_{\,\sGlu} = 900\GeV$ and
+      $m_{\chiz_1} = 700\GeV$) are superimposed on the SM-only
+      expectations. (Lower panel) The significance of deviations
+      (pulls) observed in data with respect to the pre-fit (open
+      circles) and post-fit (closed circles) SM expectations,
+      expressed in terms of the total uncertainty in the SM
+      expectations. The pulls cannot be considered independently due
+      to inter-bin correlations.}
+    \label{fig:sym}
+  \end{center}
+\end{figure}
+
+The pre-fit result of this search, which considers the
+observations in the control regions only, is summarised in
+Figs.~\ref{fig:mono}--\ref{fig:sym} for, respectively, the monojet,
+asymmetric, and symmetric topologies.
+%This result is based on an estimate of the \znunuj background using
+%observations in multiple control regions as described by the
+%likelihood function, maximised over all fit parameters. 
+The figures also show the significance of deviations observed in data
+with respect to the pre-fit SM expectations, expressed in terms of
+the total uncertainty in the SM
+expectations. Figures~\ref{fig:mono}--\ref{fig:sym} also summarise the
+pulls from the post-fit result, which is based on a ML fit to
+observations in the signal region as well as the control regions.
+
+The data are well described by the background-only hypothesis. 
+%A saturated likelihood model %~\cite{}
+%is used as a goodness-of-fit test to determine the compatibility of
+%the observed yields with the expectations under the background-only
+%hypothesis. 
+A goodness-of-fit test, based on a log likelihood ratio, is performed
+to quantify the degree of compatibility between the observed yields
+and the expectations under the background-only hypothesis. The
+alternative hypothesis is defined by a "saturated"
+model~\cite{sat-llk}, for which the background expectation is set
+equal to the observed number of events, and provides a reference for
+the largest value that the likelihood can take for any model for the
+given data set. Hence, this reference can be used as a reasonable
+normalisation for the maximum observed for a more constraining
+model. A $p$-value of 0.20 is observed for the fit over the full
+signal region, and $p$-values in the range 0.04--1.00, consistent with
+a uniform distribution, are obtained when considering events
+categorised according to \njet.
+% Njet-binned p-values taken from http://www.hep.ph.ic.ac.uk/~mc3909/Log/16-04/16-04-27/pValues/pValuesnB.pdf 
+
+The covariance and correlation matrices for the pre-fit SM
+expectations in all bins of the signal region, defined by \njet, \nb,
+\scalht, and integrated over \HTmiss, are determined from 500
+pseudo-experiments by sampling the pre-fit nuisance parameters under
+the background-only hypothesis. The SM expectations for different
+\njet and \nb categories exhibit a nonnegligible level of covariance
+within the same \scalht bin, primarily as a result of the systematic
+uncertainties evaluated from closure tests, described in
+Section~\ref{sec:ewk_background}, that integrate yields over \njet and
+\nb. Bins adjacent and next-to-adjacent in \njet and/or \nb can have
+correlation coefficients in the range 0.2--0.4, and, infrequently, as
+large as $\sim$0.5. Otherwise, the correlation coefficients are
+$<0.2$. Anticorrelation coefficients are typically not larger than
+$\sim$0.2.
+
+\begin{figure*}[!t]
+  \begin{center}
+%    \includegraphics[width=0.45\textwidth]{figures/mht_shapes/v0/postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700}
+%    \includegraphics[width=0.49\textwidth]{figures/mht_shapes/v1/postFitShape_eq0b_ge5j_600_800_prefit_T1qqqq_900_700} 
+%    \includegraphics[width=0.49\textwidth]{figures/mht_shapes/v1/postFitShape_eq1b_ge5j_800_Inf_prefit_T1qqqq_1200_100} \\
+    \includegraphics[width=0.49\textwidth]{figures/mht_shapes/v3/postFitShape_eq0b_ge5j_800_Inf_prefit} 
+    \includegraphics[width=0.49\textwidth]{figures/mht_shapes/v3/postFitShape_eq1b_ge5j_800_Inf_prefit} \\
+  \end{center}
+  \caption{Event yields observed in data (solid circles) and pre-fit
+    SM expectations with their associated uncertainties (blue
+    histogram with shaded band) as a function of \HTmiss for events in
+    the signal region that satisfy $\njet \geq 5$, $\scalht >
+    800\GeV$, and (left) $\nb = 0$ or (right) $\nb = 1$. For
+    illustration only, the expectations for one of two benchmark
+    models (\texttt{T1qqqq} and \texttt{T1tttt}, both with
+    $m_{\,\sGlu} = 1200\GeV$ and $m_{\chiz_1} = 100\GeV$) are
+    superimposed on the SM-only expectations. The lower panels
+    indicate the significance of deviations (pulls) observed in data
+    with respect to both the pre-fit SM expectations, expressed in
+    terms of the total uncertainty in the SM expectations. The pulls
+    cannot be considered independently due to inter-bin
+    correlations. }
+    \label{fig:mht-templates} 
+\end{figure*}
+
+Figure~\ref{fig:mht-templates} shows the event yields observed in data
+and pre-fit SM expectations with their associated uncertainties as
+a function of \HTmiss for two categories of signal candidate events,
+which provide good sensitivity to models with high-mass gluinos. For
+illustration only, the expected counts from benchmark signal models
+that assume the pair production and decay of gluinos, described
+further in Section~\ref{sec:interpretations}, are also shown.
+
+%\input{tables/result/v0/predewkdata_sig_comb_mono_twiki}
+%\input{tables/result/v0/predewkdata_sig_comb_asym_twiki}
+%\input{tables/result/v0/predewkdata_sig_comb_sym_twiki}
+

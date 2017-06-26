@@ -1,0 +1,243 @@
+%%____________________________________________________________________________||
+\section{Physics objects}
+\label{sec:objects}
+
+The definitions of the physics objects used in this analysis follow
+the recommendations of the various Physics Object Groups (POGs).
+During data taking these recommendations are subject to change and
+will be be updated if necessary.
+
+\subsection{Jets}
+\label{sec:jetreco}
+
+Jets are defined as sets of particle-flow (PF) candidates clustered by
+the anti-$k_{T}$ jet clustering algorithm \cite{Cacciari:2008gp} with
+a distance parameter of 0.4 (PFJets). Charged Hadron Subtraction (CHS)
+is applied, i.e., charged hadrons that can be traced back to pileup
+vertices are not clustered.  The four-momenta of jets are initially
+defined as the four-vector sum of the four-momenta of the constituent
+particle-flow candidates and then scaled by the jet energy correction
+factors designated as L1FastJet, L2Relative, and L3Absolute
+\cite{Chatrchyan:2011ds}.
+
+The ``loose'' working point Jet-Id selection criteria is chosen.  The
+cuts are listed in Tab.~\ref{tab:loose-jet-id}.  In addition, a
+dedicated selection is applied to reject ``beam halo'' candidate
+events, as described in Section~\ref{sec:had-signal}.
+
+\begin{table}[ht!]
+  \caption{The ``loose'' jet ID requirements. \label{tab:loose-jet-id}}
+  \centering
+  \begin{tabular}{ ccc }
+    \hline
+    \hline
+    Variable & cut & notes \\ \hline
+    \multicolumn{3}{c}{$-3.0 < \eta_{\mathrm{jet}} < 3.0$} \\ \hline    
+    Neutral Hadron Fraction & $<0.99$ & - \\
+    Neutral EM Fraction & $<0.99$ & - \\
+    Number of constituents & $>1$ & - \\
+    Charged Hadron Fraction & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
+    Charged Multiplicity & $>0$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\
+    Charged EM Fraction & $<0.99$ & only for $|\eta_{\mathrm{jet}}| < 2.4$ \\ \hline
+    \multicolumn{3}{c}{$|\eta_{\mathrm{jet}}| > 3.0$} \\ \hline        
+    Neutral EM Fraction & $<0.90$ & - \\
+    Number of Neutral Particles & $>10$ & - \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{b-tagged jets}
+\label{sec:btags}
+
+Jets originating from bottom quarks are identified through vertices
+that are displaced with respect to the primary interaction
+\cite{Chatrchyan:2012jua}.  The algorithm used to tag b-jets is the
+Combined Secondary Vertex tagger V2, with the ``medium'' working
+point, which is achieved by requiring a cut of $>$ 0.8484 on the
+algorithm discriminator variable.  This results in a gluon/light-quark
+mis-tag rate of $\sim$1 \% (where ``light'' means $u$, $d$ and $s$
+quarks), a charm-quark mis-tag rate of $\sim$10 \% and a b-quark b-tag
+efficiency of about 60 \%.
+
+Some validation studies used by the analysis make use of the ``loose''
+and ``tight'' working points, which are defined by the thresholds
+requirements of 0.5426 and 0.9535 on the discriminator variable. These
+requirements yield light-flavour mistag probabilities of $\sim$10 and
+$\sim$0.1\%, respectively.
+
+\subsection{Muons}
+\label{sec:muon-id}
+
+\subsubsection{Selection}
+
+Muons are selected in the \mj and \mmj control regions using the
+``tight'' working point definition of the recommended identification
+algorithm from the Muon POG.  Muons are also required to be well
+isolated, i.e. a low activity within a cone defined by $\delta R <
+0.3$ around the muon trajectory. The transverse momenta of PF neutral
+and charged candidates, as well as photons, lying within the cone
+around the lepton are summed. The relative combined isolation
+$I^\mathrm{rel}_\mathrm{comb}$ is then defined as the ratio of this
+scalar sum to the transverse momentum of the lepton
+candidate. Additionally, $\rho\times \mathcal{A}_\textrm{eff}$
+corrections are applied to remove the effects of pileup.  Muons are
+defined to be isolated if they fulfill the criterium
+$I^\mathrm{rel}_\mathrm{comb} < 0.15$.
+
+\subsubsection{Veto}
+
+For the purpose of vetoing muons in the signal region, the ``loose''
+working point is used, which provides $\sim$ 98 $\%$ efficiency.  In
+the hadronic signal region a variable cone size for the isolation is
+used, which is referred to as ``mini-isolation''.  This isolation
+algorithm helps in recovering some efficiency in the lepton selection
+for boosted topology of top quark decays, in which the muon's track
+may be found close to the jet activity due to the boost of the parent
+top.  Therefore, the cone size used for the calculation of the lepton
+isolation is reduced as a function of the lepton \Pt, as follows:
+$R=0.2$ for $\Pt_{\ell}\leq50\gev$, $R=10\gev/\Pt_{\ell}$ for $50 \gev
+< \Pt_{\ell} < 200\gev$ and $R=0.05$ for $\Pt_{\ell} > 200 \gev$.  In
+the signal region, identified muons with mini-isolation satisfying
+$I^\mathrm{min}_\mathrm{comb} < 0.2$ are vetoed.
+
+\subsection{Photons}
+\label{sec:photon-id}
+
+\begin{table}[ht!]
+  \caption{Photon identification.\label{tab:photon-id-gamma}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ccc }
+    \hline
+    \hline
+    Categories & \multicolumn{2}{c}{Barrel}   \\
+    Working point  & Tight & Loose \\
+    \hline
+    Conversion safe electron veto & Yes & Yes  \\
+    Single Tower H/E              & 0.05 & 0.05  \\
+    $\sigma_{i\eta i\eta}$        & 0.0100 & 0.0102 \\
+    PF charged hadron isolation   & 0.76 & 3.32  \\
+    PF neutral hadron isolation   & 0.97 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000019 $\times$ $p_{\mathrm{T},\gamma}^{2}$ & 1.92 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000019 $\times$ $p_{\mathrm{T},\gamma}^{2}$  \\
+    PF photon isolation           & 0.08 + 0.0053 $\times$ $p_{\mathrm{T},\gamma}$ & 0.81 + 0.0053 $\times$ $p_{\mathrm{T},\gamma}$ \\
+    \hline
+    \hline
+    Categories & \multicolumn{2}{c}{Endcap}   \\
+    Working point  & Tight & Loose \\
+    \hline
+    Conversion safe electron veto & Yes & Yes  \\
+    Single Tower H/E              & 0.05 & 0.05  \\
+    $\sigma_{i\eta i\eta}$        & 0.0268 & 0.0274 \\
+    PF charged hadron isolation   & 0.56 & 1.97  \\
+    PF neutral hadron isolation   & 2.09 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000025 $\times$ $p_{\mathrm{T},\gamma}^{2}$ & 11.86 + 0.014 $\times$ $p_{\mathrm{T},\gamma}$ + 0.000025 $\times$ $p_{\mathrm{T},\gamma}^{2}$ \\
+    PF photon isolation           &  0.16 + 0.0034 $\times$ $p_{\mathrm{T},\gamma}$ & 0.83 + 0.0034 $\times$ $p_{\mathrm{T},\gamma}$ \\
+    \hline
+    \hline
+  \end{tabular}
+  \end{table}
+
+\subsubsection{Selection}
+
+Photons are identified according to the ``tight'' working point
+definition ($\sim$ 71 $\%$ efficiency) of the simple cut-based photon
+identification algorithm \cite{photon-id} and required to be well
+isolated.  A PF-based isolation is used with a cone size $\Delta R$
+$<$ 0.3 and $\rho\times \mathcal{A}_\textrm{eff}$ corrections are applied to remove the
+effects of pileup \cite{pf-photon}.  Table \ref{tab:photon-id-gamma}
+summarises the identification and isolation selection used.
+
+\subsubsection{Veto}
+
+Photons are vetoed in the definition of the hadronic signal region and
+muon control regions, as described in Sec.~\ref{sec:preSelection},
+while a control region with one photon (``\gj'') is defined for the
+purpose of the background estimation, as described in
+Sec.~\ref{sec:photoncontrolSelection}.
+
+
+\subsection{Electrons}
+\label{sec:electron-id}
+
+\begin{table}[h!]
+  \caption{Electron identification for veto (``loose'' working point).\label{tab:ele-id}}
+  \centering
+  \footnotesize
+  \begin{tabular}{ lcc }
+    \hline
+    \hline
+    Categories                                               & Barrel    & EndCap    \\
+    \hline
+    $\Delta \eta_{In}$                                       & 0.0105   & 0.00814  \\
+    $\Delta \phi_{In}$                                       & 0.115    & 0.182  \\
+    $\sigma_{i\eta i\eta}$                                   & 0.0103    & 0.0301  \\
+    H/E                                                      & 0.104    & 0.0897   \\
+    d0 (vtx)                                                 & 0.0261    & 0.118  \\
+    dZ (vtx)                                                 & 0.041    & 0.822  \\
+    $\lvert(1/E_{\textrm{ECAL}} - 1/p_{\textrm{trk}})\rvert$ & 0.102     & 0.126  \\
+    Missing hits (inner tracker)                             & 2         & 1         \\
+    Conversion veto                                          & yes       & yes   \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Selection}
+
+Electron-based control regions are not used by this analysis. 
+
+\subsubsection{Veto}
+
+In order to veto electrons in the hadronic signal region and the muon
+and photon control regions, the ``loose'' working point definition
+($\sim$ 90 $\%$ efficiency) of the cut-based electron identification
+\cite{electron-id} is used.  Electrons are also required to be
+isolated.  Similar to muons, in the hadronic signal regions a PF-based
+isolation \cite{pf-photon} is used with a cone size determined by the
+mini isolation algorithm (see Sec.~\ref{sec:muon-id}) and $\rho\times
+\mathcal{A}_\textrm{eff}$ corrections are applied to remove the effects of pileup.
+Isolated electrons are defined by $I^\mathrm{min}_\mathrm{comb} < 0.1$.
+
+Table \ref{tab:ele-id} summarises the identification requirements. 
+
+\subsection{Single isolated tracks}
+\label{sec:SIT}
+
+\subsubsection{Selection}
+
+Event samples containing single isolated tracks are not used by this
+analysis, other than for ``closure test'' studies related to the
+simulation modelling of the veto (\eg see
+Sec.~\ref{sec:tfSyst_SITV}). In this case, the veto definition below
+is simply inverted.
+
+\subsubsection{Veto}
+
+A single isolated track (SIT) can be used to identify W bosons through
+their leptonic decays: W $\rightarrow$ $\mu \nu$, W $\rightarrow$
+$e\nu$, and W $\rightarrow$ $\tau$($\rightarrow l\nu$) $\nu$.  Single
+prong decays of the tau lepton can also be identified: W $\rightarrow$
+$\tau$ ($\rightarrow$ h$^{\pm}$ + n$\pi^{0}\nu$) $\nu$.  A single
+isolated track comprises a charged PF candidate with $\Pt > 10 \gev$,
+$\Delta z(\mathrm{track}, \mathrm{PV}) < 0.05 \, \mathrm{cm}$ and with
+a relative isolation smaller than 0.1, where the isolation is
+determined from the sum of the \Pt of the charged PF candidates within
+$\Delta R < 0.3$.
+
+\subsection{Missing transverse momentum}
+
+The transverse momentum imbalance of an event (\met) is defined as the
+magnitude of the vector sum of the transverse momentum of all
+particle-flow candidates in the event.
+
+The Type-I \met correction \cite{Khachatryan:2014gga} is applied, \ie
+the transverse momentum of the particle-flow candidates clustered as
+jets are replaced with the transverse momentum of the jets that are
+scaled by the jet energy correction factors.
+
+The \met is used in the definition of the transverse mass, $M_{T}$,
+which is in turn used as part of the selection criteria that define
+the single muon control sample (Sec.~\ref{sec:mucontrolSelection}),
+and for the $\mhtmet$ cleaning filter, as described in
+Sec.~\ref{sec:selection}.
+
+%%____________________________________________________________________________||

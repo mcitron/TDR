@@ -31,33 +31,38 @@ available at the time of writing. These samples populate key regions of the
 {\mphi-\mchi} mass plane, and correspond roughly to those shown in
 Tab.~\ref{tab:DMgrid}.
 
-\begin{table}[h!] \centering \begin{tabular}{l|llllllllll}\hline \hline
-$m_\textrm{DM}$  & \multicolumn{10}{c}{$m_\Phi$}
-\\ \hline 1    & 10 & 20 & 50 & 100 & 200 & 300 & 500 & 1000 & 2000 & 10000 \\
-10   & 10 & 15 & 50 & 100 &     &     &     &      &      & 10000 \\ 50   & 10 &
-& 50 & 95  & 200 & 300 &     &      &      & 10000 \\ 150  & 10 &    &    &
-& 200 & 295 & 500 & 1000 &      & 10000 \\ 500  & 10 &    &    &     &     &
-& 500 & 995  &      & 10000 \\ 1000 & 10 &    &    &     &     &     &     &
-1000 & 1995 & 10000\\ \hline \hline \end{tabular} \caption{Benchmark dark
-matter and mediator masses. The parameter space follows the
-DM Forum recommendations~\cite{Abercrombie:2015wmb}. Points are chosen roughly
-equidistant on a logarithmic scale. Points on the on-shell diagonal are always 
-chosen to be 5 GeV away from the threshold to avoid numerical instabilities in 
-the event generation.} \label{tab:DMgrid} \end{table}
+\begin{table}[h!] \centering \begin{tabular}{l|llllllllll} \hline \hline
+\mchi & \multicolumn{10}{c}{\mphi} \\
+\hline
+1    & 10 & 20 & 50 & 100 & 200 & 300 & 500 & 1000 & 2000 & 10000 \\
+10   & 10 & 15 & 50 & 100 &     &     &     &      &      & 10000 \\
+50   & 10 &    & 50 & 95  & 200 & 300 &     &      &      & 10000 \\
+150  & 10 &    &    &     & 200 & 295 & 500 & 1000 &      & 10000 \\ 
+500  & 10 &    &    &     &     &     & 500 & 995  &      & 10000 \\
+1000 & 10 &    &    &     &     &     &     & 1000 & 1995 & 10000 \\
+\hline \hline \end{tabular}
+\caption{Benchmark dark matter and mediator masses. The parameter space follows
+the DM Forum recommendations~\cite{Abercrombie:2015wmb}. Points are chosen 
+roughly equidistant on a logarithmic scale. Points on the on-shell diagonal are
+always chosen to be 5 GeV away from the threshold to avoid numerical
+instabilities in the event generation.} \label{tab:DMgrid} \end{table}
 
 
-\subsection{Light flavour models} \label{sec:dm_lightjet}
+\subsection{Simplified Dark Matter models} \label{sec:dm_smdm}
 
 The light flavour simplified models consist of a DM particle \pchi of mass
 \mchi that is a Dirac fermion, and a spin-1 (vector or axial-vector) or spin-0
 (scalar or pseudoscalar) mediating particle \pphi of mass \mphi in an
-$s$-channel. The couplings of the mediator with the standard model and dark
+$s$-channel. The heavy flavour simplified models are similar to light flavour
+models; however, the production of the mediator is associated with a \ttNew
+or \bbNew pair. The couplings of the mediator with the standard model and dark
 matter particles are given by \gsm and \gdm, respectively. The recommendations
-by the DM Forum on the choice of couplings is \gsm$=1$,\gdm$=1$ for
-(pseudo)scalar models, and \gsm$=0.25$,\gdm$=1$ for (axial-)vector models.
+by the DM Forum on the choice of couplings is $\gsm=1$, $\gdm=1$ for
+(pseudo)scalar models, and $\gsm=0.25$, $\gdm=1$ for (axial-)vector models.
 Assuming that no additional visible or invisible particles contribute to the decay 
 of the mediator, we impose the minimal width determined by the choice of couplings. 
-An example Feynman diagram is shown in Fig.~\ref{fig:DMfeynman}.
+An example Feynman diagram for light flavour models is shown in 
+Fig.~\ref{fig:DMfeynman}.
 
 \begin{figure}[h!] \centering
   \subfigure{\includegraphics[width=0.35\textwidth]{figures/DMplots/feynman_light_jet.pdf}}
@@ -65,11 +70,20 @@ An example Feynman diagram is shown in Fig.~\ref{fig:DMfeynman}.
   \label{fig:DMfeynman} 
 \end{figure}
 
+Owing to the principal of Minimal Flavor Violation (MFV) scalar and 
+pseudoscalar couplings can be proportional to the quark mass and therefore
+potentially enhance the production of top and bottom quarks in the final state.
+This results in signatures with relatively large jet multiplicities, in
+particular for \DMtt production, an exemplary Feynman diagram is shown in 
+Fig~\ref{fig:feynman_hf}. However, the cross section and acceptance to such 
+topologies tend to be smaller compared to the monojet final state.
+
 \begin{figure}[h!] \centering
-\subfigure{\includegraphics[width=0.35\textwidth]{figures/DMplots/feynman_hf.pdf}}
-\caption{Feynman diagram of the pair production of Dark Matter particles in
-association with $t\bar{t}$ or $b\bar{b}$. \cite{Abercrombie:2015wmb}}
-\label{fig:feynman_hf} \end{figure}
+  \subfigure{\includegraphics[width=0.35\textwidth]{figures/DMplots/feynman_hf.pdf}}
+  \caption{Feynman diagram of the pair production of Dark Matter particles in
+  association with $t\bar{t}$ or $b\bar{b}$. \cite{Abercrombie:2015wmb}}
+  \label{fig:feynman_hf}
+\end{figure}
 
 %Assuming 2~\ifb of data we list the cross sections, yields and selection  efficiencies for the four light jet models in Tables~\ref{summaryTableAN_DMV_xs10_g0p25_2p1fb_exp}-\ref{summaryTableAN_DMS_xs10_g1p0_2p1fb_exp}. 
 The signal selection efficiencies are around $\sim 1$\% for mass points near the expected exclusion
@@ -78,255 +92,461 @@ The asymmetric and monojet categories are seen to almost double the acceptance
 to these models compared to the Run~1 symmetric categories alone, justifying the
 inclusion of these selections into the analysis.
 
-%% \begin{table}[]
-%% \centering
-%% \begin{tabular}{llll}
-%% \hline \hline
-%% Sample & $M_{\text{DM}}$ & $M_{\text{med}}$ & NGen \\
-%% \hline
-%% DM+bbar PS &    1 &    10 &  50246 \\
-%% DM+bbar PS &    1 &    20 &  50259 \\
-%% DM+bbar PS &    1 &    50 &  50068 \\
-%% DM+bbar PS &    1 &   200 &  50667 \\
-%% DM+bbar PS &    1 &   300 &  50905 \\
-%% DM+bbar PS &    1 &  1000 &  50680 \\
-%% DM+bbar PS &   10 &    10 &  50046 \\
-%% DM+bbar PS &   10 &    50 &  49875 \\
-%% DM+bbar PS &   50 &    10 &  50456 \\
-%% DM+bbar PS &   50 &    95 &  50205 \\
-%% DM+bbar PS &   50 &   200 &  47846 \\
-%% DM+bbar PS &  150 &   500 & 107788 \\
-%% DM+bbar PS &  500 &    10 &  51464 \\
-%% DM+bbar PS &  500 &   500 &  50283 \\
-%% DM+bbar PS &  500 &   995 &  50437 \\
-%% DM+bbar PS &  500 & 10000 &  50239 \\
-%% DM+bbar PS & 1000 &    10 &  50036 \\
-%% DM+bbar PS & 1000 &  1000 &  50960 \\
-%% \hline \hline
-%% \end{tabular}
-%% \caption{DM+$b\bar{b}$ signal simulations using pseudoscalar couplings. The last number gives the number of events generated}
-%% \label{tab:dmbb_ps}
-%% \end{table}
+The list of simplified DM MC samples, along with the number of events 
+generated, are shown in Tab.~\ref{tab:dmj_av}-\ref{tab:dmtt_s}, respectively.
 
-%% \begin{table}[]
-%% \centering
-%% \begin{tabular}{llll}
-%% \hline\hline
-%% Sample & $M_{\text{DM}}$ & $M_{\text{med}}$ & NGen \\
-%% \hline
-%% DM+bbar S &    1 &    10 & 47880 \\
-%% DM+bbar S &    1 &    20 & 50036 \\
-%% DM+bbar S &    1 &   200 & 50454 \\
-%% DM+bbar S &    1 &   500 & 50001 \\
-%% DM+bbar S &    1 &  1000 & 50768 \\
-%% DM+bbar S &    1 & 10000 & 50379 \\
-%% DM+bbar S &   10 &    10 & 49767 \\
-%% DM+bbar S &   10 &    15 & 50377 \\
-%% DM+bbar S &   10 &    50 & 50116 \\
-%% DM+bbar S &   10 & 10000 & 50545 \\
-%% DM+bbar S &  150 &   295 & 49927 \\
-%% DM+bbar S &  150 & 10000 & 50219 \\
-%% DM+bbar S &  500 &    10 & 50089 \\
-%% DM+bbar S &  500 &   995 & 50040 \\
-%% DM+bbar S &  500 & 10000 & 50206 \\
-%% DM+bbar S & 1000 &    10 & 50576 \\
-%% DM+bbar S & 1000 &  1000 & 50412 \\
-%% \hline \hline
-%% \end{tabular}
-%% \caption{DM+$b\bar{b}$ signal simulations using scalar couplings. The last number gives the number of events generated}
-%% \label{tab:dmbb_s}
-%% \end{table}
+%\begin{table}[]
+%    \centering
+%    \begin{tabular}{lrrr}
+%        \hline\hline
+%        Sample & \mphi & \mchi & NGen \\
+%        \hline
+%        DM+jets S &   10 &   1 & 296800 \\
+%        DM+jets S &  100 &   1 & 293600 \\
+%        DM+jets S &  100 &  50 & 297000 \\
+%        DM+jets S &  300 &   1 &  50000 \\
+%        DM+jets S &  300 & 100 & 292600 \\
+%        DM+jets S &  500 &   1 & 294800 \\
+%        DM+jets S &  500 & 150 & 298800 \\
+%        DM+jets S & 1000 &   1 & 300000 \\
+%        DM+jets S & 1250 &   1 & 297200 \\
+%        DM+jets S & 1250 &  10 & 289200 \\
+%        DM+jets S & 1250 &  50 & 295800 \\
+%        DM+jets S & 1250 & 200 & 296000 \\
+%        DM+jets S & 1250 & 250 & 294000 \\
+%        DM+jets S & 1250 & 300 & 290800 \\
+%        DM+jets S & 1250 & 350 & 292800 \\
+%        DM+jets S & 1250 & 400 & 283800 \\
+%        DM+jets S & 1500 &   1 & 295400 \\
+%        DM+jets S & 1500 &  10 & 288000 \\
+%        DM+jets S & 1500 &  50 & 293600 \\
+%        DM+jets S & 1500 & 100 & 287200 \\
+%        DM+jets S & 1500 & 200 & 294200 \\
+%        DM+jets S & 1500 & 250 & 286600 \\
+%        DM+jets S & 1500 & 300 & 295600 \\
+%        DM+jets S & 1500 & 350 & 299600 \\
+%        DM+jets S & 1500 & 400 & 300000 \\
+%        DM+jets S & 2000 &   1 &  50000 \\
+%        \hline\hline
+%    \end{tabular}
+%    \caption{DM+jets signal simulations using scalar (S) couplings. The last number gives the number of events generated.}
+%    \label{tab:dmj_s}
+%\end{table}
+
+%\begin{table}[]
+%    \centering
+%    \begin{tabular}{lrrr}
+%        \hline\hline
+%        Sample & \mphi & \mchi & NGen \\
+%        \hline  
+%        DM+jets PS &   10 &   1 & 294000 \\
+%        DM+jets PS &   10 &  10 & 287800 \\
+%        DM+jets PS &  100 &   1 & 294000 \\
+%        DM+jets PS &  100 &  50 & 289000 \\
+%        DM+jets PS &  300 &   1 & 295800 \\
+%        DM+jets PS &  300 & 100 & 291200 \\
+%        DM+jets PS &  300 & 150 & 300000 \\
+%        DM+jets PS &  500 &   1 & 285200 \\
+%        DM+jets PS &  500 & 150 & 300000 \\
+%        DM+jets PS &  500 & 200 & 296000 \\
+%        DM+jets PS & 1000 & 300 & 292200 \\
+%        DM+jets PS & 1000 & 350 & 287000 \\
+%        DM+jets PS & 1250 &   1 & 278800 \\
+%        DM+jets PS & 1250 & 100 & 299000 \\
+%        DM+jets PS & 1250 & 150 & 284000 \\
+%        DM+jets PS & 1250 & 200 & 290000 \\
+%        DM+jets PS & 1250 & 250 & 296400 \\
+%        DM+jets PS & 1250 & 300 & 284200 \\
+%        DM+jets PS & 1250 & 350 & 294800 \\
+%        DM+jets PS & 1250 & 400 & 292400 \\
+%        DM+jets PS & 1500 &   1 & 288600 \\
+%        DM+jets PS & 1500 &  10 & 272400 \\
+%        DM+jets PS & 1500 &  50 & 298800 \\
+%        DM+jets PS & 1500 & 100 & 296800 \\
+%        DM+jets PS & 1500 & 150 & 270600 \\
+%        DM+jets PS & 1500 & 200 & 286200 \\
+%        DM+jets PS & 1500 & 250 & 293400 \\
+%        DM+jets PS & 1500 & 300 & 290600 \\
+%        DM+jets PS & 1500 & 350 & 290000 \\
+%        DM+jets PS & 1500 & 400 & 296600 \\
+%        \hline \hline
+%    \end{tabular}
+%    \caption{DM+jets signal simulations using pseudoscalar (PS) couplings. The last number gives the number of events generated.}
+%    \label{tab:dmj_ps}
+%\end{table}
+
 
 \begin{table}[]
-\centering
-\begin{tabular}{lrrr}
-\hline \hline
-Sample & $M_{\text{DM}}$ & $M_{\text{med}}$ & NGen \\
-\hline  
-DM+jets PS &  10 &    1 & 298400 \\
-DM+jets PS &  10 &   10 & 300000 \\
-DM+jets PS &  10 &   50 & 300000 \\
-DM+jets PS &  10 &  100 & 297600 \\
-DM+jets PS &  10 &  150 & 297400 \\
-DM+jets PS &  10 & 1000 & 292800 \\
-DM+jets PS &  20 &    1 & 299600 \\
-DM+jets PS &  20 &   10 & 300000 \\
-DM+jets PS &  50 &    1 & 298400 \\
-DM+jets PS &  50 &   10 & 300000 \\
-DM+jets PS &  50 &   50 & 300000 \\
-DM+jets PS & 100 &    1 & 298400 \\
-DM+jets PS & 100 &   10 & 300000 \\
-DM+jets PS & 100 &   50 & 300000 \\
-DM+jets PS & 100 &  100 & 297800 \\
-\hline \hline
-\end{tabular}
-\caption{DM+jets signal simulations using pseudoscalar couplings. The last number gives the number of events generated}
-\label{tab:dmj_ps}
+    \centering
+    \begin{tabular}[t]{lrrr}
+        \hline \hline
+        Sample & \mphi & \mchi & NGen \\
+        \hline
+        DM+jets AV &   300 &   1 & 300000 \\   
+        DM+jets AV &   300 & 100 & 300000 \\
+        DM+jets AV &   500 &   1 & 300000 \\
+        DM+jets AV &   500 & 150 & 296600 \\
+        DM+jets AV &   500 & 200 & 300000 \\
+        DM+jets AV &  1000 & 300 & 300000 \\
+        DM+jets AV &  1000 & 350 & 300000 \\
+        DM+jets AV &  1250 &  10 & 300000 \\
+        DM+jets AV &  1250 & 100 & 299800 \\
+        DM+jets AV &  1250 & 150 & 300000 \\
+        DM+jets AV &  1250 & 200 & 284200 \\
+        DM+jets AV &  1250 & 250 & 298200 \\
+        DM+jets AV &  1250 & 300 & 300000 \\
+        DM+jets AV &  1250 & 350 & 300000 \\
+        DM+jets AV &  1500 &  50 & 300000 \\
+        DM+jets AV &  1500 & 100 & 300000 \\
+        DM+jets AV &  1500 & 150 & 300000 \\
+        DM+jets AV &  1500 & 200 & 300000 \\
+        DM+jets AV &  1500 & 250 & 299400 \\
+        DM+jets AV &  1500 & 300 & 300000 \\
+        DM+jets AV &  1500 & 350 & 300000 \\
+        DM+jets AV &  1500 & 400 & 300000 \\
+        \hline\hline
+    \end{tabular}
+    \caption{DM+jets signal simulations using axial-vector (AV) couplings. The last number gives the number of events generated}
+    \label{tab:dmj_av}
 \end{table}
 
 \begin{table}[]
-\centering
-\begin{tabular}[t]{lrrr}
-\hline \hline
-Sample & $M_{\text{DM}}$ & $M_{\text{med}}$ & NGen \\
-\hline
-DM+jets AV & 10   & 1    &300000 \\
-DM+jets AV & 10   & 10   &300000 \\
-DM+jets AV & 10   & 50   &293600 \\
-DM+jets AV & 10   & 100  &300000 \\
-DM+jets AV & 10   & 200  &300000 \\
-DM+jets AV & 10   & 250  &298400 \\
-DM+jets AV & 10   & 300  &300000 \\
-DM+jets AV & 10   & 350  &295200 \\
-DM+jets AV & 10   & 400  &288200 \\
-DM+jets AV & 20   & 1    &300000 \\
-DM+jets AV & 20   & 10   &300000 \\
-DM+jets AV & 50   & 1    &300000 \\
-DM+jets AV & 50   & 10   &291600 \\
-DM+jets AV & 50   & 50   &297400 \\
-DM+jets AV & 100  & 10   &299000 \\
-DM+jets AV & 100  & 50   &297800 \\
-DM+jets AV & 100  & 100  &297200 \\
-DM+jets AV & 200  & 50   &297400 \\
-DM+jets AV & 200  & 100  &300000 \\
-DM+jets AV & 200  & 150  &300000 \\
-DM+jets AV & 300  & 50   &288200 \\
-DM+jets AV & 300  & 100  &300000 \\
-DM+jets AV & 300  & 200  &296723 \\
-DM+jets AV & 300  & 250  &300000 \\
-DM+jets AV & 500  & 50   &295600 \\
-DM+jets AV & 500  & 100  &300000 \\
-DM+jets AV & 500  & 150  &293400 \\
-DM+jets AV & 500  & 200  &300000 \\
-\hline\hline
-\end{tabular}
-\hspace{2em}
-\begin{tabular}[t]{lrrr}
-\hline\hline
-Sample & $M_{\text{DM}}$ & $M_{\text{med}}$ & NGen \\
-\hline
-DM+jets AV & 500  & 250  &300000 \\
-DM+jets AV & 500  & 300  &297000 \\
-DM+jets AV & 500  & 350  &300000 \\
-DM+jets AV & 500  & 400  &297800 \\
-DM+jets AV & 750  & 100  &295800 \\
-DM+jets AV & 750  & 250  &290800 \\
-DM+jets AV & 750  & 300  &300000 \\
-DM+jets AV & 750  & 350  &300000 \\
-DM+jets AV & 750  & 400  &296800 \\
-DM+jets AV & 1000 & 50   &298400 \\
-DM+jets AV & 1000 & 250  &286980 \\
-DM+jets AV & 1000 & 300  &300000 \\
-DM+jets AV & 1000 & 350  &298800 \\
-DM+jets AV & 1000 & 400  &296800 \\
-DM+jets AV & 1250 & 50   &300000 \\
-DM+jets AV & 1250 & 100  &297800 \\
-DM+jets AV & 1250 & 150  &298000 \\
-DM+jets AV & 1250 & 200  &296400 \\
-DM+jets AV & 1250 & 250  &296800 \\
-DM+jets AV & 1250 & 350  &272400 \\
-DM+jets AV & 1250 & 500  &285496 \\
-DM+jets AV & 1250 & 1000 &300000 \\
-DM+jets AV & 1500 & 1    &298400 \\
-DM+jets AV & 1500 & 10   &297200 \\
-DM+jets AV & 1500 & 50   &300000 \\
-DM+jets AV & 1500 & 100  &294600 \\
-DM+jets AV & 1500 & 200  &300000\\
-\hline \hline
-\end{tabular}
-\caption{DM+jets signal simulations using axial-vector couplings. The last number gives the number of events generated}
-\label{tab:dmj_av}
+    \centering
+    \begin{tabular}{lrrr}
+        \hline\hline
+        Sample & \mphi & \mchi & NGen \\
+        \hline
+        DM+jets V &   300 & 150 & 300000 \\
+        DM+jets V &   500 & 200 & 296000 \\
+        DM+jets V &  1000 & 350 & 275200 \\
+        DM+jets V &  1250 &   1 & 298171 \\
+        DM+jets V &  1250 & 150 & 300000 \\
+        DM+jets V &  1250 & 250 & 295800 \\
+        DM+jets V &  1250 & 350 & 300000 \\
+        DM+jets V &  1250 & 400 & 288000 \\
+        DM+jets V &  1500 &  50 & 275013 \\
+        DM+jets V &  1500 & 100 & 295600 \\
+        DM+jets V &  1500 & 150 & 300000 \\
+        DM+jets V &  1500 & 200 & 295600 \\
+        \hline\hline
+    \end{tabular}
+    \caption{DM+jets signal simulations using vector (V) couplings. The last number gives the number of events generated}
+    \label{tab:dmj_v}
 \end{table}
 
 \begin{table}[]
-\centering
-\begin{tabular}{lrrr}
-\hline \hline
-Sample & $M_{\text{DM}}$ & $M_{\text{med}}$ & NGen \\
-\hline
-DM+ttbar PS & 1    & 10    & 252054 \\
-DM+ttbar PS & 1    & 20    & 247516 \\
-DM+ttbar PS & 1    & 50    & 255516 \\
-DM+ttbar PS & 1    & 100   & 249971 \\
-DM+ttbar PS & 1    & 200   & 240536 \\
-DM+ttbar PS & 1    & 300   & 250250 \\
-DM+ttbar PS & 1    & 500   & 244681 \\
-DM+ttbar PS & 1    & 1000  & 408173 \\
-DM+ttbar PS & 1    & 10000 & 204186 \\
-DM+ttbar PS & 10   & 10    & 249863 \\
-DM+ttbar PS & 10   & 15    & 253099 \\
-DM+ttbar PS & 10   & 50    & 252215 \\
-DM+ttbar PS & 10   & 100   & 246115 \\
-DM+ttbar PS & 10   & 10000 & 411495 \\
-DM+ttbar PS & 50   & 10    & 274874 \\
-DM+ttbar PS & 50   & 50    & 253334 \\
-DM+ttbar PS & 50   & 95    & 379662 \\
-DM+ttbar PS & 50   & 200   & 239809 \\
-DM+ttbar PS & 50   & 300   & 256765 \\
-DM+ttbar PS & 50   & 10000 & 447898 \\
-DM+ttbar PS & 150  & 10    & 293811 \\
-DM+ttbar PS & 150  & 200   & 243139 \\
-DM+ttbar PS & 150  & 295   & 278441 \\
-DM+ttbar PS & 150  & 500   & 251043 \\
-DM+ttbar PS & 150  & 1000  & 250827 \\
-DM+ttbar PS & 150  & 10000 & 374575 \\
-DM+ttbar PS & 500  & 10    & 243491 \\
-DM+ttbar PS & 500  & 500   & 258498 \\
-DM+ttbar PS & 500  & 995   & 281855 \\
-DM+ttbar PS & 500  & 10000 & 396617 \\
-DM+ttbar PS & 1000 & 10    & 240502 \\
-DM+ttbar PS & 1000 & 1000  & 440564 \\
-DM+ttbar PS & 1000 & 10000 & 317907 \\
-\hline \hline
-\end{tabular}
-\caption{DM+$t\bar{t}$ signal simulations using pseudoscalar couplings. The last number gives the number of events generated}
-\label{tab:dmtt_ps}
+    \centering
+    \begin{tabular}{lrrr}
+        \hline\hline
+        Sample & \mphi & \mchi & NGen \\
+        \hline
+        DM+ttbar PS &    10 &   1 & 252054 \\
+        DM+ttbar PS &    10 &  10 & 250666 \\
+        DM+ttbar PS &    10 &  50 & 274874 \\
+        DM+ttbar PS &    15 &  10 & 253099 \\
+        DM+ttbar PS &    20 &   1 & 249253 \\
+        DM+ttbar PS &    50 &   1 & 255516 \\
+        DM+ttbar PS &    50 &  10 & 231909 \\
+        DM+ttbar PS &    50 &  50 & 236930 \\
+        DM+ttbar PS &    95 &  50 & 370018 \\
+        DM+ttbar PS &   100 &   1 & 249971 \\
+        DM+ttbar PS &   100 &  10 & 246115 \\
+        DM+ttbar PS &   200 &   1 & 241926 \\
+        DM+ttbar PS &   200 &  50 & 232399 \\
+        DM+ttbar PS &   300 &   1 & 251079 \\
+        DM+ttbar PS &   300 &  50 & 256765 \\
+        DM+ttbar PS &   500 &   1 & 241952 \\
+        \hline\hline
+    \end{tabular}
+    \caption{DM+$t\bar{t}$ signal simulations using pseudoscalar (PS) couplings. The last number gives the number of events generated}
+    \label{tab:dmtt_ps}
 \end{table}
 
 \begin{table}[]
-\centering
-\begin{tabular}{lrrr}
-\hline \hline
-Sample & $M_{\text{DM}}$    & $M_{\text{med}}$ & NGen \\
-\hline
-DM+ttbar  S  & 1    & 10    & 240379 \\
-DM+ttbar  S  & 1    & 20    & 251225 \\
-DM+ttbar  S  & 1    & 50    & 253308 \\
-DM+ttbar  S  & 1    & 100   & 257761 \\
-DM+ttbar  S  & 1    & 200   & 254295 \\
-DM+ttbar  S  & 1    & 300   & 254030 \\
-DM+ttbar  S  & 1    & 500   & 250524 \\
-DM+ttbar  S  & 1    & 1000  & 258859 \\
-DM+ttbar  S  & 1    & 10000 & 249959 \\
-DM+ttbar  S  & 10   & 10    & 245622 \\
-DM+ttbar  S  & 10   & 15    & 239050 \\
-DM+ttbar  S  & 10   & 50    & 254833 \\
-DM+ttbar  S  & 10   & 100   & 244948 \\
-DM+ttbar  S  & 10   & 10000 & 442394 \\
-DM+ttbar  S  & 50   & 10    & 333199 \\
-DM+ttbar  S  & 50   & 50    & 245362 \\
-DM+ttbar  S  & 50   & 95    & 242838 \\
-DM+ttbar  S  & 50   & 200   & 251025 \\
-DM+ttbar  S  & 50   & 300   & 252187 \\
-DM+ttbar  S  & 50   & 10000 & 495036 \\
-DM+ttbar  S  & 150  & 10    & 535684 \\
-DM+ttbar  S  & 150  & 200   & 237784 \\
-DM+ttbar  S  & 150  & 295   & 383362 \\
-DM+ttbar  S  & 150  & 500   & 219636 \\
-DM+ttbar  S  & 150  & 1000  & 222381 \\
-DM+ttbar  S  & 150  & 10000 & 366184 \\
-DM+ttbar  S  & 500  & 10    & 242850 \\
-DM+ttbar  S  & 500  & 500   & 253947 \\
-DM+ttbar  S  & 500  & 995   & 257082 \\
-DM+ttbar  S  & 500  & 10000 & 382104 \\
-DM+ttbar  S  & 1000 & 10    & 435870 \\
-DM+ttbar  S  & 1000 & 1000  & 362123 \\
-DM+ttbar  S  & 1000 & 10000 & 317556 \\
-\hline \hline
-\end{tabular}
-\caption{DM+$t\bar{t}$ signal simulations using scalar couplings. The last number gives the number of events generated}
-\label{tab:dmtt_s}
+    \centering
+    \begin{tabular}{lrrr}
+        \hline\hline
+        Sample & \mphi & \mchi & NGen \\
+        \hline
+        DM+ttbar S &   10 &   1 & 240379 \\
+        DM+ttbar S &   10 &  10 & 248046 \\
+        DM+ttbar S &   10 &  50 & 332190 \\
+        DM+ttbar S &   15 &  10 & 214004 \\
+        DM+ttbar S &   20 &   1 & 241125 \\
+        DM+ttbar S &   50 &   1 & 252272 \\
+        DM+ttbar S &   50 &  10 & 254833 \\
+        DM+ttbar S &   50 &  50 & 246177 \\
+        DM+ttbar S &   95 &  50 & 234466 \\
+        DM+ttbar S &  100 &   1 & 257761 \\
+        DM+ttbar S &  100 &  10 & 239701 \\
+        DM+ttbar S &  200 &   1 & 254295 \\
+        DM+ttbar S &  200 &  50 & 253278 \\
+        DM+ttbar S &  300 &   1 & 254030 \\
+        DM+ttbar S &  300 &  50 & 246915 \\
+        DM+ttbar S &  500 &   1 & 250524 \\
+        \hline\hline
+    \end{tabular}
+    \caption{DM+$t\bar{t}$ signal simulations using scalar (S) couplings. The last number gives the number of events generated}
+    \label{tab:dmtt_s}
 \end{table}
+
+\clearpage
+\subsection{Systematic uncertainties, signal yields and efficiency}
+\label{sec:systs-darkmatter}
+The following sources of systematic uncertainty are propagated to the signal 
+acceptance and shape, according to the recommendations agreed on within the
+collaboration.
+\begin{itemize}
+    \item Luminosity: $6.2\%$, taken as correlated across all bins.
+    \item Trigger: systematic measured using the difference between the electron
+        and muon reference triggers (see Sec.~\ref{sec:triggers})
+    \item MC statistics: uncorrelated bin-by-bin uncertainty, affecting the 
+        shape of the signal. 
+    \item Pileup reweighting: uncertainty on the minimum bias cross section 
+        (see Sec.~\ref{sec:pileup-reweighting}).
+    \item b-tag efficiency: uncertainties on the b-tag scale factors are 
+        propagated and taken as correlated across the bins. These are 
+        uncorrelated for mis-tag and efficiency systematics.
+    \item Lepton efficiency: uncertainty on the lepton scale factors is 
+        propagated and taken as correlated across the bins. 
+    \item Jet energy scale: uncertainty on the jet energy corrections is 
+        propagated and taken as correlated across the bins.
+    \item Parton distribution function (PDF): uncertainty on the PDF is
+        propagated and taken correlated across the bins.
+    \item Factorisation/renormalisation: uncertainty on the 
+        factorisation/renormalisation scale is propagated and taken correlated
+        across the bins.
+\end{itemize}
+
+The signal yields and efficiencies, after the full analysis selection is applied
+to the simplified DM MC samples, are listed in Tab.\ref{tab:DMV_yld}-\ref{tab:DMttPS_yld}.
+
+\clearpage
+
+\begin{table}
+    \centering
+    {\small
+    \begin{tabular}{rrlrrrrr}
+        \hline\hline
+        \mphi & \mchi & $\sigma$ (pb) & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency (\%) \\
+        \hline
+%%% 12.9 /fb
+          $300$ & $150$ & $3.18\text{e}+02$ &  $4102.04$ &   $5452.97$ &  $10084.65$ &  $19639.66$ & $0.48$ \\
+          $500$ & $200$ & $3.64\text{e}+02$ &  $7898.89$ &   $9565.00$ &  $18032.21$ &  $35496.10$ & $0.76$ \\
+         $1000$ & $350$ & $2.81\text{e}+01$ &  $1280.69$ &   $1443.12$ &   $2686.46$ &   $5410.26$ & $1.49$ \\
+         $1250$ &   $1$ & $1.18\text{e}+01$ &   $706.82$ &    $791.03$ &   $1324.23$ &   $2822.08$ & $1.86$ \\
+         $1250$ & $150$ & $1.29\text{e}+01$ &   $678.05$ &    $756.83$ &   $1305.61$ &   $2740.50$ & $1.64$ \\
+         $1250$ & $250$ & $1.23\text{e}+01$ &   $677.77$ &    $751.46$ &   $1298.33$ &   $2727.56$ & $1.72$ \\
+         $1250$ & $350$ & $1.23\text{e}+01$ &   $659.93$ &    $733.48$ &   $1267.28$ &   $2660.69$ & $1.68$ \\
+         $1250$ & $400$ & $1.02\text{e}+01$ &   $636.90$ &    $715.33$ &   $1224.98$ &   $2577.21$ & $1.96$ \\
+         $1500$ &  $50$ & $5.65\text{e}+00$ &   $340.14$ &    $386.38$ &    $654.16$ &   $1380.68$ & $1.89$ \\
+         $1500$ & $100$ & $5.20\text{e}+00$ &   $346.14$ &    $404.97$ &    $663.07$ &   $1414.18$ & $2.11$ \\
+         $1500$ & $150$ & $6.32\text{e}+00$ &   $344.87$ &    $387.74$ &    $657.05$ &   $1389.67$ & $1.70$ \\
+         $1500$ & $200$ & $4.96\text{e}+00$ &   $347.09$ &    $390.38$ &    $653.32$ &   $1390.80$ & $2.17$ \\
+        \hline\hline
+    \end{tabular}
+    }
+    \caption{Cross section, yields (split according to symmetric, asymmetric, 
+        and monojet categories), and total selection efficiency at $12.9$~\ifb 
+        for vector mediated DM+jets models.}
+    \label{tab:DMV_yld}
+\end{table}
+
+\begin{table}
+    \centering
+    {\small
+    \begin{tabular}{rrlrrrrr}
+        \hline\hline
+        \mphi & \mchi & $\sigma$ (pb) & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency (\%) \\
+        \hline
+%%% 12.9 /fb
+          $300$ &   $1$ & $2.65\text{e}+03$ & $27171.57$ &  $34438.35$ &  $65926.95$ & $127536.86$ & $0.37$ \\
+          $300$ & $100$ & $1.48\text{e}+03$ & $16410.32$ &  $21849.93$ &  $40437.00$ &  $78697.25$ & $0.41$ \\
+          $500$ &   $1$ & $4.54\text{e}+02$ &  $9929.95$ &  $12003.09$ &  $22238.02$ &  $44171.06$ & $0.75$ \\
+          $500$ & $150$ & $3.08\text{e}+02$ &  $6433.93$ &   $7856.85$ &  $14866.57$ &  $29157.35$ & $0.73$ \\
+          $500$ & $200$ & $1.59\text{e}+02$ &  $3540.02$ &   $4291.14$ &   $7714.62$ &  $15545.78$ & $0.76$ \\
+         $1000$ & $300$ & $2.59\text{e}+01$ &   $956.27$ &   $1089.89$ &   $1910.54$ &   $3956.69$ & $1.18$ \\
+         $1000$ & $350$ & $1.48\text{e}+01$ &   $752.70$ &    $865.14$ &   $1499.47$ &   $3117.31$ & $1.63$ \\
+         $1250$ &  $10$ & $1.20\text{e}+01$ &   $697.89$ &    $777.58$ &   $1334.26$ &   $2809.72$ & $1.82$ \\
+         $1250$ & $100$ & $1.04\text{e}+01$ &   $682.50$ &    $771.28$ &   $1297.41$ &   $2751.20$ & $2.05$ \\
+         $1250$ & $150$ & $1.33\text{e}+01$ &   $650.80$ &    $742.85$ &   $1259.50$ &   $2653.15$ & $1.55$ \\
+         $1250$ & $200$ & $1.32\text{e}+01$ &   $626.38$ &    $698.53$ &   $1197.84$ &   $2522.76$ & $1.48$ \\
+         $1250$ & $250$ & $9.55\text{e}+00$ &   $594.79$ &    $676.57$ &   $1136.84$ &   $2408.20$ & $1.96$ \\
+         $1250$ & $300$ & $8.55\text{e}+00$ &   $540.08$ &    $608.41$ &   $1047.75$ &   $2196.23$ & $1.99$ \\
+         $1250$ & $350$ & $9.52\text{e}+00$ &   $471.84$ &    $535.70$ &    $917.29$ &   $1924.82$ & $1.57$ \\
+         $1500$ &  $50$ & $5.08\text{e}+00$ &   $349.25$ &    $391.02$ &    $665.44$ &   $1405.71$ & $2.15$ \\
+         $1500$ & $100$ & $5.61\text{e}+00$ &   $348.60$ &    $380.75$ &    $642.55$ &   $1371.89$ & $1.90$ \\
+         $1500$ & $150$ & $5.38\text{e}+00$ &   $342.45$ &    $376.16$ &    $619.48$ &   $1338.08$ & $1.93$ \\
+         $1500$ & $200$ & $5.62\text{e}+00$ &   $322.82$ &    $369.55$ &    $608.28$ &   $1300.65$ & $1.79$ \\
+         $1500$ & $250$ & $4.29\text{e}+00$ &   $316.93$ &    $348.31$ &    $583.51$ &   $1248.75$ & $2.25$ \\
+         $1500$ & $300$ & $4.74\text{e}+00$ &   $290.80$ &    $334.36$ &    $552.68$ &   $1177.84$ & $1.93$ \\
+         $1500$ & $350$ & $4.16\text{e}+00$ &   $277.84$ &    $310.75$ &    $514.38$ &   $1102.97$ & $2.06$ \\
+         $1500$ & $400$ & $4.15\text{e}+00$ &   $251.37$ &    $279.44$ &    $467.69$ &    $998.50$ & $1.86$ \\
+        \hline\hline
+    \end{tabular}
+    }
+    \caption{Cross section, yields (split according to symmetric, asymmetric, 
+        and monojet categories), and total selection efficiency at $12.9$~\ifb 
+        for axial-vector mediated DM+jets models.}
+    \label{tab:DMAV_yld}
+\end{table}
+
+%\begin{table}
+%    \centering
+%    {\small
+%    \begin{tabular}{rrlrrrrr}
+%    \hline\hline
+%    \mphi & \mchi & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
+%    \hline
+%%%% 12.9 /fb
+%    $1000$ & $1$   & $1.84\text{e}-01$ & $9.05$   & $9.34$   & $9.33$   & $27.72$   & $1.17$ \\
+%    $100$  & $1$   & $1.14\text{e}+02$ & $445.79$ & $682.79$ & $817.80$ & $1946.38$ & $0.13$ \\
+%    $100$  & $50$  & $1.97\text{e}+00$ & $17.01$  & $24.34$  & $27.15$  & $68.50$   & $0.27$ \\
+%    $10$   & $1$   & $1.16\text{e}+03$ & $509.27$ & $818.49$ & $989.82$ & $2317.58$ & $0.02$ \\
+%    $1250$ & $10$  & $5.22\text{e}-02$ & $2.97$   & $2.91$   & $2.80$   & $8.67$    & $1.29$ \\
+%    $1250$ & $1$   & $5.03\text{e}-02$ & $2.94$   & $2.90$   & $2.80$   & $8.65$    & $1.33$ \\
+%    $1250$ & $200$ & $3.96\text{e}-02$ & $2.57$   & $2.45$   & $2.33$   & $7.34$    & $1.44$ \\
+%    $1250$ & $250$ & $3.47\text{e}-02$ & $2.33$   & $2.25$   & $2.12$   & $6.70$    & $1.50$ \\
+%    $1250$ & $300$ & $3.14\text{e}-02$ & $2.10$   & $1.99$   & $1.89$   & $5.98$    & $1.48$ \\
+%    $1250$ & $350$ & $2.65\text{e}-02$ & $1.82$   & $1.74$   & $1.62$   & $5.18$    & $1.51$ \\
+%    $1250$ & $400$ & $2.22\text{e}-02$ & $1.52$   & $1.44$   & $1.36$   & $4.32$    & $1.51$ \\
+%    $1250$ & $50$  & $5.03\text{e}-02$ & $2.95$   & $2.87$   & $2.77$   & $8.59$    & $1.32$ \\
+%    $1500$ & $100$ & $1.56\text{e}-02$ & $1.07$   & $1.02$   & $0.94$   & $3.03$    & $1.51$ \\
+%    $1500$ & $10$  & $1.72\text{e}-02$ & $1.11$   & $1.06$   & $0.98$   & $3.16$    & $1.42$ \\
+%    $1500$ & $1$   & $1.73\text{e}-02$ & $1.11$   & $1.06$   & $0.99$   & $3.16$    & $1.41$ \\
+%    $1500$ & $200$ & $1.33\text{e}-02$ & $0.96$   & $0.90$   & $0.82$   & $2.68$    & $1.57$ \\
+%    $1500$ & $250$ & $1.22\text{e}-02$ & $0.90$   & $0.81$   & $0.77$   & $2.48$    & $1.57$ \\
+%    $1500$ & $300$ & $1.07\text{e}-02$ & $0.82$   & $0.75$   & $0.69$   & $2.27$    & $1.64$ \\
+%    $1500$ & $350$ & $9.69\text{e}-03$ & $0.75$   & $0.68$   & $0.62$   & $2.05$    & $1.64$ \\
+%    $1500$ & $400$ & $8.11\text{e}-03$ & $0.67$   & $0.61$   & $0.55$   & $1.83$    & $1.75$ \\
+%    $1500$ & $50$  & $1.63\text{e}-02$ & $1.10$   & $1.03$   & $0.97$   & $3.10$    & $1.48$ \\
+%    $2000$ & $1$   & $3.27\text{e}-03$ & $0.21$   & $0.19$   & $0.17$   & $0.57$    & $1.36$ \\
+%    $300$  & $100$ & $2.25\text{e}+01$ & $298.10$ & $410.79$ & $453.95$ & $1162.84$ & $0.40$ \\
+%    $300$  & $1$   & $2.32\text{e}+01$ & $271.29$ & $449.91$ & $485.63$ & $1206.83$ & $0.40$ \\
+%    $500$  & $150$ & $5.19\text{e}+00$ & $110.77$ & $141.99$ & $145.94$ & $398.70$  & $0.60$ \\
+%    $500$  & $1$   & $7.00\text{e}+00$ & $145.12$ & $190.18$ & $194.62$ & $529.92$  & $0.59$ \\
+%    \hline\hline
+%    \end{tabular}
+%    }
+%    \caption{Cross section, yields (split according to symmetric, asymmetric, 
+%        and monojet categories), and total selection efficiency at $12.9$~\ifb 
+%        for scalar mediated DM+jets models.}
+%    \label{tab:DMS_yld}
+%\end{table}
+
+%\begin{table}
+%    \centering
+%    {\small
+%    \begin{tabular}{rrlrrrrr}
+%    \hline\hline
+%    \mphi & \mchi & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
+%    \hline
+%%%% 12.9 /fb
+%    $1000$ & $300$ & $1.67\text{e}-01$ & $9.30$    & $9.58$    & $9.32$    & $28.19$   & $1.31$ \\
+%    $1000$ & $350$ & $1.45\text{e}-01$ & $8.46$    & $8.38$    & $8.25$    & $25.10$   & $1.34$ \\
+%    $100$  & $1$   & $2.66\text{e}+02$ & $999.48$  & $1553.54$ & $1839.56$ & $4392.58$ & $0.13$ \\
+%    $100$  & $50$  & $1.35\text{e}+01$ & $84.48$   & $127.30$  & $145.78$  & $357.57$  & $0.21$ \\
+%    $10$   & $10$  & $3.38\text{e}+01$ & $78.86$   & $117.32$  & $140.94$  & $337.11$  & $0.08$ \\
+%    $10$   & $1$   & $2.59\text{e}+03$ & $1144.83$ & $1825.87$ & $2120.38$ & $5091.08$ & $0.02$ \\
+%    $1250$ & $100$ & $6.56\text{e}-02$ & $3.71$    & $3.67$    & $3.57$    & $10.94$   & $1.29$ \\
+%    $1250$ & $150$ & $5.93\text{e}-02$ & $3.67$    & $3.54$    & $3.48$    & $10.69$   & $1.40$ \\
+%    $1250$ & $1$   & $6.52\text{e}-02$ & $3.82$    & $3.78$    & $3.66$    & $11.26$   & $1.34$ \\
+%    $1250$ & $200$ & $5.42\text{e}-02$ & $3.48$    & $3.40$    & $3.29$    & $10.17$   & $1.46$ \\
+%    $1250$ & $250$ & $4.95\text{e}-02$ & $3.32$    & $3.21$    & $3.07$    & $9.60$    & $1.50$ \\
+%    $1250$ & $300$ & $4.44\text{e}-02$ & $3.16$    & $2.98$    & $2.88$    & $9.02$    & $1.58$ \\
+%    $1250$ & $350$ & $4.26\text{e}-02$ & $2.94$    & $2.78$    & $2.65$    & $8.37$    & $1.53$ \\
+%    $1250$ & $400$ & $3.86\text{e}-02$ & $2.72$    & $2.56$    & $2.45$    & $7.73$    & $1.55$ \\
+%    $1500$ & $100$ & $2.16\text{e}-02$ & $1.40$    & $1.34$    & $1.26$    & $4.00$    & $1.44$ \\
+%    $1500$ & $10$  & $2.27\text{e}-02$ & $1.41$    & $1.35$    & $1.29$    & $4.06$    & $1.39$ \\
+%    $1500$ & $150$ & $2.08\text{e}-02$ & $1.36$    & $1.27$    & $1.22$    & $3.85$    & $1.44$ \\
+%    $1500$ & $1$   & $2.27\text{e}-02$ & $1.41$    & $1.36$    & $1.31$    & $4.07$    & $1.39$ \\
+%    $1500$ & $200$ & $1.77\text{e}-02$ & $1.28$    & $1.21$    & $1.15$    & $3.64$    & $1.60$ \\
+%    $1500$ & $250$ & $1.61\text{e}-02$ & $1.24$    & $1.15$    & $1.07$    & $3.46$    & $1.67$ \\
+%    $1500$ & $300$ & $1.49\text{e}-02$ & $1.17$    & $1.07$    & $1.01$    & $3.25$    & $1.69$ \\
+%    $1500$ & $350$ & $1.33\text{e}-02$ & $1.10$    & $1.01$    & $0.92$    & $3.03$    & $1.76$ \\
+%    $1500$ & $400$ & $1.25\text{e}-02$ & $1.05$    & $0.95$    & $0.87$    & $2.87$    & $1.79$ \\
+%    $1500$ & $50$  & $2.25\text{e}-02$ & $1.42$    & $1.35$    & $1.29$    & $4.06$    & $1.40$ \\
+%    $300$  & $100$ & $6.98\text{e}+01$ & $863.89$  & $1209.30$ & $1353.37$ & $3426.56$ & $0.38$ \\
+%    $300$  & $150$ & $7.33\text{e}+00$ & $103.93$  & $145.94$  & $155.14$  & $405.00$  & $0.43$ \\
+%    $300$  & $1$   & $6.95\text{e}+01$ & $869.42$  & $1198.91$ & $1341.69$ & $3410.03$ & $0.38$ \\
+%    $500$  & $150$ & $9.21\text{e}+00$ & $204.51$  & $257.15$  & $277.17$  & $738.83$  & $0.62$ \\
+%    $500$  & $1$   & $1.07\text{e}+01$ & $236.50$  & $299.27$  & $315.63$  & $851.40$  & $0.62$ \\
+%    $500$  & $200$ & $7.36\text{e}+00$ & $167.32$  & $209.61$  & $224.63$  & $601.56$  & $0.63$ \\
+%    \hline\hline
+%    \end{tabular}
+%    }
+%    \caption{Cross section, yields (split according to symmetric, asymmetric, 
+%        and monojet categories), and total selection efficiency at $12.9$~\ifb 
+%        for pseudoscalar mediated DM+jets models.}
+%    \label{tab:DMPS_yld}
+%\end{table}
+
+\begin{table}
+    \centering
+    {\small
+    \begin{tabular}{rrlrrrrr}
+        \hline\hline
+        \mphi & \mchi & $\sigma$ (pb) & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency (\%) \\
+        \hline
+%%% 12.9 /fb
+         $10$ &  $1$ & $1.96\text{e}+01$ & $431.63$ & $520.34$ & $12.35$ & $964.32$ &  $0.38$ \\
+         $10$ & $10$ & $9.49\text{e}-02$ &   $8.75$ &   $7.46$ &  $0.09$ &  $16.30$ &  $1.33$ \\
+         $10$ & $50$ & $1.91\text{e}-03$ &   $1.11$ &   $0.62$ &  $0.01$ &   $1.73$ &  $7.05$ \\
+         $15$ & $10$ & $1.20\text{e}-01$ &   $9.76$ &   $8.42$ &  $0.18$ &  $18.35$ &  $1.18$ \\
+         $20$ &  $1$ & $1.05\text{e}+01$ & $355.47$ & $368.49$ &  $3.80$ & $727.76$ &  $0.54$ \\
+         $50$ &  $1$ & $2.94\text{e}+00$ & $235.39$ & $212.93$ &  $2.60$ & $450.91$ &  $1.19$ \\
+         $50$ & $10$ & $2.94\text{e}+00$ & $228.09$ & $226.43$ &  $2.56$ & $457.08$ &  $1.20$ \\
+         $50$ & $50$ & $2.33\text{e}-03$ &   $1.28$ &   $0.76$ &  $0.01$ &   $2.04$ &  $6.80$ \\
+         $95$ & $50$ & $6.56\text{e}-03$ &   $2.70$ &   $1.62$ &  $0.02$ &   $4.34$ &  $5.13$ \\
+        $100$ &  $1$ & $6.72\text{e}-01$ & $142.13$ & $108.30$ &  $0.94$ & $251.37$ &  $2.90$ \\
+        $100$ & $10$ & $6.73\text{e}-01$ & $140.22$ & $109.46$ &  $1.27$ & $250.95$ &  $2.89$ \\
+        $200$ &  $1$ & $9.33\text{e}-02$ &  $57.93$ &  $32.94$ &  $0.31$ &  $91.18$ &  $7.58$ \\
+        $200$ & $50$ & $9.22\text{e}-02$ &  $57.48$ &  $31.69$ &  $0.39$ &  $89.57$ &  $7.53$ \\
+        $300$ &  $1$ & $2.95\text{e}-02$ &  $28.00$ &  $14.00$ &  $0.12$ &  $42.12$ & $11.07$ \\
+        $300$ & $50$ & $2.90\text{e}-02$ &  $28.13$ &  $13.73$ &  $0.11$ &  $41.97$ & $11.22$ \\
+        $500$ &  $1$ & $5.18\text{e}-03$ &   $6.24$ &   $2.92$ &  $0.02$ &   $9.18$ & $13.74$ \\
+        \hline\hline
+    \end{tabular}
+    }
+    \caption{Cross section, yields (split according to symmetric, asymmetric, 
+        and monojet categories), and total selection efficiency at $12.9$~\ifb 
+        for scalar mediated DM+ttbar models.}
+    \label{tab:DMttS_yld}
+\end{table}
+
+\begin{table}
+    \centering
+    {\small
+    \begin{tabular}{rrlrrrrr}
+        \hline\hline
+        \mphi & \mchi & $\sigma$ (pb) & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency (\%) \\
+        \hline
+%%% 12.9 /fb
+         $10$ &  $1$ & $4.41\text{e}-01$ & $139.57$ & $113.34$ & $0.67$ & $253.58$ &  $4.46$ \\
+         $10$ & $10$ & $1.50\text{e}-02$ &   $7.06$ &   $5.24$ & $0.04$ &  $12.33$ &  $6.38$ \\
+         $10$ & $50$ & $2.44\text{e}-03$ &   $1.84$ &   $1.18$ & $0.01$ &   $3.04$ &  $9.63$ \\
+         $15$ & $10$ & $1.86\text{e}-02$ &   $8.43$ &   $6.37$ & $0.05$ &  $14.85$ &  $6.18$ \\
+         $20$ &  $1$ & $3.99\text{e}-01$ & $135.25$ & $107.45$ & $0.83$ & $243.53$ &  $4.73$ \\
+         $50$ &  $1$ & $3.03\text{e}-01$ & $127.95$ & $100.74$ & $0.64$ & $229.33$ &  $5.86$ \\
+         $50$ & $10$ & $3.03\text{e}-01$ & $126.32$ & $101.84$ & $0.74$ & $228.90$ &  $5.85$ \\
+         $50$ & $50$ & $2.98\text{e}-03$ &   $2.16$ &   $1.47$ & $0.01$ &   $3.64$ &  $9.48$ \\
+         $95$ & $50$ & $1.07\text{e}-02$ &   $6.63$ &   $4.78$ & $0.03$ &  $11.44$ &  $8.31$ \\
+        $100$ &  $1$ & $1.91\text{e}-01$ & $107.26$ &  $78.67$ & $0.59$ & $186.53$ &  $7.57$ \\
+        $100$ & $10$ & $1.90\text{e}-01$ & $103.25$ &  $78.97$ & $0.50$ & $182.72$ &  $7.45$ \\
+        $200$ &  $1$ & $8.36\text{e}-02$ &  $62.58$ &  $42.59$ & $0.28$ & $105.45$ &  $9.78$ \\
+        $200$ & $50$ & $8.38\text{e}-02$ &  $63.41$ &  $42.59$ & $0.26$ & $106.26$ &  $9.83$ \\
+        $300$ &  $1$ & $4.00\text{e}-02$ &  $36.08$ &  $21.84$ & $0.14$ &  $58.05$ & $11.25$ \\
+        $300$ & $50$ & $3.99\text{e}-02$ &  $36.02$ &  $21.62$ & $0.16$ &  $57.80$ & $11.23$ \\
+        $500$ &  $1$ & $5.41\text{e}-03$ &   $6.23$ &   $3.16$ & $0.02$ &   $9.42$ & $13.50$ \\
+        \hline\hline
+    \end{tabular}
+    }
+    \caption{Cross section, yields (split according to symmetric, asymmetric, 
+        and monojet categories), and total selection efficiency at $12.9$~\ifb 
+        for pseudoscalar mediated DM+ttbar models.}
+    \label{tab:DMttPS_yld}
+\end{table}
+
 
 \clearpage
 \subsection{Sensitivity study}
@@ -349,7 +569,6 @@ Similar sensitivity study is shown for the heavy flavour models producing dark m
 \label{fig:DMV-sensitivity} 
 \end{figure}
 
-
 \begin{figure}[h!] \centering
 \subfigure[Pseudoscalar - DMtt Mmed=20 GeV, mDM=1 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMttP-20-1_limitPerBin_exp_log}}
 \subfigure[Pseudoscalar - DMtt Mmed=100 GeV, mDM=10 GeV]{\includegraphics[width=0.5\textwidth]{figures/DMplots/DMttP-100-10_limitPerBin_exp_log}}
@@ -366,299 +585,79 @@ Similar sensitivity study is shown for the heavy flavour models producing dark m
 
 
 \clearpage
-\begin{table}
-    \centering
-    {\small
-    \begin{tabular}{rrlrrrrr}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
-    \hline
-%%% 12.9 /fb
-    $1000$ & $350$ & $2.81\text{e}+01$ & $2559.37$ & $2887.05$ & $5401.40$ & $10847.81$ & $2.991$ \\
-    $1250$ & $150$ & $1.29\text{e}+01$ & $1352.53$ & $1511.22$ & $2623.49$ & $5487.24$ & $3.285$ \\
-    $1250$ & $1$ & $1.18\text{e}+01$ & $1411.40$ & $1579.61$ & $2657.86$ & $5648.87$ & $3.722$ \\
-    $1250$ & $250$ & $1.23\text{e}+01$ & $1354.00$ & $1503.85$ & $2613.38$ & $5471.23$ & $3.450$ \\
-    $1250$ & $350$ & $1.23\text{e}+01$ & $1326.08$ & $1464.62$ & $2547.50$ & $5338.20$ & $3.375$ \\
-    $1250$ & $400$ & $1.02\text{e}+01$ & $1275.01$ & $1434.35$ & $2456.27$ & $5165.63$ & $3.929$ \\
-    $1500$ & $100$ & $5.20\text{e}+00$ & $691.91$ & $822.01$ & $1330.13$ & $2844.04$ & $4.242$ \\
-    $1500$ & $10$ & $6.21\text{e}+00$ & $693.70$ & $796.08$ & $1321.61$ & $2811.39$ & $3.511$ \\
-    $1500$ & $150$ & $6.32\text{e}+00$ & $688.57$ & $776.59$ & $1319.41$ & $2784.58$ & $3.415$ \\
-    $1500$ & $200$ & $4.96\text{e}+00$ & $693.06$ & $782.07$ & $1315.29$ & $2790.41$ & $4.359$ \\
-    $1500$ & $50$ & $5.65\text{e}+00$ & $682.57$ & $774.70$ & $1313.92$ & $2771.19$ & $3.801$ \\
-    $300$ & $150$ & $3.18\text{e}+02$ & $8247.98$ & $10926.00$ & $20273.81$ & $39447.79$ & $0.962$ \\
-    $500$ & $200$ & $3.64\text{e}+02$ & $15911.16$ & $19127.56$ & $36237.45$ & $71276.17$ & $1.517$ \\
-    \hline\hline
-    \end{tabular}
-    }
-    \caption{Cross section, yields (split according to symmetric, asymmetric, 
-        and monojet categories), and total selection efficiency at $12.9$~\ifb 
-        for vector mediated DM+jets models.}
-    \label{tab:DMV_yld}
-\end{table}
+\subsection{Exclusion limits}
+In order to extract the signal contribution in the fit, the distribution of
+events according to the \mht variable, encoded as template histograms, is used
+as described in Sec.~\ref{sec:had-shape} and \ref{sec:likelihood}. Upper limits
+on the cross section are computed using the $\text{CL}_{s}$ criterion 
+\cite{CLsTechnique}. Asymptotic formulae \cite{AsymptoticFormulae} are utilised
+to approximate the distribution of the test statistics. All the statistical
+results are produced using the \textit{combine} tool, provided within the
+HiggsAnalysis-CombinedLimit package \cite{Combine}.
 
-\begin{table}
-    \centering
-    {\small
-    \begin{tabular}{rrlrrrrr}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
-    \hline
-%%% 12.9 /fb
-    $1000$ & $300$ & $2.59\text{e}+01$ & $1910.52$ & $2180.81$ & $3842.41$ & $7933.75$ & $2.375$ \\
-    $1000$ & $350$ & $1.48\text{e}+01$ & $1506.69$ & $1733.38$ & $3013.81$ & $6253.88$ & $3.271$ \\
-    $1250$ & $100$ & $1.04\text{e}+01$ & $1370.88$ & $1544.11$ & $2605.04$ & $5520.03$ & $4.107$ \\
-    $1250$ & $10$ & $1.20\text{e}+01$ & $1401.67$ & $1563.88$ & $2678.66$ & $5644.21$ & $3.653$ \\
-    $1250$ & $150$ & $1.33\text{e}+01$ & $1298.44$ & $1494.96$ & $2526.83$ & $5320.23$ & $3.102$ \\
-    $1250$ & $200$ & $1.32\text{e}+01$ & $1251.97$ & $1398.16$ & $2404.66$ & $5054.79$ & $2.960$ \\
-    $1250$ & $250$ & $9.55\text{e}+00$ & $1193.25$ & $1355.47$ & $2285.81$ & $4834.54$ & $3.926$ \\
-    $1250$ & $300$ & $8.55\text{e}+00$ & $1082.42$ & $1221.76$ & $2106.67$ & $4410.85$ & $3.999$ \\
-    $1250$ & $350$ & $9.52\text{e}+00$ & $946.54$ & $1073.66$ & $1840.56$ & $3860.76$ & $3.142$ \\
-    $1500$ & $100$ & $5.61\text{e}+00$ & $697.43$ & $764.78$ & $1293.65$ & $2755.86$ & $3.810$ \\
-    $1500$ & $150$ & $5.38\text{e}+00$ & $687.00$ & $752.32$ & $1243.39$ & $2682.71$ & $3.865$ \\
-    $1500$ & $200$ & $5.62\text{e}+00$ & $646.16$ & $743.54$ & $1217.49$ & $2607.19$ & $3.594$ \\
-    $1500$ & $250$ & $4.29\text{e}+00$ & $635.39$ & $694.95$ & $1172.82$ & $2503.17$ & $4.518$ \\
-    $1500$ & $300$ & $4.74\text{e}+00$ & $578.60$ & $672.22$ & $1107.27$ & $2358.08$ & $3.857$ \\
-    $1500$ & $350$ & $4.16\text{e}+00$ & $555.17$ & $623.24$ & $1035.69$ & $2214.10$ & $4.131$ \\
-    $1500$ & $400$ & $4.15\text{e}+00$ & $501.65$ & $558.13$ & $937.57$ & $1997.35$ & $3.728$ \\
-    $1500$ & $50$ & $5.08\text{e}+00$ & $699.88$ & $786.83$ & $1339.72$ & $2826.43$ & $4.316$ \\
-    $300$ & $100$ & $1.48\text{e}+03$ & $32921.61$ & $43759.97$ & $81466.06$ & $158147.65$ & $0.827$ \\
-    $300$ & $1$ & $2.65\text{e}+03$ & $54633.08$ & $69189.63$ & $132257.95$ & $256080.66$ & $0.750$ \\
-    $500$ & $150$ & $3.08\text{e}+02$ & $12892.14$ & $15757.38$ & $29814.75$ & $58464.27$ & $1.472$ \\
-    $500$ & $1$ & $4.54\text{e}+02$ & $19874.52$ & $24122.14$ & $44745.47$ & $88742.13$ & $1.514$ \\
-    $500$ & $200$ & $1.59\text{e}+02$ & $7103.77$ & $8566.83$ & $15505.16$ & $31175.76$ & $1.525$ \\
-    \hline\hline
-    \end{tabular}
-    }
-    \caption{Cross section, yields (split according to symmetric, asymmetric, 
-        and monojet categories), and total selection efficiency at $12.9$~\ifb 
-        for axial-vector mediated DM+jets models.}
-    \label{tab:DMAV_yld}
-\end{table}
+In Tab. ~\ref{tab:DMV_limits}-\ref{tab:DMttPS_limits} the 95\% C.L. upper limits 
+on the cross section are listed for the models considered in this 
+interpretation. These results correspond to 12.9~\ifb of integrated luminosity. 
 
-%\begin{table}
-%    \centering
-%    {\small
-%    \begin{tabular}{rrlrrrrr}
-%    \hline\hline
-%    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
-%    \hline
-%%%% 12.9 /fb
-%    %$1000$ & $1$ & $1.84\text{e}-01$ & $18.10$ & $18.68$ & $18.66$ & $55.43$ & $2.332$ \\
-%    $100$ & $1$ & $1.14\text{e}+02$ & $891.58$ & $1365.59$ & $1635.60$ & $3892.77$ & $0.264$ \\
-%    $100$ & $50$ & $1.97\text{e}+00$ & $34.02$ & $48.67$ & $54.30$ & $136.99$ & $0.540$ \\
-%    $10$ & $1$ & $1.16\text{e}+03$ & $1018.55$ & $1636.98$ & $1979.64$ & $4635.16$ & $0.031$ \\
-%    %$1250$ & $10$ & $5.22\text{e}-02$ & $5.94$ & $5.81$ & $5.59$ & $17.34$ & $2.576$ \\
-%    %$1250$ & $1$ & $5.03\text{e}-02$ & $5.89$ & $5.81$ & $5.60$ & $17.30$ & $2.666$ \\
-%    %$1250$ & $200$ & $3.96\text{e}-02$ & $5.13$ & $4.89$ & $4.66$ & $14.68$ & $2.873$ \\
-%    %$1250$ & $250$ & $3.47\text{e}-02$ & $4.65$ & $4.50$ & $4.24$ & $13.40$ & $2.992$ \\
-%    %$1250$ & $300$ & $3.14\text{e}-02$ & $4.20$ & $3.99$ & $3.77$ & $11.96$ & $2.954$ \\
-%    %$1250$ & $350$ & $2.65\text{e}-02$ & $3.64$ & $3.48$ & $3.25$ & $10.36$ & $3.029$ \\
-%    %$1250$ & $400$ & $2.22\text{e}-02$ & $3.03$ & $2.89$ & $2.72$ & $8.64$ & $3.017$ \\
-%    %$1250$ & $50$ & $5.03\text{e}-02$ & $5.89$ & $5.74$ & $5.54$ & $17.18$ & $2.645$ \\
-%    %$1500$ & $100$ & $1.56\text{e}-02$ & $2.13$ & $2.05$ & $1.88$ & $6.06$ & $3.017$ \\
-%    %$1500$ & $10$ & $1.72\text{e}-02$ & $2.22$ & $2.13$ & $1.96$ & $6.31$ & $2.847$ \\
-%    %$1500$ & $1$ & $1.73\text{e}-02$ & $2.22$ & $2.11$ & $1.98$ & $6.31$ & $2.826$ \\
-%    %$1500$ & $200$ & $1.33\text{e}-02$ & $1.92$ & $1.80$ & $1.65$ & $5.37$ & $3.136$ \\
-%    %$1500$ & $250$ & $1.22\text{e}-02$ & $1.80$ & $1.63$ & $1.53$ & $4.96$ & $3.142$ \\
-%    %$1500$ & $300$ & $1.07\text{e}-02$ & $1.65$ & $1.51$ & $1.39$ & $4.54$ & $3.286$ \\
-%    %$1500$ & $350$ & $9.69\text{e}-03$ & $1.51$ & $1.36$ & $1.24$ & $4.11$ & $3.286$ \\
-%    %$1500$ & $400$ & $8.11\text{e}-03$ & $1.34$ & $1.23$ & $1.09$ & $3.66$ & $3.495$ \\
-%    %$1500$ & $50$ & $1.63\text{e}-02$ & $2.21$ & $2.06$ & $1.94$ & $6.20$ & $2.959$ \\
-%    %$2000$ & $1$ & $3.27\text{e}-03$ & $0.41$ & $0.39$ & $0.34$ & $1.14$ & $2.710$ \\
-%    $300$ & $100$ & $2.25\text{e}+01$ & $596.20$ & $821.57$ & $907.90$ & $2325.67$ & $0.803$ \\
-%    $300$ & $1$ & $2.32\text{e}+01$ & $542.59$ & $899.82$ & $971.26$ & $2413.67$ & $0.805$ \\
-%    $500$ & $150$ & $5.19\text{e}+00$ & $221.54$ & $283.99$ & $291.87$ & $797.40$ & $1.192$ \\
-%    $500$ & $1$ & $7.00\text{e}+00$ & $290.25$ & $380.35$ & $389.25$ & $1059.85$ & $1.174$ \\
-%    \hline\hline
-%    \end{tabular}
-%    }
-%    \caption{Cross section, yields (split according to symmetric, asymmetric, 
-%        and monojet categories), and total selection efficiency at $12.9$~\ifb 
-%        for scalar mediated DM+jets models.}
-%    \label{tab:DMS_yld}
-%\end{table}
-%
-%\begin{table}
-%    \centering
-%    {\small
-%    \begin{tabular}{rrlrrrrr}
-%    \hline\hline
-%    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
-%    \hline
-%%%% 12.9 /fb
-%    %$1000$ & $300$ & $1.67\text{e}-01$ & $18.59$ & $19.15$ & $18.63$ & $56.38$ & $2.624$ \\
-%    %$1000$ & $350$ & $1.45\text{e}-01$ & $16.93$ & $16.75$ & $16.51$ & $50.19$ & $2.678$ \\
-%    $100$ & $1$ & $2.66\text{e}+02$ & $1998.96$ & $3107.09$ & $3679.11$ & $8785.17$ & $0.256$ \\
-%    $100$ & $50$ & $1.35\text{e}+01$ & $168.96$ & $254.61$ & $291.57$ & $715.14$ & $0.411$ \\
-%    $10$ & $10$ & $3.38\text{e}+01$ & $157.71$ & $234.63$ & $281.88$ & $674.22$ & $0.155$ \\
-%    $10$ & $1$ & $2.59\text{e}+03$ & $2289.66$ & $3651.73$ & $4240.77$ & $10182.15$ & $0.030$ \\
-%    %$1250$ & $100$ & $6.56\text{e}-02$ & $7.41$ & $7.34$ & $7.13$ & $21.89$ & $2.586$ \\
-%    %$1250$ & $150$ & $5.93\text{e}-02$ & $7.33$ & $7.09$ & $6.95$ & $21.38$ & $2.793$ \\
-%    %$1250$ & $1$ & $6.52\text{e}-02$ & $7.65$ & $7.56$ & $7.31$ & $22.52$ & $2.678$ \\
-%    %$1250$ & $200$ & $5.42\text{e}-02$ & $6.96$ & $6.79$ & $6.58$ & $20.34$ & $2.911$ \\
-%    %$1250$ & $250$ & $4.95\text{e}-02$ & $6.64$ & $6.42$ & $6.15$ & $19.21$ & $3.008$ \\
-%    %$1250$ & $300$ & $4.44\text{e}-02$ & $6.33$ & $5.96$ & $5.75$ & $18.04$ & $3.152$ \\
-%    %$1250$ & $350$ & $4.26\text{e}-02$ & $5.88$ & $5.56$ & $5.30$ & $16.74$ & $3.050$ \\
-%    %$1250$ & $400$ & $3.86\text{e}-02$ & $5.44$ & $5.13$ & $4.89$ & $15.46$ & $3.107$ \\
-%    %$1500$ & $100$ & $2.16\text{e}-02$ & $2.80$ & $2.69$ & $2.52$ & $8.00$ & $2.876$ \\
-%    %$1500$ & $10$ & $2.27\text{e}-02$ & $2.82$ & $2.70$ & $2.59$ & $8.11$ & $2.770$ \\
-%    %$1500$ & $150$ & $2.08\text{e}-02$ & $2.72$ & $2.55$ & $2.44$ & $7.71$ & $2.879$ \\
-%    %$1500$ & $1$ & $2.27\text{e}-02$ & $2.83$ & $2.71$ & $2.61$ & $8.15$ & $2.785$ \\
-%    %$1500$ & $200$ & $1.77\text{e}-02$ & $2.57$ & $2.43$ & $2.29$ & $7.29$ & $3.201$ \\
-%    %$1500$ & $250$ & $1.61\text{e}-02$ & $2.48$ & $2.30$ & $2.15$ & $6.93$ & $3.342$ \\
-%    %$1500$ & $300$ & $1.49\text{e}-02$ & $2.34$ & $2.14$ & $2.01$ & $6.50$ & $3.388$ \\
-%    %$1500$ & $350$ & $1.33\text{e}-02$ & $2.20$ & $2.01$ & $1.85$ & $6.06$ & $3.525$ \\
-%    %$1500$ & $400$ & $1.25\text{e}-02$ & $2.10$ & $1.90$ & $1.74$ & $5.74$ & $3.569$ \\
-%    %$1500$ & $50$ & $2.25\text{e}-02$ & $2.84$ & $2.69$ & $2.59$ & $8.12$ & $2.800$ \\
-%    $300$ & $100$ & $6.98\text{e}+01$ & $1727.78$ & $2418.60$ & $2706.74$ & $6853.12$ & $0.761$ \\
-%    $300$ & $150$ & $7.33\text{e}+00$ & $207.85$ & $291.88$ & $310.27$ & $810.01$ & $0.856$ \\
-%    $300$ & $1$ & $6.95\text{e}+01$ & $1738.85$ & $2397.82$ & $2683.39$ & $6820.06$ & $0.760$ \\
-%    $500$ & $150$ & $9.21\text{e}+00$ & $409.03$ & $514.30$ & $554.33$ & $1477.66$ & $1.243$ \\
-%    $500$ & $1$ & $1.07\text{e}+01$ & $473.00$ & $598.53$ & $631.26$ & $1702.79$ & $1.236$ \\
-%    $500$ & $200$ & $7.36\text{e}+00$ & $334.64$ & $419.23$ & $449.25$ & $1203.12$ & $1.268$ \\
-%    \hline\hline
-%    \end{tabular}
-%    }
-%    \caption{Cross section, yields (split according to symmetric, asymmetric, 
-%        and monojet categories), and total selection efficiency at $12.9$~\ifb 
-%        for pseudoscalar mediated DM+jets models.}
-%    \label{tab:DMPS_yld}
-%\end{table}
-
-\begin{table}
-    \centering
-    {\small
-    \begin{tabular}{rrlrrrrr}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
-    \hline
-%%% 12.9 /fb
-    $100$ & $10$ & $6.73\text{e}-01$ & $285.23$ & $219.79$ & $2.43$ & $507.45$ & $5.843$ \\
-    $10$ & $10$ & $9.49\text{e}-02$ & $17.53$ & $15.10$ & $0.17$ & $32.80$ & $2.680$ \\
-    $15$ & $10$ & $1.20\text{e}-01$ & $19.45$ & $17.09$ & $0.34$ & $36.88$ & $2.379$ \\
-    $50$ & $10$ & $2.94\text{e}+00$ & $457.23$ & $453.18$ & $6.06$ & $916.47$ & $2.415$ \\
-    $100$ & $1$ & $6.72\text{e}-01$ & $284.77$ & $219.34$ & $2.02$ & $506.13$ & $5.836$ \\
-    $10$ & $1$ & $1.96\text{e}+01$ & $859.83$ & $1018.92$ & $19.79$ & $1898.55$ & $0.751$ \\
-    $200$ & $1$ & $9.33\text{e}-02$ & $116.92$ & $66.38$ & $0.66$ & $183.95$ & $15.289$ \\
-    $20$ & $1$ & $1.05\text{e}+01$ & $705.00$ & $734.20$ & $7.43$ & $1446.63$ & $1.070$ \\
-    $300$ & $1$ & $2.95\text{e}-02$ & $56.14$ & $28.10$ & $0.25$ & $84.48$ & $22.201$ \\
-    $500$ & $1$ & $5.18\text{e}-03$ & $12.55$ & $5.85$ & $0.05$ & $18.45$ & $27.610$ \\
-    $50$ & $1$ & $2.94\text{e}+00$ & $471.14$ & $429.92$ & $6.21$ & $907.27$ & $2.391$ \\
-    $10$ & $50$ & $1.91\text{e}-03$ & $2.23$ & $1.24$ & $0.01$ & $3.48$ & $14.155$ \\
-    $200$ & $50$ & $9.22\text{e}-02$ & $115.46$ & $63.79$ & $0.81$ & $180.07$ & $15.133$ \\
-    $300$ & $50$ & $2.90\text{e}-02$ & $56.57$ & $27.73$ & $0.23$ & $84.53$ & $22.588$ \\
-    $50$ & $50$ & $2.33\text{e}-03$ & $2.58$ & $1.53$ & $0.01$ & $4.12$ & $13.729$ \\
-    $95$ & $50$ & $6.56\text{e}-03$ & $5.42$ & $3.24$ & $0.03$ & $8.70$ & $10.282$ \\
-    \hline\hline
-    \end{tabular}
-    }
-    \caption{Cross section, yields (split according to symmetric, asymmetric, 
-        and monojet categories), and total selection efficiency at $12.9$~\ifb 
-        for scalar mediated DM+ttbar models.}
-    \label{tab:DMttS_yld}
-\end{table}
-
-\begin{table}
-    \centering
-    {\small
-    \begin{tabular}{rrlrrrrr}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & $\sigma$ [pb] & Yield (sym) & Yield (asy) & Yield (mon) & Yield (tot) & Efficiency [\%] \\
-    \hline
-%%% 12.9 /fb
-    $100$ & $10$ & $1.90\text{e}-01$ & $206.69$ & $158.71$ & $1.02$ & $366.42$ & $14.942$ \\
-    $10$ & $10$ & $1.50\text{e}-02$ & $14.16$ & $10.56$ & $0.08$ & $24.79$ & $12.820$ \\
-    $15$ & $10$ & $1.86\text{e}-02$ & $17.02$ & $12.79$ & $0.11$ & $29.92$ & $12.449$ \\
-    $50$ & $10$ & $3.03\text{e}-01$ & $254.54$ & $204.36$ & $1.51$ & $460.41$ & $11.764$ \\
-    $100$ & $1$ & $1.91\text{e}-01$ & $214.23$ & $157.08$ & $1.21$ & $372.52$ & $15.127$ \\
-    $10$ & $1$ & $4.41\text{e}-01$ & $281.32$ & $226.91$ & $1.40$ & $509.63$ & $8.960$ \\
-    $200$ & $1$ & $8.36\text{e}-02$ & $125.45$ & $85.00$ & $0.54$ & $210.99$ & $19.565$ \\
-    $20$ & $1$ & $3.99\text{e}-01$ & $270.83$ & $214.74$ & $1.74$ & $487.31$ & $9.463$ \\
-    $300$ & $1$ & $4.00\text{e}-02$ & $72.03$ & $43.70$ & $0.28$ & $116.02$ & $22.489$ \\
-    $500$ & $1$ & $5.41\text{e}-03$ & $12.54$ & $6.36$ & $0.05$ & $18.94$ & $27.154$ \\
-    $50$ & $1$ & $3.03\text{e}-01$ & $256.53$ & $201.79$ & $1.27$ & $459.58$ & $11.750$ \\
-    $10$ & $50$ & $2.44\text{e}-03$ & $3.71$ & $2.38$ & $0.02$ & $6.11$ & $19.369$ \\
-    $200$ & $50$ & $8.38\text{e}-02$ & $127.89$ & $85.55$ & $0.54$ & $213.98$ & $19.790$ \\
-    $300$ & $50$ & $3.99\text{e}-02$ & $72.46$ & $43.59$ & $0.32$ & $116.37$ & $22.615$ \\
-    $50$ & $50$ & $2.98\text{e}-03$ & $4.36$ & $2.92$ & $0.02$ & $7.31$ & $19.019$ \\
-    $95$ & $50$ & $1.07\text{e}-02$ & $13.28$ & $9.60$ & $0.05$ & $22.94$ & $16.663$ \\
-    \hline\hline
-    \end{tabular}
-    }
-    \caption{Cross section, yields (split according to symmetric, asymmetric, 
-        and monojet categories), and total selection efficiency at $12.9$~\ifb 
-        for pseudoscalar mediated DM+ttbar models.}
-    \label{tab:DMttPS_yld}
-\end{table}
-
-\clearpage
-
-
-Expected sensitivities vector, axial-vector, scalar and pseudoscalar mediated DM plus light jet samples are listed in Tables~\ref{tab:DMV_limits}-\ref{tab:DMPS_limits}. For each mass points as well the five 'most sensitive bin' (MSB) in terms of jet multiplicity are given. Currently a flat systematic uncertainty of 20\% is assume for the sensitivity calculation.
-
-These result are preliminary and are subject to change with more precise determination of uncertainties etc.
-
-\begin{table}
+\begin{table}[!htbp]
   \centering
-  \begin{tabular}{rrccccc}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value & obs r-value \\
-    \hline
-%%% 12.9 /fb
-      500 & 200 & eq1j, eq2j, eq3j, eq2a & $0.092_{-0.026}^{+0.038}$ & 0.123 \\
-      300 & 150 & eq1j, eq3j, eq2j, eq2a & $0.238_{-0.068}^{+0.098}$ & 0.431 \\
-     1000 & 350 & eq1j, eq2j, eq3j, eq2a & $0.327_{-0.094}^{+0.134}$ & 0.27 \\
-     1250 & 150 & eq2j, eq1j, eq3j, eq2a & $0.56_{-0.16}^{+0.23}$    & 0.357 \\
-     1250 &   1 & eq2j, eq1j, eq3j, eq2a & $0.56_{-0.16}^{+0.23}$    & 0.461 \\
-     1250 & 350 & eq2j, eq1j, eq3j, eq2a & $0.57_{-0.16}^{+0.24}$    & 0.433 \\
-     1250 & 250 & eq1j, eq2j, eq2a, eq3j & $0.58_{-0.16}^{+0.24}$    & 0.466 \\
-     1250 & 400 & eq2j, eq1j, eq3j, eq2a & $0.62_{-0.18}^{+0.25}$    & 0.46 \\
-     1500 & 200 & eq2j, eq3j, eq1j, eq2a & $0.96_{-0.27}^{+0.40}$    & 0.642 \\
-     1500 &  10 & eq2j, eq2a, eq1j, eq3j & $1.00_{-0.29}^{+0.42}$    & 0.656 \\
-     1500 &  50 & eq2j, eq1j, eq2a, eq3j & $1.00_{-0.29}^{+0.41}$    & 0.727 \\
-     1500 & 150 & eq2j, eq1j, eq2a, eq3j & $1.01_{-0.29}^{+0.43}$    & 0.765 \\
-     1500 & 100 & eq2j, eq1j, eq2a, eq3j & $1.04_{-0.30}^{+0.43}$    & 0.786 \\
-    \hline\hline
-  \end{tabular}
-  % \include{tables/DM/160703_80XDMV_SummaryTable}
-  \caption{Expected limits for vector mediated DM+jets models}
-  \label{tab:DMV_limits}
+    \begin{tabular}{rrcc}
+        \hline\hline
+        \mphi & \mchi & exp r-value & obs r-value \\
+        \hline
+        500 & 200 & $0.088_{-0.025}^{+0.036}$ & 0.12 \\
+        300 & 150 & $0.233_{-0.066}^{+0.094}$ & 0.445 \\
+        1000 & 350 & $0.323_{-0.091}^{+0.133}$ & 0.239 \\
+        1250 & 150 & $0.56_{-0.16}^{+0.23}$ & 0.318 \\
+        1250 &   1 & $0.56_{-0.16}^{+0.23}$ & 0.398 \\
+        1250 & 350 & $0.57_{-0.16}^{+0.24}$ & 0.4 \\
+        1250 & 250 & $0.57_{-0.16}^{+0.24}$ & 0.412 \\
+        1250 & 400 & $0.62_{-0.17}^{+0.25}$ & 0.43 \\
+        1500 & 200 & $0.96_{-0.27}^{+0.39}$ & 0.73 \\
+        1500 &  50 & $1.00_{-0.28}^{+0.42}$ & 0.717 \\
+        1500 & 150 & $1.01_{-0.29}^{+0.42}$ & 0.658 \\
+        1500 & 100 & $1.03_{-0.29}^{+0.43}$ & 0.663 \\
+        \hline\hline
+    \end{tabular}
+    \caption{Expected and observed limits for vector mediated DM+jets models}
+    \label{tab:DMV_limits}
 \end{table}
 
-\begin{table}
-  \centering
-  \begin{tabular}{rrccccc}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value & obs r-value \\
-    \hline
-%%% 12.9 /fb
-      300 &   1 & eq3j, eq2j, eq1j, eq2a & $0.039_{-0.011}^{+0.016}$ & 0.083 \\
-      300 & 100 & eq3j, eq2j, eq1j, eq4j & $0.062_{-0.017}^{+0.026}$ & 0.146 \\
-      500 &   1 & eq1j, eq2j, eq3j, eq2a & $0.072_{-0.021}^{+0.029}$ & 0.0809 \\
-      500 & 150 & eq2j, eq1j, eq3j, eq2a & $0.112_{-0.032}^{+0.046}$ & 0.136 \\
-      500 & 200 & eq1j, eq2j, eq3j, eq2a & $0.202_{-0.057}^{+0.085}$ & 0.256 \\
-     1000 & 300 & eq1j, eq2j, eq3j, eq2a & $0.46_{-0.13}^{+0.19}$    & 0.377 \\
-     1250 &  10 & eq2j, eq1j, eq3j, eq2a & $0.54_{-0.15}^{+0.23}$    & 0.363 \\
-     1250 & 100 & eq2j, eq1j, eq3j, eq2a & $0.56_{-0.16}^{+0.23}$    & 0.429 \\
-     1250 & 150 & eq2j, eq1j, eq3j, eq2a & $0.58_{-0.17}^{+0.24}$    & 0.501 \\
-     1250 & 200 & eq2j, eq1j, eq3j, eq2a & $0.60_{-0.17}^{+0.25}$    & 0.445 \\
-     1250 & 250 & eq2j, eq1j, eq3j, eq2a & $0.64_{-0.18}^{+0.27}$    & 0.461 \\
-     1250 & 300 & eq1j, eq2j, eq2a, eq4j & $0.74_{-0.21}^{+0.31}$    & 0.656 \\
-     1250 & 350 & eq2j, eq1j, eq3j, eq2a & $0.79_{-0.23}^{+0.32}$    & 0.583 \\
-     1500 &  50 & eq2j, eq1j, eq2a, eq3j & $0.99_{-0.28}^{+0.41}$    & 0.678 \\
-     1500 & 100 & eq2j, eq3j, eq1j, eq2a & $1.03_{-0.30}^{+0.42}$    & 0.763 \\
-     1500 & 200 & eq2j, eq1j, eq3j, eq2a & $1.08_{-0.31}^{+0.45}$    & 0.801 \\
-     1500 & 250 & eq2j, eq1j, eq3j, eq2a & $1.13_{-0.32}^{+0.47}$    & 0.885 \\
-     1500 & 300 & eq2j, eq2a, eq1j, eq3j & $1.15_{-0.33}^{+0.48}$    & 0.838 \\
-     1500 & 350 & eq2j, eq1j, eq3j, eq2a & $1.23_{-0.35}^{+0.51}$    & 0.881 \\
-     1500 & 400 & eq2j, eq3j, eq2a, eq1j & $1.35_{-0.39}^{+0.57}$    & 0.92 \\
-    \hline\hline
-  \end{tabular}
-  \caption{Expected limits for axial-vector mediated DM+jets models}
-  \label{tab:DMAV_limits}
+\begin{table}[]
+    \centering
+    \begin{tabular}{rrcc}
+        \hline\hline
+        \mphi & \mchi & exp r-value & obs r-value \\
+        \hline
+          300 &   1 & $0.038_{-0.011}^{+0.015}$ & 0.0848 \\
+          300 & 100 & $0.062_{-0.017}^{+0.026}$ & 0.137 \\
+          500 &   1 & $0.071_{-0.020}^{+0.028}$ & 0.074 \\
+          500 & 150 & $0.112_{-0.031}^{+0.046}$ & 0.143 \\
+          500 & 200 & $0.198_{-0.056}^{+0.081}$ & 0.258 \\
+         1000 & 300 & $0.46_{-0.13}^{+0.19}$ & 0.325 \\
+         1250 &  10 & $0.54_{-0.15}^{+0.23}$ & 0.337 \\
+         1250 & 100 & $0.56_{-0.16}^{+0.23}$ & 0.381 \\
+         1000 & 350 & $0.58_{-0.16}^{+0.24}$ & 0.569 \\
+         1250 & 150 & $0.58_{-0.16}^{+0.24}$ & 0.406 \\
+         1250 & 200 & $0.60_{-0.17}^{+0.25}$ & 0.407 \\
+         1250 & 250 & $0.64_{-0.18}^{+0.27}$ & 0.512 \\
+         1250 & 300 & $0.71_{-0.20}^{+0.30}$ & 0.491 \\
+         1250 & 350 & $0.79_{-0.22}^{+0.32}$ & 0.527 \\
+         1500 & 150 & $0.99_{-0.28}^{+0.42}$ & 0.579 \\
+         1500 &  50 & $1.00_{-0.28}^{+0.41}$ & 0.609 \\
+         1500 & 100 & $1.03_{-0.29}^{+0.43}$ & 0.66 \\
+         1500 & 200 & $1.08_{-0.31}^{+0.45}$ & 0.689 \\
+         1500 & 250 & $1.12_{-0.32}^{+0.47}$ & 0.784 \\
+         1500 & 300 & $1.16_{-0.33}^{+0.48}$ & 0.743 \\
+         1500 & 350 & $1.23_{-0.35}^{+0.52}$ & 0.767 \\
+         1500 & 400 & $1.35_{-0.39}^{+0.56}$ & 0.819 \\
+        \hline\hline
+    \end{tabular}
+    \caption{Expected and observed limits for axial-vector mediated DM+jets models}
+    \label{tab:DMAV_limits}
 \end{table}
 
-%\begin{table}
+%\begin{table}[]
 %  \centering
 %  \begin{tabular}{rrcccc}
 %    \hline\hline
@@ -694,10 +693,10 @@ These result are preliminary and are subject to change with more precise determi
 %    \hline\hline
 %  \end{tabular}
 %  \caption{Expected limits for scalar mediated DM+jets models}
-%  \label{tab:DMS_exp}
+%  \label{tab:DMS_limits}
 %\end{table}
 
-%\begin{table}
+%\begin{table}[]
 %  \centering
 %  \begin{tabular}{rrcccc}
 %    \hline\hline
@@ -737,62 +736,63 @@ These result are preliminary and are subject to change with more precise determi
 %\hline\hline
 %  \end{tabular}
 %  \caption{Expected limits for pseudoscalar mediated DM+jets models}
-%  \label{tab:DMPS_exp}
+%  \label{tab:DMPS_limits}
 %\end{table}
 
-\begin{table}
-  \centering
-  \begin{tabular}{rrccccc}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value & obs r-value \\
-    \hline
-%%% 12.9 /fb
-       10 &   1 & ge5j, ge5a, eq4a, eq4j & $0.64_{-0.21}^{+0.34}$ & 0.405 \\
-       20 &   1 & ge5j, ge5a, eq4j, eq4a & $0.69_{-0.23}^{+0.38}$ & 0.359 \\
-       50 &  10 & ge5j, eq4j, ge5a, eq4a & $0.98_{-0.32}^{+0.54}$ & 0.451 \\
-       50 &   1 & ge5j, ge5a, eq4j, eq4a & $1.11_{-0.36}^{+0.61}$ & 0.529 \\
-      100 &   1 & ge5j, ge5a, eq4j, eq4a & $1.43_{-0.46}^{+0.78}$ & 0.835 \\
-      100 &  10 & ge5j, eq4j, ge5a, eq4a & $1.46_{-0.47}^{+0.81}$ & 0.942 \\
-      200 &   1 & ge5j, eq4j, ge5a, eq4a & $2.71_{-0.89}^{+1.55}$ & 2.8 \\
-      200 &  50 & ge5j, eq4j, ge5a, eq4a & $2.73_{-0.90}^{+1.53}$ & 2.59 \\
-      300 &  50 & ge5j, eq4j, ge5a, eq4a & $4.5_{-1.5}^{+2.6}$    & 4.46 \\
-      500 &   1 & ge5j, eq4j, ge5a, eq4a & $16.1_{-5.5}^{+9.9}$   & 19.6 \\
-       15 &  10 & ge5j, eq4j, ge5a, eq4a & $22.8_{-7.3}^{+12.5}$  & 11.8 \\
-       10 &  10 & ge5j, eq4j, ge5a, eq4a & $25.1_{-8.1}^{+13.7}$  & 12.8 \\
-       95 &  50 & ge5j, eq4j, ge5a, eq4a & $67_{-22}^{+38}$       & 54.0 \\
-       50 &  50 & ge5j, eq4j, ge5a, eq4a & $119_{-40}^{+69}$      & 124.0 \\
-       10 &  50 & ge5j, eq4j, ge5a, eq4a & $135_{-45}^{+78}$      & 117.0 \\
-    \hline\hline
-  \end{tabular}
-  \caption{Expected limits for scalar mediated DM+ttbar models}
-  \label{tab:DMttS_limits}
+\begin{table}[]
+    \centering
+    \begin{tabular}{rrcc}
+        \hline\hline
+        \mphi & \mchi & exp r-value & obs r-value \\
+        \hline
+           10 &   1 & $0.63_{-0.20}^{+0.34}$ & 0.425 \\
+           20 &   1 & $0.76_{-0.24}^{+0.41}$ & 0.367 \\
+           50 &  10 & $1.00_{-0.32}^{+0.55}$ & 0.59 \\
+           50 &   1 & $1.14_{-0.36}^{+0.62}$ & 0.73 \\
+          100 &   1 & $1.52_{-0.49}^{+0.83}$ & 1.1 \\
+          100 &  10 & $1.59_{-0.51}^{+0.88}$ & 1.35 \\
+          200 &  50 & $2.84_{-0.93}^{+1.59}$ & 3.81 \\
+          200 &   1 & $2.84_{-0.93}^{+1.59}$ & 3.46 \\
+          300 &  50 & $4.5_{-1.5}^{+2.6}$ & 4.83 \\
+          300 &   1 & $4.6_{-1.5}^{+2.7}$ & 6.79 \\
+          500 &   1 & $16.4_{-5.6}^{+10.1}$ & 22.0 \\
+           15 &  10 & $24.1_{-7.8}^{+13.1}$ & 14.1 \\
+           10 &  10 & $27.1_{-8.8}^{+14.4}$ & 25.8 \\
+           95 &  50 & $68_{-22}^{+39}$ & 77.3 \\
+           50 &  50 & $123_{-41}^{+71}$ & 142.0 \\
+           10 &  50 & $138_{-46}^{+80}$ & 150.0 \\
+        \hline\hline
+    \end{tabular}
+    \caption{Expected and observed limits for scalar mediated DM+ttbar models}
+    \label{tab:DMttS_limits}
 \end{table}
 
-\begin{table}
-  \centering
-  \begin{tabular}{rrccccc}
-    \hline\hline
-    $M_{\text{med}}$ & $M_{\text{DM}}$ & nJet MSB & exp r-value & obs r-value \\
-    \hline
-%%% 12.9 /fb
-       20 &   1 & ge5j, ge5a, eq4j, eq4a & $1.29_{-0.43}^{+0.75}$ & 0.982 \\
-       50 &  10 & ge5j, ge5a, eq4j, eq4a & $1.38_{-0.46}^{+0.80}$ & 1.1 \\
-       50 &   1 & ge5j, ge5a, eq4j, eq4a & $1.43_{-0.48}^{+0.83}$ & 0.973 \\
-      100 &   1 & ge5j, ge5a, eq4j, eq4a & $1.57_{-0.53}^{+0.92}$ & 1.46 \\
-      100 &  10 & ge5j, ge5a, eq4j, eq4a & $1.59_{-0.53}^{+0.93}$ & 1.69 \\
-      200 &  50 & ge5j, ge5a, eq4j, eq4a & $2.29_{-0.78}^{+1.37}$ & 2.07 \\
-      200 &   1 & ge5j, ge5a, eq4j, eq4a & $2.32_{-0.79}^{+1.39}$ & 2.71 \\
-      300 &   1 & ge5j, ge5a, eq4j, eq4a & $3.5_{-1.2}^{+2.2}$    & 4.55 \\
-      300 &  50 & ge5j, ge5a, eq4j, eq4a & $3.5_{-1.2}^{+2.2}$    & 5.07 \\
-      500 &   1 & ge5j, eq4j, ge5a, eq4a & $17.1_{-6.0}^{+10.7}$  & 20.9 \\
-       15 &  10 & ge5j, ge5a, eq4j, eq4a & $19.8_{-6.6}^{+11.6}$  & 21.3 \\
-       95 &  50 & ge5j, ge5a, eq4j, eq4a & $23.6_{-7.9}^{+14.1}$  & 25.3 \\
-       50 &  50 & ge5j, ge5a, eq4j, eq4a & $66_{-22}^{+40}$       & 69.6 \\
-       10 &  50 & ge5j, ge5a, eq4j, eq4a & $76_{-26}^{+47}$       & 108.0 \\
-    \hline\hline
-  \end{tabular}
-  \caption{Expected limits for pseudoscalar mediated DM+ttbar models}
-  \label{tab:DMttPS_limits}
+\begin{table}[]
+    \centering
+    \begin{tabular}{rrcc}
+        \hline\hline
+        \mphi & \mchi & exp r-value & obs r-value \\
+        \hline
+           10 &   1 & $1.32_{-0.44}^{+0.77}$ & 1.4 \\
+           20 &   1 & $1.33_{-0.44}^{+0.77}$ & 1.35 \\
+           50 &  10 & $1.38_{-0.46}^{+0.81}$ & 1.74 \\
+           50 &   1 & $1.45_{-0.48}^{+0.84}$ & 1.5 \\
+          100 &  10 & $1.60_{-0.54}^{+0.93}$ & 2.34 \\
+          100 &   1 & $1.60_{-0.53}^{+0.94}$ & 2.11 \\
+          200 &  50 & $2.34_{-0.79}^{+1.40}$ & 3.08 \\
+          200 &   1 & $2.35_{-0.80}^{+1.41}$ & 3.22 \\
+          300 &  50 & $3.6_{-1.2}^{+2.2}$ & 5.59 \\
+          300 &   1 & $3.6_{-1.2}^{+2.2}$ & 4.94 \\
+          500 &   1 & $17.4_{-6.2}^{+11.0}$ & 23.3 \\
+           15 &  10 & $20.3_{-6.7}^{+12.0}$ & 25.9 \\
+           95 &  50 & $23.7_{-8.0}^{+14.0}$ & 27.7 \\
+           10 &  10 & $24.0_{-8.1}^{+14.1}$ & 22.7 \\
+           50 &  50 & $66_{-22}^{+40}$ & 93.1 \\
+           10 &  50 & $78_{-26}^{+48}$ & 131.0 \\
+        \hline\hline
+    \end{tabular}
+    \caption{Expected and observed limits for pseudoscalar mediated DM+ttbar models}
+    \label{tab:DMttPS_limits}
 \end{table}
 
 %Currently we are scaling the expected sensitivities to 2.2~\ifb of data corresponding to last years dataset to be able to compare.
@@ -809,21 +809,9 @@ These result are preliminary and are subject to change with more precise determi
 
 
 
-%Owing to the principal of Minimal Flavor Violation (MFV), top and bottom quarks can play important roles in the phenomenology of dark matter. Scalar and
-%pseudoscalar models predict not only the `monojet' processes described in Sec.~\ref{sec:dm_lightjet} but also the production of dark matter in association
-%with top (or bottom) pairs. This results in signatures with relatively large jet multiplicities, in particular for \DMtt production. The \alphat analysis is well 
-%suited to searching for such signatures. An example Feynman diagram for the pair production of dark matter particles in association with pairs of heavy quarks is
-%shown in Fig.~\ref{fig:feynman_hf}.
-
 
 
 %\begin{figure}[h!] \centering
 %\subfigure{\includegraphics[width=0.35\textwidth]{figures/DMplots/DMA_76X_ContourLimits.pdf}}
 %\caption{Expected sensitivities for 2.2~\ifb for the pseudoscalar DM+$t\bar{t}$ models}
 %\label{fig:exp_dmtt_ps} \end{figure}
-
-
-%Finally we show the sensitivity jet rakings in Fig....
-
-
-

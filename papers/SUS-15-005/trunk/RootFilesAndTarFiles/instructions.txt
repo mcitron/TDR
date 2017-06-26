@@ -1,0 +1,102 @@
+===============
+Nominal result:
+===============
+
+1) results_prefit.csv
+2) results_postfit.csv
+
+The two .csv files contain the nominal result: 
+1) provides the pre-fit SM background estimates;
+2) provides the post-fit SM background estimates (in which the fit is
+performed to data in the signal region and all control regions).  
+
+The covariance and correlation matrices are not provided.
+
+The first line of each .csv file defines the contents of the columns:
+njet,btag,htlow,hthigh,mhtlow,mhthigh,bkg,bkgErr,data
+
+Notes: 
+- the first 6 columns define the bin in terms of njet, nb, HT, and HTmiss
+- bkgdErr contains both stat. and syst. contributions.
+- the njet and nb categories are identified through 4-character codes:
+  - eqNj: exactly 'N' jets (symm)
+  - eqNa: exactly 'N' jets (asym)
+  - eqNb: exactly 'N' b-tagged jets
+  - geNb: at least 'N' b-tagged jets
+- "symm": implies symmetric pT thresholds of >100GeV on the two leading jets
+- "asym": implies asymmetric pT thresholds of >100 and >40GeV on the two leading jets
+
+============================================
+Result based on a simplified binning scheme:
+============================================
+
+This result is based on a simplified categorisation of candidate
+signal events. The SM background estimates are obtained from a
+"CR-only fit", in which a simultaneous fit to data yields in all
+control regions is performed, while the signal region is excluded
+from the fit.
+
+Event yields are provided for eight representative "topologies",
+defined in terms of requirements on Njet and Nb. For each topology,
+the event yields are integrated over the full HT range, HT > 200 GeV,
+and categorised according to eight bins in HTmiss. This categorisation
+scheme leads to 64 bins that are exclusive, contiguous, and provide
+complete coverage of the signal region. The corresponding background
+estimates are determined from the nominal likelihood model. The
+covariance matrix for the background estimates in the 64 bins is also
+available. This minimal set of information can be used to aid the
+reinterpretation of the search result using physics models not covered
+in this paper. The procedure using a simplified likelihood approach,
+as described in Ref. [1] below, demonstrates a good degree of accuracy
+for a wide range of models. A discussion of the assumptions and
+approximations is also provided therein. Further information is
+available upon request.
+
+[1] CMS Collaboration, "Simplified likelihood for the
+re-interpretation of public CMS results", CMS Note
+CMS-NOTE-2017-001. CERN-CMS-NOTE-2017-001, 2017,
+https://cds.cern.ch/record/2242860
+
+1) aggregated_results_crfit.csv
+
+The first line of each .csv file defines the contents of the columns:
+njet,btag,htlow,hthigh,mhtlow,mhthigh,bkg,bkgErr,data
+
+Notes: 
+- the first 6 columns define the bin in terms of njet, nb, HT, and HTmiss
+- bkgdErr contains both stat. and syst. contributions.
+- the njet and nb categories are identified through 4-character codes:
+  - le2j: njet (symm) == 1, njet (symm) == 2, and njet (asym) == 2
+  - ge3a: njet (asym) >= 3  
+  - ge3j: njet (symm) == 3 and njet (symm) == 4
+  - ge5j: njet (symm) >= 5
+  - eq0b: exactly 0 b-tagged jets
+  - ge1b: at least 1 b-tagged jet
+  - le1b: exactly 0 or 1 b-tagged jets
+  - ge2b: at least 2 b-tagged jets
+- "symm": implies symmetric pT thresholds of >100GeV on the two leading jets
+- "asym": implies asymmetric pT thresholds of >100 and >40GeV on the two leading jets
+
+2) aggregated_results_crfit.root
+
+This file provides identical information to 1), but in a histogram
+format (TH1F). The relevant histograms are found in the "shapes_fit_b"
+directory and are called "total_data" and "total_background".
+
+In the same file and directory, the covariance matrix is also provided
+in a TH2D histogram format ("total_covar"). The matrix can be used in
+conjunction with the "result_data" and "total_background" histograms
+to form a "simplified likelihood", as detailed in Ref [1] (above) in
+order to aid the reinterpretation of the analysis result.
+
+==================================
+Code implementations of variables:
+==================================
+
+1) makeAlphaT.tar
+2) makeBiasedDPhi.tar
+
+1) and 2) contain python snippets that define the two variables used
+to suppress QCD multijet production to a negligible level with respect
+to other SM backgrounds. 
+

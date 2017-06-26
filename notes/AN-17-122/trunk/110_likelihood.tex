@@ -1,0 +1,90 @@
+%%____________________________________________________________________________||
+\section{Likelihood model}
+\label{sec:likelihood}
+
+The \alphat~analysis relies on control regions to predict the normalisation of each category of \njet, \nb~and \scalht 
+(which are in the following identified with \htcat) and on simulation to predict the shape 
+of \mht~within each category. The likelihood model is split into hadronic and control components
+linked by floating parameters for the prediction. In one signal \htcat~category, J, 
+the hadronic component may be written as a multiple of Poisson likelihoods
+for the observation in each \mht bin 
+($\mathrm{Pois}(n|\lambda) \equiv e^{-n}\frac{\lambda^{n}}{n!}$):
+
+\begin{multline}
+\label{eq:hadronicLikelihood}
+\mathcal{L}^{J}_{\mathrm{had}} = \prod_i \mathcal{L}^{J,i}_{\mathrm{had}} = \prod_i \mathrm{Pois}(n^{J,i}_{\mathrm{had}} |\sum_{j \in J}\, b^{j,i}_{\zInv~,\mathrm{had}}\times\phi^{j}(\mu\mu\rightarrow\zInv~)\times a_{\zInv~}^{j}\times\rho^{j,i}_{\zInv~,\mathrm{had}}\, + \\ 
+b^{j,i}_{\ttw,\mathrm{had}}\times\phi^{j}(\mu\rightarrow\ttw)\times a_{\ttw}^{j}\times\rho^{j,i}_{\ttw,\mathrm{had}}\, + b^{j,i}_{\text{QCD},\mathrm{had}}\times\omega^{j,i}_{\text{QCD},\mathrm{had}} + \,r\times s^{j,i}_{\mathrm{had}}\times\rho^{j,i}_{s,\mathrm{had}}) 
+\end{multline}
+
+where 
+the product is over each \mht bin, i, in the \htcat~category;
+the sum over j accounts for the fine control region predictions in \scalht; 
+$b^{j,i}_{\zInv~/\ttw,\mathrm{had}}$ are the predicted number 
+of events from simulation for the electroweak backgrounds (categorised according to the control region binning); 
+$b^{j,i}_{\text{QCD},\mathrm{had}}$ are the predicted 
+number of events for the QCD multijet component (from the method described in Section~\ref{sec:qcd});
+the $a_{\zInv~/\ttw}^{j}$ parameters are unconstrained and connect the prediction of the signal region
+to the control regions (see below); $\phi^{j}$ contains the systematic uncertainties on the 
+transfer factors from the data-driven tests; $\rho^{j,i}$ contains the systematics from 
+variations in simulation, the systematics derived from the control regions on the~\mht shape 
+and the uncertainty from the limited number of simulated events; 
+$r$ is the unconstrained `signal strength' parameter and $\omega_{\text{QCD},\mathrm{had}}^{j,i}$ 
+contains the uncertainties on the QCD multijet component. 
+
+The \ttw component is predicted using the \mj control region. The relevant 
+components of the likelihood, which is not categorised in \mht, may be written as:
+
+\begin{equation}
+\label{eq:muLikelihood}
+\mathcal{L}^{j}_{\mu} = \mathrm{Pois}(n^{j}_{\mu} |\, b^{j}_{\mu}\times a_{\ttw}^{j}\times\rho^{j}_{\mu} +\, b^{j}_{\text{QCD},\,\mu} + \,r \times s^{j}_{\mu}\times\rho^{j}_{s,\mu})
+\end{equation}
+
+similarly to Equation~\ref{eq:hadronicLikelihood}, $\rho^{j}_{\mu}$ contains the uncertainty in the control \htcat from variations in simulation. 
+The signal contamination in the control region is encoded by $s^{j}_{\mu}$, which is small by design. 
+The connection between the control and signal region
+is included by the unconstrained $a_{\ttw}^{j}$ parameter. The 
+subdominant QCD component, $b^{j}_{\text{QCD},\,\mu}$, is taken from simulation. 
+
+The \zInv~component in the signal region is predicted using the \mmj control regions. 
+Within each category of \njet and \scalht the prediction is correlated 
+for  $\nb \geq 1$. The relevant components of the likelihood, which is not categorised in \mht, may be written as:
+
+\begin{equation}
+\label{eq:mumuLikelihood}
+\mathcal{L}^{j}_{\mu\mu} = \mathrm{Pois}(n^{j}_{\mu\mu} |\, b^{j}_{\mu\mu}\times a_{\zInv~}^{j}\times\rho^{j}_{\mu\mu} +\, b^{j}_{\text{QCD},\,\mu\mu} + \,r \times s^{j}_{\mu\mu}\times\rho^{j}_{s,\mu\mu})
+\end{equation}
+
+where parameters are defined as in Equations~\ref{eq:hadronicLikelihood} and~\ref{eq:muLikelihood}. 
+The $a_{\zInv~}^{j}$ parameter is correlated for $\nb \geq 1$ within each 
+category of \njet and \scalht.
+
+The modifier and constraint terms of the parameters representing the systematic uncertainties and 
+connections between control and signal regions are summarised below:
+
+\begin{itemize}
+\item The transfer factor systematics and uncertainties on the QCD multijet contribution 
+are taken to be `log normal' uncertainties such that the logarithm of the variable has 
+a Gaussian (normal) constraint~\cite{templateMorphing}. These uncertainties are correlated per topology and \scalht bin 
+(pair of \scalht bins for uncertainties derived using \mmj)
+\item The systematic uncertainties from variations in simulation and those derived on the \mht~shape from the control regions 
+are included using `vertical template morphing'~\cite{templateMorphing}. For vertical template morphing, the yield
+in each bin is interpolated quadratically between the $\pm 1\sigma$ variations for each source of
+uncertainty and extrapolated linearly beyond this range. The constraint term is Gaussian
+with mean 0 and width 1. The uncertainties from simulation and those derived from the control regions
+are fully correlated and uncorrelated across all categories respectively.
+\item The Poisson uncertainty due to the limited number of simulated events is approximated using
+two parameters per bin that multiply the total background and signal contributions and 
+are Gaussian constrained. The relevant correlations induced from the 'formula method` (described in Sec.~\ref{sec:formula}) 
+are included. 
+\end{itemize}
+
+The total likelihood (including the constraint terms in $\mathcal{L}_\mathrm{constraint}$) 
+can be written as a product over all (signal) \htcat~bins:
+
+\begin{equation}
+\label{eq:totalLikelihood}
+\mathcal{L} =  \mathcal{L}_\mathrm{constraint} \times \prod_{J\in\htcat} \mathcal{L}^{J}_{\mathrm{had}} \times  \prod_{j\in J} \mathcal{L}^{j}_{\mu\mu} 
+\times \mathcal{L}^{j}_{\mu}
+\end{equation}
+
+
