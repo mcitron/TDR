@@ -78,8 +78,8 @@
 
 \cmsNoteHeader{SUS-16-038}
 
-\title{Search for supersymmetry in pp collisions using final states
-  with at least one jet and missing transverse momentum}
+\title{Search for new physics in pp collisions using final states with
+  at least one jet and missing transverse momentum}
 \titlerunning{Search for new physics in pp collisions using final
   states with at least one jet and missing transverse momentum}
 
@@ -88,23 +88,23 @@
 
 \date{\today}
 
-\abstract{A search for supersymmetry is performed in final states
+\abstract{A search for new physics is performed in final states
   containing one or more jets and an imbalance in transverse
   momentum. A sample of events resulting from pp collisions at a
   centre-of-mass energy of 13\TeV is analysed. The event data were
   recorded with the CMS detector at the CERN LHC in 2016 and
   correspond to an integrated luminosity of 35.9\fbinv. The search
-  provides sensitivity to models that predict a stable weakly
-  interacting massive particle, such as the neutralino. The search
-  employs several kinematic variables to suppress multijet production
-  to a subdominant level with respect to all other standard model
-  background processes. Further kinematic variables are used for
-  signal extraction using a binned maximum-likelihood fit to the
-  data. The number of candidate signal events is found to agree with
-  the expected event counts from standard model processes.  The result
-  is interpretated using simplified supersymmetric models that assume
-  the gluino-mediated or direct production of top or bottom squark
-  pairs. 
+  provides sensitivity to supersymmetric and nonsupersymmetric models
+  that predict a stable weakly interacting massive particle, such as
+  the neutralino. The search employs several kinematic variables to
+  suppress multijet production to a subdominant level with respect to
+  all other standard model background processes. Further kinematic
+  variables are used to provide signal-to-background discrimination. A
+  binned maximum-likelihood fit to the data reveals that the number of
+  candidate events is found to agree with the expected event counts
+  from standard model processes. The result is interpretated using
+  simplified supersymmetric models that assume the gluino-mediated or
+  direct production of top or bottom squark pairs.
 %  A number of simplified supersymmetric models that assume the
 %  production of gluino or squark pairs that decay to neutralinos and
 %  standard model particles, are used to interpret the result. For
@@ -124,7 +124,7 @@
     Flaecher, Aran Garcia-Bellido, Christian Laner, Kin Ho Lo, Sarah
     Alam Malik, Bjoern Penning, Tai Sakuma, Dominic Smith, Alex
     Tapper},
-  pdftitle={Search for supersymmetry in pp collisions using final
+  pdftitle={Search for new physics in pp collisions using final
     states with at least one jet and missing transverse momentum},
   pdfsubject={CMS},
   pdfkeywords={CMS, jets, monojet, missing transverse momentum,
@@ -1633,3 +1633,55 @@ as high as 1900, 1075, and 1040\GeV, respectively.
 %    \hline
 %  \end{tabular}
 %\end{table}
+
+
+\newcommand{\tmp}{\phantom{, 200}}
+\begin{table}[!t]
+  \topcaption{Summary of the \mht binning scheme as a function of
+    \njet, \nb, and \scalht [GeV]. The \mht values signify the
+    lower bound of each bin. Each bin is bounded from above by the
+    following one, except for the final entry, which corresponds to
+    the final open \mht bin indicated by the $>$ symbol. A dash
+    (--) signifies that the (\njet, \nb \scalht) category is not used
+    in the analysis. The $\njet = 1$ category is not shown, as
+    $\scalht \equiv \mht$. }
+  \label{tab:SR_binning}
+  \small
+  \centering
+  \begin{tabular}{rrllll}
+    \hline
+    \njet\T\B         & \nb      & \multicolumn{4}{c}{\scalht [GeV]}                                                             \\ 
+    \cline{3-6}
+                      &          & 400\T\B               & 600                   & 900                   & 1200                  \\
+    \hline
+%    1                & 0        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+%    1                & 1        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}\T & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}   & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}   & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}\B & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & --                    & --                    \\ 
+    2\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    2                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    2\B               & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+    3\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    3                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    3                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    3\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+    4\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    4                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    4                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    4\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+    5\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    5                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    5                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    5                 & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+    5\B               & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+    $\geq 6$\T        & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$\B        & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+    \hline
+  \end{tabular}
+\end{table}
+
