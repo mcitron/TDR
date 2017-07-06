@@ -42,6 +42,9 @@ mkdir ${BASE}/mono/
 mkdir ${BASE}/asym/
 mkdir ${BASE}/symm/
 mkdir ${BASE}/all/
+mkdir ${BASE}/postfit/nuis/
+mkdir ${BASE}/postfit/shapes/
+mkdir ${BASE}/crfit/shapes/
 
 wget -O ${BASE}/mono/summaryPlot_Monojet_prefit.pdf               ${MR}/summaryPlot_Monojet_prefit.pdf
 wget -O ${BASE}/mono/summaryPlot_Monojet_fit_b.pdf                ${MR}/summaryPlot_Monojet_fit_b.pdf
@@ -60,10 +63,10 @@ wget -O ${BASE}/all/pulls_all_prefit.pdf ${MR}/pulls_all_prefit.pdf
 wget -O ${BASE}/all/pull2D_CROnlyFit.pdf ${PULL_CR}
 
 #wget -P ${BASE}/prefit/nuis/ ${NUIS_PRE}/
-#wget -P ${BASE}/postfit/nuis/ ${NUIS_POST}/
+wget -P ${BASE}/postfit/nuis/ ${NUIS_POST}/
 
 #wget -P ${BASE}/prefit/shapes/ ${SHAPE_PRE}/
-#wget -P ${BASE}/crfit/shapes/ ${SHAPE_CR}/
-#wget -P ${BASE}/postfit/shapes/ ${SHAPE_POST}/
+wget -P ${BASE}/crfit/shapes/ ${SHAPE_CR}/
+wget -P ${BASE}/postfit/shapes/ ${SHAPE_POST}/
 
 unalias wget
