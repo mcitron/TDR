@@ -245,8 +245,8 @@ are described in this section and summarised in
 Table~\ref{tab:cr-selections}.
 
 \begin{table}[!h]
-  \topcaption{Summary of the event selection criteria for the signal
-    region. The criteria are applied in addition to the pre-selection
+  \topcaption{Summary of the event selection criteria for the control
+    regions. The criteria are applied in addition to the pre-selection
     requirements listed in Table~\ref{tab:pre-selections}. One of the
     lepton or photon vetoes in Table~\ref{tab:sr-selections} are
     inverted to define each lepton- or photon-based control
@@ -581,12 +581,6 @@ $\nb = 0$) and (\njet, \scalht, $\nb \geq 1$), with the single
 exception of ($\njet = 1$, $\scalht > 900$, $\nb \geq 0$), for which
 the \nb dimension is completely collapsed. 
 
-Figure~\ref{fig:cr-counts} (in Appendix~\ref{app:selection}) shows the
-event counts as a function of \njet, \nb, and \scalht in \mj, \mmj,
-and \gj samples. The binning utilised by the analysis aims to maintain
-sufficiently high counts to operate mainly in the Gaussian regime, and
-is summarised in Table~\ref{tab:sr-binning}.
-
 \begin{table}[!h]
   \topcaption{Summary of the lower bound of the final open \scalht bin
     [GeV] as a function of \njet and \nb. The lower bound of the first
@@ -659,7 +653,58 @@ bins for each template are merged until this requirement is satisfied.
 \subsubsection{Summary of event categorisation}
 \label{sec:binning-summary}
 
-The binning strategy is summarised as follows: 
+\newcommand{\tmp}{\phantom{, 200}}
+\begin{table}[!t]
+  \topcaption{Summary of the \HTmiss binning scheme as a function of
+    \njet, \nb, and \scalht [GeV]. The \HTmiss values signify the
+    lower bound of each bin. Each bin is bounded from above by the
+    following one, except for the final entry, which corresponds to
+    the final open \HTmiss bin indicated by the $>$ symbol. A dash
+    (--) signifies that the (\njet, \nb \scalht) category is not used
+    in the analysis. The $\njet = 1$ category is not shown, as
+    $\scalht \equiv \mht$. }
+  \label{tab:SR_binning}
+  \small
+  \centering
+  \begin{tabular}{rrllll}
+    \hline
+    \njet\T\B         & \nb      & \multicolumn{4}{c}{\scalht [GeV]}                                                             \\ 
+    \cline{3-6}
+                      &          & 400\T\B               & 600                   & 900                   & 1200                  \\
+    \hline
+%    1                & 0        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+%    1                & 1        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}\T & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}   & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}   & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+    $\geq 2${\it a}\B & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & --                    & --                    \\ 
+    2\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    2                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    2\B               & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+    3\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    3                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    3                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    3\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+    4\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    4                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    4                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    4\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+    5\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    5                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    5                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+    5                 & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+    5\B               & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+    $\geq 6$\T        & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$\B        & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+    \hline
+  \end{tabular}
+\end{table}
+
+The binning strategy employed in the signal region is shown in
+Table~\ref{tab:SR_binning}, and can be summarised as follows:
 \begin{itemize}
 \item In the signal and all control regions, seven \njet categories
   are employed (Table~\ref{tab:njet-binning}). 
@@ -692,10 +737,51 @@ The total number of measurements used in the binned likelihood fit,
 which includes the signal, \mj, and \mmj control regions, is 276 + 204
 + 121 = 601. (The multijet background estimates are determined in a
 separate fit.) Further details can be found in
-Sec.~\ref{sec:likelihood}.
+Sec.~\ref{sec:likelihood}. 
 
-\subsection{Breakdown of SM backgrounds in signal region}%and control regions}
+\subsection{Simplified binning scheme}
+\label{sec:aggregated}
+
+\begin{table}[!tb]
+  \centering
+  \caption{The event topologies, defined in terms of
+    requirements on \njet and \nb, for the simplified binning
+    scheme. Events are further categorised according to four \mht bins
+    per topology.
+    \label{tab:aggrsr}
+  }
+  \begin{tabular}{lccc}
+    \hline
+    Topology     & \njet categories  & Low \nb & High \nb \\
+    \hline
+    Monojet-like & 1, $\geq$2{\it a} & 0       & $\geq$1  \\
+    Low \njet    & 2, 3              & 0--1    & $\geq$2  \\
+    Medium \njet & 3, 4              & 0--1    & $\geq$2  \\
+    High \njet   & 5, $\geq$6        & 0--1    & $\geq$2  \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Data counts and SM background estimates are aslo provided for an
+alternate, simplified binning scheme in which events are organised
+into eight distinct topologies defined in terms of \njet and \nb, as
+summarised in Table~\ref{tab:aggrsr}. For each topology, event yields
+are integrated over the full \scalht range and categorised according
+to the four bins in \mht defined above. This scheme leads to 32 bins
+that are exclusive, contiguous, and provide a complete coverage of the
+signal region. The SM background estimates are based on the same
+likelihood model used to determine the nominal result.
+
+\subsection{Breakdown of SM backgrounds in signal region}
 \label{sec:smbreakdown}
+
+\begin{figure}[h!]
+  \centering
+  \caption{Breakdown of SM backgrounds in the signal region as
+    determined from simulation.}
+  \label{fig:breakdownmc}
+  \includegraphics[width=0.8\linewidth]{figures/results/36invfb/breakdown/prefit/Signal_sample_composition.pdf}\\
+\end{figure}
 
 Figure~\ref{fig:breakdownmc} summarises the breakdown of SM
 backgrounds, categorised as lost lepton, \znunuj, or multijet, in the
@@ -704,10 +790,50 @@ of the event selection criteria detailed in Sec.~\ref{sec:had-signal}
 and categorised according to the scheme outlined in
 Sec.~\ref{sec:event-categorisation}.
 
+\subsection{Data counts and SM processes in control regions}
+\label{sec:crbreakdown}
+
+Figures~\ref{fig:cr-counts-mj} and \ref{fig:breakdown-mj} show,
+respectively, the event counts and SM breakdown, as determined from
+simulation, as a function of \njet, \nb, and \scalht for the \mj
+control sample. The binning utilised by the analysis aims to maintain
+sufficiently high control-region data counts to operate mainly in the
+Gaussian regime. Figures~\ref{fig:cr-counts-mmj} and
+\ref{fig:breakdown-mmj} show the same information for the \mmj control
+region.
+
+\clearpage
+\begin{figure}[h!]
+  \begin{center}
+    {\includegraphics[width=0.8\textwidth]{figures/control_regions/SingleMu.pdf}} 
+    \caption{Event counts in data as a function of (\njet, \nb,
+      \scalht) in the \mj control region for 35.9\fbinv.}
+    \label{fig:cr-counts-mj}
+  \end{center}
+\end{figure}
+
 \begin{figure}[h!]
   \centering
-  \caption{Breakdown of SM backgrounds in the signal region as
+  \caption{Breakdown of SM processes in the \mj control region as
     determined from simulation.}
-  \label{fig:breakdownmc}
-  \includegraphics[width=0.8\linewidth]{figures/results/36invfb/breakdown/prefit/Signal_sample_composition.pdf}\\
+  \label{fig:breakdown-mj}
+  \includegraphics[width=0.8\linewidth]{figures/control_regions/SingleMuSitV_MC_sampleComp}\\
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \begin{center}
+    {\includegraphics[width=0.8\textwidth]{figures/control_regions/DoubleMu.pdf}} 
+    \caption{Event counts in data as a function of (\njet, \nb,
+      \scalht) in the \mmj control region for 35.9\fbinv.}
+    \label{fig:cr-counts-mmj}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \caption{Breakdown of SM processes in the \mmj control region as
+    determined from simulation.}
+  \label{fig:breakdown-mmj}
+  \includegraphics[width=0.8\linewidth]{figures/control_regions/DoubleMuSitV_MC_sampleComp}\\
 \end{figure}
