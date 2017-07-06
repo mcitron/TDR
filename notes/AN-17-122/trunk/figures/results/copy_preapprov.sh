@@ -36,6 +36,7 @@ NUIS_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630
 #SHAPE_PRE="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170616/Unblinding36fb2017_v3_formulaSyst/postCRFitShape/" #@@
 SHAPE_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630/Unblinding36fb2017_v14_formulaSyst/postFitCRShape/"
 SHAPE_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630/Unblinding36fb2017_v14_formulaSyst/postFitFullShape/"
+PULL_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630/Unblinding36fb2017_v14_formulaSyst/Pull/CROnlyFit_2DPull.pdf"
 
 mkdir ${BASE}/mono/
 mkdir ${BASE}/asym/
@@ -56,6 +57,7 @@ wget -O ${BASE}/symm/summaryPlot_Symmetric_prefit_overlay_fit_b.pdf ${MR}/summar
 
 wget -O ${BASE}/all/ratios_all_prefit.pdf ${MR}/ratios_all_prefit.pdf
 wget -O ${BASE}/all/pulls_all_prefit.pdf ${MR}/pulls_all_prefit.pdf
+wget -O ${BASE}/all/pull2D_CROnlyFit.pdf ${PULL_CR}
 
 #wget -P ${BASE}/prefit/nuis/ ${NUIS_PRE}/
 #wget -P ${BASE}/postfit/nuis/ ${NUIS_POST}/
