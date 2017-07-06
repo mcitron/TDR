@@ -37,6 +37,7 @@ NUIS_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630
 SHAPE_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630/Unblinding36fb2017_v14_formulaSyst/postFitCRShape/"
 SHAPE_POST="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630/Unblinding36fb2017_v14_formulaSyst/postFitFullShape/"
 PULL_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170630/Unblinding36fb2017_v14_formulaSyst/Pull/CROnlyFit_2DPull.pdf"
+AGGREGATED_CR="http://www.hep.ph.ic.ac.uk/~klo2/RA1/BTagFormula/FullFit/Log/20170706/SuperSR/Unblinding36fb2017_v11/postFitCRShape/"
 
 mkdir ${BASE}/mono/
 mkdir ${BASE}/asym/
@@ -68,5 +69,6 @@ wget -P ${BASE}/postfit/nuis/ ${NUIS_POST}/
 #wget -P ${BASE}/prefit/shapes/ ${SHAPE_PRE}/
 wget -P ${BASE}/crfit/shapes/ ${SHAPE_CR}/
 wget -P ${BASE}/postfit/shapes/ ${SHAPE_POST}/
+wget -P ${BASE}/aggregated/postFitShapeCR/ ${AGGREGATED_CR}/ 
 
 unalias wget
