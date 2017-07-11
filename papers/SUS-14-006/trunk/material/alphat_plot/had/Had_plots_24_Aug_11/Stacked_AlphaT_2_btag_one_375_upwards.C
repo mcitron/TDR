@@ -1,0 +1,842 @@
+void Stacked_AlphaT_2_btag_one_375_upwards()
+{
+//=========Macro generated from canvas: canvasbtag_one_375_475/AlphaT_2/cannameAlphaT_2
+//=========  (Wed Aug 24 11:54:25 2016) by ROOT version6.06/06
+   TCanvas *canvasbtag_one_375_475/AlphaT_2 = new TCanvas("canvasbtag_one_375_475/AlphaT_2", "cannameAlphaT_2",1,1,1200,976);
+   gStyle->SetOptFit(1);
+   gStyle->SetOptStat(0);
+   canvasbtag_one_375_475/AlphaT_2->SetHighLightColor(2);
+   canvasbtag_one_375_475/AlphaT_2->Range(0,0,1,1);
+   canvasbtag_one_375_475/AlphaT_2->SetFillColor(0);
+   canvasbtag_one_375_475/AlphaT_2->SetBorderMode(0);
+   canvasbtag_one_375_475/AlphaT_2->SetBorderSize(2);
+   canvasbtag_one_375_475/AlphaT_2->SetTickx(1);
+   canvasbtag_one_375_475/AlphaT_2->SetTicky(1);
+   canvasbtag_one_375_475/AlphaT_2->SetFrameBorderMode(0);
+  
+// ------------>Primitives in pad: u
+   TPad *u = new TPad("u", "u",0.01,0.25,0.99,0.99);
+   u->Draw();
+   u->cd();
+   u->Range(-0.3875,-1.492471,3.4875,3.846164);
+   u->SetFillColor(0);
+   u->SetBorderMode(0);
+   u->SetBorderSize(2);
+   u->SetLogy();
+   u->SetTickx(1);
+   u->SetTicky(1);
+   u->SetFrameBorderMode(0);
+   u->SetFrameBorderMode(0);
+   Double_t xAxis1729[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1625 = new TH1D("plot__1625","",24, xAxis1729);
+   plot__1625->SetBinContent(10,183);
+   plot__1625->SetBinContent(11,87);
+   plot__1625->SetBinContent(12,48);
+   plot__1625->SetBinContent(13,22);
+   plot__1625->SetBinContent(14,19);
+   plot__1625->SetBinContent(15,10);
+   plot__1625->SetBinContent(16,6.5);
+   plot__1625->SetBinContent(17,8);
+   plot__1625->SetBinContent(18,4.2);
+   plot__1625->SetBinContent(19,2.2);
+   plot__1625->SetBinContent(20,1.2);
+   plot__1625->SetBinContent(21,0.7);
+   plot__1625->SetBinContent(22,0.6);
+   plot__1625->SetBinContent(23,3);
+   plot__1625->SetBinContent(24,0.03623188);
+   plot__1625->SetBinError(10,13.52775);
+   plot__1625->SetBinError(11,9.327379);
+   plot__1625->SetBinError(12,6.928203);
+   plot__1625->SetBinError(13,4.690416);
+   plot__1625->SetBinError(14,4.358899);
+   plot__1625->SetBinError(15,2.236068);
+   plot__1625->SetBinError(16,2.68);
+   plot__1625->SetBinError(17,3.03);
+   plot__1625->SetBinError(18,2.3);
+   plot__1625->SetBinError(19,2);
+   plot__1625->SetBinError(20,1);
+   plot__1625->SetBinError(23,2);
+   plot__1625->SetBinError(24,0.01620339);
+   plot__1625->SetMinimum(0.11);
+   plot__1625->SetMaximum(2052.58);
+   plot__1625->SetEntries(514);
+
+   Int_t ci;      // for color index setting
+   TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#000099");
+   plot__1625->SetLineColor(ci);
+   plot__1625->SetLineWidth(2);
+   plot__1625->SetMarkerStyle(20);
+   plot__1625->SetMarkerSize(1.5);
+   plot__1625->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1625->GetXaxis()->SetRange(1,23);
+   plot__1625->GetXaxis()->SetLabelFont(42);
+   plot__1625->GetXaxis()->SetLabelSize(0.035);
+   plot__1625->GetXaxis()->SetTitleSize(0.035);
+   plot__1625->GetXaxis()->SetTitleFont(42);
+   plot__1625->GetYaxis()->SetTitle("Events");
+   plot__1625->GetYaxis()->SetLabelFont(42);
+   plot__1625->GetYaxis()->SetLabelSize(0.035);
+   plot__1625->GetYaxis()->SetTitleSize(0.035);
+   plot__1625->GetYaxis()->SetTitleOffset(1.3);
+   plot__1625->GetYaxis()->SetTitleFont(42);
+   plot__1625->GetZaxis()->SetLabelFont(42);
+   plot__1625->GetZaxis()->SetLabelSize(0.035);
+   plot__1625->GetZaxis()->SetTitleSize(0.035);
+   plot__1625->GetZaxis()->SetTitleFont(42);
+   plot__1625->Draw("");
+   
+   THStack * = new THStack();
+   ->SetName("");
+   ->SetTitle("");
+   Double_t xAxis1730[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1F *_stack_105 = new TH1F("_stack_105","",24, xAxis1730);
+   _stack_105->SetMinimum(0.0821032);
+   _stack_105->SetMaximum(328.4128);
+   _stack_105->SetDirectory(0);
+   _stack_105->SetStats(0);
+   _stack_105->GetXaxis()->SetLabelFont(42);
+   _stack_105->GetXaxis()->SetLabelOffset(0.007);
+   _stack_105->GetXaxis()->SetLabelSize(0.05);
+   _stack_105->GetXaxis()->SetTitleSize(0.05);
+   _stack_105->GetYaxis()->SetLabelFont(42);
+   _stack_105->GetYaxis()->SetLabelOffset(0.007);
+   _stack_105->GetYaxis()->SetLabelSize(0.05);
+   _stack_105->GetZaxis()->SetLabelFont(42);
+   _stack_105->GetZaxis()->SetLabelOffset(0.007);
+   _stack_105->GetZaxis()->SetLabelSize(0.05);
+   ->SetHistogram(_stack_105);
+   
+   Double_t xAxis1731[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1626 = new TH1D("plot__1626","",24, xAxis1731);
+   plot__1626->SetEntries(25);
+   plot__1626->SetFillColor(7);
+   plot__1626->SetLineColor(7);
+   plot__1626->SetLineStyle(10);
+   plot__1626->SetLineWidth(3);
+   plot__1626->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1626->GetXaxis()->SetRange(1,23);
+   plot__1626->GetXaxis()->SetLabelFont(42);
+   plot__1626->GetXaxis()->SetLabelSize(0.035);
+   plot__1626->GetXaxis()->SetTitleSize(0.035);
+   plot__1626->GetXaxis()->SetTitleFont(42);
+   plot__1626->GetYaxis()->SetTitle("Events/0.025");
+   plot__1626->GetYaxis()->SetLabelFont(42);
+   plot__1626->GetYaxis()->SetLabelSize(0.035);
+   plot__1626->GetYaxis()->SetTitleSize(0.035);
+   plot__1626->GetYaxis()->SetTitleFont(42);
+   plot__1626->GetZaxis()->SetLabelFont(42);
+   plot__1626->GetZaxis()->SetLabelSize(0.035);
+   plot__1626->GetZaxis()->SetTitleSize(0.035);
+   plot__1626->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   Double_t xAxis1732[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1627 = new TH1D("plot__1627","",24, xAxis1732);
+   plot__1627->SetBinContent(10,0.4100202);
+   plot__1627->SetBinContent(11,0.04102613);
+   plot__1627->SetBinContent(12,0.0666919);
+   plot__1627->SetBinContent(13,0.0355547);
+   plot__1627->SetBinContent(15,0.01248167);
+   plot__1627->SetBinContent(17,0.03128044);
+   plot__1627->SetBinContent(18,0.01016845);
+   plot__1627->SetBinContent(21,0.00204036);
+   plot__1627->SetBinError(10,0.1276132);
+   plot__1627->SetBinError(11,0.0314455);
+   plot__1627->SetBinError(12,0.03956586);
+   plot__1627->SetBinError(13,0.0254593);
+   plot__1627->SetBinError(15,0.01248167);
+   plot__1627->SetBinError(17,0.0177228);
+   plot__1627->SetBinError(18,0.007198765);
+   plot__1627->SetBinError(21,0.00204036);
+   plot__1627->SetEntries(53);
+   plot__1627->SetFillColor(6);
+   plot__1627->SetLineColor(6);
+   plot__1627->SetLineWidth(3);
+   plot__1627->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1627->GetXaxis()->SetRange(1,23);
+   plot__1627->GetXaxis()->SetLabelFont(42);
+   plot__1627->GetXaxis()->SetLabelSize(0.035);
+   plot__1627->GetXaxis()->SetTitleSize(0.035);
+   plot__1627->GetXaxis()->SetTitleFont(42);
+   plot__1627->GetYaxis()->SetTitle("Events/0.025");
+   plot__1627->GetYaxis()->SetLabelFont(42);
+   plot__1627->GetYaxis()->SetLabelSize(0.035);
+   plot__1627->GetYaxis()->SetTitleSize(0.035);
+   plot__1627->GetYaxis()->SetTitleFont(42);
+   plot__1627->GetZaxis()->SetLabelFont(42);
+   plot__1627->GetZaxis()->SetLabelSize(0.035);
+   plot__1627->GetZaxis()->SetTitleSize(0.035);
+   plot__1627->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   Double_t xAxis1733[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1628 = new TH1D("plot__1628","",24, xAxis1733);
+   plot__1628->SetBinContent(10,2.349103);
+   plot__1628->SetBinContent(11,1.144857);
+   plot__1628->SetBinContent(12,0.69187);
+   plot__1628->SetBinContent(13,0.5174021);
+   plot__1628->SetBinContent(14,0.2068703);
+   plot__1628->SetBinContent(15,0.2888968);
+   plot__1628->SetBinContent(16,0.1508664);
+   plot__1628->SetBinContent(17,0.06788305);
+   plot__1628->SetBinContent(18,0.0973789);
+   plot__1628->SetBinContent(19,0.0269104);
+   plot__1628->SetBinContent(20,0.02886081);
+   plot__1628->SetBinContent(21,0.0500401);
+   plot__1628->SetBinContent(22,0.006029435);
+   plot__1628->SetBinContent(23,0.01989904);
+   plot__1628->SetBinContent(24,0.0002883919);
+   plot__1628->SetBinError(10,0.4513211);
+   plot__1628->SetBinError(11,0.22332);
+   plot__1628->SetBinError(12,0.2049593);
+   plot__1628->SetBinError(13,0.1531393);
+   plot__1628->SetBinError(14,0.0710785);
+   plot__1628->SetBinError(15,0.05912023);
+   plot__1628->SetBinError(16,0.07001127);
+   plot__1628->SetBinError(17,0.0170553);
+   plot__1628->SetBinError(18,0.03229151);
+   plot__1628->SetBinError(19,0.01150985);
+   plot__1628->SetBinError(20,0.01294512);
+   plot__1628->SetBinError(21,0.02240808);
+   plot__1628->SetBinError(22,0.003602759);
+   plot__1628->SetBinError(23,0.09974729);
+   plot__1628->SetBinError(24,0.0002045899);
+   plot__1628->SetEntries(290);
+   plot__1628->SetFillColor(44);
+   plot__1628->SetLineColor(44);
+   plot__1628->SetLineWidth(3);
+   plot__1628->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1628->GetXaxis()->SetRange(1,23);
+   plot__1628->GetXaxis()->SetLabelFont(42);
+   plot__1628->GetXaxis()->SetLabelSize(0.035);
+   plot__1628->GetXaxis()->SetTitleSize(0.035);
+   plot__1628->GetXaxis()->SetTitleFont(42);
+   plot__1628->GetYaxis()->SetTitle("Events/0.025");
+   plot__1628->GetYaxis()->SetLabelFont(42);
+   plot__1628->GetYaxis()->SetLabelSize(0.035);
+   plot__1628->GetYaxis()->SetTitleSize(0.035);
+   plot__1628->GetYaxis()->SetTitleFont(42);
+   plot__1628->GetZaxis()->SetLabelFont(42);
+   plot__1628->GetZaxis()->SetLabelSize(0.035);
+   plot__1628->GetZaxis()->SetTitleSize(0.035);
+   plot__1628->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   Double_t xAxis1734[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1629 = new TH1D("plot__1629","",24, xAxis1734);
+   plot__1629->SetBinContent(10,10.18996);
+   plot__1629->SetBinContent(11,1.310089);
+   plot__1629->SetBinContent(12,2.161156);
+   plot__1629->SetBinContent(13,1.105092);
+   plot__1629->SetBinContent(15,0.2583122);
+   plot__1629->SetBinContent(16,0.2605135);
+   plot__1629->SetBinContent(17,0.1033717);
+   plot__1629->SetBinContent(19,0.1115777);
+   plot__1629->SetBinContent(21,0.1149339);
+   plot__1629->SetBinContent(22,0.06160481);
+   plot__1629->SetBinContent(23,0.07343113);
+   plot__1629->SetBinContent(24,0.001064219);
+   plot__1629->SetBinError(10,2.152241);
+   plot__1629->SetBinError(11,0.8568032);
+   plot__1629->SetBinError(12,1.093664);
+   plot__1629->SetBinError(13,0.7829516);
+   plot__1629->SetBinError(15,0.2583122);
+   plot__1629->SetBinError(16,0.2605135);
+   plot__1629->SetBinError(17,0.1033717);
+   plot__1629->SetBinError(19,0.08940111);
+   plot__1629->SetBinError(21,0.08145432);
+   plot__1629->SetBinError(22,0.06160481);
+   plot__1629->SetBinError(23,0.1916131);
+   plot__1629->SetBinError(24,0.001064219);
+   plot__1629->SetEntries(67);
+   plot__1629->SetFillColor(40);
+   plot__1629->SetLineColor(40);
+   plot__1629->SetLineWidth(3);
+   plot__1629->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1629->GetXaxis()->SetRange(1,23);
+   plot__1629->GetXaxis()->SetLabelFont(42);
+   plot__1629->GetXaxis()->SetLabelSize(0.035);
+   plot__1629->GetXaxis()->SetTitleSize(0.035);
+   plot__1629->GetXaxis()->SetTitleFont(42);
+   plot__1629->GetYaxis()->SetTitle("Events/0.025");
+   plot__1629->GetYaxis()->SetLabelFont(42);
+   plot__1629->GetYaxis()->SetLabelSize(0.035);
+   plot__1629->GetYaxis()->SetTitleSize(0.035);
+   plot__1629->GetYaxis()->SetTitleFont(42);
+   plot__1629->GetZaxis()->SetLabelFont(42);
+   plot__1629->GetZaxis()->SetLabelSize(0.035);
+   plot__1629->GetZaxis()->SetTitleSize(0.035);
+   plot__1629->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   Double_t xAxis1735[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1630 = new TH1D("plot__1630","",24, xAxis1735);
+   plot__1630->SetBinContent(10,46.61448);
+   plot__1630->SetBinContent(11,17.37328);
+   plot__1630->SetBinContent(12,9.349522);
+   plot__1630->SetBinContent(13,6.447297);
+   plot__1630->SetBinContent(14,4.995693);
+   plot__1630->SetBinContent(15,2.760226);
+   plot__1630->SetBinContent(16,1.31688);
+   plot__1630->SetBinContent(17,1.101387);
+   plot__1630->SetBinContent(18,0.7102373);
+   plot__1630->SetBinContent(19,0.234259);
+   plot__1630->SetBinContent(20,0.40216);
+   plot__1630->SetBinContent(21,0.1736472);
+   plot__1630->SetBinContent(22,0.06795249);
+   plot__1630->SetBinContent(23,0.6005569);
+   plot__1630->SetBinContent(24,0.007383927);
+   plot__1630->SetBinError(10,2.611415);
+   plot__1630->SetBinError(11,1.558609);
+   plot__1630->SetBinError(12,1.230965);
+   plot__1630->SetBinError(13,0.9603744);
+   plot__1630->SetBinError(14,0.8474468);
+   plot__1630->SetBinError(15,0.4551328);
+   plot__1630->SetBinError(16,0.284989);
+   plot__1630->SetBinError(17,0.1800652);
+   plot__1630->SetBinError(18,0.1466479);
+   plot__1630->SetBinError(19,0.080115);
+   plot__1630->SetBinError(20,0.1161277);
+   plot__1630->SetBinError(21,0.04697121);
+   plot__1630->SetBinError(22,0.0317881);
+   plot__1630->SetBinError(23,0.5479767);
+   plot__1630->SetBinError(24,0.002784442);
+   plot__1630->SetEntries(914);
+   plot__1630->SetFillColor(4);
+   plot__1630->SetLineColor(4);
+   plot__1630->SetLineWidth(3);
+   plot__1630->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1630->GetXaxis()->SetRange(1,23);
+   plot__1630->GetXaxis()->SetLabelFont(42);
+   plot__1630->GetXaxis()->SetLabelSize(0.035);
+   plot__1630->GetXaxis()->SetTitleSize(0.035);
+   plot__1630->GetXaxis()->SetTitleFont(42);
+   plot__1630->GetYaxis()->SetTitle("Events/0.025");
+   plot__1630->GetYaxis()->SetLabelFont(42);
+   plot__1630->GetYaxis()->SetLabelSize(0.035);
+   plot__1630->GetYaxis()->SetTitleSize(0.035);
+   plot__1630->GetYaxis()->SetTitleFont(42);
+   plot__1630->GetZaxis()->SetLabelFont(42);
+   plot__1630->GetZaxis()->SetLabelSize(0.035);
+   plot__1630->GetZaxis()->SetTitleSize(0.035);
+   plot__1630->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   Double_t xAxis1736[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1631 = new TH1D("plot__1631","",24, xAxis1736);
+   plot__1631->SetBinContent(10,65.54259);
+   plot__1631->SetBinContent(11,26.43781);
+   plot__1631->SetBinContent(12,14.8388);
+   plot__1631->SetBinContent(13,9.583988);
+   plot__1631->SetBinContent(14,4.547375);
+   plot__1631->SetBinContent(15,4.317697);
+   plot__1631->SetBinContent(16,3.036809);
+   plot__1631->SetBinContent(17,1.968607);
+   plot__1631->SetBinContent(18,1.647043);
+   plot__1631->SetBinContent(19,1.133522);
+   plot__1631->SetBinContent(20,0.3073304);
+   plot__1631->SetBinContent(21,0.1799365);
+   plot__1631->SetBinContent(22,0.08774615);
+   plot__1631->SetBinContent(23,0.5818265);
+   plot__1631->SetBinContent(24,0.008432268);
+   plot__1631->SetBinError(10,3.773654);
+   plot__1631->SetBinError(11,2.365021);
+   plot__1631->SetBinError(12,1.809521);
+   plot__1631->SetBinError(13,1.424303);
+   plot__1631->SetBinError(14,0.9948045);
+   plot__1631->SetBinError(15,0.6728146);
+   plot__1631->SetBinError(16,0.5651112);
+   plot__1631->SetBinError(17,0.2892169);
+   plot__1631->SetBinError(18,0.2554667);
+   plot__1631->SetBinError(19,0.2203343);
+   plot__1631->SetBinError(20,0.1165585);
+   plot__1631->SetBinError(21,0.06149008);
+   plot__1631->SetBinError(22,0.04289132);
+   plot__1631->SetBinError(23,0.5393638);
+   plot__1631->SetBinError(24,0.003585197);
+   plot__1631->SetEntries(876);
+   plot__1631->SetFillColor(2);
+   plot__1631->SetLineColor(2);
+   plot__1631->SetLineWidth(3);
+   plot__1631->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1631->GetXaxis()->SetRange(1,23);
+   plot__1631->GetXaxis()->SetLabelFont(42);
+   plot__1631->GetXaxis()->SetLabelSize(0.035);
+   plot__1631->GetXaxis()->SetTitleSize(0.035);
+   plot__1631->GetXaxis()->SetTitleFont(42);
+   plot__1631->GetYaxis()->SetTitle("Events/0.025");
+   plot__1631->GetYaxis()->SetLabelFont(42);
+   plot__1631->GetYaxis()->SetLabelSize(0.035);
+   plot__1631->GetYaxis()->SetTitleSize(0.035);
+   plot__1631->GetYaxis()->SetTitleFont(42);
+   plot__1631->GetZaxis()->SetLabelFont(42);
+   plot__1631->GetZaxis()->SetLabelSize(0.035);
+   plot__1631->GetZaxis()->SetTitleSize(0.035);
+   plot__1631->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   Double_t xAxis1737[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1632 = new TH1D("plot__1632","",24, xAxis1737);
+   plot__1632->SetBinContent(10,80.15184);
+   plot__1632->SetBinContent(11,37.09175);
+   plot__1632->SetBinContent(12,22.25869);
+   plot__1632->SetBinContent(13,13.9254);
+   plot__1632->SetBinContent(14,10.71934);
+   plot__1632->SetBinContent(15,7.233314);
+   plot__1632->SetBinContent(16,5.173167);
+   plot__1632->SetBinContent(17,3.209797);
+   plot__1632->SetBinContent(18,1.585169);
+   plot__1632->SetBinContent(19,1.079445);
+   plot__1632->SetBinContent(20,0.8031379);
+   plot__1632->SetBinContent(21,0.3946611);
+   plot__1632->SetBinContent(22,0.2188738);
+   plot__1632->SetBinContent(23,2.011384);
+   plot__1632->SetBinContent(24,0.02360822);
+   plot__1632->SetBinError(10,1.748577);
+   plot__1632->SetBinError(11,1.171306);
+   plot__1632->SetBinError(12,0.9097125);
+   plot__1632->SetBinError(13,0.7523296);
+   plot__1632->SetBinError(14,0.6477118);
+   plot__1632->SetBinError(15,0.3794855);
+   plot__1632->SetBinError(16,0.3214736);
+   plot__1632->SetBinError(17,0.1588564);
+   plot__1632->SetBinError(18,0.112244);
+   plot__1632->SetBinError(19,0.0850783);
+   plot__1632->SetBinError(20,0.07365281);
+   plot__1632->SetBinError(21,0.0374026);
+   plot__1632->SetBinError(22,0.03161715);
+   plot__1632->SetBinError(23,1.002842);
+   plot__1632->SetBinError(24,0.002549336);
+   plot__1632->SetEntries(8898);
+   plot__1632->SetFillColor(5);
+   plot__1632->SetLineColor(5);
+   plot__1632->SetLineWidth(3);
+   plot__1632->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1632->GetXaxis()->SetRange(1,23);
+   plot__1632->GetXaxis()->SetLabelFont(42);
+   plot__1632->GetXaxis()->SetLabelSize(0.035);
+   plot__1632->GetXaxis()->SetTitleSize(0.035);
+   plot__1632->GetXaxis()->SetTitleFont(42);
+   plot__1632->GetYaxis()->SetTitle("Events/0.025");
+   plot__1632->GetYaxis()->SetLabelFont(42);
+   plot__1632->GetYaxis()->SetLabelSize(0.035);
+   plot__1632->GetYaxis()->SetTitleSize(0.035);
+   plot__1632->GetYaxis()->SetTitleFont(42);
+   plot__1632->GetZaxis()->SetLabelFont(42);
+   plot__1632->GetZaxis()->SetLabelSize(0.035);
+   plot__1632->GetZaxis()->SetTitleSize(0.035);
+   plot__1632->GetZaxis()->SetTitleFont(42);
+   ->Add(plot,"");
+   ->Draw("histsame");
+   
+   TLegend *leg = new TLegend(0.72,0.54,0.9,0.76,NULL,"brNDC");
+   leg->SetBorderSize(0);
+   leg->SetTextFont(62);
+   leg->SetTextSize(0.02);
+   leg->SetLineColor(0);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
+   TLegendEntry *entry=leg->AddEntry("AlphaT_2","W + Jets","L");
+   entry->SetLineColor(4);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("AlphaT_2","t\bar{t}","L");
+   entry->SetLineColor(2);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("AlphaT_2","Z\rightarrow \nu\bar{\nu}","L");
+   entry->SetLineColor(5);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("AlphaT_2","DY + Jets","L");
+   entry->SetLineColor(6);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("AlphaT_2","Single Top","L");
+   entry->SetLineColor(40);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("AlphaT_2","WW/ZZ/WZ","L");
+   entry->SetLineColor(44);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("AlphaT_2","QCD","L");
+   entry->SetLineColor(7);
+   entry->SetLineStyle(10);
+   entry->SetLineWidth(3);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   leg->Draw();
+   Double_t xAxis1738[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1633 = new TH1D("plot__1633","",24, xAxis1738);
+   plot__1633->SetBinContent(10,183);
+   plot__1633->SetBinContent(11,87);
+   plot__1633->SetBinContent(12,48);
+   plot__1633->SetBinContent(13,22);
+   plot__1633->SetBinContent(14,19);
+   plot__1633->SetBinContent(15,10);
+   plot__1633->SetBinContent(16,6.5);
+   plot__1633->SetBinContent(17,8);
+   plot__1633->SetBinContent(18,4.2);
+   plot__1633->SetBinContent(19,2.2);
+   plot__1633->SetBinContent(20,1.2);
+   plot__1633->SetBinContent(21,0.7);
+   plot__1633->SetBinContent(22,0.6);
+   plot__1633->SetBinContent(23,3);
+   plot__1633->SetBinContent(24,0.03623188);
+   plot__1633->SetBinError(10,13.52775);
+   plot__1633->SetBinError(11,9.327379);
+   plot__1633->SetBinError(12,6.928203);
+   plot__1633->SetBinError(13,4.690416);
+   plot__1633->SetBinError(14,4.358899);
+   plot__1633->SetBinError(15,2.236068);
+   plot__1633->SetBinError(16,2.68);
+   plot__1633->SetBinError(17,3.03);
+   plot__1633->SetBinError(18,2.3);
+   plot__1633->SetBinError(19,2);
+   plot__1633->SetBinError(20,1);
+   plot__1633->SetBinError(23,2);
+   plot__1633->SetBinError(24,0.01620339);
+   plot__1633->SetMinimum(0.11);
+   plot__1633->SetMaximum(2052.58);
+   plot__1633->SetEntries(514);
+
+   ci = TColor::GetColor("#000099");
+   plot__1633->SetLineColor(ci);
+   plot__1633->SetLineWidth(2);
+   plot__1633->SetMarkerStyle(20);
+   plot__1633->SetMarkerSize(1.5);
+   plot__1633->GetXaxis()->SetTitle("#alpha_{T}");
+   plot__1633->GetXaxis()->SetRange(1,23);
+   plot__1633->GetXaxis()->SetLabelFont(42);
+   plot__1633->GetXaxis()->SetLabelSize(0.035);
+   plot__1633->GetXaxis()->SetTitleSize(0.035);
+   plot__1633->GetXaxis()->SetTitleFont(42);
+   plot__1633->GetYaxis()->SetTitle("Events");
+   plot__1633->GetYaxis()->SetLabelFont(42);
+   plot__1633->GetYaxis()->SetLabelSize(0.035);
+   plot__1633->GetYaxis()->SetTitleSize(0.035);
+   plot__1633->GetYaxis()->SetTitleOffset(1.3);
+   plot__1633->GetYaxis()->SetTitleFont(42);
+   plot__1633->GetZaxis()->SetLabelFont(42);
+   plot__1633->GetZaxis()->SetLabelSize(0.035);
+   plot__1633->GetZaxis()->SetTitleSize(0.035);
+   plot__1633->GetZaxis()->SetTitleFont(42);
+   plot__1633->Draw("PSAME");
+   TLatex *   tex = new TLatex(0.1,0.95,"btag_one_375_    Jet Multiplicity=2,3");
+tex->SetNDC();
+   tex->SetTextAlign(12);
+   tex->SetTextSize(0.04);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.7,0.85,"CMS 2012, 8TeV");
+tex->SetNDC();
+   tex->SetTextAlign(12);
+   tex->SetTextSize(0.03);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.7,0.79,"\\int L dt = 18.493 fb^{-1}");
+tex->SetNDC();
+   tex->SetTextAlign(12);
+   tex->SetTextSize(0.03);
+   tex->SetLineWidth(2);
+   tex->Draw();
+   u->Modified();
+   canvasbtag_one_375_475/AlphaT_2->cd();
+  
+// ------------>Primitives in pad: d
+   TPad *d = new TPad("d", "d",0.01,0.01,0.99,0.25);
+   d->Draw();
+   d->cd();
+   d->Range(-0.3875,-0.25,3.4875,2.25);
+   d->SetFillColor(0);
+   d->SetBorderMode(0);
+   d->SetBorderSize(2);
+   d->SetTickx(1);
+   d->SetTicky(1);
+   d->SetFrameBorderMode(0);
+   d->SetFrameBorderMode(0);
+   Double_t xAxis1739[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1634 = new TH1D("plot__1634","",24, xAxis1739);
+   plot__1634->SetBinContent(10,0.8915608);
+   plot__1634->SetBinContent(11,1.04318);
+   plot__1634->SetBinContent(12,0.9723147);
+   plot__1634->SetBinContent(13,0.6958782);
+   plot__1634->SetBinContent(14,0.9282203);
+   plot__1634->SetBinContent(15,0.672453);
+   plot__1634->SetBinContent(16,0.6540396);
+   plot__1634->SetBinContent(17,1.234125);
+   plot__1634->SetBinContent(18,1.037038);
+   plot__1634->SetBinContent(19,0.8508289);
+   plot__1634->SetBinContent(20,0.778468);
+   plot__1634->SetBinContent(21,0.7648107);
+   plot__1634->SetBinContent(22,1.356832);
+   plot__1634->SetBinContent(23,0.9126592);
+   plot__1634->SetBinContent(24,0.8885366);
+   plot__1634->SetBinError(10,0.06590607);
+   plot__1634->SetBinError(11,0.1118407);
+   plot__1634->SetBinError(12,0.1403415);
+   plot__1634->SetBinError(13,0.1483617);
+   plot__1634->SetBinError(14,0.2129483);
+   plot__1634->SetBinError(15,0.1503651);
+   plot__1634->SetBinError(16,0.2696656);
+   plot__1634->SetBinError(17,0.4674248);
+   plot__1634->SetBinError(18,0.5679017);
+   plot__1634->SetBinError(19,0.7734808);
+   plot__1634->SetBinError(20,0.6487234);
+   plot__1634->SetBinError(23,0.6084394);
+   plot__1634->SetBinError(24,0.3973657);
+   plot__1634->SetMinimum(0);
+   plot__1634->SetMaximum(2);
+   plot__1634->SetEntries(68.70007);
+
+   ci = TColor::GetColor("#000099");
+   plot__1634->SetLineColor(ci);
+   plot__1634->SetLineWidth(2);
+   plot__1634->SetMarkerStyle(20);
+   plot__1634->SetMarkerSize(1.5);
+   plot__1634->GetXaxis()->SetRange(1,23);
+   plot__1634->GetXaxis()->SetLabelFont(42);
+   plot__1634->GetXaxis()->SetLabelSize(0.12);
+   plot__1634->GetXaxis()->SetTitleSize(0.035);
+   plot__1634->GetXaxis()->SetTitleFont(42);
+   plot__1634->GetYaxis()->SetTitle("Data/MC");
+   plot__1634->GetYaxis()->SetNdivisions(505);
+   plot__1634->GetYaxis()->SetLabelFont(42);
+   plot__1634->GetYaxis()->SetLabelSize(0.11);
+   plot__1634->GetYaxis()->SetTitleSize(0.1);
+   plot__1634->GetYaxis()->SetTitleOffset(0.5);
+   plot__1634->GetYaxis()->SetTitleFont(42);
+   plot__1634->GetZaxis()->SetLabelFont(42);
+   plot__1634->GetZaxis()->SetLabelSize(0.035);
+   plot__1634->GetZaxis()->SetTitleSize(0.035);
+   plot__1634->GetZaxis()->SetTitleFont(42);
+   plot__1634->Draw("p");
+   
+   Double_t Graph_from_plot_fx1420[24] = {
+   0.05,
+   0.125,
+   0.2,
+   0.275,
+   0.325,
+   0.375,
+   0.425,
+   0.475,
+   0.525,
+   0.575,
+   0.625,
+   0.675,
+   0.725,
+   0.775,
+   0.85,
+   0.95,
+   1.125,
+   1.375,
+   1.625,
+   1.875,
+   2.25,
+   2.75,
+   3.05,
+   6.55};
+   Double_t Graph_from_plot_fy1420[24] = {
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0.8885366};
+   Double_t Graph_from_plot_fex1420[24] = {
+   0.05,
+   0.025,
+   0.05,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.025,
+   0.05,
+   0.05,
+   0.125,
+   0.125,
+   0.125,
+   0.125,
+   0.25,
+   0.25,
+   0.05,
+   3.45};
+   Double_t Graph_from_plot_fey1420[24] = {
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0.02622232,
+   0.03825637,
+   0.05304315,
+   0.06446848,
+   0.07133953,
+   0.06287384,
+   0.07641163,
+   0.06026159,
+   0.07826119,
+   0.102562,
+   0.1172447,
+   0.131689,
+   0.1978929,
+   0.3900126,
+   0.1304146};
+   TGraphErrors *gre = new TGraphErrors(24,Graph_from_plot_fx1420,Graph_from_plot_fy1420,Graph_from_plot_fex1420,Graph_from_plot_fey1420);
+   gre->SetName("Graph_from_plot");
+   gre->SetTitle("");
+   gre->SetFillColor(17);
+   gre->SetFillStyle(3244);
+
+   ci = TColor::GetColor("#000099");
+   gre->SetLineColor(ci);
+   gre->SetLineWidth(2);
+   gre->SetMarkerStyle(20);
+   gre->SetMarkerSize(1.5);
+   
+   TH1F *Graph_Graph_from_plot1420 = new TH1F("Graph_Graph_from_plot1420","",100,0,11);
+   Graph_Graph_from_plot1420->SetMinimum(0.5319848);
+   Graph_Graph_from_plot1420->SetMaximum(1.468015);
+   Graph_Graph_from_plot1420->SetDirectory(0);
+   Graph_Graph_from_plot1420->SetStats(0);
+   Graph_Graph_from_plot1420->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_from_plot1420->GetXaxis()->SetLabelOffset(0.007);
+   Graph_Graph_from_plot1420->GetXaxis()->SetLabelSize(0.05);
+   Graph_Graph_from_plot1420->GetXaxis()->SetTitleSize(0.05);
+   Graph_Graph_from_plot1420->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_from_plot1420->GetYaxis()->SetLabelOffset(0.007);
+   Graph_Graph_from_plot1420->GetYaxis()->SetLabelSize(0.05);
+   Graph_Graph_from_plot1420->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_from_plot1420->GetZaxis()->SetLabelOffset(0.007);
+   Graph_Graph_from_plot1420->GetZaxis()->SetLabelSize(0.05);
+   gre->SetHistogram(Graph_Graph_from_plot1420);
+   
+   gre->Draw("2");
+   Double_t xAxis1740[25] = {0, 0.1, 0.15, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.9, 1, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.1, 10}; 
+   
+   TH1D *plot__1635 = new TH1D("plot__1635","",24, xAxis1740);
+   plot__1635->SetBinContent(10,0.8915608);
+   plot__1635->SetBinContent(11,1.04318);
+   plot__1635->SetBinContent(12,0.9723147);
+   plot__1635->SetBinContent(13,0.6958782);
+   plot__1635->SetBinContent(14,0.9282203);
+   plot__1635->SetBinContent(15,0.672453);
+   plot__1635->SetBinContent(16,0.6540396);
+   plot__1635->SetBinContent(17,1.234125);
+   plot__1635->SetBinContent(18,1.037038);
+   plot__1635->SetBinContent(19,0.8508289);
+   plot__1635->SetBinContent(20,0.778468);
+   plot__1635->SetBinContent(21,0.7648107);
+   plot__1635->SetBinContent(22,1.356832);
+   plot__1635->SetBinContent(23,0.9126592);
+   plot__1635->SetBinContent(24,0.8885366);
+   plot__1635->SetBinError(10,0.06590607);
+   plot__1635->SetBinError(11,0.1118407);
+   plot__1635->SetBinError(12,0.1403415);
+   plot__1635->SetBinError(13,0.1483617);
+   plot__1635->SetBinError(14,0.2129483);
+   plot__1635->SetBinError(15,0.1503651);
+   plot__1635->SetBinError(16,0.2696656);
+   plot__1635->SetBinError(17,0.4674248);
+   plot__1635->SetBinError(18,0.5679017);
+   plot__1635->SetBinError(19,0.7734808);
+   plot__1635->SetBinError(20,0.6487234);
+   plot__1635->SetBinError(23,0.6084394);
+   plot__1635->SetBinError(24,0.3973657);
+   plot__1635->SetMinimum(0);
+   plot__1635->SetMaximum(2);
+   plot__1635->SetEntries(68.70007);
+
+   ci = TColor::GetColor("#000099");
+   plot__1635->SetLineColor(ci);
+   plot__1635->SetLineWidth(2);
+   plot__1635->SetMarkerStyle(20);
+   plot__1635->SetMarkerSize(1.5);
+   plot__1635->GetXaxis()->SetRange(1,23);
+   plot__1635->GetXaxis()->SetLabelFont(42);
+   plot__1635->GetXaxis()->SetLabelSize(0.12);
+   plot__1635->GetXaxis()->SetTitleSize(0.035);
+   plot__1635->GetXaxis()->SetTitleFont(42);
+   plot__1635->GetYaxis()->SetTitle("Data/MC");
+   plot__1635->GetYaxis()->SetNdivisions(505);
+   plot__1635->GetYaxis()->SetLabelFont(42);
+   plot__1635->GetYaxis()->SetLabelSize(0.11);
+   plot__1635->GetYaxis()->SetTitleSize(0.1);
+   plot__1635->GetYaxis()->SetTitleOffset(0.5);
+   plot__1635->GetYaxis()->SetTitleFont(42);
+   plot__1635->GetZaxis()->SetLabelFont(42);
+   plot__1635->GetZaxis()->SetLabelSize(0.035);
+   plot__1635->GetZaxis()->SetTitleSize(0.035);
+   plot__1635->GetZaxis()->SetTitleFont(42);
+   plot__1635->Draw("PSAME");
+   d->Modified();
+   canvasbtag_one_375_475/AlphaT_2->cd();
+   canvasbtag_one_375_475/AlphaT_2->Modified();
+   canvasbtag_one_375_475/AlphaT_2->cd();
+   canvasbtag_one_375_475/AlphaT_2->SetSelected(canvasbtag_one_375_475/AlphaT_2);
+}
