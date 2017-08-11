@@ -17,7 +17,10 @@ signal is present.
 {\it masked fit} and {\it control-region-only fit} ({\it CR-only fit})
 are also used interchangeably.)
 
-Figures~\ref{fig:cr-fit} and \ref{fig:full-fit} show the results of the control region-only fit and full fit respectively, for the signal region bins (\nj, \nb, \scalht, and \mht).
+The observed data and expected SM contributions are shown in 
+figures~\ref{fig:no-fit}, \ref{fig:cr-fit}, and \ref{fig:full-fit}.
+Figure~\ref{fig:no-fit} shows the results prior to fitting, so contains just the observed data and MC predictions with only the previously mentioned corrections applied.
+Figures~\ref{fig:cr-fit} and \ref{fig:full-fit} show the results of the control region-only fit and full fit respectively.
 For each fit, the results are divided into six figures containing the seven considered event topologies, with monojet and asymmetric events shown together.
 
 Each of these figures contains three panels.  The top panels show the
@@ -37,6 +40,10 @@ uncertainty.  The total uncertainty is the quadrature sum of the uncertainty on
 the prediction and the asymmetric statistical uncertainty on the data. The
 upper (lower) value of the statistical uncertainty on the data is used when the
 prediction is above (below) the observed value.
+
+Each bin in figures~\ref{fig:no-fit}, \ref{fig:cr-fit}, and \ref{fig:full-fit} represents a different \HTmiss bin.
+Bins are labelled for their \nj, \nb, and \scalht along the top of the plots, however, to improve readability, the
+\HTmiss value for the bin should be inferred from table~\ref{tab:SR_binning} in section~\ref{sec:binning-summary}.
 
 %Figures~\ref{fig:mr_mono_pre} and \ref{fig:mr_mono_post} summarise the
 %event yields observed in data and SM expectations with their
@@ -72,10 +79,6 @@ Figure~\ref{fig:breakdown} provides the breakdown of SM backgrounds
 (categorised as lost lepton, \znunuj, or multijet) in the signal
 region as determined from the CR-only and full fits.
 
-%Appendix~\ref{app:mhtshapes} contains figures that show the event
-%yields observed in data and CR-fit SM expectations with their
-%associated uncertainties as a function of \HTmiss for each (\njet,
-%\nb) event category and \scalht bin.
 Additional figures can be found in the appendix.
 Appendix~\ref{app:nuispost}
 contains figures showing the post-fit behaviour of the nuisance
@@ -86,26 +89,62 @@ figures~\ref{fig:aggregated_results1},
 \ref{fig:aggregated_results2}, \ref{fig:aggregated_results3}, and
 \ref{fig:aggregated_results4}.
 
+Appendix~\ref{app:mhtshapes} contains similar plots to those shown below but 
+integrated over the \HTmiss bins.  It also provides figures with the event
+yields observed in data and CR-fit SM expectations with their
+associated uncertainties as a function of \HTmiss for each (\njet,
+\nb) event category and \scalht bin.
+
+\clearpage
+\begin{figure}[!h]
+  \centering
+  \subfigure[\label{fig:no-fit:mono-asymm}Monojet and asymmetric topologies]{
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/no-fit/monojet_no-fit.pdf}
+  }~ 
+  \subfigure[\label{fig:no-fit:dijet}Dijet topologies]{
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/no-fit/di-jet_no-fit.pdf}
+  }\\
+  \subfigure[\label{fig:no-fit:three-jet}Topologies with 3 jets]{
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/no-fit/3jet_no-fit.pdf}
+  }~ 
+  \subfigure[\label{fig:no-fit:four-jet}Topologies with 4 jets]{
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/no-fit/4jet_no-fit.pdf}
+  }\\
+  \subfigure[\label{fig:no-fit:five-jet}Topologies with 5 jets]{
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/no-fit/5jet_no-fit.pdf}
+  }~ 
+  \subfigure[\label{fig:no-fit:six-jet}Topologies with $\ge$6 jets]{
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/no-fit/6+_jets_no-fit.pdf}
+  }\\
+  \caption{\label{fig:no-fit} Corrected MC predictions and data before fitting.
+  Top panels:  Event yields in data and SM expectations.
+  Centre panels:  Ratio of the observed and expected counts.
+  Bottom panels:  Observed pulls of the data from expectation.
+  Detailed descriptions are given in the text.
+	}
+\end{figure}
+
+
 \clearpage
 \begin{figure}[!h]
   \centering
   \subfigure[\label{fig:cr-fit:mono-asymm}Monojet and asymmetric topologies]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/prefit/monojet_prefit_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/cr-only/monojet_cr-only.pdf}
   }~ 
   \subfigure[\label{fig:cr-fit:dijet}Dijet topologies]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/prefit/di-jet_prefit_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/cr-only/di-jet_cr-only.pdf}
   }\\
   \subfigure[\label{fig:cr-fit:three-jet}Topologies with 3 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/prefit/3jet_prefit_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/cr-only/3jet_cr-only.pdf}
   }~ 
   \subfigure[\label{fig:cr-fit:four-jet}Topologies with 4 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/prefit/4jet_prefit_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/cr-only/4jet_cr-only.pdf}
   }\\
   \subfigure[\label{fig:cr-fit:five-jet}Topologies with 5 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/prefit/5jet_prefit_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/cr-only/5jet_cr-only.pdf}
   }~ 
   \subfigure[\label{fig:cr-fit:six-jet}Topologies with $\ge$6 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/prefit/6+_jets_prefit_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/cr-only/6+_jets_cr-only.pdf}
   }\\
   \caption{\label{fig:cr-fit} Results of the control region-only fit in the 7 different event topologies.
   Top panels:  Event yields in data and SM expectations.
@@ -120,22 +159,22 @@ figures~\ref{fig:aggregated_results1},
 \begin{figure}[!h]
   \centering
   \subfigure[\label{fig:full-fit:mono-asymm}Monojet and asymmetric topologies]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/fit_b/monojet_fit_b_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/full-fit_bg/monojet_full-fit_bg.pdf}
   }~ 
   \subfigure[\label{fig:full-fit:dijet}Dijet topologies]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/fit_b/di-jet_fit_b_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/full-fit_bg/di-jet_full-fit_bg.pdf}
   }\\
   \subfigure[\label{fig:full-fit:three-jet}Topologies with 3 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/fit_b/3jet_fit_b_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/full-fit_bg/3jet_full-fit_bg.pdf}
   }~ 
   \subfigure[\label{fig:full-fit:four-jet}Topologies with 4 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/fit_b/4jet_fit_b_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/full-fit_bg/4jet_full-fit_bg.pdf}
   }\\
   \subfigure[\label{fig:full-fit:five-jet}Topologies with 5 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/fit_b/5jet_fit_b_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/full-fit_bg/5jet_full-fit_bg.pdf}
   }~ 
   \subfigure[\label{fig:full-fit:six-jet}Topologies with $\ge$6 jets]{
-    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/fit_b/6+_jets_fit_b_dists_true.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/results/36invfb_preapproval/mht_binned/full-fit_bg/6+_jets_full-fit_bg.pdf}
   }\\
   \caption{\label{fig:full-fit} Results of the full fit in the 7 different event topologies.
   Top panels:  Event yields in data and SM expectations.
@@ -144,132 +183,6 @@ figures~\ref{fig:aggregated_results1},
   Detailed descriptions are given in the text.
 	}
 \end{figure}
-
-%% mono 
-%\clearpage
-%\subsection{Monojet topology}
-%
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the monojet category ($\njet = 1$)
-%    in the signal region. Lower panel. Data-to-background ratios. The
-%    background estimates and ratios are from the masked fit. }
-%  \label{fig:mr_mono_pre}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/mono/summaryPlot_Monojet_prefit}
-%\end{figure}
-%
-%\clearpage
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the monojet category ($\njet = 1$)
-%    in the signal region. Lower panel. Data-to-background ratios. The
-%    background estimates and ratios are obtained with the full fit. }
-%  \label{fig:mr_mono_post}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/mono/summaryPlot_Monojet_fit_b}
-%\end{figure}
-%
-%\clearpage
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the monojet category ($\njet = 1$)
-%    in the signal region. Lower panel. The pulls, which are obtained
-%    from both the masked (red markers) and full (blue markers) fits. }
-%  \label{fig:mr_mono_pulls}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/mono/summaryPlot_Monojet_prefit_overlay_fit_b}
-%\end{figure}
-%
-%% asym 
-%\clearpage
-%\subsection{Asymmetric topology}
-%
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the asymmetric \njet category
-%    in the signal region. Lower panel. Data-to-background ratios. The
-%    background estimates and ratios are from the masked fit. }
-%  \label{fig:mr_asym_pre}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/asym/summaryPlot_Asymmetric_prefit}
-%\end{figure}
-%
-%\clearpage
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the asymmetric \njet category
-%    in the signal region. Lower panel. Data-to-background ratios. The
-%    background estimates and ratios are obtained with the full fit. }
-%  \label{fig:mr_asym_post}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/asym/summaryPlot_Asymmetric_fit_b}
-%\end{figure}
-%
-%\clearpage
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the asymmetric \njet category
-%    in the signal region. Lower panel. The pulls, which are obtained
-%    from both the masked (red markers) and full (blue markers) fits. }
-%  \label{fig:mr_asym_pulls}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/asym/summaryPlot_Asymmetric_prefit_overlay_fit_b}
-%\end{figure}
-%
-%% symm
-%\clearpage
-%\subsection{Symmetric topology}
-%
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the symmmetric \njet category
-%    in the signal region. Lower panel. Data-to-background ratios. The
-%    background estimates and ratios are from the masked fit. }
-%  \label{fig:mr_symm_pre}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/symm/summaryPlot_Symmetric_prefit}
-%\end{figure}
-%
-%\clearpage
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the symmmetric \njet category
-%    in the signal region. Lower panel. Data-to-background ratios. The
-%    background estimates and ratios are obtained with the full fit. }
-%  \label{fig:mr_symm_post}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/symm/summaryPlot_Symmetric_fit_b}
-%\end{figure}
-%
-%\clearpage
-%\begin{figure}[h!]
-%  \centering
-%  \caption{Upper panel. Event yields observed in data (solid circles)
-%    and SM expectations with their associated uncertainties (black
-%    histogram with shaded band) as a function of \nb and \scalht,
-%    integrated over \mht, and for the symmmetric \njet category
-%    in the signal region. Lower panel. The pulls, which are obtained
-%    from both the masked (red markers) and full (blue markers) fits. }
-%  \label{fig:mr_symm_pulls}
-%  \includegraphics[width=1.\linewidth]{figures/results/36invfb_preapproval/symm/summaryPlot_Symmetric_prefit_overlay_fit_b}
-%\end{figure}
 
 % 1d histograms 
 \clearpage
