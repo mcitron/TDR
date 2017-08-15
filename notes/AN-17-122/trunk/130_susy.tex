@@ -1,33 +1,39 @@
 %%____________________________________________________________________________||
 \section{Interpretation in Simplified SUSY models}
 \label{sec:susy}
+
 To interpret the results of this search, simplified
 %models~\cite{Alwall:2008ag,Alwall:2008va,Alves:2011wf} for the production of
-supersymmetric particles are considered.  They use only a limited set of
-sparticles in the production and decay and enable comprehensive studies of
-individual SUSY event topologies. These studies can be performed in terms of
-fundamental properties such as decay modes, production cross sections and
-sparticle masses.
+supersymmetric particles are considered.  They use only a limited set
+of sparticles in the production and decay and enable comprehensive
+studies of individual SUSY event topologies. These studies can be
+performed in terms of fundamental properties such as decay modes,
+production cross sections and sparticle masses.
 
 \subsection{Signal models}
 \label{sec:susy_models}
-Interpretations are presented for pair production of gluino, stop, sbottom and
-scharm particles with several different possibilities for the decay chain. The
-simplified models used in the analysis are summarised in
-Tab.~\ref{tab:simplified-models}. Benchmark points are also listed, which will
-be used throughout the section. Two benchmarks are provided, where relevant,
-to cover the phenomenology of compressed and uncompressed spectra. All the
-benchmarks are chosen to be right within the expected exclusion. \\
-%A sensitivity study has been performed on these benchmark models, which is
-%described in App.~\ref{app:sensitivity-benchmarks}. \\
-Sketches of the production and decay in these models are shown in
-Fig.~\ref{fig:simplified-models-feyn}. Systematic uncertainties on the signal
-acceptance are detailed in Sec.~\ref{sec:sig-syst}.
 
-All the models are generated using the FastSim package \cite{Abdullin:2011zz}.
-FastSim Monte Carlo samples are corrected using FastSim-to-FullSim scale factor,
-accounting for difference in b-tag efficiency. These scale factors are applied
-on top of the FullSim scale factors applied for the other Monte Carlo samples.
+Interpretations are presented for pair production of gluino, stop,
+sbottom and scharm particles with several different possibilities for
+the decay chain. The simplified models used in the analysis are
+summarised in Tab.~\ref{tab:simplified-models}. Benchmark points are
+also listed, which will be used throughout the section. Two benchmarks
+are provided, where relevant, to cover the phenomenology of compressed
+and uncompressed spectra. All the
+benchmarks are chosen to be right within the expected exclusion. 
+
+%A sensitivity study has been performed on these benchmark models, which is
+%described in App.~\ref{app:sensitivity-benchmarks}. 
+
+Sketches of the production and decay in these models are shown in
+Fig.~\ref{fig:simplified-models-feyn}. Systematic uncertainties on the
+signal acceptance are detailed in Sec.~\ref{sec:sig-syst}.
+
+All the models are generated using the FastSim package
+\cite{Abdullin:2011zz}.  FastSim Monte Carlo samples are corrected
+using FastSim-to-FullSim scale factor, accounting for difference in
+b-tag efficiency. These scale factors are applied on top of the
+FullSim scale factors applied for the other Monte Carlo samples.
 
 \begin{table}[h!]
     \scriptsize
@@ -40,11 +46,19 @@ on top of the FullSim scale factors applied for the other Monte Carlo samples.
         \hline \hline
         T1bbbb & \ppToGluGlu & \gluToBBNo & $m_{\mathrm{Gluino}}>\sim 1850 \,\mathrm{GeV}$ (ICHEP) & \ref{fig:T1bbbb_feyn} & \parbox[t]{5cm}{Compressed: (1300,1100)\\Uncompressed: (1900,100)} \\
         \hline
+        T1tttt & \ppToGluGlu & \gluToTTNo & $m_{\mathrm{Gluino}}>\sim 1600 \,\mathrm{GeV}$ (ICHEP) & \ref{fig:T1tttt_feyn} & \parbox[t]{5cm}{Compressed: (1000,550)\\Uncompressed: (1700,100)} \\
+        \hline
         T2tt   & \ppToStopStop & \stopToTNo & $m_{\mathrm{\mathrm{Stop}}}>\sim 925 \,\mathrm{GeV}$ (ICHEP) & \ref{fig:T2tt_feyn} & \parbox[t]{5cm}{Compressed: (450,200)\\Uncompressed: (1000,50)\\$W$ corridor: (250,150)} \\
         \hline
         T2cc   & \ppToStopStop & \stopToCNo & $m_{\mathrm{\mathrm{Stop}}}>\sim 350 \,\mathrm{GeV}$ (2015)& \ref{fig:T2cc_feyn} & Compressed: (500,480) \\
         \hline
         T2bb   & \ppToSbotSbot & \sbottomToB & $m_{\mathrm{\mathrm{Sbottom}}}>\sim 980 \,\mathrm{GeV}$ (ICHEP)& \ref{fig:T2bb_feyn} & \parbox[t]{5cm}{Compressed: (550,450)\\Uncompressed: (1000,100)} \\
+        \hline
+        T1qqqq & \ppToGluGlu & \gluToQQNo & $m_{\mathrm{Gluino}}>\sim 1550 \,\mathrm{GeV}$ (ICHEP) & \ref{fig:T1qqqq_feyn} & \parbox[t]{5cm}{Compressed: (1000,850)\\Uncompressed: (1700,100)} \\
+        \hline
+        T2qq (1-fold) & \ppToSquaSqua & \squarkToQ & - & - & \parbox[t]{5cm}{Compressed: (400,300)\\Uncompressed: (700,100)} \\
+        \hline
+        T2qq (8-fold) & \ppToSquaSqua & \squarkToQ & - & - & \parbox[t]{5cm}{Compressed: (700,600)\\Uncompressed: (1250,100)} \\
         \hline \hline
     \end{tabular}
 \end{table}
@@ -55,22 +69,30 @@ on top of the FullSim scale factors applied for the other Monte Carlo samples.
             \includegraphics[width=0.35\textwidth]{figures/susyResults/T1bbbb_feyn}
             \label{fig:T1bbbb_feyn}
             } ~~
+        \subfigure[T1tttt]{
+            \includegraphics[width=0.35\textwidth]{figures/susyResults/T1tttt_feyn}
+            \label{fig:T1tttt_feyn}
+            } \\
         \subfigure[T2tt]{
             \includegraphics[width=0.35\textwidth]{figures/susyResults/T2tt_feyn}
             \label{fig:T2tt_feyn}
+            } ~~
+        \subfigure[T2cc]{
+            \includegraphics[width=0.35\textwidth]{figures/susyResults/T2cc_feyn}
+            \label{fig:T2cc_feyn}
             } \\
         \subfigure[T2bb]{
             \includegraphics[width=0.35\textwidth]{figures/susyResults/T2bb_feyn}
             \label{fig:T2bb_feyn}
-            }
-        \subfigure[T2cc]{
-            \includegraphics[width=0.35\textwidth]{figures/susyResults/T2cc_feyn}
-            \label{fig:T2cc_feyn}
             } ~~
+        \subfigure[T1qqqq]{
+            \includegraphics[width=0.35\textwidth]{figures/susyResults/T1qqqq_feyn}
+            \label{fig:T1qqqq_feyn}
+            }
         \caption{Graphical representation of the production and decay of
-            supersymmetric particles in models with the production of: (a)
-            gluinos (with decoupled third generation squarks), (b) stops, (c)
-            sbottoms and (d) scharms.}
+            supersymmetric particles in models with the production of: (a) (b)
+            gluinos (with decoupled third generation squarks), (c) (d) stops,
+            (e) sbottoms and (f) gluinos decaying to light quarks.}
         \label{fig:simplified-models-feyn}
     \end{center}
 \end{figure}
@@ -234,40 +256,51 @@ Tab.~\ref{tab:sig-systematics} for some benchmark models.
     \end{tabular}
 \end{table}
 
+
 \subsection{Exclusion limits}
 \label{sec:susy_results}
-In order to extract the signal contribution in the fit, the distribution of
-events according to the \mht variable, encoded as template histograms, is used
-as described in Sec.~\ref{sec:had-shape} and \ref{sec:likelihood}. \\
-Upper limits on the cross section are computed using the $\text{CL}_{s}$
-criterion \cite{CLsTechnique}. Asymptotic formulae \cite{AsymptoticFormulae} are
-utilised to approximate the distribution of the test statistics. \\
-All the statistical results are produced using the \textit{combine} tool,
-provided within the HiggsAnalysis-CombinedLimit package \cite{Combine}.
 
-In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2bb} (top) the 95\% C.L. upper limits on the
-cross section are shown in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for
-the models considered in this interpretation. These results correspond to
-35.9~\ifb of integrated luminosity. The exclusion contour is also shown together
-with $\pm1\sigma$ (and $\pm2\sigma$ for the expected exclusion) uncertainty.
-The band around the expected exclusion reflects the experimental uncertainty,
-while the band around the observed exclusion correspond to the theoretical
-uncertainty on the signal cross section.
+In order to extract the signal contribution in the fit, the
+distribution of events according to the \mht variable, encoded as
+template histograms as described in
+Secs.~\ref{sec:htmiss-categorisation}, \ref{sec:mht-intro},
+\ref{sec:mht-zinv}, and \ref{sec:likelihood}, is used.
 
-In Fig.~\ref{fig:T1bbbb}-\ref{fig:T2bb} (bottom left) the signal acceptance
-for each mass point in the SMS scan.
+Upper limits on the cross section are computed using the
+$\text{CL}_{s}$ criterion \cite{CLsTechnique}. Asymptotic formulae
+\cite{AsymptoticFormulae} are
+utilised to approximate the distribution of the test statistics. 
 
-In Fig.~\ref{fig:T1bbbb}-\ref{fig:T2bb} (bottom left) each mass point is
-assigned a group of 4 jet categories in descending order of sensitivity. The
-total number of mass points with the same 4 most sensitive jet categories is
-noted. In T1bbbb, the 4 most sensitive jet categories are the symmetric high jet
-multiplicities (eq5j, ge6j, eq4j, eq3j), with the asymmetric category playing
-a role in the compressed spectrum (ge6j, eq5j, ge2a, eq4j). The sensitive
-categories for T2tt and T2cc are similar to T1bbbb: symmetric high jet
-multiplicities with the asymmetric topology playing a role in the compressed
-region. In T2bb, the sensitivity is driven by symmetric moderate jet
-multiplicities (eq2j, eq3j, eq4j, eq5j) in the uncompressed region and the high
-jet multiplicities in the compressed region (eq4j, eq5j, ge6j, ge2a).
+All the statistical results are produced using the \textit{combine}
+tool, provided within the HiggsAnalysis-CombinedLimit package
+\cite{Combine}.
+
+In Fig. ~\ref{fig:T1bbbb}-\ref{fig:T2bb} (top) the 95\% C.L. upper
+limits on the cross section are shown in the
+$(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered
+in this interpretation. These results correspond to 35.9~\ifb of
+integrated luminosity. The exclusion contour is also shown together
+with $\pm1\sigma$ (and $\pm2\sigma$ for the expected exclusion)
+uncertainty.  The band around the expected exclusion reflects the
+experimental uncertainty, while the band around the observed exclusion
+correspond to the theoretical uncertainty on the signal cross section.
+
+In Fig.~\ref{fig:T1bbbb}-\ref{fig:T2bb} (bottom left) the signal
+acceptance for each mass point in the SMS scan.
+
+In Fig.~\ref{fig:T1bbbb}-\ref{fig:T2bb} (bottom left) each mass point
+is assigned a group of 4 jet categories in descending order of
+sensitivity. The total number of mass points with the same 4 most
+sensitive jet categories is noted. In T1bbbb, the 4 most sensitive jet
+categories are the symmetric high jet multiplicities (eq5j, ge6j,
+eq4j, eq3j), with the asymmetric category playing a role in the
+compressed spectrum (ge6j, eq5j, ge2a, eq4j). The sensitive categories
+for T2tt and T2cc are similar to T1bbbb: symmetric high jet
+multiplicities with the asymmetric topology playing a role in the
+compressed region. In T2bb, the sensitivity is driven by symmetric
+moderate jet multiplicities (eq2j, eq3j, eq4j, eq5j) in the
+uncompressed region and the high jet multiplicities in the compressed
+region (eq4j, eq5j, ge6j, ge2a).
 
 The models are grouped according to the following categorisation:
 \begin{itemize}
@@ -300,7 +333,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T1bbbb}
     \end{center}
@@ -324,7 +357,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T1qqqq}
     \end{center}
@@ -348,7 +381,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T1tttt}
     \end{center}
@@ -372,7 +405,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T2tt}
     \end{center}
@@ -396,7 +429,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T2cc}
     \end{center}
@@ -420,7 +453,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T2bb}
     \end{center}
@@ -444,7 +477,7 @@ The models are grouped according to the following categorisation:
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
             (solid red line) exclusion contours. Bottom left: signal acceptance
-            including all jet categories. Bottom right: bitmap representing the
+            including all jet categories. Bottom right: graph showing the four
             most sensitive jet categories for each mass point.}
         \label{fig:T2qq}
     \end{center}
