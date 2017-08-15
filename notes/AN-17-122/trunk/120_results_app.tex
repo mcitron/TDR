@@ -1,11 +1,6 @@
 %%____________________________________________________________________________||
-\section{Results}
+\section{Post-fit nuisance parameters}
 \label{app:results}
-
-\subsection{\texorpdfstring{\mht}{MHT} shapes for masked fit }
-\label{app:mhtshapes}
-
-\input{figures/results/results.tex}
 
 %\clearpage
 %\subsection{Masked fit nuisance parameters}
@@ -23,8 +18,8 @@
 %  \includegraphics[width=1.\linewidth]{figures/results/36invfb/prefit/nuis/Correlated_nuisances}
 %\end{figure}
 
-\subsection{Full fit nuisance parameters}
-\label{app:nuispost}
+%\subsection{Full fit nuisance parameters}
+%\label{app:nuispost}
 
 \begin{figure}[h!]
   \centering
@@ -109,71 +104,6 @@
   \centering
   \caption{Systematic uncertainties in W polarisation modelling}
   \includegraphics[width=0.8\linewidth]{figures/results/36invfb_preapproval/postfit/nuis/WPol_nuisances}
-\end{figure}
-
-\clearpage
-\subsection{Simplified binning scheme}
-\label{app:aggregated}
-
-\newcommand{\customcaption}[5]{(Upper panel) Event yields observed in
-  data (solid circles) and SM expectations with their associated
-  uncertainties (blue histogram with grey shaded band) determined from
-  a simultaneous fit to data in the control regions only (CR-only
-  fit). Event yields and expectations are shown as a function of
-  \HTmiss for events in the #1 topology that are required to satisfy
-  #2, #3, and (\cmsLeft) #4 or (\cmsRight) #5. 
-  (Lower panel) The significance of deviations (pulls) observed in
-  data with respect to both the SM expectations from the CR-only fit,
-  expressed in terms of the total uncertainty in the SM
-  expectations. The pulls cannot be considered independently due to
-  inter-bin correlations.}
-
-\begin{figure}[h!]
-  \centering
-  \caption{
-    \customcaption{``monojet-like''}{$\njet = 1$ or $\njet = 2${\it a}}{$\scalht > 200\GeV$}{$\nb = 0$}{$\nb \geq 1$}
-  }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq0b_ge1j2a_200_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge1b_ge1j2a_200_Inf_crfit.pdf} 
-  \label{fig:aggregated_results1}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \caption{
-    \customcaption{``low \njet''}{$2 \leq \njet \leq 3$}{$\scalht > 200\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
-  }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq23j_200_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq23j_200_Inf_crfit.pdf} 
-  \label{fig:aggregated_results2}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \caption{
-    \customcaption{``medium \njet''}{$4 \leq \njet \leq 5$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
-  }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq45j_400_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq45j_400_Inf_crfit.pdf} 
-  \label{fig:aggregated_results3}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-    \caption{
-      \customcaption{``high \njet''}{$\njet \geq 6$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
-    }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_ge6j_400_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_ge6j_400_Inf_crfit.pdf}
-  \label{fig:aggregated_results4}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \caption{Covariance matrix with aggregated signal region binning} 
-  }
-  \includegraphics[width=0.8\linewidth]{figures/results/36invfb_preapproval/aggregated/covariance}
-  \label{fig:T1bbbbSignif}
 \end{figure}
 
 \clearpage
