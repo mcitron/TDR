@@ -5,68 +5,70 @@
 The following section summarises the result of this analysis. The
 control regions are populated with the full data set of 2016, namely
 35.9\fbinv. As indicated in Sec.~\ref{sec:blinding}, the signal region
-has been fully unblinded. 
+has been fully unblinded.
+
+\subsection{Nominal result}
+\label{sec:nominal-result}
 
 Two different fits are performed. The {\it control-region-only fit} or
 {\it masked fit} is constrained by data in the control regions only
 and does not consider the observed data counts in the signal
 region. The {\it signal-region fit} or {\it full fit} is constrained
-by data counts in all control and signal regions, under the assumption that no
-signal is present. 
-(Note that the terms
-{\it masked fit} and {\it control-region-only fit} ({\it CR-only fit})
-are also used interchangeably.)
+by data counts in all control and signal regions, under the assumption
+that no signal is present.  (Note that the terms {\it masked fit} and
+{\it control-region-only fit} ({\it CR-only fit}) are also used
+interchangeably.)
 
-The observed data and expected SM contributions are shown in 
-figures~\ref{fig:no-fit}, \ref{fig:cr-fit}, and \ref{fig:full-fit}.
-Figure~\ref{fig:no-fit} shows the results prior to fitting, so contains just the observed data and MC predictions with only the previously mentioned corrections applied.
-Figures~\ref{fig:cr-fit} and \ref{fig:full-fit} show the results of the control region-only fit and full fit respectively.
-For each fit, the results are divided into six figures containing the seven considered event topologies, with monojet and asymmetric events shown together.
+The result, in terms of observed data counts and the expected SM
+contributions and uncertainties, are shown in Figs.~\ref{fig:no-fit},
+\ref{fig:cr-fit}, and \ref{fig:full-fit}. (These figures supersede the
+original presentation of the result, found in AN v4 and
+Appendix~\ref{app:results-orig}.)
 
-Each of these figures contains three panels.  The top panels show the
-event yields in the signal region as observed in data (solid circles) and as
-predicted in the SM (black histogram).  The uncertainties on the prediction are
-indicated by the shaded bands, with the grey band for the uncertainty on the
-total prediction and the burgundy shaded band for the remnant multi-jet
-background.
+Figure~\ref{fig:no-fit} shows the results prior to fitting, so
+contains just the observed data and predictions determined from
+simulated event samples following (only) the application of the
+corrections summarised in
+Sec.~\ref{sec:sim-corrs}. Figures~\ref{fig:cr-fit} and
+\ref{fig:full-fit} show the results of the control-region-only and
+full fits, respectively.
 
-Central panels show the ratio of the observed and expected counts.
-Error bars contain both statistical and systematic uncertainties and show the
-mid-P interval for the ratio.
+For each fit, the results are divided into six subfigures, containing
+the seven considered event topologies categorised according to \njet,
+with the monojet and asymmetric events shown together. The different
+\nb and \scalht categories are delineated by vertical lines, and the
+\mht dimension is ``unrolled'' for each (\njet, \nb, \scalht)
+category.
 
-Finally, the bottom panels provide the observed pull of the data given by the
-difference between observed and expected yields and normalised to the total
-uncertainty.  The total uncertainty is the quadrature sum of the uncertainty on
-the prediction and the asymmetric statistical uncertainty on the data. The
-upper (lower) value of the statistical uncertainty on the data is used when the
-prediction is above (below) the observed value.
+Each subfigure contains three panels.  The top panels show the event
+yields in the signal region as observed in data (solid circles) and as
+predicted in the SM (black histogram).  The uncertainties on the
+prediction are indicated by the shaded bands, with the grey band for
+the uncertainty on the total prediction and the burgundy shaded band
+for the remnant multi-jet background. Central panels show the ratio of
+the observed and expected counts.  Error bars contain both statistical
+and systematic uncertainties and show the mid-P interval for the
+ratio. Finally, the bottom panels provide the observed pull of the
+data given by the difference between observed and expected yields and
+normalised to the total uncertainty.  The total uncertainty is the
+quadrature sum of the uncertainty on the prediction and the asymmetric
+statistical uncertainty on the data. The upper (lower) value of the
+statistical uncertainty on the data is used when the prediction is
+above (below) the observed value.
 
-Each bin in figures~\ref{fig:no-fit}, \ref{fig:cr-fit}, and \ref{fig:full-fit} represents a different \HTmiss bin.
-Bins are labelled for their \nj, \nb, and \scalht along the top of the plots, however, to improve readability, the
-\HTmiss value for the bin should be inferred from table~\ref{tab:SR_binning} in section~\ref{sec:binning-summary}.
-
-%Figures~\ref{fig:mr_mono_pre} and \ref{fig:mr_mono_post} summarise the
-%event yields observed in data and SM expectations with their
-%associated uncertainties as a function of \scalht and \nb, integated
-%over \mht, for the monojet category ($\njet = 1$) for the masked and
-%full fits, respectively. The lower panels show the data-to-background
-%ratios for the masked and full fits.  Figure~\ref{fig:mr_mono_pulls}
-%shows background expectations for the masked fit in the upper panel,
-%as shown in Fig.~\ref{fig:mr_mono_pre}, and the pulls (\ie the
-%difference between data and the background estimates relative to their
-%uncertainties) for both the masked and full fits in the lower
-%panel. 
-%The same information is shown in Figs.~\ref{fig:mr_asym_pre},
-%\ref{fig:mr_asym_post}, \ref{fig:mr_asym_pulls} and
-%\ref{fig:mr_symm_pre}, \ref{fig:mr_symm_post}, \ref{fig:mr_symm_pulls}
-%for the asymmetric and symmetric \njet categories,
-%respectively. 
+%Each bin in figures~\ref{fig:no-fit}, \ref{fig:cr-fit}, and
+%\ref{fig:full-fit} represents a different \HTmiss bin.  Bins are
+%labelled for their \nj, \nb, and \scalht along the top of the plots,
+%however, to improve readability, the \HTmiss value for the bin should
+%be inferred from table~\ref{tab:SR_binning} in
+%section~\ref{sec:binning-summary}.
 
 Figure~\ref{fig:ratios_and_pulls} shows histograms of the masked fit
 values of the data-to-background ratios and pulls for all event
-categories. Figure~\ref{fig:pulls} shows the pulls as a function of
-(\njet, \nb) event category and \scalht, with counts integrated over
-\mht, obtained from the masked fit.
+categories (defined in terms of \njet, \nb, and \scalht, yet inclusive
+with respect to \mht). Figure~\ref{fig:pulls} shows the pulls as a
+function of (\njet, \nb) event category and \scalht, with counts
+integrated over \mht, obtained from the masked fit.
 %A goodness-of-fit estimate can be obtained by considering the pulls
 %obtained from the masked fit, which in the following are assumed to be
 %derived from independent background estimates. The summation over the
@@ -79,21 +81,8 @@ Figure~\ref{fig:breakdown} provides the breakdown of SM backgrounds
 (categorised as lost lepton, \znunuj, or multijet) in the signal
 region as determined from the CR-only and full fits.
 
-Additional figures can be found in the appendix.
-Appendix~\ref{app:nuispost}
-contains figures showing the post-fit behaviour of the nuisance
-parameters relative to their pre-fit values.
-The results with the simplified binning scheme, described in
-Sec.~\ref{sec:aggregated}, are shown in Appendix~\ref{app:aggregated} in
-figures~\ref{fig:aggregated_results1},
-\ref{fig:aggregated_results2}, \ref{fig:aggregated_results3}, and
-\ref{fig:aggregated_results4}.
-
-Appendix~\ref{app:mhtshapes} contains similar plots to those shown below but 
-integrated over the \HTmiss bins.  It also provides figures with the event
-yields observed in data and CR-fit SM expectations with their
-associated uncertainties as a function of \HTmiss for each (\njet,
-\nb) event category and \scalht bin.
+Finally, App.~\ref{app:results} contains figures showing the post-fit
+behaviour of the nuisance parameters relative to their pre-fit values.
 
 \clearpage
 \begin{figure}[!h]
@@ -124,7 +113,6 @@ associated uncertainties as a function of \HTmiss for each (\njet,
 	}
 \end{figure}
 
-
 \clearpage
 \begin{figure}[!h]
   \centering
@@ -153,7 +141,6 @@ associated uncertainties as a function of \HTmiss for each (\njet,
   Detailed descriptions are given in the text.
 	}
 \end{figure}
-
 
 \clearpage
 \begin{figure}[!h]
@@ -186,7 +173,7 @@ associated uncertainties as a function of \HTmiss for each (\njet,
 
 % 1d histograms 
 \clearpage
-\subsection{Ratios and pulls}
+\subsubsection{Ratios and pulls}
 
 \begin{figure}[h!]
   \centering
@@ -209,7 +196,7 @@ associated uncertainties as a function of \HTmiss for each (\njet,
 \end{figure}
 
 \clearpage
-\subsection{SM breakdown}
+\subsubsection{SM breakdown}
 
 \begin{figure}[h!]
   \centering
@@ -220,3 +207,82 @@ associated uncertainties as a function of \HTmiss for each (\njet,
   \includegraphics[width=0.8\linewidth]{figures/results/36invfb/breakdown/postfit/Signal_sample_composition.pdf}
 \end{figure}
 
+\clearpage
+\subsection{Aggregated signal regions}
+\label{sec:aggregated}
+
+Observed data counts and SM background estimates are presented in
+Figs.~\ref{fig:aggregated_results1}, \ref{fig:aggregated_results2},
+\ref{fig:aggregated_results3}, and \ref{fig:aggregated_results4} for
+the aggregated signal regions based on a simplified binning scheme, as
+defined in Sec.~\ref{sec:aggregated}. The SM background estimates are
+based on the same likelihood model used to determine the nominal
+result.
+
+\newcommand{\customcaption}[5]{(Upper panel) Event yields observed in
+  data (solid circles) and SM expectations with their associated
+  uncertainties (blue histogram with grey shaded band) determined from
+  a simultaneous fit to data in the control regions only (CR-only
+  fit). Event yields and expectations are shown as a function of
+  \HTmiss for events in the #1 topology that are required to satisfy
+  #2, #3, and (\cmsLeft) #4 or (\cmsRight) #5. 
+  (Lower panel) The significance of deviations (pulls) observed in
+  data with respect to both the SM expectations from the CR-only fit,
+  expressed in terms of the total uncertainty in the SM
+  expectations. The pulls cannot be considered independently due to
+  inter-bin correlations.}
+
+\clearpage
+\begin{figure}[h!]
+  \centering
+  \caption{
+    \customcaption{``monojet-like''}{$\njet = 1$ or $\njet = 2${\it a}}{$\scalht > 200\GeV$}{$\nb = 0$}{$\nb \geq 1$}
+  }
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq0b_ge1j2a_200_Inf_crfit.pdf} ~
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge1b_ge1j2a_200_Inf_crfit.pdf} 
+  \label{fig:aggregated_results1}
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \centering
+  \caption{
+    \customcaption{``low \njet''}{$2 \leq \njet \leq 3$}{$\scalht > 200\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+  }
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq23j_200_Inf_crfit.pdf} ~
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq23j_200_Inf_crfit.pdf} 
+  \label{fig:aggregated_results2}
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \centering
+  \caption{
+    \customcaption{``medium \njet''}{$4 \leq \njet \leq 5$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+  }
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq45j_400_Inf_crfit.pdf} ~
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq45j_400_Inf_crfit.pdf} 
+  \label{fig:aggregated_results3}
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \centering
+    \caption{
+      \customcaption{``high \njet''}{$\njet \geq 6$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+    }
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_ge6j_400_Inf_crfit.pdf} ~
+  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_ge6j_400_Inf_crfit.pdf}
+  \label{fig:aggregated_results4}
+\end{figure}
+
+\clearpage
+\begin{figure}[h!]
+  \centering
+  \caption{Covariance and correlation matrices for the background
+    predictions based on aggregated signal regions} 
+  }
+  \includegraphics[width=0.8\linewidth]{figures/results/36invfb_preapproval/aggregated/covariance} \\
+  \includegraphics[width=0.8\linewidth]{figures/results/36invfb_preapproval/aggregated/correlation}
+  \label{fig:T1bbbbSignif}
+\end{figure}
