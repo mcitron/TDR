@@ -87,7 +87,8 @@ mismodelling of kinematics (\eg acceptances) and instrumental effects
 (\eg reconstruction efficiencies). These uncertainties are discussed
 below.
 
-\subsection{\texorpdfstring{\mht}{MHT} template}
+\subsection{\texorpdfstring{\mht}{MHT} templates}
+\label{sec:mht-zinv}
 
 As discussed above, the \mmj events are categorised similarly to
 candidate signal events in terms of \njet, \scalht, and \nb. However,
@@ -191,11 +192,9 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
     QCD + EWK NLO corrections           & 1, correlated across \cat           & 2.2--14.3                            & Shared & \ref{fig:tfSyst_nlo_mmZinv}         \\
     Signal trigger efficiency           & 1, correlated across \cat           & 0.0--2.0                             & Shared & \ref{fig:tfSyst_trigger_mmZinv}     \\
     Lepton efficiency (selection)       & 1, correlated across \cat           & 0.0--4.2                             & Unique & \ref{fig:tfSyst_muonsf_mmZinv}      \\
-    %Lepton efficiency (veto)            & 1, correlated across \cat           & X--Y                                 & Unique & \ref{fig:tfSyst_leptonveto_mmZinv}  \\
     Jet energy scale                    & 1, correlated across \cat           & 5.3--8.0                             & Shared & \ref{fig:tfSyst_jec_mmZinv}         \\
     b-quark tag efficiency              & 1, correlated across \cat           & 0.3--0.6                             & Shared & \ref{fig:tfSyst_bsf_mmZinv}         \\
     b-quark mistag probability          & 1, correlated across \cat           & 0.2--1.8                             & Shared & \ref{fig:tfSyst_bsfl_mmZinv}        \\
-%    \alphat + \bdphi extrapolation     & 1 per \njet, 1 per \scalht category & X--Y (\njet), X--Y (\scalht)         & Unique & \ref{fig:closure_AlphaT_bDPhi_mumu} \\
     \alphat extrapolation               & 1 per \njet, 1 per \scalht category & 3.3--9.4 (\njet), 2.1--5.9 (\scalht) & Unique & \ref{fig:closure_AlphaT_mumu}       \\
     \bdphi extrapolation                & 1 per \njet, 1 per \scalht category & 2.7--22. (\njet), 1.6--18. (\scalht) & Unique & \ref{fig:closure_bDPhi_mumu}        \\
     \hline
@@ -270,12 +269,10 @@ percent level, as presented in Fig.~\ref{fig:tfSyst_trigger_mmZinv}
 \subsubsection{Lepton trigger / identification / isolation efficiencies}
 \label{sec:leptonSyst-zinv}
 
-Figures~\ref{fig:tfSyst_muonsf_mmZinv} and
-\ref{fig:tfSyst_leptonveto_mmZinv} (App.~\ref{app:zinv}) show the
+Figure~\ref{fig:tfSyst_muonsf_mmZinv} (App.~\ref{app:zinv}) shows the
 systematic uncertainties associated with the data/simulation scale
 factors related to the trigger, identification, and isolation
-efficiencies for muon selection and identification and isolation
-efficiencies for lepton veto, repectively.
+efficiencies for muon selection.
 
 \subsubsection{Jet energy scale}
 \label{sec:tfSyst_jec-zinv}
@@ -319,10 +316,10 @@ The level of closure for an extrapolation in \alphat (only) with the
 \mmj sample is shown in Fig.~\ref{fig:closure_AlphaT_mumu}
 (App.~\ref{app:zinv}) as function of \scalht and \njet. Similarly,
 Fig.~\ref{fig:closure_bDPhi_mumu} (App.~\ref{app:zinv}) shows the same
-information for the extrapolation in \bdphi (only). Finally, the level
-of closure observed when both \alphat and \bdphi requirements are
-simultaneously imposed is summarised in
-Fig.~\ref{fig:closure_AlphaT_bDPhi_mumu} (App.~\ref{app:zinv}).
+information for the extrapolation in \bdphi (only). 
+%Finally, the level of closure observed when both \alphat and \bdphi
+%requirements are simultaneously imposed is summarised in
+%Fig.~\ref{fig:closure_AlphaT_bDPhi_mumu} (App.~\ref{app:zinv}).
 
 Any non-closure in the extrapolation of both \alphat and \bdphi is
 covered by a systematic uncertainty, which is defined as the
