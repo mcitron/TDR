@@ -59,7 +59,11 @@ topologies = odict([
 ################################################################################
 ################################################################################
 
-file = open(["MhtBinning_final_CR.pkl","MhtBinning_final_SR.pkl"][region],"rb")
+file = open([ 
+        ["MhtBinning_final_CR.pkl","MhtBinning_final_v2.pkl"][0],
+        ["MhtBinning_final_SR.pkl","MhtBinning_SR_v5.pkl"][0]
+        ][region],"rb")
+
 input = pickle.load(file)
 
 # format of 'input' dict:
