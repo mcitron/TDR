@@ -71,7 +71,8 @@ input = pickle.load(file)
 # ('njet', 'nb', (ht_low, ht_high)) [mht_1, mht_2, mht_3, ...]
 
 # print input dict
-#for key,val in input.items() : print key,val
+for key,val in input.items() : print key,val
+quit()
 
 # overrides input dict by keeping only 200,400,600,900 boundaries for MHT binning (probably now obsolete? fixed by Lucien?)
 input = odict([ (key,list(filter(lambda x: x == 200 or x == 400 or x == 600 or x == 900, val))) for key,val in input.items() ])

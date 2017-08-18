@@ -1,0 +1,44 @@
+--- histogram.py 2010/10/19 17:03:11 1.1
++++ histogram.py 2010/10/19 17:42:17 1.2
+@@ -9,4 +9,7 @@
+#
+#
++import numpy as np
++import math
++
+class Histogram(object):
+"""
+@@ -18,9 +21,10 @@
+
+:Parameters:
+- - `data`: array like object
++ - `data`: array-like object
++ - `bins`: number of bins (default 10)
+"""
+self.data = data
+self.bins = bins
+- self.h = histogram(self.data, bins=self.bins)
++ self.h = np.histogram(self.data, bins=self.bins)
+def horizontal(self, height=4, character ='|'):
+"""Returns a multiline string containing a
+@@ -40,5 +44,5 @@
+"""
+his = """"""
+- bars = self.h[0]/max(self.h[0])*height
++ bars = self.h[0]/float(max(self.h[0]))*height
+for l in reversed(range(1,height+1)):
+line = ""
+@@ -48,5 +52,5 @@
+line = ' '*(len(str(max(self.h[0])))+1) #add leading spaces
+for c in bars:
+- if c >= ceil(l):
++ if c >= math.ceil(l):
+line += character
+else:
+@@ -81,5 +85,5 @@
+xl = ['%.2f'%n for n in self.h[1]]
+lxl = [len(l) for l in xl]
+- bars = self.h[0]/max(self.h[0])*height
++ bars = self.h[0]/float(max(self.h[0]))*height
+his += ' '*(max(bars)+2+max(lxl))+'%s\n'%max(self.h[0])
+for i,c in enumerate(bars):
