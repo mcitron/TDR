@@ -3,34 +3,83 @@ import math
 from histogram import histogram
 import numpy as np
 
+# pull definition:
+# https://github.com/CMSRA1/AlphaStats/blob/v1.6.x/dataframes/mountainRangePlot.py#L584-L600
+
 ################################################################################
 
 option = ["raw","ordered","formatted"][2]
 
-fit = ["pre","CR","CR-only","full"][1]
+fit = ["pre","CR","CR-only","full"][3]
 
 ################################################################################
 
 file = {
     "pre":"data_no-fit.txt",
     "CR":"data_no-fit-CR.txt",
-    "CR-only":"data_prefit.txt",
-    "full":"data_fit_b.txt",
+    "CR-only":"data_cr-only.txt",
+    "full":"data_full-fit-bg.txt",
     }
 
-for vals in file.values() :
-
-    f = open(file[fit],'r') 
+for filename in file.values() :
+    f = open(filename,'r') 
     lines = f.readlines()
-    print file[fit],len(lines)
+    print "filename:",filename,"lines:",len(lines)
+
+print 
+f = open(file["pre"],'r') 
+lines = f.readlines()
+print "filename:",file["pre"],"lines:",len(lines)
+print "  njet:",len(list(set([ (line.split()[1]) for line in lines[1:] ])))
+print "  nb:",len(list(set([ (line.split()[2]) for line in lines[1:] ])))
+print "  ht:",len(list(set([ (line.split()[3]) for line in lines[1:] ])))
+print "  mht:",len(list(set([ (line.split()[6]) for line in lines[1:] ])))
+print "  njet,nb:",len(list(set([ (line.split()[1],line.split()[2]) for line in lines[1:] ])))
+print "  njet,ht:",len(list(set([ (line.split()[1],line.split()[3]) for line in lines[1:] ])))
+print "  njet,nb,ht:",len(list(set([ (line.split()[1],line.split()[2],line.split()[3]) for line in lines[1:] ])))
+print "  njet,nb,ht,mht:",len(list(set([ (line.split()[1],line.split()[2],line.split()[3],line.split()[6]) for line in lines[1:] ])))
+f.close()
+
+print 
+f = open(file["CR"],'r') 
+lines = f.readlines()
+print "filename:",file["pre"],"Mu","lines:",len(lines)
+print "  njet:",len(list(set([ (line.split()[1]) for line in lines[1:] if line.split()[0] == "Mu" ])))
+print "  nb:",len(list(set([ (line.split()[2]) for line in lines[1:] if line.split()[0] == "Mu" ])))
+print "  ht:",len(list(set([ (line.split()[3]) for line in lines[1:] if line.split()[0] == "Mu" ])))
+print "  njet,nb:",len(list(set([ (line.split()[1],line.split()[2]) for line in lines[1:] if line.split()[0] == "Mu" ])))
+print "  njet,ht:",len(list(set([ (line.split()[1],line.split()[3]) for line in lines[1:] if line.split()[0] == "Mu" ])))
+print "  njet,nb,ht:",len(list(set([ (line.split()[1],line.split()[2],line.split()[3]) for line in lines[1:] if line.split()[0] == "Mu" ])))
+f.close()
+
+print 
+f = open(file["CR"],'r') 
+lines = f.readlines()
+print "filename:",file["pre"],"MuMu","lines:",len(lines)
+print "  njet:",len(list(set([ (line.split()[1]) for line in lines[1:] if line.split()[0] == "MuMu" ])))
+print "  nb:",len(list(set([ (line.split()[2]) for line in lines[1:] if line.split()[0] == "MuMu" \
+                                 and line.split()[2] == "eq0b" ])))*2
+print "  ht:",len(list(set([ (line.split()[3]) for line in lines[1:] if line.split()[0] == "MuMu" ])))
+print "  njet,nb:",len(list(set([ (line.split()[1],line.split()[2]) for line in lines[1:] if line.split()[0] == "MuMu" \
+                                      and line.split()[2] == "eq0b" ])))*2
+print "  njet,ht:",len(list(set([ (line.split()[1],line.split()[3]) for line in lines[1:] if line.split()[0] == "MuMu" ])))
+print "  njet,nb,ht:",len(list(set([ (line.split()[1],line.split()[2],line.split()[3]) for line in lines[1:] if line.split()[0] == "MuMu" \
+                                         and line.split()[2] == "eq0b" ])))*2
+f.close()
+
+#quit()
+print
+
+f = open(file[fit],'r') 
+lines = f.readlines()
 
 ################################################################################
 # hack to deal with change in data format, extra integer (0-3) in column #5
-    entries = []
-    entries.append(" ".join(lines[0].split()))
-    for line in lines[1:] :
-        if fit == "CR" : entries.append(line)
-        else : entries.append(" ".join(line.split()[0:5]+line.split()[6:]))
+entries = []
+entries.append(" ".join(lines[0].split()))
+for line in lines[1:] :
+    if fit == "CR" : entries.append(line)
+    else : entries.append(" ".join(line.split()[0:5]+line.split()[6:]))
 
 ################################################################################
 
@@ -178,7 +227,7 @@ elif option == "formatted" :
         if fit == "CR" : header += "    the \\mj and \\mmj control regions for the \\texttt{"+"{:s}".format(key)+"} topology. The\n"
         else : header += "    the signal region for the \\texttt{"+"{:s}".format(key)+"} topology. The\n"
         header += "    uncertainties in the background expectations include statistical\n"
-        if fit == "pre" or fit == "CR" : header += "    contributions only. \n"
+        if fit == "pre" or fit == "CR" : header += "    contributions from the finite-sized simulation samples {\\it only}. \n"
         else : header += "    as well as systematic contributions. \n"
         header += "  }\n"
         header += "  \\label{tab:result-"+"{:s}".format(key)+"}\n"
