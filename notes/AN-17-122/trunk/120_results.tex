@@ -223,7 +223,8 @@ Figs.~\ref{fig:aggregated_results1}, \ref{fig:aggregated_results2},
 the aggregated signal regions based on a simplified binning scheme, as
 defined in Sec.~\ref{sec:aggregated}. The SM background estimates are
 based on the same likelihood model used to determine the nominal
-result.
+result. The covariance and correlation matrices are shown in
+Figs.~\ref{fig:covarmatrix} and \ref{fig:corrmatrix}, respectively. 
 
 \newcommand{\customcaption}[5]{(Upper panel) Event yields observed in
   data (solid circles) and SM expectations with their associated
@@ -238,25 +239,29 @@ result.
   expectations. The pulls cannot be considered independently due to
   inter-bin correlations.}
 
+\newcommand{\customcaptiontwo}[6]{As Fig.~\ref{#6}, but for for events 
+  in the #1 topology that are required to satisfy #2, #3, and
+  (\cmsLeft) #4 or (\cmsRight) #5.}
+
 \clearpage
 \begin{figure}[h!]
   \centering
   \caption{
     \customcaption{``monojet-like''}{$\njet = 1$ or $\njet = 2${\it a}}{$\scalht > 200\GeV$}{$\nb = 0$}{$\nb \geq 1$}
   }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq0b_ge1j2a_200_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge1b_ge1j2a_200_Inf_crfit.pdf} 
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq0b_ge1j2a_200_Inf_crfit.pdf} ~
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge1b_ge1j2a_200_Inf_crfit.pdf} 
   \label{fig:aggregated_results1}
 \end{figure}
 
-\clearpage
+%\clearpage
 \begin{figure}[h!]
   \centering
   \caption{
-    \customcaption{``low \njet''}{$2 \leq \njet \leq 3$}{$\scalht > 200\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+    \customcaptiontwo{``low \njet''}{$2 \leq \njet \leq 3$}{$\scalht > 200\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
   }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq23j_200_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq23j_200_Inf_crfit.pdf} 
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq23j_200_Inf_crfit.pdf} ~
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq23j_200_Inf_crfit.pdf} 
   \label{fig:aggregated_results2}
 \end{figure}
 
@@ -264,21 +269,21 @@ result.
 \begin{figure}[h!]
   \centering
   \caption{
-    \customcaption{``medium \njet''}{$4 \leq \njet \leq 5$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+    \customcaptiontwo{``medium \njet''}{$4 \leq \njet \leq 5$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
   }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq45j_400_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq45j_400_Inf_crfit.pdf} 
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq45j_400_Inf_crfit.pdf} ~
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq45j_400_Inf_crfit.pdf} 
   \label{fig:aggregated_results3}
 \end{figure}
 
-\clearpage
+%\clearpage
 \begin{figure}[h!]
   \centering
     \caption{
-      \customcaption{``high \njet''}{$\njet \geq 6$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}
+      \customcaptiontwo{``high \njet''}{$\njet \geq 6$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
     }
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_ge6j_400_Inf_crfit.pdf} ~
-  \includegraphics[width=0.49\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_ge6j_400_Inf_crfit.pdf}
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_ge6j_400_Inf_crfit.pdf} ~
+  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_ge6j_400_Inf_crfit.pdf}
   \label{fig:aggregated_results4}
 \end{figure}
 
@@ -287,17 +292,15 @@ result.
   \centering
   \caption{Covariance matrix for the background
     predictions based on aggregated signal regions} 
-  }
-  \includegraphics[width=0.8\linewidth]{figures/results/36invfb_preapproval/aggregated/covariance}
-  \label{fig:covar}
+  \label{fig:covarmatrix}}
+  \includegraphics[width=0.5\linewidth]{figures/results/36invfb_preapproval/aggregated/covariance}
 \end{figure}
 
-\clearpage
+%\clearpage
 \begin{figure}[h!]
   \centering
   \caption{Correlation matrix for the background
     predictions based on aggregated signal regions} 
-  }
-  \includegraphics[width=0.8\linewidth]{figures/results/36invfb_preapproval/aggregated/correlation}
-  \label{fig:corr}
+  \label{fig:corrmatrix}}
+  \includegraphics[width=0.5\linewidth]{figures/results/36invfb_preapproval/aggregated/correlation}
 \end{figure}
