@@ -5,17 +5,17 @@ import numpy as np
 
 ################################################################################
 
-option = ["raw","formatted"][1]
+option = ["raw","ordered","formatted"][2]
 
-fit = ["pre","CR-only","full","CR"][3]
+fit = ["pre","CR","CR-only","full"][1]
 
 ################################################################################
 
 file = {
     "pre":"data_no-fit.txt",
+    "CR":"data_no-fit-CR.txt",
     "CR-only":"data_prefit.txt",
     "full":"data_fit_b.txt",
-    "CR":"data_no-fit-CR.txt",
     }
 
 for vals in file.values() :
@@ -24,14 +24,17 @@ for vals in file.values() :
     lines = f.readlines()
     print file[fit],len(lines)
 
-#for line in lines :
-#    print line.split()[:7]
-#quit()
+################################################################################
+# hack to deal with change in data format, extra integer (0-3) in column #5
+    entries = []
+    entries.append(" ".join(lines[0].split()))
+    for line in lines[1:] :
+        if fit == "CR" : entries.append(line)
+        else : entries.append(" ".join(line.split()[0:5]+line.split()[6:]))
 
 ################################################################################
 
 index = []
-
 if fit != "CR" :
     index = [
         (0,   str,"{:4s}"),   # row number 
@@ -106,14 +109,25 @@ topologies = odict([
 
 ################################################################################
 
+header = entries[0].split()
+#print header 
+
+################################################################################
+
+if option == "raw" : 
+    for line in lines[:10] :
+        print line.split()
+
+################################################################################
+
 if fit == "CR" : 
     dct = odict()
-    for line in lines[1:] :
+    for line in entries[1:] :
         line = line.split()
         old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),float(line[4]))
         new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),float(line[4]))
         line = [float(line[5]),float(line[6]),float(line[7]),float(line[8]),float(line[9]),float(line[10])]
-        if old[0] == "Mu" or old[2] == "eq0b" : 
+        if old[1] == "eq1j" or old[0] == "Mu" or old[2] == "eq0b" :
             dct[old] = line 
         else :
             if new not in dct.keys() : 
@@ -136,24 +150,16 @@ if fit == "CR" :
         print entry
 #        print "{0:4s}, {1:4s}, {2:4s}, {3:4.0f}, {4:4.0f}, {6:7.1f}+/-{7:5.1f}, {8:5.0f}".format(*entry)
 
-    lines = lst
+    entries = lst
 
 ################################################################################
 
-header = lines[0].split()
-#print header 
-
-################################################################################
-
-if option == "raw" : 
-    for line in lines[1:] :
+if option == "ordered" : 
+    for line in entries[1:] :
         temp = [ k.format(j(line.split()[i])) for (i,j,k) in index ]
         print temp
 
-################################################################################
-
 elif option == "formatted" : 
-
 
 #    temp = np.array([float(x[8]) for x in lst])
 #    #print temp
@@ -176,16 +182,22 @@ elif option == "formatted" :
         else : header += "    as well as systematic contributions. \n"
         header += "  }\n"
         header += "  \\label{tab:result-"+"{:s}".format(key)+"}\n"
-        header += "  \\tiny\n"
+        header += "  \\scriptsize\n"
         header += "  \\centering\n"
         if fit == "CR" : header += "  \\begin{tabular}{lrrlrrcl}\n"
-        else : header += "  \\begin{tabular}{rrllrrcl}\n"
+        else : 
+            if key == "eq1j" : header += "  \\begin{tabular}{rrlrrcl}\n"
+            else : header += "  \\begin{tabular}{rrllrrcl}\n"
         header += "    \\hline\n"
         if fit == "CR" : header += "    Region\\T\\B & \\njet & \\nb & \\scalht [GeV] & Data & \\multicolumn{3}{c}{SM} \\\\ \n"
-        else : header += "    \\njet\\T\\B & \\nb & \\scalht [GeV] & \\mht [GeV] & Data & \\multicolumn{3}{c}{SM} \\\\ \n"
+        else : 
+            if key == "eq1j" : header += "    \\njet\\T\\B & \\nb & \\scalht [GeV] & Data & \\multicolumn{3}{c}{SM} \\\\ \n"
+            else : header += "    \\njet\\T\\B & \\nb & \\scalht [GeV] & \\mht [GeV] & Data & \\multicolumn{3}{c}{SM} \\\\ \n"
         header += "    \\hline"
         print header 
-        for line in lines[1:] :
+        previous = ""
+        previousCR = ""
+        for line in entries[1:] :
 
             # extract and format file content, line by line  
             temp = [ k.format(j(line.split()[i])) for (i,j,k) in index ]
@@ -194,16 +206,24 @@ elif option == "formatted" :
             if temp[0] not in key : continue 
 
             # HT and MHT equivalence for eq1j cat
-            if temp[0] == "eq1j" and "200" not in temp[4] : continue 
+            if fit != "CR" and temp[0] == "eq1j" and float(temp[2]) != float(temp[4]) : continue
 
             # format table entry 
             tmp = []
 
             if fit == "CR" : tmp.append( "{:s}".format( {"Mu":"\\mj","MuMu":"\\mmj"}[line.split()[0]] ) ) 
-            tmp.append( "{:s}".format(nj_string[temp[0]]) ) 
-            tmp.append( "{:s}".format(nb_string[temp[1]]) ) 
-            tmp.append( "${:s}-{:s}$".format(str(temp[2]),str(temp[3]).replace("inf","\\infty")) )
-            if fit != "CR" : tmp.append( "${:s}-{:s}$".format(str(temp[4]),str(temp[5]).replace("inf","\\infty")) )
+            (njet,bjet,ht) = ( "{:s}".format(nj_string[temp[0]]),
+                               "{:s}".format(nb_string[temp[1]]),
+                               "${:s}-{:s}$".format(str(temp[2]),str(temp[3]).replace("inf","\\infty")) )
+            padding = "" 
+            if fit != "CR" and str(njet+bjet+ht) != previous : padding = "\\T"
+#            if fit == "CR" and str(njet+bjet) != previousCR : padding = "\\T"
+            previous = str(njet+bjet+ht)
+            previousCR = str(njet+bjet)
+            tmp.append(njet+padding) 
+            tmp.append(bjet) 
+            tmp.append(ht)
+            if fit != "CR" and key != "eq1j" : tmp.append( "${:s}-{:s}$".format(str(temp[4]),str(temp[5]).replace("inf","\\infty")) )
             tmp.append( "{:s}".format(temp[6]) )
             #tmp.append( "${:s}".format(temp[6]) + "^{+" + "{:s}".format(temp[7]) + "}_{-" + "{:s}".format(temp[8]) + "}$" )
             tmp.append( "{:s}".format(temp[9]) + " &$\pm$& " + "{:s}".format(temp[10]) )
