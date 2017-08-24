@@ -164,42 +164,42 @@ header = entries[0].split()
 ################################################################################
 
 if option == "raw" : 
-    for line in lines[:10] :
-        print line.split()
-
+    for line in lines[1:] :
+        #print line.split()
+        if str(line.split()[0]) == "MuMu" and \
+                str(line.split()[2]) != "eq0b" and \
+                str(line.split()[2]) != "eq1b" : continue 
+        print "{0:4s}, {1:4s}, {2:4s}, {3:4.0f}, {4:4.0f}, {6:7.1f}+/-{7:5.1f}, {8:5.0f}".format(str(line.split()[0]),
+                                                                                                 str(line.split()[1]),
+                                                                                                 str(line.split()[2]),
+                                                                                                 float(line.split()[3]),
+                                                                                                 float(line.split()[4]),
+                                                                                                 float(line.split()[5]),
+                                                                                                 float(line.split()[6]),
+                                                                                                 float(line.split()[7]),
+                                                                                                 float(line.split()[8]),
+                                                                                                 float(line.split()[9]),
+                                                                                                 )
+        
 ################################################################################
 
 if fit == "CR" : 
     dct = odict()
     for line in entries[1:] :
         line = line.split()
-        #old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),float(line[4]))
-        #new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),float(line[4]))
-        old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),0.)
-        new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),0.)
+        old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),float(line[4]))
+        new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),float(line[4]))
         line = [float(line[5]),float(line[6]),float(line[7]),float(line[8]),float(line[9]),float(line[10])]
-        if old[1] == "eq1j" or old[0] == "Mu" or old[2] == "eq0b" :
-            dct[old] = line 
-        else :
-            if new not in dct.keys() : 
-                dct[new] = line
-            else :
-                bin,bkgd,err,data,errh,errl = dct[new]
-                dct[new] = [bin,
-                            bkgd+line[1],
-                            math.sqrt(err**2+line[2]**2),
-                            data+line[3],
-                            math.sqrt(errh**2+line[4]**2),
-                            math.sqrt(errl**2+line[5]**2),
-                            ]
-
+        if old[0] == "Mu" or old[1] == "eq1j" or old[2] == "eq0b" : dct[old] = line 
+        elif old[0] == "MuMu" and old[2] == "eq1b" and new not in dct.keys() : dct[new] = line
+        
     lst = []
     for key,val in dct.items() :
         lst.append(" ".join([str(x) for x in list(key)]+[str(x) for x in val]))
 
-    for entry in lst :
-        print entry
-#        print "{0:4s}, {1:4s}, {2:4s}, {3:4.0f}, {4:4.0f}, {6:7.1f}+/-{7:5.1f}, {8:5.0f}".format(*entry)
+#    for entry in lst :
+#        print [ type(e) for e in entry ]
+#        #print "{0:4s}, {1:4s}, {2:4s}, {3:4.0f}, {4:4.0f}, {6:7.1f}+/-{7:5.1f}, {8:5.0f}".format(*entry)
 
     entries = lst
 
@@ -208,7 +208,18 @@ if fit == "CR" :
 if option == "ordered" : 
     for line in entries[1:] :
         temp = [ k.format(j(line.split()[i])) for (i,j,k) in index ]
-        print temp
+        print line
+#        print "{0:4s}, {1:4s}, {2:4s}, {3:4.0f}, {4:4.0f}, {6:7.1f}+/-{7:5.1f}, {8:5.0f}".format(str(line.split()[0]),
+#                                                                                                 str(line.split()[1]),
+#                                                                                                 str(line.split()[2]),
+#                                                                                                 float(line.split()[3]),
+#                                                                                                 float(line.split()[4]),
+#                                                                                                 float(line.split()[]),
+#                                                                                                 float(line.split()[6]),
+#                                                                                                 float(line.split()[7]),
+#                                                                                                 float(line.split()[8]),
+#                                                                                                 float(line.split()[9]),
+#                                                                                                 )
 
 elif option == "formatted" : 
 
