@@ -10,7 +10,7 @@ import numpy as np
 
 option = ["raw","ordered","formatted"][2]
 
-fit = ["pre","CR","CR-only","full"][3]
+fit = ["pre","CR","CR-only","full"][1]
 
 ################################################################################
 
@@ -173,8 +173,10 @@ if fit == "CR" :
     dct = odict()
     for line in entries[1:] :
         line = line.split()
-        old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),float(line[4]))
-        new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),float(line[4]))
+        #old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),float(line[4]))
+        #new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),float(line[4]))
+        old = (str(line[0]),str(line[1]),str(line[2]),float(line[3]),0.)
+        new = (str(line[0]),str(line[1]),"ge1b",float(line[3]),0.)
         line = [float(line[5]),float(line[6]),float(line[7]),float(line[8]),float(line[9]),float(line[10])]
         if old[1] == "eq1j" or old[0] == "Mu" or old[2] == "eq0b" :
             dct[old] = line 
@@ -261,9 +263,14 @@ elif option == "formatted" :
             tmp = []
 
             if fit == "CR" : tmp.append( "{:s}".format( {"Mu":"\\mj","MuMu":"\\mmj"}[line.split()[0]] ) ) 
-            (njet,bjet,ht) = ( "{:s}".format(nj_string[temp[0]]),
-                               "{:s}".format(nb_string[temp[1]]),
-                               "${:s}-{:s}$".format(str(temp[2]),str(temp[3]).replace("inf","\\infty")) )
+            if fit == "CR" : 
+                (njet,bjet,ht) = ( "{:s}".format(nj_string[temp[0]]),
+                                   "{:s}".format(nb_string[temp[1]]),
+                                   "{:s}".format(str(temp[2])) )
+            else :
+                (njet,bjet,ht) = ( "{:s}".format(nj_string[temp[0]]),
+                                   "{:s}".format(nb_string[temp[1]]),
+                                   "${:s}-{:s}$".format(str(temp[2]),str(temp[3]).replace("inf","\\infty")) )
             padding = "" 
             if fit != "CR" and str(njet+bjet+ht) != previous : padding = "\\T"
 #            if fit == "CR" and str(njet+bjet) != previousCR : padding = "\\T"
