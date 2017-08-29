@@ -224,7 +224,7 @@ not on \njet nor \nb that are used to define the event categories. No
 \alphat cut is applied for events satisfying $\njet = 1$ (``monojet''
 events, see Sec.~\ref{sec:subleading-jet}), as the variable is defined
 only for $\njet \geq 2$. Further, no requirement is made for events
-satisfying $\scalht > 1200\GeV$.
+satisfying $\scalht > 900\GeV$.
 
 \subsubsection{\texorpdfstring{\bdphi}{biased dPhi} requirement} 
 \label{sec:bdphi-selection}
@@ -352,7 +352,7 @@ QCD multijet-enriched event samples are defined by the application of
 the same event selection criteria used to define the signal region,
 summarised in Sec.~\ref{sec:had-signal}, except for the inversion of
 one or both of the following (signal region) requirements: $\mht/\met
-> 1.25$ and/or $\bdphi > 0.5$. An upper bound for the $\mht/\met$
+< 1.25$ and/or $\bdphi < 0.5$. An upper bound for the $\mht/\met$
 sideband is applied: $1.25 < \mht/\met < 3.0$. A lower bound for the
 $\bdphi$ sideband is applied: $0.2 < \bdphi < 0.5$. Further details
 can be found in Sec.~\ref{sec:qcd}.
@@ -577,9 +577,9 @@ chosen based on data event counts in the \mj and \mmj samples. The
 binning in \nb is bounded from above by \njet and determined based on
 data event counts in the \mj control region. The event counts in the
 \mmj sample are categorised according to counts in (\njet, \scalht,
-$\nb = 0$) and (\njet, \scalht, $\nb \geq 1$), with the single
-exception of ($\njet = 1$, $\scalht > 900$, $\nb \geq 0$), for which
-the \nb dimension is completely collapsed. 
+$\nb = 0$) and (\njet, \scalht, $\nb \geq 1$).%, with the single
+%exception of ($\njet = 1$, $\scalht > 900$, $\nb \geq 0$), for which
+%the \nb dimension is completely collapsed. 
 
 \begin{table}[!h]
   \topcaption{Summary of the lower bound of the final open \scalht bin
@@ -594,10 +594,10 @@ the \nb dimension is completely collapsed.
     \hline
     $\njet\, / \,\nb$ & 0    & 1    & 2    & 3    & $\geq$4 \\
     \hline
-    eq1j              & 900  & 900  & --   & --   & --      \\ 
+    eq1j              & 900  & 600  & --   & --   & --      \\ 
     ge2a              & 900  & 900  & 900  & 600  & --      \\ 
-    eq2j              & 1200 & 1200 & 900  & --   & --      \\ 
-    eq3j              & 1200 & 1200 & 1200 & 900  & --      \\ 
+    eq2j              & 1200 & 1200 & 600  & --   & --      \\ 
+    eq3j              & 1200 & 1200 & 1200 & 600  & --      \\ 
     eq4j              & 1200 & 1200 & 1200 & 900  & --      \\ 
     eq5j              & 1200 & 1200 & 1200 & 900  & 400     \\ 
     ge6j              & 1200 & 1200 & 1200 & 1200 & 400     \\ 
@@ -624,37 +624,45 @@ account for finite-size simulation samples. To ensure a sufficiently
 populated \HTmiss template can be constructed from simulated events,
 at least 500 unweighted simulation events are required in each (\njet,
 \scalht, \MHT) bin, inclusive with respect to \nb. Adjacent \HTmiss
-bins for each template are merged until this requirement is satisfied.
+bins for each template are merged until this requirement is
+satisfied. The \HTmiss binning scheme is summarised in
+Table~\ref{tab:SR_binning}. 
 
-\begin{table}[!h]
-  \topcaption{Summary of the lower bound of the final \HTmiss bin
-    [GeV] as a function of \njet and \scalht (signal region,
-    aggregated scheme). The lower bound of the first \scalht bin is
-    summarised in Table~\ref{tab:sr-ht-binning}. The dashes (--)
-    signify (\njet, \nb) bins that are not possible or used.  
-  }
-  \label{tab:mht-binning}
-  \centering
-  \begin{tabular}{ lccccc }
-    \hline
-    $\njet\, / \,\scalht$ [GeV] & 200--400 & 400--600 & 600--900 & 900--1200 & $>$1200 \\
-    \hline
-    eq1j                        & 900      & 900      & --       & --        & --      \\ 
-    ge2a                        & 900      & 900      & 900      & 600       & --      \\ 
-    eq2j                        & 900      & 900      & 900      & --        & --      \\ 
-    eq3j                        & 900      & 900      & 900      & 900       & --      \\ 
-    eq4j                        & 900      & 900      & 900      & 900       & --      \\ 
-    eq5j                        & 900      & 900      & 900      & 900       & 400     \\ 
-    ge6j                        & 900      & 900      & 900      & 900       & 400     \\ 
-    \hline
-  \end{tabular}
-\end{table}
+%\begin{table}[!h]
+%  \topcaption{Summary of the lower bound of the final \HTmiss bin
+%    [GeV] as a function of \njet and \scalht (signal region,
+%    aggregated scheme). The lower bound of the first \scalht bin is
+%    summarised in Table~\ref{tab:sr-ht-binning}. The dashes (--)
+%    signify (\njet, \nb) bins that are not possible or used.  
+%  }
+%  \label{tab:mht-binning}
+%  \centering
+%  \begin{tabular}{ lccccc }
+%    \hline
+%    $\njet\, / \,\scalht$ [GeV] & 200--400 & 400--600 & 600--900 & 900--1200 & $>$1200 \\
+%    \hline
+%    eq1j                        & 900      & 900      & --       & --        & --      \\ 
+%    ge2a                        & 900      & 900      & 900      & 600       & --      \\ 
+%    eq2j                        & 900      & 900      & 900      & --        & --      \\ 
+%    eq3j                        & 900      & 900      & 900      & 900       & --      \\ 
+%    eq4j                        & 900      & 900      & 900      & 900       & --      \\ 
+%    eq5j                        & 900      & 900      & 900      & 900       & 400     \\ 
+%    ge6j                        & 900      & 900      & 900      & 900       & 400     \\ 
+%    \hline
+%  \end{tabular}
+%\end{table}
 
 \subsubsection{Summary of event categorisation}
 \label{sec:binning-summary}
 
 \newcommand{\tmp}{\phantom{, 200}}
 \begin{table}[!t]
+%  \topcaption{Summary of the \HTmiss binning scheme as a function of
+%    \njet, \nb, and \scalht [GeV]. The \HTmiss values signify the
+%    lower bound of each bin. Each bin is bounded from above by the
+%    following one, except for the final open \HTmiss bin, as indicated
+%    by the $>$ symbol. A dash (--) signifies that the (\njet, \nb
+%    \scalht) category is not used in the analysis. } 
   \topcaption{Summary of the \HTmiss binning scheme as a function of
     \njet, \nb, and \scalht [GeV]. The \HTmiss values signify the
     lower bound of each bin. Each bin is bounded from above by the
@@ -672,70 +680,119 @@ bins for each template are merged until this requirement is satisfied.
     \cline{3-6}
                       &          & 400\T\B               & 600                   & 900                   & 1200                  \\
     \hline
-%    1                & 0        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
-%    1                & 1        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+%    1                & 0        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp                         \\ 
+%    1                & 1        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & --                                            \\ 
     $\geq 2${\it a}\T & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
     $\geq 2${\it a}   & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
     $\geq 2${\it a}   & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
     $\geq 2${\it a}\B & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & --                    & --                    \\ 
     2\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
     2                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
-    2\B               & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+    2\B               & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & --                    & --                    \\ 
     3\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
     3                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
     3                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
-    3\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+    3\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & --                    & --                    \\ 
     4\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
     4                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
     4                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
     4\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
-    5\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
-    5                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
-    5                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
-    5                 & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+    5\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    5                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    5                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    5                 & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & --                    \\ 
     5\B               & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
-    $\geq 6$\T        & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
-    $\geq 6$          & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
-    $\geq 6$          & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
-    $\geq 6$          & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
-    $\geq 6$\B        & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+    $\geq 6$\T        & 0        & $>$200 \tmp \tmp \tmp & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 1        & $>$200 \tmp \tmp \tmp & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 2        & $>$200 \tmp \tmp \tmp & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$          & 3        & $>$200 \tmp \tmp \tmp & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+    $\geq 6$\B        & $\geq 4$ & $>$200 \tmp \tmp \tmp & --                    & --                    & --                    \\ 
     \hline
   \end{tabular}
 \end{table}
 
-The binning strategy employed in the signal region is shown in
-Table~\ref{tab:SR_binning}, and can be summarised as follows:
+%\newcommand{\tmp}{\phantom{, 200}}
+%\begin{table}[!t]
+%  \topcaption{Summary of the \HTmiss binning scheme as a function of
+%    \njet, \nb, and \scalht [GeV]. The \HTmiss values signify the
+%    lower bound of each bin. Each bin is bounded from above by the
+%    following one, except for the final entry, which corresponds to
+%    the final open \HTmiss bin indicated by the $>$ symbol. A dash
+%    (--) signifies that the (\njet, \nb \scalht) category is not used
+%    in the analysis. The $\njet = 1$ category is not shown, as
+%    $\scalht \equiv \mht$. }
+%  \label{tab:SR_binning}
+%  \small
+%  \centering
+%  \begin{tabular}{rrllll}
+%    \hline
+%    \njet\T\B         & \nb      & \multicolumn{4}{c}{\scalht [GeV]}                                                             \\ 
+%    \cline{3-6}
+%                      &          & 400\T\B               & 600                   & 900                   & 1200                  \\
+%    \hline
+%%    1                & 0        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+%%    1                & 1        & $>$400 \tmp \tmp \tmp & $>$600 \tmp \tmp \tmp & $>$900 \tmp \tmp \tmp & --                    \\ 
+%    $\geq 2${\it a}\T & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+%    $\geq 2${\it a}   & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+%    $\geq 2${\it a}   & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, $>$900 \tmp \tmp & --                    \\ 
+%    $\geq 2${\it a}\B & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & --                    & --                    \\ 
+%    2\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    2                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    2\B               & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+%    3\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    3                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    3                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    3\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900                         \\ 
+%    4\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    4                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    4                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    4\B               & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+%    5\T               & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    5                 & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    5                 & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & 200, 400, 600, $>$900 \\ 
+%    5                 & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 & --                    \\ 
+%    5\B               & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+%    $\geq 6$\T        & 0        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+%    $\geq 6$          & 1        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+%    $\geq 6$          & 2        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+%    $\geq 6$          & 3        & 200, $>$400 \tmp \tmp & 200, 400, $>$600 \tmp & 200, 400, $>$600 \tmp & 200, 400, 600, $>$900 \\ 
+%    $\geq 6$\B        & $\geq 4$ & 200, $>$400 \tmp \tmp & --                    & --                    & --                    \\ 
+%    \hline
+%  \end{tabular}
+%\end{table}
+
+The binning strategy employed in the signal and control regions can be
+summarised as follows:
 \begin{itemize}
 \item In the signal and all control regions, seven \njet categories
   are employed (Table~\ref{tab:njet-binning}). 
+\item In the signal and \mj control regions, up to five \nb categories
+  are used. An extrapolation in \nb is performed from the \mmj (for
+  the region $\nb \geq 1$ only) and multijet control regions.
 \item In the control regions, up to eleven \scalht categories are
   used (Tables~\ref{tab:ht-aggr}, \ref{tab:sr-ht-binning}, and
   \ref{tab:sr-binning}).  
-\item In the signal and all control regions, up to five \nb categories
-  are used.
 \item In the signal region, up to four \HTmiss categories are used.
 \item The number of (\njet, \scalht) categories in each control region
   is 61.
 \item The number of (\njet, \scalht, \nb) categories in the \mj
-  control region is 207.
+  control region is 198.
 \item The number of (\njet, \scalht, \nb) categories in the \mmj
-  control region is 121.
-\item An extrapolation in \nb is performed from the \mmj (for the
-  region $\nb \geq 1$ only) and multijet control regions.
+  control region is 122.
 \item An extrapolation in \HTmiss is performed from all control regions.
 \end{itemize}
 In the signal region, after aggregation across \scalht bins: 
 \begin{itemize}
 \item There are up to five \scalht categories.
 \item The number of (\njet, \scalht) cateogories is 30.
-\item the number of (\njet, \scalht, \nb) categories is 104.
+\item the number of (\njet, \scalht, \nb) categories is 101.
 \item the total number of (\njet, \scalht, \nb, \HTmiss) categories is
-  276. 
+  254. 
 \end{itemize}
 
 The total number of measurements used in the binned likelihood fit,
-which includes the signal, \mj, and \mmj control regions, is 276 + 204
-+ 121 = 601. (The multijet background estimates are determined in a
+which includes the signal, \mj, and \mmj control regions, is 254 + 198
++ 122 = 574. (The multijet background estimates are determined in a
 separate fit.) Further details can be found in
 Sec.~\ref{sec:likelihood}. 
 

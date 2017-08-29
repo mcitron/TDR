@@ -243,7 +243,7 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
     $N_\textrm{isr}$ (\ttbar)           & 1, correlated across \cat           & 0.8--1.1                             & Unique & \ref{fig:tfSyst_nisr_muToTtw}       \\
     Signal trigger efficiency           & 1, correlated across \cat           & 0.0--3.1                             & Shared & \ref{fig:tfSyst_trigger_muToTtw}    \\
     Lepton efficiency (selection)       & 1, correlated across \cat           & 0.0--2.1                             & Unique & \ref{fig:tfSyst_muonsf_muToTtw}     \\
-    Lepton efficiency (veto)            & 1, correlated across \cat           & X--Y                                 & Unique & \ref{fig:tfSyst_leptonveto_muToTtw} \\
+    Lepton efficiency (veto)            & 1, correlated across \cat           & 2.5--15.                                    & Unique & \ref{fig:tfSyst_leptonveto_muToTtw} \\
     Jet energy scale                    & 1, correlated across \cat           & 3.4--5.5                             & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
     b-quark tag efficiency              & 1, correlated across \cat           & 0.4--0.6                             & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
     b-quark mistag probability          & 1, correlated across \cat           & 0.1--1.4                             & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
@@ -697,6 +697,14 @@ shapes, only normalisation. The data/MC scale factors (1.42) shown in
 each plot are consistent with the bias observed in the aforementioned
 closure tests.
 
+The mismodelling of the isolated track veto, as evidenced by the
+closure tests and data/MC scale factors, largely cancel in the
+transfer factors, but not entirely, due to the different efficiencies
+per process (\eg \wj and \ttbar) and the slightly different mixtures
+of \wj and \ttbar in the signal and \mj control region. This results
+in systematic uncertainties in the transfer factors of up to
+$\sim$10\%. 
+
 \subsection{Systematics uncertainties in the \texorpdfstring{\HTmiss}{MHT} templates}
 \label{sec:mht}
 
@@ -828,7 +836,7 @@ parameter can be ignored when attempting to determine biases versus
     relative to unity in units of the associated statistical
     uncertainty, \ie the statistical ``pull'', as a function of \njet,
     \nb, and \scalht. (Right) The histogram of the pull values.}
-  \label{fig:pulls} 
+  \label{fig:pulls-ttw} 
 \end{figure}
 
 Importantly, in this iteration of the analysis, we now also apply
@@ -843,7 +851,7 @@ corrections are applied to simulated events, unless stated otherwise.
 Following the application of NLO corrections and due to the ``scale
 anchoring'' approach, no significant trend as a function of \mht is
 expected. The fit information in the figures of App.~\ref{app:mht} is
-summarised in Fig.\ref{fig:pulls} (left), which shows the best fit
+summarised in Fig.\ref{fig:pulls-ttw} (left), which shows the best fit
 value for the linear parameter (of the first-order orthogonal
 polynomial) relative to unity (\ie no trend) in units of the
 associated statistical uncertainty, \ie the statistical ``pull'', as a

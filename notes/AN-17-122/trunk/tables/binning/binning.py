@@ -14,6 +14,12 @@ summary = ["summary","detailed","full2"][2]
 # SR or CR? 
 region_str = "SR"
 region = {"CR":0,"SR":1}[region_str]
+
+# filename
+filename = [["MhtBinning_final_CR.pkl","MhtBinning_final_v2.pkl"][1],
+            ["MhtBinning_final_SR.pkl","MhtBinning_final_SR_v5.pkl"][1]
+            ][region]
+
 ################################################################################
 ################################################################################
 ################################################################################
@@ -59,15 +65,20 @@ topologies = odict([
 ################################################################################
 ################################################################################
 
-file = open(["MhtBinning_final_CR.pkl","MhtBinning_final_SR.pkl"][region],"rb")
+file = open(filename,"rb")
 input = pickle.load(file)
 
 # format of 'input' dict:
 # ('ge6j', 'ge4b', (400, inf)) [200.0, 300.0, 400.0]
 # ('njet', 'nb', (ht_low, ht_high)) [mht_1, mht_2, mht_3, ...]
 
-# print input dict
-#for key,val in input.items() : print key,val
+#print input dict
+length = 0
+for key,val in input.items() : 
+    length += len(val)
+    print key,val
+print length
+#quit()
 
 # overrides input dict by keeping only 200,400,600,900 boundaries for MHT binning (probably now obsolete? fixed by Lucien?)
 input = odict([ (key,list(filter(lambda x: x == 200 or x == 400 or x == 600 or x == 900, val))) for key,val in input.items() ])
