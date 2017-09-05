@@ -30,7 +30,7 @@
 \newcommand{\scalst}{\ensuremath{\mathcal{E}_\text{T}}\xspace}
 \newcommand{\met}{\ensuremath{E_{\text{T}}^{\text{miss}}}\xspace}
 \newcommand{\mht}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
-
+\newcommand{\ptmiss}{\ensuremath{p_{\text{T}}^{\kern1pt\text{miss}}}\xspace}
 \newcommand{\dst}{\ensuremath{\Delta\scalst}\xspace}
 \newcommand{\alphat}{\ensuremath{\alpha_{\text{T}}}\xspace}
 \newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
@@ -87,19 +87,19 @@
 \date{\today}
 
 \abstract{A search for supersymmetry is performed in final states
-  comprising one or more jets and an imbalance in transverse
-  momentum. A sample of events resulting from pp collisions at a
-  centre-of-mass energy of $13~\text{TeV}$ is analysed. The event data
-  were recorded with the CMS detector at the CERN LHC in 2016 and
-  correspond to an integrated luminosity of $35.9~\text{fb}^{-1}$.
-  The search provides sensitivity to supersymmetric models that
-  predict the pair production of heavy, colour-charged particles that
-  are assumed to be meta-stable or undergo prompt decays to stable
-  weakly interacting massive particles, such as the neutralino.  The
-  search employs standard event reconstruction techniques, without the
-  use of specialised algorithms to target displaced jets arising from
-  the decays of long-lived states. Several kinematic variables are
-  used to suppress the dominant standard model background, multijet
+  comprising one or more jets and missing transverse momentum. A
+  sample of events resulting from pp collisions at a centre-of-mass
+  energy of $13~\text{TeV}$ is analysed. The event data were recorded
+  with the CMS detector at the CERN LHC in 2016 and correspond to an
+  integrated luminosity of $35.9~\text{fb}^{-1}$.  The search provides
+  sensitivity to supersymmetric models that predict the pair
+  production of heavy, colour-charged particles that are assumed to be
+  meta-stable or undergo prompt decays to stable weakly interacting
+  massive particles, such as the neutralino.  The search employs
+  standard event reconstruction techniques, without the use of
+  specialised algorithms to target displaced jets arising from the
+  decays of long-lived states. Several kinematic variables are used to
+  suppress the dominant standard model background, multijet
   production, to a subdominant level with respect to all other
   background processes. Further kinematic variables are used to
   provide signal-to-background discrimination. A binned
@@ -116,12 +116,12 @@
   Models involving the production of meta-stable, colourless,
   composite states of gluinos and light-flavour quarks known as
   R-hadrons are considered, which can lead to spectacular signatures
-  with displaced jets and momentum imbalance. Broad coverage is
-  realised for a range of gluino and neutralino masses and lifetimes
-  ($\tau$). Gluino masses below X\TeV are excluded, irrespective of
-  the mass hierarchy and lifetime (from prompt to stable and values
-  inbetween). Gluino masses up to Y\TeV are probed for $\tau =
-  10^{-2}\ns$.  }
+  with displaced jets and missing transverse momentum. Broad coverage
+  is realised for a range of gluino and neutralino masses and
+  lifetimes ($\tau$). Gluino masses below X\TeV are excluded,
+  irrespective of the mass hierarchy and lifetime (from prompt to
+  stable and values inbetween). Gluino masses up to Y\TeV are probed
+  for $\tau = 10^{-2}\ns$.  }
 
 \hypersetup{ 
   pdfauthor={Robert Bainbridge, Eshwen Bhal, Freya Blekman, Shane
@@ -190,8 +190,8 @@ the Higgs boson~\cite{ref:atlashiggsdiscovery, ref:cmshiggsdiscovery,
   ref:cmshiggsdiscoverylong} at $\higgsmass = 125\GeV$. The
 characteristic signature of natural SUSY production at the LHC is a
 final state containing an abundance of jets, originating from the
-hadronisation of light- or heavy-flavour quarks, accompanied by a
-significant imbalance in transverse momentum \ptvecmiss.
+hadronisation of light- or heavy-flavour quarks, accompanied by
+significant missing transverse momentum \ptvecmiss.
 
 %%%%%%%%%%%%%%
 
@@ -324,55 +324,63 @@ within a time interval of less than 4\mus. The second level, known as
 the high-level trigger (HLT), consists of a farm of processors running
 a version of the full event reconstruction software optimized for fast
 processing, and reduces the event rate to less than 1\unit{kHz} before
-data storage. The L1 and HLT algorithms used by this search are
-summarised in Sec.~\ref{sec:selection}.
+data storage. The trigger logic used by this search is summarised in
+Sec.~\ref{sec:selection}.
 
-The particle-flow (PF) event algorithm~\cite{Sirunyan:2017ulk}
-reconstructs and identifies candidate physics objects, including
+The particle-flow (PF) event reconstruction
+algorithm~\cite{Sirunyan:2017ulk} reconstructs and identifies
+candidate physics objects, including
 photons~\cite{Khachatryan:2015iwa},
 electrons~\cite{Khachatryan:2015hwa}, muons~\cite{Chatrchyan:2012xi},
 and charged and neutral hadrons, with an optimized combination of
-information from the various elements of the CMS detector.
-
-Further details can be found in
-Ref.~\cite{Khachatryan:2016dvc} and references therein.
+information from the various elements of the CMS detector. The
+reconstruction techniques and physics-object definitions used by this
+search are considered standard within the CMS experiment and are not
+modified to target specific experimental signatures. The
+physics-object requirements detailed below are summarised in
+Table~\ref{tab:selections}. In the case of photons and leptons,
+further details can be found in Ref.~\cite{Khachatryan:2016dvc} and
+references therein. 
 
 The reconstructed vertex with the largest value of summed
 physics-object $\pt^2$ is taken to be the primary $\Pp\Pp$ interaction
 vertex (PV). The physics objects are the objects returned by a jet
-finding algorithm~\cite{Cacciari:2008gp,Cacciari:2011ma} applied to
+finding algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} applied to
 all charged-particle tracks associated with the vertex, plus the
-corresponding associated missing transverse momentum. Charged-particle
-tracks associated with vertices from additional proton-proton
-interactions within the same or nearby bunch crossings
-(pileup)~\cite{pileup} are not considered by the PF algorithm as part
-of the global event reconstruction.
+corresponding associated \ptmiss. Charged-particle tracks associated
+with vertices from additional proton-proton interactions within the
+same or nearby bunch crossings (pileup) are not considered by the PF
+algorithm as part of the global event reconstruction.
 
-Candidate signal events, as well as samples of control data, are
-defined by the absence or presence of photons and leptons that are
-isolated from other activity in the event. All isolation variables
-exclude the contributions from the physics object itself and pileup
-events. Photons use an isolation cone defined by the radius $\Delta R
-= \sqrt{\smash[b]{(\Delta\phi)^2 + (\Delta\eta)^2}} = 0.3$, where
-$\phi$ and $\eta$ represent pseudorapidity and the azimuthal angle.
+Samples of candidate signal events and control data are defined,
+respectively, by the absence or presence of photons or leptons that
+are isolated from other activity in the event. Photons are required to
+be isolated~\cite{Khachatryan:2015iwa} within a cone around the photon
+trajectory defined by the radius $\Delta R =
+\sqrt{\smash[b]{(\Delta\phi)^2 + (\Delta\eta)^2}} = 0.3$, where $\phi$
+and $\eta$ represent pseudorapidity and the azimuthal angle.
 %Photons are required to be isolated from additional event activity
 %within a cone $\Delta R = \sqrt{\smash[b]{(\Delta\phi)^2 +
 %    (\Delta\eta)^2}} = 0.3$ around its trajectory. 
 Isolation for an electron or muon is a relative quantity,
-$\mathcal{I}_\textrm{rel}$, defined as the scalar \pt sum of all
-candidate particles within a cone around its trajectory, divided by
-the lepton \pt. The cone radius is dependent on the lepton \pt to
-maintain high efficiency for semileptonic decays of Lorentz-boosted
-top quarks~\cite{Rehermann:2010vq}: $\Delta R = \min [ \max( 0.05,
-10\GeV / \pt ), 0.2 ]$. Isolated electrons and muons are required to
-satisfy $\mathcal{I}_\text{rel} < 0.1$ and 0.2, respectively.
-Electron and muon candidates that fail any of the aforementioned
-requirements, as well as charged-hadron candidates from hadronically
-decaying tau leptons, are collectively labelled as single isolated
-tracks (SIT) if the scalar \pt sum of additional tracks associated to
-the PV within a cone $\Delta R < 0.3$ around the track trajectory,
-relative to the track \pt, satisfies $I^\text{track}_\text{rel} <
-0.1$.
+$I^\text{rel}$, defined as the scalar \pt sum of all candidate
+particles within a cone around its trajectory, divided by the lepton
+\pt. The cone radius is dependent on the lepton \pt to maintain high
+efficiency for semileptonic decays of Lorentz-boosted top
+quarks~\cite{Rehermann:2010vq}: $\Delta R = \min [ \max( 0.05, 10\GeV
+/ \pt ), 0.2 ]$. Isolated electrons and muons are required to satisfy
+$I^\text{rel} < 0.1$ and 0.2, respectively.  Electron and muon
+candidates that fail any of the aforementioned requirements, as well
+as charged-hadron candidates from hadronically decaying tau leptons,
+are collectively labelled as single isolated tracks (SIT) if the
+scalar \pt sum of additional tracks associated to the PV within a cone
+$\Delta R < 0.3$ around the track trajectory, relative to the track
+\pt, satisfies $I^\text{track} < 0.1$. All isolation variables exclude
+the contributions from the physics object itself and pileup
+events. The experimental acceptances for photons, electrons, muons,
+and SITs are defined by the transverse momentum and pseudorapidity
+requirements of $\pt > 25$, 10, 10, and 10\GeV, respectively, and
+$\abs{\eta} < 2.5$. 
 
 Jets are reconstructed from the PF particle candidates, clustered by
 the anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a
@@ -385,32 +393,31 @@ produced in additional proton-proton interactions within the same or
 nearby bunch crossings~\cite{Cacciari:2007fd, CMS-PAS-JME-14-001}. The
 raw jet energies are then corrected to establish a relative uniform
 response of the calorimeter in $\eta$ and a calibrated absolute
-response in transverse momentum \pt. Jet energy corrections are
-derived from simulation, and are confirmed with in situ measurements
-of the energy balance in events with a dijet
-topology~\cite{Khachatryan:2016kdb}.
+response in \pt. Jet energy corrections are derived from simulation,
+and are confirmed with in situ measurements of the energy balance in
+events with a dijet topology~\cite{Khachatryan:2016kdb}. Jets are
+required to satisfy $\pt > 40\GeV$ and $\abs{\eta} < 2.5$.
 
 %The jet energy resolution amounts typically to 15\% at 10\GeV, 8\% at
 %100\GeV, and 4\% at 1\TeV, respectively.
 %Jet momentum is determined from simulation to be within 5 to 10\% of
 %the true momentum over the whole \pt spectrum and detector acceptance.
 
-Jets are identified as originating from b quarks using the combined
+Jets can be identified as originating from b quarks using the combined
 secondary vertex algorithm~\cite{Chatrchyan:2012jua}. Data
-samples~\cite{CMS-PAS-BTV-15-001} are used to measure the b tagging
-efficiency, which is the probability of correctly identifying jets as
-originating from b quarks, as well as the ``mistag'' probability of
+samples~\cite{CMS-PAS-BTV-15-001} are used to measure the ``b tagging
+efficiency'', which is the probability of correctly identifying jets
+as originating from b quarks, as well as the ``mistag'' probability of
 identifying jets originating from light-flavour partons (u, d, s
 quarks or gluons) or a charm quark as a b-tagged jet. A working point
 is employed that yields a b tagging efficiency of 60 to 75\%, and
 charm and light-flavour mistag probabilities of approximately 15 and
 1\%, respectively, for jets with \pt that is typical of \ttbar events.
 
-The most accurate estimator for the missing transverse momentum vector
-\ptvecmiss is defined as the projection on the plane perpendicular to
-the beams of the negative vector sum of the momenta of all PF
-candidate particles in an event. Its magnitude is referred to as
-\ptmiss.
+Finally, the most accurate estimator for \ptvecmiss is defined as the
+projection on the plane perpendicular to the beams of the negative
+vector sum of the momenta of all PF candidate particles in an
+event. Its magnitude is referred to as \ptmiss.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -594,8 +601,8 @@ The multijet background dominates over all other SM backgrounds
 following the application of the baseline event selection
 criteria. The multijet background is suppressed to a negligible level
 through the application of two dedicated variables that provide strong
-discrimation between multijet events with a transverse momentum
-imbalance resulting from instrumental sources, such as jet energy
+discrimation between multijet events with missing transverse momentum
+resulting from instrumental sources, such as jet energy
 mismeasurements, and new-physics processes with genuine \ptvecmiss
 resulting from the production of weakly interacting particles that
 escape detection.
@@ -609,10 +616,10 @@ $\phi_{\rm j_1,j_2}$ is defined as the azimuthal angle between jets
 ${\rm j_1}$ and ${\rm j_1}$ and $M_\textrm{T}$ is the transerve mass
 of a dijet system. In the absence of jet energy mismeasurements, and
 in the limit for which the \Et of each jet is large compared with its
-mass, a well measured dijet event with $\Et^{\text{j_1}} =
-\Et^{\text{j_2}}$ and back-to-back jets ($\phi_{\rm j_1,j_2} = \pi$)
+mass, a well measured dijet event with $\Et^{\text{j}_\text{1}} =
+\Et^{\text{j}_\text{2}}$ and back-to-back jets ($\phi_{\rm j_1,j_2} = \pi$)
 yields an \alphat value of 0.5. In the presence of a jet energy
-mismeasurement, $\Et^{\text{j_1}} > \Et^{\text{j_2}}$ and $\alphat
+mismeasurement, $\Et^{\text{j}_\text{1}} > \Et^{\text{j}_\text{2}}$ and $\alphat
 < 0.5$. Values significantly greater than 0.5 can be observed when the
 two jets are not back-to-back and recoil against \ptvecmiss from
 weakly interacting particles that escape the detector. The definition
