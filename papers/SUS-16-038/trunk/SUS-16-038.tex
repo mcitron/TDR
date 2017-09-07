@@ -286,7 +286,7 @@ and summarized in Sec.~\ref{sec:summary}.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-%\clearpage
+\clearpage
 \section{The CMS detector and event reconstruction}
 \label{sec:reconstruction}
 
@@ -460,7 +460,7 @@ event. Its magnitude is referred to as \ptmiss.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-%\clearpage
+\clearpage
 \section{Event selection and categorization}
 \label{sec:selection}
 
@@ -785,7 +785,7 @@ boson~\cite{1674-1137-38-9-090001}.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-%\clearpage
+\clearpage
 \section{Monte Carlo simulation}
 \label{sec:simulation}
 
@@ -841,6 +841,7 @@ distribution as measured in data.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
+\clearpage
 \section{Non-multijet background evaluation}
 \label{sec:ewk}
 
@@ -874,47 +875,6 @@ $\mathcal{N}^{\znunu}_\textrm{pred}$ in the corresponding (\njet,
 \scalht, \nb, \mht) bins of the signal region. The categorization of
 the \mj and \mmj event samples is described in
 Sec.~\ref{sec:categorization_cr}.
-
-\begin{table}[t!]
-  \caption{
-    Systematic uncertainties in the background evaluation. The quoted
-    ranges are representative of the minimum and maximum variations
-    observed across all bins of the signal region. The two ranges
-    quoted for uncertainties derived from closure tests in data
-    correspond to variations as a function of \njet and \scalht.
-  } 
-  \label{tab:bkgd_systs}
-  \centering
-  \footnotesize
-  \begin{tabular}{ lcc }
-    \hline
-    Source of uncertainty\T\B           & Magnitude (\%)                                  \\
-    \hline
-    Finite-size simulated samples\T     & 1--100                 & 1--100                 \\
-    \multicolumn{3}{l}{\bf Uncertainties in corrections applied to simulation:}\T\B       \\
-    Minimum bias cross section (pileup) & 0.6--3.8               & 2.3--2.8               \\
-    $\mu_R$ / $\mu_F$ scales            & 2.3--3.6               & X--Y                   \\
-    Parton density functions            & 1.1--2.7               & X--Y                   \\
-    \wj cross section                   & 0.2--1.4               & --                     \\
-    \ttbar cross section                & 0.0--1.0               & --                     \\
-    QCD + EWK NLO corrections           & 0.5--5.4               & 2.2--14.3              \\
-    ISR (\ttbar)                        & 0.8--1.1               & --                     \\
-    Signal trigger efficiency           & 0.0--3.1               & 0.0--2.0               \\
-    Muon trigger and selection          & 0.0--2.1               & 0.0--4.2               \\
-    Lepton vetoes                       & X--Y                   & X--Y                   \\
-    Jet energy scale                    & 3.4--5.5               & 5.3--8.0               \\
-    b quark tag efficiency              & 0.4--0.6               & 0.3--0.6               \\
-    b quark mistag probability          & 0.1--1.4               & 0.2--1.8               \\
-    \multicolumn{3}{l}{\bf Uncertainties determined from closure tests in data:}\T\B      \\
-    \alphat extrapolation               & 3--\ph{2}9, 2--\ph{1}6 & 3--\ph{2}9, 2--\ph{1}6 \\
-    \bdphi extrapolation                & 2--22, 1--18           & 2--22, 1--18           \\
-    W boson polarization                & 1--\ph{2}7, 1--\ph{1}7 & --                     \\
-    Single isolated track veto          & 0--10, 0--13           & --                     \\
-    \multicolumn{3}{l}{\bf Validation of \mht modelling against control data:}\T\B        \\
-    \mht modelling\B                    & 0--30                  & 0--50                  \\
-    \hline
-  \end{tabular}
-\end{table}
 
 Several sources of uncertainty in the transfer factors are evaluated.
 In addition to statistical uncertainties arising from finite-size
@@ -955,6 +915,47 @@ source of uncertainty is assumed to vary with a fully correlated
 behaviour across the full phase space of the signal and control
 regions.
 
+\begin{table}[t!]
+  \caption{
+    Systematic uncertainties in the background evaluation. The quoted
+    ranges are representative of the minimum and maximum variations
+    observed across all bins of the signal region. The two ranges
+    quoted for uncertainties derived from closure tests in data
+    correspond to variations as a function of \njet and \scalht.
+  } 
+  \label{tab:bkgd_systs}
+  \centering
+  %\small
+  \begin{tabular}{ lcc }
+    \hline
+    Source of uncertainty\T\B           & Magnitude (\%)                                  \\
+    \hline
+    Finite-size simulated samples\T     & 1--100                 & 1--100                 \\
+    \multicolumn{3}{l}{\bf Uncertainties in corrections applied to simulation:}\T\B       \\
+    Minimum bias cross section (pileup) & 0.6--3.8               & 2.3--2.8               \\
+    $\mu_R$ / $\mu_F$ scales            & 2.3--3.6               & X--Y                   \\
+    Parton density functions            & 1.1--2.7               & X--Y                   \\
+    \wj cross section                   & 0.2--1.4               & --                     \\
+    \ttbar cross section                & 0.0--1.0               & --                     \\
+    QCD + EWK NLO corrections           & 0.5--5.4               & 2.2--14.3              \\
+    ISR (\ttbar)                        & 0.8--1.1               & --                     \\
+    Signal trigger efficiency           & 0.0--3.1               & 0.0--2.0               \\
+    Muon trigger and selection          & 0.0--2.1               & 0.0--4.2               \\
+    Lepton vetoes                       & X--Y                   & X--Y                   \\
+    Jet energy scale                    & 3.4--5.5               & 5.3--8.0               \\
+    b quark tag efficiency              & 0.4--0.6               & 0.3--0.6               \\
+    b quark mistag probability          & 0.1--1.4               & 0.2--1.8               \\
+    \multicolumn{3}{l}{\bf Uncertainties determined from closure tests in data:}\T\B      \\
+    \alphat extrapolation               & 3--\ph{2}9, 2--\ph{1}6 & 3--\ph{2}9, 2--\ph{1}6 \\
+    \bdphi extrapolation                & 2--22, 1--18           & 2--22, 1--18           \\
+    W boson polarization                & 1--\ph{2}7, 1--\ph{1}7 & --                     \\
+    Single isolated track veto          & 0--10, 0--13           & --                     \\
+    \multicolumn{3}{l}{\bf Validation of \mht modelling against control data:}\T\B        \\
+    \mht modelling\B                    & 0--30                  & 0--50                  \\
+    \hline
+  \end{tabular}
+\end{table}
+
 Sources of additional uncertainties are determined from ``closure
 tests'' that aim to identify \njet- or \scalht-dependent sources of
 systematic bias arising from extrapolations performed by transfer
@@ -994,6 +995,7 @@ sensitive \mht bins, are summarized in Table~\ref{tab:bkgd_systs}.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
+\clearpage
 \section{Multijet background evaluation}
 \label{sec:qcd}
 
@@ -1049,6 +1051,7 @@ described above.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
+\clearpage
 \section{Results}
 \label{sec:result}
 
@@ -1078,9 +1081,10 @@ symmetric topologies. No significant tension is observed between the
 predictions and data in the signal region, which is well described by
 the SM-only hypothesis.
 
-\begin{figure}[!tb]
+\clearpage
+\begin{figure}[!t]
+  \centering
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{summaryPlot_Monojet_prefit_overlay_fit_b}
     \caption{(Top panel) Event yields observed in data (solid circles)
       and SM expectations with their associated uncertainties (black
       histogram with shaded band) from a CR-only fit as a function of
@@ -1090,46 +1094,21 @@ the SM-only hypothesis.
       from the CR-only (red circles) and full fit (blue circles). The
       pulls are indicative only and cannot be considered
       independently.}
+    \includegraphics[width=0.48\textwidth]{figures/monojet_no-fit.pdf}~ 
+    \includegraphics[width=0.48\textwidth]{figures/di-jet_no-fit.pdf}\\
+    \includegraphics[width=0.48\textwidth]{figures/3jet_no-fit.pdf}~
+    \includegraphics[width=0.48\textwidth]{figures/4jet_no-fit.pdf}\\
+    \includegraphics[width=0.48\textwidth]{figures/5jet_no-fit.pdf}~
+    \includegraphics[width=0.48\textwidth]{figures/6+_jets_no-fit.pdf}\\
     \label{fig:mono}
   \end{center}
 \end{figure}
 
-\begin{figure*}[!tb]
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{summaryPlot_Asymmetric_prefit_overlay_fit_b}
-    \caption{(Top panel) Event yields observed in data (solid circles)
-      and SM expectations with their associated uncertainties (black
-      histogram with shaded band) from a CR-only fit, integrated over
-      \mht, as a function of \njet, \nb, and \scalht for the
-      asymmetric topology in the signal region. (Bottom panel). The
-      significance of deviations (pulls) observed in data with respect
-      to the SM expectations from the CR-only (red circles) and full
-      fit (blue circles). The pulls are indicative only and cannot be
-      considered independently.}
-    \label{fig:asym}
-  \end{center}
-\end{figure*}
-
-\begin{figure*}[!tb]
-  \begin{center}
-    \includegraphics[angle=90,width=0.65\textwidth]{summaryPlot_Symmetric_prefit_overlay_fit_b}
-    \caption{(Top panel) Event yields observed in data (solid circles)
-      and SM expectations with their associated uncertainties (black
-      histogram with shaded band) from a CR-only fit, integrated over
-      \mht, as a function of \njet, \nb, and \scalht for the
-      symmetric topology in the signal region. (Bottom panel). The
-      significance of deviations (pulls) observed in data with respect
-      to the SM expectations from the CR-only (red circles) and full
-      fit (blue circles). The pulls are indicative only and cannot be
-      considered independently.}
-    \label{fig:sym}
-  \end{center}
-\end{figure*}
-
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
+\clearpage
 \section{Interpretation}
 \label{sec:interpretations}
 
@@ -1259,6 +1238,7 @@ are excluded.
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
+\clearpage
 \section{Summary}
 \label{sec:summary}
 
