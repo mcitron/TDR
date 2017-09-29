@@ -16,6 +16,13 @@ To distinguish these models from the that of section~\ref{sec:susy}, we refer to
 % The range of lifetimes considered, implications for decay vertex (less than b-lifetime, outside the tracker, outside ECAL, etc)
 % Generation of signal samples: Full sim vs. FastSim as for standard SUSY
 
+The distribution of the signal model events in the simplified bins for the
+benchmark models are shown in Figs.~\ref{fig:T1qqqqLL_ctau_0p001_compressed_MR_simp}-\ref{fig:T1qqqqLL_ctau_100000_uncompressed_MR_simp}.
+All relevant corrections are applied to the events in these distributions;
+however, the uncertainty represents the simulation statistical uncertainty due
+to the finite size of the simulated sample. The background prediction is taken
+from the CR-only post-fit result in Sec.~\ref{sec:results}.
+
 \clearpage
 \subsection{Signal acceptance times efficiency}
 \label{sec:sig-accept-contam-LLP}
@@ -33,16 +40,21 @@ points and lifetimes (as \ctau) is summarised.
 	\caption{Signal efficiency for T1qqqqLL with different \ctau values.}
     \label{tab:sig-eff-LLP}
     \centering
-    \begin{tabular}{ ll }
+    \begin{tabular}{lcc}
         \hline \hline
-	    \ctau (mm) & Efficiency (total) \\ 
-            0.001 & 20.5\% \\
-            0.01  & 20.5\% \\
-            0.1   & 20.5\% \\
-            1     & 20.5\% \\
-            10    & 20.5\% \\
-            100   & 20.5\% \\
-            1000  & 20.5\% \\
+	    \ctau (mm) & ($m_{\mathrm{Susy}},m_{\mathrm{LSP}}$) & Efficiency (total) \\ 
+        \hline
+        \multirow{2}{*}{$10^{-3}$}
+            & (1800, 200) & 27.8\% \\
+            & (1000, 900) & 6.7\% \\
+        \hline
+        \multirow{2}{*}{$10^{0}$}
+            & (1800, 200) & 22.9\% \\
+            & (1000, 900) & 5.2\% \\
+        \hline
+        \multirow{2}{*}{$10^{5}$}
+            & (1000, 200) & 11.2\% \\
+            & (1000, 900) & 10.4\% \\
         \hline \hline
     \end{tabular}
 \end{table}
@@ -117,13 +129,88 @@ Tab.~\ref{tab:sig-systematics-LLP} for some benchmark models.
 \subsection{Exclusion limits}
 \label{sec:LLP_results}
 
+In order to extract the signal contribution in the fit, the
+distribution of events according to the \mht variable, encoded as
+template histograms as described in
+Secs.~\ref{sec:htmiss-categorisation}, \ref{sec:mht-intro},
+\ref{sec:mht-zinv-intro}, and \ref{sec:likelihood}, is used. Upper
+limits on the cross section are computed using the $\text{CL}_{s}$
+criterion \cite{CLsTechnique}. Asymptotic formulae
+\cite{AsymptoticFormulae} are utilised to approximate the distribution
+of the test statistics. All the statistical results are produced using
+the \textit{combine} tool, provided within the
+HiggsAnalysis-CombinedLimit package \cite{Combine}.
+
+The models are grouped according to the following categorisation:
+\begin{itemize}
+\item \textbf{Gluino-mediated production of off-shell (decoupled) 3rd
+    generation squarks}: gluino pair production followed by 3-body
+  decay to $t\bar{t}\chiz$,$b\bar{b}\chiz$.  It includes T1bbbb and
+  T1tttt.
+\item \textbf{Direct and gluino-mediated production of off-shell
+    (decoupled) light-flavour squarks}: gluino/light squark pair
+  production followed by 3-body/2-body decay to $q(q)\chiz$. It
+  includes T1qqqq and T2qq.
+\item \textbf{Direct production of 3rd generation squarks}:
+  stop/sbottom pair production, with several possibility for the decay
+  (see Tab.~\ref{tab:simplified-models}). It includes T2bb, T2tt and
+  T2cc.
+\end{itemize}
+
+Table~\ref{tab:susyLL_aggr_limits} shows the observed and expected limits
+determined for the benchmark models using both the nominal and
+simplified binning schemes. 
+
+In Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (top) the 95\% C.L. upper
+limits on the cross section are shown in the
+$(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered
+in this interpretation. These results correspond to 35.9~\ifb of
+integrated luminosity. The exclusion contour is also shown together
+with $\pm1\sigma$ (and $\pm2\sigma$ for the expected exclusion)
+uncertainty.  The band around the expected exclusion reflects the
+experimental uncertainty, while the band around the observed exclusion
+correspond to the theoretical uncertainty on the signal cross
+section. In Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (left) the signal
+acceptance for each mass point in the SMS scan. In
+Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (right) each mass point is
+assigned a group of 4 jet categories in descending order of
+sensitivity. The total number of mass points with the same 4 most
+sensitive jet categories is noted. In the gluino production models in
+the uncompressed regions the high jet multiplicities drive the
+sensitivity (ge6j, eq5j, eq4j), and in the compressed regions the same
+high jet multiplicities drive the sensitivity with the asymmetric jet
+topologies playing a larger role than in the uncompressed regions. In
+the T2qq and T2bb models, the sensitivity in the uncompressed regions
+are driven by low/medium jet multiplicities (eq2j, eq3j, eq4j), and in
+the compressed regions it's driven by high jet multiplicities (ge6j,
+eq5j, eq4j). In stop production models the uncompressed and compressed
+regions are driven by high jet multiplicities (ge6j, eq5j, eq4j) with
+the asymmetric topology playing a larger role in the compressed
+regions.  The weakest jet multiplicity, in terms of limit sensitivity,
+is the monojet category and is expected to become sensitive for Dark
+matter models. In Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (bottom) the
+local observed significance for each mass point in the SMS scan is
+shown.
+
+In summary, gluino masses up to $\sim$1800 GeV for the decay into
+light-quarks (T1qqqq), $\sim$2050 GeV for the decay into b-quarks
+(T1bbbb) and $\sim$1850 GeV for the decay into t-quarks
+(T1tttt). Squark production is excluded up to squark masses $\sim$1400
+GeV for the 8-fold models, and up to $\sim$800 GeV for the 1-fold
+(degenerate) models (T2qq). Sbottom production is excluded to sbottom
+masses $\sim$1100 GeV (T2bb).  Stop production is excluded up to stop
+masses $\sim$1050 GeV in the 2-body decay to top quarks (T2tt), and up
+to $\sim$550 GeV in the compressed region of decays into charm quarks
+(T2cc).  For the models considered, the exclusion exceeds the one of
+the 13 TeV ICHEP data.
+
 \begin{table*}[!t]
   \topcaption{Expected ($\mu_{\text{exp}}$) and observed 
     ($\mu_{\text{obs}}$) upper limits on the production cross section, 
     expressed in terms of the signal strength parameter, obtained using
     both the nominal and simplified binning schema. 
   }
-  \label{tab:aggr_limits}
+  \label{tab:susyLL_aggr_limits}
   \centering
   \begin{tabular}{ llccccc }
     \hline
@@ -422,4 +509,81 @@ Tab.~\ref{tab:sig-systematics-LLP} for some benchmark models.
         }
         \label{fig:T1qqqqLL:ctau-100000}
     \end{center}
+\end{figure}
+
+\newpage
+\subsection{Sensitive categories}
+
+The 95\% CL upper limit on the ratio of the cross section to the theoretical
+cross section is repeated with a similar likelihood model used to obtain the
+standard limits in Sec.~\ref{sec:susy_results}; however, the combination of
+analysis bins is chosen to understand which bins drive the sensitivity of the
+benchmark signal models. The limits are recalculated by combining all analysis
+bins apart from the \nj categories, then again without combining the
+$(\nj, \nb)$ categories and lastly leaving the $(\nj, \nb, \scalht)$ bins
+uncombined (i.e. no analysis bins are combined). This procedure gives an
+estimate of which bins drive the sensitivity at the expense of the full
+correlation between all analysis bins.
+
+\begin{figure}[!h]
+    \centering
+    \subfigure[T1qqqqLL $(1000,900)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1000_mLSP-900/limits_per_bin}
+        \label{fig:T1qqqqLL_ctau_0p001_compressed_limitsPerBin}
+    } ~~
+    \subfigure[T1qqqqLL $(1800,200)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1800_mLSP-200/limits_per_bin}
+        \label{fig:T1qqqqLL_ctau_0p001_uncompressed_limitsPerBin}
+    }
+    \caption{
+        95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$ for the
+        T1qqqqLL $c\tau=0.001~\mathrm{mm}$ models are shown for four different
+        bin combinations: no bins, \scalht-only, $(\nb,\scalht)$ and all bins
+        overlaid in ascending order. The expected limit, along with the
+        $\pm 1\sigma$ and $\pm 2\sigma$ bands, and the observed limit are
+        displayed for each bin.
+    }
+    \label{fig:T1qqqqLL_ctau_0p001_limitsPerBin}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \subfigure[T1qqqqLL $(1200,1100)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1200_mLSP-1100/limits_per_bin}
+        \label{fig:T1qqqqLL_ctau_1_compressed_limitsPerBin}
+    } ~~
+    \subfigure[T1qqqqLL $(1800,200)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1800_mLSP-200/limits_per_bin}
+        \label{fig:T1qqqqLL_ctau_1_uncompressed_limitsPerBin}
+    }
+    \caption{
+        95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$ for the
+        T1qqqqLL $c\tau=1~\mathrm{mm}$ models are shown for four different
+        bin combinations: no bins, \scalht-only, $(\nb,\scalht)$ and all bins
+        overlaid in ascending order. The expected limit, along with the
+        $\pm 1\sigma$ and $\pm 2\sigma$ bands, and the observed limit are
+        displayed for each bin.
+    }
+    \label{fig:T1qqqqLL_ctau_1_limitsPerBin}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \subfigure[T1qqqqLL $(1000,900)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900/limits_per_bin}
+        \label{fig:T1qqqqLL_ctau_100000_compressed_limitsPerBin}
+    } ~~
+    \subfigure[T1qqqqLL $(1000,200)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-200/limits_per_bin}
+        \label{fig:T1qqqqLL_ctau_100000_uncompressed_limitsPerBin}
+    }
+    \caption{
+        95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$ for the
+        T1qqqqLL $c\tau=100~\mathrm{m}$ models are shown for four different
+        bin combinations: no bins, \scalht-only, $(\nb,\scalht)$ and all bins
+        overlaid in ascending order. The expected limit, along with the
+        $\pm 1\sigma$ and $\pm 2\sigma$ bands, and the observed limit are
+        displayed for each bin.
+    }
+    \label{fig:T1qqqqLL_ctau_100000_limitsPerBin}
 \end{figure}
