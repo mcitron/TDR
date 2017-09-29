@@ -5,31 +5,89 @@
 
 This Analysis Note (AN-17-122) supersedes that with the identifier
 AN-16-400, which is now deprecated. The changes to this AN for each
-version are summarised below.
+version are summarised below, in reverse chronological order.
 
-\subsection{December 2016 (v1)}
+\subsection{September 2017 (v6)}
 
-This version (v1) supports the Full Status report talk given on
-2\superscript{nd} December 2016~\cite{fullstatus}. It is identical to
-AN-16-400 v2 (now deprecated).
+The following updates have been made:
+\begin{itemize}
+\item Minor updates to the documentation for the analysis methods have
+  been made in response to the ARC review. \eg details have been added
+  or clarified in the text. 
+\item Additional interpretations have been added, which are motivated
+  by ``split SUSY'' models in which only the gluino and LSP are light
+  and all other SUSY particles are decoupled to a high energy
+  scale, resulting in long-lived gluinos and signiatures involving
+  \ptmiss and displaced jets. The analysis sensitivity is quantified
+  using simplified models defined by three parameters: the masses of
+  the gluino and LSP, as well as the lifetime of the gluino, expressed
+  in terms of the characteristic (proper) decay length, $c\tau$ [mm]. 
+\end{itemize}
 
-This version contains studies in the control regions based on
-36\fbinv. Following the release of the preliminary public result for
-ICHEP 2016~\cite{CMS-PAS-SUS-16-016}, the signal region was
-reblinded. In time for the Full Status report, a partial unblinding of
-the signal region data corresponding to 5\fbinv (from Run Era G) was
-performed, which revealed an excess of events in the core of
-distributions of the discriminating variables employed by this
-search.\footnote{The fit result shown in the Full Status
-  report~\cite{fullstatus} was understood to be correctly executed and
-  healthy. However, a mistake in the data cards for this fit was
-  realised soon afterwards. Only then was the excess observed, which
-  prompted the reblinding of the signal region and further detailed
-  studies of the control regions.}  The data sets at the time were
-based on the \verb!Prompt!  reconstruction and the calibrations from
-the various POGs were still considered very preliminary. Known issues
-with the data at the time, such as the ``HIP effect'', were still
-under study by the Collaboration.
+\subsection{August 2017 (v5)}
+
+The following updates have been made in response to feedback during
+the pre-approval and from the ARC:
+\begin{itemize}
+\item Section~\ref{sec:event-categorisation} has been simplified and
+  updated to correct the description of the event categorisation
+  scheme.
+\item Section~\ref{sec:results} has been updated with new figures and
+  tables that present the analysis result. (The old figures can be
+  found in App.~\ref{app:results-orig}, just for this iteration of the
+  AN.)  The covariance and correlation matrices for background
+  estimates using the simplified binning scheme have been added.
+\item Interpretations with the models \verb!T1tttt!, \verb!T1qqqq!,
+  and \verb!T2qq!  have been added, along with information such as
+  figures showing the most sensitive categories and local significance
+  plots.
+\item The addition of missing information related to the background
+  methods and a number of appendices have been provided in response to
+  feedback during pre-approval~\cite{preapp} and ARC
+  review~\cite{arcreviewowen, arcreviewnadja}. 
+\end{itemize}
+
+\subsection{July 2017 (v4)}
+
+The following updates (worthy of note) have been made since freezing
+the documentation prior to pre-approval:
+\begin{itemize}
+\item Section~\ref{sec:results} has been updated following a technical change 
+  in how the data cards are written, but the technical change concerns 
+  no modification to analysis strategies.
+\item Added a table (\ref{tab:SR_binning}) that lists the complete
+  signal region binning scheme. Added plots to support the counts and
+  composition of the control regions (Sec.~\ref{sec:crbreakdown}).
+\item Added the PDF and scale uncertainties to the background
+  systematics tables in Secs.~\ref{sec:ttw} and \ref{sec:zinv}.
+\item The interpretations have been updated following the technical
+  change described above, see Sec.~\ref{sec:susy}.
+\item Added detailed explanations on bitmaps representing the most sensitive 
+  jet categories.
+\item Added an appendix Section~\ref{sec:zplusbb_app} on a study on heavy 
+  flavour process in \znunu+jets background estimation.
+\end{itemize}
+
+\subsection{June  2017 (v3)}
+
+In addition to several minor tweaks, the following major changes have
+been made:
+\begin{itemize}
+\item The use of the \mmj sample to predict the \znunuj background has
+  been modified slightly. Secs~\ref{sec:event-categorisation} and
+  \ref{sec:zinv} have been updated accordingly.
+\item A brief description of corrections and uncertainties to the
+  signal samples has been provided in Sec.~\ref{sec:signalcorrs}.
+\item The multijet background estimation method is unchanged, but some
+  figures have been updated, and others added to further support the
+  method, in Sec.~\ref{sec:qcd}. 
+\item The likelihood description has been added in
+  Sec.~\ref{sec:likelihood}. 
+\item The signal region has been fully unblinded using the 2016 data
+  set and documented in Sec.~\ref{sec:results}. 
+\item Interpretations with SUSY simplified models have been provided
+  in Sec.~\ref{sec:susy}. 
+\end{itemize}
 
 \subsection{April 2017 (v2)}
 
@@ -96,71 +154,28 @@ methods. These updates, labelled as ``Planned'', ``Checks'', or
 
 \end{itemize}
 
-\subsection{June  2017 (v3)}
+\subsection{December 2016 (v1)}
 
-In addition to several minor tweaks, the following major changes have
-been made:
-\begin{itemize}
-\item The use of the \mmj sample to predict the \znunuj background has
-  been modified slightly. Secs~\ref{sec:event-categorisation} and
-  \ref{sec:zinv} have been updated accordingly.
-\item A brief description of corrections and uncertainties to the
-  signal samples has been provided in Sec.~\ref{sec:signalcorrs}.
-\item The multijet background estimation method is unchanged, but some
-  figures have been updated, and others added to further support the
-  method, in Sec.~\ref{sec:qcd}. 
-\item The likelihood description has been added in
-  Sec.~\ref{sec:likelihood}. 
-\item The signal region has been fully unblinded using the 2016 data
-  set and documented in Sec.~\ref{sec:results}. 
-\item Interpretations with SUSY simplified models have been provided
-  in Sec.~\ref{sec:susy}. 
-\end{itemize}
+This version (v1) supports the Full Status report talk given on
+2\superscript{nd} December 2016~\cite{fullstatus}. It is identical to
+AN-16-400 v2 (now deprecated).
 
-\subsection{July 2017 (v4)}
-
-The following updates (worthy of note) have been made since freezing
-the documentation prior to pre-approval:
-\begin{itemize}
-\item Section~\ref{sec:results} has been updated following a technical change 
-  in how the data cards are written, but the technical change concerns 
-  no modification to analysis strategies.
-\item Added a table (\ref{tab:SR_binning}) that lists the complete
-  signal region binning scheme. Added plots to support the counts and
-  composition of the control regions (Sec.~\ref{sec:crbreakdown}).
-\item Added the PDF and scale uncertainties to the background
-  systematics tables in Secs.~\ref{sec:ttw} and \ref{sec:zinv}.
-\item The interpretations have been updated following the technical
-  change described above, see Sec.~\ref{sec:susy}.
-\item Added detailed explanations on bitmaps representing the most sensitive 
-  jet categories.
-\item Added an appendix Section~\ref{sec:zplusbb_app} on a study on heavy 
-  flavour process in \znunu+jets background estimation.
-  %We have added tables to support the stated limits for benchmark models.
-%\item We have added DM interpretations for EXO review, see Sec.~\ref{sec:exo}. 
-\end{itemize}
-
-\subsection{August 2017 (v5)}
-
-The following updates have been made in response to feedback during
-the pre-approval and from the ARC:
-\begin{itemize}
-\item Section~\ref{sec:event-categorisation} has been simplified and
-  updated to correct the description of the event categorisation
-  scheme.
-\item Section~\ref{sec:results} has been updated with new figures and
-  tables that present the analysis result. (The old figures can be
-  found in App.~\ref{app:results-orig}, just for this iteration of the
-  AN.)  The covariance and correlation matrices for background
-  estimates using the simplified binning scheme have been added.
-\item Interpretations with the models \verb!T1tttt!, \verb!T1qqqq!,
-  and \verb!T2qq!  have been added, along with information such as
-  figures showing the most sensitive categories and local significance
-  plots.
-\item The addition of missing information related to the background
-  methods and a number of appendices have been provided in response to
-  feedback during pre-approval~\cite{preapp} and ARC
-  review~\cite{arcreviewowen, arcreviewnadja}. 
-\end{itemize}
+This version contains studies in the control regions based on
+36\fbinv. Following the release of the preliminary public result for
+ICHEP 2016~\cite{CMS-PAS-SUS-16-016}, the signal region was
+reblinded. In time for the Full Status report, a partial unblinding of
+the signal region data corresponding to 5\fbinv (from Run Era G) was
+performed, which revealed an excess of events in the core of
+distributions of the discriminating variables employed by this
+search.\footnote{The fit result shown in the Full Status
+  report~\cite{fullstatus} was understood to be correctly executed and
+  healthy. However, a mistake in the data cards for this fit was
+  realised soon afterwards. Only then was the excess observed, which
+  prompted the reblinding of the signal region and further detailed
+  studies of the control regions.}  The data sets at the time were
+based on the \verb!Prompt!  reconstruction and the calibrations from
+the various POGs were still considered very preliminary. Known issues
+with the data at the time, such as the ``HIP effect'', were still
+under study by the Collaboration.
 
 %%____________________________________________________________________________||
