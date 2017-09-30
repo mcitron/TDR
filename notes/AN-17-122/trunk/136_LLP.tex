@@ -1,29 +1,95 @@
 %%____________________________________________________________________________||
-\section{Interpretation in Simplified SUSY models with Long-lived Mediators}
+\section{Interpretations with simplified ``split SUSY'' models}
 \label{sec:LLP}
 
-As an additional interpretation of the results in this search, we investigate a simple extension to the 
-simplified supersymmetric model T1qqqq of section~\ref{sec:susy} where the mediating sparticle is ``long-lived''.
-In these cases, the final visible decay products may be produced with a non-negligible displacement from the interaction vertex.
-To distinguish these models from the that of section~\ref{sec:susy}, we refer to these models as T1qqqqLL.
+As an additional interpretation of the results in this search, we
+investigate a simple extension to the simplified supersymmetric model
+\texttt{T1qqqq} described in Section~\ref{sec:susy}, where the gluino
+is long lived. In these cases, the jets from the gluino decay may be
+produced with a non-negligible displacement from the interaction
+vertex. This model family is labelled as \texttt{T1qqqqLL}.
 
-
-\subsection{Signal models}
+\subsection{Benchmark models and signal shapes}
 \label{sec:LLP_models}
+
+\begin{table}[h!]
+  \caption{Benchmark models and event topological regions, defined in
+    terms of \njet and \nb, that provide sensitivity for each model.}
+  \label{tab:benchmark-LLP}
+  \centering
+  \begin{tabular}{lcc}
+    \hline \hline
+    \ctau & ($m_{\mathrm{Susy}},m_{\mathrm{LSP}}$) & Sensitive            \\ 
+    (mm)  & (GeV)                                  & topology             \\
+    \hline
+    \multirow{2}{*}{$10^{-3}$}
+    & (1800, 200)                            & (${\geq}6,{\leq}1$)  \\
+    & (1000, 900)                            & (${\leq}2a,{\leq}1$) \\
+    \hline
+    \multirow{2}{*}{$10^{0}$}
+    & (1800, 200)                            & (${\geq}6,{\geq}2$)  \\
+    & (1000, 900)                            & (${\leq}2a,{\leq}1$) \\
+    \hline
+    \multirow{2}{*}{$10^{5}$}
+    & (1000, 200)                            & (${\geq}6,{\leq}1$)  \\
+    & (1000, 900)                            & (4--5,${\leq}1$)     \\
+    \hline \hline
+  \end{tabular}
+\end{table}
 
 % TO COVER:
 % T1qqqq decay, link to figure from last section: \ref{fig:T1qqqq_feyn}
 % The range of lifetimes considered, implications for decay vertex (less than b-lifetime, outside the tracker, outside ECAL, etc)
 % Generation of signal samples: Full sim vs. FastSim as for standard SUSY
 
-The distribution of the signal model events in the simplified bins for the
-benchmark models are shown in Figs.~\ref{fig:T1qqqqLL_ctau_0p001_compressed_MR_simp}-\ref{fig:T1qqqqLL_ctau_100000_uncompressed_MR_simp}.
-All relevant corrections are applied to the events in these distributions;
-however, the uncertainty represents the simulation statistical uncertainty due
-to the finite size of the simulated sample. The background prediction is taken
-from the CR-only post-fit result in Sec.~\ref{sec:results}.
+Table~\ref{tab:benchmark-LLP} summarises the benchmark models, defined
+in terms of the masses of the gluino and LSP, as well as the lifetime
+of the gluino, expressed in terms of the characteristic decay length,
+$c\tau$ [mm].
 
-\clearpage
+The event distributions for each benchmark model using the simplified
+binning schema are shown in Fig.~\ref{fig:T1qqqqLL_MR_simp}. All
+relevant corrections are applied to the signal events in these
+distributions. The uncertainties in the signal yields represent the
+statistical uncertainty from to the finite size of the simulated
+samples. The background prediction is taken from the CR-only post-fit
+result described in in Sec.~\ref{sec:results}.
+
+\begin{figure}[!ht]
+    \centering
+    \subfigure[$c\tau=10~\mu\mathrm{m}$, uncompressed $(1800,200)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1800_mLSP-200/all_full-fit-sig}
+        \label{fig:T1qqqqLL_ctau_0p001_uncompressed_MR_simp}
+    } ~~
+    \subfigure[$c\tau=10~\mu\mathrm{m}$, compressed $(1000,900)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1000_mLSP-900/all_full-fit-sig}
+        \label{fig:T1qqqqLL_ctau_0p001_compressed_MR_simp}
+    } \\
+    \subfigure[$c\tau=1~\mathrm{mm}$, uncompressed $(1800,200)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1800_mLSP-200/all_full-fit-sig}
+        \label{fig:T1qqqqLL_ctau_1_compressed_MR_simp}
+    } ~~
+    \subfigure[$c\tau=1~\mathrm{mm}$, compressed $(1000,900)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1200_mLSP-1100/all_full-fit-sig}
+        \label{fig:T1qqqqLL_ctau_1_uncompressed_MR_simp}
+    } \\
+    \subfigure[\ctau=100~m, uncompressed $(1000,200)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-200/all_full-fit-sig}
+        \label{fig:T1qqqqLL_ctau_100000_compressed_MR_simp}
+    } ~~
+    \subfigure[\ctau=100~m, compressed $(1000,900)$]{
+        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900/all_full-fit-sig}
+        \label{fig:T1qqqqLL_ctau_100000_uncompressed_MR_simp}
+    } \\
+    \caption{ Signal shapes for the \texttt{T1qqqqLL}
+      $c\tau=10~\mu\mathrm{m}$ (upper), $c\tau=1~\mathrm{mm}$ (middle),
+      and $c\tau=100~\mathrm{m}$ (lower) benchmark models with
+      uncompressed (left) and compressed (right) mass spectra,
+      overlaid on CR-only post-fit background predictions with the
+      simplified binning schema.  }
+    \label{fig:T1qqqqLL_MR_simp}
+\end{figure}
+
 \subsection{Signal acceptance times efficiency}
 \label{sec:sig-accept-contam-LLP}
 
@@ -36,37 +102,45 @@ points and lifetimes (as \ctau) is summarised.
 %Figs.~\ref{fig:T1qqqq_eff}-\ref{fig:T2cc_eff}.
 
 \begin{table}[h!]
-    \scriptsize
-	\caption{Signal efficiency for T1qqqqLL with different \ctau values.}
-    \label{tab:sig-eff-LLP}
-    \centering
-    \begin{tabular}{lcc}
-        \hline \hline
-	    \ctau (mm) & ($m_{\mathrm{Susy}},m_{\mathrm{LSP}}$) & Efficiency (total) \\ 
-        \hline
-        \multirow{2}{*}{$10^{-3}$}
-            & (1800, 200) & 27.8\% \\
-            & (1000, 900) & 6.7\% \\
-        \hline
-        \multirow{2}{*}{$10^{0}$}
-            & (1800, 200) & 22.9\% \\
-            & (1000, 900) & 5.2\% \\
-        \hline
-        \multirow{2}{*}{$10^{5}$}
-            & (1000, 200) & 11.2\% \\
-            & (1000, 900) & 10.4\% \\
-        \hline \hline
-    \end{tabular}
+  \caption{Signal efficiency for T1qqqqLL with different \ctau values.}
+  \label{tab:sig-eff-LLP}
+  \centering
+  \begin{tabular}{lcc}
+    \hline \hline
+    \ctau (mm) & ($m_{\mathrm{Susy}},m_{\mathrm{LSP}}$) & Efficiency (total) \\ 
+    \hline
+    \multirow{2}{*}{$10^{-3}$}
+    & (1800, 200) & 27.8\% \\
+    & (1000, 900) & 6.7\% \\
+    \hline
+    \multirow{2}{*}{$10^{0}$}
+    & (1800, 200) & 22.9\% \\
+    & (1000, 900) & 5.2\% \\
+    \hline
+    \multirow{2}{*}{$10^{5}$}
+    & (1000, 200) & 11.2\% \\
+    & (1000, 900) & 10.4\% \\
+    \hline \hline
+  \end{tabular}
 \end{table}
 
 % Discuss: Variation of Signal Efficiency around B-lifetime ?
 % Discuss: Signal contamination of the CRs?  Generally not an issue since no leptons. Sidebands?
 
-The following are the cut flow efficiencies for the six benchmark models.
+Tables~\ref{tab:cut_flow_ctau_0p001}--\ref{tab:cut_flow_ctau_100000}
+provide a summary of the cumulative signal acceptance times
+efficiency, $\mathcal{A}\,\varepsilon$ [\%], for the \text{T1qqqqLL}
+benchmark models, following the application of the event selection
+criteria used to define the signal region. The final values in each
+table represent the efficiencies for the sensitive topological (\njet,
+\nb) regions as defined in
+Table~\ref{tab:benchmark-LLP}. \fixme{Tables to be updated.}
 
-\begin{table}[H]
-\caption{A summary of the cumulative signal acceptance times efficiency, $\mathcal{A}\,\varepsilon$ [\%], for the T1qqqqLL benchmark models with a lifetime of $c\tau = 10^{-3}$ mm, following the application of the event selection criteria used to define the signal region. Values for $\mathcal{A}\,\varepsilon$ are also shown following the application of additional requirements that define the most sensitive simplified $n_{\mathrm{jet}}$, $n_{\mathrm{b}}$ category, as defined in Table X of the paper. }
-\resizebox{\textwidth}{!}{
+\begin{table}[!h]
+  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 0.001\unit{mm}$.} 
+  \label{tab:cut_flow_ctau_0p001}
+{\scriptsize%resizebox{\textwidth}{!}{
+\centering
 \begin{tabular}{lcc}
   \hline
   Event selection & \multicolumn{2}{c}{Benchmark model ($m_\mathrm{SUSY},\,m_\mathrm{LSP},\,c\tau$)} \\
@@ -93,9 +167,11 @@ The following are the cut flow efficiencies for the six benchmark models.
 }
 \end{table}
 
-\begin{table}[H]
-\caption{A summary of the cumulative signal acceptance times efficiency, $\mathcal{A}\,\varepsilon$ [\%], for the T1qqqqLL benchmark models with a lifetime of $c\tau = 1$ mm, following the application of the event selection criteria used to define the signal region. Values for $\mathcal{A}\,\varepsilon$ are also shown following the application of additional requirements that define the most sensitive simplified $n_{\mathrm{jet}}$, $n_{\mathrm{b}}$ category, as defined in Table X of the paper.}
-\resizebox{\textwidth}{!}{
+\begin{table}[!h]
+  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 1\unit{mm}$.} 
+  \label{tab:cut_flow_ctau_1}
+{\scriptsize%resizebox{\textwidth}{!}{\
+\centering
 \begin{tabular}{lcc}
   \hline
   Event selection & \multicolumn{2}{c}{Benchmark model ($m_\mathrm{SUSY},\,m_\mathrm{LSP},\,c\tau$)} \\
@@ -122,9 +198,11 @@ The following are the cut flow efficiencies for the six benchmark models.
 }
 \end{table}
 
-\begin{table}[H]
-\caption{A summary of the cumulative signal acceptance times efficiency, $\mathcal{A}\,\varepsilon$ [\%], for the T1qqqqLL benchmark models with a lifetime of $c\tau = 10^5$ mm, following the application of the event selection criteria used to define the signal region. Values for $\mathcal{A}\,\varepsilon$ are also shown following the application of additional requirements that define the most sensitive simplified $n_{\mathrm{jet}}$, $n_{\mathrm{b}}$ category, as defined in Table X of the paper.}
-\resizebox{\textwidth}{!}{
+\begin{table}[!h]
+  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 1\unit{mm}$.} 
+  \label{tab:cut_flow_ctau_100000}
+{\scriptsize%\resizebox{\textwidth}{!}{
+\centering
 \begin{tabular}{lcc}
   \hline
   Event selection & \multicolumn{2}{c}{Benchmark model ($m_\mathrm{SUSY},\,m_\mathrm{LSP},\,c\tau$)} \\
@@ -155,10 +233,11 @@ The following are the cut flow efficiencies for the six benchmark models.
 \subsection{Systematic uncertainties on signal efficiency times acceptance}
 \label{sec:sig-syst-LLP}
 
-The following sources of systematic uncertainty are propagated to the signal
-acceptance and shape, according to the recommendations agreed on within the
-collaboration. Relative effect on the yields are presented in
-Tab.~\ref{tab:sig-systematics-LLP} for some benchmark models.
+The following sources of systematic uncertainty are propagated to the
+signal acceptance and shape, according to the recommendations agreed
+on within the collaboration. Relative effect on the yields are
+presented in Tab.~\ref{tab:sig-systematics-LLP} for some benchmark
+models.
 
 \begin{itemize}
     \item Luminosity: 2.6\%, taken as correlated across all bins.
@@ -182,15 +261,13 @@ Tab.~\ref{tab:sig-systematics-LLP} for some benchmark models.
 
 \begin{table}[h!]
         % TODO CHANGE THIS TABLE
-    \scriptsize
+%    \scriptsize
     \caption{
         Representative range taken from the $16\%$ and $84\%$ percentiles of the
         uncertainty across the analysis bins for each source of signal
         systematic. Two benchmark point are chosen for each model, corresponding
         to ``compressed'' and ``uncompressed'' scenarios, i.e. with small and
-        large mass splitting between the mother particle and the LSP. A third
-        benchmark is chosen for T2tt for the $W$ corridor and no
-        ``uncompressed'' is chosen for T2cc.
+        large mass splitting between the mother particle and the LSP. 
     }
     \label{tab:sig-systematics-LLP}
     \centering
@@ -203,7 +280,7 @@ Tab.~\ref{tab:sig-systematics-LLP} for some benchmark models.
         \hline
         \multirow{2}{*}{1}
             & (1800,200) & 2.6\% & 2-4\% & 2-4\% & 3-16\% & 3-14\% & 2-4\% & 17-22\% \\
-            & (1200,110) & 2.6\% & 3-9\% & 1-4\% & 4-8\% & 8-13\% & 0-2\% & 20-29\% \\        
+            & (1000,900) & 2.6\% & 3-9\% & 1-4\% & 4-8\% & 8-13\% & 0-2\% & 20-29\% \\        
         \hline
         \multirow{2}{*}{100000}
             & (1000,200) & 2.6\% & 2-17\% & 1-5\% & 0-1\% & 1-1\% & 0-4\% & 16-30\% \\
@@ -215,135 +292,133 @@ Tab.~\ref{tab:sig-systematics-LLP} for some benchmark models.
 \end{table}
 
 \clearpage
-\subsection{Exclusion limits}
+\subsection{Sensitive categories and limits}
 \label{sec:LLP_results}
 
-In order to extract the signal contribution in the fit, the
-distribution of events according to the \mht variable, encoded as
-template histograms as described in
-Secs.~\ref{sec:htmiss-categorisation}, \ref{sec:mht-intro},
-\ref{sec:mht-zinv-intro}, and \ref{sec:likelihood}, is used. Upper
-limits on the cross section are computed using the $\text{CL}_{s}$
-criterion \cite{CLsTechnique}. Asymptotic formulae
-\cite{AsymptoticFormulae} are utilised to approximate the distribution
-of the test statistics. All the statistical results are produced using
-the \textit{combine} tool, provided within the
-HiggsAnalysis-CombinedLimit package \cite{Combine}.
+The 95\% CL upper limit on the ratio of the cross section to the
+theoretical cross section is repeated with a similar likelihood model
+used to obtain the standard limits in Sec.~\ref{sec:susy_results};
+however, the combination of analysis bins is varied to understand
+which bins drive the sensitivity of the benchmark signal models. The
+limits are recalculated with sub-regions of the signal region at
+different granularities. The finest granularity considers each \mht
+bin within a sub-region defined in terms of (\njet, \nb, \scalht). The
+next-finest granularity considered all (\scalht, \mht) bins within
+each sub-region defined in terms of (\njet, \nb). Next, sub-regions
+defined in terms of only \njet are consdiered, and finally the full
+signal region is considered. Figure~\ref{fig:T1qqqqLL_limitsPerBin}
+summarises this information, which allows to understand which bins
+drive the sensitivity to a particular benchmark model. This procedure
+is intended to be illustrative only, as it involves breaking the
+assumptions/correlations between the analysis bins.
 
-The models are grouped according to the following categorisation:
-\begin{itemize}
-\item \textbf{Gluino-mediated production of off-shell (decoupled) 3rd
-    generation squarks}: gluino pair production followed by 3-body
-  decay to $t\bar{t}\chiz$,$b\bar{b}\chiz$.  It includes T1bbbb and
-  T1tttt.
-\item \textbf{Direct and gluino-mediated production of off-shell
-    (decoupled) light-flavour squarks}: gluino/light squark pair
-  production followed by 3-body/2-body decay to $q(q)\chiz$. It
-  includes T1qqqq and T2qq.
-\item \textbf{Direct production of 3rd generation squarks}:
-  stop/sbottom pair production, with several possibility for the decay
-  (see Tab.~\ref{tab:simplified-models}). It includes T2bb, T2tt and
-  T2cc.
-\end{itemize}
+\begin{figure}[!h]
+  \centering
+  \subfigure[T1qqqqLL $(1800,200)$]{
+    \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1800_mLSP-200/limits_per_bin}
+    \label{fig:T1qqqqLL_ctau_0p001_uncompressed_limitsPerBin}
+  } ~~
+  \subfigure[T1qqqqLL $(1000,900)$]{
+    \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1000_mLSP-900/limits_per_bin}
+    \label{fig:T1qqqqLL_ctau_0p001_compressed_limitsPerBin}
+  } \\
+  \subfigure[T1qqqqLL $(1800,200)$]{
+    \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1800_mLSP-200/limits_per_bin}
+    \label{fig:T1qqqqLL_ctau_1_uncompressed_limitsPerBin}
+  } ~~
+  \subfigure[T1qqqqLL $(1000,900)$]{
+    \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1200_mLSP-1100/limits_per_bin}
+    \label{fig:T1qqqqLL_ctau_1_compressed_limitsPerBin}
+  } \\
+  \subfigure[T1qqqqLL $(1000,200)$]{
+    \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-200/limits_per_bin}
+    \label{fig:T1qqqqLL_ctau_100000_uncompressed_limitsPerBin}
+  } ~~
+  \subfigure[T1qqqqLL $(1000,900)$]{
+    \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900/limits_per_bin}
+    \label{fig:T1qqqqLL_ctau_100000_compressed_limitsPerBin}
+  } \\
+  \caption{ 95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$
+    for the \texttt{T1qqqqLL} benchmark models with
+    $c\tau=0.001\unit{mm}$ (upper), $c\tau=1\unit{mm}$ (middle),
+    $c\tau=100000\unit{mm}$ (lower) and uncompressed (left) and
+    compressed (right) mass spectra. Limits are shown for four
+    different granularities of sub-regions: individual (\njet, \nb,
+    \scalht) bins, (\njet, \nb) regions, \njet regions; and finally
+    the full signal region, all overlaid in ascending order. The
+    expected limit, along with the $\pm 1\sigma$ and $\pm 2\sigma$
+    bands, and the observed limit are displayed for each bin
+    combination.  }
+  \label{fig:T1qqqqLL_limitsPerBin}
+\end{figure}
 
-Table~\ref{tab:susyLL_aggr_limits} shows the observed and expected limits
-determined for the benchmark models using both the nominal and
-simplified binning schemes. 
+Table~\ref{tab:susyLL_aggr_limits} summarises the expected and
+observed limits determined for each benchmark model using the nominal
+and simplified binning schemas.
 
-In Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (top) the 95\% C.L. upper
-limits on the cross section are shown in the
-$(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane for the models considered
-in this interpretation. These results correspond to 35.9~\ifb of
-integrated luminosity. The exclusion contour is also shown together
-with $\pm1\sigma$ (and $\pm2\sigma$ for the expected exclusion)
-uncertainty.  The band around the expected exclusion reflects the
-experimental uncertainty, while the band around the observed exclusion
-correspond to the theoretical uncertainty on the signal cross
-section. In Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (left) the signal
-acceptance for each mass point in the SMS scan. In
-Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (right) each mass point is
-assigned a group of 4 jet categories in descending order of
-sensitivity. The total number of mass points with the same 4 most
-sensitive jet categories is noted. In the gluino production models in
-the uncompressed regions the high jet multiplicities drive the
-sensitivity (ge6j, eq5j, eq4j), and in the compressed regions the same
-high jet multiplicities drive the sensitivity with the asymmetric jet
-topologies playing a larger role than in the uncompressed regions. In
-the T2qq and T2bb models, the sensitivity in the uncompressed regions
-are driven by low/medium jet multiplicities (eq2j, eq3j, eq4j), and in
-the compressed regions it's driven by high jet multiplicities (ge6j,
-eq5j, eq4j). In stop production models the uncompressed and compressed
-regions are driven by high jet multiplicities (ge6j, eq5j, eq4j) with
-the asymmetric topology playing a larger role in the compressed
-regions.  The weakest jet multiplicity, in terms of limit sensitivity,
-is the monojet category and is expected to become sensitive for Dark
-matter models. In Figs.~\ref{fig:T1qqqq}-\ref{fig:T2cc} (bottom) the
-local observed significance for each mass point in the SMS scan is
-shown.
-
-In summary, gluino masses up to $\sim$1800 GeV for the decay into
-light-quarks (T1qqqq), $\sim$2050 GeV for the decay into b-quarks
-(T1bbbb) and $\sim$1850 GeV for the decay into t-quarks
-(T1tttt). Squark production is excluded up to squark masses $\sim$1400
-GeV for the 8-fold models, and up to $\sim$800 GeV for the 1-fold
-(degenerate) models (T2qq). Sbottom production is excluded to sbottom
-masses $\sim$1100 GeV (T2bb).  Stop production is excluded up to stop
-masses $\sim$1050 GeV in the 2-body decay to top quarks (T2tt), and up
-to $\sim$550 GeV in the compressed region of decays into charm quarks
-(T2cc).  For the models considered, the exclusion exceeds the one of
-the 13 TeV ICHEP data.
-
-\begin{table*}[!t]
+\begin{table*}[!h]
   \topcaption{Expected ($\mu_{\text{exp}}$) and observed 
     ($\mu_{\text{obs}}$) upper limits on the production cross section, 
     expressed in terms of the signal strength parameter, obtained using
-    both the nominal and simplified binning schema. 
+    both the nominal and simplified binning schemas. 
   }
   \label{tab:susyLL_aggr_limits}
   \centering
   \begin{tabular}{ llccccc }
     \hline
-    \multicolumn{2}{c}{Benchmark models}    & \multicolumn{2}{c}{Nominal}
-                                            & 
-                                            & \multicolumn{2}{c}{Simplified}             \\ [0.3ex]
+    \multicolumn{2}{c}{Benchmark models} & \multicolumn{2}{c}{Nominal}
+                                         & 
+                                         & \multicolumn{2}{c}{Simplified}             \\ [0.3ex]
     \cline{3-4}
     \cline{6-7}
    %\multicolumn{2}{c}{$(m_{\text{SUSY}}, m_{\mathrm{LSP}})$ [\GeVns{}]} 
-                                              \ctau [mm] 
-                                            & $(m_{\text{SUSY}}, m_{\mathrm{LSP}})$ [\GeVns{}]
-                                            & $\mu_{\text{exp}}$
-                                            & $\mu_{\text{obs}}$
-                                            & 
-                                            & $\mu_{\text{exp}}$
-                                            & $\mu_{\text{obs}}$                         \\ [0.3ex]
+    \ctau [mm] 
+                                         & $(m_{\text{SUSY}}, m_{\mathrm{LSP}})$ [\GeVns{}]
+                                         & $\mu_{\text{exp}}$
+                                         & $\mu_{\text{obs}}$
+                                         & 
+                                         & $\mu_{\text{exp}}$
+                                         & $\mu_{\text{obs}}$                         \\ [0.3ex]
     \hline
-    \multirow{2}{*}{0.001}  & (1800, 200)   & 0.81 & 1.58 &  & 1.22  & 1.53 \\
-                            & (1000, 900)   & 0.95 & 1.21 &  & 2.23  & 2.28 \\ [0.5ex]
-    \multirow{2}{*}{1}      & (1800, 200)   & 0.36 & 0.66 &  & 0.47  & 0.44 \\
-                            & (1200, 1100)  & 6.72 & 2.99 &  & 26.13 & 16.76 \\ [0.5ex]
-    \multirow{2}{*}{100000} & (1000, 200)   & 0.95 & 1.33 &  & 1.88 & 2.32 \\
-                            & (1000, 900)   & 0.95 & 0.73 &  & 1.90 & 1.47 \\ 
+    \multirow{2}{*}{0.001}               & (1800, 200) & 0.81 & 1.58 &  & 1.22 & 1.53 \\
+                                         & (1000, 900) & 0.95 & 1.21 &  & 2.23 & 2.28 \\ [0.5ex]
+    \multirow{2}{*}{1}                   & (1800, 200) & 0.36 & 0.66 &  & 0.47 & 0.44 \\
+                                         & (1000, 900) & --   & --   &  & --   & --   \\ [0.5ex]
+    \multirow{2}{*}{100000}              & (1000, 200) & 0.95 & 1.33 &  & 1.88 & 2.32 \\
+                                         & (1000, 900) & 0.95 & 0.73 &  & 1.90 & 1.47 \\ 
     \hline
   \end{tabular}
 \end{table*}
 
-%Summary exclusion plots according to this categorisation are presented in
-%Fig.~\ref{fig:summary-excl-plots}.
+\subsection{Limits in the mass planes}
 
-\newpage
+In Figs.~\ref{fig:T1qqqqLL:ctau-0p001}-\ref{fig:T1qqqqLL:ctau-100000}
+the top sub-figure shows the 95\% C.L. upper limits on the cross
+section are shown in the $(m_{\mathrm{Susy}},m_{\mathrm{LSP}})$ plane
+for the models considered in this interpretation. These results
+correspond to 35.9~\ifb of integrated luminosity. The exclusion
+contour is also shown together with $\pm1\sigma$ (and $\pm2\sigma$ for
+the expected exclusion) uncertainty.  The band around the expected
+exclusion reflects the experimental uncertainty, while the band around
+the observed exclusion correspond to the theoretical uncertainty on
+the signal cross section. The left sub-figure shows the signal
+acceptance for each mass point in the SMS scan. In the right
+sub-figure, each mass point is labelled with a group of (\njet, \nb)
+topologies in descending order of sensitivity. 
+
 \begin{figure}[h!]
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 0.001~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p001_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-0p001}
         } \\
         \subfigure[T1qqqqLL (\ctau = 0.001~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p001_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-0p001}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 0.001~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p001_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-0p001}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
@@ -365,15 +440,15 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 0.01~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p01_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-0p01}
         } \\
         \subfigure[T1qqqqLL (\ctau = 0.01~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p01_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-0p01}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 0.01~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p01_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-0p01}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
@@ -395,19 +470,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 0.1~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p1_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-0p1}
         } \\
         \subfigure[T1qqqqLL (\ctau = 0.1~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p1_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-0p1}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 0.1~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p1_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-0p1}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-0p1}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -425,19 +500,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 1~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-1}
         } \\
         \subfigure[T1qqqqLL (\ctau = 1~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-1}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 1~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-1}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-1}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -455,19 +530,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 10~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-10}
         } \\
         \subfigure[T1qqqqLL (\ctau = 10~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-10}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 10~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-10}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-10}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -485,19 +560,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 100~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-100}
         } \\
         \subfigure[T1qqqqLL (\ctau = 100~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-100}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 100~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-100}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-100}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -515,19 +590,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 1000~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1000_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-1000}
         } \\
         \subfigure[T1qqqqLL (\ctau = 1000~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1000_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-1000}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 1000~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1000_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-1000}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-1000}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -545,19 +620,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 10000~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10000_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-10000}
         } \\
         \subfigure[T1qqqqLL (\ctau = 10000~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10000_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-10000}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 10000~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10000_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-10000}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-10000}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -575,19 +650,19 @@ the 13 TeV ICHEP data.
     \begin{center}
         \subfigure[T1qqqqLL (\ctau = 100000~mm): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100000_XSEC}
-            \label{fig:T1qqqqLL_excl}
+            \label{fig:T1qqqqLL_excl_ctau-100000}
         } \\
         \subfigure[T1qqqqLL (\ctau = 100000~mm): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100000_effs}
-            \label{fig:T1qqqqLL_eff}
+            \label{fig:T1qqqqLL_eff_ctau-100000}
         } ~~
         \subfigure[T1qqqqLL (\ctau = 100000~mm): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100000_bitMap}
-            \label{fig:T1qqqqLL_bitMap}
+            \label{fig:T1qqqqLL_bitMap_ctau-100000}
         } \\
         %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
-        %    \label{fig:T1qqqqLL_signif}
+        %    \label{fig:T1qqqqLL_signif_ctau-100000}
         %} ~~
         \caption{Top: the 95\% C.L. observed upper limit on the cross section
             (histogram), with the expected (solid black line) observed
@@ -598,81 +673,4 @@ the 13 TeV ICHEP data.
         }
         \label{fig:T1qqqqLL:ctau-100000}
     \end{center}
-\end{figure}
-
-\newpage
-\subsection{Sensitive categories}
-
-The 95\% CL upper limit on the ratio of the cross section to the theoretical
-cross section is repeated with a similar likelihood model used to obtain the
-standard limits in Sec.~\ref{sec:susy_results}; however, the combination of
-analysis bins is chosen to understand which bins drive the sensitivity of the
-benchmark signal models. The limits are recalculated by combining all analysis
-bins apart from the \nj categories, then again without combining the
-$(\nj, \nb)$ categories and lastly leaving the $(\nj, \nb, \scalht)$ bins
-uncombined (i.e. no analysis bins are combined). This procedure gives an
-estimate of which bins drive the sensitivity at the expense of the full
-correlation between all analysis bins.
-
-\begin{figure}[!h]
-    \centering
-    \subfigure[T1qqqqLL $(1000,900)$]{
-        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1000_mLSP-900/limits_per_bin}
-        \label{fig:T1qqqqLL_ctau_0p001_compressed_limitsPerBin}
-    } ~~
-    \subfigure[T1qqqqLL $(1800,200)$]{
-        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1800_mLSP-200/limits_per_bin}
-        \label{fig:T1qqqqLL_ctau_0p001_uncompressed_limitsPerBin}
-    }
-    \caption{
-        95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$ for the
-        T1qqqqLL $c\tau=0.001~\mathrm{mm}$ models are shown for four different
-        bin combinations: no bins, \scalht-only, $(\nb,\scalht)$ and all bins
-        overlaid in ascending order. The expected limit, along with the
-        $\pm 1\sigma$ and $\pm 2\sigma$ bands, and the observed limit are
-        displayed for each bin.
-    }
-    \label{fig:T1qqqqLL_ctau_0p001_limitsPerBin}
-\end{figure}
-
-\begin{figure}[!h]
-    \centering
-    \subfigure[T1qqqqLL $(1200,1100)$]{
-        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1200_mLSP-1100/limits_per_bin}
-        \label{fig:T1qqqqLL_ctau_1_compressed_limitsPerBin}
-    } ~~
-    \subfigure[T1qqqqLL $(1800,200)$]{
-        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1800_mLSP-200/limits_per_bin}
-        \label{fig:T1qqqqLL_ctau_1_uncompressed_limitsPerBin}
-    }
-    \caption{
-        95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$ for the
-        T1qqqqLL $c\tau=1~\mathrm{mm}$ models are shown for four different
-        bin combinations: no bins, \scalht-only, $(\nb,\scalht)$ and all bins
-        overlaid in ascending order. The expected limit, along with the
-        $\pm 1\sigma$ and $\pm 2\sigma$ bands, and the observed limit are
-        displayed for each bin.
-    }
-    \label{fig:T1qqqqLL_ctau_1_limitsPerBin}
-\end{figure}
-
-\begin{figure}[!h]
-    \centering
-    \subfigure[T1qqqqLL $(1000,900)$]{
-        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900/limits_per_bin}
-        \label{fig:T1qqqqLL_ctau_100000_compressed_limitsPerBin}
-    } ~~
-    \subfigure[T1qqqqLL $(1000,200)$]{
-        \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-200/limits_per_bin}
-        \label{fig:T1qqqqLL_ctau_100000_uncompressed_limitsPerBin}
-    }
-    \caption{
-        95\% CL upper limits on $\sigma/\sigma_{\mathrm{theory}}$ for the
-        T1qqqqLL $c\tau=100~\mathrm{m}$ models are shown for four different
-        bin combinations: no bins, \scalht-only, $(\nb,\scalht)$ and all bins
-        overlaid in ascending order. The expected limit, along with the
-        $\pm 1\sigma$ and $\pm 2\sigma$ bands, and the observed limit are
-        displayed for each bin.
-    }
-    \label{fig:T1qqqqLL_ctau_100000_limitsPerBin}
 \end{figure}
