@@ -5,9 +5,12 @@
 As an additional interpretation of the results in this search, we
 investigate a simple extension to the simplified supersymmetric model
 \texttt{T1qqqq} described in Section~\ref{sec:susy}, where the gluino
-is long lived. In these cases, the jets from the gluino decay may be
-produced with a non-negligible displacement from the interaction
-vertex. This model family is labelled as \texttt{T1qqqqLL}.
+is long lived. In addition to the gluino and LSP masses, a third model
+parameter is added to define the gluino lifetime in terms of its
+characteristic decay length $c\tau$ [mm]. As a consequence, the jets
+from the gluino decay may be produced with a non-negligible
+displacement from the interaction vertex. This model family is
+labelled as \texttt{T1qqqqLL}.
 
 \subsection{Benchmark models and signal shapes}
 \label{sec:LLP_models}
@@ -42,42 +45,54 @@ vertex. This model family is labelled as \texttt{T1qqqqLL}.
 % The range of lifetimes considered, implications for decay vertex (less than b-lifetime, outside the tracker, outside ECAL, etc)
 % Generation of signal samples: Full sim vs. FastSim as for standard SUSY
 
-Table~\ref{tab:benchmark-LLP} summarises the benchmark models, defined
-in terms of the masses of the gluino and LSP, as well as the lifetime
-of the gluino, expressed in terms of the characteristic decay length,
-$c\tau$ [mm].
+Table~\ref{tab:benchmark-LLP} summarises a set of benchmark models
+studied in this section, each of which is defined in terms of the
+masses of the gluino and LSP, as well as $c\tau$. Also listed is a
+representative event topology, defined in terms of \njet and \nb, that
+plays an important role in providing sensitivity to each model.
 
-The event distributions for each benchmark model using the simplified
-binning schema are shown in Fig.~\ref{fig:T1qqqqLL_MR_simp}. All
-relevant corrections are applied to the signal events in these
-distributions. The uncertainties in the signal yields represent the
-statistical uncertainty from to the finite size of the simulated
-samples. The background prediction is taken from the CR-only post-fit
-result described in in Sec.~\ref{sec:results}.
+The signal event distributions for each benchmark model using the
+simplified binning schema are shown in
+Fig.~\ref{fig:T1qqqqLL_MR_simp}. The background prediction is taken
+from the CR-only post-fit result described in in
+Sec.~\ref{sec:results}. All relevant corrections are applied to the
+signal events in these distributions. The uncertainties in the signal
+yields represent only the statistical uncertainty from the finite size
+of the simulated samples, although all relevant statistical and
+systematic uncertainties are considered in the final limit
+calculation. Some general observations can be made. The signal events
+for the uncompressed \texttt{T1qqqqLL} model with $c\tau =
+0.001\unit{mm}$ typically populate high-\njet, high-\mht, low-\nb
+bins, while events for the compressed model typically populate lower
+values of \njet and \mht. A similar trend in \njet and \mht is
+observed for the $c\tau = 1\unit{mm}$ models, but the events instead
+populate higher-\nb bins. Finally, for the $c\tau = 100000\unit{mm}$
+model, the signal events tend to populate low-\njet, low-\mht, low-\nb
+bins regardless of the mass splitting. 
 
 \begin{figure}[!ht]
     \centering
-    \subfigure[$c\tau=10~\mu\mathrm{m}$, uncompressed $(1800,200)$]{
+    \subfigure[$c\tau=0.001\unit{mm}$, uncompressed $(1800,200)$]{
         \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1800_mLSP-200/all_full-fit-sig}
         \label{fig:T1qqqqLL_ctau_0p001_uncompressed_MR_simp}
     } ~~
-    \subfigure[$c\tau=10~\mu\mathrm{m}$, compressed $(1000,900)$]{
+    \subfigure[$c\tau=0.001\unit{mm}$, compressed $(1000,900)$]{
         \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1000_mLSP-900/all_full-fit-sig}
         \label{fig:T1qqqqLL_ctau_0p001_compressed_MR_simp}
     } \\
-    \subfigure[$c\tau=1~\mathrm{mm}$, uncompressed $(1800,200)$]{
+    \subfigure[$c\tau=1\unit{mm}$, uncompressed $(1800,200)$]{
         \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1800_mLSP-200/all_full-fit-sig}
         \label{fig:T1qqqqLL_ctau_1_compressed_MR_simp}
     } ~~
-    \subfigure[$c\tau=1~\mathrm{mm}$, compressed $(1000,900)$]{
+    \subfigure[$c\tau=1\unit{mm}$, compressed $(1000,900)$]{
         \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1200_mLSP-1100/all_full-fit-sig}
         \label{fig:T1qqqqLL_ctau_1_uncompressed_MR_simp}
     } \\
-    \subfigure[\ctau=100~m, uncompressed $(1000,200)$]{
+    \subfigure[$\ctau=100000\unit{mm}$, uncompressed $(1000,200)$]{
         \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-200/all_full-fit-sig}
         \label{fig:T1qqqqLL_ctau_100000_compressed_MR_simp}
     } ~~
-    \subfigure[\ctau=100~m, compressed $(1000,900)$]{
+    \subfigure[$\ctau=100\unit{mm}$, compressed $(1000,900)$]{
         \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900/all_full-fit-sig}
         \label{fig:T1qqqqLL_ctau_100000_uncompressed_MR_simp}
     } \\
@@ -90,6 +105,7 @@ result described in in Sec.~\ref{sec:results}.
     \label{fig:T1qqqqLL_MR_simp}
 \end{figure}
 
+\clearpage
 \subsection{Signal acceptance times efficiency}
 \label{sec:sig-accept-contam-LLP}
 
@@ -131,11 +147,11 @@ Tables~\ref{tab:cut_flow_ctau_0p001}--\ref{tab:cut_flow_ctau_100000}
 provide a summary of the cumulative signal acceptance times
 efficiency, $\mathcal{A}\,\varepsilon$ [\%], for the \text{T1qqqqLL}
 benchmark models, following the application of the event selection
-criteria used to define the signal region. The final values in each
-table represent the efficiencies for the sensitive topological (\njet,
-\nb) regions as defined in
-Table~\ref{tab:benchmark-LLP}. \fixme{Tables to be updated.}
+criteria used to define the signal region. The final value in each
+table represents the efficiency for the sensitive topological (\njet,
+\nb) region defined in Table~\ref{tab:benchmark-LLP}.
 
+\clearpage
 \begin{table}[!h]
   \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 0.001\unit{mm}$.} 
   \label{tab:cut_flow_ctau_0p001}
@@ -199,7 +215,7 @@ Table~\ref{tab:benchmark-LLP}. \fixme{Tables to be updated.}
 \end{table}
 
 \begin{table}[!h]
-  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 1\unit{mm}$.} 
+  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 100000\unit{mm}$.} 
   \label{tab:cut_flow_ctau_100000}
 {\scriptsize%\resizebox{\textwidth}{!}{
 \centering
@@ -314,27 +330,27 @@ assumptions/correlations between the analysis bins.
 
 \begin{figure}[!h]
   \centering
-  \subfigure[T1qqqqLL $(1800,200)$]{
+  \subfigure[$c\tau = 0.001\unit{mm}$, uncompressed $(1800,200)$]{
     \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1800_mLSP-200/limits_per_bin}
     \label{fig:T1qqqqLL_ctau_0p001_uncompressed_limitsPerBin}
   } ~~
-  \subfigure[T1qqqqLL $(1000,900)$]{
+  \subfigure[$c\tau = 0.001\unit{mm}$, compressed $(1000,900)$]{
     \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_0p001_mGluino-1000_mLSP-900/limits_per_bin}
     \label{fig:T1qqqqLL_ctau_0p001_compressed_limitsPerBin}
   } \\
-  \subfigure[T1qqqqLL $(1800,200)$]{
+  \subfigure[$c\tau = 1\unit{mm}$, uncompressed $(1800,200)$]{
     \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1800_mLSP-200/limits_per_bin}
     \label{fig:T1qqqqLL_ctau_1_uncompressed_limitsPerBin}
   } ~~
-  \subfigure[T1qqqqLL $(1000,900)$]{
+  \subfigure[$c\tau = 1\unit{mm}$, compressed $(1000,900)$]{
     \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_1_mGluino-1200_mLSP-1100/limits_per_bin}
     \label{fig:T1qqqqLL_ctau_1_compressed_limitsPerBin}
   } \\
-  \subfigure[T1qqqqLL $(1000,200)$]{
+  \subfigure[$c\tau = 100000\unit{mm}$, uncompressed $(1000,200)$]{
     \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-200/limits_per_bin}
     \label{fig:T1qqqqLL_ctau_100000_uncompressed_limitsPerBin}
   } ~~
-  \subfigure[T1qqqqLL $(1000,900)$]{
+  \subfigure[$c\tau = 100000\unit{mm}$, compressed $(1000,900)$]{
     \includegraphics[width=0.49\textwidth]{figures/susyLLResults/app/T1qqqqLL_ctau_100000_mGluino-1000_mLSP-900/limits_per_bin}
     \label{fig:T1qqqqLL_ctau_100000_compressed_limitsPerBin}
   } \\
@@ -383,7 +399,7 @@ and simplified binning schemas.
     \multirow{2}{*}{0.001}               & (1800, 200) & 0.81 & 1.58 &  & 1.22 & 1.53 \\
                                          & (1000, 900) & 0.95 & 1.21 &  & 2.23 & 2.28 \\ [0.5ex]
     \multirow{2}{*}{1}                   & (1800, 200) & 0.36 & 0.66 &  & 0.47 & 0.44 \\
-                                         & (1000, 900) & --   & --   &  & --   & --   \\ [0.5ex]
+                                         & (1000, 900) & 1.98 & 2.00 &  & 3.22 & 4.61 \\ [0.5ex]
     \multirow{2}{*}{100000}              & (1000, 200) & 0.95 & 1.33 &  & 1.88 & 2.32 \\
                                          & (1000, 900) & 0.95 & 0.73 &  & 1.90 & 1.47 \\ 
     \hline
@@ -408,15 +424,15 @@ topologies in descending order of sensitivity.
 
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 0.001~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 0.001\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p001_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-0p001}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 0.001~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 0.001\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p001_effs}
             \label{fig:T1qqqqLL_eff_ctau-0p001}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 0.001~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 0.001\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p001_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-0p001}
         } \\
@@ -438,15 +454,15 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 0.01~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 0.01\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p01_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-0p01}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 0.01~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 0.01\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p01_effs}
             \label{fig:T1qqqqLL_eff_ctau-0p01}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 0.01~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 0.01\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p01_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-0p01}
         } \\
@@ -468,19 +484,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 0.1~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 0.1\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p1_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-0p1}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 0.1~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 0.1\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p1_effs}
             \label{fig:T1qqqqLL_eff_ctau-0p1}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 0.1~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 0.1\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-0p1_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-0p1}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-0p1}
         %} ~~
@@ -498,19 +514,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 1~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-1}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 1~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1_effs}
             \label{fig:T1qqqqLL_eff_ctau-1}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 1~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-1}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-1}
         %} ~~
@@ -528,19 +544,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 10~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 10\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-10}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 10~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 10\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10_effs}
             \label{fig:T1qqqqLL_eff_ctau-10}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 10~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 10\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-10}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-10}
         %} ~~
@@ -558,19 +574,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 100~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 100\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-100}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 100~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 100\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100_effs}
             \label{fig:T1qqqqLL_eff_ctau-100}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 100~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 100\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-100}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-100}
         %} ~~
@@ -588,19 +604,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 1000~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 1000\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1000_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-1000}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 1000~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 1000\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1000_effs}
             \label{fig:T1qqqqLL_eff_ctau-1000}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 1000~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 1000\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-1000_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-1000}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-1000}
         %} ~~
@@ -618,19 +634,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 10000~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 10000\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10000_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-10000}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 10000~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 10000\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10000_effs}
             \label{fig:T1qqqqLL_eff_ctau-10000}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 10000~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 10000\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-10000_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-10000}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-10000}
         %} ~~
@@ -648,19 +664,19 @@ topologies in descending order of sensitivity.
 \newpage
 \begin{figure}[h!]
     \begin{center}
-        \subfigure[T1qqqqLL (\ctau = 100000~mm): Upper limit on the cross section in the mass plane]{
+        \subfigure[T1qqqqLL ($\ctau = 100000\unit{mm}$): Upper limit on the cross section in the mass plane]{
             \includegraphics[width=0.6\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100000_XSEC}
             \label{fig:T1qqqqLL_excl_ctau-100000}
         } \\
-        \subfigure[T1qqqqLL (\ctau = 100000~mm): $\epsilon_{sig}$]{
+        \subfigure[T1qqqqLL ($\ctau = 100000\unit{mm}$): $\epsilon_{sig}$]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100000_effs}
             \label{fig:T1qqqqLL_eff_ctau-100000}
         } ~~
-        \subfigure[T1qqqqLL (\ctau = 100000~mm): Most sensitive categories]{
+        \subfigure[T1qqqqLL ($\ctau = 100000\unit{mm}$): Most sensitive categories]{
             \includegraphics[width=0.45\textwidth]{figures/LLPResults/T1qqqqLL_ctau-100000_bitMap}
             \label{fig:T1qqqqLL_bitMap_ctau-100000}
         } \\
-        %\subfigure[T1qqqqLL (\ctau = 1~mm): Significance scan]{
+        %\subfigure[T1qqqqLL ($\ctau = 1\unit{mm}$): Significance scan]{
         %    \includegraphics[width=0.45\linewidth]{figures/LLPResults/T1qqqqLL_ctau-1_signif}
         %    \label{fig:T1qqqqLL_signif_ctau-100000}
         %} ~~
