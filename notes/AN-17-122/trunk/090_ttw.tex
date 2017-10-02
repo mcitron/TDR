@@ -218,12 +218,16 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
     used to estimate the lost lepton background using the \mj control
     region. Also shown are the nuisance parameters and correlation
     scheme, as well as representative ranges for the uncertainties
-    [\%]. The representative range is taken from the $16\%$ and $84\%$
-    percentiles on the transfer factor variations across all analysis
-    bins for each source of systematic. The ``type'' refers to whether
-    the nuisance parameters are unique to the lost lepton background
+    over \njet, \nb, and \scalht (\ie in the transfer factors) [\%],
+    as well as the uncertainties in the \mht dimension once the
+    variations in \njet, \nb, and \scalht are normalised away. The
+    representative ranges are taken from the $16\%$ and $84\%$
+    percentiles on the variations across all signal region bins for
+    each source of systematic. The ``type'' refers to whether the
+    nuisance parameters are unique to the lost lepton background  
     or shared with the \znunuj background estimate
-    (see Table~\ref{tab:systs-zinv}).
+    (see Table~\ref{tab:systs-zinv}). The lepton selection and veto
+    systematics are assumed to be flat, as described in the text. 
   }
   \label{tab:systs-ttw}
   \centering
@@ -231,27 +235,30 @@ likelihood model is described in Sec.~\ref{sec:likelihood}.
   \newcommand{\cat}{\njet, \scalht, \nb, \mht}
   \begin{tabular}{ llllc }
     \hline
-    Source of uncertainty               & Nuisance parameters / correlation   & Magnitude (\%)                       & Type   & Figure                              \\
+    Source of uncertainty & \multicolumn{2}{c}{Representative range of magnitudes (\%)} & Type & Figure \\
+
+                                        & Range over (\njet, \nb, \scalht) & Range over \mht    &        &                                     \\
     \hline
-    Finite-size simulated samples       & 1 per (\cat) category               & 1--100                               & Unique & n/a                                 \\
-    Minimum bias cross section (pileup) & 1, correlated across \cat           & 0.6--3.8                             & Shared & \ref{fig:tfSyst_pu_muToTtw}         \\
-    $\mu_R$ / $\mu_F$ scales            & 1, correlated across \cat           & 2.3--3.6                             & Shared & \ref{fig:tfSyst_scale_muToTtw}      \\
-    Parton density functions            & 1, correlated across \cat           & 1.1--2.7                             & Shared & \ref{fig:tfSyst_pdf_muToTtw}        \\
-    \wj cross section                   & 1, correlated across \cat           & 0.2--1.4                             & Unique & \ref{fig:tfSyst_wjetxs_muToTtw}     \\
-    \ttbar cross section                & 1, correlated across \cat           & 0.0--1.0                             & Unique & \ref{fig:tfSyst_ttbarxs_muToTtw}    \\
-    QCD + EWK NLO corrections           & 1, correlated across \cat           & 0.5--5.4                             & Shared & \ref{fig:tfSyst_nlo_muToTtw}        \\
-    $N_\textrm{isr}$ (\ttbar)           & 1, correlated across \cat           & 0.8--1.1                             & Unique & \ref{fig:tfSyst_nisr_muToTtw}       \\
-    Signal trigger efficiency           & 1, correlated across \cat           & 0.0--3.1                             & Shared & \ref{fig:tfSyst_trigger_muToTtw}    \\
-    Lepton efficiency (selection)       & 1, correlated across \cat           & 0.0--2.1                             & Unique & \ref{fig:tfSyst_muonsf_muToTtw}     \\
-    Lepton efficiency (veto)            & 1, correlated across \cat           & 2.5--15.                                    & Unique & \ref{fig:tfSyst_leptonveto_muToTtw} \\
-    Jet energy scale                    & 1, correlated across \cat           & 3.4--5.5                             & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
-    b-quark tag efficiency              & 1, correlated across \cat           & 0.4--0.6                             & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
-    b-quark mistag probability          & 1, correlated across \cat           & 0.1--1.4                             & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
-%    \alphat + \bdphi extrapolation     & 1 per \njet, 1 per \scalht          & X--Y (\njet), X--Y (\scalht)         & Unique & \ref{fig:closure_AlphaT_bDPhi_mu}   \\
-    \alphat extrapolation               & 1 per \njet, 1 per \scalht category & 3.3--9.4 (\njet), 2.1--5.9 (\scalht) & Unique & \ref{fig:closure_AlphaT_mu}         \\
-    \bdphi extrapolation                & 1 per \njet, 1 per \scalht category & 2.7--22. (\njet), 1.6--18. (\scalht) & Unique & \ref{fig:closure_bDPhi_mu}          \\
-    W polarisation                      & 1 per \njet, 1 per \scalht category & 0.9--6.6 (\njet), 1.5--6.6 (\scalht) & Unique & \ref{fig:closure_WPol_mu}           \\
-    Single isolated track veto          & 1 per \njet, 1 per \scalht category & 0.0--10. (\njet), 0.0--13. (\scalht) & Unique & \ref{fig:closure_SITV_mu}           \\
+    Finite-size simulated samples       & 1--50                           & 1--50             & Unique & n/a                                 \\
+    Minimum bias cross section (pileup) & 0.6--3.8                         & 0.7--0.9           & Shared & \ref{fig:tfSyst_pu_muToTtw}         \\
+    $\mu_R$ / $\mu_F$ scales            & 2.3--3.6                         & 1.3--2.1           & Shared & \ref{fig:tfSyst_scale_muToTtw}      \\
+    Parton density functions            & 1.1--2.7                         & 1.0--2.1           & Shared & \ref{fig:tfSyst_pdf_muToTtw}        \\
+    \wj cross section                   & 0.2--1.4                         & 0.1--0.9           & Unique & \ref{fig:tfSyst_wjetxs_muToTtw}     \\
+    \ttbar cross section                & 0.0--1.0                         & 0.1--0.4           & Unique & \ref{fig:tfSyst_ttbarxs_muToTtw}    \\
+    QCD + EWK NLO corrections           & 0.5--5.4                         & 4.8--28            & Shared & \ref{fig:tfSyst_nlo_muToTtw}        \\
+    $N_\textrm{isr}$ (\ttbar)           & 0.8--1.1                         & 0.2--0.9           & Unique & \ref{fig:tfSyst_nisr_muToTtw}       \\
+    Signal trigger efficiency           & 0.0--3.1                         & 0.0--0.3           & Shared & \ref{fig:tfSyst_trigger_muToTtw}    \\
+    Lepton efficiency (selection)       & 2.0                              & --                 & Shared & \ref{fig:tfSyst_muonsf_muToTtw}     \\
+    Lepton efficiency (veto)            & 5.0                              & --                 & Shared & \ref{fig:tfSyst_leptonveto_muToTtw} \\
+    Jet energy scale                    & 3.4--5.5                         & 2.3--2.9           & Shared & \ref{fig:tfSyst_jec_muToTtw}        \\
+    b-quark tag efficiency              & 0.4--0.6                         & 0.1--0.4           & Shared & \ref{fig:tfSyst_bsf_muToTtw}        \\
+    b-quark mistag probability          & 0.1--1.4                         & 0.3--0.5           & Shared & \ref{fig:tfSyst_bsfl_muToTtw}       \\
+    \hline
+                                        & Range over \njet                 & Range over \scalht &        &                                     \\
+    \alphat extrapolation               & 3.3--9.4                         & 2.1--5.9           & Unique & \ref{fig:closure_AlphaT_mu}         \\
+    \bdphi extrapolation                & 2.7--22                          & 1.6--18            & Unique & \ref{fig:closure_bDPhi_mu}          \\
+    W polarisation                      & 0.9--6.6                         & 1.5--6.6           & Unique & \ref{fig:closure_WPol_mu}           \\
+    Single isolated track veto          & 0.0--10                          & 0.0--13            & Unique & \ref{fig:closure_SITV_mu}           \\
     \hline
   \end{tabular}
 \end{table}
@@ -372,10 +379,12 @@ Simulated \wj events are weighted according to these NLO corrections,
 and the magnitude of each correction is propagated as an uncertainty
 throughout the analysis. Fig.~\ref{fig:tfSyst_nlo_muToTtw}
 (App.~\ref{app:ttw}) show the effect on the transfer factors as a
-function of the various discriminating variables. Uncertainties are
-typically at the percent level and as large as $\sim 5\%$.
-Fig.~\ref{fig:NLO_app} (also App.~\ref{app:ttw}) show the effects of the NLO
-corrections on the event yield in each bin in the Signal Region.
+function of the various discriminating variables. Uncertainties in the
+transfer factors are typically at the percent level and as large as
+$\sim 5\%$. The uncertainties in the \mht dimension can be as large as
+${\sim}30\%$. Fig.~\ref{fig:NLO_app} (also App.~\ref{app:ttw}) shows
+the effects of the NLO corrections on the event yield in each bin in
+the signal region.
 
 %All events in the control and signal regions are categorised
 %identically according to \njet and \scalht. The NLO corrections are
