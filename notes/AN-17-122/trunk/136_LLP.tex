@@ -5,9 +5,12 @@
 As an additional interpretation of the results in this search, we
 investigate a simple extension to the simplified supersymmetric model
 \texttt{T1qqqq} described in Section~\ref{sec:susy}, where the gluino
-is long lived. In these cases, the jets from the gluino decay may be
-produced with a non-negligible displacement from the interaction
-vertex. This model family is labelled as \texttt{T1qqqqLL}.
+is long lived. In addition to the gluino and LSP masses, a third model
+parameter is added to define the gluino lifetime in terms of its
+characteristic decay length $c\tau$ [mm]. As a consequence, the jets
+from the gluino decay may be produced with a non-negligible
+displacement from the interaction vertex. This model family is
+labelled as \texttt{T1qqqqLL}.
 
 \subsection{Benchmark models and signal shapes}
 \label{sec:LLP_models}
@@ -42,18 +45,30 @@ vertex. This model family is labelled as \texttt{T1qqqqLL}.
 % The range of lifetimes considered, implications for decay vertex (less than b-lifetime, outside the tracker, outside ECAL, etc)
 % Generation of signal samples: Full sim vs. FastSim as for standard SUSY
 
-Table~\ref{tab:benchmark-LLP} summarises the benchmark models, defined
-in terms of the masses of the gluino and LSP, as well as the lifetime
-of the gluino, expressed in terms of the characteristic decay length,
-$c\tau$ [mm].
+Table~\ref{tab:benchmark-LLP} summarises a set of benchmark models
+studied in this section, each of which is defined in terms of the
+masses of the gluino and LSP, as well as $c\tau$. Also listed is a
+representative event topology, defined in terms of \njet and \nb, that
+plays an important role in providing sensitivity to each model.
 
-The event distributions for each benchmark model using the simplified
-binning schema are shown in Fig.~\ref{fig:T1qqqqLL_MR_simp}. All
-relevant corrections are applied to the signal events in these
-distributions. The uncertainties in the signal yields represent the
-statistical uncertainty from to the finite size of the simulated
-samples. The background prediction is taken from the CR-only post-fit
-result described in in Sec.~\ref{sec:results}.
+The signal event distributions for each benchmark model using the
+simplified binning schema are shown in
+Fig.~\ref{fig:T1qqqqLL_MR_simp}. The background prediction is taken
+from the CR-only post-fit result described in in
+Sec.~\ref{sec:results}. All relevant corrections are applied to the
+signal events in these distributions. The uncertainties in the signal
+yields represent only the statistical uncertainty from the finite size
+of the simulated samples, although all relevant statistical and
+systematic uncertainties are considered in the final limit
+calculation. Some general observations can be made. The signal events
+for the uncompressed \texttt{T1qqqqLL} model with $c\tau =
+0.001\unit{mm}$ typically populate high-\njet, high-\mht, low-\nb
+bins, while events for the compressed model typically populate lower
+values of \njet and \mht. A similar trend in \njet and \mht is
+observed for the $c\tau = 1\unit{mm}$ models, but the events instead
+populate higher-\nb bins. Finally, for the $c\tau = 100000\unit{mm}$
+model, the signal events tend to populate low-\njet, low-\mht, low-\nb
+bins regardless of the mass splitting. 
 
 \begin{figure}[!ht]
     \centering
@@ -90,6 +105,7 @@ result described in in Sec.~\ref{sec:results}.
     \label{fig:T1qqqqLL_MR_simp}
 \end{figure}
 
+\clearpage
 \subsection{Signal acceptance times efficiency}
 \label{sec:sig-accept-contam-LLP}
 
@@ -131,11 +147,11 @@ Tables~\ref{tab:cut_flow_ctau_0p001}--\ref{tab:cut_flow_ctau_100000}
 provide a summary of the cumulative signal acceptance times
 efficiency, $\mathcal{A}\,\varepsilon$ [\%], for the \text{T1qqqqLL}
 benchmark models, following the application of the event selection
-criteria used to define the signal region. The final values in each
-table represent the efficiencies for the sensitive topological (\njet,
-\nb) regions as defined in
-Table~\ref{tab:benchmark-LLP}. \fixme{Tables to be updated.}
+criteria used to define the signal region. The final value in each
+table represents the efficiency for the sensitive topological (\njet,
+\nb) region defined in Table~\ref{tab:benchmark-LLP}.
 
+\clearpage
 \begin{table}[!h]
   \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 0.001\unit{mm}$.} 
   \label{tab:cut_flow_ctau_0p001}
@@ -199,7 +215,7 @@ Table~\ref{tab:benchmark-LLP}. \fixme{Tables to be updated.}
 \end{table}
 
 \begin{table}[!h]
-  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 1\unit{mm}$.} 
+  \caption{Cut flow table for \texttt{T1qqqqLL} models with $c\tau = 100000\unit{mm}$.} 
   \label{tab:cut_flow_ctau_100000}
 {\scriptsize%\resizebox{\textwidth}{!}{
 \centering
