@@ -368,7 +368,8 @@ event. Its magnitude is referred to as \ptmiss.
 \begin{table}[!t]
   \topcaption{Summary of physics objects, baseline event selections,
     signal and control regions, and event categorization. The
-    categorization schema is defined in full in Table~\ref{}.} 
+    categorization schema is defined in full in
+    Table~\ref{tab:binning}.}  
   \label{tab:selections}
   \centering
   \resizebox{\textwidth}{!}{
@@ -636,11 +637,10 @@ also provided in which events are categorization according to eight
 topologies defined in terms of \njet and \nb. For each topology, event
 yields are integrated over the full \scalht range, $\scalht >
 200\GeV$, and categorized according to the four nominal \mht bins
-defined above. This schema is summarized in Table~\ref{} and has 32
-bins that are exclusive, contiguous, and provide a complete coverage
-of the SR. SM background estimates are provided for this binning
-schema with the same likelihood model used to determine the nominal
-result.
+defined above. This schema has 32 bins that are exclusive, contiguous,
+and provide a complete coverage of the SR. SM background estimates are
+provided for this binning schema with the same likelihood model used
+to determine the nominal result.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -840,7 +840,7 @@ $\mathcal{N}^{\mmj}_\textrm{data}$ observed in each (\njet, \scalht,
 or \znunuj background counts $\mathcal{N}^{\lost}_\textrm{pred}$ and
 $\mathcal{N}^{\znunu}_\textrm{pred}$ in the corresponding (\njet,
 \scalht, \nb, \mht) bins of the SR. The categorization of the \mj and
-\mmj event samples is described in Sec.~\ref{sec:categorization_cr}.
+\mmj event samples is described in Sec.~\ref{sec:control}. 
 
 Several sources of uncertainty in the transfer factors are evaluated.
 In addition to statistical uncertainties arising from finite-size
@@ -1034,17 +1034,18 @@ modelled as a Poisson-distributed variable around the SM expectation
 and a potential signal contribution (assumed to be zero in the
 following discussion). The expected event counts from nonmultijet
 processes in the SR are related to those in the \mj and \mmj CRs via
-simulation-based transfer factors, as described in Secs.\ref{} and
-\ref{}. The systematic uncertainties in the nonmultijet estimates are
-summarised in Table~\ref{tab:bkgd_systs} are accommodated in the
-likelihood model as nuisance parameters, the measurements of which are
-assumed to follow a log-normal distribution. In the case of \mht
-modelling, alternative templates are used to describe the
-uncertainties in the \mht modelling and a vertical template morphing
-scheme~\cite{Prosper:2011zz, RA1Paper2015} is used to interpolate
-between the nominal and alternative templates. The multijet background
-estimates and uncertainties are determined using the method described
-in Section~\ref{sec:qcd}.
+simulation-based transfer factors, as described in
+Secs.\ref{sec:control} and \ref{sec:ewk}. The systematic uncertainties
+in the nonmultijet estimates are summarised in
+Table~\ref{tab:bkgd_systs} are accommodated in the likelihood model as
+nuisance parameters, the measurements of which are assumed to follow a
+log-normal distribution. In the case of \mht modelling, alternative
+templates are used to describe the uncertainties in the \mht modelling
+and a vertical template morphing schema~\cite{Prosper:2011zz,
+  Khachatryan:2016dvc} is used to interpolate between the nominal and
+alternative templates. The multijet background estimates and
+uncertainties are determined using the method described in
+Section~\ref{sec:qcd}.
 
 Figure~\ref{fig:result} summarizes the binned counts of candidate
 signal events and the corresponding SM expectations as determined from
@@ -1077,9 +1078,10 @@ kinematic pattern.
 
 Counts of candidate signal events and SM expectations are also
 determined for the simplified 32-bin schema described in
-Sec.~\ref{}. The result is summarized in Table~\ref{}, along with the
-correlation matrix in Fig.~\ref{}, and is provided to aid
-further interpretation of the search result. 
+Sec.~\ref{sec:categorization}. The result is summarized in
+Table~\ref{tab:simplified}, along with the correlation matrix in
+Fig.~\ref{fig:correlation}, and is provided to aid further
+interpretation of the search result.
 
 \clearpage
 \begin{figure}[!t]
@@ -1542,8 +1544,8 @@ ${\approx}10^{2}\unit{ns}$, with gluino masses probded up to X\TeV.
 
 The following material is provided to aid the reinterpretation of the
 result of this search. Table~\ref{tab:binning} specifies the nominal
-binning schema used by this search. Table~\ref{} summarises the search
-result based on a simplified binning schema. 
+binning schema used by this search. Table~\ref{tab:simplified}
+summarises the search result based on a simplified binning schema.
 
 \begingroup
 \newcommand{\tmp}{\phantom{, 200}}
@@ -1601,10 +1603,10 @@ result based on a simplified binning schema.
 
 \begingroup
 \renewcommand*{\arraystretch}{1.1}
-\begin{table}[!h]
+\begin{table}[!t]
   \topcaption{Observed counts of candidate signal events and SM
     expectations determined from the CR-only fit using the simplified
-    binning scheme, as a function of \njet, \nb, and \mht. All counts
+    binning schema, as a function of \njet, \nb, and \mht. All counts
     are integrated over \scalht. The uncertainties include both
     statistical and systematic contributions.  
   }
@@ -1636,3 +1638,12 @@ result based on a simplified binning schema.
   \end{tabular}
 \end{table}
 \endgroup
+
+\begin{figure}[!b]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Figures/correlation.pdf}
+  \caption{Correlation matrix for the SM background estimates obtained
+    using the simplified binning schema, determined from the CR-only
+    fit.  }
+  \label{fig:correlation}
+\end{figure} 
