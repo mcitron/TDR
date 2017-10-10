@@ -276,12 +276,12 @@ coordinate system used and the relevant kinematic variables, can be
 found in Ref.~\cite{Chatrchyan:2008zzk}.
 
 Events of interest are selected using a two-tiered trigger
-system~\cite{Khachatryan:2016bia}. The first level (L1), composed of
-custom hardware processors, uses information from the calorimeters and
-muon detectors to select events at a rate of around 100\unit{kHz}
-within a time interval of less than 4\mus. The second level, known as
-the high-level trigger (HLT), consists of a farm of processors running
-a version of the full event reconstruction software optimized for fast
+system~\cite{Khachatryan:2016bia}. The first level, composed of custom
+hardware processors, uses information from the calorimeters and muon
+detectors to select events at a rate of around 100\unit{kHz} within a
+time interval of less than 4\mus. The second level, known as the
+high-level trigger, consists of a farm of processors running a version
+of the full event reconstruction software optimized for fast
 processing, and reduces the event rate to less than 1\unit{kHz} before
 data storage. The trigger logic used by this search is summarized in
 Sec.~\ref{sec:selection}.
@@ -294,80 +294,11 @@ and charged and neutral hadrons, with an optimized combination of
 information from the various elements of the CMS detector. The
 reconstruction techniques and physics-object definitions used by this
 search are considered to be standard within the CMS experiment and are
-not modified to target specific experimental signatures. The
-physics-object requirements detailed below are summarized in
-Table~\ref{tab:selections}. In the case of photons and leptons,
-further details can be found in Ref.~\cite{Khachatryan:2016dvc} and
-references therein.
-
-The reconstructed vertex with the largest value of summed
-physics-object $\pt^2$ is taken to be the primary $\Pp\Pp$ interaction
-vertex (PV). The physics objects are the objects returned by a jet
-finding algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} applied to
-all charged-particle tracks associated with the vertex, plus the
-corresponding associated \ptmiss. Charged-particle tracks associated
-with vertices from additional proton-proton interactions within the
-same or nearby bunch crossings (pileup) are not considered by the PF
-algorithm as part of the global event reconstruction.
-
-Samples of candidate signal events and control data are defined,
-respectively, by the absence or presence of photons or leptons that
-are isolated from other activity in the event. Photons are required to
-be isolated~\cite{Khachatryan:2015iwa} within a cone around the photon
-trajectory defined by the radius ${\Delta}R =
-\sqrt{\smash[b]{(\Delta\phi)^2 + (\Delta\eta)^2}} = 0.3$, where $\phi$
-and $\eta$ represent pseudorapidity and the azimuthal angle. Isolation
-for an electron or muon is a relative quantity, $I^\text{rel}$,
-defined as the scalar \pt sum of all candidate particles within a cone
-around its trajectory, divided by the lepton \pt. The cone radius is
-dependent on the lepton \pt to maintain high efficiency for
-semileptonic decays of Lorentz-boosted top
-quarks~\cite{Rehermann:2010vq}: ${\Delta}R = \min [ \max( 0.05, 10\GeV
-/ \pt ), 0.2 ]$. Isolated electrons and muons are required to satisfy
-$I^\text{rel} < 0.1$ and 0.2, respectively.  Electron and muon
-candidates that fail any of the aforementioned requirements, as well
-as charged-hadron candidates from hadronically decaying tau leptons,
-are collectively labelled as single isolated tracks (SIT) if the
-scalar \pt sum of additional tracks associated to the PV within a cone
-${\Delta}R < 0.3$ around the track trajectory, relative to the track
-\pt, satisfies $I^\text{track} < 0.1$. All isolation variables exclude
-the contributions from the physics object itself and pileup
-events. The experimental acceptances for photons, electrons, muons,
-and SITs are defined by the transverse momentum and pseudorapidity
-requirements of $\pt > 25$, 10, 10, and 10\GeV, respectively, and
-$\abs{\eta} < 2.4$.
-
-Jets are reconstructed from the PF particle candidates, clustered by
-the anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a
-distance parameter of 0.4. In this process, raw jet energy is obtained
-from the sum of the candidate particle energies and the raw jet
-momentum by the vectorial sum of the candidate particle momenta, which
-results in a nonzero jet mass. An offset correction is applied to jet
-energies to take into account the contributions from neutral particles
-produced in pileup events~\cite{Cacciari:2007fd,
-  CMS-PAS-JME-14-001}. The raw jet energies are then corrected to
-establish a relative uniform response of the calorimeter in $\eta$ and
-a calibrated absolute response in \pt. Jet energy corrections are
-derived from simulation, and are confirmed with in situ measurements
-of the energy balance in events with a dijet
-topology~\cite{Khachatryan:2016kdb}. Jets are required to satisfy $\pt
-> 40\GeV$ and $\abs{\eta} < 2.4$.
-
-Jets can be identified as originating from b quarks using the combined
-secondary vertex algorithm~\cite{Chatrchyan:2012jua}. Data
-samples~\cite{CMS-PAS-BTV-15-001} are used to measure the ``b tagging
-efficiency'', which is the probability to correctly identify jets
-originating from b quarks, as well as the ``mistag'' probability to
-identify jets originating from light-flavour (LF) partons (u, d, s
-quarks or gluons) or a charm quark as a b-tagged jet. A working point
-is employed that yields a b tagging efficiency of 60 to 75\%, and
-charm and light-flavour mistag probabilities of approximately 15 and
-1\%, respectively, for jets with \pt that is typical of \ttbar events.
-
-Finally, the most accurate estimator for \ptvecmiss is defined as the
-projection on the plane perpendicular to the beams of the negative
-vector sum of the momenta of all PF candidate particles in an
-event. Its magnitude is referred to as \ptmiss.
+not modified to target specific experimental signatures (such as
+displaced vertices). The physics-object requirements detailed below
+are summarized in Table~\ref{tab:selections}. In the case of photons
+and leptons, further details can be found in
+Ref.~\cite{Khachatryan:2016dvc} and references therein.
 
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
@@ -434,6 +365,74 @@ event. Its magnitude is referred to as \ptmiss.
 \end{table}
 \endgroup
 
+The reconstructed vertex with the largest value of summed
+physics-object $\pt^2$ is taken to be the primary $\Pp\Pp$ interaction
+vertex (PV). The physics objects are the objects returned by a jet
+finding algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} applied to
+all charged-particle tracks associated with the vertex, plus the
+corresponding associated \ptmiss. Charged-particle tracks associated
+with vertices from additional proton-proton interactions within the
+same or nearby bunch crossings (pileup) are not considered by the PF
+algorithm as part of the global event reconstruction.
+
+Samples of candidate signal events and control data are defined,
+respectively, by the absence or presence of photons or leptons that
+are isolated from other activity in the event. Photons are required to
+be isolated~\cite{Khachatryan:2015iwa} within a cone around the photon
+trajectory defined by the radius ${\Delta}R =
+\sqrt{\smash[b]{(\Delta\phi)^2 + (\Delta\eta)^2}} = 0.3$, where $\phi$
+and $\eta$ represent pseudorapidity and the azimuthal angle. Isolation
+for an electron or muon is a relative quantity, $I^\text{rel}$,
+defined as the scalar \pt sum of all candidate particles within a cone
+around its trajectory, divided by the lepton \pt. The cone radius is
+dependent on the lepton \pt, ${\Delta}R = \min [ \max( 0.05, 10\GeV /
+\pt ), 0.2 ]$, to maintain high efficiency for semileptonic decays of
+Lorentz-boosted top quarks~\cite{Rehermann:2010vq}. Isolated electrons
+and muons are required to satisfy $I^\text{rel} < 0.1$ and 0.2,
+respectively.  Electron and muon candidates that fail any of the
+aforementioned requirements, as well as charged-hadron candidates from
+hadronically decaying tau leptons, are collectively labelled as single
+isolated tracks (SIT) if the scalar \pt sum of additional tracks
+associated to the PV within a cone ${\Delta}R < 0.3$ around the track
+trajectory, relative to the track \pt, satisfies $I^\text{track} <
+0.1$. All isolation variables exclude the contributions from the
+physics object itself and pileup events. The experimental acceptances
+for photons, electrons, muons, and SITs are defined by the transverse
+momentum and pseudorapidity requirements of $\pt > 25$, 10, 10, and
+10\GeV, respectively, and $\abs{\eta} < 2.4$.
+
+Jets are reconstructed from the PF particle candidates, clustered by
+the anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a
+distance parameter of 0.4. In this process, the raw jet energy is
+obtained from the sum of the candidate particle energies and the raw
+jet momentum by the vectorial sum of the candidate particle momenta,
+which results in a nonzero jet mass. An offset correction is applied
+to jet energies to take into account the contributions from neutral
+particles produced in pileup events~\cite{Cacciari:2007fd,
+  CMS-PAS-JME-14-001}. The raw jet energies are then corrected to
+establish a relative uniform response of the calorimeter in $\eta$ and
+a calibrated absolute response in \pt. Jet energy corrections are
+derived from simulation, and are confirmed with in situ measurements
+of the energy balance in events with a dijet
+topology~\cite{Khachatryan:2016kdb}. Jets are required to satisfy $\pt
+> 40\GeV$ and $\abs{\eta} < 2.4$.
+
+Jets can be identified as originating from b quarks using the combined
+secondary vertex algorithm~\cite{Chatrchyan:2012jua}. Data
+samples~\cite{CMS-PAS-BTV-15-001} are used to measure the ``b
+tagging'' efficiency, which is the probability to correctly identify
+jets originating from b quarks, as well as the ``mistag'' probability
+to identify jets originating from light-flavour (LF) partons (u, d, s
+quarks or gluon) or a charm quark as a mistagged jet. A working point
+is employed that yields a b tagging efficiency of 60 to 75\%, and
+charm and light-flavour mistag probabilities of approximately 15 and
+1\%, respectively, for jets with \pt that is typical of \ttbar events.
+
+Finally, the most accurate estimator for \ptvecmiss is defined as the
+projection on the plane perpendicular to the beams of the negative
+vector sum of the momenta of all PF candidate particles in an
+event. Its magnitude is referred to as \ptmiss.
+
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -451,8 +450,8 @@ categorization of candidate signal events and the background
 composition are described in Secs.~\ref{sec:categorization} and
 \ref{sec:bkgd}, respectively. The event selection criteria used to
 define three samples of control data, henceforth labelled control
-regions (CR), modify and expand on the baseline set described in
-Sec.~\ref{sec:control}. All selection sets are summarized in
+regions (CR), modify and expand on the baseline set, as described in
+Sec.~\ref{sec:control}. All selection criteria are summarized in
 Table~\ref{tab:selections}.
 
 \subsection{Baseline selections}
@@ -460,7 +459,7 @@ Table~\ref{tab:selections}.
 
 Events containing isolated photons, electrons and muons, or SITs that
 satisfy the requirements summarised in Table~\ref{tab:selections} are
-vetoed to: select all-jet final states, suppress SM processes that
+vetoed to select all-jet final states, suppress SM processes that
 produce final states containing neutrinos, and reduce backgrounds from
 misreconstructed or non-isolated leptons as well as single-prong
 hadronic decays of $\tau$ leptons.
@@ -470,8 +469,8 @@ patterns in the calorimeter systems, detector inefficiencies, and
 reconstruction failures can all lead to large values of \ptmiss. Such
 events are rejected with high efficiency using dedicated
 vetoes~\cite{CMS-PAS-JME-16-004, Khachatryan:2014gga}. Further, the
-energy fraction attributed to charged-hadron particle candidates
-$f_{h^{\pm}}$ within the highest-\pt jet of the event $\jet{1}$ is
+energy fraction attributed to charged-hadron particle candidates, 
+$f_{h^{\pm}}$, within the highest-\pt jet of the event $\jet{1}$ is
 required to be within the range 0.1--0.95 to further suppress beam
 halo and rare reconstruction failures.
 
@@ -888,46 +887,47 @@ source of uncertainty is assumed to vary with a fully correlated
 behaviour across the full phase space of the SR and CRs.
 
 \begingroup
-\renewcommand*{\arraystretch}{1.1}
+\renewcommand*{\arraystretch}{1.2}
 \begin{table}[!t]
   \topcaption{
     Systematic uncertainties in the background evaluation. The quoted
     ranges are representative of the minimum and maximum variations
-    observed across all bins of the signal region. The two ranges
-    quoted for uncertainties derived from closure tests in data
-    correspond to variations as a function of \njet and
-    \scalht. \fixme{Need updating.}
+    observed across all bins of the signal region. The two uncertainty
+    ranges quoted determined from closure tests in data correspond to
+    variations as a function of \njet and \scalht, respectively.
   } 
   \label{tab:bkgd_systs}
   \centering
   %\small
   \begin{tabular}{ lcc }
     \hline
-    Source of uncertainty               & Magnitude (\%)                                  \\
+    Source of uncertainty               & Magnitude (\%)                          \\
     \hline
-    Finite-size simulated samples       & 1--50                  & 1--50                  \\
-    \multicolumn{3}{l}{\bf Uncertainties in corrections applied to simulation:}           \\
-    Minimum bias cross section (pileup) & 0.6--3.8               & 2.3--2.8               \\
-    $\mu_R$ / $\mu_F$ scales            & 2.3--3.6               & X--Y                   \\
-    Parton density functions            & 1.1--2.7               & X--Y                   \\
-    \wj cross section                   & 0.2--1.4               & --                     \\
-    \ttbar cross section                & 0.0--1.0               & --                     \\
-    NLO QCD corrections                 & 0.5--5.4               & 2.2--14.3              \\
-    NLO electroweak corrections         & 0.5--5.4               & 2.2--14.3              \\
-    ISR (\ttbar)                        & 0.8--1.1               & --                     \\
-    Signal trigger efficiency           & 0.0--3.1               & 0.0--2.0               \\
-    Muon trigger and selection          & 0.0--2.1               & 0.0--4.2               \\
-    Lepton vetoes                       & X--Y                   & X--Y                   \\
-    Jet energy scale                    & 3.4--5.5               & 5.3--8.0               \\
-    b quark tag efficiency              & 0.4--0.6               & 0.3--0.6               \\
-    b quark mistag probability          & 0.1--1.4               & 0.2--1.8               \\
-    \multicolumn{3}{l}{\bf Uncertainties determined from closure tests in data:}          \\
-    \alphat extrapolation               & 3--\ph{2}9, 2--\ph{1}6 & 3--\ph{2}9, 2--\ph{1}6 \\
-    \bdphi extrapolation                & 2--22, 1--18           & 2--22, 1--18           \\
-    W boson polarization                & 1--\ph{2}7, 1--\ph{1}7 & --                     \\
-    Single isolated track veto          & 0--10, 0--13           & --                     \\
-    \multicolumn{3}{l}{\bf Validation of \mht modelling against control data:}            \\
-    \mht modelling                      & 1--30                  & 1--50                  \\
+    Finite-size simulated samples       & 1--50              & 1--50              \\
+    \multicolumn{3}{l}{\bf Uncertainties in corrections applied to simulation:}   \\
+    Minimum bias cross section (pileup) & 0.6--3.8           & 2.3--2.8           \\
+    $\mu_R$ / $\mu_F$ scales            & 2.3--3.6           & 0.9--4.7           \\
+    Parton density functions            & 1.1--2.7           & 0.0--3.3           \\
+    \wj cross section                   & 0.2--1.4           & --                 \\
+    \ttbar cross section                & 0.0--1.0           & --                 \\
+    NLO QCD corrections                 & X--Y               & X--Y               \\
+    NLO electroweak corrections         & X--Y               & X--Y               \\
+    ISR (\ttbar)                        & 0.8--1.1           & --                 \\
+    Signal trigger efficiency           & 0.0--3.1           & 0.0--2.0           \\
+    Lepton efficiency (selection)       & 2.0                & 4.0                \\
+    Lepton efficiency (veto)            & 5.0                & 5.0                \\
+    Jet energy scale                    & 3.4--5.5           & 5.3--8.0           \\
+    b quark tag efficiency              & 0.4--0.6           & 0.3--0.6           \\
+    b quark mistag probability          & 0.1--1.4           & 0.2--1.8           \\
+    \multicolumn{3}{l}{\bf Uncertainties determined from closure tests in data:}  \\
+%    \alphat extrapolation              & 3.3--9.4, 2.1--5.9 & 3.3--9.4, 2.1--5.9 \\
+%    \bdphi extrapolation               & 2.7--22, 1.6--18   & 2.7--22, 1.6--18   \\
+%    W boson polarization               & 0.9--6.6, 1.5--6.6 & --                 \\
+    \alphat extrapolation               & 3--9, 2--6         & 3--9, 2--6         \\
+    \bdphi extrapolation                & 3--22, 2--18       & 3--22, 2--18       \\
+    W boson polarization                & 1--7, 2--7         & --                 \\
+    Single isolated track veto          & 0--10, 0--13       & --                 \\
+    \mht modelling                      & 1--30              & 1--50              \\
     \hline
   \end{tabular}
 \end{table}
