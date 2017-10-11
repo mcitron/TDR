@@ -23,7 +23,7 @@ The result, in terms of observed data counts and the expected SM
 contributions and uncertainties, are shown in Figs.~\ref{fig:no-fit},
 \ref{fig:cr-fit}, and \ref{fig:full-fit}. (These figures supersede the
 original presentation of the result, found in AN v4 and
-Appendix~\ref{app:results-orig}.)
+Appendix~\ref{app:results}.)
 
 Figure~\ref{fig:no-fit} shows the results prior to fitting, so
 contains just the observed data and predictions determined from
@@ -217,75 +217,88 @@ behaviour of the nuisance parameters relative to their pre-fit values.
 \subsection{Aggregated signal regions}
 \label{sec:aggregated-results}
 
-Observed data counts and SM background estimates are presented in
-Figs.~\ref{fig:aggregated_results1}, \ref{fig:aggregated_results2},
-\ref{fig:aggregated_results3}, and \ref{fig:aggregated_results4} for
+Observed data counts and SM background estimates are presented in 
+%Figs.~\ref{fig:aggregated_results1}, \ref{fig:aggregated_results2},
+%\ref{fig:aggregated_results3}, and \ref{fig:aggregated_results4} 
+Fig.~\ref{fig:aggregated_results} for 
 the aggregated signal regions based on a simplified binning scheme, as
 defined in Sec.~\ref{sec:aggregated}. The SM background estimates are
 based on the same likelihood model used to determine the nominal
 result. The covariance and correlation matrices are shown in
 Figs.~\ref{fig:covarmatrix} and \ref{fig:corrmatrix}, respectively. 
 
-\newcommand{\customcaption}[5]{(Upper panel) Event yields observed in
-  data (solid circles) and SM expectations with their associated
-  uncertainties (blue histogram with grey shaded band) determined from
-  a simultaneous fit to data in the control regions only (CR-only
-  fit). Event yields and expectations are shown as a function of
-  \HTmiss for events in the #1 topology that are required to satisfy
-  #2, #3, and (\cmsLeft) #4 or (\cmsRight) #5. 
-  (Lower panel) The significance of deviations (pulls) observed in
-  data with respect to both the SM expectations from the CR-only fit,
-  expressed in terms of the total uncertainty in the SM
-  expectations. The pulls cannot be considered independently due to
-  inter-bin correlations.}
-
-\newcommand{\customcaptiontwo}[6]{As Fig.~\ref{#6}, but for for events 
-  in the #1 topology that are required to satisfy #2, #3, and
-  (\cmsLeft) #4 or (\cmsRight) #5.}
-
-\clearpage
 \begin{figure}[h!]
   \centering
-  \caption{
-    \customcaption{``monojet-like''}{$\njet = 1$ or $\njet = 2${\it a}}{$\scalht > 200\GeV$}{$\nb = 0$}{$\nb \geq 1$}
+  \caption{Results of the CR-only fit based on the simplified binning
+    schema. (Top panel) Event yields in data and SM
+    expectations. (Centre panel) Ratio of the observed and expected
+    counts. (Bottom panel) Observed pulls of the data from
+    expectation. Detailed descriptions are given in the text.
   }
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq0b_ge1j2a_200_Inf_crfit.pdf} ~
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge1b_ge1j2a_200_Inf_crfit.pdf} 
-  \label{fig:aggregated_results1}
+  \includegraphics[width=0.95\linewidth]{figures/results/36invfb_preapproval/aggregated/aggregate_cr-only.pdf} 
+  \label{fig:aggregated_results}
 \end{figure}
 
+%\newcommand{\customcaption}[5]{(Upper panel) Event yields observed in
+%  data (solid circles) and SM expectations with their associated
+%  uncertainties (blue histogram with grey shaded band) determined from
+%  a simultaneous fit to data in the control regions only (CR-only
+%  fit). Event yields and expectations are shown as a function of
+%  \HTmiss for events in the #1 topology that are required to satisfy
+%  #2, #3, and (\cmsLeft) #4 or (\cmsRight) #5. 
+%  (Lower panel) The significance of deviations (pulls) observed in
+%  data with respect to both the SM expectations from the CR-only fit,
+%  expressed in terms of the total uncertainty in the SM
+%  expectations. The pulls cannot be considered independently due to
+%  inter-bin correlations.}
+%
+%\newcommand{\customcaptiontwo}[6]{As Fig.~\ref{#6}, but for for events 
+%  in the #1 topology that are required to satisfy #2, #3, and
+%  (\cmsLeft) #4 or (\cmsRight) #5.}
+%
 %\clearpage
-\begin{figure}[h!]
-  \centering
-  \caption{
-    \customcaptiontwo{``low \njet''}{$2 \leq \njet \leq 3$}{$\scalht > 200\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
-  }
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq23j_200_Inf_crfit.pdf} ~
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq23j_200_Inf_crfit.pdf} 
-  \label{fig:aggregated_results2}
-\end{figure}
-
-\clearpage
-\begin{figure}[h!]
-  \centering
-  \caption{
-    \customcaptiontwo{``medium \njet''}{$4 \leq \njet \leq 5$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
-  }
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq45j_400_Inf_crfit.pdf} ~
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq45j_400_Inf_crfit.pdf} 
-  \label{fig:aggregated_results3}
-\end{figure}
-
+%\begin{figure}[h!]
+%  \centering
+%  \caption{
+%    \customcaption{``monojet-like''}{$\njet = 1$ or $\njet = 2${\it a}}{$\scalht > 200\GeV$}{$\nb = 0$}{$\nb \geq 1$}
+%  }
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq0b_ge1j2a_200_Inf_crfit.pdf} ~
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge1b_ge1j2a_200_Inf_crfit.pdf} 
+%  \label{fig:aggregated_results1}
+%\end{figure}
+%
+%%\clearpage
+%\begin{figure}[h!]
+%  \centering
+%  \caption{
+%    \customcaptiontwo{``low \njet''}{$2 \leq \njet \leq 3$}{$\scalht > 200\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
+%  }
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq23j_200_Inf_crfit.pdf} ~
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq23j_200_Inf_crfit.pdf} 
+%  \label{fig:aggregated_results2}
+%\end{figure}
+%
 %\clearpage
-\begin{figure}[h!]
-  \centering
-    \caption{
-      \customcaptiontwo{``high \njet''}{$\njet \geq 6$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
-    }
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_ge6j_400_Inf_crfit.pdf} ~
-  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_ge6j_400_Inf_crfit.pdf}
-  \label{fig:aggregated_results4}
-\end{figure}
+%\begin{figure}[h!]
+%  \centering
+%  \caption{
+%    \customcaptiontwo{``medium \njet''}{$4 \leq \njet \leq 5$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
+%  }
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_eq45j_400_Inf_crfit.pdf} ~
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_eq45j_400_Inf_crfit.pdf} 
+%  \label{fig:aggregated_results3}
+%\end{figure}
+%
+%%\clearpage
+%\begin{figure}[h!]
+%  \centering
+%    \caption{
+%      \customcaptiontwo{``high \njet''}{$\njet \geq 6$}{$\scalht > 400\GeV$}{$0 \leq \nb \leq 1$}{$\nb \geq 2$}{fig:aggregated_results1}
+%    }
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_eq01b_ge6j_400_Inf_crfit.pdf} ~
+%  \includegraphics[width=0.45\linewidth]{figures/results/36invfb_preapproval/aggregated/postFitShapeCR/mhtShape_ge2b_ge6j_400_Inf_crfit.pdf}
+%  \label{fig:aggregated_results4}
+%\end{figure}
 
 \clearpage
 \begin{figure}[h!]
