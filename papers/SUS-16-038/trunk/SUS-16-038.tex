@@ -214,13 +214,13 @@ kinematic thresholds and high experimental acceptance to final states
 characterized by the presence of significant \ptvecmiss. Signal
 extraction is performed using several additional kinematic variables
 to provide sensitivity to a broad range of models involving: the pair
-production of squarks of any generation or gluinos, large or small
+production of squarks or any generation of gluinos, large or small
 mass splittings between the parent SUSY particle and the LSP, and
 meta-stable $\PSg$ particles. The search employs standard event
 reconstruction techniques, without the use of specialized algorithms
 that target displaced vertices. The search result is used to constrain
 the parameter space of several simplified models~\cite{Alwall:2008ag,
-  Alwall:2008va, sms} of natural and split supersymmetry. 
+  Alwall:2008va, sms} of natural and split supersymmetry.
 
 %The search employs several dedicated variables to discriminate against
 %this background while maintaining experimental acceptance to events
@@ -617,7 +617,7 @@ SUSY particle spectra and long-lived SUSY particles.
 Events are also categorized according to \nb (0, 1, 2, 3, ${\geq}4$),
 where \nb is bounded from above by \njet and the choice of
 categorization is dependent on \njet. Higher \nb multiplicities target
-the production of third-generation (3G) squarks. 
+the production of third-generation squarks.
 %In total, candidate signal events are categorized into 27 discrete
 %(\njet, \nb) topologies, as detailed in Table~\ref{tab:binning}.
 
@@ -768,24 +768,16 @@ boson~\cite{1674-1137-38-9-090001}.
 \section{Monte Carlo simulation}
 \label{sec:simulation}
 
-The search relies on several event samples simulated with Monte Carlo
-(MC) generator programs, to estimate the backgrounds from various SM
-processes.
+The search relies on several simulated event samples, produced with
+Monte Carlo (MC) generator programs, to estimate the backgrounds from
+various SM processes and contributions from signal models.
 
 The {\MADGRAPH{}5\_a\MCATNLO} 2.2.2~\cite{Alwall2014} event generator
 is used at leading order (LO) accuracy to produce samples of \wj, \zj,
-\ttbar, and multijet events. The same generator is used at
-next-to-leading order (NLO) accuracy to generate samples of s-channel
-production of single top, as well as {\ttbar}W, {\ttbar}Z, and
-{\ttbar}$\gamma$ events. The NLO \POWHEG v2~\cite{powheg,
-  powheg_top_Wt} generator is used to describe the t- and tW-channel
-production of events containing single top quarks, as well as
-{\ttbar}H events. The \PYTHIA 8.2~\cite{pythia} program is used to
-generate diboson (WW, WZ, ZZ) production. The simulated samples are
-normalized according to production cross sections that are calculated
-with NLO and next-to-NLO precision~\cite{Alwall2014, wphys, fewz,
-  wwxs, top++, nlotop, powheg_top_Wt}. Simulated \wj and \zj events
-are weighted according to the true vector boson \pt obtained from the
+\ttbar, and multijet events. Up to three or four additional partons
+are included in the matrix element calculation for vector boson and
+\ttbar production, respectively. Simulated \wj and \zj events are
+weighted according to the true vector boson \pt obtained from the
 {\MADGRAPH{}5\_a\MCATNLO} generator code (used at LO) to account for
 the effect of missing NLO QCD and electroweak terms in the matrix
 element calculation, according to the method described in
@@ -793,35 +785,63 @@ Ref.~\cite{Khachatryan:2016mdm}. Within the range of vector boson
 transverse momenta that can probed by this search, the QCD and EWK
 corrections~\cite{Kuhn:2005gv} are largest, ${\approx}40\%$ and
 ${\approx}15\%$, at low and high values of boson \pt,
-respectively. The description of the detector response, for these SM
-processes, is implemented using the \GEANTfour~\cite{geant} package.
-
-Event samples for signal models involving the $\PSg$-mediated or
-direct pair production of squarks, in association with up to two
-additional partons, are generated at leading order with
-{\MADGRAPH{}5\_a\MCATNLO}, and the decay of the SUSY particles is
-performed with \PYTHIA 8.2~\cite{pythia}. Inclusive,
-process-dependent, signal production cross sections
-$\sigma_\text{prod}$ are calculated with NLO plus
-next-to-leading-logarithm (NLL) accuracy~\cite{Beenakker:1996ch,
-  PhysRevLett.102.111802, PhysRevD.80.095004, 1126-6708-2009-12-041,
-  doi:10.1142/S0217751X11053560, susynlo}. The detector response is
-provided by the CMS fast simulation package~\cite{fastsim}.
-
-The \textsc{NNPDF}3.0 LO and \textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton
-distribution functions (PDF) are used, respectively, with the LO and
-NLO generators described above. The \PYTHIA 8.2~\cite{pythia} program
-is used to describe parton showering and hadronization for all
-simulated samples. To model the effects of multiple pp collisions
-within the same or neigh boring bunch crossings (pileup), all
-simulated events are generated with a nominal distribution of pp
-interactions per bunch crossing and then reweighted to match the
-pileup distribution as measured in data. Simulated events for \ttbar
-and all signal processes are weighted to improve the description of
-jets arising from initial state radiation
-(ISR)~\cite{single-lepton-stop}. The weights vary from 0.92 to 0.51 
+respectively. Simulated events for \ttbar are weighted to improve the
+description of jets arising from initial state radiation
+(ISR)~\cite{single-lepton-stop}. The weights vary from 0.92 to 0.51
 depending on the number of jets (1--6) from ISR, with an uncertainty
-of one half the deviation from unity. 
+of one half the deviation from unity. The {\MADGRAPH{}5\_a\MCATNLO}
+generator is used at next-to-leading order (NLO) accuracy to generate
+samples of s-channel production of single top, as well as {\ttbar}W
+and {\ttbar}Z events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt}
+generator is used to describe the t- and tW-channel production of
+events containing single top quarks, as well as {\ttbar}H events. The
+\PYTHIA 8.2~\cite{pythia} program is used to generate diboson (WW, WZ,
+ZZ) production. Event samples for signal models involving the
+production and prompt decay of gluino or squark pairs, in association
+with up to two additional partons, are generated at leading order with
+{\MADGRAPH{}5\_a\MCATNLO}, and the decay of the SUSY particles is
+performed with \PYTHIA 8.2~\cite{pythia}. The \textsc{NNPDF}3.0 LO and
+\textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton distribution functions (PDF)
+are used, respectively, with the LO and NLO generators described
+above.
+
+The simulated samples for SM processes are normalized according to
+production cross sections that are calculated with NLO and next-to-NLO
+precision~\cite{Alwall2014, wphys, fewz, wwxs, top++, nlotop,
+  powheg_top_Wt}. The production cross sections for pairs of gluinos
+or squarks are determined at NLO plus next-to-leading-logarithm
+precision~\cite{Beenakker:1996ch, Kulesza:2008jb, Kulesza:2009kq,
+  Beenakker:2009ha, Beenakker:2011fu, Borschensky:2014cia}. All SUSY
+particles other than the \chiz are assumed to be heavy and
+decoupled. Uncertainties in the cross sections are determined from
+different choices of PDF sets and factorisation and renormalisation
+scales according to the prescription in
+Ref.~\cite{Borschensky:2014cia}. 
+
+The \PYTHIA 8.2~\cite{pythia} program is used to describe parton
+showering and hadronization for all simulated samples. Dedicated
+\PYTHIA routines are used to describe the behaviour of long-lived
+gluinos and the formation of R-hadrons~\cite{Fairbairn:2006gg,
+  Kraan:2004tz, Mackeprang:2006gx}. The description of the detector
+response is implemented using the \GEANTfour~\cite{geant} package for
+all simulated samples of SM processes or signal models with long-lived
+gluinos~\cite{Kraan:2004tz, Mackeprang:2006gx,
+  Mackeprang:2009ad}. Scale factors are applied to simulated event
+samples that correct for differences in the b-tag efficiency
+($\text{SF}_\text{b}$) and mistag probability of light-flavour partons
+and charm quarks ($\text{SF}_\text{LF}$) with respect to data, which
+typically have values of ${\approx}$0.95--1.00 and
+${\approx}$1.00--1.20, respectively, for a jet-\pt range of
+40--600\GeV. All remaining signal models rely on the CMS fast
+simulation package~\cite{fastsim}, which is consistent with the
+\GEANTfour description following the application of corrections of
+X--Y and X--Y for differences in the b-tag efficiency and mistag
+probability, respectively, as well as corrections of X--Y for
+differences in the the modelling of \mht variable. To model the
+effects of multiple pp collisions within the same or neighbouring
+bunch crossings (pileup), all simulated events are generated with a
+nominal distribution of pp interactions per bunch crossing and then
+reweighted to match the pileup distribution as measured in data.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1427,18 +1447,18 @@ candidate signal events is $<$10\%.
 % ... Additional uncertainties associated with these quantities are
 % assigned BLAH ...
 
-Figure~\ref{fig:limits} summarises the excluded regions of the
-mass parameter space for seven families of simplified model. The
-regions are determined by comparing the upper limits on the measured
-fiducial cross section, corrected for the experimental
+Figure~\ref{fig:limits} summarises the excluded regions of the mass
+parameter space for seven families of simplified model. The regions
+are determined by comparing the upper limits on the measured fiducial
+cross section, corrected for the experimental
 $\mathcal{A}\,\varepsilon$, with the theoretical cross sections
 calculated at NLO+NLL accuracy in
-$\alpha_\mathrm{s}$~\cite{susynlo}. The former cross section value is
-determined as a function of $m_{\PSg}$ or $m_{\PSQ}$ and
-$m_{\PSGczDo}$, while the latter has a dependence solely on $m_{\PSg}$
-or $m_{\PSQ}$.  The exclusion of models is evaluated using observed
-data counts in the signal region (solid contours) and also expected
-counts based on an Asimov data set (dashed contours).
+$\alpha_\mathrm{s}$~\cite{Borschensky:2014cia}. The former cross
+section value is determined as a function of $m_{\PSg}$ or $m_{\PSQ}$
+and $m_{\PSGczDo}$, while the latter has a dependence solely on
+$m_{\PSg}$ or $m_{\PSQ}$.  The exclusion of models is evaluated using
+observed data counts in the signal region (solid contours) and also
+expected counts based on an Asimov data set (dashed contours).
 
 %All these models assume the prompt decay of the parent SUSY particle.
 %
