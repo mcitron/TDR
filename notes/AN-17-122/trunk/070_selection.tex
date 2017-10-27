@@ -25,6 +25,7 @@ Table~\ref{tab:pre-selections} and described in further detail below.
                                     ECAL Endcap SC Noise, ECAL TP, Bad Muon, Bad Charged Hadron)}                                              \\
     Beam halo                     & $0.1 < \mathrm{CHF} < 0.95$ for highest-\Pt jet                                                            \\
     Jet $\mathrm{j}_i$ acceptance & Each jet $\mathrm{j}_i$ that satisfies $\pt^{\mathrm{j}_i} > 40\GeV$ and $\abs{\eta^{\mathrm{j_1}}} < 2.4$ \\
+    Odd jet veto                  & Veto events containing at least one jet within acceptance that fails Loose ID                              \\
     Jet $\mathrm{j_1}$ acceptance & $\pt^{\mathrm{j_1}} > 100\GeV$                                                                             \\
     Jets below threshold          & $\HTmiss / \ETmiss < 1.25$                                                                                 \\
     Forward jet veto              & Veto events containing a jet satisfying $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                              \\
@@ -86,6 +87,10 @@ Jets considered in the analysis are required to satisfy $\PT > 40\gev$
 and $|\eta| < 2.4$. The selected jets are used in the calculation of
 all jet-based event-level variables, such as \njet, \HT, \mht, and
 \alphat (see Sec.~\ref{sec:kine} for their definitions).
+
+Events are vetoed if any jet satisfies the aforementioned \pt and
+$\eta$ acceptance requirements yet fails the Loose ID working point
+described in Tab.~\ref{tab:loose-jet-id} (Sec.~\ref{sec:jetreco}). 
 
 The highest-\Pt jet in the event is required to satisfy $\Pt^{\mathrm
   j_1} > 100\gev$. This helps to ensure high trigger efficiencies
