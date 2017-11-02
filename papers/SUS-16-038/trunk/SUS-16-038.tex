@@ -816,32 +816,53 @@ particles other than the \chiz are assumed to be heavy and
 decoupled. Uncertainties in the cross sections are determined from
 different choices of PDF sets and factorisation and renormalisation
 scales according to the prescription in
-Ref.~\cite{Borschensky:2014cia}.
+Ref.~\cite{Borschensky:2014cia}. The \PYTHIA 8.2~\cite{pythia} program
+is used to describe parton showering and hadronization for all
+simulated samples.
 
-The \PYTHIA 8.2~\cite{pythia} program is used to describe parton
-showering and hadronization for all simulated samples. Dedicated
-\PYTHIA routines are used to describe the behaviour of long-lived
-gluinos and the formation of R-hadrons~\cite{Fairbairn:2006gg,
-  Kraan:2004tz, Mackeprang:2006gx}. The description of the detector
-response is implemented using the \GEANTfour~\cite{geant} package for
-all simulated samples of SM processes or signal models with long-lived
-gluinos~\cite{Kraan:2004tz, Mackeprang:2006gx,
-  Mackeprang:2009ad}. Scale factors are applied to simulated event
-samples that correct for differences in the b-tag efficiency
-($\text{SF}_\text{b}$) and mistag probability of light-flavour partons
-and charm quarks ($\text{SF}_\text{LF}$) with respect to data, which
-typically have values of ${\approx}$0.95--1.00 and
-${\approx}$1.00--1.20, respectively, for a jet-\pt range of
-40--600\GeV. All remaining signal models rely on the CMS fast
-simulation package~\cite{fastsim}, which is consistent with the
-\GEANTfour description following the application of corrections of
-X--Y and X--Y for differences in the b-tag efficiency and mistag
-probability, respectively, as well as corrections of X--Y for
-differences in the the modelling of \mht variable. To model the
-effects of multiple pp collisions within the same or neighbouring
-bunch crossings (pileup), all simulated events are generated with a
-nominal distribution of pp interactions per bunch crossing and then
-reweighted to match the pileup distribution as measured in data.
+%Kraan:2004tz, Mackeprang:2006gx, Mackeprang:2009ad
+The \textsc{rhadrons} package within the \PYTHIA program is used to
+describe the formation of R-hadrons through the hadronisation of
+gluinos~\cite{Fairbairn:2006gg, Kraan:2004tz, Mackeprang:2006gx}. The
+hadronisation process, which is steered according to the default
+parameter settings of the \textsc{rhadrons} package, predominantly
+yields meson-like (\PSg\Pq\Paq) and baryon-like (\PSg\Pq\Pq\Pq)
+states, but also R-hadrons comprising a gluino and a valence gluon
+with a probability of 10\%. 
+%The phenomenological ``cloud model'' is commonly used to describe
+%these loosely bound states and their interactions with
+%matter~\cite{}. 
+The gluino is assumed to undergo a three-body decay, to a \Pq\Paq\
+pair and the \chiz, according to its proper lifetime, which is a
+parameter of the simplified model. The details of the R-hadron model
+are expected to have little influence on the hadronisation of the
+quarks originating from the gluino decay (and hence the final state in
+terms of event topology and kinematics) for the models considered in
+this paper.
+%In this study, the interactions of R-hadrons with the detector
+%material are not simulated, as this behaviour cannot be exploited by
+%the generic nature of this search, unlike more dedicated techniques
+%used elsewhere.~\cite{}\fixme{eg reference dE/dx, stopped searches,
+%disappearing/kinked tracks}. 
+
+The description of the detector response is implemented using the
+\GEANTfour~\cite{geant} package for all simulated SM processes. Scale
+factors are applied to simulated event samples that correct for
+differences in the b-tag efficiency ($\text{SF}_\text{b}$) and mistag
+probability of light-flavour partons and charm quarks
+($\text{SF}_\text{LF}$) with respect to data, which typically have
+values of ${\approx}$0.95--1.00 and ${\approx}$1.00--1.20,
+respectively, for a jet-\pt range of 40--600\GeV. All remaining signal
+models rely on the CMS fast simulation package~\cite{fastsim}, which
+is consistent with the \GEANTfour description following the
+application of corrections of X--Y and X--Y for differences in the
+b-tag efficiency and mistag probability, respectively, as well as
+corrections of X--Y for differences in the the modelling of \mht
+variable. To model the effects of multiple pp collisions within the
+same or neighbouring bunch crossings (pileup), all simulated events
+are generated with a nominal distribution of pp interactions per bunch
+crossing and then reweighted to match the pileup distribution as
+measured in data.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1177,25 +1198,26 @@ interpretation of the search result.
 The result of the search is used to constrain the parameter space of
 simplified supersymmetric models~\cite{Alwall:2008ag, Alwall:2008va,
   sms}. Each family of models realizes a unique production and decay
-mode. The model parameters are the masses of the parent SUSY particle
-($m_\text{SUSY}$) and neutralino ($m_\text{LSP}$). Only the
-$\PSg$-mediated or direct production of top, bottom, or light-flavour
-squark pairs are considered, with decays leading to final states
-comprising the \chiz and SM particles. Two scenarios are considered
-for light-flavoured squarks comprising $\PSQ_\cmsSymbolFace{L}$ and
-$\PSQ_\cmsSymbolFace{R}$, with $\PSQ = \{\PSQu, \PSQd, \PSQs,
-\PSQc\}$: one with an eightfold mass degeneracy and the other with
-just a single light squark (\eg $\PSQu_\cmsSymbolFace{L}$). All other
-SUSY particles are assumed to be too heavy to be produced directly. In
-the case of the production of $\PSg$ pairs, three-body decays via
-highly virtual squarks are assumed. In the case of decays via
-light-flavour squarks, the $\PSg$ is also assumed to be metastable and
-its lifetime is introduced as a third model parameter. Lifetimes in
-the range $3{\times}10^{-6} < \tau < 3{\times}10^{2}\unit{ns}$ are
-considered, which correpond to characteristic decay lengths in the
-range $10^{-3} < c\tau < 10^{5}\unit{mm}$. Interpretations are
-provided for eight unique model families, as summarised in
-Table~\ref{tab:sms}.
+mode. Only the $\PSg$-mediated or direct production of top, bottom, or
+light-flavour squark pairs are considered, with decays leading to
+final states comprising the \chiz and SM particles. The model
+parameters are the masses of the parent \PSg\ ($m_\PSg$) and squark
+($m_{\PSQ}$, $m_{\PSQb}$, $m_{\PSQt}$) particles, also collectively
+labelled as $m_\text{SUSY}$, and the \chiz ($m_\text{LSP}$). Two
+scenarios are considered for light-flavoured squarks comprising
+$\PSQ_\cmsSymbolFace{L}$ and $\PSQ_\cmsSymbolFace{R}$, with $\PSQ =
+\{\PSQu, \PSQd, \PSQs, \PSQc\}$: one with an eightfold mass degeneracy
+and the other with just a single light squark (\eg
+$\PSQu_\cmsSymbolFace{L}$). All other SUSY particles are assumed to be
+too heavy to be produced directly. In the case of the production of
+$\PSg$ pairs, three-body decays via highly virtual squarks are
+assumed. In the case of decays via light-flavour squarks, the $\PSg$
+is also assumed to be metastable and its lifetime is introduced as a
+third model parameter. Lifetimes in the range $3{\times}10^{-6} < \tau
+< 3{\times}10^{2}\unit{ns}$ are considered, which correpond to
+characteristic decay lengths in the range $10^{-3} < c\tau <
+10^{5}\unit{mm}$. Interpretations are provided for eight unique model
+families, as summarised in Table~\ref{tab:sms}.
 
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
@@ -1460,12 +1482,30 @@ is ${\approx}5\%$ and is treated as anticorrelated between the SR and
 \mj and \mmj CRs. The uncertainty in the trigger efficiency to record
 candidate signal events is $<$10\%.
 
-% Finally, the efficiency of reconstructing jets with displaced
-% vertices resulting from the decay of long-lived $\PSg$ particles, as
-% well as the probability of tagging these displaced jets as arising
-% from b quarks, are inspected as a function of the displacement. BLAH
-% ... Additional uncertainties associated with these quantities are
-% assigned BLAH ...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As described in Sec.~\ref{}, all jets are subject to identification
+and quality requirements. 
+
+The probability for a jet to satisfy identification and quality
+requirements varies as a function of its displacement with respect to
+the PV, primarily due to 
+
+identification and quality
+requirements 
+
+arising from the decay of long-lived gluinos 
+
+efficiency jets with displaced vertices
+
+Finally, 
+resulting from the decay of long-lived $\PSg$ particles, as well as
+the probability of tagging these displaced jets as arising from b
+quarks, are inspected as a function of the displacement. BLAH
+... Additional uncertainties associated with these quantities are
+assigned BLAH ...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Figure~\ref{fig:limits} summarises the excluded regions of the mass
 parameter space for seven families of simplified model. The regions
@@ -1529,15 +1569,15 @@ Asimov data set (dashed contours).
 \clearpage
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-0p001_XSEC}~
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-0p01_XSEC}~
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-0p1_XSEC}\\
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-1_XSEC}~
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-10_XSEC}~
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-100_XSEC}\\
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-1000_XSEC}~
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-10000_XSEC}~
-  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL_ctau-100000_XSEC}\\
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL0p001XSEC}~
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL0p01XSEC}~
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL0p1XSEC}\\
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL1XSEC}~
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL10XSEC}~
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL100XSEC}\\
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL1000XSEC}~
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL10000XSEC}~
+  \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL100000XSEC}\\
   \caption{Observed upper limit in cross section at 95\% CL (indicated
     by the colour scale) as a function of the $\PSg$ and \chiz masses
     for simplified models that assume the production of pairs of
