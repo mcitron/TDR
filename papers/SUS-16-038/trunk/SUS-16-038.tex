@@ -69,6 +69,7 @@
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsTable}[1]{#1}}{\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}}
+\ifthenelse{\boolean{cms@external}}{\providecommand{\suppMaterial}{the supplemental material [URL will be inserted by publisher]}}{\providecommand{\suppMaterial}{Appendix~\ref{app:suppMat}}}
 
 \newlength\cmsTableLabelSkip
 \setlength\cmsTableLabelSkip{-1.2ex}
@@ -79,7 +80,7 @@
 
 \cmsNoteHeader{SUS-16-038}
 
-\title{Search for natural and split supersymmetric scenarios in pp
+\title{Search for natural and split supersymmetric scenarios in \Pp\Pp
   collisions at $\sqrt{s} = 13\TeV$ in all-jet final states}
 %  using the $\alpha_\text{T}$ variable}
 
@@ -98,28 +99,38 @@
   %background to a subdominant level with respect to all other standard
   %model backgrounds. Further Several kinematical variables are used to
   %provide signal-to-background discrimination. 
-  The number of candidate events is found to agree with the expected
-  event counts from standard model processes.
+  The number of candidate signal events is found to agree with the
+  expected event counts from standard model processes.
   %
   The result is interpreted with simplified models of supersymmetry
   that assume the production of gluino or squark pairs and their
-  prompt decay to SM particles and the neutralino.
+  prompt decay to SM quarks and the neutralino. 
   % 
-  Gluinos and their daughter neutralinos are probed up to masses of X
-  and Y\TeV, respectively. In the case of direct production of
-  light-flavour, bottom, or top squark pairs, masses up to X, Y, and
-  Z\GeV are probed. 
+  %Gluinos and their daughter neutralinos are probed up to masses of X
+  %and Y TeV, respectively. In the case of direct production of
+  %light-flavour, bottom, or top squark pairs, masses up to X, Y, and
+  %Z\GeV are probed.
+  %
+  The masses of bottom, top, or light-flavour squarks are probed up to
+  to X, Y, and Z\GeV, respectively, when produced directly. The gluino
+  mass is probed up to to X, Y, and Z\GeV when the gluino decays via
+  virtual states of the aforementioned squarks. The strongest mass
+  bounds on the daughter neutralinos from gluino or squark decays are
+  X and Y\GeV, respectively.
   %
   The search employs standard techniques of event reconstruction, yet
-  also provides sensitivity to simplified models of split
-  supersymmetry that involve the production and decay of meta-stable
-  composite states containing gluinos, known as R-hadrons. A lower
-  mass bound of X\TeV is established for gluinos with lifetimes in the
-  range from ${\approx}10^{-6}$ to ${\approx}10^{2}\unit{ns}$ for
-  gluino-neutralino mass differences larger than 25\GeV. Gluino masses
-  up to Y\TeV are probed for lifetimes of
-  ${\approx}10^{-3}\unit{ns}$. The search provides coverage that is
-  complementary to existing dedicated techniques at the LHC.  }
+  also provides sensitivity to simplified
+  models %inspired by split supersymmetry
+  that involve the production and decay of long-lived gluinos.
+  % that form bound colour-singlet states known as R-hadrons. 
+  %
+  Proper decay lengths from 0.001 to 100\,000\unit{mm} are considered,
+  as well as a metastable gluino state. Masses up to
+  ${\approx}1.8\TeV$ and ${\approx}1\TeV$ are probed for a proper
+  decay length of 1\unit{mm} and the metastable state, respectively.
+  %
+  The search provides coverage that is complementary to existing
+  techniques at the LHC.  }
 
 \hypersetup{ 
   pdfauthor={Robert Bainbridge, Eshwen Bhal, Shane Breeze, Oliver
@@ -146,87 +157,101 @@ Supersymmetry (SUSY)~\cite{ref:SUSY-1, ref:SUSY0, ref:SUSY3,
   ref:SUSY1} is an extension of the standard model (SM) of particle
 physics that introduces at least one bosonic (fermionic) superpartner
 for each fermionic (bosonic) SM particle that differ in spin by
-one-half unit. SUSY potentially offers solutions for the unification
-of the gauge coupling constants at a high
-energy~\cite{Dimopoulos:1981yj, Ibanez:1981yh, Marciano:1981un}, a
-dark matter (DM) candidate, and the gauge hierarchy
-problem~\cite{ref:hierarchy1, ref:hierarchy2}. SUSY particles are
-expected to be produced in pairs at the LHC, with heavy states
-decaying to the lightest stable SUSY particle (LSP), under the
-assumption of $R$-parity conservation~\cite{Farrar:1978xj}. The LSP is
-assumed to be the neutralino \PSGczDo, a weakly interacting massive
-particle and a viable DM candidate~\cite{Jungman:1995df,
-  1674-1137-38-9-090001}.  So-called ``natural'' models that invoke
-only a minimal fine-tuning of the bare Higgs boson mass parameter
-require only the gluino $\PSg$, third-generation squarks, and a
-higgsino-like \PSGczDo at or near the electroweak
-scale~\cite{ref:barbierinsusy}. The interest in natural models is
-motivated by the discovery of a low-mass Higgs
+one-half unit. SUSY offers potential solutions for the unification of
+the gauge coupling constants at a high energy~\cite{Dimopoulos:1981yj,
+  Ibanez:1981yh, Marciano:1981un}, a dark matter (DM) candidate, and
+the gauge hierarchy problem~\cite{ref:hierarchy1,
+  ref:hierarchy2}. SUSY particles are expected to be produced in pairs
+at the LHC, with heavy states decaying to the lightest stable SUSY
+particle (LSP), under the assumption of $R$-parity
+conservation~\cite{Farrar:1978xj}. The LSP is assumed to be the
+neutralino \PSGczDo, a weakly interacting massive particle and a
+viable DM candidate~\cite{Jungman:1995df, 1674-1137-38-9-090001}.
+So-called natural models that invoke only a minimal fine-tuning of the
+bare Higgs boson mass parameter require only the gluino,
+third-generation squarks, and a higgsino-like \PSGczDo at or near the
+electroweak scale~\cite{ref:barbierinsusy}. The interest in natural
+models is motivated by the discovery of a low-mass Higgs
 boson~\cite{Aad:2012tfa, Chatrchyan:2012ufa, Chatrchyan:2013lba,
   Khachatryan:2014jba, Aad:2014aba, Aad:2015zhl}. The characteristic
 signature of natural SUSY production at the LHC is a final state
 containing an abundance of jets originating from the hadronization of
-light- or heavy-flavour quarks, accompanied by significant missing
-transverse momentum \ptvecmiss.
+heavy-flavour quarks, accompanied by significant missing transverse
+momentum \ptvecmiss.
 
 %%%%%%%%%%
 
-An alternative class of models known as ``split''
-SUSY~\cite{ArkaniHamed:2004fb, Giudice:2004tc} remove the requirement
-of minimal fine tuning of model parameters related to the Higgs boson
-mass---in contrast to natural models---yet preserve the appealling
-aspects of gauge coupling unification and a DM candidate. In such a
-model, only the fermionic superpartners, and a finely tuned scalar
-Higgs boson, may be realized at a mass scale that is kinematically
-accessible at the LHC, while all other SUSY particles are
-ultraheavy. Hence, within split SUSY models, the gluino decay is
-suppressed because of highly virtual squark states. For gluino
-lifetimes beyond $\mathcal{O}(1\unit{ps})$, the gluino hadronizes and
-forms a bound state with SM particles known as an
-R-hadron~\cite{Fairbairn:2006gg}, before eventually decaying to SM
-particles and the \PSGczDo. The lifetime of the gluino determines the
-position of the decay of the R-hadron within the CMS detector, which
-can lead to a striking experimental signature of displaced particle
-vertices located at a significant distance from the primary
-interaction point of the incoming proton beams, accompanied by
-significant \ptvecmiss from the undetected \PSGczDo particles.
+An alternative class of models known as split
+supersymmetry~\cite{ArkaniHamed:2004fb, Giudice:2004tc} remove the
+requirement of minimal fine tuning of model parameters related to the
+Higgs boson mass---in contrast to natural models---yet preserve the
+appealling aspects of gauge coupling unification and a DM
+candidate. In such a model, only the fermionic superpartners, and a
+finely tuned scalar Higgs boson, may be realized at a mass scale that
+is kinematically accessible at the LHC. All other SUSY particles are
+assumed to be ultraheavy. Hence, within split SUSY models, the gluino
+decay is suppressed because of highly virtual squark states. For
+gluino lifetimes beyond $\mathcal{O}(1\unit{ps})$, the gluino
+hadronizes and forms a bound colour-singlet state containing the
+gluino and quarks or gluons~\cite{Fairbairn:2006gg}, known as an
+R-hadron, before eventually decaying to quark pairs and the
+\PSGczDo. The lifetime of the gluino determines the position of its
+decay within the CMS detector, which can lead to final states with
+significant \ptvecmiss from the undetected \PSGczDo particles and jets
+with particle vertices located a significant distance from the
+luminous region of the proton beams (displaced jets).
 
 %%%%%%%%%%%%%%
 
 This paper presents a search for new-physics processes in final states
 with one or more energetic jets and significant \ptvecmiss. The search
-is performed with a sample of proton-proton (pp) collision data at a
-centre-of-mass energy of 13\TeV. The analysed data sample recorded by
-the CMS experiment corresponds to an integrated luminosity of $35.9
+is performed with a sample of proton-proton (\Pp\Pp) collision data at
+a centre-of-mass energy of 13\TeV. The analysed data sample recorded
+by the CMS experiment corresponds to an integrated luminosity of $35.9
 \pm 0.9\fbinv$. Earlier searches using the same technique have been
 performed in pp collisions at $\sqrt{s} = 7$, 8, and
 13\TeV~\cite{RA1Paper, RA1Paper2011, RA1Paper2011FULL, RA1Paper2012,
   RA1Parked, Khachatryan:2016dvc} by the CMS Collaboration. The data
 analysed in this analysis is a factor ${\approx}16$ larger than that
-presented in Ref.~\cite{Khachatryan:2016dvc}. The ATLAS and CMS
-Collaborations have performed similar searches in all-jet final states
-at $\sqrt{s} = 13\TeV$, of which the most constraining are described
-in Refs.~\cite{Aaboud:2016zdn, Sirunyan:2017cwe, Sirunyan:2017kqq}.
+presented in Ref.~\cite{Khachatryan:2016dvc}. The search strategy aims
+to provide sensitivity to a broad range of SUSY-inspired and non-SUSY
+models that predict the existence of a DM candidate. Signal extraction
+is performed using several kinematical variables to provide
+sensitivity to a broad range of models. The overwhelmingly dominant
+background for a new-physics search in all-jet final states resulting
+from \Pp\Pp collisions is the production of multijet events through
+the strong interaction and a manifestation of quantum
+chromodynamics. Several dedicated variables are employed to suppress
+the multijet background to a negligible level while maintaining low
+kinematical thresholds and high experimental acceptance to final
+states characterized by the presence of significant \ptvecmiss. The
+ATLAS and CMS Collaborations have performed similar searches in
+all-jet final states at $\sqrt{s} = 13\TeV$, of which the most
+constraining are described in Refs.~\cite{Aaboud:2016zdn,
+  Sirunyan:2017cwe, Sirunyan:2017kqq}. The search employs standard
+event reconstruction techniques, without the use of specialized
+algorithms that target displaced jets. Examples of dedicated
+techniques at the LHC can described in Refs.~\cite{}.
 
-The search strategy aims to provide sensitivity to a broad range of
-SUSY-inspired and non-SUSY models that predict the existence of a DM
-candidate. The overwhelmingly dominant background for a new-physics
-search in all-jet final states resulting from proton-proton collisions
-is the production of multijet events through the strong interaction
-and a manifestation of quantum chromodynamics. Several dedicated
-variables are employed to suppress the multijet background to a
-negligible level while maintaining low kinematical thresholds and high
-experimental acceptance to final states characterized by the presence
-of significant \ptvecmiss. Signal extraction is performed using
-several additional kinematical variables to provide sensitivity to a
-broad range of models involving: the pair production of squarks or any
-generation of gluinos, large or small mass splittings between the
-parent SUSY particle and the \PSGczDo, and meta-stable gluino
-particles. The search employs standard event reconstruction
-techniques, without the use of specialized algorithms that target
-displaced vertices. The search result is used to constrain the
-parameter space of several simplified models~\cite{Alwall:2008ag,
-  Alwall:2008va, sms} of natural and split supersymmetry.
+% involving: the pair production of squarks or any
+%generation of gluinos, large or small mass splittings between the
+%parent SUSY particle and the \PSGczDo, and meta-stable gluino
+%particles.
+
+%This paper presents a search for new-physics processes in final states
+%with one or more energetic jets and significant \ptvecmiss. The search
+%is performed with a sample of proton-proton (pp) collision data at a
+%centre-of-mass energy of 13\TeV. The analysed data sample recorded by
+%the CMS experiment corresponds to an integrated luminosity of $35.9
+%\pm 0.9\fbinv$. Earlier searches using the same technique have been
+%performed in pp collisions at $\sqrt{s} = 7$, 8, and
+%13\TeV~\cite{RA1Paper, RA1Paper2011, RA1Paper2011FULL, RA1Paper2012,
+%  RA1Parked, Khachatryan:2016dvc} by the CMS Collaboration. The data
+%analysed in this analysis is a factor ${\approx}16$ larger than that
+%presented in Ref.~\cite{Khachatryan:2016dvc}. The ATLAS and CMS
+%Collaborations have performed similar searches in all-jet final states
+%at $\sqrt{s} = 13\TeV$, of which the most constraining are described
+%in Refs.~\cite{Aaboud:2016zdn, Sirunyan:2017cwe, Sirunyan:2017kqq}.
 
 %The search employs several dedicated variables to discriminate against
 %this background while maintaining experimental acceptance to events
@@ -867,7 +892,7 @@ provides a description that is consistent with \GEANTfour following
 the application of near-unity corrections %of X--Y and X--Y
 for differences in the b-tag efficiency and mistag probability,
 respectively, as well as corrections %of X--Y
-for differences in the the modelling of \mht variable. To model the
+for differences in the modelling of \mht variable. To model the
 effects of multiple pp collisions within the same or neighbouring
 bunch crossings (pileup), all simulated events are generated with a
 nominal distribution of pp interactions per bunch crossing and then
@@ -1676,7 +1701,7 @@ in Table~\ref{tab:limits}.
     $10\unit{mm}$ (middle centre),
     $100\unit{mm}$ (middle right),
     $1000\unit{mm}$ (lower left),
-    $10000\unit{mm}$ (lower centre), 
+    $10\,000\unit{mm}$ (lower centre), 
     and $100\,000\unit{mm}$ (lower right). 
 %    The contours indicate the excluded regions as defined in the
 %    caption of Fig.~\ref{fig:limits-stable}. 
@@ -1698,39 +1723,50 @@ in Table~\ref{tab:limits}.
 \section{Summary}
 \label{sec:summary}
 
-An inclusive search for supersymmetry with the CMS experiment is
-reported, based on a data sample of pp collisions collected in 2016 at
-$\sqrt{s} = 13\TeV$ that corresponds to an integrated luminosity of
-$35.9 \pm 0.9 \fbinv$. Final states with jets and significant
-\ptvecmiss, as expected from the production and decay of massive
-gluinos and squarks, have been analysed. Several kinematical variables
-are used to suppress the multijet background to a subdominant level
-with respect to all other standard model backgrounds. Candidate signal
-events are categorized according to the number of reconstructed jets,
-the number of jets identified to originate from bottom quarks, and the
-scalar and vector sums of the transverse momentum of jets to provide
-signal-to-background discrimination. The sum of standard model
-backgrounds per bin has been estimated from a simultaneous binned
-likelihood fit to event yields in the signal region and control
+A search for supersymmetry with the CMS experiment is reported, based
+on a data sample of pp collisions collected in 2016 at $\sqrt{s} =
+13\TeV$ that corresponds to an integrated luminosity of $35.9 \pm 0.9
+\fbinv$. Final states with jets and significant \ptvecmiss, as
+expected from the production and decay of massive gluinos and squarks,
+are considered. 
+%Several kinematical variables are used to suppress the multijet
+%background to a subdominant level with respect to all other standard
+%model backgrounds. 
+Candidate signal events are categorized according to the number of
+reconstructed jets, the number of jets identified to originate from
+bottom quarks, and the scalar and vector sums of the transverse
+momentum of jets. %to provide signal-to-background discrimination.
+The sum of standard model backgrounds is estimated from a binned
+likelihood fit to event yields in the signal region and data control
 samples. The observed yields in the signal region are found to be in
 agreement with the expected contributions from standard model
-processes. Supplemental material is provided to aid the interpretation
-of the result in \suppMaterial
+processes. Supplemental material is provided to aid futher
+interpretation of the result in \suppMaterial.
 
-Limits are determined in the mass parameter space of simplified models
-involving the gluino-mediated and direct production of light-flavour
-and third-generation squark pairs. The masses of gluinos and
-light-flavour, bottom and top squarks are probed up to 1900, X, 1075,
-and 1040\GeV, respectively. Sensitivity to simplified models of split
-supersymmetry is also demonstrated. These models assume the production
-of long-lived gluinos that decay to yield final states containing
-displaced vertices and missing transverse momenta from the undetected
-neutralinos. This coverage is achieved with standard techniques for
-event reconstruction. Gluinos with masses of at least ${\approx}1\TeV$
-are excluded for lifetimes below ${\approx}10^{2}\unit{ns}$, providing
-coverage that is complementary to other dedicated techniques at the
-LHC. The strongest exclusions occur at lifetimes of
-${\approx}10^{2}\unit{ns}$, with gluino masses probed up to X\TeV.
+Limits are determined in the parameter spaces of simplified models
+that assume the production and prompt decay of gluino or squark
+pairs. The strongest exclusion bounds (95\% CL) for squark masses are
+X, Y, and Z\GeV for bottom, top, or light-flavour squarks,
+respectively. The corresponding mass bounds on the neutralino \PSGczDo
+from squark decays are X, Y, and Z\GeV. The gluino mass is probed up
+to to X, Y, and Z\GeV when the gluino decays via virtual states of the
+aforementioned squarks. The strongest mass bound on the \PSGczDo from
+the gluino decay is X\GeV.
+
+Sensitivity to simplified models inspired by split supersymmetry is
+also demonstrated. These models assume the production of long-lived
+gluino pairs that decay to yield final states containing displaced
+jets and missing transverse momenta from the undetected \PSGczDo
+particles. Only standard techniques of event reconstruction are
+employed. Models that assume a \PSGczDo mass of 100\GeV and gluinos up
+to 1.6\TeV are excluded for a proper decay length \ctau below
+0.1\unit{mm}. The bound on the gluino mass strengthens to 1.8\TeV at
+$\ctau = 1\unit{mm}$, before weakening to ${\approx}1\TeV$ for models
+with $\ctau > 10\,000\unit{mm}$ or metastable gluinos. The weakest
+exclusion bound on the gluino mass is ${\approx}1\TeV$ for all values
+of \ctau considered and for differences in the gluino and \PSGczDo
+masses greater than 10\GeV. The search provides coverage that is
+complementary to other dedicated techniques at the LHC.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
