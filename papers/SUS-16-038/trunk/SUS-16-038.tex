@@ -1275,6 +1275,23 @@ gluino is assumed to be long-lived with proper decay lengths in the
 range $10^{-3} < \ctau < 10^{5}\unit{mm}$. A scenario involving a
 metastable gluino with $\ctau = 10^{18}\unit{mm}$ is also considered.
 
+Under the signal+background hypothesis, and in the presence of a
+nonzero signal contribution, a modified frequentist approach is used
+to determine observed upper limits at 95\% confidence level (CL) on
+the cross section $\sigma_\text{UL}$ to produce pairs of SUSY
+particles as a function of $m_\text{SUSY}$, $m_{\PSGczDo}$, and \ctau
+(if applicable). The approach is based on the %aforementioned
+profile likelihood ratio as the test
+statistic~\cite{CMS-NOTE-2011-005}, the \cls criterion~\cite{junk,
+  read}, and asymptotic formulae~\cite{Cowan:2010js} to approximate
+the distributions of the test statistic under the SM-background-only
+and signal+background hypotheses.  An Asimov data
+set~\cite{Cowan:2010js} is used to determine the expected
+$\sigma_\text{UL}$ on the allowed cross section for a given
+model. Potential signal contributions to event counts in all bins of
+the SR and CRs are considered.%, even though the only
+%significant contribution occurs in the SR. 
+
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
 \begin{table}[!t]
@@ -1333,23 +1350,6 @@ metastable gluino with $\ctau = 10^{18}\unit{mm}$ is also considered.
 \end{table}
 \endgroup 
 
-Under the signal+background hypothesis, and in the presence of a
-nonzero signal contribution, a modified frequentist approach is used
-to determine observed upper limits at 95\% confidence level (CL) on
-the cross section $\sigma_\text{UL}$ to produce pairs of SUSY
-particles as a function of $m_\text{SUSY}$, $m_{\PSGczDo}$, and \ctau
-(if applicable). The approach is based on the %aforementioned
-profile likelihood ratio as the test
-statistic~\cite{CMS-NOTE-2011-005}, the \cls criterion~\cite{junk,
-  read}, and asymptotic formulae~\cite{Cowan:2010js} to approximate
-the distributions of the test statistic under the SM-background-only
-and signal+background hypotheses.  An Asimov data
-set~\cite{Cowan:2010js} is used to determine the expected
-$\sigma_\text{UL}$ on the allowed cross section for a given
-model. Potential signal contributions to event counts in all bins of
-the SR and CRs are considered.%, even though the only
-%significant contribution occurs in the SR. 
-
 The experimental acceptance times efficiency (\ate) and is evaluated
 independently for each model, defined in terms of $m_\text{SUSY}$,
 $m_{\PSGczDo}$, and \ctau (if applicable). 
@@ -1384,6 +1384,21 @@ efficiency
 and mistag probability of LF partons and charm quarks
 %($\text{SF}_\text{LF}$), evaluated independently, 
 can be as large as ${\approx}20$.
+
+Table~\ref{tab:benchmarks} defines a number of benchmark models that
+are close to the limit of the search sensitivity. %, which are used to
+%develop an understanding of the expected parameter-space coverage. 
+All model families %(of production and decay modes)
+are represented, and the model parameters ($m_\text{SUSY}$,
+$m_{\PSGczDo}$, and \ctau if applicable) are chosen to select models
+with large and small differences in $m_\text{SUSY}$ and
+$m_{\PSGczDo}$, as well as a range of \ctau values. 
+%prompt-like, b-quark-like, and stable-like decay lengths. 
+Table~\ref{tab:benchmarks} summarizes the aforementioned uncertainties
+for each benchmark model, presented in terms of a characteristic range
+that is representative of the variations observed across the bins of
+the SR. The upper bound for each range may be subject to moderate
+statistical fluctuations.
 
 \begingroup
 \renewcommand*{\arraystretch}{1.1}
@@ -1513,21 +1528,6 @@ can be as large as ${\approx}20$.
 \end{table}
 \endgroup
 
-Table~\ref{tab:benchmarks} defines a number of benchmark models that
-are close to the limit of the search sensitivity. %, which are used to
-%develop an understanding of the expected parameter-space coverage. 
-All model families %(of production and decay modes)
-are represented, and the model parameters ($m_\text{SUSY}$,
-$m_{\PSGczDo}$, and \ctau if applicable) are chosen to select models
-with large and small differences in $m_\text{SUSY}$ and
-$m_{\PSGczDo}$, as well as a range of \ctau values. 
-%prompt-like, b-quark-like, and stable-like decay lengths. 
-Table~\ref{tab:benchmarks} summarizes the aforementioned uncertainties
-for each benchmark model, presented in terms of a characteristic range
-that is representative of the variations observed across the bins of
-the SR. The upper bound for each range may be subject to moderate
-statistical fluctuations.
-
 Additional subdominant contributions to the total uncertainty are also
 considered. The uncertainty in the integrated luminosity is determined
 to be 2.5\%~\cite{CMS:2017sdi}. Uncertainties in the production cross
@@ -1546,8 +1546,6 @@ modelling of the efficiency to identify high-quality, isolated leptons
 is ${\approx}5\%$ and is treated as anticorrelated between the SR and
 \mj and \mmj CRs. The uncertainty in the trigger efficiency to record
 candidate signal events is ${<}10\%$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The \ate for the \texttt{T1qqqqLL} family of models depends on \ctau
 in addition to $m_\PSg$ and $m_{\PSGczDo}$. Scenarios involving a
@@ -1581,7 +1579,47 @@ originating from b quarks, as indicated in
 Table~\ref{tab:benchmarks}. 
 %, in addition to uncertainties in $\text{SF}_\text{b}$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Figure~\ref{fig:limits-sms} summarizes the excluded regions of the
+mass parameter space for the nine families of simplified models. The
+regions are determined by comparing $\sigma_\text{UL}$
+%the upper limits on the measured fiducial cross section, corrected
+%for the experimental \ate,  
+with the theoretical cross sections calculated at NLO+NLL accuracy. 
+%as described in Section~\ref{sec:simulation}. 
+The former value is determined as a function of $m_{\text{SUSY}}$ and
+$m_{\PSGczDo}$, while the latter has a dependence solely on
+$m_{\text{SUSY}}$. The exclusion of models is evaluated using observed
+data counts in the signal region (solid contours) and also expected
+counts based on an Asimov data set (dashed
+contours). Figure~\ref{fig:limits-sms} (\cmsRight) allows a comparison
+of the sensitivity to \texttt{T1qqqq} and \texttt{T1qqqqLL} models,
+which assume the prompt-decay and metastable gluino scenarios,
+respectively. The latter scenario leads to monojet-like final state as
+the gluino escapes detection, result in a reach in $m_\PSg$ that is
+independent of $m_{\PSGczDo}$. The observed mass limits for several
+families are up to ${\approx}2$ standard deviations weaker than the
+expected limits. These differences are typically due to upward
+fluctuations in data for events that satisfy $\njet \geq 6$ and
+exhibit high values of \scalht and \mht. 
+
+Figure~\ref{fig:limits-ll} summarizes the evolution of the search
+sensitivity to the \texttt{T1qqqqLL} family of models as a function of
+\ctau. Each subfigure presents the observed $\sigma_\text{UL}$ as a
+function of $m_{\PSg}$ and $m_{\PSGczDo}$ for simplified models that
+involve the production of gluino pairs. The excluded mass regions
+based on the observed and expected values of $\sigma_\text{UL}$ are
+also shown, along with contours determined under variations in
+theoretical and experimental uncertainties. The top row of subfigures
+cover the range $0.001 < \ctau < 0.1\unit{mm}$ and demonstrate
+coverage comparable to the \texttt{T1qqqq} prompt-decay scenario. A
+moderate improvement in sensitivity for models with $1 \lesssim \ctau
+\lesssim 10\unit{mm}$ is observed because of the additional
+signal-to-background discrimination provided by the \nb variable. The
+sensitivity reduces for models with lifetimes in the region $\ctau >
+100\unit{mm}$ because of a reduced acceptance to the jets from the
+gluino decay and an increased reliance on jets from ISR. The coverage
+is independent of \ctau beyond values of $10\,000\unit{mm}$ and
+comparable to the limiting case of a metastable gluino. 
 
 \begin{figure}[!t]
   \centering
@@ -1629,86 +1667,7 @@ Table~\ref{tab:benchmarks}.
 %  \label{fig:limits-stable} 
 %\end{figure}
 
-Figure~\ref{fig:limits-sms} summarizes the excluded regions of the
-mass parameter space for the nine families of simplified models. The
-regions are determined by comparing $\sigma_\text{UL}$
-%the upper limits on the measured fiducial cross section, corrected
-%for the experimental \ate,  
-with the theoretical cross sections calculated at NLO+NLL accuracy. 
-%as described in Section~\ref{sec:simulation}. 
-The former value is determined as a function of $m_{\text{SUSY}}$ and
-$m_{\PSGczDo}$, while the latter has a dependence solely on
-$m_{\text{SUSY}}$. The exclusion of models is evaluated using observed
-data counts in the signal region (solid contours) and also expected
-counts based on an Asimov data set (dashed
-contours). Figure~\ref{fig:limits-sms} (\cmsRight) allows a comparison
-of the sensitivity to \texttt{T1qqqq} and \texttt{T1qqqqLL} models,
-which assume the prompt-decay and metastable gluino scenarios,
-respectively. The latter scenario leads to monojet-like final state as
-the gluino escapes detection, result in a reach in $m_\PSg$ that is
-independent of $m_{\PSGczDo}$. The observed mass limits for several
-families are up to ${\approx}2$ standard deviations weaker than the
-expected limits. These differences are typically due to upward
-fluctuations in data for events that satisfy $\njet \geq 6$ and
-exhibit high values of \scalht and \mht. 
-
-Figure~\ref{fig:limits-ll} summarizes the evolution of the search
-sensitivity to the \texttt{T1qqqqLL} family of models as a function of
-\ctau. Each subfigure presents the observed $\sigma_\text{UL}$ as a
-function of $m_{\PSg}$ and $m_{\PSGczDo}$ for simplified models that
-involve the production of gluino pairs. The excluded mass regions
-based on the observed and expected values of $\sigma_\text{UL}$ are
-also shown, along with contours determined under variations in
-theoretical and experimental uncertainties. The top row of subfigures
-cover the range $0.001 < \ctau < 0.1\unit{mm}$ and demonstrate
-coverage comparable to the \texttt{T1qqqq} prompt-decay scenario. A
-moderate improvement in sensitivity for models with $1 \lesssim \ctau
-\lesssim 10\unit{mm}$ is observed because of the additional
-signal-to-background discrimination provided by the \nb variable. The
-sensitivity reduces for models with lifetimes in the region $\ctau >
-100\unit{mm}$ because of a reduced acceptance to the jets from the
-gluino decay and an increased reliance on jets from ISR. The coverage
-is independent of \ctau beyond values of $10\,000\unit{mm}$ and
-comparable to the limiting case of a metastable gluino. 
-
-Table~\ref{tab:limits} summarizes the strongest expected and observed
-mass limits for each family of simplified models. The simplified
-result based on the 32-bin schema, summarized in \suppMaterial, yields
-limits on $\sigma_\text{UL}$ that are typically a factor ${\approx}2$
-weaker than those obtained with the nominal result.
-
-\begin{table}[!b]
-  \topcaption{Summary of the mass limits obtained for each family of
-    simplified models. The limits indicate the strongest observed 
-    mass exclusions for the parent SUSY particle (gluino or 
-    squark) and \PSGczDo.
-    % The quoted values have uncertainties of ${\pm}25$ and
-    % ${\pm}10\GeV$ for models involving the pair production of,
-    % respectively, gluinos and squarks.
-  }
-  \label{tab:limits}
-  \centering
-  \begin{tabular}{ lcc }
-    \hline
-    Model family                             & \multicolumn{2}{c}{Best mass limit [GeV]} \\ [0.5ex]
-    \cline{2-3}
-                                             & Gluino or squark & \PSGczDo               \\ [0.5ex]
-    \hline
-    \texttt{T2bb}                            & 1050             & \ph{1}500              \\
-    \texttt{T2tt}                            & 1000             & \ph{1}400              \\
-    \texttt{T2cc}                            & \ph{1}500        & \ph{1}475              \\
-    \texttt{T2qq\_8fold}                     & 1325             & \ph{1}575              \\
-    \texttt{T2qq\_1fold}                     & \ph{1}675        & \ph{1}350              \\
-    \texttt{T1bbbb}                          & 1900             & 1150                   \\
-    \texttt{T1tttt}                          & 1650             & \ph{1}850              \\
-    \texttt{T1qqqq}                          & 1650             & \ph{1}900              \\
-    \texttt{T1qqqqLL} (Metastable $\PSg$)    & \ph{1}900        & --                     \\
-    \texttt{T1qqqqLL} ($\ctau = 1\unit{mm}$) & 1750             & 1000                   \\
-    \hline
-  \end{tabular}
-\end{table}
-
-\clearpage
+%\clearpage
 \begin{figure}[!t]
   \centering
   \includegraphics[width=0.33\textwidth]{Figures/T1qqqqLL0p001XSEC}~
@@ -1748,11 +1707,49 @@ weaker than those obtained with the nominal result.
   \label{fig:limits-ll} 
 \end{figure} 
 
+%\clearpage
+Table~\ref{tab:limits} summarizes the strongest expected and observed
+mass limits for each family of simplified models. The simplified
+result based on the 32-bin schema, summarized in \suppMaterial, yields
+limits on $\sigma_\text{UL}$ that are typically a factor ${\approx}2$
+weaker than those obtained with the nominal result.
+
+\begin{table}[!h]
+  \topcaption{Summary of the mass limits obtained for each family of
+    simplified models. The limits indicate the strongest observed 
+    mass exclusions for the parent SUSY particle (gluino or 
+    squark) and \PSGczDo.
+    % The quoted values have uncertainties of ${\pm}25$ and
+    % ${\pm}10\GeV$ for models involving the pair production of,
+    % respectively, gluinos and squarks.
+  }
+  \label{tab:limits}
+  \centering
+  \begin{tabular}{ lcc }
+    \hline
+    Model family                             & \multicolumn{2}{c}{Best mass limit [GeV]} \\ [0.5ex]
+    \cline{2-3}
+                                             & Gluino or squark & \PSGczDo               \\ [0.5ex]
+    \hline
+    \texttt{T2bb}                            & 1050             & \ph{1}500              \\
+    \texttt{T2tt}                            & 1000             & \ph{1}400              \\
+    \texttt{T2cc}                            & \ph{1}500        & \ph{1}475              \\
+    \texttt{T2qq\_8fold}                     & 1325             & \ph{1}575              \\
+    \texttt{T2qq\_1fold}                     & \ph{1}675        & \ph{1}350              \\
+    \texttt{T1bbbb}                          & 1900             & 1150                   \\
+    \texttt{T1tttt}                          & 1650             & \ph{1}850              \\
+    \texttt{T1qqqq}                          & 1650             & \ph{1}900              \\
+    \texttt{T1qqqqLL} (Metastable $\PSg$)    & \ph{1}900        & --                     \\
+    \texttt{T1qqqqLL} ($\ctau = 1\unit{mm}$) & 1750             & 1000                   \\
+    \hline
+  \end{tabular}
+\end{table}
+
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 %_______________________________________________________________________________
 
-\clearpage
+%\clearpage
 \section{Summary}
 \label{sec:summary}
 
