@@ -40,7 +40,7 @@ use LWP::UserAgent; #for URL handling
 # Main:
 #############################################################################
 
-my $VERSION = sprintf "%6d", q$Revision: 306882 $ =~ /(\d+)/g;
+my $VERSION = sprintf "%6d", q$Revision: 425921 $ =~ /(\d+)/g;
 
 my $verbose = '';
 my $help = '';
@@ -59,7 +59,7 @@ my $latex = 0;
 my $preflight;
 my $preprint = 0;
 my $dataNotMC = 1;
-my $cmsCernNo = '';
+my $cmsCernNoTag = '';
 my $cmsCernDate = '\today';
 my $message = '';
 my $journal = 0;
@@ -80,7 +80,7 @@ GetOptions ('verbose!' => \$verbose, # negatable: --noverbose, turn on TeX scree
             'graphics!' => \$graphics, # indicates draft graphics option
             'wrap!' => \$wrap, # generate an archive of pdf+figures: currently only pas
             'arxiv!' => \$arxiv, # generate arxiv-specific tarball: currently only pas/paper
-            'cernNo=s' => \$cmsCernNo, # CERN-generated preprint number (for papers only)
+            'cernNoTag=s' => \$cmsCernNoTag, # CERN-generated preprint tag (for papers only); YYYY-NNN defaults to CERN-PH-EP/YYYY-NNN; CERN-EP-YYYY-NNN to CERN-EP/YYYY-NNN
             'cernDate=s' => \$cmsCernDate, # date of issuance of CERN preprint number (format to be determined: try dd MMM YYYY, with MMM JAN, FEB...
             'message=s' => \$message, # message put after abstract: typically "Submitted to XXX"
             'preview!' => \$preview, # preview the upload to CDS: currently only pas,
@@ -163,8 +163,9 @@ sub print_usage {
     print "* *\n";
     print "* Initialisation (once per session/new shell) *\n";
     print "* -------------- *\n";
-    print "* > eval `tdr runtime -sh` // for Bourne-shell or Korn shell *\n";
-    print "* > eval `tdr runtime -csh` // for c-shell or tc shell *\n";
+    print "* > eval `tdr runtime -sh`   // for Bourne-shell or Korn shell *\n";
+    print "* > eval `tdr runtime -csh`  // for c-shell or tc shell *\n";
+    print "* > eval (tdr runtime -fish) // for fish shell *\n";
     print "* *\n";
     print "* Usage: *\n";
     print "* ----- *\n";
@@ -215,7 +216,7 @@ sub print_usage {
     print "* --preprint: CERN preprint style forced on top of paper style *\n";
     print "* --latex: use eps for graphics files *\n";
     print "* *\n";
-    print "* --cernNo: CERN generated preprint number, e.g. 2010-003 *\n";
+    print "* --cernNoTag: CERN generated preprint number, e.g. 2010-003. Year/no. defaults to CERN-PH-EP/YYYY-NNN for pre-2016 dates, CERN-EP/ otherwise. *\n";
     print "* --cernDate: issuance date for preprint e.g. '05 Feb 2010' *\n";
     print "* --message: string placed after the abstract, typically *\n";
     print "* Submitted to XXX *\n";
@@ -345,6 +346,13 @@ sub build {
 $ENV{TEXINPUTS} = join($ps,$tex_path,$fig_path,$common_path,$ENV{TEXINPUTS});
 $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics when using pdftex
 
+if ($verbose)
+{
+    print "TeX environmental variables -----------------\n";
+    print "TEXINPUTS=", $ENV{TEXINPUTS}, "\n";
+    print "TEXPSHEADERS", $ENV{TEXPSHEADERS}, "\n";
+}
+
 # Set up temporary area and create input LaTeX file (boilerplate + target file)
 
     -e $tmp_dir || mkdir ($tmp_dir,0755) || die "Failed to create temporary output directory";
@@ -364,28 +372,38 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
     if ($style eq 'cmspaper' && !$draft)
     {
       my $meta = '';
-      if ($cmsCernNo && $cmsCernDate) { $meta = qq|\\def\\cmsCernNo{$cmsCernNo}\\def\\cmsCernDate{$cmsCernDate}|; }
+      $cmsCernNoTag =~ /^(CERN-EP|CERN-PH-EP)?-?([\d-]+)/;
+      my $ppn_prefix = $1; my $ppn = $2;
+      if ($ppn_prefix eq '') {
+          $ppn =~ /(\d{4})-(\d{3})/;
+          if ($1 eq '' or $2 eq '') { print "!!Error decoding CERN preprint number\n";}
+          if ($1>"2015") { # default to old-style prefix for pre-2016, new CERN-EP- for afterwards
+              $ppn_prefix = 'CERN-EP'; }
+          else  {
+              $ppn_prefix = 'CERN-PH-EP'};
+      }
+      if ($cmsCernNoTag && $cmsCernDate) {my $cernTag = $ppn_prefix.'-'.$ppn; $meta = qq|\\def\\cmsCernNoTag{$cernTag}\\def\\cmsCernDate{$cmsCernDate}|; }
       if ($message) {$meta .= qq|\\def\\cmsMessage{$message}|;}
-      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]{cms-tdr}", ",$stylestring]{cms-tdr}\n\\def\\svnVersion{$svnVersion}$meta" ) ;
+      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]\\{cms-tdr\\}", ",$stylestring]{cms-tdr}\n\\def\\svnVersion{$svnVersion}$meta" ) ;
     }
     else
     {
-      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]{cms-tdr}", ",$stylestring]{cms-tdr}\n\\def\\svnVersion{$svnVersion}" ) ;
+      &myrep( "$gen_dir/skeleton_start.tex", "$temp_tex", ",tdr]\\{cms-tdr\\}", ",$stylestring]{cms-tdr}\n\\def\\svnVersion{$svnVersion}" ) ;
     }
     if (!$draft)
     {
         # use final as the option to avoid a clash with the common LaTeX usage.
-        &myrep("$temp_tex","$temp_tex","]{cms-tdr}",",final]{cms-tdr}");
+        &myrep("$temp_tex","$temp_tex","]\\{cms-tdr\\}",",final]{cms-tdr}");
     }
     if ($issupplement)
     {
         #
-        &myrep("$temp_tex","$temp_tex","]{cms-tdr}",",supplement]{cms-tdr}");
+        &myrep("$temp_tex","$temp_tex","]\\{cms-tdr\\}",",supplement]{cms-tdr}");
     }
 
     if ($style eq 'tdr')
     {
-        &myrep("$temp_tex","$temp_tex","\\\\begin{document}","\\begin{document}\n");
+        &myrep("$temp_tex","$temp_tex","\\\\begin\\{document\\}","\\begin{document}\n");
     }
     $authorfilename; # global
     if (($arxiv || ($style =~ 'cmspaper' && ! $draft)) && !$preflight)
@@ -404,7 +422,7 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
             {
                 if (!$journal)
                 {
-                    &myrep("$temp_tex","$temp_tex","]{cms-tdr}",",collab]{cms-tdr}");
+                    &myrep("$temp_tex","$temp_tex","]\\{cms-tdr\\}",",collab]{cms-tdr}");
                 }
             }
             else
@@ -456,7 +474,7 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
         $contactAddress .= '@cern.ch';
         my $toAddress="\\href{mailto:".$contactAddress."?subject=".$PAS_name."}{Contact: ".$contactAddress."}";
 
-        &myrep("$temp_tex","$temp_tex","begin{document}","begin{document}\\cmsNoteHeader{$PAS_name}\\cmsNoteContact{$toAddress}");
+        &myrep("$temp_tex","$temp_tex","begin\\{document\\}","begin{document}\\cmsNoteHeader{$PAS_name}\\cmsNoteContact{$toAddress}");
     }
     if ($style eq 'cmspaper')
     {
@@ -464,7 +482,7 @@ $ENV{TEXPSHEADERS} = $ENV{TEXINPUTS}; # This is required by \includegraphics whe
          my $paperTag = @tmp[$#tmp-1];
          if ($paperTag =~ "tags" || $paperTag =~ "branches") {$paperTag = @tmp[$#tmp-2];} # back up one level if a tag
          $paperTag =~ s/_/\-/g; # convert underscores to dashes
-         &myrep("$temp_tex","$temp_tex","begin{document}","begin{document}\\cmsNoteHeader{$paperTag}");
+         &myrep("$temp_tex","$temp_tex","begin\\{document\\}","begin{document}\\cmsNoteHeader{$paperTag}");
     }
 
 
@@ -1024,7 +1042,7 @@ sub export_arxiv {
     {
         my $tmpstr = $1;
         $tmpstr =~ s/\n//; # strip out any \n
-        $tmpstr =~ m/(.*?)(\.\w+)?\s+(\d+|A|B)/; # pick up files in first 2 appendices, A or B
+        $tmpstr =~ m/(.*?)(\.\w+)?\s+(\d+|A|B|C|D)/; # pick up files in first 4 appendices, A, B, C, or D
         $tmpstr = $1;
         $tmpstr =~ s/\+/\\\+/;# protect against + in filename
         my $pattern = qr/\G.*?File:\s*($tmpstr\.\w+)\s/ms; # full search string name.ext_
@@ -1080,7 +1098,7 @@ sub export_arxiv {
     mkdir ($exp_dir,0755) || die "Failed to create temporary export directory";
     copy("$tmp_dir/$authorfilename","$exp_dir/$authorfilename"); #authorfilename is a global
     open(FILE,'>',"$exp_dir/${target}_temp.tex") or die "Can't open file for $exp_dir/${target}_temp.tex: $!\n";
-    if (!$latex && !$preflight) {print FILE "\\pdfoutput=1\n";} # required by ArXiV for pdfLaTeX processing : remove for latex!
+    if (!$latex) {print FILE "\\pdfoutput=1\n";} # required by ArXiV for pdfLaTeX processing : remove for latex!
     close(FILE);
     &mycat($temp_tex, "$exp_dir/${target}_temp.tex");
     if (not $journal)
@@ -1112,7 +1130,7 @@ sub export_arxiv {
             if ($epjcStyle) {copy("$gen_dir/svepj.clo", "$exp_dir/svepj.clo"); copy("$gen_dir/svjour.cls", "$exp_dir/svjour.cls") ;}
             my $texLocalDir = "/afs/cern.ch/cms/external/tex/texlive/texmf-local/tex/latex/local"; # assume have /afs connectivity
             if ($^O eq "MSWin32") {
-            $texLocalDir = $ENV{"ProgramData"}."/Local TeX/tex/latex";} # no guarantee for this path whatsoever
+            $texLocalDir = "C:/Program Data/Local TeX/tex/latex/local";} # no guarantee for this path whatsoever
             if (! -e $texLocalDir ) { print ">>> Can\'t find TeX source directory: you may not have afs access. You'll need to include some files
             in the export archive by hand!\n";}
             else
@@ -1122,6 +1140,9 @@ sub export_arxiv {
         }
     }
     copy("$gen_dir/ptdr-definitions.sty", "$exp_dir/ptdr-definitions.sty");
+    if ( -e "CMS Funding agencies.xlsx") {
+        copy("CMS Funding agencies.xlsx", "$exp_dir/CMS Funding agencies.xlsx");}
+
 
     # now the input-ed and includegraphics sub-directories and files
     while ( my ($key, $value) = each(%incDirs) ) {
@@ -1171,8 +1192,8 @@ sub export_arxiv {
             close(FILE);
             copy("$tmp_dir/auto_generated.bst", "auto_generated.bst");
             open(FILE,'>',"00README.XXX");
-            print FILE "$xml ignore\n";
-            print FILE "auto_generated.no-bib ignore\n";
+           print FILE "auto_generated.no-bib ignore\n";
+            print FILE "CMS_Funding_agencies.xlsx ignore\n";
             close(FILE);
 
             # INSPIRE-style xml
@@ -1194,7 +1215,8 @@ sub export_arxiv {
             if ($epjcStyle ) { copy("$tmp_dir/auto_generated.bst", "auto_generated.bst"); }
 
             # pick up funding agency list
-            copy("$gen_dir/CMS Funding agencies.xlsx", "CMS Funding agencies.xlsx");
+            if (! -e "CMS Funding agencies.xlsx") {
+                copy("$gen_dir/CMS Funding agencies.xlsx", "CMS Funding agencies.xlsx");}
        }
     }
     else
@@ -1210,7 +1232,7 @@ sub export_arxiv {
     {
         my $texSrcDir = "/afs/cern.ch/cms/external/tex/texlive/2010/texmf-dist/tex/latex"; # assume have /afs connectivity
         if ($^O eq "MSWin32") {
-            $texSrcDir = $ENV{"ProgramFiles(x86)"}."/MiKTeX 2.9/tex/latex";} # assume MikTeX 2.9 std distribution
+            $texSrcDir = $ENV{"ProgramFiles"}."/MiKTeX 2.9/tex/latex";} # assume MikTeX 2.9 x64 distribution
         if (! -e $texSrcDir ) { print ">>> Can\'t find TeX source directory: you may not have afs access. You'll need to include some files."}
         else
         {
@@ -1266,6 +1288,7 @@ sub export_arxiv {
             my @archNames = $zip->memberNames();
             print "Contents of $outfile2:\n---------\n";
             print join("\n",@archNames);
+            print ("\n\n");
         }
     }
     else
@@ -1463,6 +1486,10 @@ sub runtime {
                   'PATH="',"$bin_dir".":$ENV{PATH}",'";',
                   "export PATH\n";
         }
+        elsif($shell eq "-fish"){
+            print "echo Prepending PATH with: $bin_dir;\n",
+                  'set -x PATH ',"$bin_dir"." \$PATH\n";
+        }
         else{
             die "Unknown shell option: $shell\n\n";
         }
@@ -1619,7 +1646,8 @@ sub myCollab {
    else
    {$tagfile = $tag.'-authorlist.'.$type;}
    my $body;
-   my $url = 'https://cms-secr.web.cern.ch/cms-secr/Documents/authorListCMS/'.$tagfile;
+   #my $url = 'https://cms-secr.web.cern.ch/cms-secr/Documents/authorListCMS/'.$tagfile;
+   my $url = 'https://cmsdoc.cern.ch/cms/cmssecr/www/Documents/authorListCMS/'.$tagfile;
    my $response = &get_url ($url);
    if (!$response->is_success)
    {
@@ -1652,8 +1680,8 @@ sub get_url{
 
     use strict;
     use warnings;
-    use IO::Socket::SSL; 
-       
+    use IO::Socket::SSL;
+
     my $ua = LWP::UserAgent->new(ssl_opts=>{verify_hostname=>0, SSL_verify_mode => IO::Socket::SSL::SSL_VERIFY_NONE});
     return $ua->get($url);
     }
@@ -1723,7 +1751,7 @@ sub makeAPS{
 \\usepackage{topcapt}
 \\usepackage{lineno}
 \\usepackage{dcolumn}
-\\usepackage{rotating} % only for HIG-14-042
+%\\usepackage{rotating} % only for HIG-14-042, FSQ-16-004
 %\\usepackage[table,usenames,dvipsnames]{xcolor}
 %\\usepackage{colortbl}
 \\DeclareMathOperator{\\sgn}{sgn}% Declare the sgn operator
@@ -1731,6 +1759,9 @@ sub makeAPS{
 \\DeclareMathOperator{\\erf}{erf} % and the erf operator
 \\DeclareMathOperator{\\Tr}{Tr}
 \\DeclareMathOperator{\\Arg}{Arg}
+\\DeclareMathOperator{\\cov}{cov}
+\\DeclareMathOperator{\\corr}{corr}
+\\DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG}
 \\providecommand{\\cmsNoteHeader}[1]{\\preprint{#1}}
 \\providecommand{\\cmsNoteContact}[1]{\\relax}
 \\providecommand{\\cmsCollabName}{The CMS Collaboration}
@@ -1837,7 +1868,9 @@ sub makePLB{
 \\DeclareMathOperator{\\sign}{sign}% for those who insist on sign instead
 \\DeclareMathOperator{\\sgn}{sgn}% Declare the sgn operator
 \\DeclareMathOperator{\\erf}{erf} % and the erf operator
+\\DeclareMathOperator{\\Tr}{Tr}
 \\DeclareMathOperator{\\cov}{cov}
+\\DeclareMathOperator{\\corr}{corr}
 \\DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG}
 \\let\\subfigure\\subfloat % subfigure subfig compatibility
 % to allow external commands, embed in an ifthen testing on cms@external
@@ -1966,6 +1999,7 @@ sub makeEPJC{
 \\let\\subfigure\\subfloat % subfigure subfig compatibility
 \\DeclareMathOperator{\\sign}{sign}% for those who insist on sign instead
 \\DeclareMathOperator{\\cov}{cov}
+\\DeclareMathOperator{\\corr}{corr}
 \\providecommand{\\cmsNoteHeader}[1]{\\relax}
 \\providecommand{\\cmsNoteContact}[1]{\\relax}
 % authorlist formatting; cmsAuthorMark matches use in endnotes
@@ -1976,7 +2010,7 @@ sub makeEPJC{
 \\DeclareMathOperator{\\erf}{erf} % and the erf operator
 \\DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG}
 \\providecommand{\\DOI}[1]{\\href{http://dx.doi.org/#1}{\\doi{#1}}}
-\\newenvironment{acknowledgments}{\\section*{Acknowledgments}\\bgroup\\tolerance=1200}{\\par\\egroup}
+\\newenvironment{acknowledgments}{\\section*{Acknowledgments}\\bgroup\\sloppy}{\\par\\egroup}
 EOD
 
    my $preface2 = <<EOD;
@@ -2035,8 +2069,9 @@ sub makeJHEP{
    my $outfile = shift;
    my $style = shift;
 
+#  although JHEP is an external journal, we want to make it have the same settings as for CMS
    my $preface = <<EOD;
-\\setboolean{cms\@external}{true}
+\\setboolean{cms\@external}{false}
 EOD
 
    open(FILE, $infile) || die("can't open TeX file $file: $! for read");

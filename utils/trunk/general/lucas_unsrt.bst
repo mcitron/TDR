@@ -101,6 +101,7 @@ ENTRY
     archive
     eprint
     doi
+    isbn
     url
     report
     collaboration
@@ -350,6 +351,13 @@ FUNCTION {format.doi}
      if$
 }
 
+FUNCTION {format.isbn}
+{ isbn empty$
+    { "" }
+    { "ISBN~" isbn * }
+  if$
+}
+
 FUNCTION {format.report}
 { report empty$
      { ""}
@@ -370,11 +378,15 @@ FUNCTION {format.editors}
 }
 
 FUNCTION {format.title}
-{ title empty$
-    { "" }
-    { "``" title * "''," * }
+{title
+  duplicate$ empty$ 'skip$
+    { "t" change.case$
+    "''," *
+    "``" swap$
+    *}
   if$
 }
+
 
 
 FUNCTION {format.full.names}
@@ -932,6 +944,8 @@ FUNCTION {book}
   new.block
   note output
   new.sentence
+  format.doi output
+  format.isbn output
   format.SLACcitation output
   fin.entry
 }
