@@ -258,19 +258,6 @@ processing, and reduces the event rate to less than 1\unit{kHz} before
 data storage. The trigger logic used by this search is summarized in
 Section~\ref{sec:selection}.
 
-The particle-flow (PF) event reconstruction
-algorithm~\cite{CMS-PRF-14-001} reconstructs and identifies candidate
-physics objects, including photons~\cite{Khachatryan:2015iwa},
-electrons~\cite{Khachatryan:2015hwa}, muons~\cite{Chatrchyan:2012xi},
-and charged and neutral hadrons, with an optimized combination of
-information from the various elements of the CMS detector. The
-reconstruction techniques and physics object definitions used by this
-search are not specialized to target specific experimental signatures
-(such as displaced jets). The physics object requirements are defined
-below and are summarized in Table~\ref{tab:selections}. In the case of
-photons and leptons, further details can be found in
-Ref.~\cite{Khachatryan:2016dvc} and references therein.
-
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
 \newcommand{\mybox}[3]{\makebox[\widthof{\hspace{#1}}][#2]{#3}}
@@ -337,15 +324,69 @@ Ref.~\cite{Khachatryan:2016dvc} and references therein.
 \end{table}
 \endgroup
 
+%The particle-flow (PF) event reconstruction
+%algorithm~\cite{CMS-PRF-14-001} reconstructs and identifies candidate
+%physics objects, including photons~\cite{Khachatryan:2015iwa},
+%electrons~\cite{Khachatryan:2015hwa}, muons~\cite{Chatrchyan:2012xi},
+%and charged and neutral hadrons, with an optimized combination of
+%information from the various elements of the CMS detector. The
+%reconstruction techniques and physics object definitions used by this
+%search are not specialized to target specific experimental signatures
+%(such as displaced jets). The physics object requirements are defined
+%below and are summarized in Table~\ref{tab:selections}. In the case of
+%photons and leptons, further details can be found in
+%Ref.~\cite{Khachatryan:2016dvc} and references therein.
+
+%The reconstructed vertex with the largest value of summed
+%physics-object $\pt^2$ is taken to be the primary \Pp\Pp\ interaction
+%vertex (PV). The physics objects considered are those returned by a
+%jet finding algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} applied
+%to all charged particle tracks associated with the vertex, plus the
+%corresponding associated \ptmiss. Charged particle tracks associated
+%with vertices from additional \Pp\Pp\ interactions within the same or
+%nearby bunch crossings (pileup) are not considered by the PF algorithm
+%as part of the global event reconstruction.
+
+The particle-flow (PF) event algorithm~\cite{CMS-PRF-14-001}
+reconstructs and identifies each individual particle with an optimized
+combination of information from the various elements of the CMS
+detector. In this process, the identification of the particle type
+(photon, electron, muon, charged hadron, neutral hadron) plays an
+important role in the determination of the particle direction and
+energy. The energy of photons~\cite{Khachatryan:2015iwa} is directly
+obtained from the ECAL measurement, corrected for zero-suppression
+effects. The energy of electrons~\cite{Khachatryan:2015hwa} is
+determined from a combination of the electron momentum at the primary
+interaction vertex as determined by the tracker, the energy of the
+corresponding ECAL measurement, and the energy sum of all
+bremsstrahlung photons spatially compatible with originating from the
+electron track. The energy of muons~\cite{Chatrchyan:2012xi} is
+obtained from the curvature of the corresponding track. The energy of
+charged hadrons is determined from a combination of their momentum
+measured in the tracker and the matching ECAL and HCAL energy
+deposits, corrected for zero-suppression effects and for the response
+function of the calorimeters to hadronic showers. Finally, the energy
+of neutral hadrons is obtained from the corresponding corrected ECAL
+and HCAL energy. The reconstruction techniques used by this search are
+not specialized to target specific experimental signatures (such as
+displaced jets). The physics objects used in this search are defined
+below and are summarized in Table~\ref{tab:selections}. In the case of
+photons and leptons, further details can be found in
+Ref.~\cite{Khachatryan:2016dvc} and references therein.
+
 The reconstructed vertex with the largest value of summed
 physics-object $\pt^2$ is taken to be the primary \Pp\Pp\ interaction
 vertex (PV). The physics objects considered are those returned by a
 jet finding algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} applied
-to all charged particle tracks associated with the vertex, plus the
-corresponding associated \ptmiss. Charged particle tracks associated
-with vertices from additional \Pp\Pp\ interactions within the same or
+to all charged particle tracks associated with the vertex, and the
+associated \ptmiss, taken as the negative vector sum of the \pt of
+those physics objects. Charged particle tracks associated with
+vertices from additional \Pp\Pp\ interactions within the same or
 nearby bunch crossings (pileup) are not considered by the PF algorithm
-as part of the global event reconstruction.
+as part of the global event reconstruction. The energy deposits
+associated to PF candidate particles are corrected to account for
+contributions from neutral particles originating from pileup
+interactions~\cite{Cacciari:2007fd}.
 
 Samples of candidate signal events and control data are defined,
 respectively, by the absence or presence of photons and leptons that
@@ -369,10 +410,11 @@ tracks (SIT) if the scalar \pt sum of additional tracks associated to
 the PV within a cone ${\Delta}R < 0.3$ around the track trajectory,
 relative to the track \pt, satisfies $I^\text{track} < 0.1$. All
 isolation variables exclude the contributions from the physics object
-itself and pileup events. The experimental acceptances for photons,
-electrons, muons, and SITs are defined by the transverse momentum
-requirements $\pt > 25$, 10, 10, and 10\GeV, respectively, and the
-pseudorapidity requirement $\abs{\eta} < 2.4$.
+itself and pileup events~\cite{Khachatryan:2015iwa,
+  Khachatryan:2015hwa, Chatrchyan:2012xi}. The experimental
+acceptances for photons, electrons, muons, and SITs are defined by the
+transverse momentum requirements $\pt > 25$, 10, 10, and 10\GeV,
+respectively, and the pseudorapidity requirement $\abs{\eta} < 2.4$.
 
 Jets are reconstructed from the particle candidates, clustered by the
 anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a
@@ -391,8 +433,9 @@ photon and a jet~\cite{Khachatryan:2016kdb}. Jets are required to
 satisfy $\pt > 40\GeV$ and $\abs{\eta} < 2.4$. Jets are also subjected
 to a standard set of identification criteria~\cite{2011JInst611002C}
 that require each jet contains at least two particle candidates and at
-least one charged particle track, and has a nonzero energy fraction
-attributed to charged-hadron particle candidates, $f_{h^{\pm}} > 0$.
+least one charged particle track, and the energy fraction attributed
+to charged-hadron particle candidates, $f_{h^{\pm}}$, is required to
+be nonzero.
 
 Jets can be identified as originating from b quarks using the combined
 secondary vertex (CSV) algorithm~\cite{Chatrchyan:2012jua}. Data
@@ -541,19 +584,19 @@ variables. These requirements complete the definition of the SR.
 Candidate signal events are recorded with a number of trigger
 algorithms. Events with $\njet \geq 2$ must satisfy thresholds on both
 \scalht and \alphat that are looser than those used to define the
-SR. Additional trigger logic that requires $\scalht > 900\GeV$ is used
-to record high-activity events. Finally, a trigger condition that
-requires $\mht > 120\GeV$, $\ptmiss > 120\GeV$, and a single jet with
-$\pt > 20\GeV$ and $|\eta| < 5.2$ is also used to efficiently record
-candidate signal events for all categories of the SR, including those
-that satisfy $\njet \geq 1$. The combined performance of these trigger
-algorithms yields high efficiencies, as determined from samples of CR
-data enriched in vector boson + jets and \ttbar events. The
-efficiencies are primarily \scalht-dependent that range from
-97.4--97.9\% ($200 < \scalht < 600\GeV$) to 100\% ($\scalht >
-600\GeV$) with statistical and systematic uncertainties at the percent
-level. Trigger efficiencies for a range of benchmark signal models are
-typically comparable or higher (${\approx}100\%$).
+§SR. High-activity events that satisfy $\scalht > 900\GeV$ are also
+recorded. Finally, a trigger condition that requires $\mht > 120\GeV$,
+$\ptmiss > 120\GeV$, and a single jet with $\pt > 20\GeV$ and $|\eta|
+< 5.2$ is also used to efficiently record candidate signal events for
+all categories of the SR, including those that satisfy $\njet \geq
+1$. The combined performance of these trigger algorithms yields high
+efficiencies, as determined from samples of CR data enriched in vector
+boson + jets and \ttbar events. The efficiencies are primarily
+\scalht-dependent that range from 97.4--97.9\% ($200 < \scalht <
+600\GeV$) to 100\% ($\scalht > 600\GeV$) with statistical and
+systematic uncertainties at the percent level. Trigger efficiencies
+for a range of benchmark signal models are typically comparable or
+higher (${\approx}100\%$).
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -696,8 +739,12 @@ backgrounds. Each event is required to contain a single isolated muon
 with $\pt > 30\GeV$ and $\abs{\eta} < 2.1$ to satisfy trigger
 conditions and is well separated from each jet $\text{j}_i$ in the
 event according to ${\Delta}R(\mu,\text{j}_i) > 0.5$. The transverse
-mass formed by the muon \pt and \ptvecmiss system must satisfy $30 <
-m_\text{T} < 125\GeV$ to select a sample of events rich in W bosons.
+mass $m_\text{T} = \sqrt{2\pt^\mu\ptmiss[1-
+  \cos(\Delta\phi_{\mu,\ptvecmiss})]}$, where
+$\Delta\phi_{\mu,\ptvecmiss}$ is the difference between the azimuthal
+angles of the muon transverse momentum vector $\ptvec^\mu$ and of
+$\ptvecmiss$, must fall within the range 30--125\GeV to select a
+sample of events rich in W bosons.
 
 The \mmj sample is enriched in $\PZ\! \rightarrow\!  \mu^+\mu^-$
 events that have similar acceptance and kinematical properties to
@@ -717,8 +764,8 @@ boson~\cite{1674-1137-38-9-090001}.
 \label{sec:simulation}
 
 The search relies on several samples of simulated events, produced
-with Monte Carlo (MC) generator programs, to estimate SM backgrounds
-and potential signal contributions.
+with Monte Carlo (MC) generator programs, to aid the estimation of SM
+backgrounds and evaluate potential signal contributions.
 
 The {\MADGRAPH{}5\_a\MCATNLO} 2.2.2~\cite{Alwall2014} event generator
 is used at leading-order (LO) accuracy to produce samples of \wj, \zj,
@@ -728,7 +775,8 @@ vector boson production, respectively. Simulated \wj and \zj events are
 weighted according to the true vector boson \pt %obtained from the
 %{\MADGRAPH{}5\_a\MCATNLO} generator code (used at LO) 
 to account for the effect of missing NLO QCD and electroweak terms in
-the matrix-element calculation, according to the method described in
+the matrix-element calculation~\cite{Alwall2014, Kuhn:2005gv},
+according to the method described in
 Ref.~\cite{Khachatryan:2016mdm}. Within the range of vector boson
 transverse momenta that can be probed by this search, the QCD and EWK
 corrections~\cite{Kuhn:2005gv} are largest, ${\approx}40\%$ and
@@ -760,14 +808,15 @@ precision~\cite{Alwall2014, wphys, fewz, wwxs, top++, nlotop,
   powheg_top_Wt}. The production cross sections for pairs of gluinos
 or squarks are determined at NLO plus next-to-leading-logarithm (NLL)
 precision~\cite{Beenakker:1996ch, Kulesza:2008jb, Kulesza:2009kq,
-  Beenakker:2009ha, Beenakker:2011fu, Borschensky:2014cia}. All SUSY
-particles other than the \PSGczDo are assumed to be heavy and
+  Beenakker:2009ha, Beenakker:2011fu, Borschensky:2014cia}. All other
+SUSY particles, apart from the \PSGczDo, are assumed to be heavy and
 decoupled from the interaction. Uncertainties in the cross sections
 are determined from different choices of PDF sets, and factorization
 and renormalization scales ($\mu_\text{R}$ and $\mu_\text{F}$),
 according to the prescription in Ref.~\cite{Borschensky:2014cia}. The
-\PYTHIA 8.205~\cite{pythia} program is used to describe parton
-showering and hadronization for all simulated samples.
+\PYTHIA 8.205~\cite{pythia} program with the \textsc{CUETP8M1}
+tune~\cite{Skands:2014pea, Khachatryan:2015pea} is used to describe
+parton showering and hadronization for all simulated samples.
 
 The \textsc{rhadrons} package within the \PYTHIA program is used to
 describe the formation of R-hadrons through the hadronization of
@@ -1516,7 +1565,7 @@ transverse momenta of jets. The standard model background is estimated
 from a binned likelihood fit to event yields in the signal region and
 data control samples. The observed yields in the signal region are
 found to be in agreement with the expected contributions from standard
-model processes. Supplemental material is provided to aid futher
+model processes. Supplemental material is provided to aid further
 interpretation of the result in \suppMaterial.
 
 Limits are determined in the parameter spaces of simplified models
