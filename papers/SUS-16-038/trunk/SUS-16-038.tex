@@ -440,7 +440,7 @@ decaying $\PZ\text{+\text{jet}}$
 events~\cite{Khachatryan:2016kdb}. Jets are required to satisfy $\pt >
 40\GeV$ and $\abs{\eta} < 2.4$. Jets are also subjected to a standard
 set of identification criteria~\cite{2011JInst611002C} that require
-each jet contains at least two particle candidates and at least one
+each jet to contain at least two particle candidates and at least one
 charged particle track, and the energy fraction attributed to
 charged-hadron particle candidates, $f_{\text{h}^{\pm}}$, is required
 to be nonzero.
@@ -601,7 +601,7 @@ categories of the SR, including those that satisfy $\njet \geq 1$. The
 combined performance of these trigger algorithms yields high
 efficiencies, as determined from samples of CR data enriched in vector
 boson + jets and \ttbar events. The efficiencies are primarily
-\scalht-dependent that range from 97.4--97.9\% ($200 < \scalht <
+\scalht-dependent and range from 97.4--97.9\% ($200 < \scalht <
 600\GeV$) to 100\% ($\scalht > 600\GeV$) with statistical and
 systematic uncertainties at the percent level. Trigger efficiencies
 for a range of benchmark signal models are typically comparable or
@@ -654,7 +654,7 @@ a final open bin $\mht > 900\GeV$. The \mht binning depends on \njet,
 construction, the lower bound of the final \mht bin is restricted to
 be not higher than the lower bound of the \scalht bin in
 question. Events that satisfy $\njet = 1$ or $200 < \scalht < 400\GeV$
-are counted inclusively with respect to \mht.
+are not categorized according to \mht.
 
 In total, there are 254 bins in the SR. An alternate, simplified
 binning schema is also provided in which events are categorized
@@ -720,8 +720,8 @@ Two additional CRs comprising \mj and \mmj event samples are defined
 by the application of the baseline selections and requirements on
 isolated, central, high-\pt muons. Tighter isolation requirements for
 the muons are applied with respect to those indicated in
-Table~\ref{tab:selections} to ensure high trigger efficiencies. A
-trigger condition that requires an isolated muon with $\pt > 24\GeV$
+Table~\ref{tab:selections}. %to ensure high trigger efficiencies. 
+A trigger condition that requires an isolated muon with $\pt > 24\GeV$
 and $\abs{\eta} < 2.1$ is used to record the \mj and \mmj event
 samples with efficiencies of ${\approx}90$ and ${\approx}99\%$,
 respectively. For both samples, no requirements on \alphat nor \bdphi
@@ -828,25 +828,23 @@ hadronization for all simulated samples.
 The \textsc{rhadrons} package within the \PYTHIA program is used to
 describe the formation of R-hadrons through the hadronization of
 gluinos~\cite{Fairbairn:2006gg, Kraan:2004tz, Mackeprang:2006gx}. The
-hadronization process, which is steered according to the default
-parameter settings of the \textsc{rhadrons} package, predominantly
-yields meson-like (\PSg\Pq\Paq) and baryon-like (\PSg\Pq\Pq\Pq)
-states, but also R-hadrons comprising a gluino and a valence gluon
-with a probability of 10\%.
-%The phenomenological ``cloud model'' is commonly used to describe
-%these loosely bound states and their interactions with
-%matter~\cite{}. 
-The gluino is assumed to undergo a three-body decay, to a \Pq\Paq\
-pair and the \PSGczDo, according to its proper decay length \ctau [mm]
-that is a parameter of the simplified model. The details of the
-R-hadron model are expected to have little influence on the
-hadronization of the quarks originating from the gluino decay (and
-hence the final state in terms of event topology and kinematical
-variables) for the models considered in this paper. The interactions
-of R-hadrons with the detector material are not simulated, as these
-interactions are not exploited by the generic nature of this search.
-% , unlike more dedicated techniques used elsewhere.~\cite{}\fixme{eg
-%   reference dE/dx, stopped searches, disappearing/kinked tracks}.
+hadronization process, steered according to the default parameter
+settings of the \textsc{rhadrons} package, predominantly yields
+meson-like (\PSg\Pq\Paq) and baryon-like (\PSg\Pq\Pq\Pq) states, as
+well as glueball-like (\PSg\Pg) states with a probability $P_{\PSg\Pg}
+= 10\%$, where \PSg, \Pg, \Pq, and \Paq\ represent a gluino, gluon,
+quark, and antiquark, respectively. The gluino is assumed to undergo a
+three-body decay, to a \Pq\Paq\ pair and the \PSGczDo, according to
+its proper decay length \ctau that is a parameter of the simplified
+model~\cite{Buchmueller:2017uqu}. Values within the range $10^{-3} <
+\ctau < 10^{-3}\unit{mm}$ are considered. Studies with alternative
+values for parameters that influence the hadronization of the gluino,
+such as $P_{\PSg\Pg} = 50\%$, indicate a minimal influence on the
+event topology and kinematical variables for the models considered in
+this paper. Further, the interactions of R-hadrons with the detector
+material are not considered by default, as studies demonstrate that
+the sensitivity of this search is only weakly dependent on these
+interactions, as discussed in Section~\ref{sec:interpretations}.
 
 The description of the detector response is implemented using the
 \GEANTfour~\cite{geant} package for all simulated SM processes. Scale
@@ -859,8 +857,8 @@ models rely on the CMS fast simulation package~\cite{fastsim} that
 provides a description that is consistent with \GEANTfour following
 the application of near-unity corrections for the differences in the b
 tagging efficiency and mistag probability, as well as corrections for
-the differences in the modelling of \mht variable. To model the
-effects of multiple pp collisions within the same or neighbouring
+the differences in the modelling of the \mht distribution. To model
+the effects of multiple pp collisions within the same or neighbouring
 bunch crossings (pileup), all simulated events are generated with a
 nominal distribution of pp interactions per bunch crossing and then
 reweighted to match the pileup distribution as measured in data.
@@ -989,19 +987,19 @@ performed in \mmj samples that are enriched in mistagged jets
 originating from gluons or LF quarks and genuine tags of b quarks from
 gluon splitting through the use of loose and tight working points of
 the b tagging algorithm. No tests reveal evidence of significant bias
-in the simulation modelling of the \nb variable.
+in the simulation modelling of the \nb distribution.
 
-Finally, the \mht modelling in simulated events is compared to the
-distributions observed in \mj and \mmj control data, and inspected for
-trends, by assuming a linear behaviour of the ratio of observed and
-simulated counts as a function of \mht. Linear fits are performed
-independently for each \njet category while integrating event counts
-over \nb and \scalht, and then repeated for each \scalht bin while
-integrating event counts over \njet and \nb. Systematic uncertainties
-are determined from any nonclosure between data and simulation as a
-function of \njet and are assumed to be correlated in \scalht (and
-\nb), and vice versa. The uncertainties can be as large as
-${\approx}50\%$ in the most sensitive \mht bins.
+Finally, the modelling of the \mht distribution in simulated events is
+compared to the distributions observed in \mj and \mmj control data,
+and inspected for trends, by assuming a linear behaviour of the ratio
+of observed and simulated counts as a function of \mht. Linear fits
+are performed independently for each \njet category while integrating
+event counts over \nb and \scalht, and then repeated for each \scalht
+bin while integrating event counts over \njet and \nb. Systematic
+uncertainties are determined from any nonclosure between data and
+simulation as a function of \njet and are assumed to be correlated in
+\scalht (and \nb), and vice versa. The uncertainties can be as large
+as ${\approx}50\%$ in the most sensitive \mht bins.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -1072,9 +1070,9 @@ Section~\ref{sec:ewk}. The systematic uncertainties in the nonmultijet
 estimates, summarized in Table~\ref{tab:bkgd_systs}, are accommodated
 in the likelihood model as nuisance parameters, the measurements of
 which are assumed to follow a log-normal distribution. In the case of
-\mht modelling, alternative templates are used to describe the
-uncertainties in the \mht modelling and a vertical template morphing
-schema~\cite{Prosper:2011zz, Khachatryan:2016dvc} is used to
+the modelling of the \mht distribution, alternative templates are used
+to describe the uncertainties in the modelling and a vertical template
+morphing schema~\cite{Prosper:2011zz, Khachatryan:2016dvc} is used to
 interpolate between the nominal and alternative templates. The
 multijet background estimates, determined using the method described
 in Section~\ref{sec:qcd}, are also included in the likelihood model.
@@ -1311,7 +1309,7 @@ subject to moderate statistical fluctuations.
       & Obs.                                                              \\ [0.3ex]
       \hline
       \multirow{2}{*}{T2bb}
-      & (1000, 50)
+      & (1000, 100)
       & 40.1           & 14--23 & 1--7   & 4--11  & 1--4  %   & --    
       & 0.62           & 0.67                                             \\
       & (550, 450)
@@ -1475,7 +1473,14 @@ for models with lifetimes in the region $\ctau > 100\unit{mm}$ because
 of a reduced acceptance for the jets from the gluino decay and an
 increased reliance on jets from ISR. The coverage is independent of
 \ctau beyond values of $10\unit{m}$ and comparable to the limiting
-case of a metastable gluino.
+case of a metastable gluino. 
+%
+The value of $\sigma_\text{UL}$ increases by up to ${\approx}100\%$
+for models with $\ctau \gtrsim 1\unit{m}$ when the material
+interactions of R-hadrons are considered. The largest change in
+$\sigma_\text{UL}$ corresponds to a reduction of ${\approx}100\GeV$ in
+the excluded mass region. In the case of models with values of \ctau
+below 1\unit{m}, the change in $\sigma_\text{UL}$ is negligible.
 
 \begin{figure}[!p]
   \centering
@@ -1522,12 +1527,13 @@ case of a metastable gluino.
     $\ctau = 1$ (upper left), 10 (upper centre), and $100\um$ (upper
     right); 1 (middle left), 10 (middle centre), and $100\unit{mm}$
     (middle right); and 1 (lower left), 10 (lower centre), and
-    $100\unit{m}$ (lower right).  The black solid thick (thin) line
+    $100\unit{m}$ (lower right).  The thick (thin) black solid line 
     indicates the observed excluded region assuming the nominal
     (${\pm}1$ standard deviation in theoretical uncertainty)
-    production cross section. The red dashed thick (thin) line
-    indicates the median (${\pm}1$ standard deviation in experimental
-    uncertainty) expected excluded region.}
+    production cross section. The red thick dashed (thin dashed and
+    dotted) line indicates the median (${\pm}1$ and 2 standard
+    deviations in experimental uncertainty) expected excluded region. 
+  }
   \label{fig:limits-ll} 
 \end{figure} 
 
