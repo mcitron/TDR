@@ -8,6 +8,7 @@
 \newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
 \newcommand{\scalht}{\ensuremath{H_{\text{T}}}\xspace}
 \newcommand{\mht}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
+\newcommand{\ctau}{\ensuremath{c\tau_{0}}\xspace}
 
 \title{Search for natural and split supersymmetric scenarios in pp
   collisions at $\sqrt{s} = 13\TeV$ in all-jet final
@@ -123,29 +124,6 @@
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.95\linewidth]{Supplementary/SimplifiedBinning_results_no-fit_aux} 
-  \caption{Counts of signal events (solid markers) and SM expectations
-    with associated uncertainties (statistical and systematic, black
-    histograms and shaded bands) 
-    %%
-    before fitting (i.e.\ simulation with scale factors applied)
-    %%
-    %as a function of \nb, \scalht, and \mht for the event categories
-    %$\njet = 4$ (upper), $=5$ (middle), and ${\geq}6$ (lower).
-    %
-    for the simplified binning scheme.
-    %%
-    The centre panel shows the ratios of
-    observed counts and the SM expectations, while the lower panel
-    shows the significance of deviations observed in data with respect
-    to the SM expectations expressed in terms of the total uncertainty
-    in the SM expectations.
-    }
-  \label{fig:aggregated_results}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
   \includegraphics[width=0.95\linewidth]{Supplementary/SimplifiedBinning_results_cr-only-fit_aux} 
   \caption{Counts of signal events (solid markers) and SM expectations
     with associated uncertainties (statistical and systematic, black
@@ -188,62 +166,6 @@
     in the SM expectations.
     }
   \label{fig:aggregated_results}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-            \includegraphics[width=0.98\textwidth]{Supplementary/FullBinning_results_monojet_no-fit_aux}
-            \includegraphics[width=0.98\textwidth]{Supplementary/FullBinning_results_2jet_no-fit_aux}\\
-            \includegraphics[width=0.98\textwidth]{Supplementary/FullBinning_results_3jet_no-fit_aux}\\
-  \caption{Counts of signal events (solid markers) and SM expectations
-    with associated uncertainties (statistical and systematic, black
-    histograms and shaded bands) 
-    %%
-    before fitting (i.e.\ simulation with scale factors applied)
-    %as determined from the CR-only fit
-    %as determined by the full fit to signal and control regions.
-    %%
-    as a function of \nb, \scalht, and \mht for the event categories
-    $\njet = 1$ and ${\geq}2a$ (upper), $=2$ (middle), and $=3$
-    %$\njet = 4$ (upper), $=5$ (middle), and ${\geq}6$ (lower).
-    %for the simplified binning scheme.
-    %%
-    The centre panel shows the ratios of
-    observed counts and the SM expectations, while the lower panel
-    shows the significance of deviations observed in data with respect
-    to the SM expectations expressed in terms of the total uncertainty
-    in the SM expectations.
-    }
-        \label{fig:T1qqqqLL_no-fit_123}
-    \end{center}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-            \includegraphics[width=0.98\textwidth]{Supplementary/FullBinning_results_4jet_no-fit_aux}
-            \includegraphics[width=0.98\textwidth]{Supplementary/FullBinning_results_5jet_no-fit_aux}\\
-            \includegraphics[width=0.98\textwidth]{Supplementary/FullBinning_results_6+_jets_no-fit_aux}\\
-  \caption{Counts of signal events (solid markers) and SM expectations
-    with associated uncertainties (statistical and systematic, black
-    histograms and shaded bands) 
-    %%
-    before fitting (i.e.\ simulation with scale factors applied)
-    %as determined from the CR-only fit
-    %as determined by the full fit to signal and control regions.
-    %%
-    as a function of \nb, \scalht, and \mht for the event categories
-    %$\njet = 1$ and ${\geq}2a$ (upper), $=2$ (middle), and $=3$
-    $\njet = 4$ (upper), $=5$ (middle), and ${\geq}6$ (lower).
-    %for the simplified binning scheme.
-    %%
-    The centre panel shows the ratios of
-    observed counts and the SM expectations, while the lower panel
-    shows the significance of deviations observed in data with respect
-    to the SM expectations expressed in terms of the total uncertainty
-    in the SM expectations.
-    }
-        \label{fig:T1qqqqLL_no-fit_456}
-    \end{center}
 \end{figure}
 
 \begin{figure}
@@ -331,9 +253,9 @@
       \multirow{2}{*}{T2qq\_1fold} & (700, 100)  & 1.07 & 2.20 \\ & (400, 300)  & 1.60 & 1.60 \\ [0.5ex]
       \multirow{2}{*}{T1bbbb} & (1900, 100) & 1.16 & 1.15 \\ & (1300, 1100) & 0.78 & 1.03 \\ [0.5ex]
       \multirow{2}{*}{T1tttt} & (1700, 100) & 0.67 & 0.70 \\ & (950, 600)  & 3.39 & 2.95 \\ [0.5ex]
-      T1qqqqLL & (1800, 200) & 1.36 & 2.00 \\ ($10^{-3}\unit{mm}$) & (1000, 900) & 1.46 & 2.40 \\ [0.5ex]
+	    T1qqqqLL & (1800, 200) & 1.36 & 2.00 \\ ($1~\unit{$\mu$m}$) & (1000, 900) & 1.46 & 2.40 \\ [0.5ex]
       T1qqqqLL & (1800, 200) & 0.52 & 0.60 \\ ($1\unit{mm}$) & (1000, 900) & 0.41 & 0.47 \\ [0.5ex]
-      T1qqqqLL & (1000, 200) & 1.23 & 1.40 \\ ($100\,000\unit{mm}$) & (1000, 900) & 1.22 & 1.90 \\
+      T1qqqqLL & (1000, 200) & 1.23 & 1.40 \\ ($1\unit{m}$) & (1000, 900) & 1.22 & 1.90 \\
       \hline
     \end{tabular}
 \end{table}
