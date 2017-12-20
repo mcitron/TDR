@@ -1,4 +1,35 @@
-<p>The nominal result of the analysis is available in a digital format
+<p> 
+To help with re-interpretation of these results the following information is made available in machine-readable formats:
+<ul>
+    <li>
+        CSV files containing the CR-only and CR + SR fit (BG-only hypothesis) for both the nominal and simplified binning scheme: <br/>
+        <a href="RootFilesAndTarFiles/FullBinning_cr-only_aux.csv.csv">CR-only fit, nominal binning</a>, 
+        <a href="RootFilesAndTarFiles/FullBinning_full-fit-bg_aux.csv">CR+SR fit (full fit), nominal binning</a>, 
+        <a href="RootFilesAndTarFiles/SimplifiedBinning_cr-only_aux.csv.csv">CR-only fit, simplified binning</a>, 
+        <a href="RootFilesAndTarFiles/SimplifiedBinning_full-fit-bg_aux.csv">CR+SR fit (full fit), simplified binning</a>. <br/>
+        The meaning of each column is given in the first row in each file
+    </li><li>
+        ROOT files containing the covariance and correlation matrices for both the simplified and nominal binning schemes: <br/>
+        <a href="RootFilesAndTarFiles/FullBinning_Covariance_Correlation_aux.root">nominal binning</a>, 
+        <a href="RootFilesAndTarFiles/SimplifiedBinning_Covariance_Correlation_aux.root">simplified binning</a>. <br/>
+        Each matrix is represented as a TH2, with the label of each bin specifying an event category as a string 
+        containing N<sub>jet</sub>, N<sub>b</sub>, H<sub>T</sub> low, H<sub>T</sub><sup>miss</sup> low (in that order) separated by semi-colons,
+        (eg. <span style="font-family:monospace">"2; 0; &#35;geq1200; 900"</span>).
+        Since the matrices are symmetric, only the lower right half is filled.
+    </li><li>
+        ROOT files containing histograms for the interpretations with simplified models, for both the limits and signal efficiency in the nominal binning scheme.
+        Each file contains the expected and observed exclusion contours as well as their variants using 1 sigma upwards and downwards systematic uncertainties. 
+        In addition, the observed and expected limits on the cross section are
+        given as a function of the masses of the supersymmetric mediator and
+        lightest-supersymmetric particle, as well as the limits under 1 sigma
+        systematic varitions.
+    </li>
+</ul>
+</p>
+
+        <!--
+<p>
+The nominal result of the analysis is available in a digital format
 (.csv) at the following links: <a
 href="RootFilesAndTarFiles/results_prefit.csv">pre-fit result</a>, <a
 href="RootFilesAndTarFiles/results_postfit.csv">post-fit
@@ -16,5 +47,6 @@ href="RootFilesAndTarFiles/makeAlphaT.tar">here</a> and <a
 href="RootFilesAndTarFiles/makeBiasedDPhi.tar">here</a>,
 respectively.</p><p>Instructions on how to use the aforementioned
 material can be found <a
-href="RootFilesAndTarFiles/instructions.txt">here</a>. </p>
-
+href="RootFilesAndTarFiles/instructions.txt">here</a>. 
+</p>
+        --!>
