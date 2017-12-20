@@ -176,8 +176,8 @@ models, the gluino decay is suppressed because of the highly virtual
 squark states. For gluino lifetimes beyond a picosecond, the gluino
 hadronizes and forms a bound colour-singlet state containing the
 gluino and quarks or gluons~\cite{Fairbairn:2006gg}, known as an
-R-hadron, before eventually decaying to quark pairs and the
-\PSGczDo. The long-lived gluino can lead to final states with
+R-hadron, before eventually decaying to a quark--antiquark pair and
+the \PSGczDo. The long-lived gluino can lead to final states with
 significant \ptvecmiss from the undetected \PSGczDo particles and to
 jets with particle vertices located a significant distance (\ie
 displaced) from the luminous region of the proton beams. A metastable
@@ -841,10 +841,11 @@ model~\cite{Buchmueller:2017uqu}. Values within the range $10^{-3} <
 values for parameters that influence the hadronization of the gluino,
 such as $P_{\PSg\Pg} = 50\%$, indicate a minimal influence on the
 event topology and kinematical variables for the models considered in
-this paper. Further, the interactions of R-hadrons with the detector
-material are not considered by default, as studies demonstrate that
-the sensitivity of this search is only weakly dependent on these
-interactions, as discussed in Section~\ref{sec:interpretations}.
+this paper. Further, the model-dependent interactions of R-hadrons
+with the detector material are not considered by default, as studies
+demonstrate that the sensitivity of this search is only moderately
+dependent on these interactions, as discussed in
+Section~\ref{sec:interpretations}.
 
 The description of the detector response is implemented using the
 \GEANTfour~\cite{geant} package for all simulated SM processes. Scale
@@ -1475,12 +1476,34 @@ increased reliance on jets from ISR. The coverage is independent of
 \ctau beyond values of $10\unit{m}$ and comparable to the limiting
 case of a metastable gluino. 
 %
-The value of $\sigma_\text{UL}$ increases by up to ${\approx}100\%$
-for models with $\ctau \gtrsim 1\unit{m}$ when the material
-interactions of R-hadrons are considered. The largest change in
-$\sigma_\text{UL}$ corresponds to a reduction of ${\approx}100\GeV$ in
-the excluded mass region. In the case of models with values of \ctau
-below 1\unit{m}, the change in $\sigma_\text{UL}$ is negligible.
+%The value of $\sigma_\text{UL}$ increases by up to ${\approx}100\%$
+%for models with $\ctau \gtrsim 1\unit{m}$ when the material
+%interactions of R-hadrons are considered. The largest change in
+%$\sigma_\text{UL}$ corresponds to a reduction of ${\approx}100\GeV$ in
+%the excluded mass region. In the case of models with values of \ctau
+%below 1\unit{m}, the change in $\sigma_\text{UL}$ is negligible.
+%
+%A nonnegligible fraction of R-hadrons that traverse the muon chambers
+%before decaying are identified as muons by the PF algorithm. In the
+%R-hadron model considered by this search, the signal \ate is strongly
+%dependent on \ctau due to the muon veto employed by this search. The
+%\ate is also dependent on the choice of parameters that affect the
+%hadronization model and matter interactions. Under these assumptions,
+%the excluded mass regions weaken by 50--200\GeV for models with $\ctau
+%\gtrsim 1\unit{m}$, with the largest change occurring for $\ctau
+%\approx 10\unit{m}$. The change is negligible for models with values
+%of \ctau below $1\unit{m}$.
+
+A nonnegligible fraction of R-hadrons that traverse the muon chambers
+before decaying are identified as muons by the PF algorithm. The
+fraction is dependent on the R-hadron model and the choice of
+parameters that affect the hadronization model and matter
+interactions. The signal \ate is strongly dependent on \ctau due to
+the muon veto employed by this search. Under these assumptions, the
+excluded mass regions shown in Fig.~\ref{fig:limits-ll} weaken by
+50--200\GeV for models with $\ctau \gtrsim 1\unit{m}$, with the
+largest change occurring at $\ctau \approx 10\unit{m}$. The change is
+negligible for models with \ctau below $1\unit{m}$.
 
 \begin{figure}[!p]
   \centering
@@ -1608,19 +1631,29 @@ decay is 1150\GeV.
 Sensitivity to simplified models inspired by split supersymmetry is
 also demonstrated. These models assume the production of long-lived
 gluino pairs that decay to final states containing displaced jets and
-\ptvecmiss from the undetected \PSGczDo particles. No specialized
-techniques of event reconstruction that target long-lived gluinos are
-employed. Models that assume a \PSGczDo mass of 100\GeV and gluino
-masses up to 1600\GeV are excluded for a proper decay length \ctau
-below 0.1\unit{mm}. The bound on the gluino mass strengthens to
-1750\GeV at $\ctau = 1\unit{mm}$, before weakening to 900--1000\GeV
-for models with $\ctau > 10\unit{m}$ or metastable gluinos.  For all
-values of \ctau considered, the exclusion bounds on the gluino mass
-weaken to about 1\TeV when the difference between the gluino and
-\PSGczDo mass is greater than 10\GeV.  The search provides coverage
-that is complementary to other dedicated techniques at the LHC, such
-as for models with long-lived gluinos with $\ctau \lesssim
-1\unit{mm}$.
+\ptvecmiss from the undetected \PSGczDo particles. The long-lived
+gluino, with an assumed proper decay length \ctau, is expected to
+hadronize with SM particles and form a bound state known as an
+R-hadron.
+%The matter interactions of R-hadrons are not considered by default,
+%and the sensitivity of this search is only modererately dependent on
+%these interactions.
+The model-dependent matter interactions of R-hadrons are not
+considered by default. The sensitivity of this search is only
+moderately dependent on these matter interactions for models with
+$\ctau \gtrsim 1\unit{m}$, while no dependence is found for models
+with \ctau below 1\unit{m}. 
+%
+Models that assume a \PSGczDo mass of 100\GeV and gluino masses up to
+1600\GeV are excluded for a proper decay length \ctau below
+0.1\unit{mm}. The bound on the gluino mass strengthens to 1750\GeV at
+$\ctau = 1\unit{mm}$, before weakening to 900--1000\GeV for models
+with $\ctau > 10\unit{m}$ or metastable gluinos.  For all values of
+\ctau considered, the exclusion bounds on the gluino mass weaken to
+about 1\TeV when the difference between the gluino and \PSGczDo mass
+is greater than 10\GeV.  The search provides coverage that is
+complementary to other dedicated techniques at the LHC, such as for
+models with long-lived gluinos with $\ctau \lesssim 1\unit{mm}$.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
