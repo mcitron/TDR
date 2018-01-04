@@ -101,7 +101,7 @@
   agree with the expected background counts from standard model
   processes. The results are interpreted with simplified models of
   SUSY that assume the production of gluino or squark pairs and their
-  prompt decay to quarks and the neutralino.  The masses of bottom,
+  prompt decay to quarks and the lightest neutralino.  The masses of bottom,
   top, and mass-degenerate light-flavour squarks are probed up to
   1050, 1000, and 1325\GeV, respectively. The gluino mass is probed up
   to 1900, 1650, and 1650\GeV when the gluino decays via virtual
@@ -390,8 +390,9 @@ associated \ptmiss, taken as the negative vector sum of the \pt of
 those physics objects. Charged particle tracks associated with
 vertices from additional \Pp\Pp\ interactions within the same or
 nearby bunch crossings (pileup) are not considered by the PF algorithm
-as part of the global event reconstruction. The energy deposits
-associated with PF particle candidates are corrected to account for
+as part of the global event reconstruction. The energy deposit
+associated with each physics object %PF particle candidates
+is corrected to account for
 contributions from neutral particles originating from pileup
 interactions~\cite{Cacciari:2007fd}.
 
@@ -417,11 +418,11 @@ tracks (SITs) if the scalar \pt sum of additional tracks associated
 with the PV within a cone ${\Delta}R < 0.3$ around the track
 trajectory, relative to the track \pt, satisfies $I^\text{track} <
 0.1$. All isolation variables exclude the contributions from the
-physics object itself and pileup events~\cite{Khachatryan:2015iwa,
+physics object itself and pileup interactions~\cite{Khachatryan:2015iwa,
   Khachatryan:2015hwa, Chatrchyan:2012xi}. The experimental
 acceptances for photons, electrons, muons, and SITs are defined by the
 transverse momentum requirements $\pt > 25$, 10, 10, and 10\GeV,
-respectively, and the pseudorapidity requirement $\abs{\eta} < 2.4$.
+respectively, and the pseudorapidity requirement $\abs{\eta} < 2.5$.
 
 Jets are reconstructed from the PF particle candidates, clustered by
 the anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a
@@ -430,12 +431,12 @@ obtained from the sum of the particle candidate energies and the raw
 jet momentum by the vectorial sum of the particle candidate momenta,
 which results in a nonzero jet mass. An offset correction is applied
 to jet energies to take into account the contributions from neutral
-particles produced in pileup events~\cite{Cacciari:2007fd,
+particles produced in pileup interactions~\cite{Cacciari:2007fd,
   CMS-PAS-JME-14-001}. The raw jet energies are then corrected to
 establish a relative uniform response of the calorimeter in $\eta$ and
 a calibrated absolute response in \pt. Jet energy corrections are
 derived from simulation, and are confirmed with in situ measurements
-of the energy balance in dijet, multijet, \ggj, and leptonically
+of the energy balance in dijet, multijet, \gj, and leptonically
 decaying $\PZ\text{+\text{jet}}$
 events~\cite{Khachatryan:2016kdb}. Jets are required to satisfy $\pt >
 40\GeV$ and $\abs{\eta} < 2.4$. Jets are also subjected to a standard
@@ -449,9 +450,9 @@ Jets can be identified as originating from b quarks using the combined
 secondary vertex (CSVv2) algorithm~\cite{BTV-16-002}. %Chatrchyan:2012jua}.
 Data samples %~\cite{CMS-PAS-BTV-15-001}
 are used to measure the b tagging efficiency, which is the probability to correctly identify
-jets originating from b quarks, as well as the mistag probability to
-identify jets originating from light-flavour (LF) partons (u, d, s
-quarks or gluon) or a charm quark as a mistagged jet. A working point
+jets originating from b quarks, as well as the mistag probabilities
+for jets that originate from light-flavour (LF) partons (u, d, s
+quarks or gluon) or a charm quark. A working point
 is employed that yields a b tagging efficiency of ${\approx}69\%$ for
 jets with $\pt > 30\GeV$ from \ttbar events, and charm and LF mistag
 probabilities of ${\approx}18$ and ${\approx}1\%$, respectively, for
@@ -675,7 +676,7 @@ nominal result.
 
 Following the application of the SR selection criteria, the multijet
 background is reduced to a negligible level. The remaining background
-counts are dominated by processes that involve the production of
+contributions are dominated by processes that involve the production of
 high-\pt neutrinos in the final state. The associated production of
 jets and a Z boson that decays to $\cPgn\cPagn$ dominates the
 background contributions for events containing low numbers of jets and
@@ -794,7 +795,7 @@ description of jets arising from initial-state radiation
 depending on the number of jets (1--6) from ISR, with an uncertainty
 of one half the deviation from unity. The {\MADGRAPH{}5\_a\MCATNLO}
 generator is used at NLO accuracy to generate samples of $s$-channel
-production of single top, as well as {\ttbar}W and {\ttbar}Z
+production of single top quark, as well as {\ttbar}W and {\ttbar}Z
 events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is
 used to describe the $t$- and tW-channel production of events
 containing single top quarks, as well as {\ttbar}H events. The \PYTHIA
@@ -850,19 +851,19 @@ Section~\ref{sec:interpretations}.
 The description of the detector response is implemented using the
 \GEANTfour~\cite{geant} package for all simulated SM processes. Scale
 factors are applied to simulated event samples that correct for
-differences in the b tagging efficiency and mistag probability of LF
-partons and charm quarks with respect to data. The scale factors have
+differences with respect to data in the b tagging efficiency and
+mistag probabilities. The scale factors have
 typical values of ${\approx}$0.95--1.00 and ${\approx}$1.00--1.20,
 respectively, for a jet \pt range of 40--600\GeV. All remaining signal
 models rely on the CMS fast simulation package~\cite{fastsim} that
 provides a description that is consistent with \GEANTfour following
 the application of near-unity corrections for the differences in the b
-tagging efficiency and mistag probability, as well as corrections for
+tagging efficiency and mistag probabilities, as well as corrections for
 the differences in the modelling of the \mht distribution. To model
 the effects of multiple pp collisions within the same or neighbouring
 bunch crossings (pileup), all simulated events are generated with a
 nominal distribution of pp interactions per bunch crossing and then
-reweighted to match the pileup distribution as measured in data.
+weighted to match the pileup distribution as measured in data.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -905,23 +906,23 @@ effects are discussed below.
 
 The uncertainties from known theoretical and experimental sources are
 propagated through to the transfer factors to ascertain the magnitude
-of variations related to: the jet energy scale, the efficiency and
-mistag probability of b-tagged jets, the efficiency to trigger on and
-identify, or veto, well-reconstructed isolated leptons, the
-PDFs~\cite{Butterworth:2015oua}, $\mu_\text{F}$ and $\mu_\text{R}$,
-and the modelling of jets from ISR produced in association with
-\ttbar~\cite{Chatrchyan:2013xna}. Uncertainties of 100\% in both the
-NLO QCD and EW corrections to the \wj and \zj simulated
-samples are also considered. A 5\% uncertainty in the total inelastic
-cross section~\cite{Aaboud:2016mmw} is assumed and propagated through
-to the reweighting procedure to account for differences between the
-data and simulation in the pileup distributions. Uncertainties in the
-signal trigger efficiency measurements are also propagated to the
-transfer factors. The effects of the aforementioned systematic
-uncertainties are summarized in Table~\ref{tab:bkgd_systs}, in terms
-of representative ranges.  Each source of uncertainty is assumed to
-vary with a fully correlated behaviour across the full phase space of
-the SR and CRs.
+of variations related to: the jet energy scale, the scale factors
+related to the b tagging efficiency and mistag probabilities, the
+efficiency to trigger on and identify, or veto, well-reconstructed
+isolated leptons, the PDFs~\cite{Butterworth:2015oua}, $\mu_\text{F}$
+and $\mu_\text{R}$, and the modelling of jets from ISR produced in
+association with \ttbar~\cite{Chatrchyan:2013xna}. Uncertainties of
+100\% in both the NLO QCD and EW corrections to the \wj and \zj
+simulated samples are also considered. A 5\% uncertainty in the total
+inelastic cross section~\cite{Aaboud:2016mmw} is assumed and
+propagated through to the weighting procedure to account for
+differences between the data and simulation in the pileup
+distributions. Uncertainties in the signal trigger efficiency
+measurements are also propagated to the transfer factors. The effects
+of the aforementioned systematic uncertainties are summarized in
+Table~\ref{tab:bkgd_systs}, in terms of representative ranges.  Each
+source of uncertainty is assumed to vary with a fully correlated
+behaviour across the full phase space of the SR and CRs.
 
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
@@ -946,7 +947,7 @@ the SR and CRs.
     Finite-size simulated samples            & 1--50        & 1--50               \\
     Total inelastic cross section (pileup)   & 0.6--3.8     & 2.3--2.8            \\
     $\mu_\text{F}$ and $\mu_\text{R}$ scales & 2.3--3.6     & 0.9--4.7            \\
-    Parton density functions                 & 1.1--2.7     & 0.0--3.3            \\
+    Parton distribution functions            & 1.1--2.7     & 0.0--3.3            \\
     \wj cross section                        & 0.2--1.4     & --                  \\
     \ttbar cross section                     & 0.0--1.0     & --                  \\
     NLO QCD corrections                      & 1.5--13      & 2.6--17             \\
@@ -957,7 +958,7 @@ the SR and CRs.
     Lepton efficiency (veto)                 & 5.0          & 5.0                 \\
     Jet energy scale                         & 3.4--5.5     & 5.3--8.0            \\
     b tagging efficiency                     & 0.4--0.6     & 0.3--0.6            \\
-    b quark mistag probability               & 0.1--1.4     & 0.2--1.8            \\
+    Mistag probabilities                     & 0.1--1.4     & 0.2--1.8            \\
     \alphat extrapolation                    & 3--9, 2--6   & 3--9, 2--6          \\
     \bdphi extrapolation                     & 3--22, 2--18 & 3--22, 2--18        \\
     W boson polarization                     & 1--7, 2--7   & --                  \\
@@ -974,7 +975,7 @@ extrapolations in kinematical variables covered by the transfer
 factors. Several sets of tests are performed. The accuracy of the
 modelling of the efficiencies of both the \alphat and \bdphi
 requirements is estimated from both the \mj and \mmj samples. The
-effect of W polarization are probed by using \mj events with a
+effects of W boson polarization are probed by using \mj events with a
 positively charged muon to predict those containing a negatively
 charged muon. Finally, the efficiency of the single isolated track
 veto is also probed using a sample of \mj events. The uncertainties
@@ -984,11 +985,11 @@ The simulation modelling of the \nb distributions for the \znunuj
 background in the region $\nb \geq 1$ is evaluated through a binned
 maximum-likelihood fit to the observed \nb distributions in data in
 each (\njet, \scalht) bin of the \mmj CR. Additional checks are
-performed in \mmj samples that are enriched in mistagged jets
-originating from gluons or LF quarks and genuine tags of b quarks from
-gluon splitting through the use of loose and tight working points of
-the b tagging algorithm. No tests reveal evidence of significant bias
-in the simulation modelling of the \nb distribution.
+performed in \mmj samples that are enriched in mistagged jets that
+originate from LF partons or charm quarks, or the genuine tags of b quarks from
+gluon splitting, through the use of loose and tight working points of
+the b tagging algorithm, respectively. No tests reveal evidence of
+significant bias in the simulation modelling of the \nb distribution.
 
 Finally, the modelling of the \mht distribution in simulated events is
 compared to the distributions observed in \mj and \mmj control data,
@@ -1260,8 +1261,8 @@ large as ${\approx}30\%$. The corrections to the jet energy scale
 counts as large as ${\approx}25\%$ for models yielding high jet
 multiplicities. The uncertainties in the modelling of scale factors
 applied to simulated event samples that correct for differences in the
-b tagging efficiency and mistag probability of LF partons and charm
-quarks can be as large as ${\approx}20\%$.
+b tagging efficiency and mistag probabilities can be as large as
+${\approx}20\%$.
 
 Table~\ref{tab:benchmarks} defines a number of benchmark models that
 are close to the limit of the search sensitivity. All model families
@@ -1399,7 +1400,7 @@ adequately covered by, the uncertainties in the modelling of
 ISR. Uncertainties from $\mu_\text{F}$ and $\mu_\text{R}$ variations
 are determined to be ${\approx}5\%$. The effect of a 5\% uncertainty
 in the total inelastic cross section~\cite{Aaboud:2016mmw} is
-propagated through the reweighting procedure that corrects for
+propagated through the weighting procedure that corrects for
 differences between the simulated and measured pileup, resulting in
 event count variations of ${\approx}10\%$. Uncertainty in the
 modelling of the efficiency to identify high-quality, isolated leptons
