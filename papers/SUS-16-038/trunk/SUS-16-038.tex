@@ -106,7 +106,7 @@
   to 1050, 1000, and 1325\GeV, respectively. The gluino mass is probed
   up to 1900, 1650, and 1650\GeV when the gluino decays via virtual
   states of the aforementioned squarks. The strongest mass bounds on
-  the daughter neutralinos from gluino and squark decays are 1150 and
+  the neutralinos from gluino and squark decays are 1150 and
   575\GeV, respectively.  The search also provides sensitivity to
   simplified models inspired by split SUSY that involve the production
   and decay of long-lived gluinos. Values of the proper decay length
@@ -150,7 +150,7 @@ the gauge couplings at high energy~\cite{Dimopoulos:1981yj,
   Ibanez:1981yh, Marciano:1981un}, and provides a candidate for dark
 matter (DM). Under the assumption of R-parity~\cite{Farrar:1978xj}
 conservation, SUSY particles are expected to be produced in pairs at
-the CERN LHC and to decay to the lightest stable SUSY particle
+the CERN LHC and to decay to the stable, lightest SUSY particle
 (LSP). The LSP is assumed to be the neutralino \PSGczDo, a weakly
 interacting massive particle and a viable DM
 candidate~\cite{Jungman:1995df, Patrignani:2016xqp}.  So-called
@@ -180,9 +180,9 @@ gluino and quarks or gluons~\cite{Fairbairn:2006gg}, known as an
 R-hadron, before eventually decaying to a quark--antiquark pair and
 the \PSGczDo. The long-lived gluino can lead to final states with
 significant \ptvecmiss from the undetected \PSGczDo particles and to
-jets with particle vertices located a significant distance (\ie
+jets with vertices located a significant distance (\ie
 displaced) from the luminous region of the proton beams. A metastable
-gluino, with a proper decay length significantly beyond the scale of
+gluino, with a decay length significantly beyond the scale of
 the CMS detector, can escape undetected.
 
 This paper presents a search for new-physics processes in final states
@@ -303,8 +303,8 @@ Section~\ref{sec:selection}.
                                         & \mybox{5cm}{l}{${\geq}2a$} ($a$ denotes asymmetric, $40 < \pt^{\jet{2}} < 100\GeV$)                          \\
                                         & \mybox{5cm}{l}{2, 3, 4, 5, ${\geq}6$} (symmetric, $\pt^{\jet{2}} > 100\GeV$)                                 \\
       \nb                               & \mybox{5cm}{l}{0, 1, 2, 3, ${\geq}4$} (can be dropped/merged \vs \njet)                                      \\
-      \scalht boundaries [\GeVns{}]     & \mybox{5cm}{l}{200, 400, 600, 900, 1200} (can be dropped/merged \vs \njet, \nb)                              \\
-      \mht boundaries [\GeVns{}]        & \mybox{5cm}{l}{200, 400, 600, 900} (can be dropped/merged \vs \njet, \nb, \scalht)                           \\
+      \scalht boundaries                & \mybox{5cm}{l}{200, 400, 600, 900, 1200\GeV} (can be dropped/merged \vs \njet, \nb)                          \\
+      \mht boundaries                   & \mybox{5cm}{l}{200, 400, 600, 900\GeV} (can be dropped/merged \vs \njet, \nb, \scalht)                       \\
       \hline
       \multicolumn{2}{l}{\bf Simplified categorization schema}                                                                                         \\
       Topology (\njet, \nb)             
@@ -312,8 +312,8 @@ Section~\ref{sec:selection}.
                                         & \mybox{2.5cm}{l}{Low \njet} ($2 \cap 3, 0 \cap 1$), ($2 \cap 3, {\geq}2$)                                    \\
                                         & \mybox{2.5cm}{l}{Medium \njet} ($4 \cap 5, 0 \cap 1$), ($4 \cap 5, {\geq}2$)                                 \\
                                         & \mybox{2.5cm}{l}{High \njet} (${\geq}6, 0 \cap 1$), (${\geq}6, {\geq}2$)                                     \\
-      \scalht boundaries [\GeVns{}]     & $\scalht > 200\GeV$ ($\njet \leq 3$), $\scalht > 400\GeV$ ($\njet \geq 4$)                                   \\
-      \mht boundaries [\GeVns{}]        & 200, 400, 600, 900                                                                                           \\
+      \scalht boundaries                & $\scalht > 200\GeV$ ($\njet \leq 3$), $\scalht > 400\GeV$ ($\njet \geq 4$)                                   \\
+      \mht boundaries                   & 200, 400, 600, 900\GeV                                                                                       \\
       \hline
       {\bf Control regions}             & Baseline selection +                                                                                         \\
 %                                       &                                                                                                              \\
@@ -404,7 +404,7 @@ isolated~\cite{Khachatryan:2015iwa} within a cone around the photon
 trajectory defined by the radius ${\Delta}R =
 \sqrt{\smash[b]{(\Delta\phi)^2 + (\Delta\eta)^2}} = 0.3$, where
 $\Delta\phi$ and $\Delta\eta$ represent differences in the azimuthal
-angle and pseudorapidity. Isolation for an electron or muon is a
+angle (radians) and pseudorapidity. Isolation for an electron or muon is a
 relative quantity, $I^\text{rel}$, defined as the scalar \pt sum of
 all PF particle candidates within a cone around its trajectory,
 divided by the lepton \pt. The cone radius is dependent on the lepton
@@ -428,7 +428,7 @@ respectively, and the pseudorapidity requirement $\abs{\eta} < 2.5$.
 Jets are reconstructed from the PF particle candidates, clustered by
 the anti-\kt algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} with a
 distance parameter of 0.4. In this process, the raw jet energy is
-obtained from the sum of the particle candidate energies and the raw
+obtained from the sum of the particle candidate energies, and the raw
 jet momentum by the vectorial sum of the particle candidate momenta,
 which results in a nonzero jet mass. An offset correction is applied
 to jet energies to take into account the contributions from neutral
@@ -443,9 +443,9 @@ events~\cite{Khachatryan:2016kdb}. Jets are required to satisfy $\pt >
 40\GeV$ and $\abs{\eta} < 2.4$. Jets are also subjected to a standard
 set of identification criteria~\cite{2011JInst611002C} that require
 each jet to contain at least two particle candidates and at least one
-charged particle track, and the energy fraction attributed to
-charged-hadron particle candidates, $f_{\text{h}^{\pm}}$, is required
-to be nonzero.
+charged particle track, and the energy fraction $f_{\text{h}^{\pm}}$
+attributed to charged-hadron particle candidates is required to be
+nonzero.
 
 Jets can be identified as originating from b quarks using the combined
 secondary vertex (CSVv2) algorithm~\cite{BTV-16-002}. %Chatrchyan:2012jua}.
@@ -499,8 +499,8 @@ reconstruction failures can all lead to large values of \ptmiss. Such
 events are rejected with high efficiency using dedicated
 vetoes~\cite{CMS-PAS-JME-16-004, Khachatryan:2014gga}. Events are
 vetoed if any jet fails the identification criteria described in
-Section~\ref{sec:reconstruction}. Further, the highest \pt jet of the
-event $\jet{1}$ is required to satisfy $0.1 < f_{\text{h}^{\pm}}^{\jet{1}} <
+Section~\ref{sec:reconstruction}. Further, $f_{\text{h}^{\pm}}$ for the highest \pt jet of the
+event, $\jet{1}$, is required to satisfy $0.1 < f_{\text{h}^{\pm}}^{\jet{1}} <
 0.95$ to further suppress beam halo and rare reconstruction failures.
 
 The highest \pt jet in the event is required to satisfy $\pt^{\jet{1}}
@@ -665,8 +665,8 @@ each topology, event yields are integrated over the full available
 \scalht range and categorized according to the four nominal \mht bins
 defined above. This schema has 32 bins that are exclusive, contiguous,
 and provide a complete coverage of the SR. The SM background estimates
-are obtained from the same likelihood model used to determine the
-nominal result.
+are obtained from the same likelihood model as the one used to
+determine the nominal result.
 
 %_______________________________________________________________________________
 %_______________________________________________________________________________
@@ -706,7 +706,7 @@ WW, WZ, ZZ (diboson) production; and the associated production of
 \label{sec:control}
 
 Topological and kinematical requirements, summarized in
-Table~\ref{tab:selections}, ensure the samples of CR data are enriched
+Table~\ref{tab:selections}, ensure that the samples of CR data are enriched
 in the same or similar SM processes that populate the SR, as well as
 being depleted in contributions from SUSY processes (signal
 contamination).
@@ -726,7 +726,7 @@ Table~\ref{tab:selections}. %to ensure high trigger efficiencies.
 A trigger condition that requires an isolated muon with $\pt > 24\GeV$
 and $\abs{\eta} < 2.1$ is used to record the \mj and \mmj event
 samples with efficiencies of ${\approx}90$ and ${\approx}99\%$,
-respectively. For both samples, no requirements on \alphat nor \bdphi
+respectively. For both samples, no requirements on \alphat or \bdphi
 are imposed. The kinematical properties of events in the \mj and \mmj
 CRs and SR are comparable once the muon or dimuon system is ignored in
 the calculation of event-level quantities such as \scalht and \mht.
@@ -827,7 +827,7 @@ according to the prescription in Ref.~\cite{Borschensky:2014cia}. The
   Khachatryan:2015pea} is used to describe parton showering and
 hadronization for all simulated samples.
 
-The \textsc{rhadrons} package within the \PYTHIA program is used to
+The \textsc{rhadrons} package within the \PYTHIA 8.205 program is used to
 describe the formation of R-hadrons through the hadronization of
 gluinos~\cite{Fairbairn:2006gg, Kraan:2004tz, Mackeprang:2006gx}. The
 hadronization process, steered according to the default parameter
@@ -838,8 +838,9 @@ well as glueball-like (\PSg\Pg) states with a probability $P_{\PSg\Pg}
 quark, and antiquark, respectively. The gluino is assumed to undergo a
 three-body decay, to a \Pq\Paq\ pair and the \PSGczDo, according to
 its proper decay length \ctau that is a parameter of the simplified
-model~\cite{Buchmueller:2017uqu}. Values within the range $10^{-3} <
-\ctau < 10^{-3}\unit{mm}$ are considered. Studies with alternative
+model~\cite{Buchmueller:2017uqu}. 
+%Values within the range $10^{-3} < \ctau < 10^{5}\unit{mm}$ are considered.
+Studies with alternative
 values for parameters that influence the hadronization of the gluino,
 such as $P_{\PSg\Pg} = 50\%$, indicate a minimal influence on the
 event topology and kinematical variables for the models considered in
@@ -855,14 +856,13 @@ factors are applied to simulated event samples that correct for
 differences with respect to data in the b tagging efficiency and
 mistag probabilities. The scale factors have
 typical values of ${\approx}$0.95--1.00 and ${\approx}$1.00--1.20,
-respectively, for a jet \pt range of 40--600\GeV. All remaining signal
+respectively, for a jet \pt range of 40--600\GeV~\cite{BTV-16-002}. All remaining signal
 models rely on the CMS fast simulation package~\cite{fastsim} that
 provides a description that is consistent with \GEANTfour following
 the application of near-unity corrections for the differences in the b
 tagging efficiency and mistag probabilities, as well as corrections for
 the differences in the modelling of the \mht distribution. To model
-the effects of multiple pp collisions within the same or neighbouring
-bunch crossings (pileup), all simulated events are generated with a
+the effects of pileup, all simulated events are generated with a
 nominal distribution of pp interactions per bunch crossing and then
 weighted to match the pileup distribution as measured in data.
 
@@ -907,7 +907,7 @@ effects are discussed below.
 
 The uncertainties from known theoretical and experimental sources are
 propagated through to the transfer factors to ascertain the magnitude
-of variations related to: the jet energy scale, the scale factors
+of variations related to the following: the jet energy scale, the scale factors
 related to the b tagging efficiency and mistag probabilities, the
 efficiency to trigger on and identify, or veto, well-reconstructed
 isolated leptons, the PDFs~\cite{Butterworth:2015oua}, $\mu_\text{F}$
@@ -1023,8 +1023,8 @@ procedure similar to the one described in Section~\ref{sec:ewk}. The
 corrected counts are assumed to arise solely from multijet
 production. For each sideband, a transfer factor per (\njet, \scalht)
 bin is obtained from simulation, defined as the ratio of the number of
-multijet events that satisfy the sideband requirement to the number
-that fail this requirement. Estimates of the multijet background per
+multijet events that satisfies the SR requirements to the number
+that satisfies the sideband requirement. Estimates of the multijet background per
 (\njet, \scalht) bin are obtained per sideband from the product of the
 transfer factors and the corrected data counts.
 
@@ -1048,7 +1048,7 @@ A model is assumed to determine the estimates as a function of \nb and
 \mht. The distribution of multijet events as a function of \nb and
 \mht per (\njet, \scalht) bin is assumed to be identical to the
 distribution expected for the nonmultijet backgrounds. This assumption
-is based on studies in simulation and is a valid simplification given
+is based on simulation-based studies and is a valid simplification given
 the magnitude of the multijet background relative to the sum of all
 other SM backgrounds, as well as the magnitude of the statistical and
 systematic uncertainties in the estimates described above.
@@ -1135,7 +1135,7 @@ counts in the signal region.
 
 Hypothesis testing with regards to a potential signal contribution is
 performed by considering a full fit to the event counts in the SR and
-CRs. No significant tension is observed between the predictions and
+CRs. No significant deviation is observed between the predictions and
 data in the SR and CRs, and the data counts appear to be adequately
 modelled by the SM expectations with no significant kinematical
 patterns.
@@ -1157,7 +1157,7 @@ simplified SUSY models~\cite{Alwall:2008ag, Alwall:2008va,
 as summarized in Table~\ref{tab:sms}. Each family of models realizes a
 unique production and decay mode. The model parameters are the masses
 of the parent gluino ($m_\PSg$) or bottom, top, and LF ($m_{\PSQb}$,
-$m_{\PSQt}$, $m_{\PSQ}$) squark, also collectively labelled as
+$m_{\PSQt_1}$, $m_{\PSQ}$) squark, also collectively labelled as
 $m_\text{SUSY}$, and the \PSGczDo ($m_{\PSGczDo}$). Two scenarios are
 considered for LF squarks: one with an eightfold mass degeneracy for
 $\PSQ_\cmsSymbolFace{L}$ and $\PSQ_\cmsSymbolFace{R}$ with $\PSQ =
@@ -1448,11 +1448,11 @@ dependence solely on $m_{\text{SUSY}}$. The exclusion of models is
 evaluated using observed data counts in the signal region (solid
 contours) and also expected counts based on an Asimov data set (dashed
 contours). The observed excluded regions for the T1bbbb and T1tttt
-families, as shown in Fig.~\ref{fig:limits-sms} (\cmsRight), can be up
+families, as shown in Fig.~\ref{fig:limits-sms} (lower), can be up
 to 2--3 standard deviations weaker than the expected excluded regions
 when $m_{\PSg} - m_{\PSGczDo} \approx 350\GeV$. These differences are
 typically due to fluctuations in data for events that satisfy $\njet
-\geq 5$ and $\njet \geq 3$. Figure~\ref{fig:limits-sms} (\cmsRight)
+\geq 5$ and $\nb \geq 3$. Figure~\ref{fig:limits-sms} (lower)
 also allows a comparison of the sensitivity to T1qqqq and T1qqqqLL
 models, which assume the prompt-decay and metastable gluino scenarios,
 respectively. The latter scenario leads to a monojet-like final state
@@ -1471,9 +1471,9 @@ cover the range $1 < \ctau < 100\um$ and demonstrate coverage
 comparable to the T1qqqq prompt-decay scenario. A moderate improvement
 in sensitivity for models with $1 \lesssim \ctau \lesssim 10\unit{mm}$
 is observed because of the additional signal-to-background
-discrimination provided by the \nb variable. The sensitivity reduces
-for models with lifetimes in the region $\ctau > 100\unit{mm}$ because
-of a reduced acceptance for the jets from the gluino decay and an
+discrimination provided by the \nb variable. The sensitivity is
+reduced for models with lifetimes in the region $\ctau > 100\unit{mm}$ because
+of a lower acceptance for the jets from the gluino decay and an
 increased reliance on jets from ISR. The coverage is independent of
 \ctau beyond values of $10\unit{m}$ and comparable to the limiting
 case of a metastable gluino. 
@@ -1514,7 +1514,8 @@ negligible for models with \ctau below $1\unit{m}$.
   \caption{Observed and expected mass exclusions at 95\% CL
     (indicated, respectively, by solid and dashed contours) for
     various families of simplified models. 
-    (\cmsLeft) Five model families involve the direct pair
+    The upper subfigure summarises the mass exclusions for five model
+    families that involve the direct pair
     production of squarks. The first scenario considers the pair
     production and decay of bottom squarks (T2bb). Two
     scenarios involve the production and decay of top squark pairs
@@ -1524,7 +1525,8 @@ negligible for models with \ctau below $1\unit{m}$.
     production and decay of light-flavour squarks, with different
     assumptions on the mass degeneracy of the squarks as described in
     the text (T2qq\_8fold and T2qq\_1fold). 
-    (\cmsRight) Three scenarios involve the production and prompt
+    The lower subfigure summarises three scenarios that involve
+    the production and prompt 
     decay of gluino pairs via virtual squarks (T1bbbb,
     T1tttt, and T1qqqq). A final scenario involves
     the production of gluinos that are assumed to be metastable on the
@@ -1611,7 +1613,7 @@ on a data sample of pp collisions collected in 2016 at $\sqrt{s} =
 momentum \ptvecmiss, as expected from the production and decay of
 massive gluinos and squarks, are considered. Signal events are
 categorized according to the number of reconstructed jets, the number
-of jets identified to originate from bottom quarks, and the scalar and
+of jets identified as originating from bottom quarks, and the scalar and
 vector sums of the transverse momenta of jets. The standard model
 background is estimated from a binned likelihood fit to event yields
 in the signal region and data control samples. The observed yields in
@@ -1621,7 +1623,7 @@ provided to aid further interpretation of the result in \suppMaterial.
 
 Limits are determined in the parameter spaces of simplified models
 that assume the production and prompt decay of gluino or squark
-pairs. The strongest exclusion bounds (95\% CL) for squark masses are
+pairs. The strongest exclusion bounds (95\% confidence level) for squark masses are
 1050, 1000, and 1325\GeV for bottom, top, and mass-degenerate
 light-flavour squarks, respectively. The corresponding mass bounds on
 the neutralino \PSGczDo from squark decays are 500, 400, and
@@ -1663,6 +1665,31 @@ models with long-lived gluinos with $\ctau \lesssim 1\unit{mm}$.
 
 %\clearpage
 \begin{acknowledgments}
+We congratulate our colleagues in the CERN accelerator departments for
+the excellent performance of the LHC and thank the technical and
+administrative staffs at CERN and at other CMS institutes for their
+contributions to the success of the CMS effort. In addition, we
+gratefully acknowledge the computing centres and personnel of the
+Worldwide LHC Computing Grid for delivering so effectively the
+computing infrastructure essential to our analyses. Finally, we
+acknowledge the enduring support for the construction and operation of
+the LHC and the CMS detector provided by the following funding
+agencies: BMWFW and FWF (Austria); FNRS and FWO (Belgium); CNPq,
+CAPES, FAPERJ, and FAPESP (Brazil); MES (Bulgaria); CERN; CAS, MoST,
+and NSFC (China); COLCIENCIAS (Colombia); MSES and CSF (Croatia); RPF
+(Cyprus); SENESCYT (Ecuador); MoER, ERC IUT, and ERDF (Estonia);
+Academy of Finland, MEC, and HIP (Finland); CEA and CNRS/IN2P3
+(France); BMBF, DFG, and HGF (Germany); GSRT (Greece); OTKA and NIH
+(Hungary); DAE and DST (India); IPM (Iran); SFI (Ireland); INFN
+(Italy); MSIP and NRF (Republic of Korea); LAS (Lithuania); MOE and UM
+(Malaysia); BUAP, CINVESTAV, CONACYT, LNS, SEP, and UASLP-FAI
+(Mexico); MBIE (New Zealand); PAEC (Pakistan); MSHE and NSC (Poland);
+FCT (Portugal); JINR (Dubna); MON, RosAtom, RAS, RFBR and RAEP
+(Russia); MESTD (Serbia); SEIDI, CPAN, PCTI and FEDER (Spain); Swiss
+Funding Agencies (Switzerland); MST (Taipei); ThEPCenter, IPST, STAR,
+and NSTDA (Thailand); TUBITAK and TAEK (Turkey); NASU and SFFR
+(Ukraine); STFC (United Kingdom); DOE and NSF (USA).
+
 \hyphenation{Rachada-pisek} Individuals have received support from the
 Marie-Curie programme and the European Research Council and Horizon
 2020 Grant, contract No. 675440 (European Union); the Leventis
