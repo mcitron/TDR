@@ -101,6 +101,8 @@ class cleanRefs:
                        ('TITLE',re.compile('(?i)MadGraph.*5'), 'Consider using arXiv:1405.0301, MadGraph5_aMC@NLO?','Warning'),                       
                        ('TITLE',re.compile('POWHEG'), 'Is POWHEG (BOX) correctly referenced? See http://powhegbox.mib.infn.it','Warning'),                       
                        ('DOI',re.compile('10.1088/1126-6708/2002/06/029|10.1088/1126-6708/2003/08/007|10.1088/1126-6708/2006/03/092|10.1088/1126-6708/2008/07/029|10.1007/JHEP01\(2011\)053'), 'MC@NLO citation found. Did you get them all? See http://www.hep.phy.cam.ac.uk/theory/webber/MCatNLO/ near the bottom','Warning'),
+                       ('DOI',re.compile('10.1007/JHEP05(2014)146|10.1007/JHEP09(2013)029'), 'Soft drop or modified mass drop tagger found. If you are using soft drop with beta=0, please also cite the MMDT', 'Warning'),
+                       ('DOI',re.compile('10.1088/1126-6708/2008/04/063|10.1140/epjc/s10052-012-1896-2'), 'You are using anti-kt or fastjet. Did you cite both properly?', 'Warning'),
                        ('DOI',re.compile('doi|DOI'), 'Do not include dx.doi.org','Error'),
                        ('DOI',re.compile(','), 'Only one doi in the DOI field','Error'),
                        ('DOI',re.compile(' '), 'No spaces in the DOI field','Error'),
@@ -255,6 +257,16 @@ class cleanRefs:
             for k,v in c.iteritems():
                 if len(v)>1:
                     print("\t",k,": ",v)
+    def checkTrigger(self, checkItems, checkTag):
+        """ Check to make sure that the CMS trigger system paper (10.1088/1748-0221/12/01/P01020) is cited for all Run 2 papers (and following).
+            For now just check all papers. """
+        trigDoi = "10.1088/1748-0221/12/01/P01020"
+        if (sys.version_info[0] > 2 or (sys.version_info[0]==2  and sys.version_info[1]>6)) :
+            chklist = [v[checkTag] for (v,j) in ((vv[1],i) for i, vv in checkItems.items()) if checkTag in v and j in self._refs]
+        else:
+            chklist = [v[checkTag] for (v,j) in ((vv[1],i) for i, vv in checkItems.iteritems()) if checkTag in v and j in self._refs]
+        if not trigDoi in chklist:
+            print('>>Run 1 trigger citation, TRG-12-001, http://dx.doi.org.{0} was not cited. Should be included for both Run 1 and Run 2.'.format(trigDoi))
 
 
     def checkRefs(self):
@@ -332,7 +344,8 @@ class cleanRefs:
                     if m:
                         print('{1}: Blank value for field {0}'.format(item[0],key))                        
                 #print(self.printCite(key))
-        # duplicate entry check (use doi as unique marker)
+        print(">   Checking references against general tests   <")
+        self.checkTrigger(self._bib,'DOI')
         # python 2.7 and later only
         self.checkForDuplicates(self._bib,'DOI')
         self.checkForDuplicates(self._bib,'EPRINT')

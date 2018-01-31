@@ -1,7 +1,7 @@
 \def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
 \def\Filedate$#1: #2 #3 ${\gdef\filedate{#2}}
-\Fileversion$Revision: 306882 $
-\Filedate$Date: 2015-10-26 11:26:15 +0000 (Mon, 26 Oct 2015) $
+\Fileversion$Revision: 431900 $
+\Filedate$Date: 2017-10-31 15:19:37 +0000 (Tue, 31 Oct 2017) $
 
 %\def\fileversion{1.0.0}\def\filedate{21 December 2006}
 
@@ -19,6 +19,7 @@
 %\tracingonline2
 %\showboxdepth100
 %\showboxbreadth100
+%\usepackage{fltrace}
 
 % switches to handle document styles: one of these must be specified.
 % pas is the same as as.
@@ -113,6 +114,7 @@
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\cov}{cov}
 \DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\corr}{corr}
 \usepackage{pennames-pazo}% particle names: converted from pennames for mathpazo
 
 \usepackage{topcapt}% for captions at top, i.e., tables
@@ -122,6 +124,8 @@
 \ifpdf\usepackage[watermark]{pdfdraftcopy}\watermarkgraphic{BigDraft}%
 \else\usepackage{draftcopy}\fi}
 \usepackage{pdfpages}% not for use in journal submission!
+\usepackage{placeins} % for FloatBarrier: TOP-17-006 ATLAS combo only
+\usepackage{adjustbox} % TOP-17-006 ATLAS combo only
 %\usepackage{float}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %
@@ -503,7 +507,7 @@
 \providecommand{\doi}{\texttt{doi:}\begingroup \urlstyle{tt}\Url}
 \providecommand{\DOI}[1]{\href{http://dx.doi.org/#1}{\doi{#1}}}
 
-\newenvironment{acknowledgments}{\section*{Acknowledgments}}{\par}
+\newenvironment{acknowledgments}{\section*{Acknowledgments}\tolerance=800}{\par}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   NOTES code
@@ -615,20 +619,20 @@
  % \setlength{\textheight}{ 275mm}
  \enlargethispage{40mm}
   \setcounter{page}{1}\pagenumbering{roman}
-\ifx\cmsCernNo\undefined
+\ifx\cmsCernNoTag\undefined
 \cmsNoteRepo\hfill{\Large\textbf{\cmsPubBlock}}
 \vskip -2em
 \else
 \newbox\cms@cernbox
 \newbox\cms@stampbox
-\setbox\cms@stampbox=\hbox to 0pt { \small \begin{tabular}[b]{@{}l}CERN-PH-EP/\cmsCernNo\\[-0.2em]\cmsCernDate\end{tabular}}
+\setbox\cms@stampbox=\hbox to 0pt { \small \begin{tabular}[b]{@{}l}\cmsCernNoTag\\[-0.2em]\cmsCernDate\end{tabular}}
 \setbox\cms@cernbox=\vbox{\hbox{\hspace{-1cm}\includegraphics[width=1cm]{cernlogo}\raise 0.35 em \box\cms@stampbox\hss}\vspace*{12mm}\vss}
 \begin{center}\Large EUROPEAN ORGANIZATION FOR NUCLEAR RESEARCH (CERN)\end{center}
 \vskip 2em
 \fi
 % Select header block: appropriate center graphic + date and optional archive info
 \ifthenelse{\boolean{cms@final}}{
-\ifx\cmsCernNo\undefined
+\ifx\cmsCernNoTag\undefined
 \begin{center}\includegraphics{cms_\cms@style}\end{center}
 \vskip -0.5em
 \else
@@ -638,7 +642,7 @@
 \vskip 0.5em%
 \fi
 \ifthenelse{\boolean{cms@pas}}{\cmsContact}{}%
-{\ifx\cmsCernNo\undefined
+{\ifx\cmsCernNoTag\undefined
 \hfill\large\ifx\RCSDate\empty\@date\else\ifthenelse{\boolean{cms@pas}\or\boolean{cms@paper}}{\expandafter\RCSgetDate\RCSDate\RCSDayDate}{\@date}\fi
 \fi}
 }
@@ -737,7 +741,7 @@ Archive Date:& \ifx\RCSId\empty\relax\else\expandafter\RCSgetDate\RCSId\RCSSVNDa
   }{}
   % submit to :
   \ifx\cmsMessage\undefined\else\vskip 1cm\begin{center}\textit{\cmsMessage}\end{center}\fi
-  \ifthenelse{\boolean{cms@final}}{\null\vfill\ifthenelse{\boolean{cms@paper}}{\noindent\small{\cmsCopyright\ \href{http://creativecommons.org/licenses/by/3.0}{CC-BY-3.0 license}}}{}}{\vfill\hfill{\textcolor{cms@grey}{\framebox{
+  \ifthenelse{\boolean{cms@final}}{\null\vfill\ifthenelse{\boolean{cms@paper}}{\noindent\small{\cmsCopyright\ \href{http://creativecommons.org/licenses/by/4.0}{CC-BY-4.0 license}}}{}}{\vfill\hfill{\textcolor{cms@grey}{\framebox{
   \begin{tabular}{lp{0.8\textwidth}}
   \multicolumn{2}{l}{This box is only visible in draft mode. Please make sure the values below make sense.}\\
   \cline{1-2}\\

@@ -13,7 +13,8 @@ use XML::Twig;
 use Text::Balanced qw (extract_bracketed);
 #use PDF::API2; #not installed on lxplus
 
-my $VERSION = sprintf "%d.%03d", q$Revision: 312882 $ =~ /(\d+)/g;
+
+my $VERSION = sprintf "%d.%03d", q$Revision: 431900 $ =~ /(\d+)/g;
 my $verbose;
 my $texFile = 'D:/tdr2/papers/XXX-08-000/trunk/XXX-08-000.tex';
 my $doc = 'XXX-08-000_temp.pdf';
@@ -94,6 +95,7 @@ if ($help)
       my $figNum; # one of following categories: 0, 1.29, CP 2
       my $figNam; # filename less extension of included figure
       my $figPath; # filename with associated path
+      my $figFileList = dirname($logFile)."/FigList.txt"; # file to store included figure names and ordered file names
 
       my $lastFigPart = undef; #a, b, c, etc.
       my $lastFigNum = undef;
@@ -137,10 +139,10 @@ EOD
    $_ .= do { local( $/ ); <FILE> }; #grab entire content!
    close(FILE);
    # extract svn info: exemplars-- (note that these are the real values for this file)
-   # \RCS$Revision: 312882 $
-   # \RCS$Date: 2015-12-01 16:52:25 +0000 (Tue, 01 Dec 2015) $
-   # \RCS$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/utils/trunk/general/makeManifest.pl $
-   # \RCS$Id: makeManifest.pl 312882 2015-12-01 16:52:25Z alverson $
+   # \RCS$Revision: 431900 $
+   # \RCS$Date: 2017-10-31 15:19:37 +0000 (Tue, 31 Oct 2017) $
+   # \RCS$HeadURL: svn+ssh://bainbrid@svn.cern.ch/reps/tdr2/utils/trunk/general/makeManifest.pl $
+   # \RCS$Id: makeManifest.pl 431900 2017-10-31 15:19:37Z alverson $
    # -- what it looked like under cvs, with the dollar signs removed
    #\RCS Revision: 1.4 
    #\RCS Date: 2008/07/31 09:20:05 
@@ -318,6 +320,7 @@ EOD
       &insert_datafield("245",$record,$title);
       
       # Other standard MARC data as will be implemented by CDS (as per message 2013-03-05)
+      # [See also https://cds.cern.ch/help/admin/howto-marc]
       my $marcCollab = XML::Twig::Elt->new(datafield=>{ tag=>"710", ind1=>" ", ind2=>" "});
       &insert_subfield("g",$marcCollab,"CMS Collaboration");
       $marcCollab->paste('last_child',$record);
@@ -422,8 +425,17 @@ EOD
       {
           if ($^O eq "MSWin32")
           {
-              $ENV{'PATH'} = $ENV{'ProgramFiles'}."\\gs\\gs9.10\\bin;$ENV{'PATH'}";
-              $convertCmd = $ENV{'ProgramFiles(x86)'}."\\ImageMagick-6.8.7-Q16\\convert.exe";
+              if (-d $ENV{'ProgramFiles'}."\\ImageMagick-7.0.7-Q16")
+              {
+                $ENV{'PATH'} = $ENV{'ProgramFiles'}."\\ImageMagick-7.0.7-Q16;".$ENV{'ProgramFiles'}."\\gs\\gs9.22\\bin;$ENV{'PATH'}";
+                $convertCmd = "magick.exe";
+              }
+              elsif (-d $ENV{'ProgramFiles'}."\\ImageMagick-6.9.2-Q16")
+              {
+                $ENV{'PATH'} = $ENV{'ProgramFiles'}."\\ImageMagick-7.0.7-Q16;".$ENV{'ProgramFiles'}."\\gs\\gs9.18\\bin;$ENV{'PATH'}";
+                $convertCmd = "convert.exe";
+              }
+              else {print('***No image conversion program found***');} 
           }
           else
           {
@@ -437,7 +449,9 @@ EOD
       }
       if ($verbose) {print "> Opening $logFile to look for figures\n";}
       open (LOGFILE, $logFile) || die ("can't open the log file $logFile: $!");
-      local $/ = "\012"; # necessary when called, for some unknown reason
+      if ($verbose) {print ("opening $figFileList for writing\n");}
+      open (FIGLIST, ">", $figFileList) || die ("can't open file for figure list, $figFileList: $!");
+local $/ = "\012"; # necessary when called, for some unknown reason
       while (<LOGFILE> )
       {
         chomp;
@@ -504,9 +518,10 @@ EOD
                 {
                     if ($figNum == 0) { $figOffset = 1 } else { $figOffset = 0 }; 
                 }
-                $outFile = &genFigName;
+                my ($outFile, $startingFig) = &genFigName;
                 if ($outFile)
                 {
+                    print FIGLIST ("$startingFig $outFile\n");
                     if ($verbose) {print ">...Processing $outFile\n";}
                     $fft_tag = XML::Twig::Elt->new(datafield=>{tag=>"FFT", ind1=>" ", ind2=>" "});
                     $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"a"},$outDir."/".$outFile); # need to put back URL if go to server from afs
@@ -518,16 +533,17 @@ EOD
                     $outFile =~ m/^(\S+)\.\S{3,4}$/s;
                     $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"d"},$1);
                     $doc_tag->paste('last_child',$fft_tag);
-                    my @convertArgs = ("-trim", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png");
+                    my @convertArgs = ("$outDir/$outFile", "-trim", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png");
                     if ($thumbnails) 
                     {
+                      if ($verbose) {print("@convertArgs");}
                       system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?"; 
                       $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
                       $doc_tag->paste('last_child',$fft_tag);
                     }
                     if (0)
                     {
-                      @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png"); 
+                      @convertArgs = ("$outDir/$outFile", "-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png"); 
                       system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
                       $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
                       $doc_tag->paste('last_child',$fft_tag);
@@ -540,7 +556,8 @@ EOD
       close(LOGFILE);
       # kick out last figure
       $figNum = $figNum + 1; # otherwise sets figPart
-      $outFile = &genFigName;
+      my ($outFile, $startingFig) = &genFigName;
+      print FIGLIST ("$startingFig $outFile\n");      
       if ($outFile)
       {
           $fft_tag = XML::Twig::Elt->new(datafield=>{tag=>"FFT", ind1=>" ", ind2=>" "});
@@ -562,7 +579,7 @@ EOD
           }
           if (0)
           {
-            @convertArgs = ("-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$outFile", "$outDir/$1-thumb.png"); 
+            @convertArgs = ("$outDir/$outFile", "-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png"); 
             system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
             $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
             $doc_tag->paste('last_child',$fft_tag);
@@ -580,6 +597,7 @@ EOD
       $record->print($MANIFEST);
       close $MANIFEST;
       if ($verbose) {print "> Closed manifest file: $outDir/manifest.xml\n";}
+      close(FIGLIST);
 
 sub genFigName
 {# Generate figure name
@@ -627,11 +645,12 @@ sub genFigName
          }
        }
     }
+    my $oldFigPath = $lastFigPath;
     $lastFigNum = $figNum;
     $lastNewFig = $newFig;
     $lastFigPath = $figPath;
     $lastExt = $ext;
-    return $outFile;
+    return ($outFile, $oldFigPath);
 
 }
 sub formatNumber

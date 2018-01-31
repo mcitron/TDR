@@ -7,7 +7,7 @@
     """
 
 __version__ = "$Revision: 44192 $"
-#$HeadURL: svn+ssh://svn.cern.ch/reps/tdr2/utils/trunk/general/pas-bib.py $
+#$HeadURL: svn+ssh://bainbrid@svn.cern.ch/reps/tdr2/utils/trunk/general/pas-bib.py $
 #$Id: pas-bib.py 44192 2011-03-06 17:00:00Z alverson $
 
 import re
