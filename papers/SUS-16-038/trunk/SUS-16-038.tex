@@ -2,61 +2,32 @@
 \RCS$HeadURL: $
 \RCS$Id: $
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
-% Typesetting
-\newcommand\T{\rule{0pt}{2.6ex}}
-\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
 \newcommand{\ph}[1]{\phantom{#1}}
-
-% Symbols
 \newcommand{\tf}{\ensuremath{\mathcal{R}}\xspace}
 \newcommand{\cls}{\ensuremath{\text{CL}_\text{s}}\xspace}
-\newcommand{\dm}{\ensuremath{{\Delta}m}\xspace}
-\newcommand{\higgsmass}{\ensuremath{m_{\text{H}}}\xspace}
 \newcommand{\jet}[1]{\ensuremath{\text{j}_\text{#1}}\xspace}
 \newcommand{\ate}{\ensuremath{\mathcal{A}\varepsilon}\xspace}
 \newcommand{\ctau}{\ensuremath{c\tau_{0}}\xspace}
 \newcommand{\um}{\ensuremath{\,{\mu}\text{m}}\xspace}
-
-% Variables
 \newcommand{\Et}{\ensuremath{{E_{\text T}}}\xspace}
 \newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
 \newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
 \newcommand{\scalht}{\ensuremath{H_{\text{T}}}\xspace}
-\newcommand{\scalst}{\ensuremath{\mathcal{E}_\text{T}}\xspace}
 \newcommand{\mht}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
-\newcommand{\dst}{\ensuremath{\Delta\scalst}\xspace}
 \newcommand{\alphat}{\ensuremath{\alpha_{\text{T}}}\xspace}
 \newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
 \newcommand{\bdphimod}{\ensuremath{\Delta\phi^{*_{\, 25}}_\text{min}}\xspace}
-\newcommand{\minchi}{\ensuremath{\chi_\text{min}}\xspace}
 \newcommand{\mhtmet}{\ensuremath{\mht / \ptmiss}\xspace}
-
-% Selections
 \newcommand{\jets}{\ensuremath{\text{jets}}}
 \newcommand{\mj}{\ensuremath{\mu\text{+\jets}}\xspace}
 \newcommand{\mmj}{\ensuremath{\mu\mu\text{+\jets}}\xspace}
-\newcommand{\mmjpm}{\ensuremath{\mu^\pm\mu^\mp\text{+\jets}}\xspace}
 \newcommand{\gj}{\ensuremath{\gamma\text{+\jets}}\xspace}
-\newcommand{\ggj}{\ensuremath{\gamma\gamma\text{+\jets}}\xspace}
-
-% Processes
-\providecommand{\PSl}{\ensuremath{\widetilde{\ell}}\xspace}
-\newcommand{\zmumu}{\ensuremath{\cPZ \to \mu\mu}\xspace}
 \newcommand{\znunu}{\ensuremath{\cPZ \to \cPgn\cPagn}\xspace}
-\newcommand{\zj}{\ensuremath{\cPZ\text{+\jets}}\xspace}
-\newcommand{\zmumuj}{\ensuremath{\cPZ(\to \mu\mu) + \jets}\xspace}
 \newcommand{\znunuj}{\ensuremath{\cPZ(\to \cPgn\cPagn)\text{+\jets}}\xspace}
+\newcommand{\zj}{\ensuremath{\cPZ\text{+\jets}}\xspace}
 \newcommand{\wj}{\ensuremath{\PW\text{+\jets}}\xspace}
 \newcommand{\wmj}{\ensuremath{\PW(\to \mu\nu)\text{+\jets}}\xspace}
-\newcommand{\wlj}{\ensuremath{\PW(\to \ell\nu)\text{+\jets}}\xspace}
-\newcommand{\ttw}{\ensuremath{\ttbar\PW}\xspace}
-\newcommand{\ttz}{\ensuremath{\ttbar\cPZ}\xspace}
 \newcommand{\lost}{\ensuremath{\ell_\text{lost}}\xspace}
-\newcommand{\ra}{\ensuremath{\rightarrow}}
 
 \newlength\cmsFigWidth
 \newlength\cmsFigWidthTwo
@@ -65,13 +36,8 @@
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
 \ifthenelse{\boolean{cms@external}}{\providecommand{\cmsTable}[1]{#1}}{\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}}
-
 \newlength\cmsTableLabelSkip
 \setlength\cmsTableLabelSkip{-1.2ex}
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \cmsNoteHeader{SUS-16-038}
 
@@ -125,10 +91,6 @@
 }
 
 \maketitle
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \section{Introduction}
 \label{sec:introduction}
@@ -228,10 +190,6 @@ results and interpretations are described in Sections~\ref{sec:result}
 and~\ref{sec:interpretations}, respectively, and summarized in
 Section~\ref{sec:summary}.
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
 \section{The CMS detector and event reconstruction}
 \label{sec:reconstruction}
 
@@ -288,7 +246,6 @@ Section~\ref{sec:selection}.
       Jets outside acceptance           & $\mhtmet < 1.25$, veto events containing jets with $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                     \\
       \hline
       {\bf Signal region}               & Baseline selection +                                                                                         \\
-%                                       &                                                                                                              \\
       \alphat threshold (\scalht range) & 0.65 (200--250\GeV), 0.60 (250--300), 0.55 (300--350), 0.53 (350--400), 0.52 (400--900)                      \\
       \bdphi threshold                  & $\bdphi > 0.5$ ($\njet \geq 2$), $\bdphimod > 0.5$ ($\njet = 1$)                                             \\
       \hline
@@ -310,7 +267,6 @@ Section~\ref{sec:selection}.
       \mht boundaries                   & 200, 400, 600, 900\GeV                                                                                       \\
       \hline
       {\bf Control regions}             & Baseline selection +                                                                                         \\
-%                                       &                                                                                                              \\
       \mj (inverted $\mu$ veto)         
                                         & $\pt^{\mu_1} > 30\GeV$, $\abs{\eta^{\mu_1}} < 2.1$, 
                                         ${\Delta}R(\mu,\jet{i}) > 0.5$,
@@ -434,10 +390,6 @@ projection on the plane perpendicular to the beams of the negative
 vector sum of the momenta of all PF particle candidates in an
 event. Its magnitude is referred to as \ptmiss.
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
 \section{Event selection and categorization}
 \label{sec:selection}
 
@@ -494,10 +446,6 @@ collinear in $\phi$ can result in significant \mht relative to
 type of event topology, which is typical of multijet events, is
 suppressed while maintaining high efficiency for new-physics processes
 with significant \ptvecmiss by requiring $\mhtmet < 1.25$.
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \subsection{Signal region}
 \label{sec:signal}
@@ -577,10 +525,6 @@ systematic uncertainties at the percent level. Trigger efficiencies
 for a range of benchmark signal models are typically comparable or
 higher (${\approx}100\%$).
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
 \subsection{Event categorization}
 \label{sec:categorization}
 
@@ -636,10 +580,6 @@ and provide a complete coverage of the SR. The SM background estimates
 are obtained from the same likelihood model as the one used to
 determine the nominal result.
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
 \subsection{Background composition}
 \label{sec:bkgd}
 
@@ -665,10 +605,6 @@ SM processes are also considered, such as single top quark production;
 WW, WZ, ZZ (diboson) production; and the associated production of
 \ttbar and a boson ({\ttbar}W, {\ttbar}Z, {\ttbar}$\gamma$, and
 {\ttbar}H).
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \subsection{Control regions}
 \label{sec:control}
@@ -732,10 +668,6 @@ charged, isolated muons that both satisfy $\pt > 30\GeV$, $\abs{\eta}
 also required to have a dilepton invariant mass $m_{\mu\mu}$ within a
 ${\pm}25\GeV$ window around the mass of the Z
 boson~\cite{Patrignani:2016xqp}.
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \section{Monte Carlo simulation}
 \label{sec:simulation}
@@ -830,10 +762,6 @@ model the effects of pileup, all simulated events are generated with a
 nominal distribution of pp interactions per bunch crossing and then
 weighted to match the pileup distribution as measured in data.
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
 \section{Nonmultijet background estimation}
 \label{sec:ewk}
 
@@ -903,7 +831,6 @@ SR and CRs.
   } 
   \label{tab:bkgd_systs}
   \centering
-  %\small
   \begin{tabular}{ lcc }
     \hline
     Source of uncertainty                    & \multicolumn{2}{c}{Magnitude [\%]} \\
@@ -970,11 +897,6 @@ simulation as a function of \njet and are assumed to be correlated in
 \scalht (and \nb), and vice versa. The uncertainties can be as large
 as ${\approx}50\%$ in the most sensitive \mht bins.
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
-%\clearpage
 \section{Multijet background estimation}
 \label{sec:qcd}
 
@@ -1018,10 +940,6 @@ is based on simulation-based studies and is a valid simplification
 given the magnitude of the multijet background relative to the sum of
 all other SM backgrounds, as well as the magnitude of the statistical
 and systematic uncertainties in the estimates described above.
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \section{Results}
 \label{sec:result}
@@ -1099,10 +1017,6 @@ patterns.
 Event counts, SM background estimates, and the associated correlation
 matrix are also determined using the simplified 32-bin schema, which
 can be found in Appendix~\ref{app:suppMat}.
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \section{Interpretations}
 \label{sec:interpretations}
@@ -1529,11 +1443,6 @@ weaker than those obtained with the nominal result.
   \end{tabular}
 \end{table}
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
-%\clearpage
 \section{Summary}
 \label{sec:summary}
 
@@ -1586,11 +1495,6 @@ for models involving long-lived gluinos, such as the region $\ctau
 \lesssim 1\unit{mm}$, that is complementary to the coverage provided
 by dedicated techniques at the LHC.
 
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-
-%\clearpage
 \begin{acknowledgments}
 We congratulate our colleagues in the CERN accelerator departments for
 the excellent performance of the LHC and thank the technical and
@@ -1642,10 +1546,6 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
 \end{acknowledgments}
 
 \bibliography{auto_generated}
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
 
 \clearpage
 \appendix
@@ -1756,7 +1656,3 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
     schema defined in Table~\ref{tab:simplified}.}
   \label{fig:correlation}
 \end{figure} 
-
-%_______________________________________________________________________________
-%_______________________________________________________________________________
-%_______________________________________________________________________________
