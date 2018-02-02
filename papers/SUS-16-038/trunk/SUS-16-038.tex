@@ -2,19 +2,23 @@
 \RCS$HeadURL: $
 \RCS$Id: $
 
+\ifthenelse{\boolean{cms@external}}{\providecommand{\CL}{C.L.\xspace}}{\providecommand{\CL}{CL\xspace}}
+\providecommand{\NA}{\ensuremath{\text{---}}}
+\newcommand{\fh}[1]{\ensuremath{f_{\mathrm{h}^{\pm}}}\xspace}
+\newcommand{\fhleadjet}[1]{\ensuremath{f_{\mathrm{h}^{\pm}}^{\jet{1}}}\xspace}
 \newcommand{\ph}[1]{\phantom{#1}}
 \newcommand{\tf}{\ensuremath{\mathcal{R}}\xspace}
-\newcommand{\cls}{\ensuremath{\text{CL}_\text{s}}\xspace}
-\newcommand{\jet}[1]{\ensuremath{\text{j}_\text{#1}}\xspace}
+\newcommand{\cls}{\ensuremath{\text{\CL}_\text{s}}\xspace}
+\newcommand{\jet}[1]{\ensuremath{\mathrm{j}_\text{#1}}\xspace}
 \newcommand{\ate}{\ensuremath{\mathcal{A}\varepsilon}\xspace}
 \newcommand{\ctau}{\ensuremath{c\tau_{0}}\xspace}
-\newcommand{\um}{\ensuremath{\,{\mu}\text{m}}\xspace}
-\newcommand{\Et}{\ensuremath{{E_{\text T}}}\xspace}
+\newcommand{\um}{\ensuremath{\,{\mu}\mathrm{m}}\xspace}
+\newcommand{\Et}{\ensuremath{E_{\mathrm{T}}}\xspace}
 \newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
-\newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
-\newcommand{\scalht}{\ensuremath{H_{\text{T}}}\xspace}
-\newcommand{\mht}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
-\newcommand{\alphat}{\ensuremath{\alpha_{\text{T}}}\xspace}
+\newcommand{\nb}{\ensuremath{n_{\mathrm{b}}}\xspace}
+\newcommand{\scalht}{\ensuremath{H_{\mathrm{T}}}\xspace}
+\newcommand{\mht}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
 \newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
 \newcommand{\bdphimod}{\ensuremath{\Delta\phi^{*_{\, 25}}_\text{min}}\xspace}
 \newcommand{\mhtmet}{\ensuremath{\mht / \ptmiss}\xspace}
@@ -26,7 +30,7 @@
 \newcommand{\znunuj}{\ensuremath{\cPZ(\to \cPgn\cPagn)\text{+\jets}}\xspace}
 \newcommand{\zj}{\ensuremath{\cPZ\text{+\jets}}\xspace}
 \newcommand{\wj}{\ensuremath{\PW\text{+\jets}}\xspace}
-\newcommand{\wmj}{\ensuremath{\PW(\to \mu\nu)\text{+\jets}}\xspace}
+\newcommand{\wmj}{\ensuremath{\PW(\to\mu\nu)\text{+\jets}}\xspace}
 \newcommand{\lost}{\ensuremath{\ell_\text{lost}}\xspace}
 
 \newlength\cmsFigWidth
@@ -53,24 +57,24 @@
 \abstract{A search for supersymmetry (SUSY) is performed in final
   states comprising one or more jets and missing transverse momentum
   using data from proton-proton collisions at a centre-of-mass energy
-  of $13~\text{TeV}$. The data were recorded with the CMS detector at
-  the CERN LHC in 2016 and correspond to an integrated luminosity of
-  $35.9~\text{fb}^{-1}$.  The number of signal events is found to
-  agree with the expected background yields from standard model
-  processes. The results are interpreted in the context of simplified
-  models of SUSY that assume the production of gluino or squark pairs
-  and their prompt decay to quarks and the lightest neutralino.  The
-  masses of bottom, top, and mass-degenerate light-flavour squarks are
-  probed up to 1050, 1000, and 1325\GeV, respectively. The gluino mass
-  is probed up to 1900, 1650, and 1650\GeV when the gluino decays via
-  virtual states of the aforementioned squarks. The strongest mass
-  bounds on the neutralinos from gluino and squark decays are 1150 and
-  575\GeV, respectively.  The search also provides sensitivity to
-  simplified models inspired by split SUSY that involve the production
-  and decay of long-lived gluinos. Values of the proper decay length
-  \ctau from $10^{-3}$ to $10^{5}\unit{mm}$ are considered, as well as
-  a metastable gluino scenario. Gluino masses up to 1750 and 900\GeV
-  are probed for $\ctau = 1\unit{mm}$ and for the metastable state,
+  of 13\TeV. The data were recorded with the CMS detector at the CERN
+  LHC in 2016 and correspond to an integrated luminosity of
+  35.9\fbinv. The number of signal events is found to agree with the
+  expected background yields from standard model processes. The
+  results are interpreted in the context of simplified models of SUSY
+  that assume the production of gluino or squark pairs and their
+  prompt decay to quarks and the lightest neutralino.  The masses of
+  bottom, top, and mass-degenerate light-flavour squarks are probed up
+  to 1050, 1000, and 1325\GeV, respectively. The gluino mass is probed
+  up to 1900, 1650, and 1650\GeV when the gluino decays via virtual
+  states of the aforementioned squarks. The strongest mass bounds on
+  the neutralinos from gluino and squark decays are 1150 and 575\GeV,
+  respectively.  The search also provides sensitivity to simplified
+  models inspired by split SUSY that involve the production and decay
+  of long-lived gluinos. Values of the proper decay length \ctau from
+  $10^{-3}$ to $10^{5}\unit{mm}$ are considered, as well as a
+  metastable gluino scenario. Gluino masses up to 1750 and 900\GeV are
+  probed for $\ctau = 1\unit{mm}$ and for the metastable state,
   respectively. The sensitivity is moderately dependent on model
   assumptions for $\ctau \gtrsim 1\unit{m}$. The search provides
   coverage of the \ctau parameter space for models involving
@@ -241,12 +245,12 @@ Section~\ref{sec:selection}.
       \multicolumn{2}{l}{\bf Baseline event selection}                                                                                                 \\
       All-jet final state               & Veto events containing photons, electrons, muons, and SITs within acceptance                                 \\
       \ptmiss quality                   & Veto events based on filters related to beam and instrumental effects                                        \\ 
-      Jet quality                       & Veto events containing jets that fail identification criteria or $0.1 < f_{\text{h}^{\pm}}^{\jet{1}} < 0.95$ \\ 
+      Jet quality                       & Veto events containing jets that fail identification criteria or $0.1 < \fhleadjet < 0.95$ \\ 
       Jet energy and sums               & $\pt^{\jet{1}} > 100\GeV$, $\scalht > 200\GeV$, $\mht > 200\GeV$                                             \\
       Jets outside acceptance           & $\mhtmet < 1.25$, veto events containing jets with $\pt > 40\GeV$ and $\abs{\eta} > 2.4$                     \\
       \hline
       {\bf Signal region}               & Baseline selection +                                                                                         \\
-      \alphat threshold (\scalht range) & 0.65 (200--250\GeV), 0.60 (250--300), 0.55 (300--350), 0.53 (350--400), 0.52 (400--900)                      \\
+      \alphat threshold (\scalht range) & 0.65 (200--250\GeVns), 0.60 (250--300), 0.55 (300--350), 0.53 (350--400), 0.52 (400--900)                      \\
       \bdphi threshold                  & $\bdphi > 0.5$ ($\njet \geq 2$), $\bdphimod > 0.5$ ($\njet = 1$)                                             \\
       \hline
       \multicolumn{2}{l}{\bf Nominal categorization schema}                                                                                            \\
@@ -270,11 +274,11 @@ Section~\ref{sec:selection}.
       \mj (inverted $\mu$ veto)         
                                         & $\pt^{\mu_1} > 30\GeV$, $\abs{\eta^{\mu_1}} < 2.1$, 
                                         ${\Delta}R(\mu,\jet{i}) > 0.5$,
-                                        $30 < m_\text{T}(\ptvec^\mu,\ptvecmiss) < 125\GeV$                                                             \\
+                                        $30 < m_\mathrm{T}(\ptvec^\mu,\ptvecmiss) < 125\GeV$                                                             \\
       \mmj (inverted $\mu$ veto)        
                                         & $\pt^{\mu_{1,2}} > 30\GeV$, $\abs{\eta^{\mu_{1,2}}} < 2.1$, 
                                         ${\Delta}R(\mu_{1,2},\jet{i}) > 0.5$, 
-                                        $ \abs{m_{\mu\mu} - m_\text{Z}} < 25\GeV$                                                                      \\
+                                        $ \abs{m_{\mu\mu} - m_\mathrm{Z}} < 25\GeV$                                                                      \\
       Multijet-enriched                 & Sidebands to signal region: $\mht/\ptmiss > 1.25$ and/or $\bdphi < 0.5$                                      \\  
       \hline
     \end{tabular}
@@ -365,12 +369,11 @@ establish a relative uniform response of the calorimeter in $\eta$ and
 a calibrated absolute response in \pt. Jet energy corrections are
 derived from simulation, and are confirmed with in situ measurements
 of the energy balance in dijet, multijet, \gj, and leptonically
-decaying $\PZ\text{+\text{jet}}$
-events~\cite{Khachatryan:2016kdb}. Jets are required to satisfy $\pt >
-40\GeV$ and $\abs{\eta} < 2.4$. Jets are also subjected to a standard
-set of identification criteria~\cite{2011JInst611002C} that require
-each jet to contain at least two particle candidates and at least one
-charged particle track, and the energy fraction $f_{\text{h}^{\pm}}$
+decaying \zj events~\cite{Khachatryan:2016kdb}. Jets are required to
+satisfy $\pt > 40\GeV$ and $\abs{\eta} < 2.4$. Jets are also subjected
+to a standard set of identification criteria~\cite{2011JInst611002C}
+that require each jet to contain at least two particle candidates and
+at least one charged particle track, and the energy fraction \fh
 attributed to charged-hadron particle candidates is required to be
 nonzero.
 
@@ -421,10 +424,9 @@ reconstruction failures can all lead to large values of \ptmiss. Such
 events are rejected with high efficiency using dedicated
 vetoes~\cite{CMS-PAS-JME-16-004, Khachatryan:2014gga}. Events are
 vetoed if any jet fails the identification criteria described in
-Section~\ref{sec:reconstruction}. Further, $f_{\text{h}^{\pm}}$ for
-the highest \pt jet of the event, $\jet{1}$, is required to satisfy
-$0.1 < f_{\text{h}^{\pm}}^{\jet{1}} < 0.95$ to further suppress beam
-halo and rare reconstruction failures.
+Section~\ref{sec:reconstruction}. Further, \fh for the highest \pt jet
+of the event, $\jet{1}$, is required to satisfy $0.1 < \fhleadjet <
+0.95$ to further suppress beam halo and rare reconstruction failures.
 
 The highest \pt jet in the event is required to satisfy $\pt^{\jet{1}}
 > 100\GeV$. The mass scale of each event is estimated from the scalar
@@ -462,7 +464,7 @@ interacting particles that escape detection.
 The first variable, \alphat~\cite{Randall:2008rw, Khachatryan:2011tk},
 is designed to be intrinsically robust against jet energy
 mismeasurements. In its simplest form, the \alphat variable is defined
-as $\alphat = \Et^{\jet{2}}/M_\text{T}$, where $M_\text{T} = \sqrt{ 2
+as $\alphat = \Et^{\jet{2}}/M_\mathrm{T}$, where $M_\mathrm{T} = \sqrt{ 2
   \Et^{\jet{1}} \Et^{\jet{2}} (1 - \cos\phi_{\jet{1},\jet{2}})}$ and
 $\phi_{\jet{1},\jet{2}}$ is defined as the azimuthal angle between
 jets $\jet{1}$ and $\jet{2}$. In the absence of jet energy
@@ -650,21 +652,21 @@ production, as well as other SM processes (\eg single top quark and
 diboson production), that are manifest in the SR as the \lost
 backgrounds. Each event is required to contain a single isolated muon
 with $\pt > 30\GeV$ and $\abs{\eta} < 2.1$ to satisfy trigger
-conditions, and is well separated from each jet $\text{j}_i$ in the
-event according to ${\Delta}R(\mu,\text{j}_i) > 0.5$. The transverse
-mass $m_\text{T} = \sqrt{2\pt^\mu\ptmiss[1-
+conditions, and is well separated from each jet $\mathrm{j}_i$ in the
+event according to ${\Delta}R(\mu,\mathrm{j}_i) > 0.5$. The transverse
+mass $m_\mathrm{T} = \sqrt{2\pt^\mu\ptmiss[1-
   \cos(\Delta\phi_{\mu,\ptvecmiss})]}$, where
 $\Delta\phi_{\mu,\ptvecmiss}$ is the difference between the azimuthal
 angles of the muon transverse momentum vector $\ptvec^\mu$ and of
 $\ptvecmiss$, must fall within the range 30--125\GeV to select a
 sample of events rich in W bosons.
 
-The \mmj sample is enriched in $\PZ\! \rightarrow\!  \mu^+\mu^-$
+The \mmj sample is enriched in $\PZ\! \to\!  \mu^+\mu^-$
 events that have similar acceptance and kinematical properties to
 \znunuj events when the muons are ignored. The sample uses selection
 criteria similar to the \mj sample, but requires two oppositely
 charged, isolated muons that both satisfy $\pt > 30\GeV$, $\abs{\eta}
-< 2.1$, and ${\Delta}R(\mu_{1,2},\text{j}_i) > 0.5$. The muons are
+< 2.1$, and ${\Delta}R(\mu_{1,2},\mathrm{j}_i) > 0.5$. The muons are
 also required to have a dilepton invariant mass $m_{\mu\mu}$ within a
 ${\pm}25\GeV$ window around the mass of the Z
 boson~\cite{Patrignani:2016xqp}.
@@ -676,13 +678,13 @@ The search relies on several samples of simulated events, produced
 with Monte Carlo (MC) generator programs, to aid the estimation of SM
 backgrounds and evaluate potential signal contributions.
 
-The {\MADGRAPH{}5\_a\MCATNLO} 2.2.2~\cite{Alwall2014} event generator
-is used at leading-order (LO) accuracy to produce samples of \wj, \zj,
-\ttbar, and multijet events. Up to three or four additional partons
-are included in the matrix-element calculation for \ttbar and vector
-boson production, respectively. Simulated \wj and \zj events are
-weighted according to the true vector boson \pt to account for the
-effect of missing next-to-leading-order (NLO) QCD and EW terms in the
+The \MGvATNLO 2.2.2~\cite{Alwall2014} event generator is used at
+leading-order (LO) accuracy to produce samples of \wj, \zj, \ttbar,
+and multijet events. Up to three or four additional partons are
+included in the matrix-element calculation for \ttbar and vector boson
+production, respectively. Simulated \wj and \zj events are weighted
+according to the true vector boson \pt to account for the effect of
+missing next-to-leading-order (NLO) QCD and EW terms in the
 matrix-element calculation~\cite{Alwall2014, Kuhn:2005gv}, according
 to the method described in Ref.~\cite{Khachatryan:2016mdm}. Within the
 range of vector boson \pt that can be probed by this search, the QCD
@@ -692,22 +694,21 @@ respectively. Simulated \ttbar events are weighted to improve the
 description of jets arising from initial-state radiation
 (ISR)~\cite{Chatrchyan:2013xna}. The weights vary from 0.92 to 0.51
 depending on the number of jets (1--6) from ISR, with an uncertainty
-of one half the deviation from unity. The {\MADGRAPH{}5\_a\MCATNLO}
-generator is used at NLO accuracy to generate samples of $s$-channel
-production of single top quark, as well as {\ttbar}W and {\ttbar}Z
-events. The NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is
-used to describe the $t$- and tW-channel production of events
-containing single top quarks, as well as {\ttbar}H events. The \PYTHIA
-8.205~\cite{pythia} program is used to generate diboson (WW, WZ, ZZ)
-production.
+of one half the deviation from unity. The \MGvATNLO generator is used
+at NLO accuracy to generate samples of $s$-channel production of
+single top quark, as well as {\ttbar}W and {\ttbar}Z events. The NLO
+\POWHEG v2~\cite{powheg, powheg_top_Wt} generator is used to describe
+the $t$- and tW-channel production of events containing single top
+quarks, as well as {\ttbar}H events. The \PYTHIA 8.205~\cite{pythia}
+program is used to generate diboson (WW, WZ, ZZ) production.
 
 Event samples for signal models involving the production of gluino or
 squark pairs, in association with up to two additional partons, are
-generated at LO with {\MADGRAPH{}5\_a\MCATNLO}, and the decay of the
-SUSY particles is performed with the \PYTHIA program. The
-\textsc{NNPDF}3.0 LO and \textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton
-distribution functions (PDFs) are used, respectively, with the LO and
-NLO generators described above.
+generated at LO with \MGvATNLO, and the decay of the SUSY particles is
+performed with the \PYTHIA program. The \textsc{NNPDF}3.0 LO and
+\textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton distribution functions
+(PDFs) are used, respectively, with the LO and NLO generators
+described above.
 
 The simulated samples for SM processes are normalized according to
 production cross sections that are calculated with NLO and next-to-NLO
@@ -719,7 +720,7 @@ precision~\cite{Beenakker:1996ch, Kulesza:2008jb, Kulesza:2009kq,
 SUSY particles, apart from the \PSGczDo, are assumed to be heavy and
 decoupled from the interaction. Uncertainties in the cross sections
 are determined from different choices of PDF sets, and factorization
-and renormalization scales ($\mu_\text{F}$ and $\mu_\text{R}$),
+and renormalization scales ($\mu_\mathrm{F}$ and $\mu_\mathrm{R}$),
 according to the prescription in Ref.~\cite{Borschensky:2014cia}. The
 \PYTHIA program with the \textsc{CUETP8M1} tune~\cite{Skands:2014pea,
   Khachatryan:2015pea} is used to describe parton showering and
@@ -803,7 +804,7 @@ of variations related to the following: the jet energy scale, the
 scale factors related to the b tagging efficiency and mistag
 probabilities, the efficiency to trigger on and identify, or veto,
 well-reconstructed isolated leptons, the
-PDFs~\cite{Butterworth:2015oua}, $\mu_\text{F}$ and $\mu_\text{R}$,
+PDFs~\cite{Butterworth:2015oua}, $\mu_\mathrm{F}$ and $\mu_\mathrm{R}$,
 and the modelling of jets from ISR produced in association with
 \ttbar~\cite{Chatrchyan:2013xna}. Uncertainties of 100\% in both the
 NLO QCD and EW corrections to the \wj and \zj simulated samples are
@@ -833,29 +834,29 @@ SR and CRs.
   \centering
   \begin{tabular}{ lcc }
     \hline
-    Source of uncertainty                    & \multicolumn{2}{c}{Magnitude [\%]} \\
+    Source of uncertainty                        & \multicolumn{2}{c}{Magnitude [\%]} \\
     \cline{2-3}
-                                             & $\lost$      & $\znunu$            \\
+                                                 & $\lost$      & $\znunu$            \\
     \hline
-    Finite-size simulated samples            & 1--50        & 1--50               \\
-    Total inelastic cross section (pileup)   & 0.6--3.8     & 2.3--2.8            \\
-    $\mu_\text{F}$ and $\mu_\text{R}$ scales & 2.3--3.6     & 0.9--4.7            \\
-    Parton distribution functions            & 1.1--2.7     & 0.0--3.3            \\
-    \wj cross section                        & 0.2--1.4     & --                  \\
-    \ttbar cross section                     & 0.0--1.0     & --                  \\
-    NLO QCD corrections                      & 1.5--13      & 2.6--17             \\
-    NLO EW corrections                       & 0.1--9.5     & 0.0--7.8            \\
-    ISR (\ttbar)                             & 0.8--1.1     & --                  \\
-    Signal trigger efficiency                & 0.0--3.1     & 0.0--2.0            \\
-    Lepton efficiency (selection)            & 2.0          & 4.0                 \\
-    Lepton efficiency (veto)                 & 5.0          & 5.0                 \\
-    Jet energy scale                         & 3.4--5.5     & 5.3--8.0            \\
-    b tagging efficiency                     & 0.4--0.6     & 0.3--0.6            \\
-    Mistag probabilities                     & 0.1--1.4     & 0.2--1.8            \\
-    \alphat extrapolation                    & 3--9, 2--6   & 3--9, 2--6          \\
-    \bdphi extrapolation                     & 3--22, 2--18 & 3--22, 2--18        \\
-    W boson polarization                     & 1--7, 2--7   & --                  \\
-    Single isolated track veto               & 0--10, 0--13 & --                  \\
+    Finite-size simulated samples                & 1--50        & 1--50               \\
+    Total inelastic cross section (pileup)       & 0.6--3.8     & 2.3--2.8            \\
+    $\mu_\mathrm{F}$ and $\mu_\mathrm{R}$ scales & 2.3--3.6     & 0.9--4.7            \\
+    Parton distribution functions                & 1.1--2.7     & 0.0--3.3            \\
+    \wj cross section                            & 0.2--1.4     & \NA                 \\
+    \ttbar cross section                         & 0.0--1.0     & \NA                 \\
+    NLO QCD corrections                          & 1.5--13      & 2.6--17             \\
+    NLO EW corrections                           & 0.1--9.5     & 0.0--7.8            \\
+    ISR (\ttbar)                                 & 0.8--1.1     & \NA                 \\
+    Signal trigger efficiency                    & 0.0--3.1     & 0.0--2.0            \\
+    Lepton efficiency (selection)                & 2.0          & 4.0                 \\
+    Lepton efficiency (veto)                     & 5.0          & 5.0                 \\
+    Jet energy scale                             & 3.4--5.5     & 5.3--8.0            \\
+    b tagging efficiency                         & 0.4--0.6     & 0.3--0.6            \\
+    Mistag probabilities                         & 0.1--1.4     & 0.2--1.8            \\
+    \alphat extrapolation                        & 3--9, 2--6   & 3--9, 2--6          \\
+    \bdphi extrapolation                         & 3--22, 2--18 & 3--22, 2--18        \\
+    W boson polarization                         & 1--7, 2--7   & \NA                 \\
+    Single isolated track veto                   & 0--10, 0--13 & \NA                 \\
     \hline
   \end{tabular}
 \end{table}
@@ -966,9 +967,9 @@ in Section~\ref{sec:qcd}, are also included in the likelihood model.
 
 \begin{figure}[!p]
   \centering
-  \includegraphics[width=0.99\textwidth, trim=0 0 0 0, clip=true]{Figures/CMS-SUS-16-038_Figure_001-a.pdf}\\
-  \includegraphics[width=0.99\textwidth, trim=0 0 0 0, clip=true]{Figures/CMS-SUS-16-038_Figure_001-b.pdf}\\
-  \includegraphics[width=0.99\textwidth, trim=0 0 0 0, clip=true]{Figures/CMS-SUS-16-038_Figure_001-c.pdf}\\
+  \includegraphics[width=0.99\textwidth]{Figures/CMS-SUS-16-038_Figure_001-a.pdf}\\
+  \includegraphics[width=0.99\textwidth]{Figures/CMS-SUS-16-038_Figure_001-b.pdf}\\
+  \includegraphics[width=0.99\textwidth]{Figures/CMS-SUS-16-038_Figure_001-c.pdf}\\
   \caption{Counts of signal events (solid markers) and SM expectations
     with associated uncertainties (statistical and systematic, black
     histograms and shaded bands) as determined from the CR-only fit as
@@ -984,9 +985,9 @@ in Section~\ref{sec:qcd}, are also included in the likelihood model.
 
 \begin{figure}[!p]
   \centering
-  \includegraphics[width=0.99\textwidth, trim=0 0 0 0, clip=true]{Figures/CMS-SUS-16-038_Figure_002-a.pdf}\\
-  \includegraphics[width=0.99\textwidth, trim=0 0 0 0, clip=true]{Figures/CMS-SUS-16-038_Figure_002-b.pdf}\\
-  \includegraphics[width=0.99\textwidth, trim=0 0 0 0, clip=true]{Figures/CMS-SUS-16-038_Figure_002-c.pdf}\\
+  \includegraphics[width=0.99\textwidth]{Figures/CMS-SUS-16-038_Figure_002-a.pdf}\\
+  \includegraphics[width=0.99\textwidth]{Figures/CMS-SUS-16-038_Figure_002-b.pdf}\\
+  \includegraphics[width=0.99\textwidth]{Figures/CMS-SUS-16-038_Figure_002-c.pdf}\\
   \caption{Counts of signal events (solid markers) and SM expectations
     with associated uncertainties (statistical and systematic, black
     histograms and shaded bands) as determined from the CR-only fit as
@@ -1042,7 +1043,7 @@ long-lived with proper decay lengths in the range $10^{-3} < \ctau <
 
 Under the signal+background hypothesis, and in the presence of a
 nonzero signal contribution, a modified frequentist approach is used
-to determine observed upper limits (ULs) at 95\% confidence level (CL)
+to determine observed upper limits (ULs) at 95\% confidence level (\CL)
 on the cross section $\sigma_\text{UL}$ to produce pairs of SUSY
 particles as a function of $m_\text{SUSY}$, $m_{\PSGczDo}$, and \ctau
 (if applicable). The approach is based on the profile likelihood ratio
@@ -1072,15 +1073,15 @@ all bins of the SR and CRs are considered.
     T2bb
     & $\Pp\Pp \to \PSQb_1\PASQb_1$,
     $\PSQb_1 \to \cPqb\PSGczDo$
-    & --                                                                             \\
+    & \NA                                                                            \\
     T2tt
     & $\Pp\Pp \to \PSQt_1\PASQt_1$,
     $\PSQt_1 \to \cPqt\PSGczDo$
-    & --                                                                             \\
+    & \NA                                                                            \\
     T2cc
     & $\Pp\Pp \to \PSQt_1\PASQt_1$,
     $\PSQt_1\to \cPqc\PSGczDo$
-    & $10 < m_{\,\PSQt_1} - m_{\PSGczDo} < 80\GeV$                                     \\
+    & $10 < m_{\,\PSQt_1} - m_{\PSGczDo} < 80\GeV$                                   \\
     T2qq\_8fold
     & $\Pp\Pp \to \PSQ\PASQ$,
     $\PSQ \to \cPq\PSGczDo$
@@ -1094,11 +1095,11 @@ all bins of the SR and CRs are considered.
     T1bbbb
     & $\Pp\Pp \to \PSg\PSg$,
     $\PSg\to \cPaqb\PSQb_1^* \to \cPaqb\cPqb\PSGczDo$
-    & $m_{\PSQb_1} \gg m_{\PSg}$                                                       \\
+    & $m_{\PSQb_1} \gg m_{\PSg}$                                                     \\
     T1tttt
     & $\Pp\Pp \to \PSg\PSg$,
     $\PSg\to \cPaqt\PSQt_1^* \to \cPaqt\cPqt\PSGczDo$
-    & $m_{\PSQt_1} \gg m_{\PSg}$                                                       \\
+    & $m_{\PSQt_1} \gg m_{\PSg}$                                                     \\
     T1qqqq
     & $\Pp\Pp \to \PSg\PSg$,
     $\PSg\to \cPaq\PSQ^* \to \cPaq\cPq\PSGczDo$                                                                   
@@ -1107,7 +1108,7 @@ all bins of the SR and CRs are considered.
     T1qqqqLL
     & $\Pp\Pp \to \PSg\PSg$,
     $\PSg \to \cPaq\PSQ^* \to \cPaq\cPq\PSGczDo$    
-    & $m_{\PSQ} \gg m_{\PSg}$, $10^{-3} < \ctau < 10^{5}\unit{mm}$ or metastable    \\
+    & $m_{\PSQ} \gg m_{\PSg}$, $10^{-3} < \ctau < 10^{5}\unit{mm}$ or metastable     \\
     \hline
   \end{tabular}
 \end{table}
@@ -1167,7 +1168,7 @@ subject to moderate statistical fluctuations.
       & $(m_{\text{SUSY}}, m_{\PSGczDo})$
       & \ate
       & \multicolumn{4}{c}{Systematic uncertainties [\%]}
-      & \multicolumn{2}{c}{$\sigma_\text{UL}/\sigma_\text{th}$ (95\% CL)} \\ [0.3ex]
+      & \multicolumn{2}{c}{$\sigma_\text{UL}/\sigma_\text{th}$ (95\% \CL)} \\ [0.3ex]
       \cline{4-7}
       (\ctau)
       & [\GeVns{}]
@@ -1181,76 +1182,76 @@ subject to moderate statistical fluctuations.
       \hline
       \multirow{2}{*}{T2bb}
       & (1000, 100)
-      & 40.1           & 14--23 & 1--7   & 4--11  & 1--4  %   & --    
+      & 40.1           & 14--23 & 1--7   & 4--11  & 1--4
       & 0.62           & 0.67                                             \\
       & (550, 450)
-      & \phantom{1}5.7 & 9--22  & 4--15  & 4--15  & 3--7  %   & --    
+      & \phantom{1}5.7 & 9--22  & 4--15  & 4--15  & 3--7
       & 0.76           & 1.21                                             \\ [0.5ex]
       \multirow{3}{*}{T2tt}
       & (1000, 50)
-      & 23.8           & 14--27 & 3--7   & 4--14  & 1--5  %   & --    
+      & 23.8           & 14--27 & 3--7   & 4--14  & 1--5
       & 0.82           & 0.85                                             \\
       & (450, 200)
-      & \phantom{1}4.2 & 6--19  & 4--12  & 6--15  & 4--9  %   & --    
+      & \phantom{1}4.2 & 6--19  & 4--12  & 6--15  & 4--9
       & 0.56           & 0.73                                             \\ [0.5ex]
       & (250, 150)
-      & \phantom{1}0.3 & 10--23 & 13--27 & 8--22  & 6--16 %   & --    
+      & \phantom{1}0.3 & 10--23 & 13--27 & 8--22  & 6--16
       & 0.71           & 0.66                                             \\ [0.5ex]
       \multirow{1}{*}{T2cc}
       & (500, 480)
-      & 20.5           & 6--19  & 4--18  & 5--13  & 1--4  %   & --    
+      & 20.5           & 6--19  & 4--18  & 5--13  & 1--4
       & 0.68           & 1.38                                             \\ [0.5ex]
       \multirow{2}{*}{T2qq\_8fold}
       & (1250, 100)
-      & 42.9           & 12--24 & 2--7   & 5--14  & 1--1  %   & --    
+      & 42.9           & 12--24 & 2--7   & 5--14  & 1--1
       & 0.54           & 0.66                                             \\
       & (700, 600)
-      & \ph{1}7.7      & 6--22  & 4--17  & 4--13  & 2--5  %   & --    
+      & \ph{1}7.7      & 6--22  & 4--17  & 4--13  & 2--5
       & 0.75           & 1.13                                             \\ [0.5ex]
       \multirow{2}{*}{T2qq\_1fold}
       & (700, 100)
-      & 32.9           & 4--22  & 2--7   & 3--10  & 0--5  %   & --    
+      & 32.9           & 4--22  & 2--7   & 3--10  & 0--5
       & 0.60           & 0.88                                             \\
       & (400, 300)
-      & \ph{1}4.5      & 6--20  & 5--22  & 5--18  & 3--5  %   & --    
+      & \ph{1}4.5      & 6--20  & 5--22  & 5--18  & 3--5
       & 0.61           & 0.46                                             \\ [0.5ex]
       \multirow{2}{*}{T1bbbb}
       & (1900, 100)
-      & 25.1           & 11--19 & 3--9   & 4--6   & 7--11 %   & --    
+      & 25.1           & 11--19 & 3--9   & 4--6   & 7--11
       & 0.56           & 1.25                                             \\
       & (1300, 1100)
-      & 14.6           & 11--22 & 2--11  & 3--11  & 2--5  %   & --    
+      & 14.6           & 11--22 & 2--11  & 3--11  & 2--5
       & 0.44           & 1.15                                             \\ [0.5ex]
       \multirow{2}{*}{T1tttt}
       & (1700, 100)
-      & \phantom{1}6.9 & 12--24 & 2--6   & 3--15  & 2--6  %   & --    
+      & \phantom{1}6.9 & 12--24 & 2--6   & 3--15  & 2--6
       & 0.51           & 1.31                                             \\
       & (950, 600)
-      & \phantom{1}0.3 & 15--30 & 5--9   & 12--26 & 2--6  %   & --    
+      & \phantom{1}0.3 & 15--30 & 5--9   & 12--26 & 2--6
       & 0.89           & 1.51                                             \\ [0.5ex]
       T1qqqqLL
       & (1800, 200)
-      & 27.8           & 8--20  & 3--5   & 3--9   & 0--1  %   & 2--9  
+      & 27.8           & 8--20  & 3--5   & 3--9   & 0--1
       & 1.02           & 1.91                                             \\
       ($1\um$)
       & (1000, 900)
-      & \ph{1}6.7      & 15--21 & 2--10  & 4--14  & 0--1  %   & 0--1  
+      & \ph{1}6.7      & 15--21 & 2--10  & 4--14  & 0--1
       & 0.68           & 1.26                                             \\ [0.5ex]
       T1qqqqLL
       & (1800, 200)
-      & 22.9           & 11--20 & 2--5   & 3--9   & 17--59 %  & 3--14 
+      & 22.9           & 11--20 & 2--5   & 3--9   & 17--59
       & 0.43           & 1.00                                             \\
       ($1\unit{mm}$)
       & (1000, 900)
-      & \ph{1}5.2      & 17--26 & 2--9   & 4--17  & 10--41  % & 8--13 
+      & \ph{1}5.2      & 17--26 & 2--9   & 4--17  & 10--41
       & 0.28           & 0.63                                             \\ [0.5ex]
       T1qqqqLL
       & (1000, 200)
-      & 11.2           & 16--22 & 2--14  & 4--9   & 0--1  %   & 1--1  
+      & 11.2           & 16--22 & 2--14  & 4--9   & 0--1
       & 0.74           & 1.58                                             \\
       ($100\unit{m}$)
       & (1000, 900)
-      & 10.4           & 14--26 & 3--14  & 2--12  & 0--1  %   & 1--1  
+      & 10.4           & 14--26 & 3--14  & 2--12  & 0--1
       & 0.63           & 0.45                                             \\ [0.5ex]
       \hline
     \end{tabular}
@@ -1262,11 +1263,11 @@ Additional subdominant contributions to the total uncertainty are also
 considered. The uncertainty in the integrated luminosity is determined
 to be 2.5\%~\cite{CMS:2017sdi}. Uncertainties in the production cross
 section arising from the choice of the PDF set, and variations
-therein, as well as variations in $\mu_\text{F}$ and $\mu_\text{R}$ at
+therein, as well as variations in $\mu_\mathrm{F}$ and $\mu_\mathrm{R}$ at
 LO are considered. Uncertainties in event migration between bins from
 variations in the PDF sets are assumed to be correlated with, and
 adequately covered by, the uncertainties in the modelling of
-ISR. Uncertainties from $\mu_\text{F}$ and $\mu_\text{R}$ variations
+ISR. Uncertainties from $\mu_\mathrm{F}$ and $\mu_\mathrm{R}$ variations
 are determined to be ${\approx}5\%$. The effect of a 5\% uncertainty
 in the total inelastic cross section~\cite{Aaboud:2016mmw} is
 propagated through the weighting procedure that corrects for
@@ -1288,21 +1289,20 @@ reliance on jets from ISR. Scenarios with $m_\PSg - m_{\PSGczDo}
 to one or both gluinos decaying within the calorimeter systems to
 yield energetic jets comprising particle candidates that have no
 associated charged particle track. Hence, the efficiencies for the
-event vetoes related to the jet identification and
-$f_{\text{h}^{\pm}}^{\jet{1}}$ requirements, described in
-Sections~\ref{sec:reconstruction} and \ref{sec:baseline}, can be as
-low as ${\approx}90\%$ and ${\approx}30\%$, respectively, for this
-region of the model parameter space. Uncertainties as large as
-${\approx}10\%$ are assumed. The efficiencies for all other scenarios
-are typically ${\approx}100\%$. Jet identification requirements in the
-trigger logic lead to inefficiencies and uncertainties not larger than
-2\%. Finally, models with $1 \lesssim \ctau \lesssim 10\unit{mm}$
-often lead to jets that are tagged by the CSV algorithm with
-efficiencies as high as ${\approx}60\%$, which are comparable to the
-values obtained for jets originating from b quarks. Uncertainties of
-20--50\% in the tagging efficiency are assumed to cover differences
-with respect to jets originating from b quarks, as indicated in
-Table~\ref{tab:benchmarks}.
+event vetoes related to the jet identification and \fhleadjet
+requirements, described in Sections~\ref{sec:reconstruction} and
+\ref{sec:baseline}, can be as low as ${\approx}90\%$ and
+${\approx}30\%$, respectively, for this region of the model parameter
+space. Uncertainties as large as ${\approx}10\%$ are assumed. The
+efficiencies for all other scenarios are typically
+${\approx}100\%$. Jet identification requirements in the trigger logic
+lead to inefficiencies and uncertainties not larger than 2\%. Finally,
+models with $1 \lesssim \ctau \lesssim 10\unit{mm}$ often lead to jets
+that are tagged by the CSV algorithm with efficiencies as high as
+${\approx}60\%$, which are comparable to the values obtained for jets
+originating from b quarks. Uncertainties of 20--50\% in the tagging
+efficiency are assumed to cover differences with respect to jets
+originating from b quarks, as indicated in Table~\ref{tab:benchmarks}.
 
 Figure~\ref{fig:limits-sms} summarizes the excluded regions of the
 mass parameter space for the nine families of simplified models. The
@@ -1359,7 +1359,7 @@ negligible for models with \ctau below $1\unit{m}$.
   \centering
   \includegraphics[width=0.6\textwidth]{Figures/CMS-SUS-16-038_Figure_003-a.pdf}\\
   \includegraphics[width=0.6\textwidth]{Figures/CMS-SUS-16-038_Figure_003-b.pdf}\\
-  \caption{Observed and expected mass exclusions at 95\% CL
+  \caption{Observed and expected mass exclusions at 95\% \CL
     (indicated, respectively, by solid and dashed contours) for
     various families of simplified models. The upper subfigure
     summarises the mass exclusions for five model families that
@@ -1390,7 +1390,7 @@ negligible for models with \ctau below $1\unit{m}$.
   \includegraphics[width=0.33\textwidth]{Figures/CMS-SUS-16-038_Figure_004-g.pdf}~
   \includegraphics[width=0.33\textwidth]{Figures/CMS-SUS-16-038_Figure_004-h.pdf}~
   \includegraphics[width=0.33\textwidth]{Figures/CMS-SUS-16-038_Figure_004-i.pdf}\\
-  \caption{Observed upper limit in cross section at 95\% CL (indicated
+  \caption{Observed upper limit in cross section at 95\% \CL (indicated
     by the colour scale) as a function of the $\PSg$ and \PSGczDo
     masses for simplified models that assume the production of pairs
     of long-lived gluinos that each decay via highly virtual
@@ -1425,20 +1425,20 @@ weaker than those obtained with the nominal result.
   \centering
   \begin{tabular}{ lcc }
     \hline
-    Model family                    & \multicolumn{2}{c}{Best mass limit [GeV]} \\ [0.5ex]
+    Model family                    & \multicolumn{2}{c}{Best mass limit [\GeVns]} \\ [0.5ex]
     \cline{2-3}
-                                    & Gluino or squark & \PSGczDo               \\ [0.5ex]
+                                    & Gluino or squark & \PSGczDo                  \\ [0.5ex]
     \hline
-    T2bb                            & 1050             & \ph{1}500              \\
-    T2tt                            & 1000             & \ph{1}400              \\
-    T2cc                            & \ph{1}500        & \ph{1}475              \\
-    T2qq\_8fold                     & 1325             & \ph{1}575              \\
-    T2qq\_1fold                     & \ph{1}675        & \ph{1}350              \\
-    T1bbbb                          & 1900             & 1150                   \\
-    T1tttt                          & 1650             & \ph{1}850              \\
-    T1qqqq                          & 1650             & \ph{1}900              \\
-    T1qqqqLL (Metastable $\PSg$)    & \ph{1}900        & --                     \\
-    T1qqqqLL ($\ctau = 1\unit{mm}$) & 1750             & 1000                   \\
+    T2bb                            & 1050             & \ph{1}500                 \\
+    T2tt                            & 1000             & \ph{1}400                 \\
+    T2cc                            & \ph{1}500        & \ph{1}475                 \\
+    T2qq\_8fold                     & 1325             & \ph{1}575                 \\
+    T2qq\_1fold                     & \ph{1}675        & \ph{1}350                 \\
+    T1bbbb                          & 1900             & 1150                      \\
+    T1tttt                          & 1650             & \ph{1}850                 \\
+    T1qqqq                          & 1650             & \ph{1}900                 \\
+    T1qqqqLL (Metastable $\PSg$)    & \ph{1}900        & \NA                       \\
+    T1qqqqLL ($\ctau = 1\unit{mm}$) & 1750             & 1000                      \\
     \hline
   \end{tabular}
 \end{table}
@@ -1553,7 +1553,6 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
 
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
-\newcommand{\tmp}{\phantom{, 200}}
 \begin{table}[!h]
   \topcaption{Summary of the nominal (\njet, \nb, \scalht, \mht)
     binning schema. Each entry (and the following entry, if present)
@@ -1571,37 +1570,37 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
   \resizebox{\textwidth}{!}{
     \begin{tabular}{rrlllll}
       \hline
-      \njet      & \nb       & \multicolumn{5}{c}{\scalht [GeV]}                                        \\ 
+      \njet      & \nb       & \multicolumn{5}{c}{\scalht [\GeVns]}                                                                         \\ 
       \cline{3-7}
-                 &           & 200 & 400      & 600           & 900                & 1200               \\
+                 &           & 200 & 400            & 600                       & 900                                  & 1200               \\
       \hline
-      1          & 0         & 200 & 400 \tmp & 600 \tmp \tmp & 900 \tmp \tmp \tmp & --                 \\ 
-      1          & 1         & 200 & 400 \tmp & 600 \tmp \tmp & --                 & --                 \\ 
-      ${\geq}2a$ & 0         & 200 & 200, 400 & 200, 400, 600 & 200, 900 \tmp \tmp & --                 \\ 
-      ${\geq}2a$ & 1         & 200 & 200, 400 & 200, 400, 600 & 200, 900 \tmp \tmp & --                 \\ 
-      ${\geq}2a$ & 2         & 200 & 200, 400 & 200, 400, 600 & 200, 900 \tmp \tmp & --                 \\ 
-      ${\geq}2a$ & ${\geq}3$ & 200 & 200, 400 & 200, 400, 600 & --                 & --                 \\ 
-      2          & 0         & 200 & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      2          & 1         & 200 & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      2          & 2         & 200 & 200, 400 & 200, 400, 600 & --                 & --                 \\ 
-      3          & 0         & 200 & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      3          & 1         & 200 & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      3          & 2         & 200 & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      3          & 3         & 200 & 200, 400 & 200, 400, 600 & --                 & --                 \\ 
-      4          & 0         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      4          & 1         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      4          & 2         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & 200, 400, 600, 900 \\ 
-      4          & ${\geq}3$ & --  & 200, 400 & 200, 400, 600 & 200, 400, 600, 900 & --                 \\ 
-      5          & 0         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      5          & 1         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      5          & 2         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      5          & 3         & --  & 200, 400 & 200, 400, 600 & 200, 400, 600 \tmp & --                 \\ 
-      5          & ${\geq}4$ & --  & 200, 400 & --            & --                 & --                 \\ 
-      ${\geq}6$  & 0         & --  & 200 \tmp & 200, 400 \tmp & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & 1         & --  & 200 \tmp & 200, 400 \tmp & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & 2         & --  & 200 \tmp & 200, 400 \tmp & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & 3         & --  & 200 \tmp & 200, 400 \tmp & 200, 400, 600 \tmp & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & ${\geq}4$ & --  & 200 \tmp & --            & --                 & --                 \\ 
+      1          & 0         & 200 & 400 \ph{, 200} & 600 \ph{, 200} \ph{, 200} & 900 \ph{, 200} \ph{, 200} \ph{, 200} & \NA                \\ 
+      1          & 1         & 200 & 400 \ph{, 200} & 600 \ph{, 200} \ph{, 200} & \NA                                  & \NA                \\ 
+      ${\geq}2a$ & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\ 
+      ${\geq}2a$ & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\ 
+      ${\geq}2a$ & 2         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\ 
+      ${\geq}2a$ & ${\geq}3$ & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\ 
+      2          & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      2          & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      2          & 2         & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\ 
+      3          & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      3          & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      3          & 2         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      3          & 3         & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\ 
+      4          & 0         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      4          & 1         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      4          & 2         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
+      4          & ${\geq}3$ & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & \NA                \\ 
+      5          & 0         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      5          & 1         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      5          & 2         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      5          & 3         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & \NA                \\ 
+      5          & ${\geq}4$ & \NA & 200, 400       & \NA                       & \NA                                  & \NA                \\ 
+      ${\geq}6$  & 0         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      ${\geq}6$  & 1         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      ${\geq}6$  & 2         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      ${\geq}6$  & 3         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
+      ${\geq}6$  & ${\geq}4$ & \NA & 200 \ph{, 200} & \NA                       & \NA                                  & \NA                \\ 
       \hline
     \end{tabular}
   }
@@ -1623,7 +1622,7 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
   \centering
   \begin{tabular}{rrlr@{}lr@{}lr@{}lr@{}l}
     \hline
-    \njet           & \nb       &      & \multicolumn{8}{c}{\mht [GeV]}                                                                             \\
+    \njet           & \nb       &      & \multicolumn{8}{c}{\mht [\GeVns]}                                                                             \\
     \cline{4-11}
                     &           &      & 200        &                   & 400       &                & 600   &               & 900   &              \\
     \hline
