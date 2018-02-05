@@ -4,12 +4,12 @@
 
 \ifthenelse{\boolean{cms@external}}{\providecommand{\CL}{C.L.\xspace}}{\providecommand{\CL}{CL\xspace}}
 \providecommand{\NA}{\ensuremath{\text{---}}}
-\newcommand{\fh}[1]{\ensuremath{f_{\mathrm{h}^{\pm}}}\xspace}
-\newcommand{\fhleadjet}[1]{\ensuremath{f_{\mathrm{h}^{\pm}}^{\jet{1}}}\xspace}
 \newcommand{\ph}[1]{\phantom{#1}}
 \newcommand{\tf}{\ensuremath{\mathcal{R}}\xspace}
 \newcommand{\cls}{\ensuremath{\text{\CL}_\text{s}}\xspace}
 \newcommand{\jet}[1]{\ensuremath{\mathrm{j}_\text{#1}}\xspace}
+\newcommand{\fh}{\ensuremath{f_{\mathrm{h}^{\pm}}}\xspace}
+\newcommand{\fhleadjet}{\ensuremath{f_{\mathrm{h}^{\pm}}^{\jet{1}}}\xspace}
 \newcommand{\ate}{\ensuremath{\mathcal{A}\varepsilon}\xspace}
 \newcommand{\ctau}{\ensuremath{c\tau_{0}}\xspace}
 \newcommand{\um}{\ensuremath{\,{\mu}\mathrm{m}}\xspace}
@@ -314,7 +314,7 @@ photons and leptons, further details can be found in
 Ref.~\cite{Khachatryan:2016dvc} and references therein.
 
 The reconstructed vertex with the largest value of summed physics
-object $\pt^2$ is taken to be the primary {Pp\Pp} interaction vertex
+object $\pt^2$ is taken to be the primary {\Pp\Pp} interaction vertex
 (PV). The physics objects considered are those returned by a jet
 finding algorithm~\cite{Cacciari:2008gp, Cacciari:2011ma} applied to
 all charged particle tracks associated with the vertex, and the
@@ -654,8 +654,8 @@ backgrounds. Each event is required to contain a single isolated muon
 with $\pt > 30\GeV$ and $\abs{\eta} < 2.1$ to satisfy trigger
 conditions, and is well separated from each jet $\mathrm{j}_i$ in the
 event according to ${\Delta}R(\mu,\mathrm{j}_i) > 0.5$. The transverse
-mass $m_\mathrm{T} = \sqrt{2\pt^\mu\ptmiss[1-
-  \cos(\Delta\phi_{\mu,\ptvecmiss})]}$, where
+mass $m_\mathrm{T} = \sqrt{\smash[b]{2\pt^\mu\ptmiss[1-
+    \cos(\Delta\phi_{\mu,\ptvecmiss})]}}$, where
 $\Delta\phi_{\mu,\ptvecmiss}$ is the difference between the azimuthal
 angles of the muon transverse momentum vector $\ptvec^\mu$ and of
 $\ptvecmiss$, must fall within the range 30--125\GeV to select a
@@ -697,7 +697,7 @@ of one half the deviation from unity. The \MGvATNLO generator is used
 at NLO accuracy to generate samples of $s$-channel production of
 single top quark, as well as $\ttbar\PW$ and $\ttbar\cPZ$ events. The
 NLO \POWHEG v2~\cite{powheg, powheg_top_Wt} generator is used to
-describe the $t$- and \cPqt\PW-channel production of events containing
+describe the $t$- and \PW\cPqt-channel production of events containing
 single top quarks, as well as $\ttbar\PH$ events. The \PYTHIA
 8.205~\cite{pythia} program is used to generate diboson (\PW\PW,
 \PW\cPZ, \cPZ\cPZ) production.
