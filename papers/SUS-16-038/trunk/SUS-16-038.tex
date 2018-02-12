@@ -1,8 +1,8 @@
-\RCS$Revision: $
-\RCS$HeadURL: $
-\RCS$Id: $
+\RCS$Revision: 444593 $
+\RCS$HeadURL: svn+ssh://bainbrid@svn.cern.ch/reps/tdr2/papers/SUS-16-038/trunk/SUS-16-038.tex $
+\RCS$Id: SUS-16-038.tex 444593 2018-02-06 17:58:57Z alverson $
 
-\ifthenelse{\boolean{cms@external}}{\providecommand{\CL}{C.L.\xspace}}{\providecommand{\CL}{CL\xspace}}
+\providecommand{\CL}{CL\xspace}
 \providecommand{\NA}{\ensuremath{\text{---}}}
 \newcommand{\ph}[1]{\phantom{#1}}
 \newcommand{\tf}{\ensuremath{\mathcal{R}}\xspace}
@@ -13,7 +13,6 @@
 \newcommand{\ate}{\ensuremath{\mathcal{A}\varepsilon}\xspace}
 \newcommand{\ctau}{\ensuremath{c\tau_{0}}\xspace}
 \newcommand{\um}{\ensuremath{\,{\mu}\mathrm{m}}\xspace}
-\newcommand{\Et}{\ensuremath{E_{\mathrm{T}}}\xspace}
 \newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
 \newcommand{\nb}{\ensuremath{n_{\mathrm{b}}}\xspace}
 \newcommand{\scalht}{\ensuremath{H_{\mathrm{T}}}\xspace}
@@ -33,15 +32,6 @@
 \newcommand{\wmj}{\ensuremath{\PW(\to\mu\nu)\text{+\jets}}\xspace}
 \newcommand{\lost}{\ensuremath{\ell_\text{lost}}\xspace}
 
-\newlength\cmsFigWidth
-\newlength\cmsFigWidthTwo
-\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidth{0.49\textwidth}}{\setlength\cmsFigWidth{0.7\textwidth}}
-\ifthenelse{\boolean{cms@external}}{\setlength\cmsFigWidthTwo{0.95\textwidth}}{\setlength\cmsFigWidthTwo{0.95\textwidth}}
-\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsLeft}{top\xspace}}{\providecommand{\cmsLeft}{left\xspace}}
-\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsRight}{bottom\xspace}}{\providecommand{\cmsRight}{right\xspace}}
-\ifthenelse{\boolean{cms@external}}{\providecommand{\cmsTable}[1]{#1}}{\providecommand{\cmsTable}[1]{\resizebox{\textwidth}{!}{#1}}}
-\newlength\cmsTableLabelSkip
-\setlength\cmsTableLabelSkip{-1.2ex}
 
 \cmsNoteHeader{SUS-16-038}
 
@@ -50,7 +40,7 @@
   missing transverse momentum}
 
 \author[cern]{The CMS Collaboration}
-\address[cern]{CERN} 
+\address[cern]{CERN}
 
 \date{\today}
 
@@ -81,7 +71,7 @@
   long-lived gluinos that is complementary to existing techniques at
   the LHC.}
 
-\hypersetup{ 
+\hypersetup{
   pdftitle={Search for natural and split supersymmetry in
     proton-proton collisions at 13 TeV in final states with jets and
     missing transverse momentum},
@@ -228,32 +218,32 @@ Section~\ref{sec:selection}.
   \topcaption{Summary of the physics object acceptances, the baseline
     event selection, the signal and control regions, and the event
     categorization schemas. The nominal categorization schema is
-    defined in full in Appendix~\ref{app:suppMat}.  
-  }  
+    defined in full in Appendix~\ref{app:suppMat}.
+  }
   \label{tab:selections}
   \centering
   \resizebox{\textwidth}{!}{
     \begin{tabular}{ ll }
       \hline
-      \multicolumn{2}{l}{\bf Physics object acceptances}                                                                                 \\
-      Jet                               & $\pt > 40\GeV$, $\abs{\eta} < 2.4$                                                             \\ 
-      Photon                            & $\pt > 25\GeV$, $\abs{\eta} < 2.5$, isolated in cone ${\Delta}R < 0.3$                         \\ 
+      \multicolumn{2}{l}{\textbf{Physics object acceptances}}                                                                                 \\
+      Jet                               & $\pt > 40\GeV$, $\abs{\eta} < 2.4$                                                             \\
+      Photon                            & $\pt > 25\GeV$, $\abs{\eta} < 2.5$, isolated in cone ${\Delta}R < 0.3$                         \\
       Electron                          & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{rel} < 0.1$ in cone $0.05 < {\Delta}R(\pt) < 0.2$ \\
-      Muon                              & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{rel} < 0.2$ in cone $0.05 < {\Delta}R(\pt) < 0.2$ \\ 
-      Single isolated track (SIT)       & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{track} < 0.1$ in cone ${\Delta}R < 0.3$           \\ 
+      Muon                              & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{rel} < 0.2$ in cone $0.05 < {\Delta}R(\pt) < 0.2$ \\
+      Single isolated track (SIT)       & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{track} < 0.1$ in cone ${\Delta}R < 0.3$           \\
       \hline
-      \multicolumn{2}{l}{\bf Baseline event selection}                                                                                   \\
+      \multicolumn{2}{l}{\textbf{Baseline event selection}}                                                                                   \\
       All-jet final state               & Veto events containing photons, electrons, muons, and SITs within acceptance                   \\
-      \ptmiss quality                   & Veto events based on filters related to beam and instrumental effects                          \\ 
-      Jet quality                       & Veto events containing jets that fail identification criteria or $0.1 < \fhleadjet < 0.95$     \\ 
+      \ptmiss quality                   & Veto events based on filters related to beam and instrumental effects                          \\
+      Jet quality                       & Veto events containing jets that fail identification criteria or $0.1 < \fhleadjet < 0.95$     \\
       Jet energy and sums               & $\pt^{\jet{1}} > 100\GeV$, $\scalht > 200\GeV$, $\mht > 200\GeV$                               \\
       Jets outside acceptance           & $\mhtmet < 1.25$, veto events containing jets with $\pt > 40\GeV$ and $\abs{\eta} > 2.4$       \\
       \hline
-      {\bf Signal region}               & Baseline selection +                                                                           \\
+      \textbf{Signal region}               & Baseline selection +                                                                           \\
       \alphat threshold (\scalht range) & 0.65 (200--250\GeV), 0.60 (250--300), 0.55 (300--350), 0.53 (350--400), 0.52 (400--900)        \\
       \bdphi threshold                  & $\bdphi > 0.5$ ($\njet \geq 2$), $\bdphimod > 0.5$ ($\njet = 1$)                               \\
       \hline
-      \multicolumn{2}{l}{\bf Nominal categorization schema}                                                                              \\
+      \multicolumn{2}{l}{\textbf{Nominal categorization schema}}                                                                              \\
       \njet                             & \mybox{5cm}{l}{1} (monojet)                                                                    \\
                                         & \mybox{5cm}{l}{${\geq}2a$} ($a$ denotes asymmetric, $40 < \pt^{\jet{2}} < 100\GeV$)            \\
                                         & \mybox{5cm}{l}{2, 3, 4, 5, ${\geq}6$} (symmetric, $\pt^{\jet{2}} > 100\GeV$)                   \\
@@ -261,8 +251,8 @@ Section~\ref{sec:selection}.
       \scalht boundaries                & \mybox{5cm}{l}{200, 400, 600, 900, 1200\GeV} (can be dropped/merged \vs \njet, \nb)            \\
       \mht boundaries                   & \mybox{5cm}{l}{200, 400, 600, 900\GeV} (can be dropped/merged \vs \njet, \nb, \scalht)         \\
       \hline
-      \multicolumn{2}{l}{\bf Simplified categorization schema}                                                                           \\
-      Topology (\njet, \nb)             
+      \multicolumn{2}{l}{\textbf{Simplified categorization schema}}                                                                          \\
+      Topology (\njet, \nb)
                                         & \mybox{2.5cm}{l}{Monojet-like} ($1 \cap {\geq}2a, 0$), ($1 \cap {\geq}2a, {\geq}1$)            \\
                                         & \mybox{2.5cm}{l}{Low \njet} ($2 \cap 3, 0 \cap 1$), ($2 \cap 3, {\geq}2$)                      \\
                                         & \mybox{2.5cm}{l}{Medium \njet} ($4 \cap 5, 0 \cap 1$), ($4 \cap 5, {\geq}2$)                   \\
@@ -270,16 +260,16 @@ Section~\ref{sec:selection}.
       \scalht boundaries                & $\scalht > 200\GeV$ ($\njet \leq 3$), $\scalht > 400\GeV$ ($\njet \geq 4$)                     \\
       \mht boundaries                   & 200, 400, 600, 900\GeV                                                                         \\
       \hline
-      {\bf Control regions}             & Baseline selection +                                                                           \\
-      \mj (inverted $\mu$ veto)         
-                                        & $\pt^{\mu_1} > 30\GeV$, $\abs{\eta^{\mu_1}} < 2.1$, 
+      \textbf{Control regions}             & Baseline selection +                                                                           \\
+      \mj (inverted $\mu$ veto)
+                                        & $\pt^{\mu_1} > 30\GeV$, $\abs{\eta^{\mu_1}} < 2.1$,
                                         ${\Delta}R(\mu,\jet{i}) > 0.5$,
                                         $30 < m_\mathrm{T}(\ptvec^\mu,\ptvecmiss) < 125\GeV$                                             \\
-      \mmj (inverted $\mu$ veto)        
-                                        & $\pt^{\mu_{1,2}} > 30\GeV$, $\abs{\eta^{\mu_{1,2}}} < 2.1$, 
-                                        ${\Delta}R(\mu_{1,2},\jet{i}) > 0.5$, 
+      \mmj (inverted $\mu$ veto)
+                                        & $\pt^{\mu_{1,2}} > 30\GeV$, $\abs{\eta^{\mu_{1,2}}} < 2.1$,
+                                        ${\Delta}R(\mu_{1,2},\jet{i}) > 0.5$,
                                         $ \abs{m_{\mu\mu} - m_\mathrm{\cPZ}} < 25\GeV$                                                      \\
-      Multijet-enriched                 & Sidebands to signal region: $\mht/\ptmiss > 1.25$ and/or $\bdphi < 0.5$                        \\  
+      Multijet-enriched                 & Sidebands to signal region: $\mht/\ptmiss > 1.25$ and/or $\bdphi < 0.5$                        \\
       \hline
     \end{tabular}
   }
@@ -464,16 +454,16 @@ interacting particles that escape detection.
 The first variable, \alphat~\cite{Randall:2008rw, Khachatryan:2011tk},
 is designed to be intrinsically robust against jet energy
 mismeasurements. In its simplest form, the \alphat variable is defined
-as $\alphat = \Et^{\jet{2}}/M_\mathrm{T}$, where $M_\mathrm{T} = \sqrt{ 2
-  \Et^{\jet{1}} \Et^{\jet{2}} (1 - \cos\phi_{\jet{1},\jet{2}})}$ and
+as $\alphat = \ET^{\jet{2}}/M_\mathrm{T}$, where $M_\mathrm{T} = \sqrt{\smash[b]{ 2
+  \ET^{\jet{1}} \ET^{\jet{2}} (1 - \cos\phi_{\jet{1},\jet{2}})}}$ and
 $\phi_{\jet{1},\jet{2}}$ is defined as the azimuthal angle between
 jets $\jet{1}$ and $\jet{2}$. In the absence of jet energy
-mismeasurements, and in the limit for which the \Et of each jet is
+mismeasurements, and in the limit for which the \ET of each jet is
 large compared with its mass, a well-measured dijet event with
-$\Et^{\jet{1}} = \Et^{\jet{2}}$ and back-to-back jets
+$\ET^{\jet{1}} = \ET^{\jet{2}}$ and back-to-back jets
 ($\phi_{\jet{1},\jet{2}} = \pi$) yields an \alphat value of 0.5. In
-the presence of a jet energy mismeasurement, $\Et^{\jet{1}} >
-\Et^{\jet{2}}$ and $\alphat < 0.5$. Values significantly greater than
+the presence of a jet energy mismeasurement, $\ET^{\jet{1}} >
+\ET^{\jet{2}}$ and $\alphat < 0.5$. Values significantly greater than
 0.5 can be observed when the two jets are not back-to-back and recoil
 against \ptvecmiss from weakly interacting particles that escape the
 detector. The definition of the \alphat variable can be generalized
@@ -486,7 +476,7 @@ production of neutrinos result in a long tail in \alphat beyond values
 of 0.5. A \scalht-dependent \alphat threshold that decreases from 0.65
 at low \scalht to 0.52 at high \scalht within the range $200 < \scalht
 < 900\GeV$ is employed to maintain an approximately constant rejection
-power against the multijet background. 
+power against the multijet background.
 
 The second variable, known as \bdphi, considers the minimum azimuthal
 angular separation between each jet in the event and the vector \pt
@@ -705,8 +695,8 @@ single top quarks, as well as $\ttbar\PH$ events. The \PYTHIA
 Event samples for signal models involving the production of gluino or
 squark pairs, in association with up to two additional partons, are
 generated at LO with \MGvATNLO, and the decay of the SUSY particles is
-performed with the \PYTHIA program. The \textsc{NNPDF}3.0 LO and
-\textsc{NNPDF}3.0 NLO~\cite{nnpdf} parton distribution functions
+performed with the \PYTHIA program. The {NNPDF}3.0 LO and
+{NNPDF}3.0 NLO~\cite{nnpdf} parton distribution functions
 (PDFs) are used, respectively, with the LO and NLO generators
 described above.
 
@@ -770,23 +760,21 @@ The \lost and \znunuj backgrounds, collectively labelled henceforth as
 the nonmultijet backgrounds, are estimated from data samples in CRs
 and transfer factors $\mathcal{R}$ determined from the ratios of
 expected counts obtained from simulation:
-
 \begin{align}
-  \tf^{\lost} \, & = \,
+  \tf^{\lost} & =
   \frac{N^{\lost}_\text{MC}(\njet, \scalht, \nb, \mht)}
   {N^{\mj}_\text{MC}(\njet, \scalht, \nb)\hfill},
-  & 
-  N^{\lost}_\text{pred} \, & = \,
+  &
+  N^{\lost}_\text{pred}  & =
   \tf^{\lost} \; N^{\mj}_\text{data},
   \\
-  \tf^{\znunu} \, & = \,
+  \tf^{\znunu}  & = 
   \frac{N^{\znunu}_\text{MC}(\njet, \scalht, \nb, \mht)}
   {N^{\mmj}_\text{MC}(\njet, \scalht, \nb)\hfill},
-  & 
-  N^\text{\znunu}_\text{pred} \, & = \,
+  &
+  N^\text{\znunu}_\text{pred}  & = 
   \tf^{\znunu} \; N^{\mmj}_\text{data},
 \end{align}
-
 where $\tf^{\lost}$ and $\tf^{\znunu}$ are the transfer factors that
 act as multiplier terms on the event counts $N^{\mj}_\text{data}$ and
 $N^{\mmj}_\text{data}$ observed in each (\njet, \scalht, \nb) bin of,
@@ -829,7 +817,7 @@ SR and CRs.
     region. Pairs of ranges are quoted for uncertainties determined
     from closure tests in data, which correspond to variations as a
     function of \njet and \scalht, respectively.
-  } 
+  }
   \label{tab:bkgd_systs}
   \centering
   \begin{tabular}{ lcc }
@@ -1060,7 +1048,7 @@ all bins of the SR and CRs are considered.
 \renewcommand*{\arraystretch}{1.2}
 \begin{table}[!t]
   \topcaption{Summary of the simplified SUSY models used to
-    interpret the result of this search.} 
+    interpret the result of this search.}
   \label{tab:sms}
   \centering
   \begin{tabular}{ lll }
@@ -1069,7 +1057,7 @@ all bins of the SR and CRs are considered.
     & Production and decay
     & Additional assumptions                                                         \\
     \hline
-    \multicolumn{3}{l}{\bf Production and prompt decay of squark pairs}           \\
+    \multicolumn{3}{l}{\textbf{Production and prompt decay of squark pairs} }          \\
     T2bb
     & $\Pp\Pp \to \PSQb_1\PASQb_1$,
     $\PSQb_1 \to \cPqb\PSGczDo$
@@ -1091,7 +1079,7 @@ all bins of the SR and CRs are considered.
     & $\Pp\Pp \to \PSQ\PASQ$,
     $\PSQ \to \cPq\PSGczDo$
     & $m_{\PSQ (\PSQ \neq \PSQu_\cmsSymbolFace{L})} \gg m_{\PSQu_\cmsSymbolFace{L}}$ \\
-    \multicolumn{3}{l}{\bf Production and prompt decay of gluino pairs}           \\
+    \multicolumn{3}{l}{\textbf{Production and prompt decay of gluino pairs} }          \\
     T1bbbb
     & $\Pp\Pp \to \PSg\PSg$,
     $\PSg\to \cPaqb\PSQb_1^* \to \cPaqb\cPqb\PSGczDo$
@@ -1102,17 +1090,17 @@ all bins of the SR and CRs are considered.
     & $m_{\PSQt_1} \gg m_{\PSg}$                                                     \\
     T1qqqq
     & $\Pp\Pp \to \PSg\PSg$,
-    $\PSg\to \cPaq\PSQ^* \to \cPaq\cPq\PSGczDo$                                                                   
+    $\PSg\to \cPaq\PSQ^* \to \cPaq\cPq\PSGczDo$
     & $m_{\PSQ} \gg m_{\PSg}$                                                        \\
-    \multicolumn{3}{l}{\bf Production and decay of long-lived gluino pairs}       \\
+    \multicolumn{3}{l}{\textbf{Production and decay of long-lived gluino pairs}}       \\
     T1qqqqLL
     & $\Pp\Pp \to \PSg\PSg$,
-    $\PSg \to \cPaq\PSQ^* \to \cPaq\cPq\PSGczDo$    
+    $\PSg \to \cPaq\PSQ^* \to \cPaq\cPq\PSGczDo$
     & $m_{\PSQ} \gg m_{\PSg}$, $10^{-3} < \ctau < 10^{5}\unit{mm}$ or metastable     \\
     \hline
   \end{tabular}
 \end{table}
-\endgroup 
+\endgroup
 
 The experimental acceptance times efficiency (\ate) is evaluated
 independently for each model, defined in terms of $m_\text{SUSY}$,
@@ -1151,13 +1139,13 @@ subject to moderate statistical fluctuations.
 \renewcommand*{\arraystretch}{1.1}
 \begin{table}[!t]
   \topcaption{A list of benchmark simplified models organized
-    according to production and decay modes (family), the \ate, 
-    representative values for some of the dominant sources of 
+    according to production and decay modes (family), the \ate,
+    representative values for some of the dominant sources of
     systematic uncertainty, and the expected and observed upper limits
     on the production cross section $\sigma_\text{UL}$ relative to the
     theoretical value $\sigma_\text{th}$ calculated at NLO+NLL
     accuracy. Additional uncertainties concerning the T1qqqqLL models
-    are not listed here and are discussed in the text.   
+    are not listed here and are discussed in the text.
   }
   \label{tab:benchmarks}
   \centering
@@ -1376,7 +1364,7 @@ negligible for models with \ctau below $1\unit{m}$.
     virtual squarks (T1bbbb, T1tttt, and T1qqqq). A final scenario
     involves the production of gluinos that are assumed to be
     metastable on the detector scale (T1qqqqLL).}
-  \label{fig:limits-sms} 
+  \label{fig:limits-sms}
 \end{figure}
 
 \begin{figure}[!p]
@@ -1406,8 +1394,8 @@ negligible for models with \ctau below $1\unit{m}$.
     dotted) line indicates the median (${\pm}1$ and 2 standard
     deviations in experimental uncertainty) expected excluded region.
   }
-  \label{fig:limits-ll} 
-\end{figure} 
+  \label{fig:limits-ll}
+\end{figure}
 
 Table~\ref{tab:limits} summarizes the strongest expected and observed
 mass limits for each family of models. The simplified result based on
@@ -1417,8 +1405,8 @@ weaker than those obtained with the nominal result.
 
 \begin{table}[!h]
   \topcaption{Summary of the mass limits obtained for each family of
-    simplified models. The limits indicate the strongest observed 
-    mass exclusions for the parent SUSY particle (gluino or 
+    simplified models. The limits indicate the strongest observed
+    mass exclusions for the parent SUSY particle (gluino or
     squark) and \PSGczDo.
   }
   \label{tab:limits}
@@ -1542,7 +1530,7 @@ Asturias; the Thalis and Aristeia programmes cofinanced by EU-ESF and
 the Greek NSRF; the Rachadapisek Sompot Fund for Postdoctoral
 Fellowship, Chulalongkorn University and the Chulalongkorn Academic
 into Its 2nd Century Project Advancement Project (Thailand); the Welch
-Foundation, contract C-1845; and the Weston Havens Foundation (USA). 
+Foundation, contract C-1845; and the Weston Havens Foundation (USA).
 \end{acknowledgments}
 
 \bibliography{auto_generated}
@@ -1558,49 +1546,49 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
     binning schema. Each entry (and the following entry, if present)
     signifies the lower (upper) bound of an \mht bin within a given
     (\njet, \nb, \scalht) bin. Unique or final entries represent \mht
-    bins unbounded from above. A dash (\NA) signifies that the \scalht 
+    bins unbounded from above. A dash (\NA) signifies that the \scalht
     bin in a given (\njet, \nb) category is not used in the analysis,
     in which case counts in high-\scalht bins are integrated into the
     adjacent lower-\scalht bin. For monojet events, $\scalht \equiv
-    \mht$. The {\it a} denotes asymmetric \pt thresholds for the two
-    highest \pt jets. 
+    \mht$. The \textit{a} denotes asymmetric \pt thresholds for the two
+    highest \pt jets.
   }
   \label{tab:binning}
   \centering
   \resizebox{\textwidth}{!}{
     \begin{tabular}{rrlllll}
       \hline
-      \njet      & \nb       & \multicolumn{5}{c}{\scalht [\GeVns{}]}                                                                       \\ 
+      \njet      & \nb       & \multicolumn{5}{c}{\scalht [\GeVns{}]}                                                                       \\
       \cline{3-7}
                  &           & 200 & 400            & 600                       & 900                                  & 1200               \\
       \hline
-      1          & 0         & 200 & 400 \ph{, 200} & 600 \ph{, 200} \ph{, 200} & 900 \ph{, 200} \ph{, 200} \ph{, 200} & \NA                \\ 
-      1          & 1         & 200 & 400 \ph{, 200} & 600 \ph{, 200} \ph{, 200} & \NA                                  & \NA                \\ 
-      ${\geq}2a$ & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\ 
-      ${\geq}2a$ & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\ 
-      ${\geq}2a$ & 2         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\ 
-      ${\geq}2a$ & ${\geq}3$ & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\ 
-      2          & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      2          & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      2          & 2         & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\ 
-      3          & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      3          & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      3          & 2         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      3          & 3         & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\ 
-      4          & 0         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      4          & 1         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      4          & 2         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\ 
-      4          & ${\geq}3$ & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & \NA                \\ 
-      5          & 0         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      5          & 1         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      5          & 2         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      5          & 3         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & \NA                \\ 
-      5          & ${\geq}4$ & \NA & 200, 400       & \NA                       & \NA                                  & \NA                \\ 
-      ${\geq}6$  & 0         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & 1         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & 2         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & 3         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\ 
-      ${\geq}6$  & ${\geq}4$ & \NA & 200 \ph{, 200} & \NA                       & \NA                                  & \NA                \\ 
+      1          & 0         & 200 & 400 \ph{, 200} & 600 \ph{, 200} \ph{, 200} & 900 \ph{, 200} \ph{, 200} \ph{, 200} & \NA                \\
+      1          & 1         & 200 & 400 \ph{, 200} & 600 \ph{, 200} \ph{, 200} & \NA                                  & \NA                \\
+      ${\geq}2a$ & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\
+      ${\geq}2a$ & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\
+      ${\geq}2a$ & 2         & 200 & 200, 400       & 200, 400, 600             & 200, 900 \ph{, 200} \ph{, 200}       & \NA                \\
+      ${\geq}2a$ & ${\geq}3$ & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\
+      2          & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      2          & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      2          & 2         & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\
+      3          & 0         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      3          & 1         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      3          & 2         & 200 & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      3          & 3         & 200 & 200, 400       & 200, 400, 600             & \NA                                  & \NA                \\
+      4          & 0         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      4          & 1         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      4          & 2         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & 200, 400, 600, 900 \\
+      4          & ${\geq}3$ & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600, 900                   & \NA                \\
+      5          & 0         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      5          & 1         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      5          & 2         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      5          & 3         & \NA & 200, 400       & 200, 400, 600             & 200, 400, 600 \ph{, 200}             & \NA                \\
+      5          & ${\geq}4$ & \NA & 200, 400       & \NA                       & \NA                                  & \NA                \\
+      ${\geq}6$  & 0         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      ${\geq}6$  & 1         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      ${\geq}6$  & 2         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      ${\geq}6$  & 3         & \NA & 200 \ph{, 200} & 200, 400 \ph{, 200}       & 200, 400, 600 \ph{, 200}             & 200, 400, 600, 900 \\
+      ${\geq}6$  & ${\geq}4$ & \NA & 200 \ph{, 200} & \NA                       & \NA                                  & \NA                \\
       \hline
     \end{tabular}
   }
@@ -1614,9 +1602,9 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
     expectations determined from the CR-only fit using the simplified
     binning schema, as a function of \njet, \nb, and \mht. All counts
     are integrated over \scalht. The uncertainties include both
-    statistical and systematic contributions. 
-    The {\it a} denotes asymmetric \pt thresholds for the two highest \pt
-    jets. 
+    statistical and systematic contributions.
+    The \textit{a} denotes asymmetric \pt thresholds for the two highest \pt
+    jets.
   }
   \label{tab:simplified}
   \centering
@@ -1654,4 +1642,4 @@ Foundation, contract C-1845; and the Weston Havens Foundation (USA).
     determined from the CR-only fit using the simplified binning
     schema defined in Table~\ref{tab:simplified}.}
   \label{fig:correlation}
-\end{figure} 
+\end{figure}
