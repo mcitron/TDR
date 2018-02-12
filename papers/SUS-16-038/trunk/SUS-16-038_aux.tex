@@ -4,12 +4,15 @@
 
 \ifthenelse{\boolean{cms@external}}{\providecommand{\suppMaterial}{the supplemental material [URL will be inserted by publisher]}}{\providecommand{\suppMaterial}{Appendix~\ref{app:suppMat}}}
 
+\newcommand{\jet}[1]{\ensuremath{\mathrm{j}_\text{#1}}\xspace}
 \newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
 \newcommand{\nb}{\ensuremath{n_{\text{b}}}\xspace}
 \newcommand{\scalht}{\ensuremath{H_{\text{T}}}\xspace}
 \newcommand{\mht}{\ensuremath{H_{\text{T}}^{\text{miss}}}\xspace}
 \newcommand{\ctau}{\ensuremath{c\tau_{0}}\xspace}
 \newcommand{\um}{\ensuremath{\,{\mu}\text{m}}\xspace}
+\newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
+\newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
 
 \title{Search for natural and split supersymmetry in proton-proton
   collisions at $\sqrt{s} = 13\TeV$ in final states with jets and
@@ -106,14 +109,13 @@
 
 \clearpage
 \begin{figure}[p]
-    \caption{ 
-	[TEMPORARY PLACEHOLDER]
-    The $\alpha_{\mathrm{T}}$ distribution in data and simulation for events satisfying the
-	pre-selection criteria $H_{\mathrm{T}} > 300$ GeV and
-	$p_{T}^{\mathrm{j2}} > 100$ GeV for $\alpha_{\mathrm{T}} < 0.55$ and
-	the full selection for $\alpha_{\mathrm{T}} > 0.55$.
-	The statistical uncertainties for the multijet and SM expectations are represented by the hatched areas (visible only for statistically limited bins).
-	 The final bin of this distribution contains the overflow events.
+  \caption{ The \alphat distribution in data and simulation for events
+    satisfying the baseline selection criteria plus the
+    additional requirements $\njet \geq 2$, $\pt^{\jet{2}} > 100\GeV$,
+    and $\scalht > 900\GeV$. The statistical uncertainties for the
+    multijet and SM expectations are represented by the hatched areas
+    (visible only for statistically limited bins). The final bin of
+    this distribution contains the overflow events.
     \label{fig:alphaT} }
   \begin{center}
   \includegraphics[width=0.7\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_008}
@@ -122,14 +124,14 @@
 
 
 \begin{figure}[p]
-    \caption{ 
-	[TEMPORARY PLACEHOLDER]
-    The $\Delta\phi^{*}_{\mathrm{min}}$ distribution in data and simulation for events
-	satisfying the pre-selection criteria, $H_{\mathrm{T}} > 800$ GeV and
-	$p_{T}^{\mathrm{j2}} > 100$ GeV. 
-	The statistical uncertainties for the multijet and SM expectations are represented by the hatched areas (visible only for statistically limited bins).
-	 The final bin of this distribution contains the overflow events.
-    \label{fig:bDPhi} }
+    \caption{ The \bdphi distribution in data and simulation for
+      events satisfying the baseline selection criteria plus
+      the additional requirements $\njet \geq 2$, $\pt^{\jet{2}} >
+      100\GeV$, and $\scalht > 900\GeV$. The statistical uncertainties
+      for the multijet and SM expectations are represented by the
+      hatched areas (visible only for statistically limited bins). The
+      final bin of this distribution contains the overflow events. 
+      \label{fig:bDPhi} }
   \begin{center}
   \includegraphics[width=0.7\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_009}
   \end{center}
@@ -497,34 +499,6 @@
             \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-g}
             \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-h}
             \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-i}
-
-%        \subfigure[T1qqqqLL ($c\tau=0.001$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-a}
-%            \label{fig:T1qqqqLL_0p001_eff}} 
-%        \subfigure[T1qqqqLL ($c\tau=0.01$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-b}
-%            \label{fig:T1qqqqLL_0p01_eff}} 
-%        \subfigure[t1qqqqll ($c\tau=0.1$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-c}
-%            \label{fig:T1qqqqll_0p1_eff}} \\
-%        \subfigure[T1qqqqLL ($c\tau=1$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-d}
-%            \label{fig:T1qqqqLL_1_eff}} 
-%        \subfigure[T1qqqqLL ($c\tau=10$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-e}
-%            \label{fig:T1qqqqLL_10_eff}} 
-%        \subfigure[T1qqqqLL ($c\tau=100$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-f}
-%            \label{fig:T1qqqqLL_100_eff}} \\
-%        \subfigure[T1qqqqLL ($c\tau=1000$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-g}
-%            \label{fig:T1qqqqLL_1000_eff}} 
-%        \subfigure[T1qqqqLL ($c\tau=10000$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-h}
-%            \label{fig:T1qqqqLL_10000_eff}} 
-%        \subfigure[T1qqqqLL ($c\tau=100000$~mm): Efficiency across the mass plane]{
-%            \includegraphics[width=0.30\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_023-i}
-%            \label{fig:T1qqqqLL_100000_eff}} 
   \caption{ The signal acceptance times efficiency as a function of 
 	    the $\PSg$ and \PSGczDo
     masses for simplified models that assume the production of pairs
@@ -563,11 +537,34 @@
   \label{fig:limits-sms_aux_squarks} 
 \end{figure}
 
+\clearpage
 \begin{figure}[!t]
   \centering
   \includegraphics[width=0.6\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_025}\\
   \caption{Observed and expected mass exclusions at 95\% CL
     (indicated, respectively, by solid and dashed contours) for
-    the split-SUSY simplified models with all considered values of the gluino lifetime.}
+    simplified models that assume the production of pairs of
+    long-lived gluinos that each decay via highly virtual
+    light-flavour squarks to the neutralino and SM particles
+    (T1qqqqLL). The mass exclusion contours are shown for each 
+    value of the gluino proper decay length \ctau considered by this
+    search. }
   \label{fig:limits-sms_aux_long_lived} 
+\end{figure}
+
+\clearpage
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Supplementary/CMS-SUS-16-038_Figure-aux_026}\\
+  \caption{Observed and expected gluino mass exclusions at 95\% CL
+    (indicated, respectively, by solid and dashed contours) for
+    simplified models that assume the production of pairs of
+    long-lived gluinos that each decay via highly virtual
+    light-flavour squarks to the neutralino and SM particles
+    (T1qqqqLL). The gluino mass exclusions are shown for two different
+    assumptions on the neutralino mass and as a function of
+    the gluino proper decay length \ctau. The prompt and stable values
+    refer to the mass exclusions obtained with the T1qqqq and T1qqqqLL
+    metastable ($\ctau = 10^{18}\unit{mm}$) scenarios, respectively.}
+  \label{fig:limits_vs_ctau} 
 \end{figure}
