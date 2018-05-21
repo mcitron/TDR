@@ -1,6 +1,6 @@
-\RCS$Revision: 444593 $
+\RCS$Revision: 461079 $
 \RCS$HeadURL: svn+ssh://bainbrid@svn.cern.ch/reps/tdr2/papers/SUS-16-038/trunk/SUS-16-038.tex $
-\RCS$Id: SUS-16-038.tex 444593 2018-02-06 17:58:57Z alverson $
+\RCS$Id: SUS-16-038.tex 461079 2018-05-21 16:39:43Z bainbrid $
 
 \providecommand{\CL}{CL\xspace}
 \providecommand{\NA}{\ensuremath{\text{---}}}
@@ -16,7 +16,6 @@
 \newcommand{\njet}{\ensuremath{n_{\text{jet}}}\xspace}
 \newcommand{\nb}{\ensuremath{n_{\mathrm{b}}}\xspace}
 \newcommand{\scalht}{\ensuremath{H_{\mathrm{T}}}\xspace}
-\newcommand{\mht}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
 \newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
 \newcommand{\bdphi}{\ensuremath{\Delta\phi^{*}_\text{min}}\xspace}
 \newcommand{\bdphimod}{\ensuremath{\Delta\phi^{*_{\, 25}}_\text{min}}\xspace}
@@ -213,7 +212,7 @@ Section~\ref{sec:selection}.
 
 \begingroup
 \renewcommand*{\arraystretch}{1.2}
-\newcommand{\mybox}[3]{\makebox[\widthof{\hspace{#1}}][#2]{#3}}
+\newcommand{\mybox}[1]{\makebox[150pt][l]{#1}}
 \begin{table}[!t]
   \topcaption{Summary of the physics object acceptances, the baseline
     event selection, the signal and control regions, and the event
@@ -225,42 +224,42 @@ Section~\ref{sec:selection}.
   \resizebox{\textwidth}{!}{
     \begin{tabular}{ ll }
       \hline
-      \multicolumn{2}{l}{\textbf{Physics object acceptances}}                                                                                 \\
+      \multicolumn{2}{l}{\textbf{Physics object acceptances}}                                                                            \\
       Jet                               & $\pt > 40\GeV$, $\abs{\eta} < 2.4$                                                             \\
       Photon                            & $\pt > 25\GeV$, $\abs{\eta} < 2.5$, isolated in cone ${\Delta}R < 0.3$                         \\
       Electron                          & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{rel} < 0.1$ in cone $0.05 < {\Delta}R(\pt) < 0.2$ \\
       Muon                              & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{rel} < 0.2$ in cone $0.05 < {\Delta}R(\pt) < 0.2$ \\
       Single isolated track (SIT)       & $\pt > 10\GeV$, $\abs{\eta} < 2.5$, $I^\text{track} < 0.1$ in cone ${\Delta}R < 0.3$           \\
       \hline
-      \multicolumn{2}{l}{\textbf{Baseline event selection}}                                                                                   \\
+      \multicolumn{2}{l}{\textbf{Baseline event selection}}                                                                              \\
       All-jet final state               & Veto events containing photons, electrons, muons, and SITs within acceptance                   \\
       \ptmiss quality                   & Veto events based on filters related to beam and instrumental effects                          \\
       Jet quality                       & Veto events containing jets that fail identification criteria or $0.1 < \fhleadjet < 0.95$     \\
       Jet energy and sums               & $\pt^{\jet{1}} > 100\GeV$, $\scalht > 200\GeV$, $\mht > 200\GeV$                               \\
       Jets outside acceptance           & $\mhtmet < 1.25$, veto events containing jets with $\pt > 40\GeV$ and $\abs{\eta} > 2.4$       \\
       \hline
-      \textbf{Signal region}               & Baseline selection +                                                                           \\
+      \textbf{Signal region}            & Baseline selection +                                                                           \\
       \alphat threshold (\scalht range) & 0.65 (200--250\GeV), 0.60 (250--300), 0.55 (300--350), 0.53 (350--400), 0.52 (400--900)        \\
       \bdphi threshold                  & $\bdphi > 0.5$ ($\njet \geq 2$), $\bdphimod > 0.5$ ($\njet = 1$)                               \\
       \hline
-      \multicolumn{2}{l}{\textbf{Nominal categorization schema}}                                                                              \\
-      \njet                             & \mybox{5cm}{l}{1} (monojet)                                                                    \\
-                                        & \mybox{5cm}{l}{${\geq}2a$} ($a$ denotes asymmetric, $40 < \pt^{\jet{2}} < 100\GeV$)            \\
-                                        & \mybox{5cm}{l}{2, 3, 4, 5, ${\geq}6$} (symmetric, $\pt^{\jet{2}} > 100\GeV$)                   \\
-      \nb                               & \mybox{5cm}{l}{0, 1, 2, 3, ${\geq}4$} (can be dropped/merged \vs \njet)                        \\
-      \scalht boundaries                & \mybox{5cm}{l}{200, 400, 600, 900, 1200\GeV} (can be dropped/merged \vs \njet, \nb)            \\
-      \mht boundaries                   & \mybox{5cm}{l}{200, 400, 600, 900\GeV} (can be dropped/merged \vs \njet, \nb, \scalht)         \\
+      \multicolumn{2}{l}{\textbf{Nominal categorization schema}}                                                                         \\
+      \njet                             & \mybox{1} (monojet)                                                                            \\
+                                        & \mybox{${\geq}2a$} ($a$ denotes asymmetric, $40 < \pt^{\jet{2}} < 100\GeV$)                    \\
+                                        & \mybox{2, 3, 4, 5, ${\geq}6$} (symmetric, $\pt^{\jet{2}} > 100\GeV$)                           \\
+      \nb                               & \mybox{0, 1, 2, 3, ${\geq}4$} (can be dropped/merged \vs \njet)                                \\
+      \scalht boundaries                & \mybox{200, 400, 600, 900, 1200\GeV} (can be dropped/merged \vs \njet, \nb)                    \\
+      \mht boundaries                   & \mybox{200, 400, 600, 900\GeV} (can be dropped/merged \vs \njet, \nb, \scalht)                 \\
       \hline
-      \multicolumn{2}{l}{\textbf{Simplified categorization schema}}                                                                          \\
+      \multicolumn{2}{l}{\textbf{Simplified categorization schema}}                                                                      \\
       Topology (\njet, \nb)
-                                        & \mybox{2.5cm}{l}{Monojet-like} ($1 \cap {\geq}2a, 0$), ($1 \cap {\geq}2a, {\geq}1$)            \\
-                                        & \mybox{2.5cm}{l}{Low \njet} ($2 \cap 3, 0 \cap 1$), ($2 \cap 3, {\geq}2$)                      \\
-                                        & \mybox{2.5cm}{l}{Medium \njet} ($4 \cap 5, 0 \cap 1$), ($4 \cap 5, {\geq}2$)                   \\
-                                        & \mybox{2.5cm}{l}{High \njet} (${\geq}6, 0 \cap 1$), (${\geq}6, {\geq}2$)                       \\
+                                        & \mybox{Monojet-like} ($1 \cap {\geq}2a, 0$), ($1 \cap {\geq}2a, {\geq}1$)                      \\
+                                        & \mybox{Low \njet} ($2 \cap 3, 0 \cap 1$), ($2 \cap 3, {\geq}2$)                                \\
+                                        & \mybox{Medium \njet} ($4 \cap 5, 0 \cap 1$), ($4 \cap 5, {\geq}2$)                             \\
+                                        & \mybox{High \njet} (${\geq}6, 0 \cap 1$), (${\geq}6, {\geq}2$)                                 \\
       \scalht boundaries                & $\scalht > 200\GeV$ ($\njet \leq 3$), $\scalht > 400\GeV$ ($\njet \geq 4$)                     \\
       \mht boundaries                   & 200, 400, 600, 900\GeV                                                                         \\
       \hline
-      \textbf{Control regions}             & Baseline selection +                                                                           \\
+      \textbf{Control regions}          & Baseline selection +                                                                           \\
       \mj (inverted $\mu$ veto)
                                         & $\pt^{\mu_1} > 30\GeV$, $\abs{\eta^{\mu_1}} < 2.1$,
                                         ${\Delta}R(\mu,\jet{i}) > 0.5$,
@@ -268,7 +267,7 @@ Section~\ref{sec:selection}.
       \mmj (inverted $\mu$ veto)
                                         & $\pt^{\mu_{1,2}} > 30\GeV$, $\abs{\eta^{\mu_{1,2}}} < 2.1$,
                                         ${\Delta}R(\mu_{1,2},\jet{i}) > 0.5$,
-                                        $ \abs{m_{\mu\mu} - m_\mathrm{\cPZ}} < 25\GeV$                                                      \\
+                                        $ \abs{m_{\mu\mu} - m_\mathrm{\cPZ}} < 25\GeV$                                                   \\
       Multijet-enriched                 & Sidebands to signal region: $\mht/\ptmiss > 1.25$ and/or $\bdphi < 0.5$                        \\
       \hline
     \end{tabular}
