@@ -1,7 +1,7 @@
 \def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
 \def\Filedate$#1: #2 #3 ${\gdef\filedate{#2}}
-\Fileversion$Revision: 451399 $
-\Filedate$Date: 2018-03-16 14:40:56 +0000 (Fri, 16 Mar 2018) $
+\Fileversion$Revision: 425142 $
+\Filedate$Date: 2017-09-11 15:24:11 -0400 (Mon, 11 Sep 2017) $
 
 %\def\fileversion{1.0.0}\def\filedate{21 December 2006}
 
@@ -54,9 +54,6 @@
 % to use formatting for a supplement
 \newboolean{cms@supplement}
 \setboolean{cms@supplement}{false}
-% to remove linenumbers for a non @final version
-\newboolean{cms@nolineno}
-\setboolean{cms@nolineno}{false}
 \DeclareOption{tdr}{\setboolean{cms@tdr}{true}\def\cms@style{tdr}} % default anyway
 \DeclareOption{note}{\setboolean{cms@note}{true}\def\cms@style{note}}
 \DeclareOption{cmspaper}{\setboolean{cms@paper}{true}\def\cms@style{paper}}
@@ -68,7 +65,6 @@
 \DeclareOption{final}{\setboolean{cms@final}{true}}
 \DeclareOption{collab}{\setboolean{cms@collab}{true}}
 \DeclareOption{supplement}{\setboolean{cms@supplement}{true}}
-\DeclareOption{nolineno}{\setboolean{cms@nolineno}{true}}
 % unknown options are passed on to report class or article class,
 % depending on the cms@tdr switch (its value is known as its option is declared first)
 \DeclareOption*{%
@@ -127,11 +123,10 @@
 \usepackage{ifpdf}%
 \ifpdf\usepackage[watermark]{pdfdraftcopy}\watermarkgraphic{BigDraft}%
 \else\usepackage{draftcopy}\fi}
-%\usepackage{pdfpages}% not for use in journal submission!
-%\usepackage{placeins} % for FloatBarrier: TOP-17-006 ATLAS combo only
-%\usepackage{adjustbox} % TOP-17-006 ATLAS combo only
+\usepackage{pdfpages}% not for use in journal submission!
+\usepackage{placeins} % for FloatBarrier: TOP-17-006 ATLAS combo only
+\usepackage{adjustbox} % TOP-17-006 ATLAS combo only
 %\usepackage{float}
-%\usepackage{suffix} % allows for creation of starred commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %
 % CMS definitions
@@ -312,7 +307,7 @@
 \ifthenelse{\boolean{cms@tdr}}
 {\ifthenelse{\boolean{cms@final}}
   {}
-  {\ifthenelse{\boolean{cms@nolineno}}{}{\linenumbers}}
+  {\linenumbers}
 }
 {}
 
@@ -358,8 +353,7 @@
 % GOA 2006-12-26: use non-deprecated versions of fancyhdr macros
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\sffamily\bfseries{}\thepage}
-% cms@tdr has chapters, which get listed in the header; others do not
-\ifthenelse{\boolean{cms@tdr}}{\fancyhead[RE]{\sffamily\small\leftmark}}{\fancyhead[RE]{}}
+\fancyhead[RE]{\sffamily\small\leftmark}
 \fancyhead[LO]{\sffamily\small\rightmark}
 
 \fancyfoot{}% clear
@@ -514,11 +508,6 @@
 \providecommand{\DOI}[1]{\href{http://dx.doi.org/#1}{\doi{#1}}}
 
 \newenvironment{acknowledgments}{\section*{Acknowledgments}\tolerance=800}{\par}
-% authorlist formatting; cmsAuthorMark matches use in endnotes
-\providecommand{\cmsAuthorMark}[1]
-{\hbox{\@textsuperscript{\normalfont#1}}}
-\newskip{\cmsinstskip} \cmsinstskip=0pt plus 4pt
-\newskip{\cmsauthskip} \cmsauthskip=16pt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %   NOTES code
@@ -530,6 +519,11 @@
 \typeout{Defining CMS Note commands}
 %
 \definecolor{cms@grey}{gray}{0.4}
+% authorlist formatting; cmsAuthorMark matches use in endnotes
+\newcommand{\cmsAuthorMark}[1]
+{\hbox{\@textsuperscript{\normalfont#1}}}
+\newskip{\cmsinstskip} \cmsinstskip=0pt plus 4pt
+\newskip{\cmsauthskip} \cmsauthskip=16pt
 %
 % ignore journal specific macros in CMS style
 %
@@ -573,8 +567,8 @@
 \newcommand{\cmsNoteContact}[1]{\def\cmsContact{#1}}
 \newcommand{\cmslogo}{\includegraphics[height=2cm]{CMS-bw-logo}}
 \newcommand{\cmsTag}{CMS-\cmsNUMBER}
-\newcommand{\cmsCopyright}{\copyright\,\the\year\ CERN for the benefit of the CMS Collaboration.}
-\newcommand{\appMsg}{See Appendix~\ref{app:collab} for the list of collaboration members}
+\newcommand{\cmsCopyright}{\copyright\,\the\year\ CERN for the benefit of the CMS and ATLAS Collaborations.}
+\newcommand{\appMsg}{See Appendix~\ref{app:collab} and \ref{app:ATLAScollab} for the list of collaboration members}
 \def\cmsNoteRepoAddress{http://cdsweb.cern.ch/collection/CMS\%20PHYSICS\%20ANALYSIS\%20SUMMARIES} %this avoids a problem with the percent signs in commands
 \newcommand{\cmsNoteRepo}[0]
 {
@@ -747,7 +741,7 @@ Archive Date:& \ifx\RCSId\empty\relax\else\expandafter\RCSgetDate\RCSId\RCSSVNDa
   }{}
   % submit to :
   \ifx\cmsMessage\undefined\else\vskip 1cm\begin{center}\textit{\cmsMessage}\end{center}\fi
-  \ifthenelse{\boolean{cms@final}}{\null\vfill\ifthenelse{\boolean{cms@paper}}{\noindent\small{\cmsCopyright\ \href{http://creativecommons.org/licenses/by/4.0}{CC-BY-4.0 license}}}{}}{\vfill\hfill{\textcolor{cms@grey}{\framebox{
+  \ifthenelse{\boolean{cms@final}}{\null\vfill\ifthenelse{\boolean{cms@paper}}{\noindent\small{\cmsCopyright\ \href{http://creativecommons.org/licenses/by/3.0}{CC-BY-3.0 license}}}{}}{\vfill\hfill{\textcolor{cms@grey}{\framebox{
   \begin{tabular}{lp{0.8\textwidth}}
   \multicolumn{2}{l}{This box is only visible in draft mode. Please make sure the values below make sense.}\\
   \cline{1-2}\\
@@ -779,7 +773,7 @@ Archive Date:& \ifx\RCSId\empty\relax\else\expandafter\RCSgetDate\RCSId\RCSSVNDa
 \setlength{\headheight}{25pt}
 \setlength{\headsep}{20pt}%     Distance from bottom of header to main body
 \setlength{\topmargin}{-8pt}
-\ifthenelse{\boolean{cms@final}}{}{\ifthenelse{\boolean{cms@nolineno}}{}{\linenumbers}}
+\ifthenelse{\boolean{cms@final}}{}{}%{\linenumbers}
 }
 \renewenvironment{thebibliography}[1]
      {\section*{\refname}%

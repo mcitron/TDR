@@ -14,7 +14,7 @@ use Text::Balanced qw (extract_bracketed);
 #use PDF::API2; #not installed on lxplus
 
 
-my $VERSION = sprintf "%d.%03d", q$Revision: 431900 $ =~ /(\d+)/g;
+my $VERSION = sprintf "%d.%03d", q$Revision: 436283 $ =~ /(\d+)/g;
 my $verbose;
 my $texFile = 'D:/tdr2/papers/XXX-08-000/trunk/XXX-08-000.tex';
 my $doc = 'XXX-08-000_temp.pdf';
@@ -49,7 +49,7 @@ GetOptions ('verbose!' => \$verbose,
             'checkRefs!' => \$checkRefs,
             'artType=i' => \$artType
              );
-#$verbose=1;             
+#$verbose=1;
 if ($verbose)
 {
     print "$0 called with texFile = $texFile, doc= $doc, style = $style, baseDir = $baseDir, outDir = $outDir, logFile = $logFile, contact = $contactAddress, article type = $artType\n";
@@ -109,7 +109,7 @@ if ($help)
       my $cmdString;
       my $outFile;
       my $ext;
-      
+
       my $preface =<<EOD; # for checking abstract LaTeX
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html>
@@ -121,11 +121,11 @@ if ($help)
 </script>
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-</head>
-<body>
-<p>Below is the abstract after passing through the same formatter [MathJax] as is used on CDS. You should be able to spot those instances where comments (%) or macros have sneaked into the abstract. Unrecognized macros in math mode will be in red, but those in text mode will not stand out.</p>
-<hr>
+</script> </head> <body> <p>Below are the title and abstract after
+passing through the same formatter [MathJaX] as is used on CDS. You
+should be able to spot those instances where comments (%) or macros
+have sneaked into the abstract. Unrecognized macros in math mode
+will be in red, but those in text mode will not stand out.</p> <hr>
 EOD
 
 #
@@ -139,15 +139,15 @@ EOD
    $_ .= do { local( $/ ); <FILE> }; #grab entire content!
    close(FILE);
    # extract svn info: exemplars-- (note that these are the real values for this file)
-   # \RCS$Revision: 431900 $
-   # \RCS$Date: 2017-10-31 15:19:37 +0000 (Tue, 31 Oct 2017) $
+   # \RCS$Revision: 436283 $
+   # \RCS$Date: 2017-11-25 20:09:05 +0000 (Sat, 25 Nov 2017) $
    # \RCS$HeadURL: svn+ssh://bainbrid@svn.cern.ch/reps/tdr2/utils/trunk/general/makeManifest.pl $
-   # \RCS$Id: makeManifest.pl 431900 2017-10-31 15:19:37Z alverson $
+   # \RCS$Id: makeManifest.pl 436283 2017-11-25 20:09:05Z alverson $
    # -- what it looked like under cvs, with the dollar signs removed
-   #\RCS Revision: 1.4 
-   #\RCS Date: 2008/07/31 09:20:05 
-   #\RCS Name: 
-   my $repo = 'svn\+ssh://svn.cern.ch/reps/tdr2/'; 
+   #\RCS Revision: 1.4
+   #\RCS Date: 2008/07/31 09:20:05
+   #\RCS Name:
+   my $repo = 'svn\+ssh://svn.cern.ch/reps/tdr2/';
    my $svn_repo_type = '';
    my $svn_tag = '';
    my $svn_year = 1900;
@@ -161,7 +161,7 @@ EOD
            $svn_repo_type = $1;
            $svn_tag = $2;
        }
-   }    
+   }
    # extract metadata
    m/\\hypersetup(.*)/s; # find hypersetup
    my $xtract = $1;
@@ -226,16 +226,16 @@ EOD
            print ">>> LaTeX ABSTRACT: ",$abstract,"\n";
            print ">>> ---- <<<\n";
            # write out html for MathJax test
-           
+
            my $htmlFile = File::Spec->catfile($outDir,$doc);
            $htmlFile =~ s/\.pdf//; #remove the .pdf extension
            $htmlFile = $htmlFile.".html";
            open(FILE, "> $htmlFile") || die("can't open file $htmlFile $! for HTML test");
-           print FILE $preface, "\n", $abstract, "\n</body></html>";
+           print FILE $preface, "\n", $ltitle,'<br/><br/>',$abstract, "\n</body></html>";
            close(FILE);
            print "\n\n>>> View the file below in a web browser to check the format of the abstract on CDS. <<<\n>>> HTML Check file: ",$htmlFile,"\n\n\n";
 
- 
+
 
        }
        if ($abstract =~ m/(?<!\\)\%/m) # look for % without preceeding \
@@ -265,17 +265,17 @@ EOD
        #print "Python version: ", $py_version, "\n";
        #print "logFile: ", $logFile, ", Tag: ", $tag, ", baseArg: ", $baseArg, "\n";
        if ( `python -V 2>&1` =~ m/([23])\.([0-9])\.?([0-9])?/ && ($1 > 2 || ($1 == 2 && (($2 == 6 && $3 >= 4) || $2 > 6 ))))
-       { 
+       {
             my $status = system("python", "$bin_dir/cleanRefs.py", $baseArg, $tag);
        }
-       else 
+       else
        {
            print ">> tdr (makeManifest) needs Python 2.6.4 or better to analyze the references\n";
            if (-x "/usr/bin/python2.6")
            {
                print ">> tdr (makeManifest): trying /usr/bin/python2.6 (default location on lxplus)\n";
                my $status = system("/usr/bin/python26", "$bin_dir/cleanRefs.py", $baseArg, $tag);
-           }                        
+           }
        }
    }
 
@@ -313,12 +313,12 @@ EOD
       }
       # CMS note number (MARC Source of Acquisition)
       my $xml_style = $style; # remove redundant CMS
-      if (lc($style) =~ 'cmspaper') {$xml_style = 'paper';} 
+      if (lc($style) =~ 'cmspaper') {$xml_style = 'paper';}
       &insert_datafield("037",$record,"CMS-".uc($xml_style)."-".$noteCode);
 
       # Title (MARC Title Statement)
       &insert_datafield("245",$record,$title);
-      
+
       # Other standard MARC data as will be implemented by CDS (as per message 2013-03-05)
       # [See also https://cds.cern.ch/help/admin/howto-marc]
       my $marcCollab = XML::Twig::Elt->new(datafield=>{ tag=>"710", ind1=>" ", ind2=>" "});
@@ -332,7 +332,7 @@ EOD
       &insert_subfield("a",$marcAccel,"CERN LHC");
       &insert_subfield("e",$marcAccel,"CMS");
       $marcAccel->paste('last_child',$record);
-      
+
       # Year (MARC Publication)
       my $pubyear = XML::Twig::Elt->new(datafield=>{ tag=>"260", ind1=>" ", ind2=>" "});
       &insert_subfield("c",$pubyear,$svn_year);
@@ -388,7 +388,7 @@ EOD
       {
           &insert_datafield("980",$record,"CMS_Papers"); # should be ?CMSPUBDRAFTFINAL? ?CMSPUBDRAFT?
       }
-      
+
       # 859:8560 tags: (email:  subfield f)
       my $tag8560 = XML::Twig::Elt->new(datafield=>{tag=>"859", ind1=>" ", ind2=>" "});
       &insert_subfield("f",$tag8560,$contactAddress);
@@ -421,7 +421,7 @@ EOD
       my $start = time;
       # add each figure
       my $convertCmd = "";
-      if ($thumbnails) 
+      if ($thumbnails)
       {
           if ($^O eq "MSWin32")
           {
@@ -435,7 +435,7 @@ EOD
                 $ENV{'PATH'} = $ENV{'ProgramFiles'}."\\ImageMagick-7.0.7-Q16;".$ENV{'ProgramFiles'}."\\gs\\gs9.18\\bin;$ENV{'PATH'}";
                 $convertCmd = "convert.exe";
               }
-              else {print('***No image conversion program found***');} 
+              else {print('***No image conversion program found***');}
           }
           else
           {
@@ -470,14 +470,14 @@ local $/ = "\012"; # necessary when called, for some unknown reason
               $line = $line.$_;   #concatenate both lines
               $line =~ s/\n+$//;
             }
-            if (not $line =~ /^<789FIG (\S*)\s(.*)>$/) {die "Unsuccessfully tried to wrap 789 line:\n$_\n";}            
+            if (not $line =~ /^<789FIG (\S*)\s(.*)>$/) {die "Unsuccessfully tried to wrap 789 line:\n$_\n";}
             $figNam = $1;
             $figNum = $2;
             if ($figNum =~ /(\d+)([[:alpha:]])$/) # subfig pre-increments the figNum
             {
                 $figNum = $1 - 1;
             }
- 
+
 #---------- now get the path to the file
             while (!$figPath && ($_ = <LOGFILE>))
             {
@@ -516,7 +516,7 @@ local $/ = "\012"; # necessary when called, for some unknown reason
             {
                 if (! defined($figOffset) ) # set offset from first encountered figure number
                 {
-                    if ($figNum == 0) { $figOffset = 1 } else { $figOffset = 0 }; 
+                    if ($figNum == 0) { $figOffset = 1 } else { $figOffset = 0 };
                 }
                 my ($outFile, $startingFig) = &genFigName;
                 if ($outFile)
@@ -534,16 +534,16 @@ local $/ = "\012"; # necessary when called, for some unknown reason
                     $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"d"},$1);
                     $doc_tag->paste('last_child',$fft_tag);
                     my @convertArgs = ("$outDir/$outFile", "-trim", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png");
-                    if ($thumbnails) 
+                    if ($thumbnails)
                     {
                       if ($verbose) {print("@convertArgs");}
-                      system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?"; 
+                      system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
                       $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
                       $doc_tag->paste('last_child',$fft_tag);
                     }
                     if (0)
                     {
-                      @convertArgs = ("$outDir/$outFile", "-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png"); 
+                      @convertArgs = ("$outDir/$outFile", "-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png");
                       system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
                       $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
                       $doc_tag->paste('last_child',$fft_tag);
@@ -557,7 +557,7 @@ local $/ = "\012"; # necessary when called, for some unknown reason
       # kick out last figure
       $figNum = $figNum + 1; # otherwise sets figPart
       my ($outFile, $startingFig) = &genFigName;
-      print FIGLIST ("$startingFig $outFile\n");      
+      print FIGLIST ("$startingFig $outFile\n");
       if ($outFile)
       {
           $fft_tag = XML::Twig::Elt->new(datafield=>{tag=>"FFT", ind1=>" ", ind2=>" "});
@@ -573,18 +573,18 @@ local $/ = "\012"; # necessary when called, for some unknown reason
           my @convertArgs = ("$outDir/$outFile", "-trim", "-thumbnail", "240", "-define", "pdf:use-cropbox=true", "$outDir/$1-thumb.png");
           if ($thumbnails)
           {
-              system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?"; 
+              system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
               $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
               $doc_tag->paste('last_child',$fft_tag);
           }
           if (0)
           {
-            @convertArgs = ("$outDir/$outFile", "-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png"); 
+            @convertArgs = ("$outDir/$outFile", "-trim", "-density", "600", "-quality", "100", "-thumbnail", "240", "-define", "pdf:use-cropbox=true",  "$outDir/$1-thumb.png");
             system($convertCmd, @convertArgs)==0 or die "system call to create thumbnails with args @convertArgs failed: $?";
             $doc_tag = XML::Twig::Elt->new(subfield=>{code=>"x"},"$outDir/$1-thumb.png");
             $doc_tag->paste('last_child',$fft_tag);
           }
-          $fft_tag->paste('last_child',$record);                    
+          $fft_tag->paste('last_child',$record);
       }
 #      $record->paste('last_child',$collection);  #: from J-Y LM, 2008/07/18
 #debug      print("Thumbnail generation time: ",time - $start, "\n");

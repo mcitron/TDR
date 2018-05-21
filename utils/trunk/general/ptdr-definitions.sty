@@ -1,7 +1,7 @@
 \def\Fileversion$#1: #2 ${\gdef\fileversion{#2}}
 \def\Filedate$#1: #2-#3-#4 #5 ${\gdef\filedate{#2/#3/#4}}
-\Fileversion$Revision: 432320 $
-\Filedate$Date: 2017-11-02 14:10:59 +0000 (Thu, 02 Nov 2017) $
+\Fileversion$Revision: 460316 $
+\Filedate$Date: 2018-05-15 11:41:40 +0100 (Tue, 15 May 2018) $
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %  CMS Common definitions style file
@@ -24,6 +24,7 @@
 \newcommand {\etc}{\mbox{etc.}\xspace}     %etc.
 \newcommand {\vs}{\mbox{\sl vs.}\xspace}      %vs.
 \newcommand {\mdash}{\ensuremath{\mathrm{-}}} % for use within formulas
+\providecommand {\NA}{\ensuremath{\text{---}}}    % for Not applicable (or available). Needs to be renewcommanded for APS to \cdots
 
 % some terms whose definition we may change
 \newcommand {\Lone}{Level-1\xspace} % Level-1 or L1 ?
@@ -58,6 +59,7 @@
 \newcommand{\POWHEG} {{\textsc{powheg}}\xspace}
 \newcommand{\HIGLU} {{\textsc{higlu}}\xspace}
 \newcommand{\HIJING} {{\textsc{hijing}}\xspace}
+\newcommand{\HYDJET} {{\textsc{hydjet}}\xspace}
 \newcommand{\IGUANA} {\textsc{iguana}\xspace}
 \newcommand{\ISAJET} {{\textsc{isajet}}\xspace}
 \newcommand{\ISAPYTHIA} {{\textsc{isapythia}}\xspace}
@@ -151,6 +153,9 @@
 \newcommand{\ptvec}{\ensuremath{{\vec p}_{\mathrm{T}}}\xspace}
 \newcommand{\ptvecmiss}{\ensuremath{{\vec p}_{\mathrm{T}}^{\kern1pt\text{miss}}}\xspace}
 \newcommand{\tauh}{\ensuremath{\PGt_\mathrm{h}}\xspace}
+\newcommand{\sqrtsNN}{\ensuremath{\sqrt{\smash[b]{s_{_{\mathrm{NN}}}}}}\xspace}
+\newcommand{\mht}{\ensuremath{H_{\mathrm{T}}^{\text{miss}}}\xspace}
+\newcommand{\htvecmiss}{\ensuremath{\vec{H}_{\text{T}}^{\text{miss}}}\xspace}
 
 % roman face derivative
 \newcommand{\dd}[2]{\ensuremath{\frac{\cmsSymbolFace{d} #1}{\cmsSymbolFace{d} #2}}}
@@ -159,16 +164,20 @@
 \newcommand{\re}{\ensuremath{\cmsSymbolFace{e}}}
 % absolute value
 \newcommand{\abs}[1]{\ensuremath{\lvert #1 \rvert}}
+% misc
+\newcommand{\CL}{\ensuremath{\text{CL}}\xspace}
+\newcommand{\CLs}{\ensuremath{\text{CL}_\text{s}}\xspace}
+\newcommand{\CLsb}{\ensuremath{\text{CL}_\text{s+b}}\xspace}
 
 
 
-\ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}{\relax}}{\newcommand{\cmsSymbolFace}{\mathrm}}
+\ifthenelse{\boolean{cms@italic}}{\newcommand{\cmsSymbolFace}[1]{#1}}{\newcommand{\cmsSymbolFace}[1]{\mathrm{#1}}}
 
 % Particle names which track the italic/non-italic face convention
-\newcommand{\zp}{\ensuremath{\cmsSymbolFace{Z}^\prime}\xspace} % plain Z'
-\newcommand{\JPsi}{\ensuremath{\cmsSymbolFace{J}\hspace{-.08em}/\hspace{-.14em}\psi}\xspace} % J/Psi (no mass)
+\newcommand{\zp}{\ensuremath{{\cmsSymbolFace{Z}^\prime}}\xspace} % plain Z'
+\newcommand{\JPsi}{\ensuremath{{\cmsSymbolFace{J}\hspace{-.08em}/\hspace{-.14em}\psi}}\xspace} % J/Psi (no mass)
 \newcommand{\Z}{\ensuremath{\cmsSymbolFace{Z}}\xspace} % plain Z (no superscript 0)
-\newcommand{\ttbar}{\ensuremath{\cmsSymbolFace{t}\overline{\cmsSymbolFace{t}}}\xspace} % t-tbar
+\newcommand{\ttbar}{\ensuremath{{\cmsSymbolFace{t}\overline{\cmsSymbolFace{t}}}}\xspace} % t-tbar
 
 % Extensions for missing names in PENNAMES % note no xspace, to match syntax in PENNAMES
 \newcommand{\cPgn}{\ensuremath{\nu}} % generic neutrino
@@ -251,6 +260,9 @@
 \providecommand{\PZ}{\ensuremath{\cmsSymbolFace{Z}}\xspace} % may have some confusion with the \xspace...
 \providecommand{\PZpr}{\ensuremath{\cmsSymbolFace{Z}'}\xspace} % plain Z' using prime
 \renewcommand{\PWpr}{\ensuremath{\cmsSymbolFace{W}'}\xspace} % use prime like pennames2
+\providecommand{\PWmp}{\ensuremath{\cmsSymbolFace{W}^\mp}\xspace}
+\providecommand{\PDstp}{\ensuremath{\cmsSymbolFace{D}^{\ast+}}\xspace}
+\providecommand{\PDstm}{\ensuremath{\cmsSymbolFace{D}^{\ast-}}\xspace}
 \providecommand{\PGn}{\ensuremath{\nu}\xspace} % generic neutrino
 \providecommand{\PAGn}{\ensuremath{\overline{\nu}}\xspace} % generic neutrino
 \providecommand{\PSQtDo}{\ensuremath{\widetilde{\cmsSymbolFace{t}}_1}\xspace}
@@ -285,22 +297,31 @@
 \providecommand{\PAp}{\ensuremath{\overline{\cmsSymbolFace{p}}}\xspace} % anti-proton
 \providecommand{\PAn}{\ensuremath{\overline{\cmsSymbolFace{n}}}\xspace} % anti-neutron
 \providecommand{\PGc}{\ensuremath{\chi}\xspace} % chi (charm, but also SUSY)
+\providecommand{\PGcc}{\ensuremath{\chi_{\PQc}}\xspace}
+\providecommand{\PGcb}{\ensuremath{\chi_{\PQb}}\xspace}
 \providecommand{\PDz}{\ensuremath{\cmsSymbolFace{D}^0}\xspace} % D0 meson
 \providecommand{\PADz}{\ensuremath{\overline{\cmsSymbolFace{D}}^0}\xspace} % anti-D0 meson
 \providecommand{\PAD}{\ensuremath{\overline{\cmsSymbolFace{D}}}\xspace} % anti-D meson
 \providecommand{\PAK}{\ensuremath{\overline{\cmsSymbolFace{K}}}\xspace} % anti-K meson
 \providecommand{\PAKz}{\ensuremath{\overline{\cmsSymbolFace{K}}^0}\xspace} % anti-K0 meson
 \providecommand{\PABz}{\ensuremath{\overline{\cmsSymbolFace{B}}^0}\xspace} % anti-B0 meson
+\providecommand{\PGLb}{\ensuremath{\Lambda_\cmsSymbolFace{b}}\xspace} % Lambda b
 
 % our extensions for pennames2
 \providecommand{\Pepm}{\ensuremath{\cmsSymbolFace{e}^\pm}\xspace}
 \providecommand{\Pemp}{\ensuremath{\cmsSymbolFace{e}^\mp}\xspace}
+\providecommand{\PGmpm}{\ensuremath{\mu^\pm}\xspace}
+\providecommand{\PGmmp}{\ensuremath{\mu^\mp}\xspace} % not available in pennames2, AFAIK
 % for APS style tables
 \ifthenelse{\boolean{cms@external}}{%
 \newenvironment{scotch}[1]{\protect\centering\ruledtabular\tabular{#1}}{\endtabular\endruledtabular}
 }{
 \newenvironment{scotch}[1]{\protect\centering\tabular{#1}\hline\hline}{\hline\endtabular}
 }
+% Other
+\newcommand{\MD}{\ensuremath{{M_\mathrm{D}}}\xspace}% ED mass
+\newcommand{\Mpl}{\ensuremath{{M_\mathrm{Pl}}}\xspace}% Planck mass
+\newcommand{\Rinv} {\ensuremath{{R}^{-1}}\xspace}
 
 % SM (still to be classified)
 
@@ -439,7 +460,4 @@
 %
 \newcommand{\spinbd}[2]{\ensuremath{\bar{#1}_{\dot{#2}}}\xspace}
 
-\newcommand{\MD}{\ensuremath{{M_\mathrm{D}}}\xspace}% ED mass
-\newcommand{\Mpl}{\ensuremath{{M_\mathrm{Pl}}}\xspace}% Planck mass
-\newcommand{\Rinv} {\ensuremath{{R}^{-1}}\xspace}
 \endinput
