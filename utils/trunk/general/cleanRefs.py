@@ -98,7 +98,7 @@ class cleanRefs:
                        ('EPRINT',re.compile('1101\.0536'), 'Check you\'ve followed the guidelines at https://twiki.cern.ch/twiki/bin/view/CMS/Internal/PubGuidelines for citing PDFs, including specific sets','Warning'),
                        ('EPRINT',re.compile('1101\.0538'), 'Check you\'ve followed the guidelines at https://twiki.cern.ch/twiki/bin/view/CMS/Internal/PubGuidelines for citing PDFs, including specific sets','Warning'),
                        ('TITLE',re.compile('(?i)MadGraph.*v4'), 'MadGraph v5 references are preferred over v4 (unless v4 was what was actually used)','Warning'),                       
-                       ('TITLE',re.compile('(?i)MadGraph.*5'), 'Consider using arXiv:1405.0301, MadGraph5_aMC@NLO?','Warning'),                       
+                       ('TITLE',re.compile('(?i)MadGraph.*5'), 'Consider using doi:10.1007/JHEP07(2014)079, MadGraph5_aMC@NLO?','Warning'),                       
                        ('TITLE',re.compile('POWHEG'), 'Is POWHEG (BOX) correctly referenced? See http://powhegbox.mib.infn.it','Warning'),                       
                        ('DOI',re.compile('10.1088/1126-6708/2002/06/029|10.1088/1126-6708/2003/08/007|10.1088/1126-6708/2006/03/092|10.1088/1126-6708/2008/07/029|10.1007/JHEP01\(2011\)053'), 'MC@NLO citation found. Did you get them all? See http://www.hep.phy.cam.ac.uk/theory/webber/MCatNLO/ near the bottom','Warning'),
                        ('DOI',re.compile('10.1007/JHEP05(2014)146|10.1007/JHEP09(2013)029'), 'Soft drop or modified mass drop tagger found. If you are using soft drop with beta=0, please also cite the MMDT', 'Warning'),

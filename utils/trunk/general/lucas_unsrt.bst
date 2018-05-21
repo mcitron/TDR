@@ -1164,6 +1164,7 @@ FUNCTION {misc}
   note output
   new.sentence
   format.doi output
+  format.url output
   fin.entry
   empty.misc.check
 }
